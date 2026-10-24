@@ -4,6 +4,7 @@
 > **分析工具链**: REA MCP + Ghidra 12.1.4 Headless + Capstone 32-bit x86 + Python 3 逆向解析工具集
 > **分析规模**: PE 镜像全部 **8,532 个内部过程** 100% 覆盖（327,485 行反编译结果，仅存于作者本地）
 > **本仓库内容**: **仅含原创分析文档、专有格式解析器与参考实现**——不含游戏本体、美术音效资产、反编译源码
+> **许可**: 代码 [PolyForm Noncommercial 1.0.0](LICENSE) / 文档 [CC BY-NC 4.0](LICENSE-DOCS.md) / `src/` 不授权 —— 详见 [NOTICE.md](NOTICE.md)
 
 ---
 
@@ -74,7 +75,10 @@ MeteorRE/
 │   └── include/
 ├── mdis.py / find_targets.py / extract_vtables.py # 反汇编辅助脚本
 ├── README.md
-└── DISCLAIMER.md
+├── DISCLAIMER.md               # 免责声明
+├── NOTICE.md                   # 分层许可范围说明（必读）
+├── LICENSE                     # PolyForm Noncommercial 1.0.0（适用于代码）
+└── LICENSE-DOCS.md             # CC BY-NC 4.0（适用于文档）
 ```
 
 ---
@@ -164,3 +168,20 @@ python tools/act_pos_mapper.py ./out/pak/character.act ./out/pak/p0.pos
 - **纯度**：全部结论直接取自安装包本体二进制与 PE 内存映像，不引用任何外部社区项目数据。
 - **交叉验证**：函数体计数采用三口径校验——单体文件行首 `{` 数、12 分卷行首 `{` 合计、`procedures.json` 记录数，三者须严格相等方视为闭环。
 - **可证伪**：文档中每组参数均标注二进制地址（如 `0x005AA934`）与引用指令地址，任何人可在自有副本上复核；无法锚定到具体指令的参数已显式降级标注为「重建推断」，不冒充实测结论。
+
+---
+
+## 七、 许可
+
+本仓库**分层授权**，不同目录的权利状态不同：
+
+| 路径 | 许可 | 商用 |
+|---|---|---|
+| `tools/`、辅助脚本 | [PolyForm Noncommercial 1.0.0](LICENSE) | 否 |
+| `docs/` 正文与图表 | [CC BY-NC 4.0](LICENSE-DOCS.md) | 否 |
+| `src/` 参考实现 | **不授予任何许可** | 否 |
+| 文件格式、算法原理、二进制地址等事实 | 不受著作权保护，自由使用 | — |
+
+`src/` 之所以不授权，是因为它是对原程序具体实现表达的还原，属衍生作品，作者不具备对外授权的资格。把衍生作品套上宽松许可，等于替原权利人做授权，会制造新的侵权风险。
+
+完整说明见 [NOTICE.md](NOTICE.md)。

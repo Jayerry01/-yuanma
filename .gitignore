@@ -19,6 +19,8 @@
 /symbols/
 /rea_evidence_bundle.json
 /_pe.json
+*.i64
+*.idb
 /REA_SESSION_MANIFEST.json
 
 # 本地专用声明文件（仅存于作者本地，不随仓库发布）

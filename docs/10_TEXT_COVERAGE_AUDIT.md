@@ -249,7 +249,10 @@ T2 判定会系统性偏低——引用链断在 thunk 上。
   （此前估的 12.6 KB 高了一倍——把对齐填充也算进去了）；
 - 零损伤：v4 ⊆ v5，落差恰 **+632 / −0**，既有 9,598 个体量一字未变；
 - Ghidra 不把这种形状标成 `isThunk`（`t=0`，因为函数体不是单条 jmp），故命名走
-  `thunk_ilt_XXXX`，与既有 67 个 `thunk_FUN_*`（纯 jmp、Ghidra 自识别）区分。
+  `thunk_ilt_XXXX`，与既有 67 个 `thunk_FUN_*`（纯 jmp、Ghidra 自识别）区分；
+- **语义比预期更低**：payload 指向 `.rdata` 里的描述符，首 dword 是 `0x19930520`——
+  MSVC C++ 异常处理的 `_s_FuncInfo` magic。也就是说这 632 个是**异常处理 handler 桩**，
+  不是游戏逻辑回调，整片 `0x59A2xx–0x5A62xx` 属于 EH 机制。这进一步支持「TH 不进可信覆盖」。
 
 **口径（防虚像）**
 

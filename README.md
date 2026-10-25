@@ -2,7 +2,7 @@
 
 > **分析目标**: 原版安装目录 `C:\Program Files (x86)\Meteor\`（623.72 MiB / 2,113 文件）
 > **分析工具链**: REA MCP + Ghidra 12.1.4 Headless + Capstone 32-bit x86 + Python 3 逆向解析工具集
-> **分析规模**: Ghidra 自动分析发现的 **8,532 个内部过程** 100% 反编译（327,485 行，仅存于作者本地）；物理代码全集至少 **10,347 个函数**（含 645 个分发桩；字节覆盖 93.0%，可信入口覆盖 92.5%；新增 1,815 个尚未反编译，见 [docs/10_TEXT_COVERAGE_AUDIT.md](docs/10_TEXT_COVERAGE_AUDIT.md)）
+> **分析规模**: Ghidra 自动分析发现的 **8,532 个内部过程** 100% 反编译（327,485 行，仅存于作者本地）；物理代码全集至少 **10,381 个函数**（含 646 个分发桩；字节覆盖 93.5%，可信入口覆盖 93.0%；新增 1,849 个尚未反编译，见 [docs/10_TEXT_COVERAGE_AUDIT.md](docs/10_TEXT_COVERAGE_AUDIT.md)）
 > **本仓库内容**: **仅含原创分析文档、专有格式解析器与参考实现**——不含游戏本体、美术音效资产、反编译源码
 > **许可**: 代码 [PolyForm Noncommercial 1.0.0](LICENSE) / 文档 [CC BY-NC 4.0](LICENSE-DOCS.md) / `src/` 不授权 —— 详见 [NOTICE.md](NOTICE.md)
 

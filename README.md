@@ -2,7 +2,8 @@
 
 > **分析目标**: 原版安装目录 `C:\Program Files (x86)\Meteor\`（623.72 MiB / 2,113 文件）
 > **分析工具链**: REA MCP + Ghidra 12.1.4 Headless + Capstone 32-bit x86 + Python 3 逆向解析工具集
-> **分析规模**: Ghidra 自动分析发现的 **8,532 个内部过程** 100% 反编译（327,485 行，仅存于作者本地）；物理代码全集至少 **10,615 个函数**（T1 8,532 / T2 1,085 / T2w 171 / T3 87 / TH 740；字节覆盖 95.0%，可信入口覆盖 91.7%，弱证据另计 2.7%；新增 2,083 个尚未反编译，见 [docs/10_TEXT_COVERAGE_AUDIT.md](docs/10_TEXT_COVERAGE_AUDIT.md)）
+> **分析规模**: Ghidra 自动分析发现的 **8,532 个内部过程** 100% 反编译（327,485 行，仅存于作者本地）；物理代码全集至少 **10,615 个函数**（T1 8,532 / T2 1,085 / T2w 171 / T3 87 / TH 740；字节覆盖 94.96%，可信入口覆盖 91.66%，弱证据另计 2.65%；新增 2,083 个尚未反编译，见 [docs/10_TEXT_COVERAGE_AUDIT.md](docs/10_TEXT_COVERAGE_AUDIT.md) §十四）
+> **覆盖率基线已冻结（v9 · 2026-10-26）**：`tiers_v9.json` + `fresh_functions_v9.json` 为规范基线并已登记 SHA-256，见 [docs/10 §十四 基线冻结声明](docs/10_TEXT_COVERAGE_AUDIT.md#十四基线冻结声明v9--2026-10-26)；之后的重扫一律以 v10 delta 报告形式追加
 > **本仓库内容**: **仅含原创分析文档、专有格式解析器与参考实现**——不含游戏本体、美术音效资产、反编译源码
 > **许可**: 代码 [PolyForm Noncommercial 1.0.0](LICENSE) / 文档 [CC BY-NC 4.0](LICENSE-DOCS.md) / `src/` 不授权 —— 详见 [NOTICE.md](NOTICE.md)
 

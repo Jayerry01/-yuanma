@@ -205,3 +205,103 @@ $$\text{SegProj}_i = \vec{u}_i \cdot \vec{S}$$
 只要在任一正交轴上，线段投影区间与盒体半长 $e_i$ 无交集，即判定分离：
 $$\min(\text{Proj}_i, \text{Proj}_i + \text{SegProj}_i) > e_i \quad \lor \quad \max(\text{Proj}_i, \text{Proj}_i + \text{SegProj}_i) < -e_i$$
 若 3 轴均重叠，则命中成立，返回相交点。
+
+
+---
+
+## 七、 玩家武器必杀、怒气消耗与换武器清怒机制深度实锚
+
+### 1. 换武器清空怒气机制 (`PlayerController::EquipWeapon @ 0x004CFD20`)
+在 PC 原版中，角色切换武器时怒气直接归零。换武器主函数位于 `0x004CFD20`：
+```x86
+0x004CFD20: mov   eax, dword ptr [esp + 4]    ; weaponType (0..11)
+0x004CFD24: push  esi
+0x004CFD25: push  edi
+0x004CFD26: push  eax
+0x004CFD27: mov   esi, ecx                    ; PlayerController* this
+0x004CFD29: call  0x004E3D80                  ; WeaponControllerFactory::Get(weaponType)
+0x004CFD2E: mov   edi, eax
+0x004CFD3C: mov   ecx, dword ptr [esi + 0x348]; 旧武器控制器指针
+0x004CFD42: test  ecx, ecx
+0x004CFD44: je    0x004CFD4C
+0x004CFD46: mov   edx, dword ptr [ecx]
+0x004CFD48: push  esi
+0x004CFD49: call  dword ptr [edx + 0xc]       ; OldWeaponController::vtable[3](Player) -> 注销旧武器
+0x004CFD4C: mov   eax, dword ptr [edi]
+0x004CFD4E: push  esi
+0x004CFD4F: mov   ecx, edi                    ; 新武器控制器指针
+0x004CFD51: call  dword ptr [eax + 8]         ; NewWeaponController::vtable[2](Player) -> 装备初始化并清空怒气
+0x004CFD54: mov   dword ptr [esi + 0x348], edi; 记录新武器控制器
+```
+
+进入 12 类武器控制器的 `vtable[2]`（如匕首 `0x004DF4D0`、飞轮 `0x004DEC70`、长枪 `0x004DFC50`）：
+```x86
+0x004DF4D0: mov   ecx, dword ptr [esp + 4]    ; PlayerController*
+0x004DF4D4: push  0                           ; param3 = 0
+0x004DF4D6: push  0                           ; param2 = 0
+0x004DF4D8: push  6                           ; param1 = 6 (ACTOR_ATTR_ANGRY / 怒气属性事件)
+0x004DF4DA: mov   eax, dword ptr [ecx]
+0x004DF4DC: call  dword ptr [eax + 0xc]       ; PlayerController::vtable[3] (PushEvent)
+0x004DF4DF: ret   4
+```
+**机制结论**：换武器时，新武器控制器的 `vtable[2]` 必然向事件队列推送 `Event 6`（`ACTOR_ATTR_ANGRY`）并将数值重置为 `0`，从而在物理层强制清空怒气。
+
+### 2. 玩家按键连招与必杀怒气扣除驱动 (`0x004CB270 - 0x004CB390`)
+玩家输入连招时，输入队列由 `PlayerController::ProcessKeyCombos`（`0x004CB270`）逐帧轮询处理：
+```x86
+0x004CB2D3: mov   esi, dword ptr [edi + 0x3d4]; 武器连招控制器接口
+0x004CB2D9: lea   ebx, [edi + 0x3d4]
+0x004CB2EA: call  0x00487830                  ; InputSystem::GetSingleton()
+0x004CB2EF: add   eax, 0x1ee8                 ; &InputSystem->KeyBuffer
+0x004CB2F4: mov   ecx, ebx
+0x004CB2F6: push  eax
+0x004CB2F7: call  dword ptr [esi]             ; WeaponController::vtable[0] (灌入按键流)
+0x004CB2F9: mov   edx, dword ptr [ebx]
+0x004CB2FB: lea   eax, [esp + 0x10]
+0x004CB2FF: lea   ecx, [esp + 0x14]
+0x004CB303: push  eax
+0x004CB304: push  ecx
+0x004CB305: mov   ecx, ebx
+0x004CB30F: call  dword ptr [edx + 0x14]      ; WeaponController::vtable[5] (MatchCombo: 匹配招式序列与 Pose)
+0x004CB312: test  eax, eax
+0x004CB314: je    0x004CB33F
+0x004CB316: mov   eax, dword ptr [esp + 0x10]
+0x004CB31A: mov   ecx, dword ptr [esp + 0x14]
+0x004CB31E: mov   edx, dword ptr [edi]
+0x004CB320: push  eax
+0x004CB321: push  ecx
+0x004CB322: mov   ecx, edi
+0x004CB324: call  dword ptr [edx + 0x1a4]     ; PlayerController::vtable[105] (派发连招姿态)
+...
+0x004CB370: mov   edx, dword ptr [ebx]
+0x004CB372: mov   ecx, ebx
+0x004CB374: call  dword ptr [edx + 8]         ; WeaponController::vtable[2] (扣除/消耗对应怒气)
+0x004CB377: test  eax, eax
+0x004CB379: jle   0x004CB37E
+0x004CB37B: inc   dword ptr [edi + 0x60]      ; 累加连招段数 / 招式序号
+```
+
+### 3. 必杀索敌硬约束与脱出清空 (`PlayerController::vtable[99] @ 0x004CE540`)
+在必杀与锁敌状态机中，包含面向锁敌与必杀释放的极限距离与角偏差门控：
+```x86
+0x004CE60D: call  0x0047ECF0                  ; 计算与锁定目标的 3D 欧氏距离
+0x004CE612: fcomp dword ptr [0x005AA924]      ; 比较最大锁敌半径 240.0f (常量 VA: 0x005AA924)
+0x004CE618: fnstsw ax
+0x004CE61A: test  ah, 5
+0x004CE61D: jp    0x004CE6AF                  ; 若超出 240.0f，跳入脱出清空序列
+0x004CE627: call  0x00509980                  ; 角度差转整型
+0x004CE631: cmp   eax, 0x64                   ; 比较角偏差是否 >= 100 (0x64)
+0x004CE634: jge   0x004CE6AF                  ; 若角偏差 >= 100，跳入脱出清空序列
+...
+0x004CE6AF:                                   ; 目标丢失 / 必杀脱出清空序列
+  mov   edx, dword ptr [edi]
+  push  0
+  push  0
+  push  6                                     ; 抛送 Event 6 清空
+  mov   ecx, edi
+  call  dword ptr [edx + 0xc]                 ; PlayerController::vtable[3]
+  ret
+```
+- **距离上限**: 单精度常量 `0x005AA924` = **`240.0f`**。
+- **角偏差上限**: 立即数 `0x64` = **`100`**。
+- 超出范围或目标丢失时，立即通过 `vtable[3]` 抛送 `Event 6` 截断状态。

@@ -561,3 +561,28 @@ ChangeBehavior(who,"attacktarget",slot[,mode])
 | `tools/ghidra_scripts/PstApiTable.java` | 名字池 → 指针槽 |
 | `tools/ghidra_scripts/PstDispatch.java` | 分段反汇编 + 立即数字符串解析 |
 | `_install_snapshot/` | 安装目录 `PScriptLib/` + `Level/` 快照（109 文件） |
+
+## 十二、地图脚本头常量：.pst 头部解析与脚本语言面（2026-10-27，社区文档 × 二进制互证）
+
+社区整理的脚本层文档（Rule/RoundTime/PlayerSpawn/PlayerHP、Int/String/数组、
+GameOver(±1)、OnStart/OnUpdate、自定义函数）与本仓库二进制侧对榫：
+
+**名表（.data 连续区 0x5C9A74–0x5CA004）**：`PlayerHP@0x5C9A7C`、`PlayerWeapon2@0x5C9A88`、
+`PlayerWeapon@0x5C9A98`、`PlayerSpawnDir@0x5C9AA8`、`PlayerSpawn@0x5C9AB8`、
+`RoundTime@0x5C9AC4`、`Rule@0x5C9AD0`、`OnStart@0x5C9B10`、`OnUpdate@0x5C9FC0`、
+`GameOver@0x5CA004` —— 头常量与事件钩子**按名注册**，社区文档的名单与二进制名表一致。
+
+**头部解析器（`0x4BF8xx` 起）**：逐字段 `push 名字指针; call 0x571660`（**VM 全局按名查找**）
+→ 命中则 `mov eax,[eax+8]`（取全局整值）→ 存入关卡对象 `[ebx+0x584/0x588/0x590…]`：
+- `PlayerWeapon2` → `+0x584`
+- **`PlayerHP` → `+0x588`，缺省 `0x3E8 = 1000`**（`mov dword [ebx+0x588],0x3e8`）——
+  **显示血量 = PlayerHP ÷ 10（缺省显示 100），×10 语义获字节铁证**（社区文档说法证实）。
+
+**游戏模式 Rule（社区语义，1=盟主 2=劫镖 3=护城 4=暗杀 5=死斗，<1 或 >5 一律按死斗兜底）**：
+模式值由脚本全局 `Rule` 携带（名表已锚），胜利判定侧的 1..5 分支开关未在本轮定位
+（`0x4BF884/0x4BF89E` 两处引用实为 PlayerHP 查找，Rule 的读取点待下一轮定位）。
+
+**与既有章节的对接**：
+- `PlayerSpawn` = AI 路径点索引——与 §十一 目标点表 `0x666858`、docs/08 路点寻路同源；
+- `OnStart/OnUpdate` = §10.2 场景级 5 固定钩子的玩家侧对应；
+- 自定义函数/Int/String/数组 = VM 字节码层的既有覆盖（§一/§二），无新增机制。

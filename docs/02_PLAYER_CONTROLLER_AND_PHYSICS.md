@@ -571,3 +571,28 @@ stateDiagram-v2
 **结论**：连招判据 = 「方向字符累积串 + 攻击沿」→ 招式 pose，**数据驱动**（匹配表在
 characteract/pos 数据侧，运行时代码只做串累积与查表）。
 方向串在**攻击沿时刻清零重计**（0x4CF5B0 派发重入语义）。
+
+### 9. MoveState 状态机派发表（`0x4CC5C8`）——tick 内联的 12 态处理体（2026-10-28）
+
+> **勘误**：MoveState 状态机的派发表在 **`0x4CC5C8`**（`FUN_004CC130` tick 体内），
+> **不是** `0x4CF75C`（那是 `FUN_004CF5B0` 跳跃派发器的分支表——两个不同的表）。
+> 派发：`MOV EAX,[ESI+0xDC]; CMP EAX,0xB; JA default; JMP [EAX*4+0x4CC5C8]`。
+
+| MoveState | case 体入口 | 体量（至下一项） | 职能 |
+|---|---|---|---|
+| 0 Idle | `0x4CC3DB` | 80 B | 待机处理 |
+| 1 Ground | `0x4CC42B` | 50 B | 地面处理 |
+| 2 WallClimb | `0x4CC45D` | 62 B | 攀爬处理 |
+| 3 Run | `0x4CC49B` | 25 B | 跑动处理 |
+| 4 JumpAction | `0x4CC4B4` | 25 B | 动作处理 |
+| 5 Slide | `0x4CC4CD` | 22 B | 滑步处理 |
+| 6 Fall | `0x4CC4E3` | 22 B | 下落处理 |
+| 7 Attack | `0x4CC4F9` | 22 B | 攻击处理 |
+| 8 Hurt | `0x4CC50F` | 22 B | 受击处理 |
+| 9 Defend | `0x4CC54F` | 22 B | 防御处理 |
+| 10 Dead | `0x4CC525` | 22 B | 死亡处理 |
+| 11 RunAccel | `0x4CC53B` | 20 B | 疾跑加速处理 |
+
+**结构确认**：12 个 case 体连续排列在 `0x4CC3DB–0x4CC54F`（合计 ~370 B），
+每态一个紧凑处理体（20–80 B）——**MoveState 状态机是 tick 的内联核心派发**，
+不是独立函数。12 态的每态处理逻辑都在这 370 B 里。

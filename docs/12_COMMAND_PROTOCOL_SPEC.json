@@ -1,0 +1,113 @@
+{
+  "$schema": "meteor-command-protocol/v1",
+  "protocol": "Meteor (2002) 内部命令通道 — PlayerController 输入/命令子系统",
+  "binary": {
+    "file": "Meteor.exe",
+    "sha256": "baebb6d59e6da61e03660c57c31f842f8a3ec157f07d1e2f9bf8d78373a58619",
+    "image_base": "0x00400000",
+    "authoritative_source": "C:\\Program Files (x86)\\Meteor\\Meteor.exe"
+  },
+  "transport": {
+    "type": "in-process virtual dispatch (thiscall)",
+    "sender_pattern": "MOV EDX,[ESI]; MOV ECX,ESI; CALL [EDX+0xC]  (this->vtable[3])",
+    "router": {
+      "address": "0x004A9770",
+      "size": 18,
+      "body": "MOV ECX,[ECX+0xC]; TEST ECX,ECX; JZ +5; MOV EAX,[ECX]; JMP [EAX+0x20]; OR EAX,-1; RET 0xC",
+      "semantics": "this->member_0xC (子对象) -> 子对象 vtable[8] 尾转发；无 member 则返回 -1",
+      "binding_note": "vtable 槽位必须带基址引用（同一指针池被多重继承子对象窗口化，方法论第 10/12 条）"
+    }
+  },
+  "channels": [
+    {
+      "cmd": "0x31",
+      "name": "KEY_EVENT",
+      "payload_bytes": 8,
+      "fields": [
+        {"name": "key", "type": "u32", "notes": "键码：0x1000=攻击动作码, 0x1200=跳跃动作码, 0x41-0x5A=字母 VK, 0x1B=ESC"},
+        {"name": "pressed", "type": "u32", "notes": "1=按下沿, 0=释放沿"}
+      ],
+      "sender": "FUN_004CB820 @0x4CB839（无条件首发，所有离散键的唯一入口，1,009 B）",
+      "gameapp_handler": {"slot": 220, "address": "0x00489470"},
+      "queue_landing": {"queue_offset": "+0x18", "entry_bytes": 12}
+    },
+    {
+      "cmd": "0x32",
+      "name": "JOYSTICK_A",
+      "payload_bytes": 12,
+      "fields": [{"name": "axes", "type": "u32[3]", "notes": "摇杆 A 轴组"}],
+      "gameapp_handler": {"slot": 221, "address": "0x004894B0"},
+      "queue_landing": {"queue_offset": "+0x48", "entry_bytes": 12}
+    },
+    {
+      "cmd": "0x34",
+      "name": "JOYSTICK_B",
+      "payload_bytes": 16,
+      "fields": [{"name": "axes", "type": "u32[4]", "notes": "摇杆 B 轴组"}],
+      "gameapp_handler": {"slot": 222, "address": "0x004894E0"},
+      "queue_landing": {"queue_offset": "+0x38", "entry_bytes": 16}
+    },
+    {
+      "cmd": "0x33",
+      "name": "AXIS_STATE",
+      "payload_bytes": 16,
+      "fields": [
+        {"name": "fwd", "type": "i32", "notes": "前后轴 [-1,1]"},
+        {"name": "right", "type": "i32", "notes": "左右轴 [-1,1]"},
+        {"name": "cnt", "type": "u32", "notes": "采样计数"},
+        {"name": "x", "type": "u32", "notes": "扩展"}
+      ],
+      "sender": "FUN_004CB260（输入轮询器 @0x4CB260+0x10）",
+      "gameapp_handler": {"slot": 223, "address": "0x00489510"},
+      "queue_landing": {"queue_offset": "+0x28", "entry_bytes": 8, "notes": "意图队列：8 B {key, timestamp}，相邻去重"}
+    }
+  ],
+  "dispatch": {
+    "function": "FUN_004BB800",
+    "size": 2023,
+    "this_vfptr": "0x5A9FE0（派发器类，225 方法；双锚点验证：cmd 0x33→FUN_004BC100@+0x1E8、cmd 0x1D→FUN_004BC710@+0x7C）",
+    "jump_table": {"address": "0x004BBFE8", "entries": 51, "index": "cmd - 3"},
+    "cmd_range": [3, 53],
+    "cases": {
+      "shared_noop_1": {"address": "0x004BBFD0", "cmds": ["0x03", "0x04", "0x09"]},
+      "shared_noop_2": {"address": "0x004BBFDB", "cmds": ["0x0E", "0x12", "0x23", "0x24", "0x25", "0x26", "0x27"]},
+      "unique": {
+        "0x05": "0x004BBC64", "0x06": "0x004BBCC1", "0x07": "0x004BBCD6", "0x08": "0x004BBC22",
+        "0x0A": "0x004BBC84", "0x0B": "0x004BBCF0", "0x0C": "0x004BBDB9", "0x0D": "0x004BBDD3",
+        "0x0F": "0x004BB81F", "0x10": "0x004BBE7B", "0x11": "0x004BBF04", "0x13": "0x004BBBE3",
+        "0x14": "0x004BBBF8", "0x15": "0x004BBB6C", "0x16": "0x004BBB04", "0x17": "0x004BBBC7",
+        "0x18": "0x004BBCA0", "0x19": "0x004BBF39", "0x1A": "0x004BBF51", "0x1B": "0x004BBC43",
+        "0x1C": "0x004BBC0D", "0x1D": "0x004BBADE", "0x1E": "0x004BBF74", "0x1F": "0x004BBF91",
+        "0x20": "0x004BBFA1", "0x21": "0x004BBAC3", "0x22": "0x004BBA3A", "0x28": "0x004BBB1B",
+        "0x29": "0x004BBB47", "0x2A": "0x004BBFB3", "0x2B": "0x004BB8E0", "0x2C": "0x004BB8B0",
+        "0x2D": "0x004BB8C0", "0x2E": "0x004BBDED", "0x2F": "0x004BBF29", "0x30": "0x004BB8D0",
+        "0x31": "0x004BB9EC", "0x32": "0x004BBA06", "0x33": "0x004BBA20", "0x34": "0x004BB9CD",
+        "0x35": "0x004BB96E"
+      }
+    }
+  },
+  "semantic_handlers": {
+    "0x1d_attack_permission": {
+      "entry": "0x004BC710 (402 B, SEH)",
+      "chain": "设置门 cfg+0xC8 → FUN_004F1960 → vtable[17] 懒工厂(FUN_004F1D90, 0x528B) → vtable[109] 武器放行闸 FUN_004CE2D0 → [pc+0x348]->vtable[21] 能力常量",
+      "capability_constants": {"RET_1": ["类型0","1","4","5","7","8","9","10","11"], "RET_0": ["类型2","3","6"]},
+      "note": "权限探询——不选招"
+    },
+    "0x35_attack_terminal": {
+      "entry": "0x004D03F0 (166 B)",
+      "sequence": ["slot76 状态筛（7/9 拒绝）", "slot29 动作载荷执行（4 参，未深读）", "SetState(4) 禁跳", "第三计时器 +0x210 武装", "冲量向量 +0x390→+0x3B8 保值", "重入 cmd 0x35"],
+      "note": "重入由状态筛终结（状态 4 不在放行集）"
+    },
+    "0x0f_lookup_report": {
+      "entry": "0x004BB81F（门 [+0x35C]==1）",
+      "chain": "A.slot75 setter（零实参异常已在派发器基裁定下解除：接收者 = 派发器类 0x5A9FE0+0x12C = FUN_004F1A60，零参 RET，元数匹配）→ GameApp 单例 → A.slot19 锁存写 [+0x34C] → GameApp.slot93 接收锁存值",
+      "note": "cmd 0x0F = 锁存 + 上报，非状态写入"
+    }
+  },
+  "state_machine_ref": "docs/02 §八（MoveState 12 态 + 实测迁移表 143,550 事件）",
+  "UNKNOWN": [
+    "44 案例中除 0x0F/0x1D/0x33/0x35 外的语义命名（结构地址已全锚）",
+    "十槽扇出的运行时基址裁定（0x5AA660 vs 0x5AA6A8，需动态 vptr 捕获）",
+    "队列排空的完整消费语义（slot 19 tick 的排空循环体）"
+  ]
+}

@@ -1,0 +1,177 @@
+================ A: the thunk that dispatches 0x40A2A0 ================
+  0x408EF0 in thunk_FUN_0040a2a0 entry=00408ef0 size=5
+  -- refs to thunk 0x408EF0 (00408EF0)
+     00408e13 UNCONDITIONAL_CALL   in FUN_00408da0@00408da0
+
+================ B: the hub FUN_0040BBE0 ================
+  hub: entry=0040bbe0 size=1111 RET(0)
+  distinct callers: 18
+     FUN_004b86d0@004b86d0
+     FUN_004f5da0@004f5da0
+     FUN_004f5970@004f5970
+     FUN_00404040@00404040
+     FUN_0040fc00@0040fc00
+     FUN_0040fdd0@0040fdd0
+     FUN_004101c0@004101c0
+     FUN_004ea660@004ea660
+     FUN_00465a30@00465a30
+     FUN_004661f0@004661f0
+     FUN_0046f4a0@0046f4a0
+     FUN_00470160@00470160
+     FUN_004701c0@004701c0
+     FUN_004a36a0@004a36a0
+     FUN_004a62b0@004a62b0
+     FUN_004f7290@004f7290
+     FUN_00465810@00465810
+     FUN_004a8080@004a8080
+
+================ C: what is at 0x40D040 (inside FUN_0040CD10) ================
+  FUN_0040CD10: entry=0040cd10 size=1695 RET(0)
+  0x40D040 offset inside = +0x330
+  bytes 0x40D030..0x40D060:
+     0040d031  8b ac 24 7c 04 00    MOV EBP,dword ptr [ESP + 0x47c]
+     0040d038  0f af d7             IMUL EDX,EDI
+     0040d03b  8b 46 1c             MOV EAX,dword ptr [ESI + 0x1c]
+     0040d03e  8b 6c cd 04          MOV EBP,dword ptr [EBP + ECX*0x8 + 0x4]
+     0040d042  89 6c 90 1c          MOV dword ptr [EAX + EDX*0x4 + 0x1c],EBP
+     0040d046  eb 17                JMP 0x0040d05f
+     0040d048  8b 46 18             MOV EAX,dword ptr [ESI + 0x18]
+     0040d04b  0f af c7             IMUL EAX,EDI
+     0040d04e  89 54 85 18          MOV dword ptr [EBP + EAX*0x4 + 0x18],EDX
+     0040d052  8b 46 18             MOV EAX,dword ptr [ESI + 0x18]
+     0040d055  0f af c7             IMUL EAX,EDI
+     0040d058  8b 6e 1c             MOV EBP,dword ptr [ESI + 0x1c]
+     0040d05b  89 54 85 1c          MOV dword ptr [EBP + EAX*0x4 + 0x1c],EDX
+     0040d05f  8b 84 24 8c 04 00    MOV EAX,dword ptr [ESP + 0x48c]
+  is 0x40D040 a branch target? (search JMP/Jcc to it in this function)
+     no instruction references 0x40D040 by immediate
+
+================ D: heads ================
+
+  --- head of 0040A2A0
+     0040a2a0  81 ec a8 01 00 00    SUB ESP,0x1a8
+     0040a2a6  8b 94 24 ac 01 00    MOV EDX,dword ptr [ESP + 0x1ac]
+     0040a2ad  53                   PUSH EBX
+     0040a2ae  55                   PUSH EBP
+     0040a2af  56                   PUSH ESI
+     0040a2b0  57                   PUSH EDI
+     0040a2b1  8d 84 24 58 01 00    LEA EAX,[ESP + 0x158]
+     0040a2b8  6a 00                PUSH 0x0
+     0040a2ba  50                   PUSH EAX
+     0040a2bb  8b 02                MOV EAX,dword ptr [EDX]
+     0040a2bd  8d 8c 24 f4 00 00    LEA ECX,[ESP + 0xf4]
+     0040a2c4  0d 00 00 00 02       OR EAX,0x2000000
+     0040a2c9  51                   PUSH ECX
+     0040a2ca  50                   PUSH EAX
+     0040a2cb  e8 00 cc ff ff       CALL 0x00406ed0
+     0040a2d0  83 c4 10             ADD ESP,0x10
+     0040a2d3  c7 44 24 2c 00 00    MOV dword ptr [ESP + 0x2c],0x0
+     0040a2db  8d b4 24 58 01 00    LEA ESI,[ESP + 0x158]
+     0040a2e2  bf 08 00 00 00       MOV EDI,0x8
+     0040a2e7  8d 8c 24 ec 00 00    LEA ECX,[ESP + 0xec]
+     0040a2ee  56                   PUSH ESI
+     0040a2ef  51                   PUSH ECX
+     0040a2f0  e8 db 7c 02 00       CALL 0x00431fd0
+     0040a2f5  d8 54 24 34          FCOM float ptr [ESP + 0x34]
+     0040a2f9  83 c4 08             ADD ESP,0x8
+     0040a2fc  df e0                FNSTSW AX
+     0040a2fe  25 00 41 00 00       AND EAX,0x4100
+     0040a303  75 06                JNZ 0x0040a30b
+     0040a305  d9 5c 24 2c          FSTP float ptr [ESP + 0x2c]
+     0040a309  eb 02                JMP 0x0040a30d
+
+  --- head of 0040BBE0
+     0040bbe0  a1 00 5a 5d 00       MOV EAX,[0x005d5a00]
+     0040bbe5  53                   PUSH EBX
+     0040bbe6  55                   PUSH EBP
+     0040bbe7  33 ed                XOR EBP,EBP
+     0040bbe9  3b c5                CMP EAX,EBP
+     0040bbeb  56                   PUSH ESI
+     0040bbec  0f 84 41 04 00 00    JZ 0x0040c033
+     0040bbf2  8b 5c 24 10          MOV EBX,dword ptr [ESP + 0x10]
+     0040bbf6  3b dd                CMP EBX,EBP
+     0040bbf8  0f 84 35 04 00 00    JZ 0x0040c033
+     0040bbfe  53                   PUSH EBX
+     0040bbff  e8 6c 4e 00 00       CALL 0x00410a70
+     0040bc04  8b f0                MOV ESI,EAX
+     0040bc06  83 c4 04             ADD ESP,0x4
+     0040bc09  3b f5                CMP ESI,EBP
+     0040bc0b  0f 84 22 04 00 00    JZ 0x0040c033
+     0040bc11  53                   PUSH EBX
+     0040bc12  e8 29 4b 00 00       CALL 0x00410740
+     0040bc17  8b 46 04             MOV EAX,dword ptr [ESI + 0x4]
+     0040bc1a  83 c4 04             ADD ESP,0x4
+     0040bc1d  83 f8 04             CMP EAX,0x4
+     0040bc20  75 28                JNZ 0x0040bc4a
+     0040bc22  a1 d8 18 7f 00       MOV EAX,[0x007f18d8]
+     0040bc27  33 c9                XOR ECX,ECX
+     0040bc29  3b c5                CMP EAX,EBP
+     0040bc2b  7e 1d                JLE 0x0040bc4a
+     0040bc2d  8b 04 8d 20 06 7f    MOV EAX,dword ptr [ECX*0x4 + 0x7f0620]
+     0040bc34  3b c5                CMP EAX,EBP
+     0040bc36  74 08                JZ 0x0040bc40
+     0040bc38  39 70 14             CMP dword ptr [EAX + 0x14],ESI
+
+  --- head of 0040C040
+     0040c040  55                   PUSH EBP
+     0040c041  56                   PUSH ESI
+     0040c042  8b 74 24 0c          MOV ESI,dword ptr [ESP + 0xc]
+     0040c046  33 ed                XOR EBP,EBP
+     0040c048  3b f5                CMP ESI,EBP
+     0040c04a  0f 84 dd 02 00 00    JZ 0x0040c32d
+     0040c050  8b 86 9c 00 00 00    MOV EAX,dword ptr [ESI + 0x9c]
+     0040c056  3b c5                CMP EAX,EBP
+     0040c058  0f 84 cf 02 00 00    JZ 0x0040c32d
+     0040c05e  8b 4e 04             MOV ECX,dword ptr [ESI + 0x4]
+     0040c061  57                   PUSH EDI
+     0040c062  83 f9 06             CMP ECX,0x6
+     0040c065  0f 85 0b 02 00 00    JNZ 0x0040c276
+     0040c06b  8b 40 20             MOV EAX,dword ptr [EAX + 0x20]
+     0040c06e  3b c5                CMP EAX,EBP
+     0040c070  74 1b                JZ 0x0040c08d
+     0040c072  50                   PUSH EAX
+     0040c073  e8 85 c9 0f 00       CALL 0x005089fd
+     0040c078  8b 86 9c 00 00 00    MOV EAX,dword ptr [ESI + 0x9c]
+     0040c07e  83 c4 04             ADD ESP,0x4
+     0040c081  89 68 20             MOV dword ptr [EAX + 0x20],EBP
+     0040c084  8b 8e 9c 00 00 00    MOV ECX,dword ptr [ESI + 0x9c]
+     0040c08a  89 69 1c             MOV dword ptr [ECX + 0x1c],EBP
+     0040c08d  8b 96 9c 00 00 00    MOV EDX,dword ptr [ESI + 0x9c]
+     0040c093  8b 42 24             MOV EAX,dword ptr [EDX + 0x24]
+     0040c096  3b c5                CMP EAX,EBP
+     0040c098  74 12                JZ 0x0040c0ac
+     0040c09a  50                   PUSH EAX
+     0040c09b  e8 5d c9 0f 00       CALL 0x005089fd
+     0040c0a0  8b 86 9c 00 00 00    MOV EAX,dword ptr [ESI + 0x9c]
+
+  --- head of 0040CD10
+     0040cd10  81 ec 58 04 00 00    SUB ESP,0x458
+     0040cd16  53                   PUSH EBX
+     0040cd17  8b 9c 24 74 04 00    MOV EBX,dword ptr [ESP + 0x474]
+     0040cd1e  55                   PUSH EBP
+     0040cd1f  8b ac 24 6c 04 00    MOV EBP,dword ptr [ESP + 0x46c]
+     0040cd26  56                   PUSH ESI
+     0040cd27  33 d2                XOR EDX,EDX
+     0040cd29  33 f6                XOR ESI,ESI
+     0040cd2b  57                   PUSH EDI
+     0040cd2c  85 db                TEST EBX,EBX
+     0040cd2e  89 54 24 2c          MOV dword ptr [ESP + 0x2c],EDX
+     0040cd32  bf 01 00 00 00       MOV EDI,0x1
+     0040cd37  0f 8e 5a 01 00 00    JLE 0x0040ce97
+     0040cd3d  85 f6                TEST ESI,ESI
+     0040cd3f  75 0f                JNZ 0x0040cd50
+     0040cd41  8d 0c 5b             LEA ECX,[EBX + EBX*0x2]
+     0040cd44  8d 45 0c             LEA EAX,[EBP + 0xc]
+     0040cd47  50                   PUSH EAX
+     0040cd48  55                   PUSH EBP
+     0040cd49  8d 54 8d f4          LEA EDX,[EBP + ECX*0x4 + -0xc]
+     0040cd4d  52                   PUSH EDX
+     0040cd4e  eb 30                JMP 0x0040cd80
+     0040cd50  8d 43 ff             LEA EAX,[EBX + -0x1]
+     0040cd53  3b f0                CMP ESI,EAX
+     0040cd55  75 14                JNZ 0x0040cd6b
+     0040cd57  8d 0c 5b             LEA ECX,[EBX + EBX*0x2]
+     0040cd5a  8d 44 5b fa          LEA EAX,[EBX + EBX*0x2 + -0x6]
+     0040cd5e  55                   PUSH EBP
+     0040cd5f  8d 54 8d f4          LEA EDX,[EBP + ECX*0x4 + -0xc]
+     0040cd63  8d 4c 85 00          LEA ECX,[EBP + EAX*0x4]

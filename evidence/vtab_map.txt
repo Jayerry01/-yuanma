@@ -1,0 +1,141 @@
+=== VTABLE MAP ===
+scanning block Headers 0x00400000 size=0x1000
+scanning block .rdata 0x005a8000 size=0x1c000
+scanning block .data 0x005c4000 size=0x22eef4
+scanning block .data1 0x007f3000 size=0x1000
+scanning block .rsrc 0x007f4000 size=0x4000
+scanning block tdb 0xffdff000 size=0x1000
+
+scanned data words: 608189
+vtable candidates found (>=4 consecutive function pointers): 90
+
+=== TOP 40 functions shared across most vtables (candidates: shared virtuals) ===
+  FUN_004e4090             in 116 vtables   slots=size=77 first=5
+  FUN_004435b0             in  93 vtables   slots=size=48 first=5
+  FUN_0046db80             in  85 vtables   slots=size=44 first=11
+  FUN_004f5860             in  65 vtables   slots=size=40 first=4
+  FUN_004e4070             in  64 vtables   slots=size=41 first=1
+  FUN_004e8500             in  51 vtables   slots=size=36 first=1
+  FUN_0050aaa0             in  36 vtables   slots=size=34 first=1
+  FUN_004a9770             in  31 vtables   slots=size=10 first=3
+  FUN_004a96c0             in  31 vtables   slots=size=10 first=11
+  FUN_004a92e0             in  31 vtables   slots=size=10 first=13
+  FUN_004a92d0             in  31 vtables   slots=size=10 first=7
+  FUN_004eee00             in  30 vtables   slots=size=23 first=1
+  FUN_004a9440             in  29 vtables   slots=size=10 first=5
+  FUN_004a92f0             in  29 vtables   slots=size=10 first=4
+  FUN_004a93c0             in  29 vtables   slots=size=10 first=6
+  FUN_004dc910             in  29 vtables   slots=size=29 first=4
+  FUN_004a9790             in  26 vtables   slots=size=9 first=8
+  FUN_004d0aa0             in  23 vtables   slots=size=22 first=3
+  FUN_004d5fb0             in  22 vtables   slots=size=20 first=4
+  FUN_004a9670             in  22 vtables   slots=[12, 20, 24, 27, 32, 34, 40, 103]
+  FUN_004e40d0             in  20 vtables   slots=size=20 first=2
+  FUN_00592660             in  19 vtables   slots=size=17 first=3
+  FUN_0046a8a0             in  19 vtables   slots=size=16 first=10
+  FUN_00502f50             in  18 vtables   slots=size=13 first=2
+  FUN_004a9600             in  18 vtables   slots=[10, 18, 22, 25, 30, 32, 38, 101]
+  FUN_004a95a0             in  18 vtables   slots=[9, 17, 21, 24, 29, 31, 100]
+  FUN_004df580             in  17 vtables   slots=size=16 first=21
+  FUN_004ed150             in  14 vtables   slots=size=14 first=2
+  FUN_00443180             in  14 vtables   slots=[2, 24, 46, 142, 188, 210, 326]
+  FUN_00582ae0             in  13 vtables   slots=[1]
+  FUN_004dca80             in  13 vtables   slots=size=10 first=4
+  FUN_00582800             in  13 vtables   slots=[17]
+  FUN_005822f0             in  13 vtables   slots=[3]
+  FUN_004dce20             in  13 vtables   slots=size=10 first=20
+  FUN_005832e0             in  13 vtables   slots=[32]
+  FUN_005819c0             in  13 vtables   slots=[26]
+  FUN_004dcf10             in  13 vtables   slots=size=10 first=7
+  FUN_00582120             in  13 vtables   slots=[4]
+  FUN_00581df0             in  13 vtables   slots=[28]
+  FUN_00582270             in  13 vtables   slots=[6]
+
+=== specifically: functions occupying SLOT 3 (offset 0xc) most often ===
+  FUN_004a9770             slot3 in  20 vtables
+  FUN_005822f0             slot3 in  13 vtables
+  FUN_004e4070             slot3 in   5 vtables
+  FUN_004ad380             slot3 in   3 vtables
+  FUN_0054daa0             slot3 in   2 vtables
+  FUN_0056aa20             slot3 in   2 vtables
+  FUN_004e8500             slot3 in   2 vtables
+  FUN_005961ac             slot3 in   2 vtables
+  FUN_00462fc0             slot3 in   2 vtables
+  FUN_0046e160             slot3 in   1 vtables
+  thunk_FUN_004ee2a0       slot3 in   1 vtables
+  FUN_004d6400             slot3 in   1 vtables
+  FUN_0055c3f0             slot3 in   1 vtables
+  FUN_004aceb0             slot3 in   1 vtables
+  FUN_004901f0             slot3 in   1 vtables
+  FUN_00516267             slot3 in   1 vtables
+  FUN_0046a2d0             slot3 in   1 vtables
+  FUN_004db730             slot3 in   1 vtables
+  FUN_00592660             slot3 in   1 vtables
+  FUN_004e40d0             slot3 in   1 vtables
+  FUN_004eee00             slot3 in   1 vtables
+  FUN_005073e0             slot3 in   1 vtables
+  FUN_00512e3c             slot3 in   1 vtables
+  FUN_004b2e80             slot3 in   1 vtables
+  FUN_0046c640             slot3 in   1 vtables
+
+=== vtable list (first 60) : base -> slot0..slot3 ===
+  0x005a83c0 n=9   s0=FUN_004fb3f0     s1=FUN_00402840     s2=FUN_004fb3f0     s3=FUN_00402840    
+  0x005a84d0 n=346 s0=FUN_004431e0     s1=FUN_0046a600     s2=FUN_00443180     s3=FUN_0046a650    
+  0x005a8a40 n=25  s0=FUN_00443250     s1=FUN_00462ef0     s2=FUN_00462f20     s3=FUN_00462fc0    
+  0x005a8aa8 n=24  s0=FUN_00443370     s1=FUN_00462ef0     s2=FUN_00462f20     s3=FUN_00462fc0    
+  0x005a8b28 n=22  s0=FUN_00463fe0     s1=FUN_00464b70     s2=FUN_00465430     s3=FUN_004655d0    
+  0x005a8b88 n=66  s0=FUN_00465710     s1=FUN_00466430     s2=FUN_00443180     s3=FUN_00465d70    
+  0x005a8c98 n=22  s0=FUN_00469e60     s1=FUN_0046a100     s2=FUN_00443180     s3=FUN_0046a1b0    
+  0x005a8cf8 n=48  s0=FUN_0046a1f0     s1=FUN_00462ef0     s2=FUN_00462f20     s3=FUN_0046a2d0    
+  0x005a8dc0 n=22  s0=FUN_0046b780     s1=FUN_0046bd80     s2=FUN_00443180     s3=FUN_0046bf90    
+  0x005a8e20 n=22  s0=FUN_0046c030     s1=FUN_0046c6d0     s2=FUN_00443180     s3=FUN_0046c640    
+  0x005a8e90 n=22  s0=FUN_0046cae0     s1=FUN_0046da90     s2=FUN_00443180     s3=FUN_0046d9a0    
+  0x005a8ef8 n=22  s0=FUN_0046db90     s1=FUN_0046e1f0     s2=FUN_00443180     s3=FUN_0046e160    
+  0x005a8fd0 n=7   s0=FUN_00481750     s1=FUN_00481610     s2=FUN_0047bac0     s3=FUN_0047bbf0    
+  0x005a9004 n=24  s0=FUN_00483290     s1=FUN_00482860     s2=FUN_004e40d0     s3=FUN_004e40d0    
+  0x005a9068 n=127 s0=FUN_00486a80     s1=FUN_0048ac50     s2=FUN_0048b640     s3=FUN_004a9770    
+  0x005a9268 n=132 s0=FUN_004902c0     s1=FUN_00490300     s2=FUN_00490260     s3=FUN_004901f0    
+  0x005a9490 n=22  s0=FUN_00492a80     s1=FUN_004d5020     s2=FUN_004d51a0     s3=FUN_004d6400    
+  0x005a9530 n=22  s0=FUN_00491090     s1=FUN_004a9530     s2=FUN_004a0dc0     s3=FUN_004a9770    
+  0x005a9590 n=17  s0=FUN_004915c0     s1=FUN_004a9530     s2=FUN_004a0670     s3=FUN_004a9770    
+  0x005a95f8 n=22  s0=FUN_00497b40     s1=FUN_004a9530     s2=FUN_004a0fb0     s3=FUN_004a9770    
+  0x005a9654 n=107 s0=FUN_004bd300     s1=FUN_004e4070     s2=FUN_004ed150     s3=FUN_004d0aa0    
+  0x005a9810 n=37  s0=FUN_004a07c0     s1=FUN_004a9530     s2=FUN_004a0dc0     s3=FUN_004a9770    
+  0x005a98a8 n=158 s0=FUN_004a17a0     s1=FUN_004a9530     s2=FUN_004a15e0     s3=FUN_004a9770    
+  0x005a9b38 n=29  s0=FUN_004a8fd0     s1=FUN_004a9530     s2=FUN_004a9570     s3=FUN_004a9770    
+  0x005a9bd8 n=73  s0=FUN_004b6390     s1=FUN_004eee00     s2=FUN_004ac750     s3=FUN_004aceb0    
+  0x005a9d00 n=9   s0=FUN_004aef40     s1=FUN_004b2090     s2=FUN_004b22b0     s3=FUN_004ad380    
+  0x005a9d58 n=75  s0=FUN_004b2990     s1=FUN_004b2f10     s2=FUN_00502f50     s3=FUN_004b2e80    
+  0x005a9ed8 n=65  s0=FUN_004b8510     s1=FUN_004b88e0     s2=FUN_004b8920     s3=FUN_004a9770    
+  0x005a9fe0 n=225 s0=FUN_004b97e0     s1=FUN_004b9f80     s2=FUN_004e8500     s3=FUN_004a9770    
+  0x005aa368 n=65  s0=FUN_004bd360     s1=FUN_004be820     s2=FUN_004a9570     s3=FUN_004a9770    
+  0x005aa470 n=19  s0=FUN_004aef40     s1=FUN_004b2090     s2=FUN_004b22b0     s3=FUN_004ad380    
+  0x005aa4c0 n=65  s0=FUN_004bea50     s1=FUN_004bed20     s2=FUN_004a9570     s3=FUN_004a9770    
+  0x005aa5c8 n=10  s0=FUN_004aef40     s1=FUN_004b2090     s2=FUN_004b22b0     s3=FUN_004ad380    
+  0x005aa5f4 n=14  s0=FUN_004bf020     s1=FUN_004bff60     s2=FUN_004c0820     s3=FUN_004a9770    
+  0x005aa658 n=150 s0=FUN_004c5a60     s1=FUN_004c5a80     s2=FUN_004c8880     s3=FUN_004c8a70    
+  0x005aa948 n=9   s0=FUN_004d7290     s1=FUN_004db560     s2=FUN_004db740     s3=FUN_004db730    
+  0x005aa970 n=65  s0=FUN_004db8f0     s1=FUN_004dc060     s2=FUN_004dbf60     s3=FUN_004dc040    
+  0x005aaa78 n=31  s0=FUN_004e40b0     s1=FUN_004dcd70     s2=FUN_004e4070     s3=FUN_004e4070    
+  0x005aab00 n=283 s0=FUN_004dd1c0     s1=FUN_004dcd70     s2=FUN_004e4070     s3=FUN_004e4070    
+  0x005aaf70 n=28  s0=FUN_004e2d00     s1=FUN_004dcd70     s2=FUN_004e4070     s3=FUN_004e4070    
+  0x005aafe8 n=38  s0=FUN_004e3590     s1=FUN_004dcd70     s2=FUN_004e4070     s3=FUN_004e4070    
+  0x005ab0a8 n=23  s0=FUN_004e7f30     s1=FUN_004e8350     s2=FUN_004e8500     s3=FUN_004a9770    
+  0x005ab108 n=29  s0=FUN_004e89e0     s1=FUN_004a9530     s2=FUN_004a9570     s3=FUN_004a9770    
+  0x005ab180 n=185 s0=FUN_004ec2f0     s1=FUN_004b3900     s2=FUN_004b3920     s3=FUN_004e4070    
+  0x005ab468 n=102 s0=FUN_004ed340     s1=FUN_004ed940     s2=FUN_004e8500     s3=FUN_004a9770    
+  0x005ab640 n=11  s0=FUN_004f5870     s1=FUN_004f5180     s2=FUN_004f4ff0     s3=FUN_004f4850    
+  0x005ab670 n=19  s0=FUN_004f5950     s1=FUN_004e8500     s2=FUN_004f5b50     s3=FUN_004a9770    
+  0x005ab6c0 n=18  s0=FUN_004f5ca0     s1=FUN_004a9530     s2=FUN_004a9570     s3=FUN_004a9770    
+  0x005ab710 n=28  s0=FUN_004f5d80     s1=FUN_004f5fa0     s2=FUN_004f5b50     s3=FUN_004a9770    
+  0x005ab7a8 n=31  s0=FUN_004f7250     s1=FUN_004f7660     s2=FUN_004f5b50     s3=FUN_004a9770    
+  0x005ab82c n=6   s0=FUN_00577f40     s1=FUN_004fa640     s2=FUN_004d4a40     s3=FUN_004fab70    
+  0x005ab878 n=115 s0=FUN_005015e0     s1=FUN_004ed9a0     s2=FUN_00502f50     s3=thunk_FUN_004ee2a0
+  0x005aba58 n=43  s0=FUN_00502de0     s1=FUN_00502f60     s2=FUN_004a9570     s3=FUN_004a9770    
+  0x005ac2a0 n=17  s0=FUN_005071a0     s1=FUN_00507210     s2=FUN_00507450     s3=FUN_005073e0    
+  0x005ac2e8 n=17  s0=FUN_00507830     s1=FUN_0050aaa0     s2=FUN_0050aaa0     s3=FUN_0050aaa0    
+  0x005ac378 n=11  s0=FUN_00507abe     s1=FUN_00507d0b     s2=FUN_00507de6     s3=FUN_00507cc7    
+  0x005ac3c8 n=11  s0=FUN_0050840f     s1=FUN_0050857c     s2=FUN_0050845b     s3=FUN_0050860e    
+  0x005ae084 n=8   s0=FUN_0054a2e0     s1=FUN_004f5f90     s2=FUN_00502f50     s3=FUN_004eee00    
+  0x005ae0a8 n=25  s0=FUN_0054d150     s1=FUN_00553430     s2=FUN_0054d340     s3=FUN_0054daa0    
+  0x005ae110 n=37  s0=FUN_005501f0     s1=FUN_00553430     s2=FUN_0054d340     s3=FUN_0054daa0    

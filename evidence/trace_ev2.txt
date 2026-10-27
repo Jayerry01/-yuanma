@@ -1,0 +1,13 @@
+=== TRACE EV2 ===
+
+=== XREFS TO vtable 0x005aa664 ===
+  (shown 0)
+
+=== functions whose body mentions 5aa664 (immediate) ===
+  dumped FUN_004cb260 -> dis_4cb260.txt  instrs=284  size=900
+  dumped FUN_004d0ac0 -> dis_4d0ac0.txt  instrs=148  size=505
+  dumped FUN_004cf5b0 -> dis_4cf5b0.txt  instrs=124  size=409
+  dumped FUN_004cd200 -> dis_4cd200.txt  instrs=119  size=429
+  dumped FUN_004c8a70 -> dis_4c8a70.txt  instrs=139  size=341
+  dumped FUN_004c8f60 -> dis_4c8f60.txt  instrs=36  size=103
+  dumped FUN_004c88a0 -> dis_4c88a0.txt  instrs=124  size=419

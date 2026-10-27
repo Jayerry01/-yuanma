@@ -1,0 +1,78 @@
+########## A: slots on the command receiver base 0x5A9FE0 ##########
+  base 0x005a9fe0 slot  17 (+0x044) @0x005aa024 -> 0x004f1d90  FUN_004f1d90 size=119
+  base 0x005a9fe0 slot 109 (+0x1b4) @0x005aa194 -> 0x004bb260  FUN_004bb260 size=579
+  base 0x005a9fe0 slot  31 (+0x07c) @0x005aa05c -> 0x004bc710  FUN_004bc710 size=402
+  base 0x005a9fe0 slot 122 (+0x1e8) @0x005aa1c8 -> 0x004bc100  FUN_004bc100 size=31
+
+########## B: body of slot 17 (+0x44) ##########
+
+===== FUN_004f1d90 size=119 =====
+  004f1d90  6a ff                                       PUSH -0x1
+  004f1d92  68 2b 37 5a 00                              PUSH 0x5a372b
+  004f1d97  64 a1 00 00 00 00                           MOV EAX,FS:[0x0]
+  004f1d9d  50                                          PUSH EAX
+  004f1d9e  64 89 25 00 00 00 00                        MOV dword ptr FS:[0x0],ESP
+  004f1da5  51                                          PUSH ECX
+  004f1da6  56                                          PUSH ESI
+  004f1da7  8b f1                                       MOV ESI,ECX
+  004f1da9  8b 86 a4 01 00 00                           MOV EAX,dword ptr [ESI + 0x1a4]
+  004f1daf  85 c0                                       TEST EAX,EAX
+  004f1db1  75 3e                                       JNZ 0x004f1df1
+  004f1db3  68 28 05 00 00                              PUSH 0x528
+  004f1db8  e8 7b 6d 01 00                              CALL 0x00508b38
+  004f1dbd  83 c4 04                                    ADD ESP,0x4
+  004f1dc0  89 44 24 04                                 MOV dword ptr [ESP + 0x4],EAX
+  004f1dc4  85 c0                                       TEST EAX,EAX
+  004f1dc6  c7 44 24 10 00 00 00 00                     MOV dword ptr [ESP + 0x10],0x0
+  004f1dce  74 09                                       JZ 0x004f1dd9
+  004f1dd0  8b c8                                       MOV ECX,EAX
+  004f1dd2  e8 f9 8d fd ff                              CALL 0x004cabd0
+  004f1dd7  eb 02                                       JMP 0x004f1ddb
+  004f1dd9  33 c0                                       XOR EAX,EAX
+  004f1ddb  8b 16                                       MOV EDX,dword ptr [ESI]
+  004f1ddd  50                                          PUSH EAX
+  004f1dde  8b ce                                       MOV ECX,ESI
+  004f1de0  c7 44 24 14 ff ff ff ff                     MOV dword ptr [ESP + 0x14],0xffffffff
+  004f1de8  89 86 a4 01 00 00                           MOV dword ptr [ESI + 0x1a4],EAX
+  004f1dee  ff 52 10                                    CALL dword ptr [EDX + 0x10]
+  004f1df1  8b 4c 24 08                                 MOV ECX,dword ptr [ESP + 0x8]
+  004f1df5  8b 86 a4 01 00 00                           MOV EAX,dword ptr [ESI + 0x1a4]
+  004f1dfb  5e                                          POP ESI
+  004f1dfc  64 89 0d 00 00 00 00                        MOV dword ptr FS:[0x0],ECX
+  004f1e03  83 c4 10                                    ADD ESP,0x10
+  004f1e06  c3                                          RET
+
+########## C: body of slot 109 (+0x1b4) on the same base, for comparison ##########
+
+===== FUN_004bb260 size=579 =====
+  004bb260  64 a1 00 00 00 00                           MOV EAX,FS:[0x0]
+  004bb266  6a ff                                       PUSH -0x1
+  004bb268  68 08 0f 5a 00                              PUSH 0x5a0f08
+  004bb26d  50                                          PUSH EAX
+  004bb26e  64 89 25 00 00 00 00                        MOV dword ptr FS:[0x0],ESP
+  004bb275  83 ec 14                                    SUB ESP,0x14
+  004bb278  53                                          PUSH EBX
+  004bb279  55                                          PUSH EBP
+  004bb27a  56                                          PUSH ESI
+  004bb27b  57                                          PUSH EDI
+  004bb27c  8b f9                                       MOV EDI,ECX
+  004bb27e  e8 ad c5 fc ff                              CALL 0x00487830
+  004bb283  8b e8                                       MOV EBP,EAX
+  004bb285  33 db                                       XOR EBX,EBX
+  004bb287  8b 85 8c 21 00 00                           MOV EAX,dword ptr [EBP + 0x218c]
+  004bb28d  3b c3                                       CMP EAX,EBX
+  004bb28f  0f 84 f9 01 00 00                           JZ 0x004bb48e
+  004bb295  39 5c 24 34                                 CMP dword ptr [ESP + 0x34],EBX
+  004bb299  0f 8d ef 01 00 00                           JGE 0x004bb48e
+  004bb29f  33 c0                                       XOR EAX,EAX
+  004bb2a1  33 c9                                       XOR ECX,ECX
+  004bb2a3  89 44 24 18                                 MOV dword ptr [ESP + 0x18],EAX
+  004bb2a7  89 4c 24 1c                                 MOV dword ptr [ESP + 0x1c],ECX
+  004bb2ab  89 5c 24 20                                 MOV dword ptr [ESP + 0x20],EBX
+  004bb2af  8b b5 ec 22 00 00                           MOV ESI,dword ptr [EBP + 0x22ec]
+  004bb2b5  89 5c 24 2c                                 MOV dword ptr [ESP + 0x2c],EBX
+  004bb2b9  8b 56 08                                    MOV EDX,dword ptr [ESI + 0x8]
+  004bb2bc  3b d6                                       CMP EDX,ESI
+  004bb2be  89 54 24 34                                 MOV dword ptr [ESP + 0x34],EDX
+  004bb2c2  0f 84 b0 00 00 00                           JZ 0x004bb378
+  ...

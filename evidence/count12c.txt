@@ -1,0 +1,100 @@
+########## A: call-form  CALL dword ptr [reg + 0x12c]  ##########
+  TOTAL = 66
+    module 0x480000-0x48ffff : 12
+    module 0x490000-0x49ffff : 10
+    module 0x4b0000-0x4bffff : 8
+    module 0x4c0000-0x4cffff : 24
+    module 0x4d0000-0x4dffff : 6
+    module 0x4e0000-0x4effff : 4
+    module 0x4f0000-0x4fffff : 2
+    0048afc8  CALL dword ptr [EAX + 0x12c]   in FUN_0048aeb0 size=643
+    0048b1ea  CALL dword ptr [EDX + 0x12c]   in FUN_0048b140 size=222
+    0048b6ac  CALL dword ptr [EDX + 0x12c]   in FUN_0048b650 size=11117
+    0048b835  CALL dword ptr [EAX + 0x12c]   in FUN_0048b650 size=11117
+    0048d2dc  CALL dword ptr [EDX + 0x12c]   in FUN_0048b650 size=11117
+    0048d3ab  CALL dword ptr [EAX + 0x12c]   in FUN_0048b650 size=11117
+    0048d42a  CALL dword ptr [EAX + 0x12c]   in FUN_0048b650 size=11117
+    0048d542  CALL dword ptr [EAX + 0x12c]   in FUN_0048b650 size=11117
+    0048d5fb  CALL dword ptr [EDX + 0x12c]   in FUN_0048b650 size=11117
+    0048d67b  CALL dword ptr [EAX + 0x12c]   in FUN_0048b650 size=11117
+    0048da07  CALL dword ptr [EAX + 0x12c]   in FUN_0048b650 size=11117
+    0048f4cf  CALL dword ptr [EDX + 0x12c]   in FUN_0048f490 size=647
+    004901f8  CALL dword ptr [EAX + 0x12c]   in FUN_004901f0 size=104
+    004903ba  CALL dword ptr [EDX + 0x12c]   in FUN_00490350 size=1116
+    004907d3  CALL dword ptr [EAX + 0x12c]   in FUN_004907b0 size=172
+    00490885  CALL dword ptr [EDX + 0x12c]   in FUN_00490860 size=143
+    0049175c  CALL dword ptr [EAX + 0x12c]   in FUN_00491750 size=141
+    00491ddf  CALL dword ptr [EAX + 0x12c]   in FUN_00491d80 size=636
+    004922be  CALL dword ptr [EAX + 0x12c]   in FUN_00492250 size=1085
+    00492fe9  CALL dword ptr [EAX + 0x12c]   in FUN_00492f60 size=806
+    004930b5  CALL dword ptr [EDX + 0x12c]   in FUN_00492f60 size=806
+    004931ef  CALL dword ptr [EDX + 0x12c]   in FUN_00492f60 size=806
+    004b26c1  CALL dword ptr [EDX + 0x12c]   in FUN_004b25d0 size=349
+    004b6ad2  CALL dword ptr [EAX + 0x12c]   in FUN_004b6940 size=3896
+    004b6b23  CALL dword ptr [EAX + 0x12c]   in FUN_004b6940 size=3896
+    004b772b  CALL dword ptr [EDX + 0x12c]   in FUN_004b6940 size=3896
+    004ba488  CALL dword ptr [EDX + 0x12c]   in FUN_004ba240 size=2638
+    004ba4e8  CALL dword ptr [EDX + 0x12c]   in FUN_004ba240 size=2638
+    004bb830  CALL dword ptr [EDX + 0x12c]   in FUN_004bb800 size=2023
+    004bed36  CALL dword ptr [EAX + 0x12c]   in FUN_004bed20 size=37
+    004cb145  CALL dword ptr [EAX + 0x12c]   in FUN_004cb130 size=32
+    004cbe5c  CALL dword ptr [EAX + 0x12c]   in FUN_004cbe10 size=145
+    004cbe94  CALL dword ptr [EAX + 0x12c]   in FUN_004cbe10 size=145
+    004cbeee  CALL dword ptr [EDX + 0x12c]   in FUN_004cbeb0 size=88
+    004cc04e  CALL dword ptr [EDX + 0x12c]   in FUN_004cbf10 size=357
+    004cc0d1  CALL dword ptr [EAX + 0x12c]   in FUN_004cc0a0 size=59
+    004cc419  CALL dword ptr [EAX + 0x12c]   in FUN_004cc130 size=1174
+    004cc448  CALL dword ptr [EAX + 0x12c]   in FUN_004cc130 size=1174
+    004cc490  CALL dword ptr [EAX + 0x12c]   in FUN_004cc130 size=1174
+    004ccfce  CALL dword ptr [EDX + 0x12c]   in FUN_004cccb0 size=1345
+    004cddcf  CALL dword ptr [EDX + 0x12c]   in FUN_004cdd60 size=155
+    004cddee  CALL dword ptr [EAX + 0x12c]   in FUN_004cdd60 size=155
+    004cde35  CALL dword ptr [EDX + 0x12c]   in FUN_004cde00 size=130
+    004cde56  CALL dword ptr [EDX + 0x12c]   in FUN_004cde00 size=130
+    004cdeb4  CALL dword ptr [EAX + 0x12c]   in FUN_004cde90 size=82
+    004cdf21  CALL dword ptr [EAX + 0x12c]   in FUN_004cdef0 size=150
+    004cdf32  CALL dword ptr [EDX + 0x12c]   in FUN_004cdef0 size=150
+    004ce041  CALL dword ptr [EDX + 0x12c]   in FUN_004ce010 size=70
+    004ce0ed  CALL dword ptr [EDX + 0x12c]   in FUN_004ce080 size=122
+    004ce149  CALL dword ptr [EDX + 0x12c]   in FUN_004ce130 size=33
+    004ce376  CALL dword ptr [EAX + 0x12c]   in FUN_004ce340 size=128
+    004ce399  CALL dword ptr [EAX + 0x12c]   in FUN_004ce340 size=128
+    004cf638  CALL dword ptr [EAX + 0x12c]   in FUN_004cf5b0 size=409
+    004cf720  CALL dword ptr [EDX + 0x12c]   in FUN_004cf5b0 size=409
+    004d02a3  CALL dword ptr [EDX + 0x12c]   in FUN_004d0250 size=120
+    004d042b  CALL dword ptr [EDX + 0x12c]   in FUN_004d03f0 size=166
+    004d04be  CALL dword ptr [EDX + 0x12c]   in FUN_004d04a0 size=40
+    004dcfb5  CALL dword ptr [EAX + 0x12c]   in FUN_004dcf50 size=177
+    004dd0ec  CALL dword ptr [EAX + 0x12c]   in FUN_004dd0a0 size=92
+    004dfd3b  CALL dword ptr [EAX + 0x12c]   in FUN_004dfcf0 size=91
+    004ebc7d  CALL dword ptr [EDX + 0x12c]   in FUN_004ebc10 size=881
+    004eca06  CALL dword ptr [EDX + 0x12c]   in FUN_004ec980 size=359
+    004edb62  CALL dword ptr [EDX + 0x12c]   in FUN_004ed9d0 size=2116
+    004efb50  CALL dword ptr [EDX + 0x12c]   in FUN_004efb20 size=1373
+    004f1016  CALL dword ptr [EDX + 0x12c]   in FUN_004f0f00 size=1582
+    004f1d5c  CALL dword ptr [EDX + 0x12c]   in FUN_004f1d30 size=54
+
+########## B: any-form instructions containing + 0x12c]  ##########
+  TOTAL = 271
+    module 0x400000-0x40ffff : 25
+    module 0x410000-0x41ffff : 5
+    module 0x420000-0x42ffff : 13
+    module 0x470000-0x47ffff : 3
+    module 0x480000-0x48ffff : 14
+    module 0x490000-0x49ffff : 11
+    module 0x4a0000-0x4affff : 49
+    module 0x4b0000-0x4bffff : 8
+    module 0x4c0000-0x4cffff : 24
+    module 0x4d0000-0x4dffff : 10
+    module 0x4e0000-0x4effff : 5
+    module 0x4f0000-0x4fffff : 4
+    module 0x520000-0x52ffff : 8
+    module 0x530000-0x53ffff : 4
+    module 0x540000-0x54ffff : 14
+    module 0x550000-0x55ffff : 14
+    module 0x560000-0x56ffff : 57
+    module 0x570000-0x57ffff : 2
+    module 0x580000-0x58ffff : 1
+
+########## C: the 0x48xxxx bucket only, call-form only  ##########
+  call-form inside 0x480000-0x48ffff = 12

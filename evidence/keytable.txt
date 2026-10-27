@@ -1,0 +1,57 @@
+================ A: 36-byte record walk from 0x5D1900 ================
+  (name inline at +0, 4-byte tail at +0x20; stride 0x24)
+   005D1900  name="const               "  +0x20=3a 25 73 00 (int=7546170)
+   005D1924  name="                    "  +0x20=00 00 00 00 (int=0)
+   005D1948  name="                    "  +0x20=00 00 00 00 (int=0)
+   005D196C  name="                    "  +0x20=00 00 00 00 (int=0)
+   005D1990  name="                    "  +0x20=00 00 00 00 (int=0)
+   005D19B4  name="                    "  +0x20=00 00 00 00 (int=0)
+   005D19D8  name="                    "  +0x20=00 00 00 00 (int=0)
+   005D19FC  name="                    "  +0x20=00 00 00 00 (int=0)
+   005D1A20  name="                    "  +0x20=00 00 00 00 (int=0)
+   005D1A44  name="                    "  +0x20=00 00 00 00 (int=0)
+
+================ B: table-base candidates ================
+-- refs to "const" (005D1900)
+     00577d8c  DATA                 in FUN_00577d70@00577d70
+-- refs to "function call\n" (005D190C)
+     00578c90  DATA                 in FUN_00578c90@00578c90
+-- refs to "TEXT:%s" (005D191C)
+     005799d9  DATA                 in FUN_00579880@00579880
+-- refs to "action" (005D1930)
+     0057a787  READ                 in FUN_0057a770@0057a770
+     0057a77a  DATA                 in FUN_0057a770@0057a770
+-- refs to "attack" (005D1954)
+     0057a787  READ                 in FUN_0057a770@0057a770
+
+================ C: .data around 0x5AEE88..0x5AEF00 ================
+   [005AEE88] = 005D23E0 -> "$undefined."
+   [005AEE8C] = 005D23D4 -> "KEY_number"
+   [005AEE90] = 005D23C8 -> "KEY_string"
+   [005AEE94] = 005D23BC -> "KEY_action"
+   [005AEE98] = 005D23AC -> "KEY_angertype"
+   [005AEE9C] = 005D239C -> "KEY_angervalue"
+   [005AEEA0] = 005D2390 -> "KEY_attack"
+   [005AEEA4] = 005D2380 -> "KEY_attacktype"
+   [005AEEA8] = 005D2370 -> "KEY_attackvalue"
+   [005AEEAC] = 005D2364 -> "KEY_bone"
+   [005AEEB0] = 005D2358 -> "KEY_blend"
+   [005AEEB4] = 005D2348 -> "KEY_checkfriend"
+   [005AEEB8] = 005D233C -> "KEY_color"
+   [005AEEBC] = 005D232C -> "KEY_defensemove"
+   [005AEEC0] = 005D231C -> "KEY_defensepose"
+   [005AEEC4] = 005D2308 -> "KEY_defensevalue"
+   [005AEEC8] = 005D22FC -> "KEY_drag"
+   [005AEECC] = 005D22EC -> "KEY_effecttype"
+   [005AEED0] = 005D22DC -> "KEY_effectid"
+   [005AEED4] = 005D22D4 -> "KEY_end"
+   [005AEED8] = 005D22CC -> "KEY_hit"
+   [005AEEDC] = 005D22C0 -> "KEY_link"
+   [005AEEE0] = 005D22B0 -> "KEY_loopstart"
+   [005AEEE4] = 005D22A4 -> "KEY_loopend"
+   [005AEEE8] = 005D2298 -> "KEY_name"
+   [005AEEEC] = 005D2288 -> "KEY_nextpose"
+   [005AEEF0] = 005D227C -> "KEY_pose"
+   [005AEEF4] = 005D2270 -> "KEY_start"
+   [005AEEF8] = 005D2264 -> "KEY_source"
+   [005AEEFC] = 005D2258 -> "KEY_speed"

@@ -1,0 +1,36 @@
+
+########## type 0  ctor 0x4dd320  size=51 ##########
+   (no 0x5aXXXX store in first 400 insns)
+
+########## type 1  ctor 0x4e0770  size=51 ##########
+   (no 0x5aXXXX store in first 400 insns)
+
+########## type 2  ctor 0x4de920  size=51 ##########
+   (no 0x5aXXXX store in first 400 insns)
+
+########## type 3  ctor 0x4df140  size=51 ##########
+   (no 0x5aXXXX store in first 400 insns)
+
+########## type 4  ctor 0x4e0030  size=51 ##########
+   (no 0x5aXXXX store in first 400 insns)
+
+########## type 5  ctor 0x4de1d0  size=51 ##########
+   (no 0x5aXXXX store in first 400 insns)
+
+########## type 6  ctor 0x4df8e0  size=51 ##########
+   (no 0x5aXXXX store in first 400 insns)
+
+########## type 7  ctor 0x4dda70  size=51 ##########
+   (no 0x5aXXXX store in first 400 insns)
+
+########## type 8  ctor 0x4e0e80  size=51 ##########
+   (no 0x5aXXXX store in first 400 insns)
+
+########## type 9  ctor 0x4e18c0  size=51 ##########
+   (no 0x5aXXXX store in first 400 insns)
+
+########## type 10  ctor 0x4e3720  size=51 ##########
+   (no 0x5aXXXX store in first 400 insns)
+
+########## type 11  ctor 0x4e2e60  size=51 ##########
+   (no 0x5aXXXX store in first 400 insns)

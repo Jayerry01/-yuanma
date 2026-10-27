@@ -1,0 +1,182 @@
+### region 0x004cc200 .. 0x004cc430 — the selector logic
+  0x004cc204  MOV ECX,dword ptr [ESI + 0x10]
+  0x004cc207  LEA EDX,[ESP + 0x38]
+  0x004cc20b  PUSH EDX
+  0x004cc20c  LEA EDX,[ESP + 0x48]
+  0x004cc210  MOV EAX,dword ptr [ECX]
+  0x004cc212  PUSH EDX
+  0x004cc213  LEA EDX,[ESP + 0x34]
+  0x004cc217  PUSH EDX
+  0x004cc218  CALL dword ptr [EAX + 0x4]
+  0x004cc21b  LEA ECX,[ESI + 0x180]
+  0x004cc221  CALL 0x00549b00
+  0x004cc226  FCOMP double ptr [0x005aa8b8]
+  0x004cc22c  FNSTSW AX
+  0x004cc22e  AND EAX,0x100
+  0x004cc233  JNZ 0x004cc38c   <== SELECT
+  0x004cc239  MOV EAX,dword ptr [ESI + 0x2e8]
+  0x004cc23f  MOV ECX,dword ptr [ESI + 0x2ec]
+  0x004cc245  LEA EDI,[ESI + 0x2e8]
+  0x004cc24b  CMP EAX,ECX   <== SELECT
+  0x004cc24d  JZ 0x004cc257   <== SELECT
+  0x004cc24f  MOV byte ptr [EAX],0x0
+  0x004cc252  MOV EAX,dword ptr [EDI]
+  0x004cc254  MOV dword ptr [EDI + 0x4],EAX
+  0x004cc257  MOV EAX,dword ptr [ESI + 0x60]
+  0x004cc25a  TEST EAX,EAX   <== SELECT
+  0x004cc25c  JZ 0x004cc2f3   <== SELECT
+  0x004cc262  CMP EAX,EBP   <== SELECT
+  0x004cc264  MOV EAX,dword ptr [EDI + 0x4]
+  0x004cc267  JNZ 0x004cc2ae   <== SELECT
+  0x004cc269  MOV EDX,dword ptr [EDI + 0x8]
+  0x004cc26c  LEA ECX,[EAX + 0x1]
+  0x004cc26f  CMP ECX,EDX   <== SELECT
+  0x004cc271  JNZ 0x004cc297   <== SELECT
+  0x004cc273  MOV EDX,dword ptr [EDI]
+  0x004cc275  MOV dword ptr [ESP + 0x10],EBP
+  0x004cc279  SUB EAX,EDX
+  0x004cc27b  LEA ECX,[ESP + 0x10]
+  0x004cc27f  CMP EAX,EBP   <== SELECT
+  0x004cc281  MOV dword ptr [ESP + 0x14],EAX
+  0x004cc285  JC 0x004cc28b   <== SELECT
+  0x004cc287  LEA ECX,[ESP + 0x14]
+  0x004cc28b  MOV EDX,dword ptr [ECX]
+  0x004cc28d  MOV ECX,EDI
+  0x004cc28f  ADD EDX,EAX
+  0x004cc291  PUSH EDX
+  0x004cc292  CALL 0x0049be40
+  0x004cc297  MOV EAX,dword ptr [EDI + 0x4]
+  0x004cc29a  MOV ECX,EDI
+  0x004cc29c  INC EAX
+  0x004cc29d  PUSH EAX
+  0x004cc29e  CALL 0x00402bc0
+  0x004cc2a3  MOV ECX,dword ptr [EDI + 0x4]
+  0x004cc2a6  MOV byte ptr [ECX],0x66
+  0x004cc2a9  JMP 0x004cc387   <== SELECT
+  0x004cc2ae  MOV ECX,dword ptr [EDI + 0x8]
+  0x004cc2b1  LEA EDX,[EAX + 0x1]
+  0x004cc2b4  CMP EDX,ECX   <== SELECT
+  0x004cc2b6  JNZ 0x004cc2dc   <== SELECT
+  0x004cc2b8  MOV EDX,dword ptr [EDI]
+  0x004cc2ba  MOV dword ptr [ESP + 0x14],EBP
+  0x004cc2be  SUB EAX,EDX
+  0x004cc2c0  LEA ECX,[ESP + 0x14]
+  0x004cc2c4  CMP EAX,EBP   <== SELECT
+  0x004cc2c6  MOV dword ptr [ESP + 0x10],EAX
+  0x004cc2ca  JC 0x004cc2d0   <== SELECT
+  0x004cc2cc  LEA ECX,[ESP + 0x10]
+  0x004cc2d0  MOV ECX,dword ptr [ECX]
+  0x004cc2d2  ADD ECX,EAX
+  0x004cc2d4  PUSH ECX
+  0x004cc2d5  MOV ECX,EDI
+  0x004cc2d7  CALL 0x0049be40
+  0x004cc2dc  MOV EDX,dword ptr [EDI + 0x4]
+  0x004cc2df  MOV ECX,EDI
+  0x004cc2e1  INC EDX
+  0x004cc2e2  PUSH EDX
+  0x004cc2e3  CALL 0x00402bc0
+  0x004cc2e8  MOV EAX,dword ptr [EDI + 0x4]
+  0x004cc2eb  MOV byte ptr [EAX],0x62
+  0x004cc2ee  JMP 0x004cc387   <== SELECT
+  0x004cc2f3  MOV EAX,dword ptr [ESI + 0x64]
+  0x004cc2f6  CMP EAX,EBP   <== SELECT
+  0x004cc2f8  JNZ 0x004cc33f   <== SELECT
+  0x004cc2fa  MOV EAX,dword ptr [EDI + 0x4]
+  0x004cc2fd  MOV EDX,dword ptr [EDI + 0x8]
+  0x004cc300  LEA ECX,[EAX + 0x1]
+  0x004cc303  CMP ECX,EDX   <== SELECT
+  0x004cc305  JNZ 0x004cc32b   <== SELECT
+  0x004cc307  MOV EDX,dword ptr [EDI]
+  0x004cc309  MOV dword ptr [ESP + 0x14],EBP
+  0x004cc30d  SUB EAX,EDX
+  0x004cc30f  LEA ECX,[ESP + 0x14]
+  0x004cc313  CMP EAX,EBP   <== SELECT
+  0x004cc315  MOV dword ptr [ESP + 0x10],EAX
+  0x004cc319  JC 0x004cc31f   <== SELECT
+  0x004cc31b  LEA ECX,[ESP + 0x10]
+  0x004cc31f  MOV EDX,dword ptr [ECX]
+  0x004cc321  MOV ECX,EDI
+  0x004cc323  ADD EDX,EAX
+  0x004cc325  PUSH EDX
+  0x004cc326  CALL 0x0049be40
+  0x004cc32b  MOV EAX,dword ptr [EDI + 0x4]
+  0x004cc32e  MOV ECX,EDI
+  0x004cc330  INC EAX
+  0x004cc331  PUSH EAX
+  0x004cc332  CALL 0x00402bc0
+  0x004cc337  MOV ECX,dword ptr [EDI + 0x4]
+  0x004cc33a  MOV byte ptr [ECX],0x72
+  0x004cc33d  JMP 0x004cc387   <== SELECT
+  0x004cc33f  CMP EAX,-0x1   <== SELECT
+  0x004cc342  JNZ 0x004cc38a   <== SELECT
+  0x004cc344  MOV EAX,dword ptr [EDI + 0x4]
+  0x004cc347  MOV ECX,dword ptr [EDI + 0x8]
+  0x004cc34a  LEA EDX,[EAX + 0x1]
+  0x004cc34d  CMP EDX,ECX   <== SELECT
+  0x004cc34f  JNZ 0x004cc375   <== SELECT
+  0x004cc351  MOV EDX,dword ptr [EDI]
+  0x004cc353  MOV dword ptr [ESP + 0x14],EBP
+  0x004cc357  SUB EAX,EDX
+  0x004cc359  LEA ECX,[ESP + 0x14]
+  0x004cc35d  CMP EAX,EBP   <== SELECT
+  0x004cc35f  MOV dword ptr [ESP + 0x10],EAX
+  0x004cc363  JC 0x004cc369   <== SELECT
+  0x004cc365  LEA ECX,[ESP + 0x10]
+  0x004cc369  MOV ECX,dword ptr [ECX]
+  0x004cc36b  ADD ECX,EAX
+  0x004cc36d  PUSH ECX
+  0x004cc36e  MOV ECX,EDI
+  0x004cc370  CALL 0x0049be40
+  0x004cc375  MOV EDX,dword ptr [EDI + 0x4]
+  0x004cc378  MOV ECX,EDI
+  0x004cc37a  INC EDX
+  0x004cc37b  PUSH EDX
+  0x004cc37c  CALL 0x00402bc0
+  0x004cc381  MOV EAX,dword ptr [EDI + 0x4]
+  0x004cc384  MOV byte ptr [EAX],0x6c
+  0x004cc387  INC dword ptr [EDI + 0x4]
+  0x004cc38a  XOR EDI,EDI
+  0x004cc38c  LEA ECX,[ESI + 0x300]
+  0x004cc392  CALL 0x00549b00
+  0x004cc397  FCOMP double ptr [0x005aa8b8]
+  0x004cc39d  FNSTSW AX
+  0x004cc39f  AND EAX,0x100
+  0x004cc3a4  JNZ 0x004cc3c5   <== SELECT
+  0x004cc3a6  MOV EAX,dword ptr [ESI + 0x2f4]
+  0x004cc3ac  MOV ECX,dword ptr [ESI + 0x2f8]
+  0x004cc3b2  CMP EAX,ECX   <== SELECT
+  0x004cc3b4  JZ 0x004cc3c5   <== SELECT
+  0x004cc3b6  MOV byte ptr [EAX],0x0
+  0x004cc3b9  MOV ECX,dword ptr [ESI + 0x2f4]
+  0x004cc3bf  MOV dword ptr [ESI + 0x2f8],ECX
+  0x004cc3c5  MOV EAX,dword ptr [ESI + 0xdc]
+  0x004cc3cb  CMP EAX,0xb   <== SELECT
+  0x004cc3ce  JA 0x004cc54f   <== SELECT
+  0x004cc3d4  JMP dword ptr [EAX*0x4 + 0x4cc5c8]   <== SELECT
+  0x004cc3db  MOV EDX,dword ptr [ESI + 0x398]
+  0x004cc3e1  MOV ECX,dword ptr [ESP + 0x1c]
+  0x004cc3e5  MOV EAX,dword ptr [ESI]
+  0x004cc3e7  MOV dword ptr [ESP + 0x14],EDX
+  0x004cc3eb  MOV EDX,dword ptr [ESP + 0x18]
+  0x004cc3ef  PUSH ECX
+  0x004cc3f0  PUSH EDX
+  0x004cc3f1  MOV ECX,ESI
+  0x004cc3f3  CALL dword ptr [EAX + 0xe8]
+  0x004cc3f9  TEST AL,0x30   <== SELECT
+  0x004cc3fb  JZ 0x004cc41f   <== SELECT
+  0x004cc3fd  FLD float ptr [ESP + 0x14]
+  0x004cc401  FCOMP float ptr [0x005a842c]
+  0x004cc407  MOV dword ptr [ESI + 0xe4],EDI
+  0x004cc40d  FNSTSW AX
+  0x004cc40f  TEST AH,0x5   <== SELECT
+  0x004cc412  JP 0x004cc41f   <== SELECT
+  0x004cc414  MOV EAX,dword ptr [ESI]
+  0x004cc416  PUSH EBP
+  0x004cc417  MOV ECX,ESI
+  0x004cc419  CALL dword ptr [EAX + 0x12c]
+  0x004cc41f  MOV EDX,dword ptr [ESI]
+  0x004cc421  MOV ECX,ESI
+  0x004cc423  CALL dword ptr [EDX + 0x78]
+  0x004cc426  JMP 0x004cc54f   <== SELECT
+  0x004cc42b  MOV ECX,dword ptr [ESP + 0x1c]
+  0x004cc42f  MOV EDX,dword ptr [ESP + 0x18]

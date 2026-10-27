@@ -1,0 +1,11 @@
+
+== 0x4e40d0 FUN_004e40d0 size=3 ==
+   004e40d0  33 c0                 XOR EAX,EAX
+   004e40d2  c3                    RET
+
+== 0x4f5860 FUN_004f5860 size=6 ==
+   004f5860  b8 01 00 00 00        MOV EAX,0x1
+   004f5865  c3                    RET
+
+== 0x4e4070 FUN_004e4070 size=3 ==
+   004e4070  c2 04 00              RET 0x4

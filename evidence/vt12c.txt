@@ -1,0 +1,78 @@
+================ A: +0x12C on three bases ================
+dispatcher 0x5A9FE0 : mem[005AA10C] = 004F1A60  -> FUN_004f1a60 entry=004f1a60 size=74
+        slot3  mem[005A9FEC] = 004A9770  -> FUN_004a9770 entry=004a9770 size=18
+inputObj   0x5AA6A8 : mem[005AA7D4] = 004D0500  -> FUN_004d0500 entry=004d0500 size=13
+        slot3  mem[005AA6B4] = 004A9770  -> FUN_004a9770 entry=004a9770 size=18
+canonical  0x5AA658 : mem[005AA784] = 004CE010  -> FUN_004ce010 entry=004ce010 size=70
+        slot3  mem[005AA664] = 004C8A70  -> FUN_004c8a70 entry=004c8a70 size=341
+
+================ B: sanity anchors on 0x5A9FE0 ================
+mem[005AA1C8] = 004BC100  OK  (expected 004BC100)
+mem[005AA05C] = 004BC710  OK  (expected 004BC710)
+
+================ C: dword run 0x5A9FE0+0x100 .. +0x160 ================
+  +0x100  mem[005AA0E0] = 004EE340  -> FUN_004ee340 entry=004ee340 size=39
+  +0x104  mem[005AA0E4] = 004EE370  -> FUN_004ee370 entry=004ee370 size=48
+  +0x108  mem[005AA0E8] = 004EE3A0  -> FUN_004ee3a0 entry=004ee3a0 size=8
+  +0x10C  mem[005AA0EC] = 004F0ED0  -> FUN_004f0ed0 entry=004f0ed0 size=47
+  +0x110  mem[005AA0F0] = 004ED640  -> FUN_004ed640 entry=004ed640 size=149
+  +0x114  mem[005AA0F4] = 004F0C50  -> FUN_004f0c50 entry=004f0c50 size=638
+  +0x118  mem[005AA0F8] = 004F0F00  -> FUN_004f0f00 entry=004f0f00 size=1582
+  +0x11C  mem[005AA0FC] = 004F26B0  -> FUN_004f26b0 entry=004f26b0 size=23
+  +0x120  mem[005AA100] = 004F26D0  -> FUN_004f26d0 entry=004f26d0 size=1011
+  +0x124  mem[005AA104] = 004F25B0  -> FUN_004f25b0 entry=004f25b0 size=250
+  +0x128  mem[005AA108] = 004F2AD0  -> FUN_004f2ad0 entry=004f2ad0 size=46
+  +0x12C  mem[005AA10C] = 004F1A60  -> FUN_004f1a60 entry=004f1a60 size=74
+  +0x130  mem[005AA110] = 004F1AB0  -> FUN_004f1ab0 entry=004f1ab0 size=33
+  +0x134  mem[005AA114] = 004F1D70  -> FUN_004f1d70 entry=004f1d70 size=27
+  +0x138  mem[005AA118] = 004EEAE0  -> FUN_004eeae0 entry=004eeae0 size=307
+  +0x13C  mem[005AA11C] = 004EEAB0  -> FUN_004eeab0 entry=004eeab0 size=43
+  +0x140  mem[005AA120] = 004EEA60  -> FUN_004eea60 entry=004eea60 size=70
+  +0x144  mem[005AA124] = 004EE910  -> FUN_004ee910 entry=004ee910 size=129
+  +0x148  mem[005AA128] = 004EE9A0  -> FUN_004ee9a0 entry=004ee9a0 size=181
+  +0x14C  mem[005AA12C] = 004EE600  -> FUN_004ee600 entry=004ee600 size=770
+  +0x150  mem[005AA130] = 004F3310  -> FUN_004f3310 entry=004f3310 size=110
+  +0x154  mem[005AA134] = 004F2E90  -> FUN_004f2e90 entry=004f2e90 size=1152
+  +0x158  mem[005AA138] = 004F2BB0  -> FUN_004f2bb0 entry=004f2bb0 size=107
+  +0x15C  mem[005AA13C] = 004DC040  -> FUN_004dc040 entry=004dc040 size=5
+  +0x160  mem[005AA140] = 004F2570  -> FUN_004f2570 entry=004f2570 size=53
+
+================ D: body of the 0x5A9FE0+0x12C target ================
+  target = 4f1a60  FUN_004f1a60 entry=004f1a60 size=74
+  004f1a60  56                       PUSH ESI
+  004f1a61  57                       PUSH EDI
+  004f1a62  8b f1                    MOV ESI,ECX
+  004f1a64  e8 c7 5d f9 ff           CALL 0x00487830
+  004f1a69  8b 8e 54 02 00 00        MOV ECX,dword ptr [ESI + 0x254]
+  004f1a6f  8b 10                    MOV EDX,dword ptr [EAX]
+  004f1a71  51                       PUSH ECX
+  004f1a72  8b c8                    MOV ECX,EAX
+  004f1a74  ff 92 4c 01 00 00        CALL dword ptr [EDX + 0x14c]
+  004f1a7a  8b f8                    MOV EDI,EAX
+  004f1a7c  e8 af 5d f9 ff           CALL 0x00487830
+  004f1a81  8b 10                    MOV EDX,dword ptr [EAX]
+  004f1a83  6a ff                    PUSH -0x1
+  004f1a85  85 ff                    TEST EDI,EDI
+  004f1a87  74 13                    JZ 0x004f1a9c
+  004f1a89  8b 8f f0 01 00 00        MOV ECX,dword ptr [EDI + 0x1f0]
+  004f1a8f  51                       PUSH ECX
+  004f1a90  8b c8                    MOV ECX,EAX
+  004f1a92  56                       PUSH ESI
+  004f1a93  ff 92 ec 01 00 00        CALL dword ptr [EDX + 0x1ec]
+  004f1a99  5f                       POP EDI
+  004f1a9a  5e                       POP ESI
+  004f1a9b  c3                       RET
+  004f1a9c  6a 00                    PUSH 0x0
+  004f1a9e  8b c8                    MOV ECX,EAX
+  004f1aa0  56                       PUSH ESI
+  004f1aa1  ff 92 ec 01 00 00        CALL dword ptr [EDX + 0x1ec]
+  004f1aa7  5f                       POP EDI
+  004f1aa8  5e                       POP ESI
+  004f1aa9  c3                       RET
+
+================ E: immediate 0x5A9FE0 written anywhere? ================
+  004b97ac  MOV dword ptr [ESI],0x5a9fe0 in FUN_004b96c0@004b96c0
+  004b98b0  MOV dword ptr [ESI],0x5a9fe0 in FUN_004b9890@004b9890
+
+================ F: summary ================
+  dispatcher +0x12C target : 4f1a60  FUN_004f1a60 entry=004f1a60 size=74

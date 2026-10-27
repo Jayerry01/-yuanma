@@ -1,0 +1,11 @@
+==== resolved strings ====
+0x005c67d0 : "r"
+0x005c9cd4 : "Jump"
+0x005c9ca8 : "Fake"
+0x005c9c7c : "Cure"
+0x005c9c5c : "Fool"
+0x005c9c44 : "+"
+0x005d1588 : "hell"
+0x005d1580 : "safea"
+0x005d1578 : "safeb"
+0x005c9c14 : "door"

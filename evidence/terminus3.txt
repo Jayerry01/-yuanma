@@ -1,0 +1,309 @@
+==================== A: full slot map of vfptr 0x005aa660 ====================
+  slot 0    (+0x0   ) = 0x004c8880 FUN_004c8880     size=30
+  slot 1    (+0x4   ) = 0x004c8a70 FUN_004c8a70     size=341
+  slot 2    (+0x8   ) = 0x004c8bd0 FUN_004c8bd0     size=109
+  slot 3    (+0xc   ) = 0x004c9180 FUN_004c9180     size=31
+  slot 4    (+0x10  ) = 0x004c8f60 FUN_004c8f60     size=103
+  slot 5    (+0x14  ) = 0x004c8fd0 FUN_004c8fd0     size=97
+  slot 6    (+0x18  ) = 0x004c9040 FUN_004c9040     size=103
+  slot 7    (+0x1c  ) = 0x004c90b0 FUN_004c90b0     size=97
+  slot 8    (+0x20  ) = 0x004c9120 FUN_004c9120     size=91
+  slot 9    (+0x24  ) = 0x004c8cc0 FUN_004c8cc0     size=185
+  slot 10   (+0x28  ) = 0x004c8c40 FUN_004c8c40     size=120
+  slot 11   (+0x2c  ) = 0x004c8d80 FUN_004c8d80     size=131
+  slot 12   (+0x30  ) = 0x004c8e10 FUN_004c8e10     size=149
+  slot 13   (+0x34  ) = 0x004c8eb0 FUN_004c8eb0     size=175
+  slot 14   (+0x38  ) = 0x004c91a0 FUN_004c91a0     size=727
+  slot 15   (+0x3c  ) = 0x004c94a0 FUN_004c94a0     size=1062
+  slot 16   (+0x40  ) = 0x004c98d0 FUN_004c98d0     size=59
+  slot 17   (+0x44  ) = 0x004c9910 FUN_004c9910     size=63
+  slot 18   (+0x48  ) = 0x004cad80 FUN_004cad80     size=30
+  slot 19   (+0x4c  ) = 0x004cc130 FUN_004cc130     size=1174
+  slot 20   (+0x50  ) = 0x004e8500 FUN_004e8500     size=1
+  slot 21   (+0x54  ) = 0x004a9770 FUN_004a9770     size=18
+  slot 22   (+0x58  ) = 0x004a92f0 FUN_004a92f0     size=194
+  slot 23   (+0x5c  ) = 0x004a9440 FUN_004a9440     size=225
+  slot 24   (+0x60  ) = 0x004a93c0 FUN_004a93c0     size=128
+  slot 25   (+0x64  ) = 0x004a92d0 FUN_004a92d0     size=12
+  slot 26   (+0x68  ) = 0x004a9790 FUN_004a9790     size=32
+  slot 27   (+0x6c  ) = 0x004cb150 FUN_004cb150     size=249
+  slot 28   (+0x70  ) = 0x004cbc90 FUN_004cbc90     size=70
+  slot 29   (+0x74  ) = 0x004a96c0 FUN_004a96c0     size=164
+  slot 30   (+0x78  ) = 0x004a9670 FUN_004a9670     size=71
+  slot 31   (+0x7c  ) = 0x004a92e0 FUN_004a92e0     size=11
+  slot 32   (+0x80  ) = 0x004cb130 FUN_004cb130     size=32
+  slot 33   (+0x84  ) = 0x004ce820 FUN_004ce820     size=44
+  slot 34   (+0x88  ) = 0x004cfca0 FUN_004cfca0     size=56
+  slot 35   (+0x8c  ) = 0x004d0aa0 FUN_004d0aa0     size=3
+  slot 36   (+0x90  ) = 0x004d03f0 FUN_004d03f0     size=166
+  slot 37   (+0x94  ) = 0x004ce230 FUN_004ce230     size=32
+  slot 38   (+0x98  ) = 0x004ce250 FUN_004ce250     size=77
+  slot 39   (+0x9c  ) = 0x004cb260 FUN_004cb260     size=900
+  slot 40   (+0xa0  ) = 0x004cfc00 FUN_004cfc00     size=120
+  slot 41   (+0xa4  ) = 0x004cc0e0 FUN_004cc0e0     size=47
+  slot 42   (+0xa8  ) = 0x004cbce0 FUN_004cbce0     size=293
+  slot 43   (+0xac  ) = 0x004cc600 FUN_004cc600     size=69
+  slot 44   (+0xb0  ) = 0x004cf770 FUN_004cf770     size=82
+  slot 45   (+0xb4  ) = 0x004cf7d0 FUN_004cf7d0     size=147
+  slot 46   (+0xb8  ) = 0x004cf8c0 FUN_004cf8c0     size=388
+  slot 47   (+0xbc  ) = 0x004cfb00 FUN_004cfb00     size=210
+  slot 48   (+0xc0  ) = 0x004cccb0 FUN_004cccb0     size=1345
+  slot 49   (+0xc4  ) = 0x004cf4c0 FUN_004cf4c0     size=122
+  slot 50   (+0xc8  ) = 0x004cc840 FUN_004cc840     size=1065
+  slot 51   (+0xcc  ) = 0x004ccc70 FUN_004ccc70     size=52
+  slot 52   (+0xd0  ) = 0x004cc650 FUN_004cc650     size=218
+  slot 53   (+0xd4  ) = 0x004d1e60 FUN_004d1e60     size=20
+  slot 54   (+0xd8  ) = 0x004cc730 FUN_004cc730     size=93
+  slot 55   (+0xdc  ) = 0x004ce3c0 FUN_004ce3c0     size=16
+  slot 56   (+0xe0  ) = 0x004cfd20 FUN_004cfd20     size=68
+  slot 57   (+0xe4  ) = 0x004cfd70 FUN_004cfd70     size=452
+  slot 58   (+0xe8  ) = 0x004cff40 FUN_004cff40     size=674
+  slot 59   (+0xec  ) = 0x004d0350 FUN_004d0350     size=150
+  slot 60   (+0xf0  ) = 0x004ce2a0 FUN_004ce2a0     size=47
+  slot 61   (+0xf4  ) = 0x004ce1d0 FUN_004ce1d0     size=63
+  slot 62   (+0xf8  ) = 0x004ce1a0 FUN_004ce1a0     size=48
+  slot 63   (+0xfc  ) = 0x004ce100 FUN_004ce100     size=37
+  slot 64   (+0x100 ) = 0x004ce130 FUN_004ce130     size=33
+  slot 65   (+0x104 ) = 0x004ce340 FUN_004ce340     size=128
+  slot 66   (+0x108 ) = 0x004d0540 FUN_004d0540     size=1356
+  slot 67   (+0x10c ) = 0x004d0ac0 FUN_004d0ac0     size=505
+  slot 68   (+0x110 ) = 0x004ce850 FUN_004ce850     size=768
+  slot 69   (+0x114 ) = 0x004ce080 FUN_004ce080     size=122
+  slot 70   (+0x118 ) = 0x004cdd60 FUN_004cdd60     size=155
+  slot 71   (+0x11c ) = 0x004cde90 FUN_004cde90     size=82
+  slot 72   (+0x120 ) = 0x004cdef0 FUN_004cdef0     size=150
+  slot 73   (+0x124 ) = 0x004ce010 FUN_004ce010     size=70
+  slot 74   (+0x128 ) = 0x004ce3d0 FUN_004ce3d0     size=336
+  slot 75   (+0x12c ) = 0x004cd200 FUN_004cd200     size=429
+  slot 76   (+0x130 ) = 0x004cd3b0 FUN_004cd3b0     size=2386
+  slot 77   (+0x134 ) = 0x004cde00 FUN_004cde00     size=130
+  slot 78   (+0x138 ) = 0x004cdf90 FUN_004cdf90     size=124
+  slot 79   (+0x13c ) = 0x004d0d10 FUN_004d0d10     size=22
+  slot 80   (+0x140 ) = 0x004d01f0 FUN_004d01f0     size=95
+  slot 81   (+0x144 ) = 0x004ceb50 FUN_004ceb50     size=1671
+  slot 82   (+0x148 ) = 0x004cf1e0 FUN_004cf1e0     size=734
+  slot 83   (+0x14c ) = 0x004cf540 FUN_004cf540     size=107
+  slot 84   (+0x150 ) = 0x004cf5b0 FUN_004cf5b0     size=409
+  slot 85   (+0x154 ) = 0x004cb790 FUN_004cb790     size=42
+  slot 86   (+0x158 ) = 0x004cf870 FUN_004cf870     size=71
+  slot 87   (+0x15c ) = 0x004cbf10 FUN_004cbf10     size=357
+  slot 88   (+0x160 ) = 0x004cfce0 FUN_004cfce0     size=64
+  slot 89   (+0x164 ) = 0x004d04d0 FUN_004d04d0     size=34
+  slot 90   (+0x168 ) = 0x004ce210 FUN_004ce210     size=18
+  slot 91   (+0x16c ) = 0x004d0520 FUN_004d0520     size=13
+  slot 92   (+0x170 ) = 0x004d0530 FUN_004d0530     size=7
+  slot 93   (+0x174 ) = 0x004d0500 FUN_004d0500     size=13
+  slot 94   (+0x178 ) = 0x004d0510 FUN_004d0510     size=7
+  slot 95   (+0x17c ) = 0x004cfc80 FUN_004cfc80     size=21
+  slot 96   (+0x180 ) = 0x004d1e80 FUN_004d1e80     size=14
+  slot 97   (+0x184 ) = 0x004ce540 FUN_004ce540     size=386
+  slot 98   (+0x188 ) = 0x004ce6d0 FUN_004ce6d0     size=336
+  slot 99   (+0x18c ) = 0x004ce520 FUN_004ce520     size=21
+  slot 100  (+0x190 ) = 0x004e8500 FUN_004e8500     size=1
+  slot 101  (+0x194 ) = 0x004d04a0 FUN_004d04a0     size=40
+  slot 102  (+0x198 ) = 0x004d0cd0 FUN_004d0cd0     size=35
+  slot 103  (+0x19c ) = 0x004d0d50 FUN_004d0d50     size=25
+  slot 104  (+0x1a0 ) = 0x004d0d70 FUN_004d0d70     size=26
+  slot 105  (+0x1a4 ) = 0x004d0d30 FUN_004d0d30     size=29
+  slot 106  (+0x1a8 ) = 0x004d02d0 FUN_004d02d0     size=15
+  slot 107  (+0x1ac ) = 0x004d02e0 FUN_004d02e0     size=15
+  slot 108  (+0x1b0 ) = 0x004d02f0 FUN_004d02f0     size=82
+  slot 109  (+0x1b4 ) = 0x004cc0a0 FUN_004cc0a0     size=59
+  slot 110  (+0x1b8 ) = 0x004cb7c0 FUN_004cb7c0     size=12
+  slot 111  (+0x1bc ) = 0x004cb7d0 FUN_004cb7d0     size=25
+  slot 112  (+0x1c0 ) = 0x004cb7f0 FUN_004cb7f0     size=12
+  slot 113  (+0x1c4 ) = 0x004cb800 FUN_004cb800     size=25
+  slot 114  (+0x1c8 ) = 0x004cdd10 FUN_004cdd10     size=15
+  slot 115  (+0x1cc ) = 0x004cdd20 FUN_004cdd20     size=15
+  slot 116  (+0x1d0 ) = 0x004cdd30 FUN_004cdd30     size=17
+  slot 117  (+0x1d4 ) = 0x004cdd50 FUN_004cdd50     size=15
+  slot 118  (+0x1d8 ) = 0x004cbe10 FUN_004cbe10     size=145
+  slot 119  (+0x1dc ) = 0x004cbeb0 FUN_004cbeb0     size=88
+  slot 120  (+0x1e0 ) = 0x004ce060 FUN_004ce060     size=14
+  slot 121  (+0x1e4 ) = 0x004ce070 FUN_004ce070     size=14
+  slot 122  (+0x1e8 ) = 0x004cfbe0 FUN_004cfbe0     size=27
+  slot 123  (+0x1ec ) = 0x004cb820 FUN_004cb820     size=1009
+  slot 124  (+0x1f0 ) = 0x004d0db0 FUN_004d0db0     size=15
+  slot 125  (+0x1f4 ) = 0x004cb6c0 FUN_004cb6c0     size=61
+  slot 126  (+0x1f8 ) = 0x004cb700 FUN_004cb700     size=139
+  slot 127  (+0x1fc ) = 0x004ce2d0 FUN_004ce2d0     size=18
+  slot 128  (+0x200 ) = 0x004ce2f0 FUN_004ce2f0     size=18
+  slot 129  (+0x204 ) = 0x004d0d90 FUN_004d0d90     size=24
+  slot 130  (+0x208 ) = 0x004cc110 FUN_004cc110     size=22
+  slot 131  (+0x20c ) = 0x004cb5f0 FUN_004cb5f0     size=194
+  slot 132  (+0x210 ) = 0x004d0250 FUN_004d0250     size=120
+  slot 133  (+0x214 ) = 0x004ce160 FUN_004ce160     size=50
+  slot 134  (+0x218 ) = 0x004ce310 FUN_004ce310     size=38
+  slot 135  (+0x21c ) = 0x004d0dc0 FUN_004d0dc0     size=52
+  slot 136  (+0x220 ) = 0x004d0e00 FUN_004d0e00     size=15
+  slot 137  (+0x224 ) = 0x004d0d00 FUN_004d0d00     size=13
+  slot 138  (+0x228 ) = 0x004d1e90 FUN_004d1e90     size=7
+  slot 139  (+0x22c ) = 0x004d11c0 FUN_004d11c0     size=896
+  slot 140  (+0x230 ) = 0x004d15c0 FUN_004d15c0     size=45
+  slot 141  (+0x234 ) = 0x004d15f0 FUN_004d15f0     size=45
+  slot 142  (+0x238 ) = 0x004d1630 FUN_004d1630     size=211
+  slot 143  (+0x23c ) = 0x004d1710 FUN_004d1710     size=45
+  slot 144  (+0x240 ) = 0x004d1540 FUN_004d1540     size=124
+  slot 145  (+0x244 ) = 0x004d1620 FUN_004d1620     size=4
+  slot 146  (+0x248 ) = 0x004d1110 FUN_004d1110     size=161
+  slot 147  (+0x24c ) = 0x004d1740 FUN_004d1740     size=1419
+
+==================== B: methods that walk the queue (read 0x28/0x2c with +8 step) ====================
+  ### slot 1    FUN_004c8a70 size=341     readBegin(0x28)=2   readEnd(0x2c)=3   step8=2   backjumps=2  
+  ### slot 8    FUN_004c9120 size=91      readBegin(0x28)=0   readEnd(0x2c)=1   step8=4   backjumps=0  
+  ### slot 9    FUN_004c8cc0 size=185     readBegin(0x28)=1   readEnd(0x2c)=0   step8=2   backjumps=0  
+  ### slot 13   FUN_004c8eb0 size=175     readBegin(0x28)=1   readEnd(0x2c)=2   step8=5   backjumps=0  
+  ### slot 14   FUN_004c91a0 size=727     readBegin(0x28)=3   readEnd(0x2c)=5   step8=2   backjumps=5  
+  ### slot 15   FUN_004c94a0 size=1062    readBegin(0x28)=6   readEnd(0x2c)=6   step8=1   backjumps=5  
+  ### slot 16   FUN_004c98d0 size=59      readBegin(0x28)=0   readEnd(0x2c)=1   step8=0   backjumps=0  
+  ### slot 19   FUN_004cc130 size=1174    readBegin(0x28)=1   readEnd(0x2c)=1   step8=0   backjumps=0  
+  ### slot 39   FUN_004cb260 size=900     readBegin(0x28)=0   readEnd(0x2c)=2   step8=1   backjumps=9  
+  ### slot 46   FUN_004cf8c0 size=388     readBegin(0x28)=1   readEnd(0x2c)=0   step8=0   backjumps=0  
+  ### slot 47   FUN_004cfb00 size=210     readBegin(0x28)=1   readEnd(0x2c)=0   step8=2   backjumps=0  
+  ### slot 48   FUN_004cccb0 size=1345    readBegin(0x28)=3   readEnd(0x2c)=3   step8=0   backjumps=1  
+  ### slot 50   FUN_004cc840 size=1065    readBegin(0x28)=4   readEnd(0x2c)=4   step8=0   backjumps=1  
+  ### slot 52   FUN_004cc650 size=218     readBegin(0x28)=2   readEnd(0x2c)=0   step8=0   backjumps=0  
+  ### slot 54   FUN_004cc730 size=93      readBegin(0x28)=1   readEnd(0x2c)=0   step8=0   backjumps=0  
+  ### slot 57   FUN_004cfd70 size=452     readBegin(0x28)=0   readEnd(0x2c)=2   step8=0   backjumps=0  
+  ### slot 58   FUN_004cff40 size=674     readBegin(0x28)=2   readEnd(0x2c)=0   step8=2   backjumps=2  
+  ### slot 66   FUN_004d0540 size=1356    readBegin(0x28)=4   readEnd(0x2c)=4   step8=1   backjumps=1  
+  ### slot 67   FUN_004d0ac0 size=505     readBegin(0x28)=4   readEnd(0x2c)=2   step8=0   backjumps=0  
+  ### slot 68   FUN_004ce850 size=768     readBegin(0x28)=3   readEnd(0x2c)=1   step8=2   backjumps=0  
+  ### slot 75   FUN_004cd200 size=429     readBegin(0x28)=2   readEnd(0x2c)=1   step8=0   backjumps=2  
+  ### slot 76   FUN_004cd3b0 size=2386    readBegin(0x28)=7   readEnd(0x2c)=10  step8=0   backjumps=2  
+  ### slot 81   FUN_004ceb50 size=1671    readBegin(0x28)=5   readEnd(0x2c)=11  step8=0   backjumps=0  
+  ### slot 82   FUN_004cf1e0 size=734     readBegin(0x28)=4   readEnd(0x2c)=9   step8=0   backjumps=0  
+  ### slot 87   FUN_004cbf10 size=357     readBegin(0x28)=3   readEnd(0x2c)=0   step8=0   backjumps=0  
+  ### slot 97   FUN_004ce540 size=386     readBegin(0x28)=2   readEnd(0x2c)=2   step8=2   backjumps=0  
+  ### slot 98   FUN_004ce6d0 size=336     readBegin(0x28)=1   readEnd(0x2c)=1   step8=0   backjumps=0  
+  ### slot 131  FUN_004cb5f0 size=194     readBegin(0x28)=1   readEnd(0x2c)=0   step8=2   backjumps=0  
+  ### slot 144  FUN_004d1540 size=124     readBegin(0x28)=3   readEnd(0x2c)=2   step8=3   backjumps=0  
+  ### slot 147  FUN_004d1740 size=1419    readBegin(0x28)=3   readEnd(0x2c)=2   step8=5   backjumps=6  
+
+==================== C: head listing of the two heaviest methods ====================
+### FUN_004c94a0 size=1062
+  0x004c94a0  PUSH -0x1
+  0x004c94a2  PUSH 0x5a186b
+  0x004c94a7  MOV EAX,FS:[0x0]
+  0x004c94ad  PUSH EAX
+  0x004c94ae  MOV dword ptr FS:[0x0],ESP
+  0x004c94b5  SUB ESP,0xb4
+  0x004c94bb  MOV EAX,[0x005ac35c]
+  0x004c94c0  PUSH ESI
+  0x004c94c1  PUSH EDI
+  0x004c94c2  MOV ESI,ECX
+  0x004c94c4  MOV ECX,dword ptr [ESP + 0xcc]
+  0x004c94cb  PUSH 0x1
+  0x004c94cd  PUSH EAX
+  0x004c94ce  PUSH 0x80
+  0x004c94d3  PUSH ECX
+  0x004c94d4  LEA ECX,[ESP + 0x48]
+  0x004c94d8  CALL 0x00507979
+  0x004c94dd  MOV EDX,dword ptr [ESP + 0x38]
+  0x004c94e1  MOV dword ptr [ESP + 0xc4],0x0
+  0x004c94ec  MOV EAX,dword ptr [EDX + 0x4]
+  0x004c94ef  MOV ECX,dword ptr [ESP + EAX*0x1 + 0x40]
+  0x004c94f3  TEST ECX,ECX
+  0x004c94f5  JNZ 0x004c988e
+  0x004c94fb  LEA ECX,[ESP + 0x94]
+  0x004c9502  PUSH 0x28
+  0x004c9504  MOV EDI,0x1e0d
+  0x004c9509  PUSH ECX
+  0x004c950a  LEA ECX,[ESP + 0x40]
+  0x004c950e  MOV dword ptr [ESP + 0x9c],EDI
+  0x004c9515  CALL 0x00507fb7
+  0x004c951a  CMP dword ptr [ESP + 0x94],EDI
+  0x004c9521  JNZ 0x004c988e
+  0x004c9527  CALL 0x00487830
+  0x004c952c  MOV EDX,dword ptr [EAX]
+  0x004c952e  LEA ECX,[ESP + 0x30]
+  0x004c9532  PUSH ECX
+  0x004c9533  LEA ECX,[ESP + 0x30]
+  0x004c9537  PUSH ECX
+  0x004c9538  MOV ECX,EAX
+  0x004c953a  CALL dword ptr [EDX + 0x214]
+  0x004c9540  MOV EDX,dword ptr [ESP + 0x9c]
+  0x004c9547  MOV EAX,dword ptr [ESP + 0x2c]
+  0x004c954b  CMP EDX,EAX
+  0x004c954d  JA 0x004c988e
+  0x004c9553  MOV EAX,dword ptr [ESP + 0xa0]
+  ---- lines touching 0x28 / 0x2c / 0x34 ----
+    0x004c952e  LEA ECX,[ESP + 0x30]
+    0x004c9533  LEA ECX,[ESP + 0x30]
+    0x004c9547  MOV EAX,dword ptr [ESP + 0x2c]
+    0x004c955a  MOV ECX,dword ptr [ESP + 0x30]
+    0x004c9591  MOV dword ptr [ESP + 0x30],ECX
+    0x004c9644  MOV dword ptr [ESP + 0x2c],EDI
+    0x004c9655  MOV dword ptr [ESP + 0x28],EDI
+    0x004c9659  MOV dword ptr [ESP + 0x2c],EDI
+    0x004c9662  LEA ECX,[ESP + 0x28]
+    0x004c9690  MOV ECX,dword ptr [ESP + 0x28]
+    0x004c96c8  MOV ECX,dword ptr [ESP + 0x28]
+    0x004c96e2  MOV EAX,dword ptr [ESP + 0x2c]
+    0x004c96e7  MOV dword ptr [ESP + 0x2c],EAX
+    0x004c9748  LEA EDI,[ESI + 0x28]
+    0x004c978f  MOV EAX,dword ptr [ESP + 0x30]
+    0x004c97b1  MOV dword ptr [ESP + 0x2c],EDX
+    0x004c97dc  MOV EDX,dword ptr [ESP + 0x28]
+
+### FUN_004c91a0 size=727
+  0x004c91a0  PUSH -0x1
+  0x004c91a2  PUSH 0x5a1848
+  0x004c91a7  MOV EAX,FS:[0x0]
+  0x004c91ad  PUSH EAX
+  0x004c91ae  MOV dword ptr FS:[0x0],ESP
+  0x004c91b5  SUB ESP,0x80
+  0x004c91bb  MOV EAX,[0x005ac35c]
+  0x004c91c0  PUSH ESI
+  0x004c91c1  MOV ESI,ECX
+  0x004c91c3  MOV ECX,dword ptr [ESP + 0x94]
+  0x004c91ca  PUSH 0x1
+  0x004c91cc  PUSH EAX
+  0x004c91cd  PUSH 0x80
+  0x004c91d2  PUSH ECX
+  0x004c91d3  LEA ECX,[ESP + 0x3c]
+  0x004c91d7  CALL 0x00507e75
+  0x004c91dc  MOV EDX,dword ptr [ESP + 0x2c]
+  0x004c91e0  MOV dword ptr [ESP + 0x8c],0x0
+  0x004c91eb  MOV EAX,dword ptr [EDX + 0x4]
+  0x004c91ee  MOV ECX,dword ptr [ESP + EAX*0x1 + 0x34]
+  0x004c91f2  TEST ECX,ECX
+  0x004c91f4  JZ 0x004c921a
+  0x004c91f6  LEA ECX,[ESP + 0x34]
+  0x004c91fa  MOV dword ptr [ESP + 0x8c],0xffffffff
+  0x004c9205  CALL 0x00507f2c
+  0x004c920a  LEA ECX,[ESP + 0x34]
+  0x004c920e  CALL 0x005078d5
+  0x004c9213  XOR EAX,EAX
+  0x004c9215  JMP 0x004c945f
+  0x004c921a  PUSH EDI
+  0x004c921b  MOV dword ptr [ESP + 0x8],0x1e0d
+  0x004c9223  MOV dword ptr [ESP + 0xc],0x28
+  0x004c922b  CALL 0x00487830
+  0x004c9230  MOV EDX,dword ptr [EAX]
+  0x004c9232  LEA ECX,[ESP + 0x14]
+  0x004c9236  PUSH ECX
+  0x004c9237  LEA ECX,[ESP + 0x14]
+  0x004c923b  PUSH ECX
+  0x004c923c  MOV ECX,EAX
+  0x004c923e  CALL dword ptr [EDX + 0x214]
+  0x004c9244  MOV EAX,dword ptr [ESI + 0xc]
+  0x004c9247  MOV EDI,dword ptr [ESI + 0x8]
+  0x004c924a  MOV ECX,dword ptr [ESI + 0x18]
+  0x004c924d  SUB EAX,EDI
+  0x004c924f  SAR EAX,0x4
+  ---- lines touching 0x28 / 0x2c / 0x34 ----
+    0x004c91dc  MOV EDX,dword ptr [ESP + 0x2c]
+    0x004c91ee  MOV ECX,dword ptr [ESP + EAX*0x1 + 0x34]
+    0x004c91f6  LEA ECX,[ESP + 0x34]
+    0x004c920a  LEA ECX,[ESP + 0x34]
+    0x004c9267  MOV ECX,dword ptr [ESI + 0x28]
+    0x004c9275  MOV EAX,dword ptr [ESI + 0x2c]
+    0x004c9290  MOV dword ptr [ESP + 0x28],EAX
+    0x004c92ab  LEA ECX,[ESP + 0x34]
+    0x004c92af  MOV dword ptr [ESP + 0x2c],EDX
+    0x004c93d3  MOV EDI,dword ptr [ESI + 0x28]
+    0x004c93d6  MOV EAX,dword ptr [ESI + 0x2c]
+    0x004c93e9  MOV EAX,dword ptr [ESI + 0x2c]
+    0x004c9433  LEA ECX,[ESP + 0x30]
+

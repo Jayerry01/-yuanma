@@ -1,0 +1,3 @@
+=== all readers of IAT slot 0x005a8258 (GetAsyncKeyState) ===
+
+=== per-function detail for the owners worth naming ===

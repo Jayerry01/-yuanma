@@ -1,0 +1,152 @@
+================ A: GameApp slots used by cmd 0x0F ================
+slot 83  (+0x14C) mem[005A91B4] = 00493E40 -> FUN_00493e40 size=95
+slot 123 (+0x1EC) mem[005A9254] = 00493A00 -> FUN_00493a00 size=183
+control slot 172 (+0x2B0) = 004981E0 -> FUN_004981e0 size=198
+control slot 218 (+0x368) = 004891C0 -> FUN_004891c0 size=14
+
+================ B: body of GameApp slot 83 ================
+  00493e40  51                       PUSH ECX
+  00493e41  8b 91 ec 22 00 00        MOV EDX,dword ptr [ECX + 0x22ec]
+  00493e47  56                       PUSH ESI
+  00493e48  57                       PUSH EDI
+  00493e49  8b 7c 24 10              MOV EDI,dword ptr [ESP + 0x10]
+  00493e4d  8b 42 04                 MOV EAX,dword ptr [EDX + 0x4]
+  00493e50  8b f2                    MOV ESI,EDX
+  00493e52  85 c0                    TEST EAX,EAX
+  00493e54  74 13                    JZ 0x00493e69
+  00493e56  39 78 10                 CMP dword ptr [EAX + 0x10],EDI
+  00493e59  72 07                    JC 0x00493e62
+  00493e5b  8b f0                    MOV ESI,EAX
+  00493e5d  8b 40 08                 MOV EAX,dword ptr [EAX + 0x8]
+  00493e60  eb 03                    JMP 0x00493e65
+  00493e62  8b 40 0c                 MOV EAX,dword ptr [EAX + 0xc]
+  00493e65  85 c0                    TEST EAX,EAX
+  00493e67  75 ed                    JNZ 0x00493e56
+  00493e69  3b f2                    CMP ESI,EDX
+  00493e6b  89 74 24 10              MOV dword ptr [ESP + 0x10],ESI
+  00493e6f  74 0b                    JZ 0x00493e7c
+  00493e71  3b 7e 10                 CMP EDI,dword ptr [ESI + 0x10]
+  00493e74  72 06                    JC 0x00493e7c
+  00493e76  8d 44 24 10              LEA EAX,[ESP + 0x10]
+  00493e7a  eb 08                    JMP 0x00493e84
+  00493e7c  89 54 24 08              MOV dword ptr [ESP + 0x8],EDX
+  00493e80  8d 44 24 08              LEA EAX,[ESP + 0x8]
+  00493e84  8b 00                    MOV EAX,dword ptr [EAX]
+  00493e86  8b 91 ec 22 00 00        MOV EDX,dword ptr [ECX + 0x22ec]
+  00493e8c  5f                       POP EDI
+  00493e8d  3b c2                    CMP EAX,EDX
+  00493e8f  5e                       POP ESI
+  00493e90  74 07                    JZ 0x00493e99
+  00493e92  83 c0 18                 ADD EAX,0x18
+  00493e95  59                       POP ECX
+  00493e96  c2 04 00                 RET 0x4
+  00493e99  33 c0                    XOR EAX,EAX
+  00493e9b  59                       POP ECX
+  00493e9c  c2 04 00                 RET 0x4
+
+================ C: body of GameApp slot 123 ================
+  00493a00  83 ec 18                 SUB ESP,0x18
+  00493a03  56                       PUSH ESI
+  00493a04  8b f1                    MOV ESI,ECX
+  00493a06  8b 06                    MOV EAX,dword ptr [ESI]
+  00493a08  ff 90 64 03 00 00        CALL dword ptr [EAX + 0x364]
+  00493a0e  85 c0                    TEST EAX,EAX
+  00493a10  74 0a                    JZ 0x00493a1c
+  00493a12  83 c8 ff                 OR EAX,0xffffffff
+  00493a15  5e                       POP ESI
+  00493a16  83 c4 18                 ADD ESP,0x18
+  00493a19  c2 0c 00                 RET 0xc
+  00493a1c  8b 44 24 28              MOV EAX,dword ptr [ESP + 0x28]
+  00493a20  8b 8e a4 22 00 00        MOV ECX,dword ptr [ESI + 0x22a4]
+  00493a26  53                       PUSH EBX
+  00493a27  8b 5c 24 24              MOV EBX,dword ptr [ESP + 0x24]
+  00493a2b  8b 11                    MOV EDX,dword ptr [ECX]
+  00493a2d  55                       PUSH EBP
+  00493a2e  57                       PUSH EDI
+  00493a2f  50                       PUSH EAX
+  00493a30  8b 44 24 34              MOV EAX,dword ptr [ESP + 0x34]
+  00493a34  50                       PUSH EAX
+  00493a35  53                       PUSH EBX
+  00493a36  56                       PUSH ESI
+  00493a37  ff 52 20                 CALL dword ptr [EDX + 0x20]
+  00493a3a  8b e8                    MOV EBP,EAX
+  00493a3c  85 ed                    TEST EBP,EBP
+  00493a3e  75 6b                    JNZ 0x00493aab
+  00493a40  8b 16                    MOV EDX,dword ptr [ESI]
+  00493a42  8b ce                    MOV ECX,ESI
+  00493a44  ff 92 68 03 00 00        CALL dword ptr [EDX + 0x368]
+  00493a4a  85 c0                    TEST EAX,EAX
+  00493a4c  74 5d                    JZ 0x00493aab
+  00493a4e  8b 03                    MOV EAX,dword ptr [EBX]
+  00493a50  8b cb                    MOV ECX,EBX
+  00493a52  8d be 88 24 00 00        LEA EDI,[ESI + 0x2488]
+  00493a58  ff 50 4c                 CALL dword ptr [EAX + 0x4c]
+  00493a5b  8b 17                    MOV EDX,dword ptr [EDI]
+  00493a5d  8b cf                    MOV ECX,EDI
+  00493a5f  8b d8                    MOV EBX,EAX
+  00493a61  ff 52 4c                 CALL dword ptr [EDX + 0x4c]
+  00493a64  3b d8                    CMP EBX,EAX
+  00493a66  75 43                    JNZ 0x00493aab
+  00493a68  8b 07                    MOV EAX,dword ptr [EDI]
+  00493a6a  8b cf                    MOV ECX,EDI
+  00493a6c  ff 50 48                 CALL dword ptr [EAX + 0x48]
+  00493a6f  85 c0                    TEST EAX,EAX
+  00493a71  74 38                    JZ 0x00493aab
+  00493a73  8b 90 5c 06 00 00        MOV EDX,dword ptr [EAX + 0x65c]
+  00493a79  8d 88 5c 06 00 00        LEA ECX,[EAX + 0x65c]
+  00493a7f  8d 44 24 1c              LEA EAX,[ESP + 0x1c]
+  00493a83  55                       PUSH EBP
+  00493a84  50                       PUSH EAX
+  00493a85  8d 44 24 18              LEA EAX,[ESP + 0x18]
+  00493a89  50                       PUSH EAX
+  00493a8a  ff 52 04                 CALL dword ptr [EDX + 0x4]
+  00493a8d  8b 16                    MOV EDX,dword ptr [ESI]
+  00493a8f  8d 44 24 10              LEA EAX,[ESP + 0x10]
+  00493a93  50                       PUSH EAX
+  00493a94  8b ce                    MOV ECX,ESI
+  00493a96  ff 92 78 03 00 00        CALL dword ptr [EDX + 0x378]
+  00493a9c  8b 16                    MOV EDX,dword ptr [ESI]
+  00493a9e  8d 44 24 1c              LEA EAX,[ESP + 0x1c]
+  00493aa2  50                       PUSH EAX
+  00493aa3  8b ce                    MOV ECX,ESI
+  00493aa5  ff 92 74 03 00 00        CALL dword ptr [EDX + 0x374]
+  00493aab  8b c5                    MOV EAX,EBP
+  00493aad  5f                       POP EDI
+  00493aae  5d                       POP EBP
+  00493aaf  5b                       POP EBX
+  00493ab0  5e                       POP ESI
+  ... (truncated)
+
+================ D: cmd 0x35 trampoline 0x4BB96E ================
+  004bb800  8b 44 24 04              MOV EAX,dword ptr [ESP + 0x4]
+  004bb804  83 ec 18                 SUB ESP,0x18
+  004bb807  83 c0 fd                 ADD EAX,-0x3
+  004bb80a  53                       PUSH EBX
+  004bb80b  56                       PUSH ESI
+  004bb80c  83 f8 32                 CMP EAX,0x32
+  004bb80f  57                       PUSH EDI
+  004bb810  8b f1                    MOV ESI,ECX
+  004bb812  0f 87 c3 07 00 00        JA 0x004bbfdb
+  004bb818  ff 24 85 e8 bf 4b 00     JMP dword ptr [EAX*0x4 + 0x4bbfe8]
+  004bb81f  83 be 5c 03 00 00 01     CMP dword ptr [ESI + 0x35c],0x1
+  004bb826  0f 85 a4 07 00 00        JNZ 0x004bbfd0
+  004bb82c  8b 16                    MOV EDX,dword ptr [ESI]
+  004bb82e  8b ce                    MOV ECX,ESI
+  004bb830  ff 92 2c 01 00 00        CALL dword ptr [EDX + 0x12c]
+  004bb836  e8 f5 bf fc ff           CALL 0x00487830
+  004bb83b  8b f8                    MOV EDI,EAX
+  004bb83d  8b 06                    MOV EAX,dword ptr [ESI]
+  004bb83f  8b ce                    MOV ECX,ESI
+  004bb841  8b 1f                    MOV EBX,dword ptr [EDI]
+  004bb843  ff 50 4c                 CALL dword ptr [EAX + 0x4c]
+  004bb846  50                       PUSH EAX
+  004bb847  8b cf                    MOV ECX,EDI
+  004bb849  ff 93 74 01 00 00        CALL dword ptr [EBX + 0x174]
+  ... (truncated)
+
+================ E: FUN_004D03F0 receiver check ================
+  (its PUSH 0x4 ; CALL [EDX+0x12C] must land on 0x4D0500 if this is the 0x5AA6A8 class)
+  mem[0x5AA7D4] = 004D0500 -> FUN_004d0500 size=13
+
+================ F: does 0x4F1A60 ever touch +0xDC ? ================
+  no +0xDC reference anywhere in FUN_004F1A60  => cmd 0x0F does NOT set the move state

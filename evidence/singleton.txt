@@ -1,0 +1,14 @@
+=== singleton class resolution ===
+ctor FUN_00486610 size=1122
+
+### vptr writes inside constructor ###
+  0x0048692d  MOV dword ptr [EDI],0x5a9444
+  0x00486a53  MOV dword ptr [ESI],0x5a9068
+
+### probe slot 223 (0x37c) of the biggest vtable candidates ###
+  base 0x005a84d0  s0=FUN_004431e0  s222(+0x378)=FUN_0050aaa0  s223(+0x37c)=0x0050aaa0 FUN_0050aaa0 size=9
+  base 0x005a9068  s0=FUN_00486a80  s222(+0x378)=FUN_004894e0  s223(+0x37c)=0x00489510 FUN_00489510 size=51
+  base 0x005a9268  s0=FUN_004902c0  s222(+0x378)=?  s223(+0x37c)=0x3fe66666 (no func)
+  base 0x005a9fe0  s0=FUN_004b97e0  s222(+0x378)=FUN_004f5f90  s223(+0x37c)=0x004bd8c0 FUN_004bd8c0 size=619
+  base 0x005ab180  s0=FUN_004ec2f0  s222(+0x378)=FUN_004f1ae0  s223(+0x37c)=0x004f1ca0 FUN_004f1ca0 size=143
+  base 0x005aab00  s0=FUN_004dd1c0  s222(+0x378)=FUN_004dce50  s223(+0x37c)=0x004e4090 FUN_004e4090 size=5

@@ -1,0 +1,89 @@
+########## A: slot 29 on both candidate bases ##########
+  base 0x005aa6a8 slot 29 (+0x74) @0x005aa71c -> 0x004cfb00  FUN_004cfb00 size=210
+  base 0x005aa660 slot 29 (+0x74) @0x005aa6d4 -> 0x004a96c0  FUN_004a96c0 size=164
+  base 0x005a9fe0 slot 29 (+0x74) @0x005aa054 -> 0x004f2c20  FUN_004f2c20 size=615
+
+########## B: body of 0x4cfb00 ##########
+  FUN_004cfb00 size=210
+  004cfb00  83 ec 08                        SUB ESP,0x8
+  004cfb03  53                              PUSH EBX
+  004cfb04  56                              PUSH ESI
+  004cfb05  8b f1                           MOV ESI,ECX
+  004cfb07  57                              PUSH EDI
+  004cfb08  8b 06                           MOV EAX,dword ptr [ESI]
+  004cfb0a  ff 90 94 00 00 00               CALL dword ptr [EAX + 0x94]
+  004cfb10  8b f8                           MOV EDI,EAX
+  004cfb12  85 ff                           TEST EDI,EDI
+  004cfb14  0f 84 af 00 00 00               JZ 0x004cfbc9
+  004cfb1a  8b 5c 24 18                     MOV EBX,dword ptr [ESP + 0x18]
+  004cfb1e  8b 16                           MOV EDX,dword ptr [ESI]
+  004cfb20  53                              PUSH EBX
+  004cfb21  8b ce                           MOV ECX,ESI
+  004cfb23  ff 92 a0 01 00 00               CALL dword ptr [EDX + 0x1a0]
+  004cfb29  8b 44 24 20                     MOV EAX,dword ptr [ESP + 0x20]
+  004cfb2d  85 c0                           TEST EAX,EAX
+  004cfb2f  74 12                           JZ 0x004cfb43
+  004cfb31  8b 06                           MOV EAX,dword ptr [ESI]
+  004cfb33  8b ce                           MOV ECX,ESI
+  004cfb35  ff 90 34 01 00 00               CALL dword ptr [EAX + 0x134]
+  004cfb3b  3b c3                           CMP EAX,EBX
+  004cfb3d  0f 84 86 00 00 00               JZ 0x004cfbc9
+  004cfb43  8b cf                           MOV ECX,EDI
+  004cfb45  e8 c6 e2 08 00                  CALL 0x0055de10
+  004cfb4a  8b 4c 24 24                     MOV ECX,dword ptr [ESP + 0x24]
+  004cfb4e  8b 7c 24 1c                     MOV EDI,dword ptr [ESP + 0x1c]
+  004cfb52  8b 16                           MOV EDX,dword ptr [ESI]
+  004cfb54  8d 44 24 18                     LEA EAX,[ESP + 0x18]
+  004cfb58  50                              PUSH EAX
+  004cfb59  51                              PUSH ECX
+  004cfb5a  57                              PUSH EDI
+  004cfb5b  53                              PUSH EBX
+  004cfb5c  8b ce                           MOV ECX,ESI
+  004cfb5e  c7 44 24 28 00 00 00 00         MOV dword ptr [ESP + 0x28],0x0
+  004cfb66  ff 52 58                        CALL dword ptr [EDX + 0x58]
+  004cfb69  8b 8e 48 03 00 00               MOV ECX,dword ptr [ESI + 0x348]
+  004cfb6f  56                              PUSH ESI
+  004cfb70  8b 11                           MOV EDX,dword ptr [ECX]
+  004cfb72  ff 52 6c                        CALL dword ptr [EDX + 0x6c]
+  004cfb75  d9 44 24 18                     FLD float ptr [ESP + 0x18]
+  004cfb79  d8 0d 7c 8f 5a 00               FMUL float ptr [0x005a8f7c]
+  004cfb7f  c1 e7 08                        SHL EDI,0x8
+  004cfb82  0b fb                           OR EDI,EBX
+  004cfb84  dc 05 60 84 5a 00               FADD double ptr [0x005a8460]
+  004cfb8a  89 7c 24 0c                     MOV dword ptr [ESP + 0xc],EDI
+  004cfb8e  e8 ed 9d 03 00                  CALL 0x00509980
+  004cfb93  d9 44 24 24                     FLD float ptr [ESP + 0x24]
+  004cfb97  d8 05 80 8b 5a 00               FADD float ptr [0x005a8b80]
+  004cfb9d  8b f8                           MOV EDI,EAX
+  004cfb9f  c1 e7 08                        SHL EDI,0x8
+  004cfba2  d8 0d c8 84 5a 00               FMUL float ptr [0x005a84c8]
+  004cfba8  d8 05 e8 83 5a 00               FADD float ptr [0x005a83e8]
+  004cfbae  e8 cd 9d 03 00                  CALL 0x00509980
+  004cfbb3  8d 4c 24 0c                     LEA ECX,[ESP + 0xc]
+  004cfbb7  0b f8                           OR EDI,EAX
+  004cfbb9  8b 06                           MOV EAX,dword ptr [ESI]
+  004cfbbb  6a 08                           PUSH 0x8
+  004cfbbd  51                              PUSH ECX
+  004cfbbe  6a 04                           PUSH 0x4
+  004cfbc0  8b ce                           MOV ECX,ESI
+  004cfbc2  89 7c 24 1c                     MOV dword ptr [ESP + 0x1c],EDI
+  004cfbc6  ff 50 0c                        CALL dword ptr [EAX + 0xc]
+  004cfbc9  5f                              POP EDI
+  004cfbca  5e                              POP ESI
+  004cfbcb  5b                              POP EBX
+  004cfbcc  83 c4 08                        ADD ESP,0x8
+  004cfbcf  c2 10 00                        RET 0x10
+
+########## C: summary ##########
+  instructions=68  indexed-jumps=0
+  W MOV dword ptr [ESP + 0x1c],EDI
+  W MOV dword ptr [ESP + 0x28],0x0
+  W MOV dword ptr [ESP + 0xc],EDI
+  C CALL 0x00509980
+  C CALL 0x0055de10
+  C CALL dword ptr [EAX + 0x134]
+  C CALL dword ptr [EAX + 0x94]
+  C CALL dword ptr [EAX + 0xc]
+  C CALL dword ptr [EDX + 0x1a0]
+  C CALL dword ptr [EDX + 0x58]
+  C CALL dword ptr [EDX + 0x6c]

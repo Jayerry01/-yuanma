@@ -1,0 +1,21 @@
+########## A: FUN_004d0500 full body ##########
+  FUN_004d0500 size=13
+   004d0500  MOV EAX,dword ptr [ESP + 0x4]
+   004d0504  MOV dword ptr [ECX + 0xdc],EAX
+   004d050a  RET 0x4
+
+########## B: callers of FUN_004d0500 ##########
+
+  total call sites = 0
+
+########## C: FUN_004cafb0 context around 0x4cb0a7 (reset) ##########
+      004cb08d  MOV dword ptr [ESI + 0xd4],EDI
+      004cb093  MOV dword ptr [ESI + 0xd8],0xc45c8000
+      004cb09d  MOV dword ptr [ESI + 0x70],EAX
+      004cb0a0  MOV dword ptr [ESI + 0x74],EAX
+      004cb0a3  MOV EAX,dword ptr [ESI]
+      004cb0a5  MOV ECX,ESI
+   >> 004cb0a7  MOV dword ptr [ESI + 0xdc],EDI
+      004cb0ad  MOV dword ptr [ESI + 0xe0],EDI
+      004cb0b3  MOV dword ptr [ESI + 0xe4],EDI
+      004cb0b9  MOV dword ptr [ESI + 0x348],EDI

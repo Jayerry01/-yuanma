@@ -1,0 +1,18 @@
+########## per-type: getter -> ctor -> vtable -> slot 21 ##########
+  type  0 getter 0x004dd320 obj 0x00006640 ctor 0x004dd170 size=73   vtable 0x005aab00 slot21 -> 0x004f5860 FUN_004f5860 size=6
+  type  1 getter 0x004e0770 obj 0x000065c0 ctor 0x004e05c0 size=73   vtable 0x005aae10 slot21 -> 0x004f5860 FUN_004f5860 size=6
+  type  2 getter 0x004de920 obj 0x00006600 ctor 0x004de770 size=73   vtable 0x005aac50 slot21 -> 0x004e40d0 FUN_004e40d0 size=3
+  type  3 getter 0x004df140 obj 0x00006458 ctor 0x004def90 size=73   vtable 0x005aacc0 slot21 -> 0x004e40d0 FUN_004e40d0 size=3
+  type  4 getter 0x004e0030 obj 0x00006348 ctor 0x004dfe80 size=73   vtable 0x005aada0 slot21 -> 0x004f5860 FUN_004f5860 size=6
+  type  5 getter 0x004de1d0 obj 0x00006418 ctor 0x004de020 size=73   vtable 0x005aabe0 slot21 -> 0x004f5860 FUN_004f5860 size=6
+  type  6 getter 0x004df8e0 obj 0x00006530 ctor 0x004df730 size=73   vtable 0x005aad30 slot21 -> 0x004e40d0 FUN_004e40d0 size=3
+  type  7 getter 0x004dda70 obj 0x00006578 ctor 0x004dd8c0 size=73   vtable 0x005aab70 slot21 -> 0x004f5860 FUN_004f5860 size=6
+  type  8 getter 0x004e0e80 obj 0x00006300 ctor 0x004e0cd0 size=73   vtable 0x005aae80 slot21 -> 0x004f5860 FUN_004f5860 size=6
+  type  9 getter 0x004e18c0 obj 0x00006390 ctor 0x004e1420 size=292  vtable 0x005aaef0 slot21 -> 0x004f5860 FUN_004f5860 size=6
+  type 10 getter 0x004e3720 obj 0x000064e0 ctor 0x004e3530 size=85   vtable 0x005aafe8 slot21 -> 0x004f5860 FUN_004f5860 size=6
+  type 11 getter 0x004e2e60 obj 0x000064a0 ctor 0x004e2cb0 size=73   vtable 0x005aaf70 slot21 -> 0x004f5860 FUN_004f5860 size=6
+
+########## sword (type 0) slot 21 body, byte level ##########
+  FUN_004f5860 size=6
+   004f5860  b8 01 00 00 00            MOV EAX,0x1
+   004f5865  c3                        RET

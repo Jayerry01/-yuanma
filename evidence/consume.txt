@@ -1,0 +1,225 @@
+### FUN_004c94a0  size=1062
+
+==================== A: all CALL / indirect CALL sites ====================
+  0x004c94d8  CALL 0x00507979   -> FUN_00507979 size=183
+  0x004c9515  CALL 0x00507fb7   -> FUN_00507fb7 size=72
+  0x004c9527  CALL 0x00487830   -> FUN_00487830 size=109
+  0x004c953a  CALL dword ptr [EDX + 0x214]
+  0x004c95a4  CALL 0x00507fb7   -> FUN_00507fb7 size=72
+  0x004c95b6  CALL 0x00507fb7   -> FUN_00507fb7 size=72
+  0x004c95c8  CALL 0x00507fb7   -> FUN_00507fb7 size=72
+  0x004c95da  CALL 0x00507fb7   -> FUN_00507fb7 size=72
+  0x004c95ec  CALL 0x00507fb7   -> FUN_00507fb7 size=72
+  0x004c95fe  CALL 0x00507fb7   -> FUN_00507fb7 size=72
+  0x004c9610  CALL 0x00507fb7   -> FUN_00507fb7 size=72
+  0x004c9622  CALL 0x00507fb7   -> FUN_00507fb7 size=72
+  0x004c9634  CALL 0x00507fb7   -> FUN_00507fb7 size=72
+  0x004c965d  CALL 0x00507fb7   -> FUN_00507fb7 size=72
+  0x004c966d  CALL 0x00507fb7   -> FUN_00507fb7 size=72
+  0x004c967d  CALL 0x00507fb7   -> FUN_00507fb7 size=72
+  0x004c968b  CALL 0x00508b38   -> operator_new size=14
+  0x004c96a1  CALL 0x00507fb7   -> FUN_00507fb7 size=72
+  0x004c96dd  CALL 0x004c9b80   -> FUN_004c9b80 size=731
+  0x004c9707  CALL 0x00507fb7   -> FUN_00507fb7 size=72
+  0x004c973c  CALL 0x004c9eb0   -> FUN_004c9eb0 size=747
+  0x004c975a  CALL 0x00507fb7   -> FUN_00507fb7 size=72
+  0x004c9787  CALL 0x004ca1f0   -> FUN_004ca1f0 size=638
+  0x004c97b5  CALL 0x00507fb7   -> FUN_00507fb7 size=72
+  0x004c97f1  CALL 0x004ca4c0   -> FUN_004ca4c0 size=731
+  0x004c981b  CALL 0x00507fb7   -> FUN_00507fb7 size=72
+  0x004c9850  CALL 0x004ca7f0   -> FUN_004ca7f0 size=747
+  0x004c985c  CALL 0x00507a71   -> FUN_00507a71 size=51
+  0x004c9865  CALL dword ptr [EAX + 0xc]
+  0x004c9877  CALL 0x00507a30   -> FUN_00507a30 size=19
+  0x004c9880  CALL 0x005078d5   -> FUN_005078d5 size=74
+  0x004c989d  CALL 0x00507a30   -> FUN_00507a30 size=19
+  0x004c98a6  CALL 0x005078d5   -> FUN_005078d5 size=74
+
+==================== B: RET sites (arity) ====================
+  0x004c98c3  RET 0x4
+
+==================== C: every numeric constant in the body ====================
+constant -> occurrences (looking for ring size / frame tolerance / table stride)
+  0x4      4      x29 
+  0x8      8      x11   <-- queue entry size
+  0xc      12     x7    <-- frame tolerance candidate
+  0x10     16     x14 
+  0x14     20     x4  
+  0x18     24     x4  
+  0x1c     28     x8  
+  0x20     32     x3    <-- 32
+  0x24     36     x5  
+  0x28     40     x7  
+  0x2c     44     x6  
+  0x30     48     x5  
+  0x38     56     x2  
+  0x3c     60     x1  
+  0x40     64     x3  
+  0x44     68     x3  
+  0x48     72     x19 
+  0x4c     76     x2  
+  0x80     128    x1  
+  0x94     148    x2  
+  0x9c     156    x2  
+  0xa0     160    x1  
+  0xa4     164    x1  
+  0xb0     176    x3  
+  0xb4     180    x2  
+  0xbc     188    x1  
+  0xc0     192    x1  
+  0xc4     196    x3  
+  0xc8     200    x1  
+  0xcc     204    x2  
+  0xdc     220    x1  
+  0xe0     224    x1  
+  0xe4     228    x1  
+  0xe8     232    x1  
+  0xec     236    x1  
+  0xf4     244    x1  
+  0x104    260    x1  
+  0x214    532    x1  
+  0x1e0d   7693   x1  
+
+==================== D: the GameApp callback @0x004c953a with context ====================
+      0x004c94dd  MOV EDX,dword ptr [ESP + 0x38]
+      0x004c94e1  MOV dword ptr [ESP + 0xc4],0x0
+      0x004c94ec  MOV EAX,dword ptr [EDX + 0x4]
+      0x004c94ef  MOV ECX,dword ptr [ESP + EAX*0x1 + 0x40]
+      0x004c94f3  TEST ECX,ECX
+      0x004c94f5  JNZ 0x004c988e
+      0x004c94fb  LEA ECX,[ESP + 0x94]
+      0x004c9502  PUSH 0x28
+      0x004c9504  MOV EDI,0x1e0d
+      0x004c9509  PUSH ECX
+      0x004c950a  LEA ECX,[ESP + 0x40]
+      0x004c950e  MOV dword ptr [ESP + 0x9c],EDI
+      0x004c9515  CALL 0x00507fb7
+      0x004c951a  CMP dword ptr [ESP + 0x94],EDI
+      0x004c9521  JNZ 0x004c988e
+      0x004c9527  CALL 0x00487830
+      0x004c952c  MOV EDX,dword ptr [EAX]
+      0x004c952e  LEA ECX,[ESP + 0x30]
+      0x004c9532  PUSH ECX
+      0x004c9533  LEA ECX,[ESP + 0x30]
+      0x004c9537  PUSH ECX
+      0x004c9538  MOV ECX,EAX
+  >>> 0x004c953a  CALL dword ptr [EDX + 0x214]
+      0x004c9540  MOV EDX,dword ptr [ESP + 0x9c]
+      0x004c9547  MOV EAX,dword ptr [ESP + 0x2c]
+      0x004c954b  CMP EDX,EAX
+      0x004c954d  JA 0x004c988e
+      0x004c9553  MOV EAX,dword ptr [ESP + 0xa0]
+      0x004c955a  MOV ECX,dword ptr [ESP + 0x30]
+      0x004c955e  CMP EAX,ECX
+      0x004c9560  JA 0x004c988e
+      0x004c9566  MOV ECX,dword ptr [ESP + 0xb0]
+      0x004c956d  MOV EDX,dword ptr [ESP + 0xb4]
+      0x004c9574  MOV EDI,dword ptr [ESP + 0xa4]
+      0x004c957b  PUSH EBX
+      0x004c957c  MOV EBX,dword ptr [ESP + 0xb0]
+      0x004c9583  PUSH EBP
+      0x004c9584  MOV EBP,dword ptr [ESP + 0xb0]
+      0x004c958b  LEA EAX,[ESI + 0x104]
+      0x004c9591  MOV dword ptr [ESP + 0x30],ECX
+      0x004c9595  PUSH 0x14
+      0x004c9597  PUSH EAX
+      0x004c9598  LEA ECX,[ESP + 0x48]
+      0x004c959c  MOV dword ptr [ESP + 0x18],EBX
+      0x004c95a0  MOV dword ptr [ESP + 0x44],EDX
+
+==================== E: the queue walk @0x004c9748 with context ====================
+      0x004c96d9  MOV ECX,EBX
+      0x004c96db  PUSH EDX
+      0x004c96dc  PUSH EAX
+      0x004c96dd  CALL 0x004c9b80
+      0x004c96e2  MOV EAX,dword ptr [ESP + 0x2c]
+      0x004c96e6  DEC EAX
+      0x004c96e7  MOV dword ptr [ESP + 0x2c],EAX
+      0x004c96eb  JNZ 0x004c9648
+      0x004c96f1  MOV EBX,dword ptr [ESP + 0x10]
+      0x004c96f5  TEST EBP,EBP
+      0x004c96f7  JLE 0x004c9744
+      0x004c96f9  LEA EDI,[ESI + 0x18]
+      0x004c96fc  LEA EAX,[ESP + 0x10]
+      0x004c9700  PUSH 0xc
+      0x004c9702  PUSH EAX
+      0x004c9703  LEA ECX,[ESP + 0x48]
+      0x004c9707  CALL 0x00507fb7
+      0x004c970c  MOV EAX,dword ptr [EDI + 0x4]
+      0x004c970f  MOV ECX,dword ptr [EDI + 0x8]
+      0x004c9712  CMP EAX,ECX
+      0x004c9714  JZ 0x004c9734
+      0x004c9716  TEST EAX,EAX
+      0x004c9718  JZ 0x004c972e
+      0x004c971a  MOV ECX,dword ptr [ESP + 0x10]
+      0x004c971e  MOV dword ptr [EAX],ECX
+      0x004c9720  MOV EDX,dword ptr [ESP + 0x14]
+      0x004c9724  MOV dword ptr [EAX + 0x4],EDX
+      0x004c9727  MOV ECX,dword ptr [ESP + 0x18]
+      0x004c972b  MOV dword ptr [EAX + 0x8],ECX
+      0x004c972e  ADD dword ptr [EDI + 0x4],0xc
+      0x004c9732  JMP 0x004c9741
+      0x004c9734  LEA EDX,[ESP + 0x10]
+      0x004c9738  MOV ECX,EDI
+      0x004c973a  PUSH EDX
+      0x004c973b  PUSH EAX
+      0x004c973c  CALL 0x004c9eb0
+      0x004c9741  DEC EBP
+      0x004c9742  JNZ 0x004c96fc
+      0x004c9744  TEST EBX,EBX
+      0x004c9746  JLE 0x004c978f
+  >>> 0x004c9748  LEA EDI,[ESI + 0x28]
+      0x004c974b  MOV EBP,0x8
+      0x004c9750  LEA EAX,[ESP + 0x10]
+      0x004c9754  PUSH EBP
+      0x004c9755  PUSH EAX
+      0x004c9756  LEA ECX,[ESP + 0x48]
+      0x004c975a  CALL 0x00507fb7
+      0x004c975f  MOV EAX,dword ptr [EDI + 0x4]
+      0x004c9762  MOV ECX,dword ptr [EDI + 0x8]
+      0x004c9765  CMP EAX,ECX
+      0x004c9767  JZ 0x004c977f
+      0x004c9769  TEST EAX,EAX
+      0x004c976b  JZ 0x004c977a
+      0x004c976d  MOV ECX,dword ptr [ESP + 0x10]
+      0x004c9771  MOV dword ptr [EAX],ECX
+      0x004c9773  MOV EDX,dword ptr [ESP + 0x14]
+      0x004c9777  MOV dword ptr [EAX + 0x4],EDX
+      0x004c977a  ADD dword ptr [EDI + 0x4],EBP
+      0x004c977d  JMP 0x004c978c
+      0x004c977f  LEA ECX,[ESP + 0x10]
+      0x004c9783  PUSH ECX
+      0x004c9784  PUSH EAX
+      0x004c9785  MOV ECX,EDI
+      0x004c9787  CALL 0x004ca1f0
+      0x004c978c  DEC EBX
+      0x004c978d  JNZ 0x004c9750
+      0x004c978f  MOV EAX,dword ptr [ESP + 0x30]
+      0x004c9793  TEST EAX,EAX
+      0x004c9795  JLE 0x004c97f9
+      0x004c9797  LEA EDI,[ESI + 0x38]
+      0x004c979a  MOV EBX,EAX
+      0x004c979c  XOR EDX,EDX
+      0x004c979e  LEA EAX,[ESP + 0x1c]
+      0x004c97a2  MOV dword ptr [ESP + 0x1c],EDX
+      0x004c97a6  PUSH 0x10
+      0x004c97a8  MOV dword ptr [ESP + 0x24],EDX
+      0x004c97ac  PUSH EAX
+      0x004c97ad  LEA ECX,[ESP + 0x48]
+      0x004c97b1  MOV dword ptr [ESP + 0x2c],EDX
+      0x004c97b5  CALL 0x00507fb7
+      0x004c97ba  MOV EAX,dword ptr [EDI + 0x4]
+
+==================== F: comparison sites against members 0x100-0x118 (config fields) ====================
+  0x004c952e  LEA ECX,[ESP + 0x30]
+  0x004c9533  LEA ECX,[ESP + 0x30]
+  0x004c9547  MOV EAX,dword ptr [ESP + 0x2c]
+  0x004c955a  MOV ECX,dword ptr [ESP + 0x30]
+  0x004c958b  LEA EAX,[ESI + 0x104]
+  0x004c9591  MOV dword ptr [ESP + 0x30],ECX
+  0x004c9644  MOV dword ptr [ESP + 0x2c],EDI
+  0x004c9659  MOV dword ptr [ESP + 0x2c],EDI
+  0x004c96e2  MOV EAX,dword ptr [ESP + 0x2c]
+  0x004c96e7  MOV dword ptr [ESP + 0x2c],EAX
+  0x004c978f  MOV EAX,dword ptr [ESP + 0x30]
+  0x004c97b1  MOV dword ptr [ESP + 0x2c],EDX

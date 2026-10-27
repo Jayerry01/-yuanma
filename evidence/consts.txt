@@ -1,0 +1,5 @@
+  float  @0x005a8f7c = 200.0   raw=43480000
+  float  @0x005a8b80 = 2.0   raw=40000000
+  float  @0x005a84c8 = 100.0   raw=42c80000
+  float  @0x005a83e8 = 0.5   raw=3f000000
+  double @0x005a8460 = 0.5   raw=3fe0000000000000

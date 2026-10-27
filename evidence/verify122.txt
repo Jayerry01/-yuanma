@@ -1,0 +1,48 @@
+########## A: raw bytes at disputed sites ##########
+  @0x004cb876  8e 03 00 00 8b 06 6a 72 8b ce ff 50 60 5f 5e 5b
+  @0x004cb890  74 03 00 00 8b 16 6a 6c 8b ce ff 52 60 5f 5e 5b
+  @0x004cba30  84 d3 01 00 00 8b 16 6a 62 8b ce ff 52 60 5f 5e
+  @0x004cbb00  84 03 01 00 00 8b 16 6a 66 8b ce ff 52 60 5f 5e
+  @0x004cbebe  74 04 33 c0 5e c3 8b 16 8b ce ff 92 88 01 00 00 85 c0 74 04 33 c0 5e c3
+
+########## B: every PUSH imm8 (opcode 6A) inside FUN_004cb820 ##########
+  0x004cb836  push 0x08   ()
+  0x004cb839  push 0x31   ('1')
+  0x004cb87c  push 0x72   ('r')
+  0x004cb896  push 0x6c   ('l')
+  0x004cb8e4  push 0x01   ()
+  0x004cb8f7  push 0x00   ()
+  0x004cb92b  push 0x01   ()
+  0x004cb93e  push 0x00   ()
+  0x004cb975  push 0x01   ()
+  0x004cb990  push 0x01   ()
+  0x004cb992  push 0x00   ()
+  0x004cb9a5  push 0x00   ()
+  0x004cb9a7  push 0x00   ()
+  0x004cb9c0  push 0x01   ()
+  0x004cb9c2  push 0x01   ()
+  0x004cb9d5  push 0x00   ()
+  0x004cb9d7  push 0x01   ()
+  0x004cba37  push 0x62   ('b')
+  0x004cba63  push 0x04   ()
+  0x004cba6e  push 0x16   ()
+  0x004cba9b  push 0x00   ()
+  0x004cba9d  push 0x00   ()
+  0x004cba9f  push 0x29   (')')
+  0x004cbb07  push 0x66   ('f')
+  0x004cbb3d  push 0x00   ()
+  0x004cbbd2  push 0x04   ()
+  0x004cbbdd  push 0x1d   ()
+  0x004cbbf9  push 0x00   ()
+  total push-imm8 = 28
+
+########## C: slot tables, two bases ##########
+  base 0x005aa660 slot 13 (+0x34) @0x005aa694 -> 0x004c8eb0  FUN_004c8eb0 size=175
+  base 0x005aa660 slot 10 (+0x28) @0x005aa688 -> 0x004c8c40  FUN_004c8c40 size=120
+  base 0x005aa660 slot 11 (+0x2c) @0x005aa68c -> 0x004c8d80  FUN_004c8d80 size=131
+  base 0x005aa660 slot 12 (+0x30) @0x005aa690 -> 0x004c8e10  FUN_004c8e10 size=149
+  base 0x005aa6a8 slot 13 (+0x34) @0x005aa6dc -> 0x004a92e0  FUN_004a92e0 size=11
+  base 0x005aa6a8 slot 24 (+0x60) @0x005aa708 -> 0x004cbce0  FUN_004cbce0 size=293
+
+########## D: direct E8 callers of FUN_004cbce0 ##########
+  direct call count = 0

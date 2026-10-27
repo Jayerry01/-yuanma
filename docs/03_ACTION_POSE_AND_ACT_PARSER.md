@@ -99,3 +99,331 @@ struct ActionDef {
    - 在 `0x004D1A5A` 处通过 `f3 a6 repe cmpsb` 检查下一个 Token 是否为字符串 `"+"`（地址 `0x005C9C44`）。
    - 若命中 `"+"`，则读取后续的 `<Duration>` 并与 `<StartFrame>` 相加，得出最终终止帧 `EndFrame = StartFrame + Duration`。
    - 通过 `0x0049C330` 注入到当前动作的取消窗口映射红黑树中。
+
+---
+
+## 五、 `KeyMap` 语义、20 条连招链与六道交叉验证（2026-10-28，数据级实锚）
+
+> 本节把「按键序列 → 招式」这一层彻底闭合。此前 `docs/07` 只追到「攻击键 → 命令」，
+> 未回答「命令 → 选哪一招」。答案不在代码里，在 `character.act` 的 group 序号 + `Input.txt` 的链定义里。
+
+### 1. `KeyMap` = `group(...)` 的出现序号，不是招式 ID
+
+解析器（`ActionInterrupt.Init()` 语义）对 `character.act` 逐行扫描，**每遇到一个 `group(...)` 行，
+计数器 `num3` 自增一次，该值即 `KeyMap`**：
+
+```csharp
+int num3 = 1;
+if (text.StartsWith("group")) {
+    actionNode.KeyMap = num3;
+    Lines[num3] = { 展开的 actionId 列表 };
+    num3++;
+}
+```
+
+实测：`D:\MeteorRE` 对应 build（9.07.16）的 `Common\character.act` = 10,389 B / 453 行 /
+**160 个 group**。而 `Input.txt` 全部 `Lines`/`LinesAir` 列引用的 KeyMap 最大值恰为 **160**——
+索引空间零余量闭合。
+
+三种声明形式：
+
+| 写法 | 含义 | 例 |
+|---|---|---|
+| `group(N)` | 单动作组，成员 `{N}`，且 `N` 成为**合法起手**（挂到 Root 与所有已有节点） | `group(253)` |
+| `group(N-M)` | 范围组，成员 `N..M`，展开后 `N` 成为合法起手 | `group(248-249)` |
+| `N(a,b,c)` | **衔接图**：`actionId N` 的 `target += {a,b,c}` | `226(227,235)` |
+
+### 2. `Input.txt` 的 20 条链 —— `Lines` 列是 **KeyMap 集合**，不是 action ID
+
+| Idx | 指令 | 招式名 | Lines（地面 KeyMap） | LinesAir（空中 KeyMap） |
+|---|---|---|---|---|
+| 1 | `J` | 攻击 | 14 项 | 8 项 |
+| 2 | `SJ` | 下攻击 | 14 项 | 9 项 |
+| 3 | `AJ` | 左攻击 | 6 项 | —（无空中） |
+| 4 | `DJ` | 右攻击 | 6 项 | —（无空中） |
+| 5 | `WJ` | 上攻击 | 11 项 | 2 项 |
+| 6 | `SSJ` | 下下攻击 | 9 项 | 2 项 |
+| 7 | `WWJ` | 上上攻击 | 10 项 | 1 项 |
+| 8 | `AAJ` | 左左攻击 | 2 项 | 1 项 |
+| 9 | `DDJ` | 右右攻击 | 2 项 | 1 项 |
+| 10 | `SWJ` | 下上攻击 | 13 项 | 2 项 |
+| 11 | `WSJ` | 上下攻击 | 4 项 | 1 项 |
+| 12 | `ADJ` | 左右攻击 | 7 项 | —（无空中） |
+| 13 | `DAJ` | 右左攻击 | 4 项 | —（无空中） |
+| 14 | `ADSJ` | 左右下攻击 | 5 项 | —（无空中） |
+| 15 | `SADJ` | 下左右攻击（双刺大招） | 1 项 | —（无空中） |
+| 16 | `ADWJ` | 左右上攻击 | 7 项 | —（无空中） |
+| 17 | `SSWJ` | 下下上攻击 | 7 项 | —（无空中） |
+| 18 | `SWWJ` | 下上上攻击 | 9 项 | —（无空中） |
+| 19 | `WWWJ` | 上上上攻击（枪绝招） | 1 项 | —（无空中） |
+| 20 | `ADWSJ` | 左右上下攻击（忍刀绝招） | 1 项 | —（无空中） |
+
+**`Idx 1`（`J` 普攻）由基本按键识别系统负责，不进连招匹配器** —— 表自身第 2 行注释即写明
+「所有的基础动作，都不由连招系统负责，而由基本按键识别系统识别」。
+
+### 3. 27 个硬编码数组 = 19 条地面链 + 8 条空中链
+
+`GetSlashNode` 内联 27 个 `int[]` 字面量（源码版命名 `slash0Ground`…`slash18Ground` +
+8 个 `slashNAir`），逐一与 `Input.txt` 的 `Lines`/`LinesAir` 列比对：**26/26 逐元素精确 + 1 个
+无编号 14 项数组（`Idx 2` 地面）= 27/27，零漂移**。
+
+| 源码数组 | 对应 Idx | 指令 | 源码注释 |
+|---|---|---|---|
+| `slash0Ground` / `slash0Air` | 2 | `SJ` | 下A地面 / 下A空中 |
+| `slash1Ground` | 3 | `AJ` | 左攻击（注释写明「无空中招式」） |
+| `slash2Ground` | 4 | `DJ` | 右攻击（同） |
+| `slash3Ground` / `slash3Air` | 5 | `WJ` | 上攻击 |
+| `slash4Ground` / `slash4Air` | 6 | `SSJ` | 下下攻击 |
+| `slash5Ground` / `slash5Air` | 7 | `WWJ` | 上上攻击 |
+| `slash6Ground` / `slash6Air` | 8 | `AAJ` | 左左攻击 |
+| `slash7Ground` / `slash7Air` | 9 | `DDJ` | 右右攻击 |
+| `slash8Ground` / `slash8Air` | 10 | `SWJ` | 下上攻击 |
+| `slash9Ground` / `slash9Air` | 11 | `WSJ` | 上下攻击 |
+| `slash10Ground` | 12 | `ADJ` | 左右攻击 |
+| `slash11Ground` | 13 | `DAJ` | 右左攻击 |
+| `slash12Ground` | 14 | `ADSJ` | 左右下攻击 |
+| `slash13Ground` | 15 | `SADJ` | 下左右A |
+| `slash14Ground` | 16 | `ADWJ` | 左右上 |
+| `slash15Ground` | 17 | `SSWJ` | 下下上 |
+| `slash16Ground` | 18 | `SWWJ` | 下上上 |
+| `slash17Ground` | 19 | `WWWJ` | **上上上-枪绝招**（`{153}`） |
+| `slash18Ground` | 20 | `ADWSJ` | **左右下上-忍刀绝招**（`{136}`） |
+
+`Scan()` 的判定式（与原版同构）：
+
+```csharp
+if (scan[j] == src[i].KeyMap && !IsSkill(src[i].ActionIdx) && IsWeaponKey(weapon, src[i].KeyMap))
+    dst.Add(src[i]);
+```
+
+**匹配键是 `KeyMap`，不是 `ActionIdx`** —— 所以地面/空中是两套**构造上不相交**的集合，
+不是一套加标志位。克隆若在过滤后判地面，会在同一动作同时出现在两侧时发散。
+
+### 4. 六道检查：哪些是真验证，哪些只是产物自洽
+
+> **先分清判据等级。** `Common\character.act`（在 `Meteor_Extracted\app\`）是**安装后的原始资产**，与
+> `Meteor.exe` 同级，可直接当判据。而 `P0POS_完整574.json` 等是**前一轮的解析产物**——它们是从 `.pos`
+> 解析出来的派生结果，本身可能算错，**只能用来做覆盖性对账，不能单独当"原版就是这样"的证据**。
+
+| # | 检查 | 判据等级 | 结果 |
+|---|---|---|---|
+| **T1** | `Input.txt` 的 KeyMap 是否都能在 `character.act` 的 160 group 里找到 | **原件 vs 原件** ✅ 真验证 | 159 个，**0 缺失** |
+| T2 | `character.act` 的 group 成员是否都存在于 574 pose 表 | 原件 vs **产物**（覆盖性） | 227 个（id 200–572），**0 缺失** |
+| T3 | 20 条链展开的 action 是否都存在于 574 pose 表 | 原件 vs **产物**（覆盖性） | **226 个，0 缺失** |
+| **T4** | `Pose90` 的 pose 表帧号 vs 运行时帧计数 | **产物 vs 运行时观测** ✅ 交叉验证 | **帧级精确**（见下） |
+| T5 | `group_count` | 原件 vs 产物元数据 | 160 = 160 |
+| T6 | `transition_count` | 口径差 | 189（JSON）vs 217（行）vs 1,673（边），不影响 |
+
+**只有 T1 和 T4 是真验证**：
+- T1 是两份**原始资产**互验，能独立成立；
+- T4 是**产物**与**运行时观测**对上，因为两边独立产生，对上了才说明产物可信。
+
+T2/T3 只能说明"**产物覆盖了原版的全部 group 成员**"，若产物解析本身有系统性错误（例如所有 pose
+都偏移同一个值），这两项仍会全过。**不要把它们当原版证据。**
+
+**T4 为什么硬**：运行时日志（`act=90` 时帧计数 `f=1694`）与
+`P0POS_完整574.json`（`pose 90` → `start=1694, end=1701`）**精确对上**，而两者来源完全独立
+（一个来自进程内存采样，一个来自 `.pos` 文本解析）。
+⇒ pose 表的 `start`/`end` 与运行时 `AnimFrame` **同单位同原点**，克隆可直接帧驱动，无需换算。
+
+附带两条：
+- `pose 90` **不在任何 group、20 条链都到不了** ⇒ 它是**基础动作**（未命名、无分段），
+  与「基础动作走基本按键识别」自洽；它正是攻击后 `SetState(4)`（禁跳）时的动作。
+- **574 个 pose 中，只有 226 个可从链到达**；其余 348 个是基础/受击/死亡池，
+  必须走基本键路径，**不能进连招匹配器**。
+
+### 5. 移植端实现要点
+
+1. 选招 = `按键序列 → Input.txt 行 → KeyMap 集合 → group 展开 → action 集合`，
+   再按 `IsWeaponKey(weapon, KeyMap)` 过滤；**不要拿 action id 去比 `Input.txt`**（它从不出现 action id）。
+2. 地面/空中两套数组构造上不相交，4 条链（`AJ`/`DJ`/`ADJ`/`DAJ`）**没有空中版本**。
+3. 记忆化缓存 `CacheGround`/`CacheAir` 按**来源 action** 索引，武器类型被烘进缓存；
+   动作中途换武器会读到旧集合（原版行为，复刻时需决定是否保留）。
+
+---
+
+---
+
+## 六、 `.pos` 数据源与三重交叉验证（2026-10-28）
+
+> 本节记录一次**被交叉验证推翻的结论**。此前因解析正则漏匹配带注释条目，把 `P0.POS` 误读成 289 个
+> pose，进而得出"P0 不含攻击动作、226 个链上 action 一个都不在"的错误判断。
+> 用三份独立副本互验后复位，并把那个解析陷阱单列。
+
+### 1. 三份 Windows 侧副本，**574 个 pose 值完全一致**
+
+| 来源 | 文件 | 大小 | 解析 pose 数 | 与基准一致性 |
+| :--- | :--- | ---: | ---: | :--- |
+| **安装目录** | `Meteor_Extracted\app\pmodel\P0.POS` | 296,888 B | **574**（id 0..573） | 基准 |
+| **Unity 导出** | `Meteor_UnityProject\...\Resources\9.07\P0.pos.bytes` | 296,888 B | **574** | **574/574 逐值相同** |
+| **iOS 工程** | `_gt\master\...\Resources\9.07\P0.pos.bytes` | 278,385 B | **574** | **574/574 逐值相同** |
+
+md5 三者互不相同（编码、缩进、注释留白差异），但**解析出的 `start`/`end` 逐项一致，0 处不符**。
+`P19` 等其余 19 个角色文件同样成对存在。
+
+⇒ **`P0.POS` 的语义在三个独立来源间稳定**，据此产生的 `P0POS_完整574.json`（574 条、id 连续
+0..573、95 条无 `Start/End` 的占位）**是正确解析，不是拼凑**。
+
+### 2. `P0.POS` 是运行时主表；`ATKPose.pos` 是攻击专用覆盖版
+
+| 文件 | pose 数 | id 范围 | `Attack{}` 段数 | 性质 |
+| :--- | ---: | :--- | ---: | :--- |
+| **`P0.POS`** | **574** | 0..573 | **299** | **完整主表** |
+| `ATKPose.pos`（及 `_I` / `_LE` / `BackUP`） | 171 | 200..370 | 161 | 攻击子集，**是 P0 的真子集** |
+
+- `set(ATKPose) ⊂ set(P0)` 成立（171 个 id 全部落在 P0 内）
+- 但同 id 有 **37 / 171 处 `start`/`end` 不同**，方向**双向**：
+  ```
+  id 214  ATKPose=(None,None)      P0=(12323,12338)
+  id 215  ATKPose=(3915,3982)      P0=(3915,3975)
+  id 223  ATKPose=(4263,4324)      P0=(None,None)
+  id 252  ATKPose=(9141,9146)      P0=(9141,9190)
+  ```
+- `P0` 的 `Attack` 段（299）远多于 `ATKPose`（161）
+
+⇒ **`P0.POS` 是运行时真正加载的主表**（Unity 导出与 iOS 工程都只带 `P0.pos.bytes`，不带 ATKPose）；
+`ATKPose.pos` 是攻击动作的特化/编辑辅助版本。**引用 pose 数据默认取 `P0.POS`。**
+
+### 3. 226 个链上 action：100% 有数据
+
+以 `character.act` 的 160 group（见第五节）+ `Input.txt` 的 20 条链展开，得到 **226 个可达 action**，
+在 `P0.POS` 的 574 个 pose 中**全部有 `start`/`end`，0 缺失**。
+
+（此前"0 命中"的结论由解析 bug 造成，已作废。）
+
+### 4. 必须记住的解析陷阱
+
+`.pos` 的条目格式允许**注释夹在编号与大括号之间**：
+
+```
+Pose 200     #暗器輕
+{
+  source 0   Start 3511   End 3533
+  ...
+```
+
+正则 `Pose\s+(\d+)\s*\{` 会**漏掉全部带注释的条目**——`P0.POS` 里有 **287 个**带 `#注释` 的 pose，
+一漏就只剩 289 个。正确写法：
+
+```python
+re.finditer(r"Pose\s+(\d+)\s*(#[^\n]*)?\s*\{", txt, re.I)
+```
+
+**同一个正则错误还导致 `ATKPose.pos` 只解析出 7 个（实际 171）。**
+
+### 5. 用途对照（定稿）
+
+| 用途 | 取哪个 |
+| :--- | :--- |
+| 动作帧范围 `start`/`end`、`Blend`/`Action` 段 | **`P0.POS`**（574，主表） |
+| `Attack{}` 判定段（`AttackType`/`DefenseValue`/`TargetPose`…） | **`P0.POS`**（299 段，比 ATKPose 多） |
+| 快速查某 id 是否有定义 | `P0POS_完整574.json`（注意 95 条无 `Start/End`） |
+| 交叉核对版本差异 | 与 `Meteor_UnityProject\...\9.07\P0.pos.bytes` 逐值比 |
+
+
+### 6. `character.act` 三源对比（9.07）
+
+| 来源 | `group` 数 | transition（语句/边） | 大小 |
+| :--- | ---: | ---: | ---: |
+| **9.07 安装目录** `app\Common\character.act` | **160** | **191 / 1,673** | 10,389 B |
+| **9.07 Unity 导出** `...\Resources\9.07\characteract.txt` | **160** | **188 / 1,663** | 10,398 B |
+| **9.07 iOS 工程** `_gt\master\...\9.07\characteract.bytes` | **160** | **188 / 1,663** | 9,945 B |
+| 1.07 Unity 导出 | 160 | 158 / 961 | 7,281 B |
+| 1.07 iOS 工程 | 160 | 158 / 961 | 6,881 B |
+
+**结论：**
+
+1. **9.07 三份的 160 个 group 成员 100% 一致**（逐 group 比对，0 处不同）。
+   这独立证实了第五节"`KeyMap` = group 出现序号、共 160 个"的结论。
+2. **transition 唯一实质差异在 `source 415`**：
+   ```
+   安装目录 : 415(411,     413,414,416,417,418,419,420,423,489)   10 个目标
+   Unity/iOS: 415(411,412,413,414,416,417,418,419,420,423,489)   11 个目标
+   ```
+   两份第三方实现一致、安装目录少 `412`。**差异极小但真实存在，克隆时需决定取哪份**
+   （建议取安装目录＝被测客户端原样，并记录此差异）。
+3. **1.07 → 9.07 的增量**：group 数不变（**160**），但 transition 从 158 增到 188/191、
+   边数从 961 增到 1,663/1,673。**即 9.07 是在同一套 group 结构上追加衔接**，
+   印证 `docs/00` 第三节的"`KeyMap` 空间跨版本不变、组内成员与衔接随版本增长"。
+4. **189 vs 217 的争议解决**：真正的 transition 语句数是 **188（Unity/iOS）或 191（安装目录）**。
+   此前数出 217 是把 `section` 标题行（如 `刀` / `刺` / `劍` 这类带数字的武器名）误算为语句。
+
+---
+
+### 7. `Input.txt` 双源一致（此前 open 项闭合）
+
+| 来源 | 大小 | md5 |
+| :--- | ---: | :--- |
+| Android（APK 反编译）`MeteorPort\TextAssets\…__Input.txt` | 1,476 B | `5c1c3c72…` |
+| **Windows（Unity 导出）** `Meteor_UnityProject\...\Resources\Input.txt` | 1,454 B | `9a665839…` |
+
+**逐行数据对比（忽略行尾符）：20 条链，`key` / `Lines` / `LinesAir` 三项 0 处不同。**
+
+唯一差异是行尾符：Android 版为 `^M^M`（双 CR），Windows 版为 `^M`（单 CR）——这解释了 22 字节的大小差。
+
+⇒ **`Input.txt` 是原版数据，不是 Android 侧独有**。此前"`Input.txt` 是否 9.07.16 原件"的
+`❓ open` **已闭合为 ✅**：Windows 侧存在独立副本，内容与 APK 版一致。
+
+---
+
+### 8. 交叉验证总表
+
+| 数据 | 独立副本数 | 一致性 | 结论 |
+| :--- | ---: | :--- | :--- |
+| `P0.POS`（574 pose） | **3**（安装目录 / Unity 导出 / iOS） | **574/574 值相同** | ✅ 语义稳定 |
+| `character.act` 9.07 | **3** | 160 group 成员全同；1 处 transition 差异（source 415 少 `412`） | ✅ 主体一致 |
+| `character.act` 1.07 | 2 | 158/961 完全相同 | ✅ |
+| `Input.txt` | **2**（Android / Windows） | 20 链数据 0 处不同 | ✅ 原件确认 |
+| `ATKPose.pos` | **1**（仅安装目录） | — | ⚠️ 无法交叉验证，单源可信度 |
+
+> **唯一单源项**：`ATKPose.pos`（及 `_I` / `_LE` / `BackUP`）只在安装目录存在，Unity 导出与 iOS 工程
+> 都不带它。这反向支持第二节的判断——**运行时读的是 `P0.POS`，`ATKPose` 是编辑辅助**。
+
+
+## 七、`.pos` 文法关键词表（37 条，字节级导出）
+
+解析器的词法表在 **`0x005D1930`**，**37 条记录、stride `0x24`**：名字内联在记录 +0（≤32 B），
+4 字节 id 在 +0x20。映射函数 **`FUN_0057A770`（99 B）** 逐条 `strcmp` 式比对，命中后返回
+`[0x5D1950 + idx*0x24]`（即 `记录基+0x20` 处的 id）；未命中返回 0。
+
+```asm
+0057a77a  MOV EDI,0x5d1930          ; 表基
+0057a785  CMP BL,byte ptr [ESI]     ; 逐字符比较
+0057a7b0  ADD EDI,0x24              ; 下一条
+0057a7b4  CMP EDI,0x5d1e64          ; 表尾
+0057a7c3  LEA EAX,[EBP+EBP*0x8]     ; idx*9
+0057a7ca  MOV EAX,[EAX*4+0x5d1950]  ; → idx*0x24 + 0x5D1950
+```
+
+唯一调用者是 `FUN_00579E90`（词法/语法前端；同段紧邻字符串
+`"fatal flex scanner internal error"`，说明 `.pos` 走 flex+bison）。
+
+| idx | 词 | id | idx | 词 | id |
+|---|---|---|---|---|---|
+| 0 | `action` | 0x104 | 19 | `loopstart` | 0x117 |
+| 1 | `attack` | 0x107 | 20 | `loopend` | 0x118 |
+| 2 | `attacktype` | 0x108 | 21 | `name` | 0x119 |
+| 3 | `attackvalue` | 0x109 | 22 | `nextpose` | 0x11A |
+| 4 | `angertype` | 0x105 | 23 | `pose` | 0x11B |
+| 5 | `angervalue` | 0x106 | 24 | `start` | 0x11C |
+| 6 | `blend` | 0x10B | 25 | `source` | 0x11D |
+| 7 | `bone` | 0x10A | 26 | `speed` | 0x11E |
+| 8 | `checkfriend` | 0x10C | 27 | `time` | 0x128 |
+| 9 | `color` | 0x10D | 28 | `targettype` | 0x124 |
+| 10 | `defensemove` | 0x10E | 29 | `targetvalue` | 0x127 |
+| 11 | `defensevalue` | 0x110 | 30 | `targetspeed` | 0x125 |
+| 12 | `defensepose` | 0x10F | 31 | `targetpose` | 0x11F |
+| 13 | `drag` | 0x111 | 32 | `targetposefront` | 0x120 |
+| 14 | `effecttype` | 0x112 | 33 | `targetposeback` | 0x121 |
+| 15 | `effectid` | 0x113 | 34 | `targetposeright` | 0x123 |
+| 16 | `end` | 0x114 | 35 | `targetposeleft` | 0x122 |
+| 17 | `hit` | 0x115 | 36 | `targetmove` | 0x126 |
+| 18 | `link` | 0x116 | | | |
+
+### 两条可直接用的推论
+
+1. **id 空间 0x104–0x128 连续，正好 37 个**，没有空洞（0x11F–0x128 是 target 族 + time）。
+   `angertype`/`angervalue` 占 0x105/0x106，编号夹在 `action`(0x104) 与 `attack`(0x107) 之间 ——
+   说明它们是**和攻击块同一次 schema 扩张**加进来的字段。
+2. **这两个字段在 9.07.16 的随附数据里一次都没用**（全部 `.pos` + `character.act` 搜 `anger` 零命中；
+   全安装目录只命中 `Meteor.exe`）。即：文法认，数据不用。详见 `docs/04` §八。

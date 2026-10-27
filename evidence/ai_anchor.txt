@@ -1,0 +1,248 @@
+================ A: the four candidates ================
+  0040A2A0  UpdateDecisionTree?         entry=0040a2a0  size=2274  arity=RET (0 args)     callers=1 
+  0040B0C0  EvaluateTargetHostility?    entry=0040b0c0  size=49    arity=RET (0 args)     callers=1 
+  0040C040  SelectComboAction?          entry=0040c040  size=752   arity=RET (0 args)     callers=1 
+  0040D040  NavigateToWaypoint?         entry=0040cd10  size=1695  arity=RET (0 args)     callers=1 <<< NOT A FUNCTION ENTRY (inside FUN_0040cd10)
+
+================ B: function inventory 0x409000..0x410000 ================
+  00409B80 size=1824  callers=1   FUN_00409b80       RET (0 args)
+  0040A2A0 size=2274  callers=1   FUN_0040a2a0       RET (0 args)
+  0040AB90 size=422   callers=1   FUN_0040ab90       RET (0 args)
+  0040AD40 size=412   callers=1   FUN_0040ad40       RET (0 args)
+  0040AEE0 size=234   callers=6   FUN_0040aee0       RET (0 args)
+  0040AFD0 size=229   callers=2   FUN_0040afd0       RET (0 args)
+  0040B0C0 size=49    callers=1   FUN_0040b0c0       RET (0 args)
+  0040B100 size=137   callers=24  FUN_0040b100       RET (0 args)
+  0040B190 size=168   callers=2   FUN_0040b190       RET (0 args)
+  0040B240 size=303   callers=9   FUN_0040b240       RET (0 args)
+  0040B370 size=1851  callers=2   FUN_0040b370       RET (0 args)
+  0040BAD0 size=68    callers=2   FUN_0040bad0       RET (0 args)
+  0040BB20 size=101   callers=9   FUN_0040bb20       RET (0 args)
+  0040BB90 size=78    callers=3   FUN_0040bb90       RET (0 args)
+  0040BBE0 size=1111  callers=35  FUN_0040bbe0       RET (0 args)
+  0040C040 size=752   callers=1   FUN_0040c040       RET (0 args)
+  0040C330 size=289   callers=19  FUN_0040c330       RET (0 args)
+  0040C460 size=419   callers=9   FUN_0040c460       RET (0 args)
+  0040C610 size=5     callers=8   thunk_FUN_0040c620 ends 00
+  0040C620 size=185   callers=1   FUN_0040c620       RET (0 args)
+  0040C6E0 size=5     callers=11  thunk_FUN_0040c6f0 ends 00
+  0040C6F0 size=113   callers=1   FUN_0040c6f0       RET (0 args)
+  0040C770 size=61    callers=26  FUN_0040c770       RET (0 args)
+  0040C7B0 size=124   callers=3   FUN_0040c7b0       RET (0 args)
+  0040C830 size=156   callers=2   FUN_0040c830       RET (0 args)
+  0040C8D0 size=40    callers=3   FUN_0040c8d0       RET (0 args)
+  0040C900 size=776   callers=5   FUN_0040c900       RET (0 args)
+  0040CC10 size=246   callers=2   FUN_0040cc10       RET (0 args)
+  0040CD10 size=1695  callers=1   FUN_0040cd10       RET (0 args)
+  0040D3B0 size=1200  callers=1   FUN_0040d3b0       RET (0 args)
+  0040D860 size=720   callers=3   FUN_0040d860       RET (0 args)
+  0040DB30 size=5     callers=3   thunk_FUN_0040db40 ends 00
+  0040DB40 size=2561  callers=1   FUN_0040db40       RET (0 args)
+  0040E550 size=41    callers=3   FUN_0040e550       ends 00
+  0040E580 size=221   callers=3   FUN_0040e580       RET (0 args)
+  0040E660 size=20    callers=2   FUN_0040e660       RET (0 args)
+  0040E680 size=15    callers=2   FUN_0040e680       RET (0 args)
+  0040E690 size=59    callers=1   FUN_0040e690       ends ff
+  0040E6D0 size=112   callers=2   FUN_0040e6d0       RET (0 args)
+  0040E740 size=113   callers=1   FUN_0040e740       RET (0 args)
+  0040E7C0 size=230   callers=4   FUN_0040e7c0       RET (0 args)
+  0040E8B0 size=146   callers=4   FUN_0040e8b0       RET (0 args)
+  0040E950 size=29    callers=2   FUN_0040e950       RET (0 args)
+  0040E970 size=124   callers=1   FUN_0040e970       RET (0 args)
+  0040E9F0 size=301   callers=2   FUN_0040e9f0       RET (0 args)
+  0040EB20 size=255   callers=6   FUN_0040eb20       RET (0 args)
+  0040EC20 size=236   callers=6   FUN_0040ec20       RET (0 args)
+  0040ED10 size=112   callers=5   FUN_0040ed10       RET (0 args)
+  0040ED80 size=777   callers=13  FUN_0040ed80       RET (0 args)
+  0040F090 size=1206  callers=1   FUN_0040f090       RET (0 args)
+  0040F550 size=254   callers=2   FUN_0040f550       RET (0 args)
+  0040F650 size=462   callers=3   FUN_0040f650       RET (0 args)
+  0040F820 size=79    callers=2   FUN_0040f820       RET (0 args)
+  0040F870 size=384   callers=7   FUN_0040f870       RET (0 args)
+  0040F9F0 size=89    callers=2   FUN_0040f9f0       RET (0 args)
+  0040FA50 size=69    callers=4   FUN_0040fa50       RET (0 args)
+  0040FAA0 size=59    callers=4   FUN_0040faa0       RET (0 args)
+  0040FAE0 size=73    callers=4   FUN_0040fae0       RET (0 args)
+  0040FB30 size=179   callers=1   FUN_0040fb30       RET (0 args)
+  0040FBF0 size=5     callers=1   thunk_FUN_004217e0 ends 00
+  0040FC00 size=450   callers=1   FUN_0040fc00       RET (0 args)
+  0040FDD0 size=361   callers=1   FUN_0040fdd0       RET (0 args)
+  0040FF40 size=178   callers=1   FUN_0040ff40       RET (0 args)
+  total 63
+
+================ C: callers of each candidate ================
+  -- 0040A2A0 UpdateDecisionTree?
+     00408ef0 UNCONDITIONAL_JUMP in thunk_FUN_0040a2a0@00408ef0
+  -- 0040B0C0 EvaluateTargetHostility?
+     004a459e UNCONDITIONAL_CALL in FUN_004a44d0@004a44d0
+  -- 0040C040 SelectComboAction?
+     0040bf97 UNCONDITIONAL_CALL in FUN_0040bbe0@0040bbe0
+  -- 0040D040 NavigateToWaypoint?
+     none
+
+================ D: head of each candidate ================
+
+  --- 0040A2A0 UpdateDecisionTree?
+     0040a2a0  81 ec a8 01 00 00    SUB ESP,0x1a8
+     0040a2a6  8b 94 24 ac 01 00    MOV EDX,dword ptr [ESP + 0x1ac]
+     0040a2ad  53                   PUSH EBX
+     0040a2ae  55                   PUSH EBP
+     0040a2af  56                   PUSH ESI
+     0040a2b0  57                   PUSH EDI
+     0040a2b1  8d 84 24 58 01 00    LEA EAX,[ESP + 0x158]
+     0040a2b8  6a 00                PUSH 0x0
+     0040a2ba  50                   PUSH EAX
+     0040a2bb  8b 02                MOV EAX,dword ptr [EDX]
+     0040a2bd  8d 8c 24 f4 00 00    LEA ECX,[ESP + 0xf4]
+     0040a2c4  0d 00 00 00 02       OR EAX,0x2000000
+     0040a2c9  51                   PUSH ECX
+     0040a2ca  50                   PUSH EAX
+     0040a2cb  e8 00 cc ff ff       CALL 0x00406ed0
+     0040a2d0  83 c4 10             ADD ESP,0x10
+     0040a2d3  c7 44 24 2c 00 00    MOV dword ptr [ESP + 0x2c],0x0
+     0040a2db  8d b4 24 58 01 00    LEA ESI,[ESP + 0x158]
+     0040a2e2  bf 08 00 00 00       MOV EDI,0x8
+     0040a2e7  8d 8c 24 ec 00 00    LEA ECX,[ESP + 0xec]
+     0040a2ee  56                   PUSH ESI
+     0040a2ef  51                   PUSH ECX
+     0040a2f0  e8 db 7c 02 00       CALL 0x00431fd0
+     0040a2f5  d8 54 24 34          FCOM float ptr [ESP + 0x34]
+     0040a2f9  83 c4 08             ADD ESP,0x8
+     0040a2fc  df e0                FNSTSW AX
+     0040a2fe  25 00 41 00 00       AND EAX,0x4100
+     0040a303  75 06                JNZ 0x0040a30b
+     0040a305  d9 5c 24 2c          FSTP float ptr [ESP + 0x2c]
+     0040a309  eb 02                JMP 0x0040a30d
+     0040a30b  dd d8                FSTP ST0
+     0040a30d  83 c6 0c             ADD ESI,0xc
+     0040a310  4f                   DEC EDI
+     0040a311  75 d4                JNZ 0x0040a2e7
+     0040a313  d9 44 24 2c          FLD float ptr [ESP + 0x2c]
+     0040a317  d9 fa                FSQRT
+     0040a319  8b 8c 24 c0 01 00    MOV ECX,dword ptr [ESP + 0x1c0]
+     0040a320  8d 94 24 f8 00 00    LEA EDX,[ESP + 0xf8]
+     0040a327  6a 00                PUSH 0x0
+     0040a329  52                   PUSH EDX
+     0040a32a  8b 11                MOV EDX,dword ptr [ECX]
+     0040a32c  8d 84 24 e8 00 00    LEA EAX,[ESP + 0xe8]
+     0040a333  81 ca 00 00 00 02    OR EDX,0x2000000
+     0040a339  50                   PUSH EAX
+     0040a33a  52                   PUSH EDX
+     ...
+
+  --- 0040B0C0 EvaluateTargetHostility?
+     0040b0c0  a1 00 5a 5d 00       MOV EAX,[0x005d5a00]
+     0040b0c5  85 c0                TEST EAX,EAX
+     0040b0c7  75 03                JNZ 0x0040b0cc
+     0040b0c9  33 c0                XOR EAX,EAX
+     0040b0cb  c3                   RET
+     0040b0cc  8b 44 24 04          MOV EAX,dword ptr [ESP + 0x4]
+     0040b0d0  50                   PUSH EAX
+     0040b0d1  e8 9a 59 00 00       CALL 0x00410a70
+     0040b0d6  83 c4 04             ADD ESP,0x4
+     0040b0d9  85 c0                TEST EAX,EAX
+     0040b0db  75 01                JNZ 0x0040b0de
+     0040b0dd  c3                   RET
+     0040b0de  8b 80 24 01 00 00    MOV EAX,dword ptr [EAX + 0x124]
+     0040b0e4  85 c0                TEST EAX,EAX
+     0040b0e6  75 01                JNZ 0x0040b0e9
+     0040b0e8  c3                   RET
+     0040b0e9  8b 00                MOV EAX,dword ptr [EAX]
+     0040b0eb  0d 00 00 00 02       OR EAX,0x2000000
+     0040b0f0  c3                   RET
+
+  --- 0040C040 SelectComboAction?
+     0040c040  55                   PUSH EBP
+     0040c041  56                   PUSH ESI
+     0040c042  8b 74 24 0c          MOV ESI,dword ptr [ESP + 0xc]
+     0040c046  33 ed                XOR EBP,EBP
+     0040c048  3b f5                CMP ESI,EBP
+     0040c04a  0f 84 dd 02 00 00    JZ 0x0040c32d
+     0040c050  8b 86 9c 00 00 00    MOV EAX,dword ptr [ESI + 0x9c]
+     0040c056  3b c5                CMP EAX,EBP
+     0040c058  0f 84 cf 02 00 00    JZ 0x0040c32d
+     0040c05e  8b 4e 04             MOV ECX,dword ptr [ESI + 0x4]
+     0040c061  57                   PUSH EDI
+     0040c062  83 f9 06             CMP ECX,0x6
+     0040c065  0f 85 0b 02 00 00    JNZ 0x0040c276
+     0040c06b  8b 40 20             MOV EAX,dword ptr [EAX + 0x20]
+     0040c06e  3b c5                CMP EAX,EBP
+     0040c070  74 1b                JZ 0x0040c08d
+     0040c072  50                   PUSH EAX
+     0040c073  e8 85 c9 0f 00       CALL 0x005089fd
+     0040c078  8b 86 9c 00 00 00    MOV EAX,dword ptr [ESI + 0x9c]
+     0040c07e  83 c4 04             ADD ESP,0x4
+     0040c081  89 68 20             MOV dword ptr [EAX + 0x20],EBP
+     0040c084  8b 8e 9c 00 00 00    MOV ECX,dword ptr [ESI + 0x9c]
+     0040c08a  89 69 1c             MOV dword ptr [ECX + 0x1c],EBP
+     0040c08d  8b 96 9c 00 00 00    MOV EDX,dword ptr [ESI + 0x9c]
+     0040c093  8b 42 24             MOV EAX,dword ptr [EDX + 0x24]
+     0040c096  3b c5                CMP EAX,EBP
+     0040c098  74 12                JZ 0x0040c0ac
+     0040c09a  50                   PUSH EAX
+     0040c09b  e8 5d c9 0f 00       CALL 0x005089fd
+     0040c0a0  8b 86 9c 00 00 00    MOV EAX,dword ptr [ESI + 0x9c]
+     0040c0a6  83 c4 04             ADD ESP,0x4
+     0040c0a9  89 68 24             MOV dword ptr [EAX + 0x24],EBP
+     0040c0ac  8b 86 9c 00 00 00    MOV EAX,dword ptr [ESI + 0x9c]
+     0040c0b2  8b 78 40             MOV EDI,dword ptr [EAX + 0x40]
+     0040c0b5  3b fd                CMP EDI,EBP
+     0040c0b7  74 66                JZ 0x0040c11f
+     0040c0b9  8b 48 34             MOV ECX,dword ptr [EAX + 0x34]
+     0040c0bc  53                   PUSH EBX
+     0040c0bd  33 db                XOR EBX,EBX
+     0040c0bf  3b cd                CMP ECX,EBP
+     0040c0c1  7e 40                JLE 0x0040c103
+     0040c0c3  8b 47 04             MOV EAX,dword ptr [EDI + 0x4]
+     0040c0c6  83 f8 ff             CMP EAX,-0x1
+     0040c0c9  74 0e                JZ 0x0040c0d9
+     0040c0cb  0d 00 00 00 03       OR EAX,0x3000000
+     ...
+
+  --- 0040D040 NavigateToWaypoint?
+     0040cd10  81 ec 58 04 00 00    SUB ESP,0x458
+     0040cd16  53                   PUSH EBX
+     0040cd17  8b 9c 24 74 04 00    MOV EBX,dword ptr [ESP + 0x474]
+     0040cd1e  55                   PUSH EBP
+     0040cd1f  8b ac 24 6c 04 00    MOV EBP,dword ptr [ESP + 0x46c]
+     0040cd26  56                   PUSH ESI
+     0040cd27  33 d2                XOR EDX,EDX
+     0040cd29  33 f6                XOR ESI,ESI
+     0040cd2b  57                   PUSH EDI
+     0040cd2c  85 db                TEST EBX,EBX
+     0040cd2e  89 54 24 2c          MOV dword ptr [ESP + 0x2c],EDX
+     0040cd32  bf 01 00 00 00       MOV EDI,0x1
+     0040cd37  0f 8e 5a 01 00 00    JLE 0x0040ce97
+     0040cd3d  85 f6                TEST ESI,ESI
+     0040cd3f  75 0f                JNZ 0x0040cd50
+     0040cd41  8d 0c 5b             LEA ECX,[EBX + EBX*0x2]
+     0040cd44  8d 45 0c             LEA EAX,[EBP + 0xc]
+     0040cd47  50                   PUSH EAX
+     0040cd48  55                   PUSH EBP
+     0040cd49  8d 54 8d f4          LEA EDX,[EBP + ECX*0x4 + -0xc]
+     0040cd4d  52                   PUSH EDX
+     0040cd4e  eb 30                JMP 0x0040cd80
+     0040cd50  8d 43 ff             LEA EAX,[EBX + -0x1]
+     0040cd53  3b f0                CMP ESI,EAX
+     0040cd55  75 14                JNZ 0x0040cd6b
+     0040cd57  8d 0c 5b             LEA ECX,[EBX + EBX*0x2]
+     0040cd5a  8d 44 5b fa          LEA EAX,[EBX + EBX*0x2 + -0x6]
+     0040cd5e  55                   PUSH EBP
+     0040cd5f  8d 54 8d f4          LEA EDX,[EBP + ECX*0x4 + -0xc]
+     0040cd63  8d 4c 85 00          LEA ECX,[EBP + EAX*0x4]
+     0040cd67  52                   PUSH EDX
+     0040cd68  51                   PUSH ECX
+     0040cd69  eb 15                JMP 0x0040cd80
+     0040cd6b  8d 14 76             LEA EDX,[ESI + ESI*0x2]
+     0040cd6e  8d 4c 76 03          LEA ECX,[ESI + ESI*0x2 + 0x3]
+     0040cd72  8d 44 95 00          LEA EAX,[EBP + EDX*0x4]
+     0040cd76  8d 54 8d 00          LEA EDX,[EBP + ECX*0x4]
+     0040cd7a  52                   PUSH EDX
+     0040cd7b  50                   PUSH EAX
+     0040cd7c  83 c0 f4             ADD EAX,-0xc
+     0040cd7f  50                   PUSH EAX
+     0040cd80  e8 4b 51 02 00       CALL 0x00431ed0
+     0040cd85  d8 15 e4 83 5a 00    FCOM float ptr [0x005a83e4]
+     0040cd8b  83 c4 0c             ADD ESP,0xc
+     0040cd8e  df e0                FNSTSW AX
+     ...

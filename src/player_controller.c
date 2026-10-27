@@ -278,7 +278,7 @@ int __thiscall Meteor_Player_GetWallKickPose(PlayerController* self) {
 }
 
 /**
- * @brief Wall climb & wall run detection and initiation (vtable[50] at 0x004CCCB0)
+ * @brief Wall climb & wall run detection and initiation (sub-vtable +0x78 / primary slot 50 at 0x004CCCB0)
  */
 int __thiscall Meteor_Player_CheckAndTriggerWallClimb(PlayerController* self) {
     if (!self || !self->bspCollision || !self->transformNode) {
@@ -369,7 +369,7 @@ int __thiscall Meteor_Player_CheckAndTriggerWallClimb(PlayerController* self) {
 }
 
 /**
- * @brief Integrate wall climb dynamics and check slip-off thresholds (vtable[77] at 0x004CD200)
+ * @brief Integrate wall climb dynamics and check slip-off thresholds (sub-vtable +0xE4 / primary slot 77 at 0x004CD200)
  */
 int __thiscall Meteor_Player_UpdateWallClimbPhysics(PlayerController* self, float dt) {
     if (!self) return -1;

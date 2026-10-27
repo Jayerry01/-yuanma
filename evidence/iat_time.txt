@@ -1,0 +1,30 @@
+================ A: IAT slots used by the timer ================
+mem[005A81D4] = 001C31F0   symbol=PTR_QueryPerformanceCounter_005a81d4   target-symbol=<?>
+mem[005A81D8] = 001C3226   symbol=PTR_lstrcpyA_005a81d8   target-symbol=<?>
+mem[005A81DC] = 001C320A   symbol=PTR_QueryPerformanceFrequency_005a81dc   target-symbol=<?>
+mem[005A81E0] = 001C2FB2   symbol=PTR_Sleep_005a81e0   target-symbol=<?>
+
+================ B: numeric constants ================
+  005AA8E8  dwords=C28F5C29 3FBC28F5   float=-71.680000   double=0.110000
+  005AA8EC  dwords=3FBC28F5 CCCCCCCD   float=1.470000   double=-9.255965e+61
+  005A84B8  dwords=00000000 00000000   float=0.000000   double=0.000000
+  005A84BC  dwords=00000000 43340000   float=0.000000   double=5.629500e+15
+  005A9D50  dwords=00000000 403E0000   float=0.000000   double=30.000000
+  005A9D54  dwords=403E0000 004B2990   float=2.968750   double=3.021913e-307
+  005AA93C  dwords=438D0000 43BB8000   float=282.000000   double=1.981584e+18
+  005AA940  dwords=43BB8000 3E051EB8   float=375.000000   double=6.146729e-10
+  005A83F4  dwords=3F800000 42E52EED   float=1.000000   double=1.863303e+14
+
+================ C: who calls slot 85 / slot 86 (+0x154 / +0x158) ================
+  -- CALL [reg + 0x154] sites
+     00483843  CALL dword ptr [ECX + 0x154] in FUN_00483830@00483830
+     004bd139  CALL dword ptr [EAX + 0x154] in FUN_004bd130@004bd130
+     004d0af4  CALL dword ptr [EAX + 0x154] in FUN_004d0ac0@004d0ac0
+     004f02d6  CALL dword ptr [EDX + 0x154] in FUN_004f0250@004f0250
+     004f2be8  CALL dword ptr [EDI + 0x154] in FUN_004f2bb0@004f2bb0
+     004f333d  CALL dword ptr [EAX + 0x154] in FUN_004f3310@004f3310
+  -- CALL [reg + 0x158] sites
+     004bb76e  CALL dword ptr [EDX + 0x158] in FUN_004bb640@004bb640
+     004d9368  CALL dword ptr [EDX + 0x158] in FUN_004d8cf0@004d8cf0
+     004dfc76  CALL dword ptr [EAX + 0x158] in FUN_004dfc70@004dfc70
+     004dfd11  CALL dword ptr [EDX + 0x158] in FUN_004dfcf0@004dfcf0

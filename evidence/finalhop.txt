@@ -1,0 +1,38 @@
+=== final hop: singleton->vtable[223] ===
+vfptr 0x005a9068 : slot223 @0x005a93e4 = 0x00489510 FUN_00489510 size=51
+      exit: 0048953a  RET 0x8
+      exit: 00489540  RET 0x8
+      --- asm ---
+        00489510  PUSH ESI
+        00489511  MOV ESI,ECX
+        00489513  MOV EAX,dword ptr [ESI]
+        00489515  CALL dword ptr [EAX + 0x368]
+        0048951b  TEST EAX,EAX
+        0048951d  JZ 0x0048953d
+        0048951f  MOV EAX,dword ptr [ESP + 0xc]
+        00489523  MOV ECX,dword ptr [ESI + 0x2410]
+        00489529  PUSH EAX
+        0048952a  MOV EAX,dword ptr [ESP + 0xc]
+        0048952e  MOV EDX,dword ptr [ECX]
+        00489530  PUSH EAX
+        00489531  CALL dword ptr [EDX + 0x34]
+        00489534  MOV EAX,0x1
+        00489539  POP ESI
+        0048953a  RET 0x8
+        0048953d  XOR EAX,EAX
+        0048953f  POP ESI
+        00489540  RET 0x8
+vfptr 0x005a9444 : slot223 @0x005a97c0 = 0x004a0370 FUN_004a0370 size=30
+      exit: 004a038b  RET 0x4
+      --- asm ---
+        004a0370  PUSH ESI
+        004a0371  MOV ESI,ECX
+        004a0373  CALL 0x004a0390
+        004a0378  TEST byte ptr [ESP + 0x8],0x1
+        004a037d  JZ 0x004a0388
+        004a037f  PUSH ESI
+        004a0380  CALL 0x00507850
+        004a0385  ADD ESP,0x4
+        004a0388  MOV EAX,ESI
+        004a038a  POP ESI
+        004a038b  RET 0x4

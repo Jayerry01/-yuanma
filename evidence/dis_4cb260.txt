@@ -1,0 +1,284 @@
+004cb260  MOV EAX,FS:[0x0]   ; <= ffdff000 ExceptionList
+004cb266  PUSH -0x1
+004cb268  PUSH 0x5a19c1   ; <= 005a19c1 LAB_005a19c1
+004cb26d  PUSH EAX
+004cb26e  MOV dword ptr FS:[0x0],ESP   ; <= ffdff000 ExceptionList
+004cb275  SUB ESP,0x1ec
+004cb27b  PUSH EBX
+004cb27c  PUSH EBP
+004cb27d  PUSH ESI
+004cb27e  PUSH EDI
+004cb27f  MOV EDI,ECX
+004cb281  XOR EBP,EBP
+004cb283  MOV dword ptr [EDI + 0x60],EBP
+004cb286  MOV ECX,dword ptr [0x005e0328]   ; <= 005e0328 DAT_005e0328
+004cb28c  CMP ECX,EBP
+004cb28e  JNZ 0x004cb2c9   ; <= 004cb2c9 LAB_004cb2c9
+004cb290  PUSH 0x33c
+004cb295  CALL 0x00508b38   ; <= 00508b38 operator_new
+004cb29a  ADD ESP,0x4
+004cb29d  MOV dword ptr [ESP + 0x18],EAX
+004cb2a1  CMP EAX,EBP
+004cb2a3  MOV dword ptr [ESP + 0x204],EBP
+004cb2aa  JZ 0x004cb2b5   ; <= 004cb2b5 LAB_004cb2b5
+004cb2ac  MOV ECX,EAX
+004cb2ae  CALL 0x0044d020   ; <= 0044d020 FUN_0044d020
+004cb2b3  JMP 0x004cb2b7   ; <= 004cb2b7 LAB_004cb2b7
+004cb2b5  XOR EAX,EAX
+004cb2b7  MOV dword ptr [ESP + 0x204],0xffffffff
+004cb2c2  MOV [0x005e0328],EAX   ; <= 005e0328 DAT_005e0328
+004cb2c7  MOV ECX,EAX
+004cb2c9  LEA EAX,[ESP + 0x2c]
+004cb2cd  PUSH EAX
+004cb2ce  CALL 0x0045a450   ; <= 0045a450 FUN_0045a450
+004cb2d3  MOV ESI,dword ptr [EDI + 0x3d4]
+004cb2d9  LEA EBX,[EDI + 0x3d4]
+004cb2df  MOV dword ptr [ESP + 0x204],0x1
+004cb2ea  CALL 0x00487830   ; <= 00487830 FUN_00487830
+004cb2ef  ADD EAX,0x1ee8
+004cb2f4  MOV ECX,EBX
+004cb2f6  PUSH EAX
+004cb2f7  CALL dword ptr [ESI]
+004cb2f9  MOV EDX,dword ptr [EBX]
+004cb2fb  LEA EAX,[ESP + 0x10]
+004cb2ff  LEA ECX,[ESP + 0x14]
+004cb303  PUSH EAX
+004cb304  PUSH ECX
+004cb305  MOV ECX,EBX
+004cb307  MOV dword ptr [ESP + 0x18],EBP
+004cb30b  MOV dword ptr [ESP + 0x1c],EBP
+004cb30f  CALL dword ptr [EDX + 0x14]
+004cb312  TEST EAX,EAX
+004cb314  JZ 0x004cb33f   ; <= 004cb33f LAB_004cb33f
+004cb316  MOV EAX,dword ptr [ESP + 0x10]
+004cb31a  MOV ECX,dword ptr [ESP + 0x14]
+004cb31e  MOV EDX,dword ptr [EDI]
+004cb320  PUSH EAX
+004cb321  PUSH ECX
+004cb322  MOV ECX,EDI
+004cb324  CALL dword ptr [EDX + 0x1a4]
+004cb32a  MOV EDX,dword ptr [EBX]
+004cb32c  LEA EAX,[ESP + 0x10]
+004cb330  LEA ECX,[ESP + 0x14]
+004cb334  PUSH EAX
+004cb335  PUSH ECX
+004cb336  MOV ECX,EBX
+004cb338  CALL dword ptr [EDX + 0x14]
+004cb33b  TEST EAX,EAX
+004cb33d  JNZ 0x004cb316   ; <= 004cb316 LAB_004cb316
+004cb33f  XOR EAX,EAX
+004cb341  MOV ECX,0x57
+004cb346  CMP dword ptr [ESP + EAX*0x8 + 0x100],ECX
+004cb34d  JZ 0x004cb35b   ; <= 004cb35b LAB_004cb35b
+004cb34f  INC EAX
+004cb350  CMP EAX,0x1b
+004cb353  JL 0x004cb346   ; <= 004cb346 LAB_004cb346
+004cb355  MOV ESI,dword ptr [ESP + 0x18]
+004cb359  JMP 0x004cb362   ; <= 004cb362 LAB_004cb362
+004cb35b  MOV ESI,dword ptr [ESP + EAX*0x8 + 0x104]
+004cb362  MOV EBP,dword ptr [0x005a8258]   ; <= 005a8258 PTR_GetAsyncKeyState_005a8258
+004cb368  PUSH ESI
+004cb369  CALL EBP   ; <= EXTERNAL:00000072 GetAsyncKeyState
+004cb36b  TEST AX,AX
+004cb36e  JNZ 0x004cb37b   ; <= 004cb37b LAB_004cb37b
+004cb370  MOV EDX,dword ptr [EBX]
+004cb372  MOV ECX,EBX
+004cb374  CALL dword ptr [EDX + 0x8]
+004cb377  TEST EAX,EAX
+004cb379  JLE 0x004cb37e   ; <= 004cb37e LAB_004cb37e
+004cb37b  INC dword ptr [EDI + 0x60]
+004cb37e  XOR EAX,EAX
+004cb380  MOV ECX,0x53
+004cb385  CMP dword ptr [ESP + EAX*0x8 + 0x100],ECX
+004cb38c  JZ 0x004cb396   ; <= 004cb396 LAB_004cb396
+004cb38e  INC EAX
+004cb38f  CMP EAX,0x1b
+004cb392  JL 0x004cb385   ; <= 004cb385 LAB_004cb385
+004cb394  JMP 0x004cb39d   ; <= 004cb39d LAB_004cb39d
+004cb396  MOV ESI,dword ptr [ESP + EAX*0x8 + 0x104]
+004cb39d  PUSH ESI
+004cb39e  CALL EBP   ; <= EXTERNAL:00000072 GetAsyncKeyState
+004cb3a0  TEST AX,AX
+004cb3a3  JNZ 0x004cb3b0   ; <= 004cb3b0 LAB_004cb3b0
+004cb3a5  MOV EAX,dword ptr [EBX]
+004cb3a7  MOV ECX,EBX
+004cb3a9  CALL dword ptr [EAX + 0x8]
+004cb3ac  TEST EAX,EAX
+004cb3ae  JGE 0x004cb3b3   ; <= 004cb3b3 LAB_004cb3b3
+004cb3b0  DEC dword ptr [EDI + 0x60]
+004cb3b3  XOR EAX,EAX
+004cb3b5  MOV ECX,0x44
+004cb3ba  CMP dword ptr [ESP + EAX*0x8 + 0x100],ECX
+004cb3c1  JZ 0x004cb3cb   ; <= 004cb3cb LAB_004cb3cb
+004cb3c3  INC EAX
+004cb3c4  CMP EAX,0x1b
+004cb3c7  JL 0x004cb3ba   ; <= 004cb3ba LAB_004cb3ba
+004cb3c9  JMP 0x004cb3d2   ; <= 004cb3d2 LAB_004cb3d2
+004cb3cb  MOV ESI,dword ptr [ESP + EAX*0x8 + 0x104]
+004cb3d2  PUSH ESI
+004cb3d3  MOV dword ptr [EDI + 0x64],0x0
+004cb3da  CALL EBP   ; <= EXTERNAL:00000072 GetAsyncKeyState
+004cb3dc  TEST AX,AX
+004cb3df  JNZ 0x004cb3ec   ; <= 004cb3ec LAB_004cb3ec
+004cb3e1  MOV EDX,dword ptr [EBX]
+004cb3e3  MOV ECX,EBX
+004cb3e5  CALL dword ptr [EDX + 0x4]
+004cb3e8  TEST EAX,EAX
+004cb3ea  JLE 0x004cb3ef   ; <= 004cb3ef LAB_004cb3ef
+004cb3ec  INC dword ptr [EDI + 0x64]
+004cb3ef  XOR EAX,EAX
+004cb3f1  MOV ECX,0x41
+004cb3f6  CMP dword ptr [ESP + EAX*0x8 + 0x100],ECX
+004cb3fd  JZ 0x004cb407   ; <= 004cb407 LAB_004cb407
+004cb3ff  INC EAX
+004cb400  CMP EAX,0x1b
+004cb403  JL 0x004cb3f6   ; <= 004cb3f6 LAB_004cb3f6
+004cb405  JMP 0x004cb40e   ; <= 004cb40e LAB_004cb40e
+004cb407  MOV ESI,dword ptr [ESP + EAX*0x8 + 0x104]
+004cb40e  PUSH ESI
+004cb40f  CALL EBP   ; <= EXTERNAL:00000072 GetAsyncKeyState
+004cb411  TEST AX,AX
+004cb414  JNZ 0x004cb421   ; <= 004cb421 LAB_004cb421
+004cb416  MOV EAX,dword ptr [EBX]
+004cb418  MOV ECX,EBX
+004cb41a  CALL dword ptr [EAX + 0x4]
+004cb41d  TEST EAX,EAX
+004cb41f  JGE 0x004cb424   ; <= 004cb424 LAB_004cb424
+004cb421  DEC dword ptr [EDI + 0x64]
+004cb424  XOR EAX,EAX
+004cb426  MOV ECX,0x27
+004cb42b  MOV dword ptr [EDI + 0x88],EAX
+004cb431  CMP dword ptr [ESP + EAX*0x8 + 0x100],ECX
+004cb438  JZ 0x004cb442   ; <= 004cb442 LAB_004cb442
+004cb43a  INC EAX
+004cb43b  CMP EAX,0x1b
+004cb43e  JL 0x004cb431   ; <= 004cb431 LAB_004cb431
+004cb440  JMP 0x004cb449   ; <= 004cb449 LAB_004cb449
+004cb442  MOV ESI,dword ptr [ESP + EAX*0x8 + 0x104]
+004cb449  PUSH ESI
+004cb44a  CALL EBP   ; <= EXTERNAL:00000072 GetAsyncKeyState
+004cb44c  TEST AX,AX
+004cb44f  JNZ 0x004cb45c   ; <= 004cb45c LAB_004cb45c
+004cb451  MOV EDX,dword ptr [EBX]
+004cb453  MOV ECX,EBX
+004cb455  CALL dword ptr [EDX + 0xc]
+004cb458  TEST EAX,EAX
+004cb45a  JLE 0x004cb462   ; <= 004cb462 LAB_004cb462
+004cb45c  INC dword ptr [EDI + 0x88]
+004cb462  XOR EAX,EAX
+004cb464  MOV ECX,0x25
+004cb469  CMP dword ptr [ESP + EAX*0x8 + 0x100],ECX
+004cb470  JZ 0x004cb47a   ; <= 004cb47a LAB_004cb47a
+004cb472  INC EAX
+004cb473  CMP EAX,0x1b
+004cb476  JL 0x004cb469   ; <= 004cb469 LAB_004cb469
+004cb478  JMP 0x004cb481   ; <= 004cb481 LAB_004cb481
+004cb47a  MOV ESI,dword ptr [ESP + EAX*0x8 + 0x104]
+004cb481  PUSH ESI
+004cb482  CALL EBP   ; <= EXTERNAL:00000072 GetAsyncKeyState
+004cb484  TEST AX,AX
+004cb487  JNZ 0x004cb494   ; <= 004cb494 LAB_004cb494
+004cb489  MOV EAX,dword ptr [EBX]
+004cb48b  MOV ECX,EBX
+004cb48d  CALL dword ptr [EAX + 0xc]
+004cb490  TEST EAX,EAX
+004cb492  JGE 0x004cb49a   ; <= 004cb49a LAB_004cb49a
+004cb494  DEC dword ptr [EDI + 0x88]
+004cb49a  XOR EAX,EAX
+004cb49c  MOV ECX,0x26
+004cb4a1  MOV dword ptr [EDI + 0x84],EAX
+004cb4a7  CMP dword ptr [ESP + EAX*0x8 + 0x100],ECX
+004cb4ae  JZ 0x004cb4b8   ; <= 004cb4b8 LAB_004cb4b8
+004cb4b0  INC EAX
+004cb4b1  CMP EAX,0x1b
+004cb4b4  JL 0x004cb4a7   ; <= 004cb4a7 LAB_004cb4a7
+004cb4b6  JMP 0x004cb4bf   ; <= 004cb4bf LAB_004cb4bf
+004cb4b8  MOV ESI,dword ptr [ESP + EAX*0x8 + 0x104]
+004cb4bf  PUSH ESI
+004cb4c0  CALL EBP   ; <= EXTERNAL:00000072 GetAsyncKeyState
+004cb4c2  TEST AX,AX
+004cb4c5  JNZ 0x004cb4d2   ; <= 004cb4d2 LAB_004cb4d2
+004cb4c7  MOV EDX,dword ptr [EBX]
+004cb4c9  MOV ECX,EBX
+004cb4cb  CALL dword ptr [EDX + 0x10]
+004cb4ce  TEST EAX,EAX
+004cb4d0  JLE 0x004cb4d8   ; <= 004cb4d8 LAB_004cb4d8
+004cb4d2  INC dword ptr [EDI + 0x84]
+004cb4d8  XOR EAX,EAX
+004cb4da  MOV ECX,0x28
+004cb4df  CMP dword ptr [ESP + EAX*0x8 + 0x100],ECX
+004cb4e6  JZ 0x004cb4f0   ; <= 004cb4f0 LAB_004cb4f0
+004cb4e8  INC EAX
+004cb4e9  CMP EAX,0x1b
+004cb4ec  JL 0x004cb4df   ; <= 004cb4df LAB_004cb4df
+004cb4ee  JMP 0x004cb4f7   ; <= 004cb4f7 LAB_004cb4f7
+004cb4f0  MOV ESI,dword ptr [ESP + EAX*0x8 + 0x104]
+004cb4f7  PUSH ESI
+004cb4f8  CALL EBP   ; <= EXTERNAL:00000072 GetAsyncKeyState
+004cb4fa  TEST AX,AX
+004cb4fd  JNZ 0x004cb50a   ; <= 004cb50a LAB_004cb50a
+004cb4ff  MOV EAX,dword ptr [EBX]
+004cb501  MOV ECX,EBX
+004cb503  CALL dword ptr [EAX + 0x10]
+004cb506  TEST EAX,EAX
+004cb508  JGE 0x004cb510   ; <= 004cb510 LAB_004cb510
+004cb50a  DEC dword ptr [EDI + 0x84]
+004cb510  MOV ECX,dword ptr [EDI + 0x60]
+004cb513  MOV EAX,dword ptr [EDI + 0x88]
+004cb519  MOV EDX,dword ptr [EDI + 0x64]
+004cb51c  MOV dword ptr [ESP + 0x1c],ECX
+004cb520  MOV ECX,dword ptr [EDI + 0x84]
+004cb526  MOV dword ptr [ESP + 0x24],EAX
+004cb52a  LEA EAX,[ESP + 0x1c]
+004cb52e  MOV dword ptr [ESP + 0x20],EDX
+004cb532  MOV EDX,dword ptr [EDI]
+004cb534  PUSH 0x10
+004cb536  MOV dword ptr [ESP + 0x2c],ECX
+004cb53a  PUSH EAX
+004cb53b  PUSH 0x33
+004cb53d  MOV ECX,EDI
+004cb53f  CALL dword ptr [EDX + 0xc]
+004cb542  MOV EAX,dword ptr [ESP + 0x1f8]
+004cb549  MOV EDI,dword ptr [ESP + 0x1f0]
+004cb550  SUB EAX,EDI
+004cb552  MOV dword ptr [ESP + 0x204],0x2
+004cb55d  TEST EDI,EDI
+004cb55f  JZ 0x004cb59e   ; <= 004cb59e LAB_004cb59e
+004cb561  TEST EAX,EAX
+004cb563  JZ 0x004cb59e   ; <= 004cb59e LAB_004cb59e
+004cb565  CMP EAX,0x80
+004cb56a  JBE 0x004cb577   ; <= 004cb577 LAB_004cb577
+004cb56c  PUSH EDI
+004cb56d  CALL 0x005089fd   ; <= 005089fd FUN_005089fd
+004cb572  ADD ESP,0x4
+004cb575  JMP 0x004cb59e   ; <= 004cb59e LAB_004cb59e
+004cb577  ADD EAX,0x7
+004cb57a  MOV ECX,0x5d59e8   ; <= 005d59e8 DAT_005d59e8
+004cb57f  SHR EAX,0x3
+004cb582  LEA ESI,[EAX*0x4 + 0x5d59a4]   ; <= 005d59a4 DAT_005d59a4
+004cb589  CALL 0x00402330   ; <= 00402330 FUN_00402330
+004cb58e  MOV ECX,dword ptr [ESI]   ; <= 005d59a4 DAT_005d59a4
+004cb590  MOV dword ptr [EDI],ECX
+004cb592  MOV ECX,0x5d59e8   ; <= 005d59e8 DAT_005d59e8
+004cb597  MOV dword ptr [ESI],EDI   ; <= 005d59a4 DAT_005d59a4
+004cb599  CALL 0x00443330   ; <= 00443330 FUN_00443330
+004cb59e  MOV EAX,dword ptr [ESP + 0x1ec]
+004cb5a5  MOV ECX,dword ptr [ESP + 0x1e4]
+004cb5ac  POP EDI
+004cb5ad  SUB EAX,ECX
+004cb5af  POP ESI
+004cb5b0  POP EBP
+004cb5b1  TEST ECX,ECX
+004cb5b3  MOV dword ptr [ESP + 0x1f8],0xffffffff
+004cb5be  POP EBX
+004cb5bf  JZ 0x004cb5cf   ; <= 004cb5cf LAB_004cb5cf
+004cb5c1  TEST EAX,EAX
+004cb5c3  JZ 0x004cb5cf   ; <= 004cb5cf LAB_004cb5cf
+004cb5c5  PUSH EAX
+004cb5c6  PUSH ECX
+004cb5c7  CALL 0x00402e90   ; <= 00402e90 FUN_00402e90
+004cb5cc  ADD ESP,0x8
+004cb5cf  MOV ECX,dword ptr [ESP + 0x1ec]
+004cb5d6  MOV dword ptr FS:[0x0],ECX   ; <= ffdff000 ExceptionList
+004cb5dd  ADD ESP,0x1f8
+004cb5e3  RET

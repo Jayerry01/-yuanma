@@ -1,0 +1,228 @@
+########## A: fan-out calls in FUN_004cc130 with disp 0xcc..0xf0 ##########
+  1) 004cc3f3  CALL dword ptr [EAX + 0xe8]         disp=0xe8 -> slot 58
+        ctx 004cc3eb  MOV EDX,dword ptr [ESP + 0x18]
+        ctx 004cc3ef  PUSH ECX
+        ctx 004cc3f0  PUSH EDX
+        ctx 004cc3f1  MOV ECX,ESI
+  2) 004cc439  CALL dword ptr [EAX + 0xe8]         disp=0xe8 -> slot 58
+        ctx 004cc433  MOV EAX,dword ptr [ESI]
+        ctx 004cc435  PUSH ECX
+        ctx 004cc436  PUSH EDX
+        ctx 004cc437  MOV ECX,ESI
+  3) 004cc46b  CALL dword ptr [EAX + 0xe4]         disp=0xe4 -> slot 57
+        ctx 004cc465  MOV EAX,dword ptr [ESI]
+        ctx 004cc467  PUSH ECX
+        ctx 004cc468  PUSH EDX
+        ctx 004cc469  MOV ECX,ESI
+  4) 004cc4a9  CALL dword ptr [EDX + 0xe0]         disp=0xe0 -> slot 56
+        ctx 004cc4a3  MOV EDX,dword ptr [ESI]
+        ctx 004cc4a5  PUSH EAX
+        ctx 004cc4a6  PUSH ECX
+        ctx 004cc4a7  MOV ECX,ESI
+  5) 004cc4c2  CALL dword ptr [EDX + 0xd0]         disp=0xd0 -> slot 52
+        ctx 004cc4bc  MOV EDX,dword ptr [ESI]
+        ctx 004cc4be  PUSH EAX
+        ctx 004cc4bf  PUSH ECX
+        ctx 004cc4c0  MOV ECX,ESI
+  6) 004cc4db  CALL dword ptr [EDX + 0xcc]         disp=0xcc -> slot 51
+        ctx 004cc4d5  MOV EDX,dword ptr [ESI]
+        ctx 004cc4d7  PUSH EAX
+        ctx 004cc4d8  PUSH ECX
+        ctx 004cc4d9  MOV ECX,ESI
+  7) 004cc4f1  CALL dword ptr [EDX + 0xd4]         disp=0xd4 -> slot 53
+        ctx 004cc4eb  MOV EDX,dword ptr [ESI]
+        ctx 004cc4ed  PUSH EAX
+        ctx 004cc4ee  PUSH ECX
+        ctx 004cc4ef  MOV ECX,ESI
+  8) 004cc507  CALL dword ptr [EDX + 0xec]         disp=0xec -> slot 59
+        ctx 004cc501  MOV EDX,dword ptr [ESI]
+        ctx 004cc503  PUSH EAX
+        ctx 004cc504  PUSH ECX
+        ctx 004cc505  MOV ECX,ESI
+  9) 004cc51d  CALL dword ptr [EDX + 0xd8]         disp=0xd8 -> slot 54
+        ctx 004cc517  MOV EDX,dword ptr [ESI]
+        ctx 004cc519  PUSH EAX
+        ctx 004cc51a  PUSH ECX
+        ctx 004cc51b  MOV ECX,ESI
+  10) 004cc533  CALL dword ptr [EDX + 0xdc]         disp=0xdc -> slot 55
+        ctx 004cc52d  MOV EDX,dword ptr [ESI]
+        ctx 004cc52f  PUSH EAX
+        ctx 004cc530  PUSH ECX
+        ctx 004cc531  MOV ECX,ESI
+  11) 004cc549  CALL dword ptr [EDX + 0xf0]         disp=0xf0 -> slot 60
+        ctx 004cc543  MOV EDX,dword ptr [ESI]
+        ctx 004cc545  PUSH EAX
+        ctx 004cc546  PUSH ECX
+        ctx 004cc547  MOV ECX,ESI
+  total fan-out sites = 11
+
+########## B: slots 51..60 on each weapon vtable (distinct-count test) ##########
+
+  type  0 vtable 0x005aab00  distinct=9/10
+
+      slot 51 (+0xcc)  0x004dd150 FUN_004dd150(20)
+      slot 52 (+0xd0)  0x004e40a0 FUN_004e40a0(8)
+      slot 53 (+0xd4)  0x004f5860 FUN_004f5860(6)
+      slot 54 (+0xd8)  0x004dce50 FUN_004dce50(171)
+      slot 55 (+0xdc)  0x004e4090 FUN_004e4090(5)
+      slot 56 (+0xe0)  0x004de070 FUN_004de070(30)
+      slot 57 (+0xe4)  0x004dcd70 FUN_004dcd70(40)
+      slot 58 (+0xe8)  0x004e4070 FUN_004e4070(3)
+      slot 59 (+0xec)  0x004e4070 FUN_004e4070(3)
+      slot 60 (+0xf0)  0x004dca80 FUN_004dca80(740)
+
+  type  1 vtable 0x005aae10  distinct=10/10
+
+      slot 51 (+0xcc)  0x004dd150 FUN_004dd150(20)
+      slot 52 (+0xd0)  0x004e40a0 FUN_004e40a0(8)
+      slot 53 (+0xd4)  0x004f5860 FUN_004f5860(6)
+      slot 54 (+0xd8)  0x004dce50 FUN_004dce50(171)
+      slot 55 (+0xdc)  0x004e4090 FUN_004e4090(5)
+      slot 56 (+0xe0)  0x004e1550 FUN_004e1550(30)
+      slot 57 (+0xe4)  0x004e2770 FUN_004e2770(137)
+      slot 58 (+0xe8)  0x004e2bb0 FUN_004e2bb0(20)
+      slot 59 (+0xec)  0x004e4070 FUN_004e4070(3)
+      slot 60 (+0xf0)  0x004dca80 FUN_004dca80(740)
+
+  type  2 vtable 0x005aac50  distinct=10/10
+
+      slot 51 (+0xcc)  0x004dd150 FUN_004dd150(20)
+      slot 52 (+0xd0)  0x004e40a0 FUN_004e40a0(8)
+      slot 53 (+0xd4)  0x004e40d0 FUN_004e40d0(3)
+      slot 54 (+0xd8)  0x004dce50 FUN_004dce50(171)
+      slot 55 (+0xdc)  0x004e4090 FUN_004e4090(5)
+      slot 56 (+0xe0)  0x004df780 FUN_004df780(30)
+      slot 57 (+0xe4)  0x004dcd70 FUN_004dcd70(40)
+      slot 58 (+0xe8)  0x004dfc50 FUN_004dfc50(28)
+      slot 59 (+0xec)  0x004e4070 FUN_004e4070(3)
+      slot 60 (+0xf0)  0x004dca80 FUN_004dca80(740)
+
+  type  3 vtable 0x005aacc0  distinct=9/10
+
+      slot 51 (+0xcc)  0x004dd150 FUN_004dd150(20)
+      slot 52 (+0xd0)  0x004e40e0 FUN_004e40e0(8)
+      slot 53 (+0xd4)  0x004f5860 FUN_004f5860(6)
+      slot 54 (+0xd8)  0x004dce50 FUN_004dce50(171)
+      slot 55 (+0xdc)  0x004e4090 FUN_004e4090(5)
+      slot 56 (+0xe0)  0x004dfed0 FUN_004dfed0(30)
+      slot 57 (+0xe4)  0x004dcd70 FUN_004dcd70(40)
+      slot 58 (+0xe8)  0x004e4070 FUN_004e4070(3)
+      slot 59 (+0xec)  0x004e4070 FUN_004e4070(3)
+      slot 60 (+0xf0)  0x004dca80 FUN_004dca80(740)
+
+  type  4 vtable 0x005aada0  distinct=9/10
+
+      slot 51 (+0xcc)  0x004dd150 FUN_004dd150(20)
+      slot 52 (+0xd0)  0x004e40a0 FUN_004e40a0(8)
+      slot 53 (+0xd4)  0x004f5860 FUN_004f5860(6)
+      slot 54 (+0xd8)  0x004dce50 FUN_004dce50(171)
+      slot 55 (+0xdc)  0x004e4090 FUN_004e4090(5)
+      slot 56 (+0xe0)  0x004e0d20 FUN_004e0d20(30)
+      slot 57 (+0xe4)  0x004dcd70 FUN_004dcd70(40)
+      slot 58 (+0xe8)  0x004e4070 FUN_004e4070(3)
+      slot 59 (+0xec)  0x004e4070 FUN_004e4070(3)
+      slot 60 (+0xf0)  0x004dca80 FUN_004dca80(740)
+
+  type  5 vtable 0x005aabe0  distinct=10/10
+
+      slot 51 (+0xcc)  0x004ded10 FUN_004ded10(37)
+      slot 52 (+0xd0)  0x004e40a0 FUN_004e40a0(8)
+      slot 53 (+0xd4)  0x004e40d0 FUN_004e40d0(3)
+      slot 54 (+0xd8)  0x004dce50 FUN_004dce50(171)
+      slot 55 (+0xdc)  0x004e4090 FUN_004e4090(5)
+      slot 56 (+0xe0)  0x004defe0 FUN_004defe0(30)
+      slot 57 (+0xe4)  0x004dcd70 FUN_004dcd70(40)
+      slot 58 (+0xe8)  0x004df4d0 FUN_004df4d0(18)
+      slot 59 (+0xec)  0x004e4070 FUN_004e4070(3)
+      slot 60 (+0xf0)  0x004dca80 FUN_004dca80(740)
+
+  type  6 vtable 0x005aad30  distinct=9/10
+
+      slot 51 (+0xcc)  0x004dd150 FUN_004dd150(20)
+      slot 52 (+0xd0)  0x004e40a0 FUN_004e40a0(8)
+      slot 53 (+0xd4)  0x004f5860 FUN_004f5860(6)
+      slot 54 (+0xd8)  0x004dce50 FUN_004dce50(171)
+      slot 55 (+0xdc)  0x004e4090 FUN_004e4090(5)
+      slot 56 (+0xe0)  0x004e0610 FUN_004e0610(30)
+      slot 57 (+0xe4)  0x004dcd70 FUN_004dcd70(40)
+      slot 58 (+0xe8)  0x004e4070 FUN_004e4070(3)
+      slot 59 (+0xec)  0x004e4070 FUN_004e4070(3)
+      slot 60 (+0xf0)  0x004dca80 FUN_004dca80(740)
+
+  type  7 vtable 0x005aab70  distinct=10/10
+
+      slot 51 (+0xcc)  0x004dd150 FUN_004dd150(20)
+      slot 52 (+0xd0)  0x004e40a0 FUN_004e40a0(8)
+      slot 53 (+0xd4)  0x004f5860 FUN_004f5860(6)
+      slot 54 (+0xd8)  0x004dce50 FUN_004dce50(171)
+      slot 55 (+0xdc)  0x004e4090 FUN_004e4090(5)
+      slot 56 (+0xe0)  0x004de7c0 FUN_004de7c0(30)
+      slot 57 (+0xe4)  0x004dcd70 FUN_004dcd70(40)
+      slot 58 (+0xe8)  0x004dec70 FUN_004dec70(32)
+      slot 59 (+0xec)  0x004dec90 FUN_004dec90(5)
+      slot 60 (+0xf0)  0x004dca80 FUN_004dca80(740)
+
+  type  8 vtable 0x005aae80  distinct=10/10
+
+      slot 51 (+0xcc)  0x004dd150 FUN_004dd150(20)
+      slot 52 (+0xd0)  0x004e40a0 FUN_004e40a0(8)
+      slot 53 (+0xd4)  0x004f5860 FUN_004f5860(6)
+      slot 54 (+0xd8)  0x004e2ba0 thunk_FUN_004dce50(5)
+      slot 55 (+0xdc)  0x004e2800 FUN_004e2800(93)
+      slot 56 (+0xe0)  0x004e2ac0 FUN_004e2ac0(103)
+      slot 57 (+0xe4)  0x004e2b30 FUN_004e2b30(103)
+      slot 58 (+0xe8)  0x004e2be0 FUN_004e2be0(196)
+      slot 59 (+0xec)  0x00000000 ?
+      slot 60 (+0xf0)  0x004e2d00 FUN_004e2d00(30)
+
+  type  9 vtable 0x005aaef0  distinct=8/10
+
+      slot 51 (+0xcc)  0x004f5860 FUN_004f5860(6)
+      slot 52 (+0xd0)  0x004dce20 FUN_004dce20(48)
+      slot 53 (+0xd4)  0x004f5860 FUN_004f5860(6)
+      slot 54 (+0xd8)  0x004e4070 FUN_004e4070(3)
+      slot 55 (+0xdc)  0x004dd150 FUN_004dd150(20)
+      slot 56 (+0xe0)  0x004e40a0 FUN_004e40a0(8)
+      slot 57 (+0xe4)  0x004f5860 FUN_004f5860(6)
+      slot 58 (+0xe8)  0x004dce50 FUN_004dce50(171)
+      slot 59 (+0xec)  0x004e4090 FUN_004e4090(5)
+      slot 60 (+0xf0)  0x3f2b851f ?
+
+  type 10 vtable 0x005aafe8  distinct=10/10
+
+      slot 51 (+0xcc)  0x004a9770 FUN_004a9770(18)
+      slot 52 (+0xd0)  0x004a92f0 FUN_004a92f0(194)
+      slot 53 (+0xd4)  0x004a9440 FUN_004a9440(225)
+      slot 54 (+0xd8)  0x004a93c0 FUN_004a93c0(128)
+      slot 55 (+0xdc)  0x004a92d0 FUN_004a92d0(12)
+      slot 56 (+0xe0)  0x004a9790 FUN_004a9790(32)
+      slot 57 (+0xe4)  0x004a95a0 FUN_004a95a0(91)
+      slot 58 (+0xe8)  0x004a9600 FUN_004a9600(103)
+      slot 59 (+0xec)  0x004a96c0 FUN_004a96c0(164)
+      slot 60 (+0xf0)  0x004a9670 FUN_004a9670(71)
+
+  type 11 vtable 0x005aaf70  distinct=9/10
+
+      slot 51 (+0xcc)  0x004f5860 FUN_004f5860(6)
+      slot 52 (+0xd0)  0x004e4070 FUN_004e4070(3)
+      slot 53 (+0xd4)  0x004dd150 FUN_004dd150(20)
+      slot 54 (+0xd8)  0x004e40a0 FUN_004e40a0(8)
+      slot 55 (+0xdc)  0x004f5860 FUN_004f5860(6)
+      slot 56 (+0xe0)  0x004dce50 FUN_004dce50(171)
+      slot 57 (+0xe4)  0x004e4090 FUN_004e4090(5)
+      slot 58 (+0xe8)  0x004e5110 FUN_004e5110(30)
+      slot 59 (+0xec)  0x004e5130 FUN_004e5130(136)
+      slot 60 (+0xf0)  0x004e52f0 FUN_004e52f0(79)
+
+########## C: same range on the PlayerController base 0x5aa6a8 ##########
+      slot 51 (+0xcc)  0x004ce080 FUN_004ce080(122)
+      slot 52 (+0xd0)  0x004cdd60 FUN_004cdd60(155)
+      slot 53 (+0xd4)  0x004cde90 FUN_004cde90(82)
+      slot 54 (+0xd8)  0x004cdef0 FUN_004cdef0(150)
+      slot 55 (+0xdc)  0x004ce010 FUN_004ce010(70)
+      slot 56 (+0xe0)  0x004ce3d0 FUN_004ce3d0(336)
+      slot 57 (+0xe4)  0x004cd200 FUN_004cd200(429)
+      slot 58 (+0xe8)  0x004cd3b0 FUN_004cd3b0(2386)
+      slot 59 (+0xec)  0x004cde00 FUN_004cde00(130)
+      slot 60 (+0xf0)  0x004cdf90 FUN_004cdf90(124)
+  distinct = 10/10

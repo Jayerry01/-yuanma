@@ -1,0 +1,119 @@
+=== EVENT PIPE: resolve slot-3 target per sender class ===
+function-entry-like words found: 7813
+runs(>=4): 90
+
+###### sender FUN_004cb260 (0x4cb260) ######
+  membership (1): [0x005aa658/slot41]
+    base=0x5aa658 (sender at slot 41)  -> vtable[0]=FUN_004c5a60   vtable[3]=0x004c8a70 FUN_004c8a70
+
+###### sender FUN_004d0ac0 (0x4d0ac0) ######
+  membership (1): [0x005aa658/slot69]
+    base=0x5aa658 (sender at slot 69)  -> vtable[0]=FUN_004c5a60   vtable[3]=0x004c8a70 FUN_004c8a70
+
+###### sender FUN_004cf5b0 (0x4cf5b0) ######
+  membership (1): [0x005aa658/slot86]
+    base=0x5aa658 (sender at slot 86)  -> vtable[0]=FUN_004c5a60   vtable[3]=0x004c8a70 FUN_004c8a70
+
+###### sender FUN_004cd200 (0x4cd200) ######
+  membership (1): [0x005aa658/slot77]
+    base=0x5aa658 (sender at slot 77)  -> vtable[0]=FUN_004c5a60   vtable[3]=0x004c8a70 FUN_004c8a70
+
+###### sender FUN_004ceb50 (0x4ceb50) ######
+  membership (1): [0x005aa658/slot83]
+    base=0x5aa658 (sender at slot 83)  -> vtable[0]=FUN_004c5a60   vtable[3]=0x004c8a70 FUN_004c8a70
+
+###### sender FUN_004d0540 (0x4d0540) ######
+  membership (1): [0x005aa658/slot68]
+    base=0x5aa658 (sender at slot 68)  -> vtable[0]=FUN_004c5a60   vtable[3]=0x004c8a70 FUN_004c8a70
+
+=== ALL RUNS (base, n, slot0, slot1, slot2, slot3) ===
+  0x005a83c0 n=9    s0=FUN_004fb3f0       s1=FUN_00402840       s2=FUN_004fb3f0       s3=FUN_00402840      
+  0x005a84d0 n=346  s0=FUN_004431e0       s1=FUN_0046a600       s2=FUN_00443180       s3=FUN_0046a650      
+  0x005a8a40 n=25   s0=FUN_00443250       s1=FUN_00462ef0       s2=FUN_00462f20       s3=FUN_00462fc0      
+  0x005a8aa8 n=24   s0=FUN_00443370       s1=FUN_00462ef0       s2=FUN_00462f20       s3=FUN_00462fc0      
+  0x005a8b28 n=22   s0=FUN_00463fe0       s1=FUN_00464b70       s2=FUN_00465430       s3=FUN_004655d0      
+  0x005a8b88 n=66   s0=FUN_00465710       s1=FUN_00466430       s2=FUN_00443180       s3=FUN_00465d70      
+  0x005a8c98 n=22   s0=FUN_00469e60       s1=FUN_0046a100       s2=FUN_00443180       s3=FUN_0046a1b0      
+  0x005a8cf8 n=48   s0=FUN_0046a1f0       s1=FUN_00462ef0       s2=FUN_00462f20       s3=FUN_0046a2d0      
+  0x005a8dc0 n=22   s0=FUN_0046b780       s1=FUN_0046bd80       s2=FUN_00443180       s3=FUN_0046bf90      
+  0x005a8e20 n=22   s0=FUN_0046c030       s1=FUN_0046c6d0       s2=FUN_00443180       s3=FUN_0046c640      
+  0x005a8e90 n=22   s0=FUN_0046cae0       s1=FUN_0046da90       s2=FUN_00443180       s3=FUN_0046d9a0      
+  0x005a8ef8 n=22   s0=FUN_0046db90       s1=FUN_0046e1f0       s2=FUN_00443180       s3=FUN_0046e160      
+  0x005a8fd0 n=7    s0=FUN_00481750       s1=FUN_00481610       s2=FUN_0047bac0       s3=FUN_0047bbf0      
+  0x005a9004 n=24   s0=FUN_00483290       s1=FUN_00482860       s2=FUN_004e40d0       s3=FUN_004e40d0      
+  0x005a9068 n=127  s0=FUN_00486a80       s1=FUN_0048ac50       s2=FUN_0048b640       s3=FUN_004a9770      
+  0x005a9268 n=132  s0=FUN_004902c0       s1=FUN_00490300       s2=FUN_00490260       s3=FUN_004901f0      
+  0x005a9490 n=22   s0=FUN_00492a80       s1=FUN_004d5020       s2=FUN_004d51a0       s3=FUN_004d6400      
+  0x005a9530 n=22   s0=FUN_00491090       s1=FUN_004a9530       s2=FUN_004a0dc0       s3=FUN_004a9770      
+  0x005a9590 n=17   s0=FUN_004915c0       s1=FUN_004a9530       s2=FUN_004a0670       s3=FUN_004a9770      
+  0x005a95f8 n=22   s0=FUN_00497b40       s1=FUN_004a9530       s2=FUN_004a0fb0       s3=FUN_004a9770      
+  0x005a9654 n=107  s0=FUN_004bd300       s1=FUN_004e4070       s2=FUN_004ed150       s3=FUN_004d0aa0      
+  0x005a9810 n=37   s0=FUN_004a07c0       s1=FUN_004a9530       s2=FUN_004a0dc0       s3=FUN_004a9770      
+  0x005a98a8 n=158  s0=FUN_004a17a0       s1=FUN_004a9530       s2=FUN_004a15e0       s3=FUN_004a9770      
+  0x005a9b38 n=29   s0=FUN_004a8fd0       s1=FUN_004a9530       s2=FUN_004a9570       s3=FUN_004a9770      
+  0x005a9bd8 n=73   s0=FUN_004b6390       s1=FUN_004eee00       s2=FUN_004ac750       s3=FUN_004aceb0      
+  0x005a9d00 n=9    s0=FUN_004aef40       s1=FUN_004b2090       s2=FUN_004b22b0       s3=FUN_004ad380      
+  0x005a9d58 n=75   s0=FUN_004b2990       s1=FUN_004b2f10       s2=FUN_00502f50       s3=FUN_004b2e80      
+  0x005a9ed8 n=65   s0=FUN_004b8510       s1=FUN_004b88e0       s2=FUN_004b8920       s3=FUN_004a9770      
+  0x005a9fe0 n=225  s0=FUN_004b97e0       s1=FUN_004b9f80       s2=FUN_004e8500       s3=FUN_004a9770      
+  0x005aa368 n=65   s0=FUN_004bd360       s1=FUN_004be820       s2=FUN_004a9570       s3=FUN_004a9770      
+  0x005aa470 n=19   s0=FUN_004aef40       s1=FUN_004b2090       s2=FUN_004b22b0       s3=FUN_004ad380      
+  0x005aa4c0 n=65   s0=FUN_004bea50       s1=FUN_004bed20       s2=FUN_004a9570       s3=FUN_004a9770      
+  0x005aa5c8 n=10   s0=FUN_004aef40       s1=FUN_004b2090       s2=FUN_004b22b0       s3=FUN_004ad380      
+  0x005aa5f4 n=14   s0=FUN_004bf020       s1=FUN_004bff60       s2=FUN_004c0820       s3=FUN_004a9770      
+  0x005aa658 n=150  s0=FUN_004c5a60       s1=FUN_004c5a80       s2=FUN_004c8880       s3=FUN_004c8a70      
+  0x005aa948 n=9    s0=FUN_004d7290       s1=FUN_004db560       s2=FUN_004db740       s3=FUN_004db730      
+  0x005aa970 n=65   s0=FUN_004db8f0       s1=FUN_004dc060       s2=FUN_004dbf60       s3=FUN_004dc040      
+  0x005aaa78 n=31   s0=FUN_004e40b0       s1=FUN_004dcd70       s2=FUN_004e4070       s3=FUN_004e4070      
+  0x005aab00 n=283  s0=FUN_004dd1c0       s1=FUN_004dcd70       s2=FUN_004e4070       s3=FUN_004e4070      
+  0x005aaf70 n=28   s0=FUN_004e2d00       s1=FUN_004dcd70       s2=FUN_004e4070       s3=FUN_004e4070      
+  0x005aafe8 n=38   s0=FUN_004e3590       s1=FUN_004dcd70       s2=FUN_004e4070       s3=FUN_004e4070      
+  0x005ab0a8 n=23   s0=FUN_004e7f30       s1=FUN_004e8350       s2=FUN_004e8500       s3=FUN_004a9770      
+  0x005ab108 n=29   s0=FUN_004e89e0       s1=FUN_004a9530       s2=FUN_004a9570       s3=FUN_004a9770      
+  0x005ab180 n=185  s0=FUN_004ec2f0       s1=FUN_004b3900       s2=FUN_004b3920       s3=FUN_004e4070      
+  0x005ab468 n=102  s0=FUN_004ed340       s1=FUN_004ed940       s2=FUN_004e8500       s3=FUN_004a9770      
+  0x005ab640 n=11   s0=FUN_004f5870       s1=FUN_004f5180       s2=FUN_004f4ff0       s3=FUN_004f4850      
+  0x005ab670 n=19   s0=FUN_004f5950       s1=FUN_004e8500       s2=FUN_004f5b50       s3=FUN_004a9770      
+  0x005ab6c0 n=18   s0=FUN_004f5ca0       s1=FUN_004a9530       s2=FUN_004a9570       s3=FUN_004a9770      
+  0x005ab710 n=28   s0=FUN_004f5d80       s1=FUN_004f5fa0       s2=FUN_004f5b50       s3=FUN_004a9770      
+  0x005ab7a8 n=31   s0=FUN_004f7250       s1=FUN_004f7660       s2=FUN_004f5b50       s3=FUN_004a9770      
+  0x005ab82c n=6    s0=FUN_00577f40       s1=FUN_004fa640       s2=FUN_004d4a40       s3=FUN_004fab70      
+  0x005ab878 n=115  s0=FUN_005015e0       s1=FUN_004ed9a0       s2=FUN_00502f50       s3=thunk_FUN_004ee2a0
+  0x005aba58 n=43   s0=FUN_00502de0       s1=FUN_00502f60       s2=FUN_004a9570       s3=FUN_004a9770      
+  0x005ac2a0 n=17   s0=FUN_005071a0       s1=FUN_00507210       s2=FUN_00507450       s3=FUN_005073e0      
+  0x005ac2e8 n=17   s0=FUN_00507830       s1=FUN_0050aaa0       s2=FUN_0050aaa0       s3=FUN_0050aaa0      
+  0x005ac378 n=11   s0=FUN_00507abe       s1=FUN_00507d0b       s2=FUN_00507de6       s3=FUN_00507cc7      
+  0x005ac3c8 n=11   s0=FUN_0050840f       s1=FUN_0050857c       s2=FUN_0050845b       s3=FUN_0050860e      
+  0x005ae084 n=8    s0=FUN_0054a2e0       s1=FUN_004f5f90       s2=FUN_00502f50       s3=FUN_004eee00      
+  0x005ae0a8 n=25   s0=FUN_0054d150       s1=FUN_00553430       s2=FUN_0054d340       s3=FUN_0054daa0      
+  0x005ae110 n=37   s0=FUN_005501f0       s1=FUN_00553430       s2=FUN_0054d340       s3=FUN_0054daa0      
+  0x005ae1b0 n=9    s0=FUN_0055c0f0       s1=FUN_0055da10       s2=FUN_0055c460       s3=FUN_0055c3f0      
+  0x005ae1d8 n=19   s0=FUN_00569120       s1=FUN_0047bbf0       s2=FUN_00560bf0       s3=FUN_0056aa20      
+  0x005ae228 n=6    s0=FUN_00569120       s1=FUN_0047bbf0       s2=FUN_0056cce0       s3=FUN_0056aa20      
+  0x005ae258 n=28   s0=FUN_005779c0       s1=FUN_004fa640       s2=FUN_004d4a40       s3=FUN_00577c20      
+  0x005b0e18 n=33   s0=FUN_00581c40       s1=FUN_00582ae0       s2=FUN_00582b50       s3=FUN_005822f0      
+  0x005b0ea0 n=33   s0=FUN_00581c40       s1=FUN_00582ae0       s2=FUN_00582b50       s3=FUN_005822f0      
+  0x005b0f28 n=33   s0=FUN_00581c40       s1=FUN_00582ae0       s2=FUN_00582b50       s3=FUN_005822f0      
+  0x005b0fb0 n=33   s0=FUN_00581c40       s1=FUN_00582ae0       s2=FUN_00582b50       s3=FUN_005822f0      
+  0x005b1038 n=33   s0=FUN_00581c40       s1=FUN_00582ae0       s2=FUN_00582b50       s3=FUN_005822f0      
+  0x005b10c0 n=33   s0=FUN_00581c40       s1=FUN_00582ae0       s2=FUN_00582b50       s3=FUN_005822f0      
+  0x005b1148 n=33   s0=FUN_00581c40       s1=FUN_00582ae0       s2=FUN_00582b50       s3=FUN_005822f0      
+  0x005b11d0 n=33   s0=FUN_00581c40       s1=FUN_00582ae0       s2=FUN_00582b50       s3=FUN_005822f0      
+  0x005b1258 n=33   s0=FUN_00588800       s1=FUN_00582ae0       s2=FUN_00582b50       s3=FUN_005822f0      
+  0x005b12e0 n=33   s0=FUN_00581c40       s1=FUN_00582ae0       s2=FUN_00582b50       s3=FUN_005822f0      
+  0x005b1368 n=33   s0=FUN_00581c40       s1=FUN_00582ae0       s2=FUN_00582b50       s3=FUN_005822f0      
+  0x005b13f0 n=33   s0=FUN_00581c40       s1=FUN_00582ae0       s2=FUN_00582b50       s3=FUN_005822f0      
+  0x005b1478 n=33   s0=FUN_00581c40       s1=FUN_00582ae0       s2=FUN_00582b50       s3=FUN_005822f0      
+  0x005b24f8 n=31   s0=FUN_0058ea00       s1=FUN_0058e270       s2=FUN_0058e340       s3=FUN_0058e230      
+  0x005b35f0 n=66   s0=FUN_005920b0       s1=FUN_005921c0       s2=FUN_00592210       s3=FUN_00592660      
+  0x005b3748 n=7    s0=FUN_00595920       s1=FUN_00595ac6       s2=FUN_00596001       s3=FUN_005961ac      
+  0x005b376c n=7    s0=FUN_00595920       s1=FUN_00595ca3       s2=FUN_00596001       s3=FUN_005961ac      
+  0x005c7c60 n=39   s0=FUN_0058e140       s1=FUN_0058e140       s2=FUN_004e8500       s3=FUN_004e8500      
+  0x005c809c n=8    s0=FUN_0058e140       s1=FUN_0058e140       s2=FUN_004e8500       s3=FUN_004e8500      
+  0x005cccc4 n=7    s0=FUN_0050f07a       s1=FUN_00512e3c       s2=FUN_00512e3c       s3=FUN_00512e3c      
+  0x005cd898 n=5    s0=FUN_00515943       s1=FUN_00515bdc       s2=FUN_005160e4       s3=FUN_00516267      
+  0x005cd8d0 n=9    s0=FUN_00515cfa       s1=FUN_00515d0b       s2=FUN_00515d1c       s3=FUN_00515740      
+  0x005cd8f8 n=4    s0=FUN_005172a7       s1=FUN_00517464       s2=FUN_00516b9d       s3=FUN_005171e3      
+  0x005cd90c n=26   s0=FUN_005173e8       s1=FUN_00516c27       s2=FUN_00516cbd       s3=FUN_00516d54      
+  0x005cd980 n=12   s0=FUN_00517eb8       s1=FUN_00515be9       s2=FUN_005160f1       s3=FUN_0051627a      
+  0x005cd9b4 n=44   s0=FUN_00517cdd       s1=FUN_0051813e       s2=FUN_005182cb       s3=FUN_00515d29      

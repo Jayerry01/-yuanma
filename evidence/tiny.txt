@@ -1,0 +1,64 @@
+
+== FUN_004bc0c0 @004bc0c0 size=31 ==
+  004bc0c0  PUSH ESI
+  004bc0c1  CALL 0x00487830
+  004bc0c6  MOV ECX,dword ptr [ESP + 0x8]
+  004bc0ca  MOV EDX,dword ptr [EAX]
+  004bc0cc  MOV ESI,dword ptr [ECX + 0x4]
+  004bc0cf  MOV ECX,dword ptr [ECX]
+  004bc0d1  PUSH ESI
+  004bc0d2  PUSH ECX
+  004bc0d3  MOV ECX,EAX
+  004bc0d5  CALL dword ptr [EDX + 0x370]
+  004bc0db  POP ESI
+  004bc0dc  RET 0x4
+
+== FUN_004bc0e0 @004bc0e0 size=15 ==
+  004bc0e0  CALL 0x00487830
+  004bc0e5  MOV EDX,dword ptr [EAX]
+  004bc0e7  MOV ECX,EAX
+  004bc0e9  JMP dword ptr [EDX + 0x374]
+
+== FUN_004bc0f0 @004bc0f0 size=15 ==
+  004bc0f0  MOV EAX,ECX
+  004bc0f2  PUSH EAX
+  004bc0f3  MOV ECX,dword ptr [EAX + 0x3b8]
+  004bc0f9  MOV EDX,dword ptr [ECX]
+  004bc0fb  CALL dword ptr [EDX + 0x24]
+  004bc0fe  RET
+
+== FUN_004bc100 @004bc100 size=31 ==
+  004bc100  PUSH ESI
+  004bc101  CALL 0x00487830
+  004bc106  MOV ECX,dword ptr [ESP + 0x8]
+  004bc10a  MOV EDX,dword ptr [EAX]
+  004bc10c  MOV ESI,dword ptr [ECX + 0x4]
+  004bc10f  MOV ECX,dword ptr [ECX]
+  004bc111  PUSH ESI
+  004bc112  PUSH ECX
+  004bc113  MOV ECX,EAX
+  004bc115  CALL dword ptr [EDX + 0x37c]
+  004bc11b  POP ESI
+  004bc11c  RET 0x4
+
+== FUN_004bc150 @004bc150 size=15 ==
+  004bc150  MOV EAX,ECX
+  004bc152  PUSH EAX
+  004bc153  MOV ECX,dword ptr [EAX + 0x3b8]
+  004bc159  MOV EDX,dword ptr [ECX]
+  004bc15b  CALL dword ptr [EDX + 0x1c]
+  004bc15e  RET
+
+== FUN_004bc100 @004bc100 size=31 ==
+  004bc100  PUSH ESI
+  004bc101  CALL 0x00487830
+  004bc106  MOV ECX,dword ptr [ESP + 0x8]
+  004bc10a  MOV EDX,dword ptr [EAX]
+  004bc10c  MOV ESI,dword ptr [ECX + 0x4]
+  004bc10f  MOV ECX,dword ptr [ECX]
+  004bc111  PUSH ESI
+  004bc112  PUSH ECX
+  004bc113  MOV ECX,EAX
+  004bc115  CALL dword ptr [EDX + 0x37c]
+  004bc11b  POP ESI
+  004bc11c  RET 0x4

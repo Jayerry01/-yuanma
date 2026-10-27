@@ -1,0 +1,45 @@
+########## A: which slot of 0x5aa6a8 holds FUN_004cd3b0 ##########
+  slot 58 (+0x0e8) -> 0x004cd3b0
+
+########## B: callers of FUN_004cd3b0 ##########
+  005aa790 DATA  in ?
+  total refs = 1
+
+########## C: slot 65 target (FUN_004cf540) ##########
+  FUN_004cf540 size=107
+   004cf540  PUSH ESI
+   004cf541  MOV ESI,ECX
+   004cf543  MOV EAX,dword ptr [ESI + 0xe8]
+   004cf549  TEST EAX,EAX
+   004cf54b  JZ 0x004cf5a6
+   004cf54d  MOV EAX,dword ptr [ESI]
+   004cf54f  CALL dword ptr [EAX + 0x180]
+   004cf555  TEST EAX,EAX
+   004cf557  JNZ 0x004cf5a6
+   004cf559  MOV ECX,dword ptr [ESI + 0xe8]
+   004cf55f  CALL 0x00549b00
+   004cf564  FCOMP double ptr [0x005aa8e8]
+   004cf56a  MOV ECX,ESI
+   004cf56c  FNSTSW AX
+   004cf56e  TEST AH,0x5
+   004cf571  JP 0x004cf57f
+   004cf573  MOV EDX,dword ptr [ESI]
+   004cf575  PUSH 0x0
+   004cf577  CALL dword ptr [EDX + 0x108]
+   004cf57d  JMP 0x004cf589
+   004cf57f  MOV EAX,dword ptr [ESI]
+   004cf581  PUSH 0x1
+   004cf583  CALL dword ptr [EAX + 0x108]
+   004cf589  MOV ECX,dword ptr [ESI + 0xe8]
+   004cf58f  PUSH ECX
+   004cf590  CALL 0x00507850
+   004cf595  ADD ESP,0x4
+   004cf598  MOV dword ptr [ESI + 0xe8],0x0
+   004cf5a2  XOR EAX,EAX
+   004cf5a4  POP ESI
+   004cf5a5  RET
+   004cf5a6  OR EAX,0xffffffff
+   004cf5a9  POP ESI
+   004cf5aa  RET
+
+########## D: FCOMP sites on clock fields (+0x10 / +0x28 / +0x40) ##########

@@ -1,0 +1,115 @@
+vfptr=0x005aa658  slot3@0x005aa664 = 0x004c8a70 FUN_004c8a70
+    signature: /* WARNING: Removing unreachable block (ram,0x004c8b6b) */
+      /* WARNING: Removing unreachable block (ram,0x004c8b6b) */
+      /* WARNING: Removing unreachable block (ram,0x004c8b7d) */
+      /* WARNING: Removing unreachable block (ram,0x004c8b79) */
+      
+      void __fastcall FUN_004c8a70(int *param_1)
+      
+      {
+        int iVar1;
+        int iVar2;
+        undefined4 local_4;
+        
+        iVar2 = param_1[2];
+        if (iVar2 != param_1[3]) {
+          do {
+            if (*(int *)(iVar2 + 4) != 0) {
+              FUN_00507850(*(int *)(iVar2 + 4));
+            }
+            iVar2 = iVar2 + 0x10;
+          } while (iVar2 != param_1[3]);
+        }
+        iVar2 = param_1[2];
+        iVar1 = param_1[3];
+        FUN_004cab30(iVar1,iVar1,iVar2,local_4,0);
+        param_1[3] = param_1[3] + (iVar1 - iVar2 >> 4) * -0x10;
+        iVar2 = param_1[6];
+    ...(total 46 lines)
+vfptr=0x005aa65c  slot3@0x005aa668 = 0x004c8bd0 FUN_004c8bd0
+    signature: void __thiscall FUN_004c8bd0(int param_1,int *param_2)
+      void __thiscall FUN_004c8bd0(int param_1,int *param_2)
+      
+      {
+        int *piVar1;
+        int iVar2;
+        char *pcVar3;
+        char *pcVar4;
+        bool bVar5;
+        
+        FUN_00549a90(0,0);
+        if (param_2 != (int *)0x0) {
+          piVar1 = *(int **)(param_1 + 8);
+          if (piVar1 != *(int **)(param_1 + 0xc)) {
+            while (*piVar1 != *param_2) {
+      LAB_004c8c14:
+              piVar1 = piVar1 + 4;
+              if (piVar1 == *(int **)(param_1 + 0xc)) {
+                return;
+              }
+            }
+            iVar2 = param_2[2];
+            if (iVar2 != 0) {
+              bVar5 = true;
+              pcVar3 = (char *)param_2[1];
+              pcVar4 = (char *)piVar1[1];
+    ...(total 41 lines)
+vfptr=0x005aa660  slot3@0x005aa66c = 0x004c9180 FUN_004c9180
+    signature: void __fastcall FUN_004c9180(int param_1)
+      void __fastcall FUN_004c9180(int param_1)
+      
+      {
+        *(undefined4 *)(param_1 + 0x14) = *(undefined4 *)(param_1 + 8);
+        *(undefined4 *)(param_1 + 0x24) = *(undefined4 *)(param_1 + 0x18);
+        *(undefined4 *)(param_1 + 0x34) = *(undefined4 *)(param_1 + 0x28);
+        *(undefined4 *)(param_1 + 0x44) = *(undefined4 *)(param_1 + 0x38);
+        *(undefined4 *)(param_1 + 0x54) = *(undefined4 *)(param_1 + 0x48);
+        return;
+      }
+      
+    ...(total 12 lines)
+vfptr=0x005aa6a8  slot3@0x005aa6b4 = 0x004a9770 FUN_004a9770
+    signature: undefined4 __fastcall FUN_004a9770(int param_1)
+      undefined4 __fastcall FUN_004a9770(int param_1)
+      
+      {
+        undefined4 uVar1;
+        
+        if (*(int **)(param_1 + 0xc) != (int *)0x0) {
+                          /* WARNING: Could not recover jumptable at 0x004a9779. Too many branches */
+                          /* WARNING: Treating indirect jump as call */
+          uVar1 = (**(code **)(**(int **)(param_1 + 0xc) + 0x20))();
+          return uVar1;
+        }
+        return 0xffffffff;
+      }
+      
+    ...(total 15 lines)
+vfptr=0x005aa88c  slot3@0x005aa898 = 0x004d1630 FUN_004d1630
+    signature: int __fastcall FUN_004d1630(int *param_1)
+      int __fastcall FUN_004d1630(int *param_1)
+      
+      {
+        int iVar1;
+        int iVar2;
+        int *piVar3;
+        int iVar4;
+        int iStack_8;
+        int iStack_4;
+        
+        iVar4 = 0;
+        iVar2 = (**(code **)(*param_1 + 0x18))();
+        if (iVar2 == 0) {
+          iStack_4 = 0x27;
+          FUN_0049d3c0(&iStack_8,&iStack_4);
+          iVar2 = param_1[1];
+          if ((iStack_8 != iVar2) && (*(char *)(*(int *)(iStack_8 + 0x14) + 0x50 + (int)param_1) != '\0'))
+          {
+            iVar4 = 1;
+          }
+          iStack_8 = param_1[1];
+          iStack_4 = iStack_8;
+          iVar1 = *(int *)(iStack_8 + 4);
+          while (iVar1 != 0) {
+            if (*(uint *)(iVar1 + 0x10) < 0x25) {
+    ...(total 54 lines)

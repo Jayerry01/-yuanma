@@ -82,7 +82,7 @@ public class CameraVtable extends GhidraScript {
         // 8 candidate virtual methods of camera vtable 0x005AA658
         // [69]=004D0AC0 [85]=004CF540 [87]=004CB790 [99]=004CE540
         // [111]=004CC0A0 [115]=004CB800 [126]=004D0DB0 [130]=004CE2F0
-        long[][] meth = {
+        Object[][] meth = {
             {0x004D0AC0L, 0x004D0D00L, "vslot69  @0x004D0AC0"},
             {0x004CF540L, 0x004CF7A0L, "vslot85  @0x004CF540"},
             {0x004CB790L, 0x004CBA00L, "vslot87  @0x004CB790"},
@@ -92,7 +92,7 @@ public class CameraVtable extends GhidraScript {
             {0x004D0DB0L, 0x004D1000L, "vslot126 @0x004D0DB0"},
             {0x004CE2F0L, 0x004CE540L, "vslot130 @0x004CE2F0"},
         };
-        for (long[] m : meth) dump(sb, m[0], m[1], m[2]);
+        for (Object[] m : meth) dump(sb, (long) m[0], (long) m[1], (String) m[2]);
 
         sb.append("===== XREF-TO (callers) =====\n\n");
         long[] all = {0x00502B3EL,0x004D0AC0L,0x004CF540L,0x004CB790L,0x004CE540L,

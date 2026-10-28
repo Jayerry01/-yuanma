@@ -34,9 +34,25 @@ LOOP = re.compile(r"\bdo\s*\{|\bwhile\s*\(|\bfor\s*\(")
 
 
 def body_only(text):
-    """剥掉函数签名，只留函数体——否则签名里的 FUN_00xxxxxx( 会被当成一次自调用。"""
+    """剥掉函数签名，只留**本函数**的配对花括号体。
+
+    两处都必须防：
+    1) 签名行 `uint FUN_00410ce0(void)` 自身匹配 FUN_00xxxxxx(，会把调用数虚增 1；
+    2) Ghidra 会在同一个 .c 文件里附带后续函数/库函数本体（见 0x00474320.c 尾部的
+       thunk_FUN_004d5fb0、0x0058b7a0.c 里的 15 个外来调用），取到文件尾会污染统计。
+    """
     i = text.find("{")
-    return text[i:] if i >= 0 else text
+    if i < 0:
+        return text
+    depth = 0
+    for j in range(i, len(text)):
+        if text[j] == "{":
+            depth += 1
+        elif text[j] == "}":
+            depth -= 1
+            if depth == 0:
+                return text[i:j + 1]
+    return text[i:]
 
 
 def read_pseudo(addr):

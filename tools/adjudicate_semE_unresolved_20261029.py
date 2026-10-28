@@ -205,15 +205,23 @@ def main():
             if len(c) >= 3 and c[2] == "UNRESOLVED":
                 un.add(c[0])
 
-    mapped = {a.lower() for a, *_ in M}
-    missing = sorted(un - mapped)
-    extra = sorted(mapped - un)
+    # 两侧统一小写比较（源台账地址列大小写混用，曾因此产生假的不一致告警）
+    un_l = {a.lower() for a in un}
+    mapped_l = {a.lower() for a in M and [m[0] for m in M]}
+    # 0x004A7F00：本体提取修正（花括号配对）后由 UNRESOLVED 改判到 ACCESSOR 桶；
+    # 它是虚调用转发而非访问器，本表的名字仍成立，故显式保留。
+    RETAINED = {"0x004a7f00"}
+    missing = sorted(un_l - mapped_l)
+    extra = sorted(mapped_l - un_l - RETAINED)
     if missing or extra:
         print("!! 地址集不一致：未在映射中的 %d 项，映射中多余的 %d 项" % (len(missing), len(extra)))
         for a in missing[:10]:
             print("   MISSING:", a)
         for a in extra[:10]:
             print("   EXTRA  :", a)
+    else:
+        print("地址集断言通过：映射 = UNRESOLVED(%d) ∪ 显式保留(%d)"
+              % (len(un_l), len(mapped_l & RETAINED)))
 
     with open(OUT, "w", errors="replace") as f:
         f.write("Addr\tOldLabel\tNewName\tFamily\tConfidence\tEvidence\n")

@@ -275,7 +275,7 @@ $$\min(\text{Proj}_i, \text{Proj}_i + \text{SegProj}_i) > e_i \quad \lor \quad \
 ...
 0x004CB370: mov   edx, dword ptr [ebx]
 0x004CB372: mov   ecx, ebx
-0x004CB374: call  dword ptr [edx + 8]         ; WeaponController::vtable[2] = 武器复位 + 清怒（见 §八；原注「扣除怒气」已撤回）
+0x004CB374: call  dword ptr [edx + 8]         ; WeaponController::vtable[2] = 武器复位 + 清怒（见 §八）
 0x004CB377: test  eax, eax
 0x004CB379: jle   0x004CB37E
 0x004CB37B: inc   dword ptr [edi + 0x60]      ; 累加连招段数 / 招式序号
@@ -395,8 +395,7 @@ public bool CheckPos(int KeyMap, int targetAct)   // 前置闸 AcceptInput() →
 
 ## 八、怒气机制的边界：`vtable[2]` 是清零不是扣费，且无 per-KeyMap 成本数据（2026-10-28）
 
-前面 §七.2 把 `0x004CB374` 的 `call [edx+8]` 注为「WeaponController::vtable[2]（扣除/消耗对应怒气）」。
-**这一条要撤回。** 12 类武器的 `vtable[2]` 全表如下（逐 dword 实读 + 逐函数反汇编）：
+12 类武器的 `vtable[2]`（即 `0x004CB374` 的 `call [edx+8]` 目标）全表如下（逐 dword 实读 + 逐函数反汇编）：
 
 | 武器 | 虚表 | `[+0x8]` 目标 | 大小 | 体 |
 |---|---|---|---|---|
@@ -434,7 +433,7 @@ public bool CheckPos(int KeyMap, int targetAct)   // 前置闸 AcceptInput() →
 3. **没有 KeyMap 参数**：函数签名只有 `this + 1 个 dword`（`RET 0x4`），拿不到「这一招是哪个组」，
    物理上无法按 `KeyMap` 分档收 100/60/50。
 
-⇒ **`vtable[2]` = 武器复位 + 清怒**。§七.2 里「扣除/消耗对应怒气」的括注撤回，
+⇒ **`vtable[2]` = 武器复位 + 清怒**（§七.2 早期「扣除/消耗对应怒气」的标注已更正为清零机制）。
 `0x004CB374` 那一跳的语义应改述为「**连招派发后复位武器连招状态（含清怒事件）**」。
 
 ### 2. per-KeyMap 怒气成本不是数据：`angervalue` 是文法词但无人使用

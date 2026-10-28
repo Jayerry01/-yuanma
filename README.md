@@ -57,7 +57,7 @@ MeteorRE/
 │   ├── split_full_decompilation.py  # 全量函数分卷归档器
 │   ├── ExportAllCpp.java       # Ghidra Headless 并发导出驱动
 │   └── run_full_export.bat     # 批处理自动化脚本
-├── docs/                       # 格式规范与算法分析（10 篇）
+├── docs/                       # 格式规范与算法分析（领域账本 17 份 + 方法论 1 份 + 协议 JSON）
 │   ├── 00_INSTALLATION_ASSET_AND_FORMAT_SPEC.md # 12 类专有格式结构体与魔数规范
 │   ├── 01_PE_ARCHITECTURE_AND_MEMORY.md         # PE 内存布局与节区映射
 │   ├── 02_PLAYER_CONTROLLER_AND_PHYSICS.md      # 角色物理与 Root Motion 驱动机制
@@ -66,15 +66,23 @@ MeteorRE/
 │   ├── 05_ANIMATION_AMB_FORMAT.md               # BANIM 动画格式定义
 │   ├── 06_LEVEL_BSP_AND_COLLISION.md            # 场景 BSP、LineCheck、SweepBox 碰撞管线
 │   ├── 07_INPUT_AND_COMBO_BUFFER.md             # 输入轮询、按键缓冲与搓招识别
-│   ├── 08_AI_AND_PATHFINDING.md                 # NPC 决策树、仇恨系统与寻路状态机
-│   └── 09_CAMERA_AND_EFFECT_SYSTEM.md           # 追尾摄像机与粒子特效系统
+│   ├── 08_AI_AND_PATHFINDING.md                 # NPC 决策、属性权重与 .pst 行为表
+│   ├── 09_CAMERA_AND_EFFECT_SYSTEM.md           # 相机管理器、追尾摄像机与特效系统
+│   ├── 10_TEXT_COVERAGE_AUDIT.md                # .text 覆盖审计与函数分级
+│   ├── 11_BEHAVIORAL_EQUIVALENCE.md             # 行为等价性验证框架
+│   ├── 12_COMMAND_PROTOCOL_SPEC.json(.note.md)  # 命令协议规范（虚表/跳表裁定）
+│   ├── 13_PSCRIPT_VM.md                         # PScript 虚拟机指令集与解释器
+│   ├── 15_COMMUNITY_PATCHES_NETWORKING_AND_ANTICHEAT.md # 社区补丁、联机与反作弊
+│   ├── 16_COMMUNITY_SDK_AND_ASSET_SPECS.md      # 社区 SDK 与资产规范
+│   ├── 18_QINGGONG_PHYSICS_AND_MOVEMENT_EXPLOITS.md # 轻功物理与移动机制
+│   └── PROCESS_REASONING.md                     # 精化方法论与已验证架构
 ├── src/                        # 参考实现（可编译 C 模块与头文件）
 │   ├── game_app.c
 │   ├── player_controller.c
 │   ├── combat_system.c
 │   ├── act_parser.c
 │   └── include/
-├── mdis.py / find_targets.py / extract_vtables.py # 反汇编辅助脚本
+├── tools/ 中的 mdis.py / find_targets.py / extract_vtables.py # 反汇编辅助脚本
 ├── README.md
 ├── DISCLAIMER.md               # 免责声明
 ├── NOTICE.md                   # 分层许可范围说明（必读）

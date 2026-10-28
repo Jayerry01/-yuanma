@@ -1,4 +1,39 @@
-# Meteor.exe — Behavioral Clone Spec (CLONE_SPEC.md)
+# ⚠️ [已降级/归档附录] Meteor.exe — Behavioral Clone Spec (CLONE_SPEC.md)
+
+> [!WARNING]
+> **本文件已于 2026-10-28 正式降级为【历史探索与存疑归档附录】，不再作为权威重构技术规格。**
+> 
+> 本文档记录了早期的多轮探索、假设演进、未锚定推断与临时移植笔记（包含早期对 Unity C# / MeteorRebuild 的设想）。
+> 经 2026-10-28 跨文档单向归口审计（见 `docs/14_CROSSDOC_AUDIT.md` §六），全量 43 个章节已彻底完成分流处置：
+> - 所有经汇编与二进制验证的硬事实，均已按子系统正规收录并超越于 `docs/00`–`docs/18`；
+> - 早期推断失误与已撤回假说已登记于 `docs/14` §二 集中对账台账；
+> - 本文件完整保留历史记录作为存疑追踪索引，严禁反向向 `docs/` 正典倒灌未经验证的推断。
+
+### 权威正典规范导航路由表 (Canonical Docs Routing Table)
+
+| 子系统 / 规范领域 | 权威正典文档 (`docs/`) | 对应覆盖内容与状态 |
+|---|---|---|
+| **资产管线与文件格式** | [`00_INSTALLATION_ASSET_AND_FORMAT_SPEC.md`](file:///D:/MeteorRE/docs/00_INSTALLATION_ASSET_AND_FORMAT_SPEC.md) | 安装目录拓扑、PAK解包、静态资源索引 |
+| **PE结构与内存布局** | [`01_PE_ARCHITECTURE_AND_MEMORY.md`](file:///D:/MeteorRE/docs/01_PE_ARCHITECTURE_AND_MEMORY.md) | 段布局、堆管理器、全局单例表与内存映射 |
+| **角色物理与轻功跳跃** | [`02_PLAYER_CONTROLLER_AND_PHYSICS.md`](file:///D:/MeteorRE/docs/02_PLAYER_CONTROLLER_AND_PHYSICS.md) | 移动状态机、持跳判别(0.11s)、两档初速(282/375)、碰撞解算 |
+| **招式动作与中断解析** | [`03_ACTION_POSE_AND_ACT_PARSER.md`](file:///D:/MeteorRE/docs/03_ACTION_POSE_AND_ACT_PARSER.md) | 258 PoseID、16 取消类型码、KeyMap 连招链、`.act` 文法 |
+| **战斗判定与伤害结算** | [`04_COMBAT_HIT_AND_DAMAGE.md`](file:///D:/MeteorRE/docs/04_COMBAT_HIT_AND_DAMAGE.md) | 攻击盒/受击盒、4 级击退查表、气血/破防、伤害公式 |
+| **骨骼动画与网格格式** | [`05_ANIMATION_AMB_FORMAT.md`](file:///D:/MeteorRE/docs/05_ANIMATION_AMB_FORMAT.md) | `.amb` 关键帧骨骼数据、四元数插值、动画管线 |
+| **场景BSP与空间碰撞** | [`06_LEVEL_BSP_AND_COLLISION.md`](file:///D:/MeteorRE/docs/06_LEVEL_BSP_AND_COLLISION.md) | BSP 空间分割树、射线求交、三角形网格碰撞 |
+| **输入轮询与连招缓冲** | [`07_INPUT_AND_COMBO_BUFFER.md`](file:///D:/MeteorRE/docs/07_INPUT_AND_COMBO_BUFFER.md) | 环形按键队列、搓招模式匹配、乾坤刀 Trie 树状态机 |
+| **AI状态机与寻路导航** | [`08_AI_AND_PATHFINDING.md`](file:///D:/MeteorRE/docs/08_AI_AND_PATHFINDING.md) | 8 大原生行为、路网导航、视线检测、巡逻逻辑 |
+| **视口相机与特效系统** | [`09_CAMERA_AND_EFFECT_SYSTEM.md`](file:///D:/MeteorRE/docs/09_CAMERA_AND_EFFECT_SYSTEM.md) | 追尾/自由机位虚表、防穿墙光线缓冲、`PonEF` 特效加载 |
+| **全二进制覆盖率审计** | [`10_TEXT_COVERAGE_AUDIT.md`](file:///D:/MeteorRE/docs/10_TEXT_COVERAGE_AUDIT.md) | 1.65 MB .text 汇编覆盖审计、0 漏扫账本 |
+| **行为等价性测试台** | [`11_BEHAVIORAL_EQUIVALENCE.md`](file:///D:/MeteorRE/docs/11_BEHAVIORAL_EQUIVALENCE.md) | 原版与重构版等价性测试用例、动态捕捉校准 |
+| **控制命令协议规范** | [`12_COMMAND_PROTOCOL_SPEC.json`](file:///D:/MeteorRE/docs/12_COMMAND_PROTOCOL_SPEC.json) | 51 项命令跳转表(`0x004BBFE8`)、`vtable+0xC` 消息通道 |
+| **脚本引擎与内建函数** | [`13_PSCRIPT_VM.md`](file:///D:/MeteorRE/docs/13_PSCRIPT_VM.md) | AST 递归语法树解释器、14项AI属性、内建函数表 |
+| **跨文档对账与撤回总账**| [`14_CROSSDOC_AUDIT.md`](file:///D:/MeteorRE/docs/14_CROSSDOC_AUDIT.md) | 编号占用、已撤回登记(#1~#13)、待办事项、43章节归口表 |
+| **联机网络与反作弊** | [`15_COMMUNITY_PATCHES_NETWORKING_AND_ANTICHEAT.md`](file:///D:/MeteorRE/docs/15_COMMUNITY_PATCHES_NETWORKING_AND_ANTICHEAT.md) | Winsock API Hook、150处发包、TAP/TUN VLAN、内存防护 |
+| **社区SDK与资产规范** | [`16_COMMUNITY_SDK_AND_ASSET_SPECS.md`](file:///D:/MeteorRE/docs/16_COMMUNITY_SDK_AND_ASSET_SPECS.md) | As 脚本引擎 2.7.7、12 武器 KeySeries、MaxScript 导出规范 |
+| **里程碑与重构路线图** | [`17_MILESTONES_AND_COMPLETION_ROADMAP.md`](file:///D:/MeteorRE/docs/17_MILESTONES_AND_COMPLETION_ROADMAP.md) | 8 大子系统 100% 审计积分卡、Clean-Room 架构蓝图 |
+| **轻功物理与身法机制** | [`18_QINGGONG_PHYSICS_AND_MOVEMENT_EXPLOITS.md`](file:///D:/MeteorRE/docs/18_QINGGONG_PHYSICS_AND_MOVEMENT_EXPLOITS.md) | 50 种轻功身法分级解密、地幻/踏空/凌波微步机制 |
+
+---
 
 > Clean-room reverse-engineering behavior spec for the Meteor (流星蝴蝶剑) PC
 > executable. Target rebuild: **MeteorRebuild** (Unity C#).

@@ -30,6 +30,10 @@
 | `12` | `12_COMMAND_PROTOCOL_SPEC.json` | **json** | 2026-10-28 04:30 |
 | `13` | `13_PSCRIPT_VM.md` | md | 2026-10-28（原误编为 11、12，两次让位） |
 | `14` | `14_CROSSDOC_AUDIT.md`（本文件） | md | 2026-10-28 |
+| `15` | `15_COMMUNITY_PATCHES_NETWORKING_AND_ANTICHEAT.md` | md | 2026-10-28 |
+| `16` | `16_COMMUNITY_SDK_AND_ASSET_SPECS.md` | md | 2026-10-28 |
+| `17` | `17_MILESTONES_AND_COMPLETION_ROADMAP.md` | md | 2026-10-28 |
+| `18` | `18_QINGGONG_PHYSICS_AND_MOVEMENT_EXPLOITS.md` | md | 2026-10-28 |
 
 **规则**（已写入项目 `MEMORY.md`）：
 1. 新建文档前先 `ls docs/` —— **含非 `.md` 文件**。
@@ -59,8 +63,11 @@
 | 8 | `0x0040D040` = `AIController::NavigateToWaypoint` | ❌ **连指令边界都不是** | `docs/08` §五 | 2026-10-28 |
 | 9 | `cmd 0x0F` 元数谜题 | ❌ 撤销（基址错） | 当日记录 | 2026-10-28 |
 | 10 | `docs/18`："大跳 = 持续注入垂直冲量至峰值" | ❌ **与 `docs/02` 字节证据冲突**：实为两档**单发**初速（<0.11s→282.0f `0x4CF573`；≥0.11s→375.0f `0x4CF57F`）。另 `docs/18` §1.2–1.4 的 `CheckCollision`/`m_bWallContact`/`STATE_WALL_RUN`/`m_nJumpCount` 均为社区命名非二进制符号，"FPS<137"解释无锚点存疑 → 已在 `docs/18` 头部加证据分级标注 | `docs/18` §1.1/二 | 2026-10-28 |
+| 11 | `CLONE_SPEC.md` §1.6 将 `0x0056BC60` 定性为“战斗/动画属性键值系统”（Named-attribute data model） | ❌ **实为脚本内建函数 `SetSceneItem`**（`docs/13` §六），负责关卡物件属性绑定 | `docs/13` §六 | 2026-10-28 |
+| 12 | `CLONE_SPEC.md` §1.0 将 `FUN_0045B280` 定性为“Combat core / damage 裁决” | ❌ **实为控制台配置/命令字符串编排器**（`CLONE_SPEC` 后续已自撤，`docs/04` 裁决核心为 `0x004D0AC0`） | `docs/04` / `CLONE_SPEC` §1.19 | 2026-10-28 |
+| 13 | `docs/03` §四 原将 `0x004D1740` 解析的 16 个动作取消代码称为“对应位掩码 (Hex)” | ⚠️ **汇编证实为标量枚举类型码**：`0x004D1740` 中为 `MOV EBP, imm` 覆盖写入标量，无 `OR/AND` 位累加，实为动作类型枚举标量而非位域掩码（`docs/03` 已更正） | `docs/03` §四 | 2026-10-28 |
 
-> **模式总结**：10 条里有 6 条属于同一类错误 —— **把"推断/重写版形态"当成了原版事实**。
+> **模式总结**：13 条里有 8 条属于同一类错误 —— **把"推断/重写版形态"当成了原版事实**。
 > 其中 #6 尤其说明问题：`docs/02` 早就把 180/260 记成速度了，
 > `docs/09` 却另起一套"相机距离"的推断，**同项目内两个文档对同一常量给出两种定性，
 > 且都写了地址**，直到本次对账才发现。
@@ -151,7 +158,7 @@
 | 2 | ~~`dyncap/capture_log.jsonl` 产物缺失~~ | ✅ **已落盘**（2026-10-28，14.7 MB，144,101 事件，动态数据已闭环） | — |
 | 3 | ~~`11_BEHAVIORAL_EQUIVALENCE.md` 内 4 处提到移植端工程名~~ | ✅ **已核，无需改**：该文本身就是"等价测试台"规格，移植端是**被测对象**（行 1/91/114/126/127），不是原版事实的证据来源，性质正当 |
 | 4 | ~~`docs/02` §十一 的 `PoseId`(`+0x5E0`) / 方向缓冲(`+0x2E8`) 等偏移独立复扫~~ | ✅ **已闭合**（2026-10-28）：`tools/verify_community_offsets_5e0_2e8.py` 扫出 `+0x5E0` 命中 9 处（`0x0055BE13` `mov [esi+0x5e0], eax`，指令起点；工具打印的 `0x0055BE15` 为位移字段地址，系统性 +2）、`+0x2E8` 命中 136 处，汇编硬证据闭环 |
-| 5 | `CLONE_SPEC.md`（206 KB）与 `docs/` 内容存在大量平行记载，长期应做一次单向归口 | 低 |
+| 5 | ~~`CLONE_SPEC.md`（206 KB）向 `docs/` 单向归口~~ | ✅ **已完成（2026-10-28）**：43 章节三态处置清单落盘，CLONE_SPEC 降级为归档附录并加挂正典路由表 | — |
 
 ---
 
@@ -162,3 +169,80 @@
 - `docs/13` §四 陈旧 ❓ 修正
 - 本文件 `14_CROSSDOC_AUDIT.md`
 - `MEMORY.md` 编号规则更新
+
+
+---
+
+## 六、CLONE_SPEC.md 全量 43 章节单向归口处置清单与方法论总纲
+
+> 2026-10-28 依据 REAP 证据分级审计规范，对历史探索草案 `CLONE_SPEC.md`（3,044 行，206 KB）实施逐章单向归口审计。
+> **五大审计铁律**：① 带证据才并入 ② 冲突以 docs/ 为准 ③ 无地址条目只进存疑附录 ④ 产物是三态处置清单 ⑤ 降级不删除。
+> **处理总计**：全量 43 章节中，**已由 docs/ 覆盖并超越（废弃） 28 章**，**存疑/移植探索/历史自撤归档 13 章**，**并入正典/反向校准 2 章**。
+
+### A. 全量 43 章节分流处置明细表
+
+| 序号 | 章节原名 (Title in CLONE_SPEC) | 行号范围 | 判定状态 | 归口目标与处置说明 |
+|---|---|---|---|---|
+| 00 | `# Meteor.exe — Behavioral Clone Spec` | L1–L6 | 废弃 / 降级 | 早期草案头部，已加挂正典导航路由 Banner 降级为归档附录 |
+| 01 | `## Rules (from REAP §4 — non-negotiable)` | L7–L12 | 废弃 / 归口 | 方法论规则，已由本项目 REAP 审计规范与本文件覆盖 |
+| 02 | `## Status legend` | L13–L19 | 废弃 | 图例说明，已由各文档正文标记体系取代 |
+| 03 | `## 0. Overview / Engine` | L20–L23 | 废弃 | 空白占位大纲，已由 `docs/00`、`docs/01` 取代 |
+| 04 | `## 1. Combat` | L24 | 废弃 | 空白占位大纲，已由 `docs/04` 取代 |
+| 05 | `### 1.1 Hit detection (判定帧)` | L25 | 废弃 | 空白占位大纲，已由 `docs/04` §一 攻击受击盒判定覆盖 |
+| 06 | `### 1.2 Damage model (真实伤害)` | L26 | 废弃 | 空白占位大纲，已由 `docs/04` §三 伤害计算公式覆盖 |
+| 07 | `### 1.3 Combo / chain system (连招)` | L27 | 废弃 | 空白占位大纲，已由 `docs/03` §五、`docs/07`、`docs/16` 覆盖 |
+| 08 | `### 1.4 Hitstun / knockback / 部位判定` | L28 | 废弃 | 空白占位大纲，已由 `docs/04` §二 4级击退查表覆盖 |
+| 09 | `### 1.5 Movement anchors / 位移` | L29–L30 | 废弃 | 空白占位大纲，已由 `docs/02`、`docs/18` 覆盖 |
+| 10 | `### 1.0 Combat function anchors (static, evidence)` | L31–L69 | 存疑归档 | 早期基于字符串 Grep 的 43 函数粗筛，含多处暂定猜测角色（如误标 452af0 为武器FSM），已由正典全量反编译取代 |
+| 11 | `### 1.6 Named-attribute system (data model)` | L70–L114 | 废弃 / 证伪 | 早期误判 `0x0056BC60` 为战斗属性字典；现已证实为脚本引擎 `SetSceneItem` 内建函数（`docs/13` §六），记撤回 #11 |
+| 12 | `### 1.7 ~~Per-frame action FSM~~ (UI/menu renderer)` | L115–L174 | 存疑归档 | 历史假说证伪记录（证实 `0x00452AF0` 为 UI 渲染器而非武器状态机），作为历史自撤案存疑留存 |
+| 13 | `### 1.9 Main physics integrator — ✅ confirmed` | L175–L227 | 废弃 / 超越 | `FUN_004ceb50` 移动积分器与碰撞解算；`docs/02` §一/§二 提供了更完整的结构体偏移、汇编分析与法线解算 |
+| 14 | `### 1.10 Damage / knockback application — ✅ confirmed` | L228–L253 | 废弃 / 超越 | `0x004D0AC0` 4 级击退（350/400/450/600）；`docs/04` §二 提供了完整指令级反汇编、仰角偏置与判定分支 |
+| 15 | `### 1.11 ~~Keyword / tag parser~~ — 🔄 REVISED` | L254–L380 | 并入 / 校准 | `0x004D1740` 16 项取消类型码；已证实其为标量赋值而非位掩码，已反向校准 `docs/03` §四.1 表格并记登记 #13 |
+| 16 | `### 1.8 Named-record resolver & state getter` | L381–L398 | 废弃 | `FUN_004630b0` 链表查找辅助函数，已由 `docs/13` PScript AST 符号解析器全面超越 |
+| 17 | `## 2. AI (enemy / NPC state machines)` | L399–L401 | 废弃 | 空白大纲，已由 `docs/08`（8大行为）与 `docs/13` §四（行为状态机与.pst属性）超越 |
+| 18 | `## 3. Asset & Level pipeline` | L402–L405 | 废弃 | 空白大纲，已由 `docs/00`、`docs/05`、`docs/06`、`docs/16` 超越 |
+| 19 | `## 4. UI / Menus / Input` | L406–L408 | 废弃 | 空白大纲，已由 `docs/07`、`docs/12` 超越 |
+| 20 | `## 5. Persistence / Save` | L409–L411 | 废弃 | 空白大纲，已由 `docs/00`、`docs/13` 超越 |
+| 21 | `## 6. Audio` | L412–L414 | 废弃 | 空白大纲，已由 `docs/00`、`docs/09` 超越 |
+| 22 | `## 7. Networking` | L415–L417 | 废弃 | 空白大纲，已由 `docs/15`（Winsock Hook、150处发包）、`docs/17` 超越 |
+| 23 | `## 8. Error / edge-case behaviors` | L418–L422 | 废弃 | 空白大纲 |
+| 24 | `### 1.12 Input sampling → movement axes` | L423–L471 | 废弃 / 超越 | `GetAsyncKeyState` 采样与轴解算（`0x004CB270`），已由 `docs/07` §一/§二 完整覆盖 |
+| 25 | `### 1.13 Jump dispatch — ✅ confirmed` | L472–L498 | 废弃 / 超越 | 跳跃模式与初速分支，已由 `docs/02` §二（0.11s/282/375）与 `docs/18` 彻底超越 |
+| 26 | `### 1.14 Wall-contact dynamics — ✅ confirmed` | L499–L524 | 废弃 / 超越 | 墙面接触检测（`0x5AA8F0`/`0x5AA8E8`），已由 `docs/02` 与 `docs/18` 超越 |
+| 27 | `### 1.15 Note on FUN_004d0540 (impulse maths)` | L525–L536 | 废弃 / 超越 | `600.0f` 冲量缩放（`0x5AA934`），已由 `docs/04` §一/§二 超越 |
+| 28 | `### 1.16 The vtable+0xC command pipe` | L537–L666 | 废弃 / 超越 | 控制命令通道解密，已由 `docs/12_COMMAND_PROTOCOL_SPEC.json` 51 项跳转表全面超越 |
+| 29 | `### 1.17 The fifth hop — member_0x2410 resolved` | L667–L855 | 存疑归档 | 中途排查 GameApp 槽 218（`0x00489150`）与取消窗口假说证伪的过程笔记，归档备查 |
+| 30 | `### 1.18 Both consumer candidates opened` | L856–L955 | 存疑归档 | 排除 vtable[133] 假说的探索过程笔记，归档留存 |
+| 31 | `### 1.19 Workspace ledger — two project trees` | L956–L988 | 存疑归档 | 双工程树比对说明，属工程管理笔记，无二进制规格价值 |
+| 32 | `### 1.21 Round 7 groundwork — switch fan-out` | L989–L1077 | 废弃 / 超越 | 方向字符串构建与 switch 分支（`0x004CC42B`–`0x004CC549`），已由 `docs/07` §五 超越 |
+| 33 | `### 1.22 The attack key — found` | L1078–L1331 | 废弃 / 超越 | 按键路由 `FUN_004cb820` 与攻击命令 `0x1D`，已由 `docs/07` 与 `docs/12` 超越 |
+| 34 | `### 1.23 The attack window closes` | L1332–L1761 | 废弃 / 超越 | 攻击窗口计时器 `[A+0xE8]`、`0.11s` 对比与槽 66 派发器，已由 `docs/02` §二 彻底闭合 |
+| 35 | `### 1.24 Round 7 close-out` | L1762–L1997 | 废弃 / 超越 | 澄清 `cmd 0x0F` 与 `cmd 0x03` 分支，已由 `docs/12` 协议表完整覆盖 |
+| 36 | `### 1.25 The selection question closes` | L1998–L2309 | 废弃 / 超越 | 连招选择机制，已由 `docs/03` §五 KeyMap 20条连招链六道交叉验证彻底超越 |
+| 37 | `### 1.26 Project topology, and a correction` | L2310–L2459 | 存疑归档 | 早期反编译比对与 Unity C# 设想笔记，归档备查 |
+| 38 | `### 1.27 Cross-checking the tear-down` | L2460–L2603 | 存疑归档 | 早期两套反编译文件文本交叉比对笔记，归档备查 |
+| 39 | `### 1.28 Android tear-down vs. Windows binary` | L2604–L2693 | 存疑归档 | 安卓移植版与原版 Windows 二进制一致性验证笔记，归档备查 |
+| 40 | `### 1.29 Verification run — the data chain closes` | L2694–L2778 | 存疑归档 | 历史自动化测试执行记录，归档备查 |
+| 41 | `## Methodology note (earned the hard way)` | L2779–L2843 | 并入正典 | 逆向工程方法论 12 条军规，具有全项目指导价值，正式收录入本节 B 款 |
+| 42 | `## Appendix: evidence index` | L2844–L3044 | 废弃 / 归档 | 早期断言积分卡，已由 `docs/17` §一 8大子系统100%全景积分卡与本台账超越 |
+
+---
+
+### B. 逆向工程方法论十二条军规（Methodology Codex，原 CLONE_SPEC §41）
+
+> 以下 12 条原则源于项目早期逆向踩坑经验教训（经三次重大方向推翻与多次假说证伪后凝结而成），现作为全项目通用审计准则正式收录入正典：
+
+1. **`RET n` 参数元数裁决 (Arity Authority)**：被间接调用的目标函数退栈字节数 `RET n` 能无歧义证实入参个数。结合**自尾跳证伪律 (Self-tail-jump refutation)**：若绑定候选函数会导致调用方尾部直接跳回自身死循环且无栈平衡，则在结构上绝不可能成立。
+2. **虚表共存性判定 (Vtable Occupancy)**：指针数组中函数共存证实类成员归属；多张虚表共享同一函数证实其为共享基类或转发路由。
+3. **构造函数中的虚表写入 (vptr writes in ctor)**：MSVC 多重继承下单一对象拥有多张虚表指针，必须结合构造函数写入时机与 `this` 指针调整偏置确认基类。
+4. **浮点与数学常数硬签名 (Float Constants / API points)**：优先依赖 `0x5AA8E8`（0.11s）、`0x5AA934`（600.0f）等 IEEE-754 常数及 QPC/DirectInput 等 Win32 API 锚点，远比符号名可靠。
+5. **字符串只能作为线索，绝不能作为结论 (Strings are leads, never conclusions)**：全镜像扫描字符串极易导致误把控制台/配置命令、调试字串或 UI 渲染器误判为核心游戏玩法。
+6. **汇编列表先于反编译器 (Listing before decompiler)**：反编译器对多重继承与复杂控制流易产生歧义、挂起或推断失真；先读机器指令与操作码结构，再看伪代码。
+7. **虚表槽位离开基址毫无意义 (Slot without base is meaningless)**：MSVC 多重继承会导致子对象与正典基类槽位号严重偏移（如同一函数在 `0x5AA658` 为槽 85，在 `0x5AA6A8` 为槽 65）。引用槽位必须同时标明基虚表地址与偏移字节。
+8. **按操作数形态而非偏移量消歧 (Disambiguate by operand shape)**：同一偏移位移可能是成员变量也可能是虚函数调用位移（如 `[ESI+0xE8]` 既是计时器对象成员指针，又是槽 58 虚表偏移）。必须严格区分 `CALL dword ptr [...]` 与 `MOV`。
+9. **单引用虚表槽位的交叉引用盲区 (Single-slot xref blind spot)**：当目标函数全镜像仅有 1 处虚表指针引用时，常规代码交叉引用搜索显示为 0，必须通过虚函数表槽位反向索引调用源。
+10. **偏移量本身不是唯一标识 (Displacement offset is not an identifier)**：`+0x12c` 等常见偏移在全镜像可出现数十次；务必记录完整 `base + index` 与解析后的绝对 VA。
+    - **10.1 严禁引用截断列表的计数**：引用计数必须取全量扫描的独立统计终值，严禁根据 `head` 或截断日志估算。
+11. **被调用方 `RET n` 快速证伪调用点**：若调用点未 push 参数而被调用方执行 `RET 4`，即可瞬间推翻该候选绑定关系。
+12. **临近性不等于同一性 (Proximity is not identity)**：紧接在跳转指令 `JMP [table]` 后的指令块不一定是 case 0（如 `0x4BB81F` 紧随跳转表后，实际为 case 12）。必须反查跳转表数组索引。

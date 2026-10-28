@@ -119,7 +119,7 @@
 | ~~`block` 动作名的调用点~~ | ✅ **闭合（2026-10-28）** = 玩家动作队列执行器 `0x004C0730`（匹配后调 `0x004C3900` 即 `Player::SetBlock(0/1)`）；场景描述表 `0x005B0214`（阻挡碰撞属性） |
 | ~~AI 属性"取两次"的含义~~ | ✅ **闭合（2026-10-28）** = 源码未暂存指针所致（`if (GetVar("X")) val = GetVar("X")->GetShort()`）。提取值写入 `ActorController` 的 14 项属性结构体（`View +0x430`、`Think +0x432`、`Guard +0x434`、`Dodge +0x436`、`Jump +0x438`、`Look +0x43A`、`Burst +0x43C`、`Aim +0x43E`、`GetItem +0x440`、`Attack1 +0x442`、`Attack2 +0x444`、`Attack3 +0x446`、`Spawn +0x448`、`HP +0x44A`） |
 | ~~`0x5CA1FC` 连招键串池的消费方~~ | ✅ **闭合（2026-10-28）** = `FUN_004ff200`（`0x004FF200`–`0x005005A3`，5,028 字节）。这是 AI 武器招式出招库构建器（`AI_InitWeaponCombos`），为 12 种武器装配 15 种合法出招方向组合序列（`lrfb`、`bbf`、`bff`、`lrb`、`fff` 等共 77 处挂载） |
-| VM 是字节码还是 AST 直解 | ❓ 倾向 AST，无证据 |
+| ~~VM 是字节码还是 AST 直解~~ | ✅ **闭合（2026-10-28）** = 纯 AST 递归语法树遍历解释（Tree-Walk Interpreter），无字节码中间表示。`FunctionNode::Execute`（`0x00570F80`）遍历节点调虚表 Slot 2 `call dword ptr [edx+8]`；无字节码提取/调度循环 |
 | 目标点表的**数值** | ❌ 静态不可得（`.data` 未初始化区） |
 
 ### B. 相机域（`docs/09`）

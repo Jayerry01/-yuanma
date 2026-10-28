@@ -673,7 +673,7 @@ ChangeBehavior(who,"attacktarget",slot[,mode])
 | ~~`Misc("transfer")` 是否真正传送~~ | ✅ **闭合（2026-10-28）**：真实生效。`Misc`（`0x0056C770` 于 `0x0056C8D9`）调用 `0x564FC0` 提取路点 `[esi+0x28]+0x98` 坐标 Vec3，格式化 actor_id 后调用引擎事件钩子 `[0x5D186C]`（实装回调 `0x004D8CF0`）派发 `0x1E` 传送事件，最终调用 `WorldManager::Slot 200 (+0x31C)` 执行角色硬瞬移（见 `tools/verify_pscript_behavior_params_20261028.py`） |
 | ~~属性变更网络出口 `[0x5D1784]`~~ | ✅ **闭合（2026-10-28）** = 实装为 `0x004D95D0`（由 `0x004936BD` 注册）。实参首参 2 为属性更新包，内部调用 `WorldManager::Slot 167 (+0x29C)` 执行服务器全网多播同步 |
 | ~~`0x5CA1FC` 连招键串池的消费方~~ | ✅ **闭合（2026-10-28）** = `FUN_004ff200`（`0x004FF200`–`0x005005A3`，5,028 字节）。这是 AI 武器招式出招库构建器（`AI_InitWeaponCombos`），为 12 种武器装配 15 种合法出招方向组合序列（`lrfb`、`bbf`、`bff`、`lrb`、`fff` 等共 77 处挂载） |
-| VM 是字节码还是 AST 直解 | ❓ 未见字节码分派特征，倾向 AST/树遍历，无证据 |
+| ~~VM 是字节码还是 AST 直解~~ | ✅ **闭合（2026-10-28）** = 纯 AST 递归语法树遍历解释（Tree-Walk Interpreter），无字节码中间表示。`FunctionNode::Execute`（`0x00570F80`）遍历 `m_ppStatements` 数组对每个节点调虚表 Slot 2 `call dword ptr [edx+8]`（`StatementNode::Execute`）；全模块无 `switch(*pc++)` 字节码分派循环（见 `tools/verify_pscript_ast_interpreter_20261028.py`） |
 
 ---
 

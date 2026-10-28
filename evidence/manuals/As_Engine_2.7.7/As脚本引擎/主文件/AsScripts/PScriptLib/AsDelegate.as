@@ -1,1 +1,0 @@
-﻿funcdef void FuncDefAction();

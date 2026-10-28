@@ -1,8 +1,0 @@
-== CMP [reg + off], 0x64 | 0x3c ==
-total sites: 2
-
-== displacements seeing BOTH 0x64 and 0x3c ==
-
-== all displacements by frequency ==
-  +0x1        x1    values=[64]
-  +0x11c      x1    values=[3c]

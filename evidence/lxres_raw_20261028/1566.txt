@@ -1,0 +1,66 @@
+资料详情
+地图 GMC 结构
+作者：漠之北
+结构 说明
+结构
+说明
+# GModel   Geometry File V1.0 注释声明
+# GModel   Geometry File V1.0
+注释声明
+Textures 4 材质贴图数量
+Textures 4
+材质贴图数量
+{ 1.JPG 2.BMP 3.TGA 4. IFL } 材质贴图、支持、 JPG 、 BMP 、 TGA 、 IFL 四种格式
+{
+1.JPG
+2.BMP
+3.TGA
+4. IFL
+}
+材质贴图、支持、 JPG 、 BMP 、 TGA 、 IFL 四种格式
+格式 说明
+格式
+说明
+JPG 有损压缩图片格式，文件小，对清晰度有影响！
+JPG
+有损压缩图片格式，文件小，对清晰度有影响！
+BMP 无损图片格式，文件大，清晰度好！
+BMP
+无损图片格式，文件大，清晰度好！
+TGA 带有 ALPHA 透明通道的贴图！ 查看 ALPHA 制作
+TGA
+带有 ALPHA 透明通道的贴图！ 查看 ALPHA 制作
+IFL 图像文件列表，一行为一帧，动态贴图需要使用此格式！
+IFL
+图像文件列表，一行为一帧，动态贴图需要使用此格式！
+Shaders 4 着色器数量
+Shaders 4
+着色器数量
+shader 0 { Texture 0 NORMAL TwoSide 0 Blend DISABLE 1 0 Opaque 1.000 } 查看 Shaders 详细说明
+shader 0
+{
+Texture 0 NORMAL
+TwoSide 0
+Blend DISABLE 1 0
+Opaque 1.000
+}
+查看 Shaders 详细说明
+SceneObjects 4   DummeyObjects 2 模型的数量
+SceneObjects 4   DummeyObjects 2
+模型的数量
+Vertices 101   Faces 108 模型总点和面的数量， Vertices 顶点、 Faces 面
+Vertices 101   Faces 108
+模型总点和面的数量， Vertices 顶点、 Faces 面
+Object B1 模型名称， v 顶点 n 顶点位置 c 顶点色彩 t 材质 f 面
+Object B1
+模型名称， v 顶点 n 顶点位置 c 顶点色彩 t 材质 f 面
+{ Vertices 26   Faces 12 v -260.000 -260.000 -50.000 n 0.000 0.000   1.571 c 255 255 255 255 t 1.000000 0.000000 ……… v -260.000 260.000 -50.000 n 1.000 0.000   0.000 c 255 255 255 255 t 0.000000 0.000000 f 0 0 3 2   0.000 0.000 1.000 ……… f 0 24 25 6 1.000 0.000 0.000 }
+{
+Vertices 26   Faces 12
+v -260.000 -260.000 -50.000 n 0.000 0.000   1.571 c 255 255 255 255 t 1.000000 0.000000
+………
+v -260.000 260.000 -50.000 n 1.000 0.000   0.000 c 255 255 255 255 t 0.000000 0.000000
+f 0 0 3 2   0.000 0.000 1.000
+………
+f 0 24 25 6 1.000 0.000 0.000
+}

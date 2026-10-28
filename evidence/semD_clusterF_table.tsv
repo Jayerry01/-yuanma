@@ -1,0 +1,137 @@
+Addr	SemanticName	ConfirmedFact	Inference	OpenUnknown
+0x00501780	Debug_Label_WorldToScreen	调用 0x477b90 / 0x476f00 摄像机变换，0x504f50 绘制 3D 调试文字	调试信息角色头顶世界坐标转屏幕投影与文本绘制	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00501F70	Debug_Label_WorldToScreen	调用 0x477b90 / 0x476f00 摄像机变换，0x504f50 绘制 3D 调试文字	调试信息角色头顶世界坐标转屏幕投影与文本绘制	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00502CD0	CRT_Memory_Subsystem_Helper	callees=[2] ins=42 被调 unique=3: 00502D70 004C4B00=FUN_004c pseudo=: void __thiscall FUN_00502cd0(int param	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00505160	Audio_DirectSound3D_Init	读取串池 s_DirectSound3D_005ca5ac ('DirectSound3D'), 调用 0x525820/0x5259e0 初始化	DirectSound3D 空间音频底层设备枚举与驱动初始化	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00505430	Audio_SoundBuffer_Array_Mgr	(DAT_0066758c - DAT_00667588) / 0x14 (20B = sizeof SoundBufferEntry), 0x528030 销毁	声音缓冲区全局描述符动态数组管理与越界销毁	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x005054E0	Audio_Channel_Slot_Alloc	iVar1 * 0x40 + DAT_0066756c (64B = sizeof SoundChannelSlot), >> 6 查找空闲声道槽	音频混音 64 字节硬件播放声道槽动态分配与抢占	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x005055D0	Audio_Channel_Slot_Alloc	iVar1 * 0x40 + DAT_0066756c (64B = sizeof SoundChannelSlot), >> 6 查找空闲声道槽	音频混音 64 字节硬件播放声道槽动态分配与抢占	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x005056D0	Audio_Channel_Slot_Alloc	iVar1 * 0x40 + DAT_0066756c (64B = sizeof SoundChannelSlot), >> 6 查找空闲声道槽	音频混音 64 字节硬件播放声道槽动态分配与抢占	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00506400	Audio_Tick_Timer_Update	DAT_00667584 < uVar1 - DAT_0066757c 步进判定，调用 0x5063b0 刷新混音	音频子系统高精度时钟帧驱动与缓冲区流式填塞	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00506ED0	Audio_Buffer_Deque_Ops	0x5092c0 (memcpy) 与 0x403490 (vector 扩容), 操作 20 字节音频事件描述符	音频触发事件队列出入队与扩容	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00506FB0	Audio_Buffer_Deque_Ops	0x5092c0 (memcpy) 与 0x403490 (vector 扩容), 操作 20 字节音频事件描述符	音频触发事件队列出入队与扩容	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00507B94	CRT_IO_File_Stream_Ops	调用 0x508593 / 0x507d0b 文件流读写锁存	MSVCRT 文件流低级 I/O 缓冲区刷新与锁状态管理	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x005080DB	CRT_Memory_Subsystem_Helper	callees=[2] ins=90 被调 unique=5: 00508015 x2 00508020 x2 00 pseudo=: { | if (*(int *)((int)param_1 + *(int 	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x005081E1	CRT_Memory_Subsystem_Helper	callees=[2] ins=45 被调 unique=6: 00508015 00508919 0050BE69 pseudo=: void __fastcall FUN_005081e1(int *para	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x005084E5	CRT_Memory_Subsystem_Helper	callees=[2] ins=67 被调 unique=1: 0050C1E0=FUN_0050c1e0 pseudo=: { | local_8 = 0; | if (param_1[2] == 0	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00508682	CRT_Memory_Subsystem_Helper	callees=[2] ins=48 被调 unique=3: 00508015 x2 00508020 00508 pseudo=: { | if (*(int *)((int)param_1 + *(int 	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x005086F6	CRT_Memory_Subsystem_Helper	callees=[2] ins=61 被调 unique=2: 00508F6A x2 00508020 x2 pseudo=: void __fastcall FUN_005086f6(int *para	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x005087A6	CRT_Memory_Subsystem_Helper	callees=[2] ins=52 被调 unique=2: 00508015 x2 00508020 x2 pseudo=: { | if (*(int *)((int)param_1 + *(int 	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050893E	CRT_Memory_Subsystem_Helper	callees=[2] ins=37 被调 unique=4: 0050C81B x2 0050C7EF 00509 pseudo=: { | FUN_0050c7ef(); | uVar1 = FUN_0050	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00508C86	CRT_Memory_Subsystem_Helper	callees=[2] ins=57 被调 unique=1: 0050EF73 pseudo=: FUN_00508c86(undefined4 *param_1,undef	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00508D3C	CRT_Memory_Subsystem_Helper	callees=[2] ins=44 被调 unique=2: 0050E6B0 00508B88 pseudo=: { | if ((*(uint *)(param_1 + 4) & 0x66	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00508DB1	CRT_Memory_Subsystem_Helper	callees=[2] ins=51 被调 unique=1: 0050F0DB x2 pseudo=: { | uVar5 = *(uint *)(param_1 + 0xc); 	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00508EBE	CRT_Memory_Subsystem_Helper	callees=[2] ins=33 被调 unique=1: 00508F52 pseudo=:	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050902C	CRT_Memory_Subsystem_Helper	callees=[2] ins=66 被调 unique=5: 00508F99 x2 0050DD18 0050C pseudo=: { | iVar2 = 0; | iVar4 = 0; | FUN_0050	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x005090D0	CRT_Memory_Subsystem_Helper	callees=[2] ins=59 被调 unique=1: 0050A85C x2 pseudo=: { | while( true ) { | if (DAT_005ca8ec	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00509633	CRT_Memory_Subsystem_Helper	callees=[2] ins=81 被调 unique=6: 0050DD18 x2 0050DD79 x2 00 pseudo=: void FUN_00509633(uint param_1) | { | 	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050982E	CRT_Memory_Subsystem_Helper	callees=[2] ins=81 被调 unique=12: 0050995B x2 0050CA7E 0050 pseudo=:	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00509D2D	CRT_Memory_Subsystem_Helper	callees=[2] ins=51 被调 unique=3: 00510285 0051029C 00510227 pseudo=: float10 FUN_00509d2d(int param_1,uint 	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00509FD1	CRT_Memory_Subsystem_Helper	callees=[2] ins=106 被调 unique=4: 0050C1E0=FUN_0050c1e0 005 pseudo=: { | piVar1 = param_4; | uVar5 = param_	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050A147	CRT_Memory_Subsystem_Helper	callees=[2] ins=92 被调 unique=3: 0050C1E0=FUN_0050c1e0 0050 pseudo=: { | piVar1 = param_4; | uVar5 = param_	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050A22F	CRT_Memory_Subsystem_Helper	callees=[2] ins=78 被调 unique=1: 0050EF73 pseudo=: { | iVar2 = FUN_0050ef73(); | pbVar4 =	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050A5F0	CRT_Memory_Subsystem_Helper	callees=[2] ins=70 被调 unique=0: pseudo=:	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050A722	CRT_Memory_Subsystem_Helper	callees=[2] ins=44 被调 unique=3: 0050DD18 0050A791 0050DD79 pseudo=: { | bool bVar1; | if (DAT_00667844 == 	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050A791	CRT_Memory_Subsystem_Helper	callees=[2] ins=78 被调 unique=2: 0050A85C 005108F6=FUN_0051 pseudo=: { | uVar1 = param_1; | if (DAT_0066784	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050A85C	CRT_Memory_Subsystem_Helper	callees=[2] ins=46 被调 unique=1: 00510B45=FUN_00510b45 pseudo=: { | if (param_2 + 1U < 0x101) { | para	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050ABA0	CRT_Memory_Subsystem_Helper	callees=[2] ins=68 被调 unique=0: pseudo=: { | cVar3 = *param_2; | if (cVar3 == '	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050AC61	CRT_Memory_Subsystem_Helper	callees=[2] ins=36 被调 unique=1: 0050ACCB pseudo=: void FUN_0050ac61(undefined4 param_1,u	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050ACE3	CRT_Memory_Subsystem_Helper	callees=[2] ins=34 被调 unique=1: 0050AD4B pseudo=: void FUN_0050ace3(undefined4 param_1,u	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050B109	CRT_Memory_Subsystem_Helper	callees=[2] ins=74 被调 unique=1: 005112EA pseudo=: void FUN_0050b109(char *param_1,char *	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050B301	CRT_Memory_Subsystem_Helper	callees=[2] ins=49 被调 unique=4: 0050B4C3 0050EF60 005089FD pseudo=: HANDLE FUN_0050b301(undefined4 param_1	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050B378	CRT_Memory_Subsystem_Helper	callees=[2] ins=40 被调 unique=2: 00509936 0050B40B=FUN_0050 pseudo=: { | BOOL BVar1; | void *local_14; | lo	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050B44A	CRT_Memory_Subsystem_Helper	callees=[2] ins=55 被调 unique=0: pseudo=: { | _SYSTEMTIME local_14; | GetLocalTi	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050B4C3	CRT_Memory_Subsystem_Helper	callees=[2] ins=92 被调 unique=7: 0050DD18 x2 0050CE77=FUN_0 pseudo=: LPVOID FUN_0050b4c3(int param_1,int pa	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050B724	CRT_Memory_Subsystem_Helper	callees=[2] ins=52 被调 unique=3: 00511575 x4 005114F6 00510 pseudo=: { | HANDLE hObject; | BOOL BVar3; | DW	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050B7A7	CRT_Memory_Subsystem_Helper	callees=[2] ins=34 被调 unique=5: 005115B7 0050B80C=FUN_0050 pseudo=: { | if ((param_1 < DAT_007f2ec0) && | 	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050B997	CRT_Memory_Subsystem_Helper	callees=[2] ins=34 被调 unique=5: 005115B7 0050B9FC=FUN_0050 pseudo=: { | if ((param_1 < DAT_007f2ec0) && | 	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050BBD5	CRT_Memory_Subsystem_Helper	callees=[2] ins=34 被调 unique=5: 005115B7 0050BC3A 00511616 pseudo=: { | if ((param_1 < DAT_007f2ec0) && | 	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050BC3A	CRT_Memory_Subsystem_Helper	callees=[2] ins=41 被调 unique=3: 00511575 00510865 005107F2 pseudo=: DWORD FUN_0050bc3a(uint param_1,LONG p	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050C680	CRT_Memory_Subsystem_Helper	callees=[2] ins=44 被调 unique=0: pseudo=:	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050C74A	CRT_Memory_Subsystem_Helper	callees=[2] ins=51 被调 unique=3: 0050C801 x2 0050C7EF 0050C pseudo=: void FUN_0050c74a(UINT param_1,int par	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050C81B	CRT_Memory_Subsystem_Helper	callees=[2] ins=72 被调 unique=6: 0050DD18 x2 0050CB23 0050C pseudo=: SIZE_T FUN_0050c81b(LPCVOID param_1) |	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050D180	CRT_Memory_Subsystem_Helper	callees=[2] ins=53 被调 unique=0: pseudo=: { | LPVOID pvVar2; | if (DAT_007f1d60 	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050D7BC	CRT_Memory_Subsystem_Helper	callees=[2] ins=66 被调 unique=1: 0050D766 pseudo=: void FUN_0050d7bc(int param_1) | { | B	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050DB22	CRT_Memory_Subsystem_Helper	callees=[2] ins=125 被调 unique=0: pseudo=: { | pbVar2 = (byte *)*param_1; | pbVar	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050DC46	CRT_Memory_Subsystem_Helper	callees=[2] ins=69 被调 unique=0: pseudo=: { | uVar6 = (uint)*param_3; | piVar2 =	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050DD8E	CRT_Memory_Subsystem_Helper	callees=[2] ins=106 被调 unique=4: 0050B7A7 x2 0051260F 0051 pseudo=: { | piVar4 = param_2; | uVar1 = param_	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050E6B0	CRT_Memory_Subsystem_Helper	callees=[2] ins=61 被调 unique=3: 0050F0DB 0050EA05 0050E74B pseudo=: FUN_0050e6b0(int *param_1,undefined4 p	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050E8FE	CRT_Memory_Subsystem_Helper	callees=[2] ins=68 被调 unique=4: 0050EF73 00508C86 00508DB1 pseudo=: void FUN_0050e8fe(undefined4 param_1,u	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050EA05	CRT_Memory_Subsystem_Helper	callees=[2] ins=45 被调 unique=3: 0050F0DB 0050EEC0 0050ADC1 pseudo=: void FUN_0050ea05(int param_1,undefine	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050EB1E	CRT_Memory_Subsystem_Helper	callees=[2] ins=52 被调 unique=3: 0050EF73 x4 00508C0D 0050E pseudo=: FUN_0050eb1e(undefined4 param_1,undefi	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050EF73	CRT_Memory_Subsystem_Helper	callees=[2] ins=38 被调 unique=3: 0050B4C3 0050EF60 00509936 pseudo=: DWORD * FUN_0050ef73(void) | { | DWORD	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050EFDA	CRT_Memory_Subsystem_Helper	callees=[2] ins=62 被调 unique=1: 005089FD=FUN_005089fd pseudo=: void FUN_0050efda(LPVOID param_1) | { 	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050F420	CRT_Memory_Subsystem_Helper	callees=[2] ins=73 被调 unique=2: 0050F5AB x3 00511700 pseudo=: { | iVar1 = param_3[1]; | if ((param_4	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050F4C7	CRT_Memory_Subsystem_Helper	callees=[2] ins=66 被调 unique=4: 00512D2A 00512CB3 0050F420 pseudo=: void FUN_0050f4c7(undefined8 *param_1,	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050F5D0	CRT_Memory_Subsystem_Helper	callees=[2] ins=52 被调 unique=5: 00510865 x2 005115B7 00511 pseudo=: { | HANDLE hFile; | BOOL BVar1; | DWOR	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050F720	CRT_Memory_Subsystem_Helper	callees=[2] ins=84 被调 unique=0: pseudo=: { | puVar3 = param_1; | do { | if (((u	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050F800	CRT_Memory_Subsystem_Helper	callees=[2] ins=54 被调 unique=0: pseudo=:	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050FA6F	CRT_Memory_Subsystem_Helper	callees=[2] ins=71 被调 unique=6: 0050C680 x2 005095F5=_mall pseudo=: void FUN_0050fa6f(void) | { | size_t s	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050FB28	CRT_Memory_Subsystem_Helper	callees=[2] ins=62 被调 unique=4: 0050FBC1=FUN_0050fbc1 0051 pseudo=: void FUN_0050fb28(void) | { | void *pv	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x005100A7	CRT_Memory_Subsystem_Helper	callees=[2] ins=45 被调 unique=0: pseudo=:	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00510359	CRT_Memory_Subsystem_Helper	callees=[2] ins=57 被调 unique=2: 00510227 00510210=FUN_0051 pseudo=: void __fastcall FUN_00510359(undefined	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00510427	CRT_Malloc_Wrapper	调用 0x5095f5 (_malloc), 属于 n=5 _malloc 画像组	MSVCRT 堆内存分配封装	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0051064E	CRT_Memory_Subsystem_Helper	callees=[2] ins=73 被调 unique=5: 0050DD18 0050C600 0050C652 pseudo=: { | void *pvVar2; | puVar4 = (undefine	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x005107F2	CRT_Memory_Subsystem_Helper	callees=[2] ins=37 被调 unique=2: 00510865 x4 0051086E pseudo=: void FUN_005107f2(uint param_1) | { | 	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00510C90	CRT_Memory_Subsystem_Helper	callees=[2] ins=43 被调 unique=0: pseudo=:	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00510D00	CRT_Memory_Subsystem_Helper	callees=[2] ins=44 被调 unique=0: pseudo=:	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00511250	CRT_Memory_Subsystem_Helper	callees=[2] ins=69 被调 unique=3: 00509730=_strncpy 0050DD18 pseudo=: { | if (DAT_007f1b3c == 0) { | param_1	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x005112EA	CRT_Memory_Subsystem_Helper	callees=[2] ins=41 被调 unique=2: 0050DD79 x2 0050DD18 pseudo=: { | if (param_1 < param_2) { | if (DAT	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00511357	CRT_Memory_Subsystem_Helper	callees=[2] ins=103 被调 unique=4: 0050DD18 x2 0050DD79 x2 0 pseudo=: { | iVar4 = -1; | FUN_0050dd18(0x12); 	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0051147A	CRT_Memory_Subsystem_Helper	callees=[2] ins=47 被调 unique=2: 00510865 0051086E pseudo=: { | DWORD nStdHandle; | if (param_1 < 	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x005114F6	CRT_Memory_Subsystem_Helper	callees=[2] ins=48 被调 unique=2: 00510865 0051086E pseudo=: { | DWORD nStdHandle; | if (param_1 < 	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00511638	CRT_Memory_Subsystem_Helper	callees=[2] ins=65 被调 unique=2: 0051353A 005137EF pseudo=: ) | { | uVar2 = param_1 - 0x76c; | if 	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00512209	CRT_Memory_Subsystem_Helper	callees=[2] ins=103 被调 unique=8: 0050BC3A x4 0050C177 x2 0 pseudo=: { | HANDLE hFile; | BOOL BVar4; | DWOR	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00512691	CRT_Memory_Subsystem_Helper	callees=[2] ins=38 被调 unique=1: 00510865 pseudo=: { | LPSTR lpMultiByteStr; | lpMultiByt	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00512966	CRT_Memory_Subsystem_Helper	callees=[2] ins=71 被调 unique=2: 005128C7 00512910 pseudo=: { | local_8 = 0; | puVar1 = (uint *)(p	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00512A34	CRT_Memory_Subsystem_Helper	callees=[2] ins=64 被调 unique=0: pseudo=: void FUN_00512a34(uint *param_1,uint p	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00512CB3	CRT_Memcpy_Memmove	纯内存搬运汇编优化内联，rep movsd / movsb	C 运行时快速内存拷贝与对齐搬运	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00512D86	CRT_Memory_Subsystem_Helper	callees=[2] ins=70 被调 unique=0: pseudo=: void FUN_00512d86(uint *param_1,uint *	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00512E87	CRT_Memory_Subsystem_Helper	callees=[2] ins=50 被调 unique=0: pseudo=: { | HMODULE hModule; | iVar1 = 0; | if	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00512F10	CRT_Memory_Subsystem_Helper	callees=[2] ins=94 被调 unique=5: 0051478A=FUN_0051478a 0051 pseudo=: void FUN_00512f10(int param_1,int *par	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00513B59	CRT_Memory_Subsystem_Helper	callees=[2] ins=75 被调 unique=1: 00510865 pseudo=: { | if ((param_2 != (byte *)0x0) && (p	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00513C4F	CRT_Memory_Subsystem_Helper	callees=[2] ins=48 被调 unique=1: 005125CB pseudo=: { | if ((param_1 != 0xffffffff) && | (	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00513CBD	CRT_Memory_Subsystem_Helper	callees=[2] ins=44 被调 unique=3: 0050DD18 00513D2C=FUN_0051 pseudo=: { | bool bVar1; | if (DAT_00667844 == 	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00514091	CRT_Memory_Subsystem_Helper	callees=[2] ins=76 被调 unique=2: 00514036 x4 00513FD8 x2 pseudo=: void FUN_00514091(char *param_1,int pa	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0051443F	CRT_Memory_Subsystem_Helper	callees=[2] ins=60 被调 unique=6: 0051478A=FUN_0051478a 0051 pseudo=: float10 FUN_0051443f(undefined4 param_	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x005149A1	CRT_Memory_Subsystem_Helper	callees=[2] ins=49 被调 unique=4: 00514AC3 x2 00514A29 x2 00 pseudo=: float10 FUN_005149a1(undefined4 param_	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00514D5C	CRT_Memory_Subsystem_Helper	callees=[2] ins=52 被调 unique=1: 00514B3C=FUN_00514b3c pseudo=: void FUN_00514d5c(undefined2 *param_1,	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00514DE0	CRT_Memory_Subsystem_Helper	callees=[2] ins=103 被调 unique=3: 0050A791 x2 0050DD18 0050 pseudo=: { | ushort uVar4; | bool bVar8; | iVar	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00514F02	CRT_Memory_Subsystem_Helper	callees=[2] ins=51 被调 unique=3: 0050C680 x2 00515102 00515 pseudo=: { | size_t _MaxCount; | size_t sVar2; 	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00515002	CRT_Memory_Subsystem_Helper	callees=[2] ins=72 被调 unique=1: 00514F7F x2 pseudo=: float10 FUN_00515002(uint param_1,uint	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00515102	CRT_Memory_Subsystem_Helper	callees=[2] ins=58 被调 unique=2: 005095F5=_malloc 005153ED= pseudo=: { | LPCWSTR lpWideCharStr; | size_t _S	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x005155CC	CRT_Malloc_Wrapper	调用 0x5095f5 (_malloc), 属于 n=5 _malloc 画像组	MSVCRT 堆内存分配封装	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00515633	CRT_Memory_Subsystem_Helper	callees=[2] ins=62 被调 unique=3: 0050DD79 x3 00510D90=FUN_0 pseudo=: { | if (DAT_007f1b3c == 0) { | param_1	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0051576A	CRT_Memory_Subsystem_Helper	callees=[2] ins=59 被调 unique=0: pseudo=: void FUN_0051576a(float *param_1,float	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00515822	CRT_Memory_Subsystem_Helper	callees=[2] ins=69 被调 unique=0: pseudo=: void FUN_00515822(float *param_1,float	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x005159A7	CRT_Memory_Subsystem_Helper	callees=[2] ins=71 被调 unique=0: pseudo=: void FUN_005159a7(float *param_1,float	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00515A7F	CRT_Memory_Subsystem_Helper	callees=[2] ins=82 被调 unique=0: pseudo=: void FUN_00515a7f(float *param_1,float	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00515E50	CRT_Memory_Subsystem_Helper	callees=[2] ins=86 被调 unique=0: pseudo=: void FUN_00515e50(float *param_1,float	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00515F4B	CRT_Memory_Subsystem_Helper	callees=[2] ins=95 被调 unique=0: pseudo=: void FUN_00515f4b(float *param_1,float	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0051606D	CRT_Memory_Subsystem_Helper	callees=[2] ins=46 被调 unique=0: pseudo=: void FUN_0051606d(float *param_1,float	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00516C43	CRT_Memory_Subsystem_Helper	callees=[2] ins=48 被调 unique=0: pseudo=: void FUN_00516c43(undefined4 *param_1,	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00516CD9	CRT_Memory_Subsystem_Helper	callees=[2] ins=49 被调 unique=0: pseudo=: void FUN_00516cd9(float *param_1,float	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00516D70	CRT_Memory_Subsystem_Helper	callees=[2] ins=49 被调 unique=0: pseudo=: void FUN_00516d70(float *param_1,float	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00516E0C	CRT_Memory_Subsystem_Helper	callees=[2] ins=106 被调 unique=1: 00515977 pseudo=: void FUN_00516e0c(float *param_1,float	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00517069	CRT_Memory_Subsystem_Helper	callees=[2] ins=89 被调 unique=2: 00516274 x2 00516F1B pseudo=: FUN_00517069(undefined4 *param_1,undef	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0051714F	CRT_Memory_Subsystem_Helper	callees=[2] ins=54 被调 unique=0: pseudo=: void FUN_0051714f(float *param_1,float	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00517A9A	CRT_Memory_Subsystem_Helper	callees=[2] ins=58 被调 unique=2: 005178F0 x3 00515706 pseudo=: FUN_00517a9a(undefined4 *param_1,undef	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00517E2B	CRT_Memory_Subsystem_Helper	callees=[2] ins=57 被调 unique=1: 00515706 pseudo=: void __thiscall FUN_00517e2b(undefined	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00517F23	CRT_Memory_Subsystem_Helper	callees=[2] ins=52 被调 unique=1: 00515706 pseudo=: void FUN_00517f23(float *param_1,float	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00517FDF	CRT_Memory_Subsystem_Helper	callees=[2] ins=68 被调 unique=1: 00515706 pseudo=: void FUN_00517fdf(float *param_1,float	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0051807F	CRT_Memory_Subsystem_Helper	callees=[2] ins=76 被调 unique=1: 00515706 pseudo=: void FUN_0051807f(float *param_1,float	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00518817	CRT_Memory_Subsystem_Helper	callees=[2] ins=85 被调 unique=1: 00517B32 pseudo=: void FUN_00518817(float *param_1,float	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x005188F1	CRT_Memory_Subsystem_Helper	callees=[2] ins=69 被调 unique=1: 00517B32 pseudo=: void FUN_005188f1(float *param_1,undef	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00518EC3	CRT_Memory_Subsystem_Helper	callees=[2] ins=65 被调 unique=2: 00518E1E x2 00518DE6 pseudo=: { | BOOL BVar1; | _OSVERSIONINFOA *p_V	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00518F77	CRT_Memory_Subsystem_Helper	callees=[2] ins=72 被调 unique=6: 00518EC3 x3 005199D7 00518 pseudo=: { | if (param_1 == 0) { | DAT_005cda68	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00519060	CRT_Memory_Subsystem_Helper	callees=[2] ins=35 被调 unique=0: pseudo=: void FUN_00519060(undefined4 *param_1)	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00519170	CRT_Memory_Subsystem_Helper	callees=[2] ins=36 被调 unique=0: pseudo=: void FUN_00519170(undefined4 *param_1)	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0051979C	CRT_Memory_Subsystem_Helper	callees=[2] ins=73 被调 unique=0: pseudo=: { | float10 fVar5; | fVar5 = (float10)	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00519866	CRT_Memory_Subsystem_Helper	callees=[2] ins=89 被调 unique=0: pseudo=: void FUN_00519866(float *param_1,float	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00519949	CRT_Memory_Subsystem_Helper	callees=[2] ins=60 被调 unique=0: pseudo=: void FUN_00519949(float *param_1,float	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0051BDE6	CRT_Memory_Subsystem_Helper	callees=[2] ins=52 被调 unique=1: 00522A80 pseudo=: void FUN_0051bde6(undefined8 *param_1,	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0051C38F	CRT_Memory_Subsystem_Helper	callees=[2] ins=31 被调 unique=2: 005210E2 00523060=FUN_0052 pseudo=: void FUN_0051c38f(undefined8 *param_1,	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0051C532	CRT_Memory_Subsystem_Helper	callees=[2] ins=42 被调 unique=1: 0051C3FB=FUN_0051c3fb pseudo=: FUN_0051c532(undefined4 param_1,undefi	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0051C5BF	CRT_Memory_Subsystem_Helper	callees=[2] ins=37 被调 unique=1: 0051C3FB=FUN_0051c3fb pseudo=: void FUN_0051c5bf(undefined4 param_1,u	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0051C6B5	CRT_Memory_Subsystem_Helper	callees=[2] ins=44 被调 unique=2: 00522A80 00523180=FUN_0052 pseudo=: void FUN_0051c6b5(undefined8 *param_1,	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0051F373	CRT_Memory_Subsystem_Helper	callees=[2] ins=80 被调 unique=2: 005210E2 00523060=FUN_0052 pseudo=: void FUN_0051f373(undefined8 *param_1,	C 运行时与内存管理底层辅助	需结合 MSVCRT 6.0 源码符号对齐内部静态变量

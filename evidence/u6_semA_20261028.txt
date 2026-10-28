@@ -1,0 +1,229 @@
+# U6 批次A 语义台账 — 179 洞语义定性 (2026-10-28)
+
+## 口径与证据链
+
+- 对象: `evidence/u6_holes_v14_20261028.csv` 中 kind ∈ {DATA_UNDECODED, PARTIAL_CODE, ORPHAN_REACHABLE, ORPHAN_UNREFERENCED} 的全部 179 洞, 共 **11,649 B**
+  - DATA_UNDECODED 14 洞 / 6,488 B; PARTIAL_CODE 17 洞 / 461 B; ORPHAN_REACHABLE 57 洞 / 4,140 B; ORPHAN_UNREFERENCED 91 洞 / 560 B
+- 逐洞转储: `evidence/semA_179_dump_20261028.txt` (4,245 行; hexdump+ASCII / capstone 线性解码 / 三通道引用 / 引用点±12B 上下文)
+- 验证脚本与产物 (全部打印判定依据):
+  - `tools/semA_verify_20261028.py` → `evidence/semA_verify_20261028.txt` (0x5241D2 表步长 / dispatcher 父函数归属 / 0x508BD7 本体)
+  - `tools/semA_verify2_20261028.py` → `evidence/semA_verify2_20261028.txt` (DIOBJECTDATAFORMAT 字段统计 / DIDATAFORMAT 头定位 / GUID 窗口全景)
+  - `tools/semA_verify3_20261028.py` → `evidence/semA_verify3_20261028.txt` (91 洞逐洞字节模式分类)
+  - `53 8b dc` 上下文解码与 DirectInput 调用点钉取: 本轮会话内联验证 (2026-10-28)
+- 函数边界: `D:\MeteorProjects\_private\ghidra_scripts\fresh_functions_v14.json` (11,140 函数, 只读)
+
+## 引用通道修正 (对 v14 refs 列的口径声明)
+
+- C3 (4LE 字节模式 == 洞内地址) 存在系统性误报: `E8 rel32` 调用指令的低 3 字节、`mov [esp+X],imm32` 的立即数都会被读成 LE dword。
+  - 实例: ref@0x47C84F "→0x53CCE8" 实为 `call 0x481C20` (E8 CC 53 00; 0x47C854+0x53CC=0x481C20); 洞 0x4C0000 的引用实为 `mov dword ptr [esp+0x100],0x4c`。
+- 本台账仅采信: C1 (E8/E9 rel32 计算目标落洞内) / C2 (EB/Jcc rel8 计算目标落洞内) / 经指令上下文核实的 C3 (jmp [reg*4+表址] 的表基址、push/mov imm)。
+- **洞地址尾字节为 E8/E9/4C/00/33 的洞, v14 refs 计数一律不可信** (本台账已逐洞重算)。
+- ptr_analysis 从未对齐洞起点读 dword, PTR 行 text=0 不作数; 指针判定以 hexdump 字节为准。
+
+## 三桶图例
+
+【事实】字节/引用可复算;【推断】结构类比(注依据);【未知】未决。
+
+---
+
+## 一. 跳转表家族 — 26 洞 (9×DATA_UNDECODED + 17×PARTIAL_CODE)
+
+通用判据【事实】: 表区为连续 4LE 指向同函数内代码地址; dispatcher 形如 `cmp reg,N; ja 缺省; jmp [reg*4+表址]` 或 `mov reg,[LUT+idx]; jmp [reg*4+表址]`; 父函数以 fresh_functions_v14.json 复算 (verify#2 表)。
+
+| 洞 VA | 表址/条数 | LUT | dispatcher | 父函数 (n) | 备注 |
+|---|---|---|---|---|---|
+| 0x411C7D | 0x411C80(7) + 0x411CA8(6) + 0x411CC0(7) | 0x411C98 | 0x411236 / 0x41134A / 0x4114E0 | 0x411190 (2797) | 一父三 switch |
+| 0x42CF29 | 0x42CF2C(8) | — | 0x42BEA4 | 0x42BE10 (4377) | |
+| 0x47E2B9 | 0x47E2BC(8) + 0x47E2CC(3) | — | 0x47E23D / 0x47E27E | 0x47E1F0 (201) | 一父两表 |
+| 0x40BAAB | 0x40BAAC(8) | — | 0x40B501 | 0x40B370 (1851) | case0 `push 0x10; call 0x5095F5` |
+| 0x509399 | 0x50939C(8, 目标降序) | — | 0x50931E | 0x5092C0 (523) | CRT 区 |
+| 0x470467 | 0x470468(5) | — | 0x470270 | 0x470260 (519) | 目标均 call 0x429DE0 |
+| 0x4CB249 | 0x4CB24C(4) | — | 0x4CB185 | 0x4CB150 (249) | case `mov [esi+0x78],1; call 0x487830` |
+| 0x4DCEFB | 0x4DCEFC(4) | — | 0x4DCE6F | 0x4DCE50 (171) | case0 `call 0x50A8DE; fild` |
+| 0x4A781D | 0x4A7820(4) | — | 0x4A7774 | 0x4A7760 (189) | |
+| 0x477BFF | 0x477C00(4) | — | 0x477B99 | 0x477B90 (111) | 拷贝/换序四胞胎之一 |
+| 0x477C7F | 0x477C80(4) | — | 0x477C19 | 0x477C10 (111) | 同上 |
+| 0x477CFF | 0x477D00(4) | — | 0x477C97 | 0x477C90 (111) | 同上 |
+| 0x477D9F | 0x477DA0(4) | — | 0x477D37 | 0x477D30 (111) | 同上 |
+| 0x48454F | 0x484550(4) | — | 0x4844F0 | 0x4844B0 (159) | case0 `push 0x10; mov byte [0x665904],0` |
+| 0x509323 | 0x509324(3) | — | 0x509317 | 0x5092C0 (523) | |
+| 0x5094AB | 0x5094AC(3) | — | (0x5094A5 洞外) | 前邻 0x509418 (7B) | CRT thunk 簇 |
+| 0x50C243 | 0x50C244(3) | — | 0x50C23D | 0x50C1E0 (523) | |
+| 0x48E71F | 0x48E720(84, case 0..0x52) | — | 0x48B6DF | 0x48B650 (11117) | 脚本解释器 switch (见 §三.1) |
+| 0x53CC25 | 0x53CC28(16) | 0x53CC68 (0x0F 偏重) | 0x53CA86 | 0x53CA40 (485) | `mov dl,[ecx+0x53CC68]; jmp [edx*4+0x53CC28]` |
+| 0x4AE7D1 | 0x4AE7D4(~51) | — | 0x4AD566 | 0x4AD530 (4769) | |
+| 0x4CC78D | 0x4CC790(6) | 0x4CC7A8 (144B) | 0x4CC75E | 0x4CC730 (93) | case→常数映射 (0xA/0x91…) |
+| 0x54F22D | 0x54F230(6) | 0x54F248 (05 偏重) | 0x54EE96 | 0x54EE50 (989) | |
+| 0x4D955B | 0x4D955C(15) + 0x4D95B4(4) | 0x4D9598 (0..4,0E…) | 0x4D8E9E / 0x4D9010 | 0x4D8CF0 (2155) | 一父两套 |
+| 0x52F22F | 0x52F230(6) | 0x52F248 (11B) | 0x52F1AF | 0x52ECA0 (1423) | 另含 0x52F254 迷你表(6) |
+| 0x56F195 | 0x56F198(11, case 0..0xA) | — | 0x56EF52 | 0x56EE70 (805) | case0 `push 0x280; call 0x508B38` 分配 640B |
+| 0x42F02C | 0x42F02C(3: 0x42EE90/0x42EF88/0x42F025) | 0x42F038 (9B) | 0x42EE83 | 0x42EE40 (489) | 三路分类 |
+
+伴生表 (ORPHAN_REACHABLE 洞, 同判据):
+- 0x42DBB0: 表 0x42DBB0(3: 0x42D852/0x42D86F/0x42D8B4) + **254 项 LUT 0x42DBBC (多数=0x02)**; dispatcher 0x42D845 in 0x42D800 (941)。输入为扫描码域 (`cmp eax,0xFD`);【推断】键码→三分类映射器 (键盘处理前置)。
+- 0x4B28E4: 表 0x4B28E4(2: 0x4B28CC/0x4B28DB) + 13 项 LUT 0x4B28EC; dispatcher 0x4B28BD in 0x4B28B0 (49)。输入域 `lea eax,[esi-0x3E]; cmp eax,0xC` → 0x3E..0x4B。
+- 0x4E4D04: 表 0x4E4D04(3) + LUT 0x4E4D10 (02×20+00 01×10); dispatcher 0x4E4BAB in 0x4E4B70 (403), 位于 `call [esi]` 之后。
+
+【未知】以上 26+3 处 switch 的业务语义 (各 case 行为) 留待批次 B/C 对父函数整体阅读时归名。
+
+---
+
+## 二. 结构化数据 — 1 洞 (DATA_UNDECODED)
+
+### 0x5241D2-0x525550 (4,990 B) — DirectInput 三重 DIDATAFORMAT 共享 DIOBJECTDATAFORMAT[311] 数组
+
+【事实】(verify#1/#2, 字节全部可复算)
+- 0x5241D2-0x5241DF = 14×CC (int3 垫)。
+- 0x5241E0 起 311×16B 记录 = `{const GUID *pguid; DWORD dwOfs; DWORD dwType; DWORD dwFlags}` (DIOBJECTDATAFORMAT):
+  - pguid 分布: GUID_Key(0x5AD200)×256; NULL×40; 轴类 11 (XAxis×2, YAxis×2, ZAxis×2, Slider×2, RxAxis×1, RyAxis×1); GUID_POV(0x5AD1F0)×4 — 合计 311。
+  - dwOfs ∈ [0,0xFF]; dwType 低字节分布 {0x03(DIDFT_AXIS):11, 0x10(DIDFT_POV):4, 0x0C(DIDFT_BUTTON):296}; dwFlags {0x100(DIDOI_ASPECTPOSITION):8, 0:303}。
+  - 键段 = 记录 44..299: instance 字段 = 记录序-44 (0..0xFF), dwOfs = instance (DIK 扫描码一字节一键)。
+- 三个 DIDATAFORMAT 头 (0x5AD310/0x5AD328/0x5AD344) 指向同一数组的三个区段:
+  - A @0x5AD310: `{dwSize=0x18, dwObjSize=0x10, dwFlags=0x1(DIDF_ABSAXIS), dwDataSize=0x50, dwNumObjs=0x2C(44), rgodf=0x5241E0(记录0)}` — 摇杆段: 6 轴+2 滑尺+4 POV+32 键位按钮, 包长 0x50。
+  - B @0x5AD328: `{0x18, 0x10, 0x2(DIDF_RELAXIS), 0x100, 0x101(257), 0x5244A0(记录44)}` — 键盘段: 256 GUID_Key + 1 NULL 通配, 包长 0x100。
+  - C @0x5AD344: `{0x18, 0x10, 0x2, 0x14, 0xB(11), 0x5254A0(记录300)}` — 11 NULL 按钮, 包长 0x14。
+  - 记录数对账: 44 + 257 + 11 = 312 > 311 (A 与 B 相邻不重叠, B 与 C 在记录 300 重叠 1 条) — 与 pguid 分布 (256+40+15=311) 完全闭合。
+- GUID 窗口 0x5AD180-0x5AD300 (节 .rdata, va 0x1A8000) 命名 (依据 dinput.h 权威转写 [factor-id3 dinput.factor](https://github.com/inforichland/factor-id3/blob/master/basis/windows/dinput/dinput.factor) 与 [Wine dinput trace](https://forum.winehq.org/viewtopic.php?t=1148)):
+  - 0x5AD200=GUID_Key, 0x5AD210=GUID_Slider, 0x5AD220=GUID_RzAxis, 0x5AD230=GUID_RyAxis, 0x5AD240=GUID_RxAxis, 0x5AD250=GUID_ZAxis, 0x5AD260=GUID_YAxis, 0x5AD270=GUID_XAxis, 0x5AD1F0=GUID_POV
+  - 0x5AD1D0=GUID_SysKeyboard{6F1D2B61}, 0x5AD1E0=GUID_SysMouse{6F1D2B60}
+  - 0x5AD300=IID_IDirectDraw2{B3A6D3E3-2B43-11CF}(高置信, 公开资料), 0x5AD2F0=IID_IDirectDraw4{9C59509A-39BD-11D1}(高置信)
+  - 0x5AD190/0x5AD1A0/0x5AD1B0 = {279AFA8x-4981-CE11-A521-0020AF0BE560} 家族【推断】DirectInput 力反馈效果 GUID (Spring/Damper/Friction 域); 具体名【未知】
+  - 0x5AD180{31EFAC30-515C-11D0}, 0x5AD1C0{47D4D946-62E8-11CF}, 0x5AD280{57D7C6BC-2356-11D3}, 0x5AD290{5944E682-C92E-11CF}, 0x5AD2A0{9A4CB684-236D-11D3}, 0x5AD2B0{93281502-8CF8-11D0}, 0x5AD2C0{BB223240-E72B-11D0}, 0x5AD2D0{69C11C3E-B46B-11D1}, 0x5AD2E0{DA044E00-69B2-11D0} —【未知】(DirectX 家族 IID/CLSID, 0x5AD2A0 疑为 IID_IDirectInput7A)
+- 调用点 (全 .text 扫描, 唯一命中):
+  - SetDataFormat (vtbl+0x2C): `push 0x5AD310` @0x411E3A (父 0x411E10) 与 @0x47AF70 (父 0x47AE40) → 格式 A; `push 0x5AD328` @0x47AF25 (父 0x47AE40) → 格式 B。
+  - CreateDeviceEx (vtbl+0x24): `push 0x5AD1E0`(SysMouse) @0x47AE7C、`push 0x5AD1D0`(SysKeyboard) @0x47AF01, 均在 FUN_0x47AE40。
+- 表的消费者唯一性: 全文件 4LE==0x5241E0 仅头 A 一处 (排除表自身); B/C 头经 rgodf 字段间接指入。
+
+【推断】FUN_0x47AE40 = DirectInput 设备初始化主路径 (CreateDeviceEx 键/鼠 → SetDataFormat); FUN_0x411E10 = 第二条摇杆 SetDataFormat 路径。
+【未知】格式 C 无 .text 直接引用 (备用或经指针算术); 0x411E10 所配设备对象与摇杆枚举回调的衔接; 各 GUID 窗口未命名项。
+
+---
+
+## 三. 代码簇 — ORPHAN_REACHABLE 主体 (12 洞 / 2,927 B)
+
+### 1. 0x48E2AF-0x48E6F4 (1,093 B) — 脚本/事件解释器 case 体簇
+【事实】switch @0x48B6DF, 表 0x48E720 (84 项, case 0..0x52), 父函数 0x48B650 (11,117 B)。
+case 体模式: 从 [esi] 数组取参 (`add esi,4` 步进), 调 [ebp] 对象 vtable 偏移 +0x2A4/+0xA0/+0x1AC/+0x2BC 的虚方法, 推 rdata 字符串 0x5C920C/0x5C9204, 公共出口 `jmp 0x48E704`。
+【推断】脚本命令分发实现 (与已收口的脚本解释器体系同族)。
+【未知】逐 case 命令语义。
+
+### 2. 0x52329B-0x523580 (741 B) — 3DNow! SIMD 数学例程
+【事实】pfmul/pf2id/pi2fd/pfadd/pfsubr/punpckldq 指令族; 常量取自 0x5CF318-0x5CF454; 符号位操作模式。
+【推断】AMD 3DNow 路径的向量/定点转换例程 (与 SSE 路径并存, 呼应 0x518E6F CPUID 探测)。
+【未知】精确数学语义 (sin/cos/变换?) — v14 refs 中 C2 通道被 0F 前缀字节污染, 仅 E8/E9 通道可信, 调用方留批次 C。
+
+### 3. 0x593E3A-0x593F50 (278 B) + 0x593F7F (31 B) — CRT pow/exp 家族 x87 助手
+【事实】入口 0x593E40 (int3 垫后); fyl2x/fldl2e/faddp/fdivrp/fscale/fchs/fabs; 模式旗标 [ebp-0x90]; `cmp dword [0x667630],1` (SSE2 可用旗) → `call 0x594C41` (SSE2 ftol); 尾跳 0x510138/0x51014B/0x5101E6; x87 常量 0x5D3740。0x593F7F: `fld xword [0x5D3740]; mov byte [ebp-0x90],3; ret`。
+【推断】msvcrt pow/exp/ldexp 共用的 x87 实现族 (MSVC 7.1 CRT 标准形态)。
+
+### 4. 0x544645 (76 B) + 0x544955 (134 B) — 纹理/缓冲设置簇
+【事实】0x544645: RGB 通道装配内循环 (三张 LUT 索引源各 3B/迭代, 定点 `sar edi,0x10`), 回边 0x544582。0x544955: `[obj+0x14]=0x38/0x39` + `[obj+0x18]=0x100`, `vcall [ecx+4]` 分配 (n+2)*3*2 B, call 0x53E660/0x544850, `[edi+0x24]=0`。
+【推断】纹理格式转换 (RGB 搬运) + D3D 顶点缓冲/纹理对象装配 (0x544xxx 簇)。
+【未知】0x38/0x39 两个格式码的枚举名。
+
+### 5. 0x4352A3-0x435320 (125 B) — 三个微初始化函数 (nop 岛分隔)
+【事实】0x4352C0: `mov [0x5DB08C..0x5DB098],0; mov [0x5DB09C],0x3F800000(1.0f); ret` — 单位/恒等类结构初始化。0x435310: `mov [0x5DBB7C],0; ret`。
+### 6. 0x473ECA-0x473F20 (86 B) — 矩阵库初始化
+【事实】0x473EE0 起: 8 个 0x5C 结构 @0x5E09E0, 每个清 23 dword, `[base+0x50]=1.0f`。
+【推断】8 元素矩阵/关节库的单位阵初始化 (呼应 act/姿势体系)。
+
+### 7. 0x591A20 (80 B) / 0x591CB0 (48 B) / 0x591F50 (64 B) — COM/D3D 包装析构三件
+【事实】push 名字符串 (0x5D3650/0x5D3660/0x5D367C/0x5D3670/0x5D3664), call 0x50AC20 (注册表移除), 依次 `call [vtbl+8]` (IUnknown::Release) 释放 [esi+0x18/0x1C/0x20/0x24], 尾跳再释放。
+【推断】D3D 资源包装类的析构 (Debug 命名 + Release 链)。
+
+### 8. 0x518E6F-0x518EB4 (69 B) — CPUID 特征探测
+【事实】缓存 [ebp-0x2C]/[ebp-0x28]; EDX bit 0x2000000(SSE)→flags|=4, bit 0x4000000(SSE2)→|=8。
+【推断】CRT 分发初始化 (SSE/SSE2 路径选择, 呼应 0x667630 旗标与 ftol2 家族)。
+
+### 9. 0x50C515-0x50C5D1 (188 B) — CRT 小块堆 (SBH) 初始化
+【事实】[0x7F2DA0] 阈值 min(x,0x200); call 0x50B4C3 分配×2 回退; 错误 `push 0x1A; call 0x509936`; 区域描述符数组 [0x7F1D84] 由 0x5CA940..0x5CABC0 步进 0x20 构建; 位图基 [0x7F2DC0]。
+
+### 10. 0x5010D1-0x501100 (47 B) / 0x501101-0x501130 (47 B) / 0x510152-0x5101E6 (148 B) — CRT 浮点助手块
+【事实】前两者互为孪生: [ebp-0x9E] x87 临时, [ebp-0x90] 模式旗, `test byte [ebp-0x97],0x40`; 另含**孪生谓词** `mov eax,[ecx]; call [eax+0x44]; …; call [edx+0x130]; cmp eax,5(4); sete` — status==5/==4 布尔映射。
+
+### 11. 0x504D54 (32 B) — 中函数尾块
+【事实】`mov ecx,[ebx+0xC]; call 0x501030/0x5012D0; …; jmp 0x4FD870`。
+
+---
+
+## 四. EH/RTTI 基础设施 (12 洞 / 473 B, 全 ORPHAN_REACHABLE)
+
+### 修正定性: `mov eax,<rdata>; jmp 0x508BD7` = MSVC __CxxFrameHandler 家族 thunk
+【事实】0x508BD7 本体 (verify#1): `push ebp; mov ebp,esp; sub esp,4; push ebx/esi/edi; cld; mov [ebp-4],eax; push 0,0,0; push [ebp-4](=FuncInfo); push [ebp+0x14..0x8]; call 0x50E6B0; add esp,0x20; 返回 eax` — 即 0x50E6B0(pRN, pFrame, pContext, pDispatch, pFuncInfo, 0,0,0) 的转发壳 (等价 __CxxFrameHandler3→2 链形态)。
+【事实】五个 per-function handler thunk (SEH3 序列 `push -1; push <此址>; mov eax,fs:[0]; mov fs:[0],esp` 的调用方为 0x591180/0x583630/0x58CE10/0x57E0E0/0x58F330):
+- 0x5A6636 (26B) → rdata 0x5C2788
+- 0x5A6833 (29B) → 0x5C1DE8
+- 0x5A6DB3 (29B) → 0x5C241C
+- 0x5A6E99 (23B) → 0x5C1B80
+- 0x5A70B4 (44B) → 0x5C25A0
+【推断】0x5C2xxx .rdata = FuncInfo 结构; 此前 "EH per-function descriptors" 定性据此细化 (v14 refs 的 C3 命中在此族为真 — thunk 体内 mov eax,imm32 即引用)。
+
+### EH filter/unwind funclet (7 洞)
+【事实·filter】0x421BF5 (19B)/0x421C0A (19B): `mov ecx,[ebp-0x14]; mov edx,[ecx]; mov eax,[edx]; mov [ebp-0x2C/-0x30],eax; mov eax,1; ret` (捕获异常对象, 返回 1=catch); 0x421C88 (11B): `mov eax,1; ret`。
+【事实·unwind】0x510A06(19B)/0x510ABA(18B)/0x51532B(18B)/0x51539A(14B)/0x50EA76(16B)/0x50F0C2(11B)/0x510C3E(11B)/0x50F118(7B)/0x50B400(11B)/0x50AD9F(13B): 签名 `mov esp,[ebp-0x18]` + 寄存器恢复 + `or [ebp-4],-1`。
+
+### CRT 垫片 (2 洞)
+【事实】0x517CD0 (13B): `push 1; call 0x518F77; jmp [0x5CD8CC]` (锁 + 导入尾跳)。
+
+---
+
+## 五. 对齐垫与微碎片 — 91 洞 (ORPHAN_UNREFERENCED, 560 B) + 杂项
+
+逐洞判据见 `evidence/semA_verify3_20261028.txt`。家族:
+
+### 1. 纯 NOP 垫 (28 洞, 165 B)
+全 0x90, 分布 0x509-0x51B/0x522-0x523 CRT 区。VA: 0x509359, 0x50943D, 0x50947E, 0x509489, 0x5094D5, 0x5095C5, 0x50C279, 0x50C35D, 0x50C39E, 0x50C3A9, 0x50C3CB(13B), 0x50C3F5, 0x50C4E5, 0x50F84A, 0x519AB9, 0x519AF9, 0x519C71(15B), 0x519E3B, 0x51A138, 0x51A728, 0x51A84E, 0x51A91B, 0x51B001(15B), 0x51B1B8, 0x51B479, 0x51B70B, 0x522758, 0x523179。
+
+### 2. 多字节 NOP 库垫 (23 洞, ~205 B)【事实·字节】【推断·角色=编译器函数对齐】
+ repertoire: `8d b4 26 00 00 00 00`(lea esi,[esi]) / `8d bc 27 00 00 00 00`(lea edi,[edi]) / `8d b6 00 00 00 00` / `8d bf 00 00 00 00` / `8d 74 26 00` / `8d 9b 00 00 00 00` / `8d a4 24 …+8d 64 24 00` / `8b f6`(mov esi,esi)。
+VA: 0x510D85, 0x51927A, 0x519BB2(14B), 0x519D73(13B), 0x51A28C, 0x51A344(12B), 0x51A3D7(9B), 0x51A487(9B), 0x51A545(11B), 0x51A6DC, 0x51AB9A, 0x51AC74(12B), 0x51AD02(14B), 0x51ADAC, 0x51AF34(12B), 0x51B792(14B), 0x51BA1A, 0x51BAF4(12B), 0x51BC14(12B), 0x52266C, 0x522A75(11B), 0x52309A, 0x5231BA。
+伴生 10B 垫 (ORPHAN_REACHABLE): 0x51A056, 0x51A1E6, 0x51B0D6, 0x51B686 — `lea esi,[esi]; lea edi,[edi]`, 其后紧邻 SSE2 ftol2 族 (0x51A060/0x51B0E0: `and esp,0xFFFFFFF0` 对齐栈)。
+
+### 3. SSE 第二入口冗余块 (25 洞, 各 3B = `53 8b dc`)【事实·结构闭合】
+模式 (0x51A06E 实测, 余 24 处同构): 函数主入口 `push ebx; mov ebx,esp; sub esp,8; and esp,0xFFFFFFF0; add esp,8; jmp +3` **跳过**此 3B 块落主函数体; 3B 块字节 == 主入口前 2 条指令。
+VA (25): 0x519B0E, 0x519BCE, 0x519C8E, 0x519D8E, 0x519E4E, 0x519F9E, 0x51A06E, 0x51A14E, 0x51A85E, 0x51A92E, 0x51AA1E, 0x51ABAE, 0x51ADBE, 0x51AF4E, 0x51B01E, 0x51B0EE, 0x51B1CE, 0x51B48E, 0x51B5EE, 0x51B69E, 0x51B71E, 0x51B7AE, 0x51B89E, 0x51BA2E, 0x51BC2E。
+【推断】编译器为已对齐情形发射的备选入口拷贝; 主入口执行流永不落入; 引用三通道零命中佐证。
+【未知】是否存在调用方以第二入口为目标 (当前零引用 → 视为死拷贝)。
+
+### 4. 函数尾/序言残片 (7 洞, 25 B)【事实】
+- 0x4031FC (4B) `5f 5e 5b 5d` = pop edi;pop esi;pop ebx;pop ebp (ASCII 视觉 "_^][")
+- 0x508B73 (7B) `5f 5e 5b c9 c2 08 00` = pop edi/esi/ebx; leave; ret 8
+- 0x509958 (3B) `59 59 c3`; 0x50997E (2B) `c3 cc`; 0x50B448 (2B) `5e c3`; 0x50C7ED (2B) `5f c3`; 0x593B0C (1B) `c3`
+【推断】增量化编译/链接边界剩料; 无独立执行语义 (前一函数流程的一部分, v14 边界切出)。
+
+### 5. 载入片段 (1 洞)
+0x508DA9 (3B) `6a 01 58` = push 1; pop eax (= mov eax,1)。
+
+### 6. lea+call 片段 (2 洞)
+0x509D24 (9B) / 0x593B69 (9B): `lea edx,[esp+X]; call 0x5102B5`。
+
+### 7. 死函数尾 (1 洞)
+0x527EAF (17B): `xor eax,eax; add esp,0x1C; ret 4` + 9×90。
+
+### 8. 死 EH thunk (1 洞)
+0x593D83 (23B): 13×CC + `mov edx,0x5D36F0; jmp 0x59425B` — int3 垫 + 未被引用的异常对象装载跳板。
+
+### 9. 死 CRT 数学包装 (1 洞, 23B)
+0x5951C9: `call 0x594E5C; ret` / `call 0x595114; ret` / `fpatan; ret`(atan2) / `fptan; ret`(tan) 四连 + cc 垫。
+
+### 10. 字符串 (1 洞)
+0x50A50F (9B): cc + `"VC20XC00"` (56 43 32 30 58 43 30 30)。
+【推断】版本/标记串残段; 【未知】消费者。
+
+### 11. 杂项微洞 (ORPHAN_REACHABLE 内)
+- 0x4D001B (1B) `91` (xchg ecx,eax) — 指令边界剩料。
+- 0x593E21 (3B) `e8 33 c0` — 相邻函数边界剩料 (线性误读为 call 的典型)。
+- 0x4A8F59 (23B) / 0x4BEE49 (23B) / 0x57AA8A (22B): `call $+0xB; jmp $+0x16` 形态的链接器对齐岛 (int3/nop 长垫间的跳转桥)。
+
+### 12. 微初始化与杂项补遗 (ORPHAN_REACHABLE 内小洞)
+- 0x5096F6(3B)/0x509B2A(8B)/0x509C7A(6B)/0x50B557(5B)/0x50B5E0(5B)/0x50C882(3B)/0x50C8FD(3B)/0x50EBE5(6B)/0x50EE86(8B): CRT 参数重载微片段 (`mov esi,[ebp+0xC]; mov ebx,[ebp+8]` 域)。
+- 0x510144 (2B): `fstp st(0)` 浮点尾。
+
+---
+
+## 六. 收口统计
+
+- 179/179 洞全部定性: 跳转表 29 (26 主 + 3 伴生), 结构化数据 1, 业务代码簇 12, EH/RTTI 基础设施 12, 对齐垫/微碎片 125。
+- 语义覆盖: 11,649 B 中【事实】级定性 100% (每洞有字节/引用判据); 业务命名 (switch case 语义、SIMD 精确算式、未命名 IID) 为【推断/未知】, 不影响字节归属与结构判定。
+- 修正记录: ① C3 通道误报规则; ② 0x5A6xxx 族定性由 "EH 描述符" 细化为 __CxxFrameHandler thunk; ③ 0x5241D2 由 "动画/姿势邻接表" 修正为 DirectInput DIDATAFORMAT 对象数组 (此前 C3 亲缘为误报产物); ④ ptr_analysis 未对齐读 dword 缺陷标注。
+- 附件: semA_179_dump_20261028.txt / semA_verify_20261028.txt / semA_verify2_20261028.txt / semA_verify3_20261028.txt / tools/semA_decode_20261028.py / tools/semA_verify_20261028.py / tools/semA_verify2_20261028.py / tools/semA_verify3_20261028.py

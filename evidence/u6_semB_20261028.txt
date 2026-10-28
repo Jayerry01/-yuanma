@@ -1,0 +1,283 @@
+================================================================================
+U6 批次B 台账 — >1KB 未命名函数语义化 36/36（2026-10-28）
+================================================================================
+范围   : evidence/semqueue_v14_20261028.csv band=B_>1000B status=UNNAMED
+         共 36 个函数，合计 58,975 B
+方法   : 五类证据扫描 tools/semB_scan_20261028.py → evidence/semB_dump_20261028.txt
+         （553 行：调用方(E8按父函数聚合)/被调/IAT/立即数分节/rdata ASCII/.data 全局/f32）
+       + 共享辅助汇编定性 tools/semB_helpers_20261028.py → evidence/semB_helpers_20261028.txt
+         （219 行：12 个 CRT/STL 辅助逐条 + E8 调用方计数）
+       + 44 份 Ghidra 伪码全文 tools/semB_extract_20261028.py → evidence/semB_pseudo/<addr>.c
+规则   : 命名一律以伪码/汇编语义为准，扫描器输出仅作线索（本次实测纠错：
+         0x5AD020-0x5AD110 立即数群曾被猜 DirectInput GUID，伪码证实为 SSE 常量池）。
+         命名不回写二进制；只入台账 + semqueue CSV。
+口径   : 【确认】伪码/字节直接读出；【推断】语义命名；【未知】未展开部分。
+================================================================================
+
+【一】渲染提交族（6 个，唯一差异 = 驱动 flush 第二参顶点格式码）
+--------------------------------------------------------------------------------
+[01] 00417C20 (1,096B)  Render_SubmitIndexedTris_Fmt0x1C4
+  【确认】顶点缓存 32B/顶点；索引缓冲 DAT_005D5ADC，容量 realloc 为 6×三角形数；
+    驱动 flush 虚调用 vtbl+0x74(param_1, 4, 0x1C4, vbuf, vcount, ibuf, icount, param_4)。
+  【推断】索引三角形批量提交，顶点格式码 0x1C4。
+  【未知】0x1C4 的逐位字段含义（FVF 风格打包格式未解码）。
+  判据: semB_pseudo/00417c20.c + semB_dump_20261028.txt[00417C20]
+
+[02] 00418070 (1,096B)  Render_SubmitIndexedTris_Fmt0x112
+  【确认】与 00417C20 同构，唯一差异 flush 第二参 = 0x112。
+  【推断】同族顶点格式 0x112 批量提交。
+  判据: semB_pseudo/00418070.c（与 00417c20.c 逐行 diff 仅常量异）
+
+[03] 004184C0 (1,083B)  Render_SubmitIndexedTris_Fmt0x1E2
+  【确认】同构，flush 第二参 = 0x1E2。
+  判据: semB_pseudo/004184c0.c
+
+[04] 00418900 (1,265B)  Render_SubmitIndexedTris_Fmt0x112_Direct
+  【确认】0x112 同构，但双 flush 直通型（无中间缓存合并，直接两段提交）；E8 调用方 n=1265。
+  判据: semB_pseudo/00418900.c + semB_dump_20261028.txt[00418900]
+  【未知】双 flush 的两段划分条件（顶点数阈值）未测。
+
+[05] 00418E00 (1,109B)  Render_SubmitIndexedTris_Fmt0x1E2_Direct
+  【确认】0x1E2 同构双 flush 直通型。
+  判据: semB_pseudo/00418e00.c
+
+[06] 0041A490 (1,210B)  Material_ApplyRenderState
+  【确认】材质表 DAT_007E5BE0[id≤0x13FF]；RGBA float×255 取出；
+    写渲染状态全局 0x7E2C80/0x7E2BE8/0x7E2BE4/0x7E2804/0x7E277C/0x7E2770/0x7E2330/0x7E2320/0x7E231C；
+    SetTexture=FUN_0041A950→vtbl+0x60；再调 vtbl+0x98；当前材质指针 DAT_005D5A0C+0x748；
+    当前材质 ID DAT_005C4618。
+  【推断】按材质 ID 应用全部渲染状态+纹理，引擎渲染状态上传入口。
+  判据: semB_pseudo/0041a490.c
+
+【二】软件光栅化族（10 个 + 2 斜率辅助 + 1 共享调用方）
+--------------------------------------------------------------------------------
+  家族判据总述：共享父调用方 00421DA0(5,515B, E8 调用方 n=5515) + 00423440；
+  共用全局 DAT_005D5A0C、光栅开关 DAT_005C4628；
+  透视族调边插值 00428BA0（32px 细分），仿射族调 00428A20，无 Z 族调 00428AF0；
+  斜率辅助以 16.16 定点计算 (v2-v1)<<16/Δ，斜率全局 0x7E2BC8/0x7E2314/0x7E2BD4/0x7E2318/
+  0x7E2B80/0x7E2308，边长 0x7E2C98；顶点数组 0x7E0EA0/0x7E0E9C 索引 DAT_007E2C8C。
+
+[07] 00423C30 (1,839B)  Raster_PerspectiveTex_PlainZWrite        调 00428BA0
+[08] 00424360 (1,883B)  Raster_PerspectiveTex_Checker            调 00428BA0 + 棋盘掩码 bVar20
+[09] 00424AC0 (1,856B)  Raster_PerspectiveTex_ColorKey           调 00428BA0 + 彩键比较 uVar16 != uVar3
+[10] 00425200 (1,904B)  Raster_PerspectiveTex_CheckerColorKey    调 00428BA0 + 两者皆有
+  【确认】四者为同一透视纹理映射体的 4 个开关组合变体；棋盘 = (x+y)&1 奇偶掩码；
+    彩键 = 纹素值与 colorkey 不等才写；写 Z。
+  判据: semB_pseudo/00423c30|00424360|00424ac0|00425200.c
+
+[11] 00425970 (1,153B)  Raster_AffineTex_Plain                   调 00428A20（含 00425E00 无 Z 回退分支）
+[12] 004261E0 (1,182B)  Raster_AffineTex_Checker                 调 00428A20
+[13] 00426A80 (1,164B)  Raster_AffineTex_ColorKey                调 00428A20
+[14] 00427300 (1,193B)  Raster_AffineTex_CheckerColorKey         调 00428A20
+  【确认】仿射纹理映射 4 变体；00425970 内对无 Z 路径回退 00425E00。
+  判据: semB_pseudo/00425970|004261e0|00426a80|00427300.c
+
+[15] 00426680 (1,012B)  Raster_NoZOverlay_Checker                调 00428AF0
+[16] 004277B0 (1,023B)  Raster_NoZOverlay_CheckerColorKey        调 00428AF0
+  【确认】无 Z 叠层族 2 变体（仅棋盘、棋盘+彩键；无 plain/彩键变体）。
+  判据: semB_pseudo/00426680|004277b0.c
+  【未知】无 Z 族为何只有 2 变体（上层是否恒开棋盘）未上溯调用点逐一确认。
+
+[17] 00428BA0 / 00428A20 / 00428AF0（辅助，非本批 36）
+  【确认】边插值斜率设置；透视=32px 细分；16.16 定点。
+  判据: semB_helpers_20261028.txt + semB_pseudo 被调引用
+
+【三】连招输入序列表三胞胎（3 个 + 基类 + 字符串池实测）
+--------------------------------------------------------------------------------
+[18] 004DE220 (1,050B)  ComboSeqTable_Ctor_A
+[19] 004E0080 (1,037B)  ComboSeqTable_Ctor_B
+[20] 004E0ED0 (1,041B)  ComboSeqTable_Ctor_C
+  【确认】三者均为类构造器蹦床：先调基类构造 004DC9A0，再各自挂虚表
+    0x5AABE0 / 0x5AADA0 / 0x5AAE80。
+    主体为「连招输入序列名→ID 映射表」构造：
+    - vector push 常量序列 {0x44,0x45,0x46,0x47,0x50,0x51,0x52,0x46}；
+    - map 键 0x9A/0x9B；
+    - 注册对: 0x3D←'fm' 0x3E←'bm' 0x3F←'lm' 0x40←'rm' 0x47←'bma'
+      0x41←'ffm' 0x42←'bfm' 0x43←'bbm' 0x44←'lrm' 0x45←'lrfm'
+      0x46←'lrbm' 0x3A←'ma' 0x9A←'rlm' 0x9B←'bbfm' + 0x5C9E70='fma'；
+    - 字符串池实测(/tmp/semB_dstr.py, 2026-10-28)：
+      0x5C9E14='rlm' 0x5C9E18='lrm' 0x5C9E1C='lrfm' 0x5C9E2C='ffm' 0x5C9E34='bfm'
+      0x5C9E38='bbm' 0x5C9E3C='bma' 0x5C9E50='lrbm' 0x5C9E60='bbfm' 0x5C9E70='fma'。
+  【推断】r/l/f/b/m/a = 右/左/前/后/中/攻击 方向字母组合 = act 连招输入序列名；
+    与 U1 trie 输入侧衔接（trie 命中 → 此表名→ID）。
+  【未知】三胞胎各自被谁实例化（三个虚表的使用者未逐一上溯）；+0x14=5/+0x18=0x12
+    两字段语义（疑容量/版本）。
+  判据: semB_pseudo/004de220|004e0080|004e0ed0.c + 字符串池字节验证
+
+【四】UI / 文本 / 资源（5 个）
+--------------------------------------------------------------------------------
+[21] 0043C710 (1,892B)  UI_Dialog_BuildControlTree_NetPlayerInfo
+  【确认】operator_new 0x6C/0x78/0x50/0x7C ×10+ 控件；基类构造 0x462D50；
+    虚表 0x5A8580/0x5A8868/0x5A84D0；add-child 0x462E50（DAT_005DBB70..7C 链）；
+    矩形浮点 0x5DDD68-74 = (176, 89, 252, 30)；颜色/字体字段填充；
+    串 0x5C7354='Con_Forward' 0x5C73D8='none' 0x5C756C='user_name'。
+    调用方 0x435320（n=2273）。
+  【推断】网络玩家信息对话框的控件树组装（名字输入/转发键提示）。
+  判据: semB_pseudo/0043c710.c + semB_dump_20261028.txt[0043C710]
+  【未知】10+ 控件逐个类别（按钮/列表/输入框）未逐一定名。
+
+[22] 00464600 (1,386B)  TextInput_OnKey
+  【确认】虚方法 0 的 E8 调用方；按键 0x1001=退格（GBK 双字节对整删 2）、
+    0x1002=前删；光标偏移 +0x6C、串长 +0x1C、脏标志 +0x58。
+  【推断】文本输入控件的按键处理（DBCS 感知）。
+  判据: semB_pseudo/00464600.c
+  【未知】0x1003+ 其余键值分派未展开。
+
+[23] 0045E1E0 (7,443B)  MenuRes_Load — menu.res 菜单资源配置加载器
+  【确认】FUN_00509F8F("menu.res"@0x5C7B54, "r"@0x5C67D0)；
+    156×（清零 0x4C 缓冲 → fgets(FUN_0050AB32) 上限 0x32=50B → strlen → 写 '\0'）；
+    填入固定 .data 缓冲 0x5DEDDC/0x5DD64C/0x5DD1D4/0x5DBB3C/0x5DDC64/0x5DD5B0…
+    （fgets 计数=156 实测 grep；两串字节验证 2026-10-28）。
+  【推断】菜单 UI 文本资源装载（每行 ≤50B，DBCS 兼容缓冲 76B）。
+  【未知】每行的语义槽位映射（156 行各对应哪个菜单项）未展开。
+  判据: semB_pseudo/0045e1e0.c + 字节验证
+
+[24] 00579A90 (1,024B)  Text3D_DrawGBKString
+  【确认】0x475590 状态机进出；字宽 [param_1+0x54]/[+0x55]；
+    DBCS 宽度公式 (2-(ch<0x80))*0.5（GBK 全角=2×半角）；
+    逐字面片 FUN_00479F80(纹理[i])；变换 0x477DB0/0x478190/0x4781D0；
+    串长统计两分支（char* 逐字节 vs 0x50B0EC）；对齐模式 param_1[0x4F]∈{1,3}、
+    纵向 param_1[0x50]∈{4,5}。
+  【推断】GBK 文本串 3D 绘制（世界空间字符串渲染，用于伤害数字/名牌类）。
+  判据: semB_pseudo/00579a90.c
+
+[25] 00479A00 (1,072B)  ResourcePath_ResolveAndLocateFile
+  【确认】_splitpath(FUN_0050ADD7)；5 字节前缀比对 DAT_005C810C；
+    128B 名称表 0x5C7E10+i*0x80；表项 0x5EF5F0+i*0x1C；0x47Fxxx 文件族收尾。
+  【推断】游戏资源路径解析+包内文件定位（前缀=资源类别路由）。
+  【未知】0x47Fxxx 文件族逐个语义、0x80 表的容量与填充方。
+  判据: semB_pseudo/00479a00.c
+
+【五】数学 / SSE / 求解器（4 个）
+--------------------------------------------------------------------------------
+[26] 004772E0 (1,222B)  Matrix4_Invert
+  【确认】元素访问器 0x477D10(i,j) 调用 ×44 = 4×4 伴随展开；无分支奇异检查。
+  【推断】4×4 矩阵求逆（伴随/余子式展开型）。
+  【未知】奇异（行列式=0）时的行为未测（可能产 NaN 而非报错）。
+  判据: semB_pseudo/004772e0.c
+
+[27] 0051DB02 (4,504B)  SSE_Matrix4_Build
+  【确认】四元数/轴输入 → 4×4 行主序矩阵；恒等阵 0x3F800000 初始化；
+    全内联，0 E8 调用（semB_dump 佐证）。
+  【推断】SSE 4×4 矩阵构造（四元数→旋转矩阵为主路径）。
+  判据: semB_pseudo/0051db02.c
+
+[28] 0051C801 (2,649B)  SSE_Matrix4_ToQuaternion_x2
+  【确认】双矩阵入（4×16B 行）→ 出 2 个四元数 + 1 行；
+    sign-flip 轴选择 + 0x3F800000 域钳制 + rsqrt 迭代；
+    辅助 0x522A80/0x523180/0x523060；0x5AD020-0x5AD110 = SSE 常量池（符号掩码）——
+    扫描器曾误标 DirectInput GUID，伪码纠正。
+  判据: semB_pseudo/0051c801.c
+
+[29] 00596C8D (1,234B)  Thomas_TridiagonalSolve
+  【确认】double 域；5×malloc(n<<3)（c/d/l/解/p 工作区）；前代 + 回代写 param_7 矩阵；
+    free=0x5089FD×5；返回码 0/8；调用方 0x596C17（样条插值链）。
+  【推断】Thomas 三对角线性求解器，样条插值子步骤。
+  判据: semB_pseudo/00596c8d.c
+
+【六】文件 / 压缩 / 图像（5 个）
+--------------------------------------------------------------------------------
+[30] 00484860 (1,062B)  Deflate_Huffman_BuildCodeLengths
+  【确认】17 长度档直方图；288 符号表；Kraft 校验 (1<<len-count)*2<0 → fail；
+    调用方 0x484E20/0x484730。
+  【推断】ZIP/DEFLATE Huffman 码长表构建（配合 U6 已知 inflate 主体）。
+  判据: semB_pseudo/00484860.c
+
+[31] 0052DCE0 (1,564B)  Surface_BlitPixelBlock
+  【确认】bpp 分支 *(param_1+0xD)∈{1,2}；MMX 探测 DAT_005CFE18==0x2601；
+    行/列步长 +0xC；数据指针 +0x14；错误路径 FUN_00530D00(0x506)；
+    __ftol(0x509980)×12。
+  【推断】像素块拷贝/Blit（帧缓冲区域搬移，含 MMX 快路径）。
+  判据: semB_pseudo/0052dce0.c
+  【未知】0x2601 常量 = CPUID 特征位打包的判定条件未逐位解码。
+
+[32] 005364D0 (1,363B)  Texture3D_CopyVolumeBlock
+  【确认】三重嵌套循环经全局缓存 DAT_007DC780-0x7DC820；bpp +0xD；维 +0x10/+0x1C
+    除以 bpp；bpp==1 与 bpp==2 两大分支。
+  【推断】3D 纹理体块拷贝（调色板/16bpp 体纹理搬运）。
+  判据: semB_pseudo/005364d0.c
+
+[33] 00538F90 (1,555B)  Image_SplitRGBChannelsAndClearHist
+  【确认】三缓冲解交织 dst[iV]=src[i+0]; *dst=src[i+1]; dst[iX]=src[i+2]；
+    0x8C61=35,937 dword ×2 清零（0x72CF20/0x7B95A0）；FUN_00530DB0×5 清理；
+    递归关联 0x52E890。
+  【推断】RGB→3 通道分离 + 直方图表清零（图像量化/中值切分预处理）。
+  判据: semB_pseudo/00538f90.c
+  【未知】0x52E890 全链与 35,937 表的图像尺寸基数关系（疑 189×190）未证。
+
+[34] 0041B6B0 (1,092B)  ScreenFade_16bpp_AlphaBlend
+  【确认】DDSURFACEDESC2 dwSize=0x7C；Lock vtbl+100 / Unlock vtbl+0x80；
+    555/565 掩码按 DAT_007F18E4∈{1,2} 选择；fade 参数插值；
+    colorkey [DAT_005D5A0C+0x704]；bpp=DAT_007EABE0：8→Blt(0x20000/0x28000 DDBLT 常量)，
+    16→手写混合循环。
+  【推断】16bpp alpha 渐变整屏过渡（场景切换淡入淡出）。
+  判据: semB_pseudo/0041b6b0.c
+
+【七】STL / CRT / 杂项（2 个）
+--------------------------------------------------------------------------------
+[35] 0054A740 (1,008B)  std::deque_assign_or_clear
+  【确认】24B 元素/512B 节点（0x1F8=504B 可用，21/块）；FUN_004C68D0 析构元素；
+    FUN_00402E90(ptr,0x1F8) 释放节点；E8 调用方 13 个。
+  【推断】std::deque 拷贝赋值/清空（MSVC6 STL 静态链入）。
+  判据: semB_pseudo/0054a740.c + semB_helpers_20261028.txt
+
+[36] 00511758 (2,597B)  CRT__input_sscanf_core
+  【确认】’%’ 状态机；’*’/’F’/’I’/’N’/’I64’ 前缀；isspace 链（0x50BE69）；
+    调用方 0x50B600/0x593B0D = sscanf/scanf 壳。
+  【推断】CRT 格式化输入核心 _input（MSVC6 静态 CRT）。
+  判据: semB_pseudo/00511758.c + semB_helpers_20261028.txt
+
+[37] 0047C570 (2,112B)  Mesh_BuildBox
+  【确认】0x47C1E0(0x18, 0xC, 0x24) 分配 24 顶点/36 索引；±半尺寸填坐标；
+    0x481C20=SetPos / 0x481CB0=SetNormal(面法线±1) / 0x481D00=SetColor /
+    0x481D40=SetUV / 0x481B30·0x481B90=begin·end / 0x481EE0×36=索引写。
+  【推断】单位盒网格构建器（碰撞盒/包围盒可视化基础网格）。
+  判据: semB_pseudo/0047c570.c
+
+================================================================================
+副产物 — 共享辅助函数定性（semB_helpers_20261028.txt，判据=汇编特征+调用计数）
+================================================================================
+  0x508B38 = malloc        （push 1; call 0x509607=_nh_malloc; E8 调用方 967）
+  0x5089FD = free          （n=215; SEH + cmp [0x7F1D70],3; 调用方 853）
+  0x5095F5 = 分配包装       （全局 _newmode [0x667714]）
+  0x5099A7 = realloc
+  0x509980 = __ftol        （fnstcw/fistp; 调用方 861）
+  0x509CE0 = chkstk
+  0x50A85C = _isctype      （pctype [0x5CA6E0]; thiscall）
+  0x50AB32 = fgets
+  0x50ADD7 = _splitpath
+  0x50BE69 = isspace 族包装 （locale flag [0x5CA8EC]）
+  0x50E6B0 = __CxxFrameHandler（魔数 0x19930520）
+  0x508AE6 = 字符串记号切分  （调用方 157）
+  0x509F8F = fopen          （本批 0045E1E0 佐证）
+  0x509607 = _nh_malloc
+  0x402570 = std::string ctor/assign（SSO 0x80 → 池 0x5D59A4；bad_alloc→0x5A83C0）
+  0x49C640 = vector::insert（cap×2；InterlockedExchange 0x5D59E8；operator new 0x402BF0）
+  0x4E4130 = map RB-tree insert（键 +0x10；L/R +8/+0xC；再平衡 0x460BE0）
+  0x484400 = 游戏 malloc0   （清零分配；失败返回 0xDEADBEEF）
+  0x434EC0 = GBK 前导字节判定（0x80<x<0xFF→2 字节；状态 2→3）
+  0x481EE0 = 网格 u16 索引写访问器（*(u16*)(*(o+0xC)+i*2)=v；上界 [o+0x4C]）
+  0x4DC9A0 = 连招输入序列基类构造
+  0x50B600 / 0x593B0D = sscanf / scanf 壳
+  0x421DA0 = 光栅化共享调用方（5,515B；E8 调用方 n=5515）
+
+================================================================================
+未知清单（本批遗留，均不阻塞命名）
+================================================================================
+  1. 顶点格式码 0x1C4/0x112/0x1E2 逐位字段含义（5+1 提交族）
+  2. 无 Z 光栅族仅 2 变体的上层约束（00426680/004277B0）
+  3. 三胞胎连招表虚表 0x5AABE0/0x5AADA0/0x5AAE80 的实例化者；+0x14/+0x18 字段
+  4. 0043C710 十余控件逐个类别
+  5. 00464600 键值 0x1003+ 分派
+  6. 0045E1E0 的 156 行 menu.res 逐行槽位
+  7. 004772E0 奇异矩阵行为
+  8. 0052DCE0 的 0x2601 MMX 判定逐位
+  9. 00538F90 的 35,937 表与图像尺寸基数（疑 189×190）
+  10. 00479A00 的 0x47Fxxx 文件族逐个语义、0x80 名称表容量
+  11. 00418900/00418E00 双 flush 分段阈值
+
+================================================================================
+semqueue 状态推进：36 行 UNNAMED → NAMED，cited_in=u6_semB_20261028.txt;semB_pseudo/<addr>.c
+批次B 后 B_>1000B 未清零（249 行中 36 行转 NAMED；其余 213 行在批次A 及更早已 NAMED）。
+下一批：批次C = 301-1000B 未命名 331 个（162,830 B）。
+================================================================================

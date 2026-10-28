@@ -1,0 +1,1810 @@
+=== 00521370 [Cluster G] (00521370  (n=139)  sec=.text) ===
+  [1] E8调用方 3 处; E9尾调 1 处; 父:005215C7 x1 0052174F x1 00521975 x1
+  [2] ins=37 被调 unique=0: 
+  [PSEUDO]: { | FastExitMediaState(); | uVar1 = (undefined4)*param_2; | uVar4 = CONCAT44(uVar1,uVar1); | uVar1 = (undefined4)((ulonglong)*param_2 >> 0x2
+
+=== 00522670 [Cluster G] (00522670  (n=232)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 0 处; 父:0051B690 x1 0051B710 x1
+  [2] ins=51 被调 unique=0: 
+  [PSEUDO]: void FUN_00522670(void) | { | return; | }
+
+=== 005228B1 [Cluster G] (005228B1  (n=207)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=58 被调 unique=0: 
+  [PSEUDO]: 
+
+=== 00522A80 [Cluster G] (00522A80  (n=247)  sec=.text) ===
+  [1] E8调用方 6 处; E9尾调 0 处; 父:0051C801 x4 0051BDE6 x1 0051C6B5 x1
+  [2] ins=59 被调 unique=0: 
+  [PSEUDO]: ulonglong FUN_00522a80(void) | { | ulonglong in_MM0; | ulonglong uVar2; | ulonglong uVar9; | ulonglong uVar5;
+
+=== 00522C80 [Cluster G] (00522C80  (n=233)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00522D69 x1
+  [2] ins=54 被调 unique=0: 
+  [PSEUDO]: 
+
+=== 00524120 [Cluster G] (00524120  (n=149)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00421DA0 x1
+  [2] ins=39 被调 unique=1: 0041F6B0=FUN_0041f6b0
+  [PSEUDO]: void FUN_00524120(void) | { | iVar1 = 0; | if (0 < DAT_007e5bc0) { | do { | if ((&DAT_007ead80)[iVar1] != 0) {
+
+=== 00525640 [Cluster G] (00525640  (n=210)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 0 处; 父:00525820 x2
+  [2] ins=63 被调 unique=3: 00525610 005260B0 00525620
+  [PSEUDO]: void FUN_00525640(undefined4 *param_1) | { | timecaps_tag local_8; | if (param_1 != (undefined4 *)0x0) { | FUN_00525610(param_1); | iVar1 = 
+
+=== 00525720 [Cluster G] (00525720  (n=241)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00525900 x1
+  [2] ins=82 被调 unique=4: 005255E0 00525610 005089FD=FUN_005089fd 00525620
+  [PSEUDO]: void FUN_00525720(uint param_1) | { | iVar3 = param_1; | cVar4 = FUN_005255e0(param_1); | if (cVar4 == '\0') { | FUN_00525630();
+
+=== 00525820 [Cluster G] (00525820  (n=215)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00505160 x1
+  [2] ins=76 被调 unique=3: 005095F5=_malloc 00525640 x2 00525630
+  [PSEUDO]: { | if (param_1 == 0) { | FUN_00525630(0xa001); | return (undefined4 *)0x0; | } | if (DAT_00667a28 != (undefined4 *)0x0) {
+
+=== 00525900 [Cluster G] (00525900  (n=125)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00505220 x1
+  [2] ins=44 被调 unique=5: 005255E0 00525610 00525720 00525620 005089FD=FUN_005089fd
+  [PSEUDO]: void FUN_00525900(undefined4 *param_1) | { | cVar1 = FUN_005255e0(param_1); | if (cVar1 != '\0') { | FUN_00525610(param_1); | FUN_00525720(p
+
+=== 005259E0 [Cluster G] (005259E0  (n=105)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 0 处; 父:00505160 x1 00505220 x1
+  [2] ins=41 被调 unique=5: 00525610 x2 00525620 x2 005255E0 00525630 00525980
+  [PSEUDO]: { | cVar1 = FUN_005255e0(param_1); | if ((cVar1 == '\0') && (param_1 != 0)) { | FUN_00525630(0xa002); | return 0; | }
+
+=== 005260B0 [Cluster G] (005260B0  (n=172)  sec=.text) ===
+  [1] E8调用方 20 处; E9尾调 0 处; 父:00528EA0 x4 00529260 x3 00529530 x3 00528790 x2 00525640 x1
+  [2] ins=62 被调 unique=5: 00525620 x2 00525610 00528E40 00526310=FUN_00526310 005271A0=FUN_005271a0
+  [PSEUDO]: void FUN_005260b0(int param_1,int param_2,int param_3) | { | FUN_00525610(param_1); | if ((*(int *)(*(int *)(param_1 + 0x60) + 0x124) != 0) 
+
+=== 00528030 [Cluster G] (00528030  (n=248)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00505430 x1
+  [2] ins=88 被调 unique=6: 005255B0 x2 00525620 x2 005089FD=FUN_005089fd 00525980 00525610 00528130
+  [PSEUDO]: void FUN_00528030(uint param_1,int param_2) | { | if (param_1 != 0) { | uVar3 = FUN_00525980(); | FUN_00525610(uVar3); | if (DAT_00667a58 < 
+
+=== 00529730 [Cluster G] (00529730  (n=179)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 0 处; 父:00505F60 x1 0052A4B0 x1
+  [2] ins=52 被调 unique=6: 00525620 x2 00525980 00525610 00528E40 005260B0 005255B0
+  [PSEUDO]: void FUN_00529730(int param_1) | { | uVar3 = FUN_00525980(); | FUN_00525610(uVar3); | cVar2 = FUN_00528e40(param_1); | if (cVar2 != '\0') {
+
+=== 005297F0 [Cluster G] (005297F0  (n=162)  sec=.text) ===
+  [1] E8调用方 3 处; E9尾调 0 处; 父:00506090 x1 00528CF0 x1 0052A4B0 x1
+  [2] ins=49 被调 unique=6: 00525620 x2 00525980 00525610 00528E40 005260B0 005255B0
+  [PSEUDO]: void FUN_005297f0(int param_1) | { | uVar3 = FUN_00525980(); | FUN_00525610(uVar3); | cVar2 = FUN_00528e40(param_1); | if (cVar2 != '\0') {
+
+=== 005298A0 [Cluster G] (005298A0  (n=190)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0052A4B0 x1
+  [2] ins=58 被调 unique=6: 00525620 x2 00525980 00525610 00528E40 005260B0 005255B0
+  [PSEUDO]: void FUN_005298a0(int param_1) | { | uVar3 = FUN_00525980(); | FUN_00525610(uVar3); | cVar2 = FUN_00528e40(param_1); | if (cVar2 != '\0') {
+
+=== 00529960 [Cluster G] (00529960  (n=135)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00506390 x1
+  [2] ins=45 被调 unique=5: 00525620 x3 005255B0 x2 00525980 00525610 005260B0
+  [PSEUDO]: void FUN_00529960(int param_1,float param_2) | { | iVar1 = FUN_00525980(); | FUN_00525610(iVar1); | if (param_1 != 0x100a) { | FUN_005255b0(
+
+=== 005299F0 [Cluster G] (005299F0  (n=202)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 0 处; 父:005062F0 x1 00506330 x1
+  [2] ins=75 被调 unique=5: 005255B0 x2 00525620 x2 00525980 00525610 005260B0
+  [PSEUDO]: void FUN_005299f0(int param_1,undefined4 *param_2) | { | if (param_2 == (undefined4 *)0x0) { | FUN_005255b0(0xa003); | return; | }
+
+=== 00529B20 [Cluster G] (00529B20  (n=191)  sec=.text) ===
+  [1] E8调用方 3 处; E9尾调 0 处; 父:00529D50 x3
+  [2] ins=73 被调 unique=4: 00525620 x4 005255B0 x2 00525980 00525610
+  [PSEUDO]: void FUN_00529b20(int param_1,undefined4 *param_2) | { | if (param_2 == (undefined4 *)0x0) { | FUN_005255b0(0xa003); | return; | }
+
+=== 00529CE0 [Cluster G] (00529CE0  (n=109)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 0 处; 父:00529D50 x2
+  [2] ins=38 被调 unique=0: 
+  [PSEUDO]: void FUN_00529ce0(float *param_1,float *param_2) | { | fVar1 = param_1[5]; | fVar2 = param_1[3]; | fVar3 = *param_2; | fVar4 = param_1[4];
+
+=== 0052AAE0 [Cluster G] (0052AAE0  (n=147)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00529D50 x1
+  [2] ins=53 被调 unique=4: 00525620 x5 005255B0 x2 00525980 00525610
+  [PSEUDO]: void FUN_0052aae0(int param_1,float *param_2) | { | iVar1 = FUN_00525980(); | FUN_00525610(iVar1); | if (param_2 == (float *)0x0) { | FUN_00
+
+=== 0052AB80 [Cluster G] (0052AB80  (n=161)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00529D50 x1
+  [2] ins=61 被调 unique=5: 00525620 x5 005255B0 x2 00509980=__ftol 00525980 00525610
+  [PSEUDO]: void FUN_0052ab80(int param_1,undefined4 *param_2) | { | iVar1 = FUN_00525980(); | FUN_00525610(iVar1); | if (param_2 == (undefined4 *)0x0) 
+
+=== 0052AF90 [Cluster G] (0052AF90  (n=275)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0052C580 x1
+  [2] ins=43 被调 unique=1: 00530D50
+  [PSEUDO]: void FUN_0052af90(void) | { | DAT_007dcb88 = 0x660; | DAT_007dcb8c = 0x666; | iVar1 = DAT_00723260 * 0x5c; | (&DAT_007dcba0)[iVar1] = 0;
+
+=== 0052BF60 [Cluster G] (0052BF60  (n=270)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 0 处; 父:0047F190 x2
+  [2] ins=88 被调 unique=4: 0052C520 x2 00530DB0 x2 0052C740=FUN_0052c740 00530D00
+  [PSEUDO]: void FUN_0052bf60(int param_1,int param_2) | { | iVar4 = 0; | if ((param_1 < 1) || (param_2 == 0)) { | FUN_00530d00(0x505); | }
+
+=== 0052C070 [Cluster G] (0052C070  (n=142)  sec=.text) ===
+  [1] E8调用方 17 处; E9尾调 0 处; 父:0052F350 x4 0047FA70 x3 0047F9E0 x2 0047F290 x1 0047F2C0 x1
+  [2] ins=42 被调 unique=2: 0052C520 x2 0052C740=FUN_0052c740
+  [PSEUDO]: void FUN_0052c070(uint param_1) | { | if ((DAT_00723270 != 0) && (DAT_00723264 != 0)) goto joined_r0x0052c097; | cVar1 = FUN_0052c520(); | w
+
+=== 0052C100 [Cluster G] (0052C100  (n=158)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 0 处; 父:0047F210 x2
+  [2] ins=48 被调 unique=2: 0052C1A0 00530D80
+  [PSEUDO]: void FUN_0052c100(uint param_1,int param_2) | { | uVar4 = 0; | if ((0 < (int)param_1) && (puVar3 = DAT_00723270, DAT_00723264 != 0)) { | do 
+
+=== 0052C1A0 [Cluster G] (0052C1A0  (n=201)  sec=.text) ===
+  [1] E8调用方 42 处; E9尾调 0 处; 父:0052DB90 x5 00539D30 x5 0052E300 x4 0052C1A0 x3 0052C8C0 x3
+  [2] ins=72 被调 unique=2: 00530DB0 x6 0052C1A0 x3
+  [PSEUDO]: void FUN_0052c1a0(int param_1) | { | if (param_1 != 0) { | if (*(int *)(param_1 + 0x14) != 0) { | FUN_00530db0(*(int *)(param_1 + 0x14)); | 
+
+=== 0052C280 [Cluster G] (0052C280  (n=157)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 0 处; 父:0047F2F0 x1 0052F350 x1
+  [2] ins=45 被调 unique=2: 00530D00 x3 0052C460 x2
+  [PSEUDO]: { | if (DAT_0072329c == 0) { | FUN_00530d00(0x506); | return 0; | } | if (param_1 == 0) {
+
+=== 0052C320 [Cluster G] (0052C320  (n=157)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0052F350 x1
+  [2] ins=45 被调 unique=2: 00530D00 x3 0052C460 x2
+  [PSEUDO]: { | if (DAT_0072329c == 0) { | FUN_00530d00(0x506); | return 0; | } | if (param_1 == 0) {
+
+=== 0052C3C0 [Cluster G] (0052C3C0  (n=157)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0052F350 x1
+  [2] ins=45 被调 unique=2: 00530D00 x3 0052C460 x2
+  [PSEUDO]: { | if (DAT_0072329c == 0) { | FUN_00530d00(0x506); | return 0; | } | if (param_1 == 0) {
+
+=== 0052C4B0 [Cluster G] (0052C4B0  (n=104)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0052C520 x1
+  [2] ins=47 被调 unique=2: 00530D80 00530DB0
+  [PSEUDO]: { | puVar1 = (undefined4 *)FUN_00530d80(param_3); | uVar3 = param_2; | if (param_3 <= param_2) { | uVar3 = param_3; | }
+
+=== 0052C6C0 [Cluster G] (0052C6C0  (n=115)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0052C580 x1
+  [2] ins=31 被调 unique=2: 0052C520 0052C740=FUN_0052c740
+  [PSEUDO]: void FUN_0052c6c0(void) | { | if (((DAT_00723270 == 0) || (DAT_00723264 < 2)) && (cVar1 = FUN_0052c520(), cVar1 == '\0')) { | return; | } | 
+
+=== 0052CCE0 [Cluster G] (0052CCE0  (n=112)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 0 处; 父:0052F800 x1 0052F910 x1
+  [2] ins=52 被调 unique=3: 00530D00 0052C740=FUN_0052c740 0052CB10=FUN_0052cb10
+  [PSEUDO]: { | if (param_1 == (undefined4 *)0x0) { | FUN_00530d00(0x509); | return 0; | } | iVar2 = FUN_0052c740(*param_1,param_1[1],param_1[2],*(undef
+
+=== 0052CD50 [Cluster G] (0052CD50  (n=126)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 0 处; 父:0052DB90 x1 0052E300 x1
+  [2] ins=44 被调 unique=3: 00530D00 00530DB0 00530D80
+  [PSEUDO]: bool FUN_0052cd50(int *param_1,int param_2,int param_3,int param_4,byte param_5,byte param_6) | { | if (param_1 == (int *)0x0) { | FUN_00530
+
+=== 0052CDD0 [Cluster G] (0052CDD0  (n=206)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 1 处; 父:
+  [2] ins=84 被调 unique=4: 0052C490 00530D00 00530D80 00530DB0
+  [PSEUDO]: { | DAT_007232a4 = FUN_0052c490(); | if (DAT_007232a4 == 0) { | FUN_00530d00(0x506); | return 0; | }
+
+=== 0052CEA0 [Cluster G] (0052CEA0  (n=222)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0052F270 x1
+  [2] ins=85 被调 unique=3: 00530D00 00530D80 00530DB0
+  [PSEUDO]: { | if (DAT_0072329c == 0) { | FUN_00530d00(0x506); | return 0; | } | iVar2 = FUN_00530d80(*(undefined4 *)(DAT_0072329c + 0x18));
+
+=== 0052CF80 [Cluster G] (0052CF80  (n=180)  sec=.text) ===
+  [1] E8调用方 4 处; E9尾调 0 处; 父:0052D330 x1 0052D410 x1 0052D5E0 x1 00530AE0 x1
+  [2] ins=71 被调 unique=2: 00530D00 00530D80
+  [PSEUDO]: { | iVar2 = param_1; | if (param_1 == 0) { | FUN_00530d00(0x506); | return 0; | }
+
+=== 0052D860 [Cluster G] (0052D860  (n=288)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 0 处; 父:0047F780 x1 0047FD60 x1
+  [2] ins=111 被调 unique=8: 00530D00 x2 00530EB0 00530F00=FUN_00530f00 005318A0=FUN_005318a0 0052D330=FUN_0052d330 0052D410=FUN_0052d410 0052D5E0=FUN_0052d5e0 00530DB0
+  [PSEUDO]: void FUN_0052d860(undefined4 param_1,int param_2,int param_3,int param_4,int param_5,int param_6, | { | if (DAT_0072329c == 0) { | FUN_00530
+
+=== 0052D980 [Cluster G] (0052D980  (n=280)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 1 处; 父:
+  [2] ins=90 被调 unique=2: 00530D00 0052C880=FUN_0052c880
+  [PSEUDO]: { | bool bVar4; | local_8 = 0x12; | local_7 = 0xf6; | local_6 = 0xf3; | local_c = 0;
+
+=== 0052DAA0 [Cluster G] (0052DAA0  (n=236)  sec=.text) ===
+  [1] E8调用方 5 处; E9尾调 0 处; 父:0047F9E0 x2 0047F780 x1 0052F800 x1 0052F910 x1
+  [2] ins=94 被调 unique=8: 0052C490 00530D00 00535FD0=FUN_00535fd0 0052DB90=FUN_0052db90 0052C880=FUN_0052c880 0052C1A0 0052EB20=FUN_0052eb20 00535620=FUN_00535620
+  [PSEUDO]: { | DAT_007232a4 = (int *)FUN_0052c490(); | if (DAT_007232a4 == (int *)0x0) { | FUN_00530d00(0x506); | } | else {
+
+=== 0052F350 [Cluster G] (0052F350  (n=195)  sec=.text) ===
+  [1] E8调用方 8 处; E9尾调 0 处; 父:0053B9F0 x4 0053A390 x3 0053B790 x1
+  [2] ins=71 被调 unique=7: 0052C460 x4 0052C070 x4 0052F270=FUN_0052f270 0052BC40=FUN_0052bc40 0052C320 0052C280 0052C3C0
+  [PSEUDO]: { | uVar2 = FUN_0052bc40(0xdf1); | uVar4 = 0; | if (uVar2 != 0) { | do { | uVar3 = FUN_0052c460();
+
+=== 0052F510 [Cluster G] (0052F510  (n=133)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0052F630 x1
+  [2] ins=46 被调 unique=5: 00530D00 x2 0053A300 0052F630=FUN_0052f630 0053B4E0 0053B960
+  [PSEUDO]: { | if (param_2 != (char *)0x0) { | iVar3 = -1; | pcVar4 = param_2; | do { | if (iVar3 == 0) break;
+
+=== 0052F5A0 [Cluster G] (0052F5A0  (n=138)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 0 处; 父:0047F8E0 x1 0047F960 x1
+  [2] ins=55 被调 unique=5: 00530D00 x2 0052F4B0 0053A370 0053B550 0053B9D0
+  [PSEUDO]: { | if (param_2 == 0) { | uVar1 = FUN_00530d00(0x509); | return uVar1 & 0xffffff00; | } | if (param_1 == 0) {
+
+=== 0052F800 [Cluster G] (0052F800  (n=272)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 1 处; 父:
+  [2] ins=89 被调 unique=9: 0052C490 x3 0052C1A0 x2 00531000=FUN_00531000 0052C4A0 x2 0052F7A0 x2 00530D00 0052CCE0 0052DAA0 0052FD70=FUN_0052fd70
+  [PSEUDO]: { | bool bVar1; | bVar1 = false; | DAT_007232a4 = (uint *)FUN_0052c490(); | DAT_007dcb80 = DAT_007232a4; | if (DAT_007232a4 == (uint *)0x0) 
+
+=== 005309E0 [Cluster G] (005309E0  (n=252)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00480040 x1
+  [2] ins=88 被调 unique=7: 0052C1A0 x2 0052C490 0052E890=FUN_0052e890 00530C50 00530C60 00530DB0 00530D00
+  [PSEUDO]: { | HBITMAP pHVar3; | BITMAPINFO local_2c; | iVar1 = FUN_0052c490(); | DAT_007242fc = iVar1; | if (iVar1 == 0) goto LAB_00530ac7;
+
+=== 00530C60 [Cluster G] (00530C60  (n=159)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:005309E0 x1
+  [2] ins=44 被调 unique=1: 0052C490
+  [PSEUDO]: void FUN_00530c60(undefined4 *param_1) | { | DAT_007242fc = (undefined4 *)FUN_0052c490(); | if (DAT_007242fc == (undefined4 *)0x0) { | FUN_0
+
+=== 005316E0 [Cluster G] (005316E0  (n=138)  sec=.text) ===
+  [1] E8调用方 6 处; E9尾调 0 处; 父:0053A4A0 x3 00531460 x1 00531500 x1 0053BFB0 x1
+  [2] ins=39 被调 unique=3: 00530DB0 00530D80 00530D50
+  [PSEUDO]: { | if (DAT_007dc850 != (code *)&LAB_00531650) { | if (DAT_007232dc != 0) { | FUN_00530db0(DAT_007232dc); | } | if (param_1 == 0) {
+
+=== 00536420 [Cluster G] (00536420  (n=166)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0052DB90 x1
+  [2] ins=53 被调 unique=2: 00530D00 005364D0=FUN_005364d0
+  [PSEUDO]: { | if (param_1 == (int *)0x0) { | FUN_00530d00(0x506); | return 0; | } | _DAT_007dc7e8 = (double)param_3 / (double)*param_1;
+
+=== 00538740 [Cluster G] (00538740  (n=164)  sec=.text) ===
+  [1] E8调用方 12 处; E9尾调 0 处; 父:00538A90 x4 00538D30 x4 00538F90 x4
+  [2] ins=67 被调 unique=0: 
+  [PSEUDO]: { | iVar1 = param_1[4]; | iVar3 = (param_1[3] + param_1[1] * 0x21) * 0x21; | iVar2 = param_1[5]; | iVar4 = (param_1[1] * 0x21 + param_1[2]) 
+
+=== 00538A90 [Cluster G] (00538A90  (n=265)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 0 处; 父:00538F90 x2
+  [2] ins=89 被调 unique=1: 00538740 x4
+  [PSEUDO]: void FUN_00538a90(undefined4 param_1) | { | FUN_00538740(param_1,&DAT_00796400); | FUN_00538740(param_1,&DAT_00773260); | FUN_00538740(param
+
+=== 00538F00 [Cluster G] (00538F00  (n=129)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00538F90 x1
+  [2] ins=57 被调 unique=0: 
+  [PSEUDO]: void FUN_00538f00(int *param_1,undefined1 param_2,int param_3) | { | iVar3 = *param_1 + 1; | if (iVar3 <= param_1[1]) { | iVar4 = iVar3 * 0x
+
+=== 005395B0 [Cluster G] (005395B0  (n=109)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00539D30 x1
+  [2] ins=36 被调 unique=0: 
+  [PSEUDO]: void FUN_005395b0(undefined4 param_1,undefined4 param_2,undefined4 param_3) | { | DAT_0072c660 = param_1; | DAT_0072c668 = param_2; | iVar2 
+
+=== 00539650 [Cluster G] (00539650  (n=263)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00539D30 x1
+  [2] ins=88 被调 unique=0: 
+  [PSEUDO]: void FUN_00539650(void) | { | local_8 = 0; | local_c = 0; | piVar5 = &DAT_0072330c; | iVar4 = 0;
+
+=== 00539760 [Cluster G] (00539760  (n=238)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00539D30 x1
+  [2] ins=89 被调 unique=0: 
+  [PSEUDO]: { | local_4 = 0xffffffff; | iVar3 = *(int *)(&DAT_0072ca80 + param_2 * 4) + -1; | iVar4 = *(int *)(&DAT_0072ca80 + param_2 * 4); | iVar5 = 1
+
+=== 00539850 [Cluster G] (00539850  (n=216)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00539B30 x1
+  [2] ins=71 被调 unique=0: 
+  [PSEUDO]: { | iVar1 = 0x7fffffff; | iVar5 = 0; | local_c = 0x7fffffff; | local_8 = -1; | local_4 = -1;
+
+=== 00539930 [Cluster G] (00539930  (n=118)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00539B30 x1
+  [2] ins=44 被调 unique=0: 
+  [PSEUDO]: void FUN_00539930(int param_1,int param_2,int param_3,int param_4,int param_5) | { | iVar1 = ((&DAT_007232f8)[param_2 * 4] - param_3) * para
+
+=== 0053A390 [Cluster G] (0053A390  (n=267)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 1 处; 父:0053A340 x1
+  [2] ins=96 被调 unique=10: 00530D00 x4 0052F350 x3 0053A1A0 0053A250 0053A1C0 0053A2A0 0053B040=FUN_0053b040 0053ADD0=FUN_0053add0 0053AB70=FUN_0053ab70 0053A4A0=FUN_0053a4a0
+  [PSEUDO]: { | if (DAT_0072329c == 0) { | puStack_60 = (undefined1 *)0x506; | FUN_00530d00(); | return 0; | }
+
+=== 0053B570 [Cluster G] (0053B570  (n=101)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0053B690 x1
+  [2] ins=31 被调 unique=0: 
+  [PSEUDO]: void FUN_0053b570(int param_1) | { | if (*(int *)(param_1 + 0x18) == 0) { | iVar2 = (*(code *)**(undefined4 **)(param_1 + 4))(param_1,0,0x24
+
+=== 0053B690 [Cluster G] (0053B690  (n=207)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 1 处; 父:0053B520 x1
+  [2] ins=60 被调 unique=9: 00530D00 0053E110 00593A18 0053DCA0 0053B570 0053DD90 0053B790=FUN_0053b790 0053E050 0053DD80
+  [PSEUDO]: { | code *local_80; | if (DAT_0072329c == 0) { | FUN_00530d00(0x506); | return 0; | }
+
+=== 0053C1A0 [Cluster G] (0053C1A0  (n=135)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0053BDC0 x1
+  [2] ins=62 被调 unique=3: 00530DB0 x2 00530D80 0052C880=FUN_0052c880
+  [PSEUDO]: { | ushort *puVar1; | iVar5 = *param_1 * param_1[1]; | pcVar4 = (char *)FUN_00530d80(iVar5 * 3); | puVar1 = (ushort *)param_1[5]; | pcVar2 =
+
+=== 0053C270 [Cluster G] (0053C270  (n=252)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=92 被调 unique=1: 0053C370
+  [PSEUDO]: { | iVar3 = param_1[0x5f]; | (**(code **)(*param_1 + 4))(param_1,0xffffffff); | do { | if (iVar3 < 0xc0) { | LAB_0053c2a8:
+
+=== 0053C370 [Cluster G] (0053C370  (n=268)  sec=.text) ===
+  [1] E8调用方 3 处; E9尾调 0 处; 父:0053C270 x1 0053CA40 x1 0053DBE0 x1
+  [2] ins=104 被调 unique=0: 
+  [PSEUDO]: { | puVar2 = (undefined4 *)param_1[6]; | pbVar5 = (byte *)*puVar2; | iVar4 = puVar2[1]; | do { | if (iVar4 == 0) {
+
+=== 0053C480 [Cluster G] (0053C480  (n=110)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0053DCA0 x1
+  [2] ins=29 被调 unique=1: 0053DC70
+  [PSEUDO]: void FUN_0053c480(int param_1) | { | puVar1 = (undefined4 *)(*(code *)**(undefined4 **)(param_1 + 4))(param_1,0,0xa8); | puVar1[1] = &LAB_00
+
+=== 0053C9A0 [Cluster G] (0053C9A0  (n=158)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0053CA40 x1
+  [2] ins=72 被调 unique=0: 
+  [PSEUDO]: { | puVar3 = (undefined4 *)param_1[6]; | iVar6 = puVar3[1]; | pbVar5 = (byte *)*puVar3; | if (iVar6 == 0) { | cVar4 = (*(code *)puVar3[3])(p
+
+=== 0053DA50 [Cluster G] (0053DA50  (n=237)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0053CA40 x1
+  [2] ins=101 被调 unique=0: 
+  [PSEUDO]: { | puVar3 = (undefined4 *)param_1[6]; | iVar8 = puVar3[1]; | puVar6 = (undefined1 *)*puVar3; | if (iVar8 == 0) { | cVar4 = (*(code *)puVar3
+
+=== 0053DB40 [Cluster G] (0053DB40  (n=155)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0053CA40 x1
+  [2] ins=67 被调 unique=0: 
+  [PSEUDO]: { | puVar2 = (undefined4 *)param_1[6]; | iVar5 = puVar2[1]; | pbVar4 = (byte *)*puVar2; | if (iVar5 == 0) { | uVar3 = (*(code *)puVar2[3])(p
+
+=== 0053DBE0 [Cluster G] (0053DBE0  (n=136)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=47 被调 unique=1: 0053C370
+  [PSEUDO]: { | if (param_1[0x5f] == 0) { | cVar1 = FUN_0053c370(param_1); | if (cVar1 == '\0') { | return 0; | }
+
+=== 0053DCA0 [Cluster G] (0053DCA0  (n=216)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0053B690 x1
+  [2] ins=71 被调 unique=3: 0053EC70=FUN_0053ec70 0053C480 0053E680
+  [PSEUDO]: void FUN_0053dca0(int *param_1,int param_2,int param_3) | { | param_1[1] = 0; | if (param_2 != 0x3e) { | (**(code **)*param_1)(param_1); | }
+
+=== 0053DD90 [Cluster G] (0053DD90  (n=112)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0053B690 x1
+  [2] ins=42 被调 unique=2: 0053DE00=FUN_0053de00 0053E2C0=FUN_0053e2c0
+  [PSEUDO]: { | if ((param_1[5] != 200) && (param_1[5] != 0xc9)) { | (**(code **)*param_1)(param_1); | } | iVar1 = FUN_0053de00(param_1); | if (iVar1 ==
+
+=== 0053E050 [Cluster G] (0053E050  (n=183)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0053B690 x1
+  [2] ins=65 被调 unique=1: 0053E2C0=FUN_0053e2c0
+  [PSEUDO]: { | iVar3 = param_1[5]; | if (((iVar3 == 0xcd) || (iVar3 == 0xce)) && ((char)param_1[0x10] == '\0')) { | if ((uint)param_1[0x1e] < (uint)par
+
+=== 0053E360 [Cluster G] (0053E360  (n=222)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0053B790 x1
+  [2] ins=81 被调 unique=2: 0053E440 x2 0053FB40
+  [PSEUDO]: { | if (param_1[5] == 0xca) { | FUN_0053fb40(param_1); | if ((char)param_1[0x10] != '\0') { | param_1[5] = 0xcf; | return 1;
+
+=== 0053E440 [Cluster G] (0053E440  (n=194)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 0 处; 父:0053E360 x2
+  [2] ins=74 被调 unique=0: 
+  [PSEUDO]: { | if (*(int *)(param_1 + 0x14) != 0xcc) { | (*(code *)**(undefined4 **)(param_1 + 0x180))(param_1); | } | if (*(char *)(*(int *)(param_1 +
+
+=== 0053E510 [Cluster G] (0053E510  (n=151)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0053B790 x1
+  [2] ins=55 被调 unique=0: 
+  [PSEUDO]: { | piVar1 = param_1; | if (param_1[5] != 0xcd) { | (**(code **)*param_1)(param_1); | } | if ((uint)piVar1[0x18] <= (uint)piVar1[0x1e]) {
+
+=== 0053E8B0 [Cluster G] (0053E8B0  (n=172)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0053E6D0 x1
+  [2] ins=60 被调 unique=0: 
+  [PSEUDO]: void FUN_0053e8b0(int *param_1) | { | piVar3 = param_1; | local_4 = 0; | if (0 < param_1[0x49]) { | param_1 = param_1 + 0x4a;
+
+=== 0053E980 [Cluster G] (0053E980  (n=190)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=79 被调 unique=2: 0053EA40=FUN_0053ea40 0053E6D0
+  [PSEUDO]: { | iVar1 = param_1[100]; | if (*(char *)(iVar1 + 0x11) != '\0') { | return 2; | } | iVar2 = (**(code **)(param_1[0x65] + 4))(param_1);
+
+=== 0053EDB0 [Cluster G] (0053EDB0  (n=295)  sec=.text) ===
+  [1] E8调用方 4 处; E9尾调 0 处; 父:0053EFB0 x1 0053F050 x1 0053F100 x1 0053F170 x1
+  [2] ins=107 被调 unique=2: 0053EEE0 x2 0053FF70 x2
+  [PSEUDO]: { | iVar1 = param_1[1]; | if (0x3b9ac9f0 < param_3) { | FUN_0053eee0(param_1,1); | } | if ((param_3 & 7) != 0) {
+
+=== 0053EF00 [Cluster G] (0053EF00  (n=161)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 0 处; 父:0053EFB0 x1 0053F050 x1
+  [2] ins=60 被调 unique=2: 0053EEE0 x2 0053FF70
+  [PSEUDO]: { | iVar1 = param_1[1]; | if (0x3b9ac9f0 < param_3) { | FUN_0053eee0(param_1,3); | } | if ((param_3 & 7) != 0) {
+
+=== 0053EFB0 [Cluster G] (0053EFB0  (n=159)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0053F1E0 x1
+  [2] ins=66 被调 unique=2: 0053EDB0 0053EF00
+  [PSEUDO]: { | uVar1 = (uint)(0x3b9ac9f0 / (ulonglong)param_3); | iVar2 = param_1[1]; | if (uVar1 == 0) { | (**(code **)*param_1)(param_1); | }
+
+=== 0053F050 [Cluster G] (0053F050  (n=167)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0053F1E0 x1
+  [2] ins=68 被调 unique=2: 0053EDB0 0053EF00
+  [PSEUDO]: { | uVar1 = (uint)(0x3b9ac9f0 / (ulonglong)(uint)(param_3 * 0x80)); | iVar2 = param_1[1]; | if (uVar1 == 0) { | (**(code **)*param_1)(param_
+
+=== 0053F100 [Cluster G] (0053F100  (n=104)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=38 被调 unique=1: 0053EDB0
+  [PSEUDO]: void FUN_0053f100(int *param_1,int param_2,undefined1 param_3,undefined4 param_4,undefined4 param_5, | { | iVar1 = param_1[1]; | if (param_2
+
+=== 0053F170 [Cluster G] (0053F170  (n=104)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=38 被调 unique=1: 0053EDB0
+  [PSEUDO]: void FUN_0053f170(int *param_1,int param_2,undefined1 param_3,undefined4 param_4,undefined4 param_5, | { | iVar1 = param_1[1]; | if (param_2
+
+=== 0053F750 [Cluster G] (0053F750  (n=252)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0053F850 x1
+  [2] ins=97 被调 unique=1: 0053FF80 x2
+  [PSEUDO]: void FUN_0053f750(int *param_1,int param_2) | { | iVar1 = param_1[1]; | if ((param_2 < 0) || (1 < param_2)) { | (**(code **)*param_1)(param_
+
+=== 00540090 [Cluster H] (00540090  (n=173)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0053FFC0 x1
+  [2] ins=62 被调 unique=0: 
+  [PSEUDO]: void FUN_00540090(int param_1) | { | iVar1 = *(int *)(param_1 + 0x184); | iVar2 = *(int *)(param_1 + 0x118); | iVar3 = (*(code *)**(undefine
+
+=== 00540310 [Cluster H] (00540310  (n=110)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=44 被调 unique=0: 
+  [PSEUDO]: void FUN_00540310(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4) | { | iVar2 = *(int *)(param_1 + 0x184); | if (*(cha
+
+=== 005404C0 [Cluster H] (005404C0  (n=211)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00540380 x1
+  [2] ins=72 被调 unique=0: 
+  [PSEUDO]: void FUN_005404c0(int param_1) | { | iVar1 = *(int *)(param_1 + 0x118); | iVar2 = *(int *)(param_1 + 0x184); | local_10 = 0; | if (0 < *(int
+
+=== 005405A0 [Cluster H] (005405A0  (n=153)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00540380 x1
+  [2] ins=64 被调 unique=0: 
+  [PSEUDO]: void FUN_005405a0(int param_1) | { | iVar7 = 0; | iVar2 = *(int *)(param_1 + 0x184); | if (0 < *(int *)(param_1 + 0x24)) { | piVar6 = (int *
+
+=== 00540670 [Cluster H] (00540670  (n=263)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0053FB80 x1
+  [2] ins=93 被调 unique=1: 0053E5C0 x2
+  [PSEUDO]: void FUN_00540670(int param_1,char param_2) | { | puVar2 = (undefined4 *)(*(code *)**(undefined4 **)(param_1 + 4))(param_1,1,0x74); | puVar2
+
+=== 00540E50 [Cluster H] (00540E50  (n=288)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00540800 x1
+  [2] ins=94 被调 unique=0: 
+  [PSEUDO]: { | iVar1 = param_1; | param_1._0_1_ = 0; | psVar2 = (short *)CONCAT31((int3)((uint)in_EAX >> 8),*(char *)(iVar1 + 200)); | iVar8 = *(int *)
+
+=== 00541880 [Cluster H] (00541880  (n=284)  sec=.text) ===
+  [1] E8调用方 19 处; E9尾调 0 处; 父:00541C10 x6 005429B0 x5 00542660 x3 005419A0 x2 005423B0 x2
+  [2] ins=103 被调 unique=0: 
+  [PSEUDO]: { | piVar1 = (int *)param_1[4]; | pbVar5 = (byte *)*param_1; | iVar6 = param_1[1]; | if (piVar1[0x5f] == 0) { | for (; param_3 < 0x19; param
+
+=== 005419A0 [Cluster H] (005419A0  (n=221)  sec=.text) ===
+  [1] E8调用方 6 处; E9尾调 0 处; 父:00541C10 x3 005423B0 x1 00542660 x1 005429B0 x1
+  [2] ins=96 被调 unique=1: 00541880 x2
+  [PSEUDO]: { | if (param_3 < param_5) { | cVar2 = FUN_00541880(param_1,param_2,param_3,param_5); | if (cVar2 == '\0') { | return 0xffffffff; | }
+
+=== 00542050 [Cluster H] (00542050  (n=128)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00541C10 x1
+  [2] ins=44 被调 unique=0: 
+  [PSEUDO]: { | iVar1 = *(int *)(param_1 + 0x198); | ((int)(*(int *)(iVar1 + 0x10) + (*(int *)(iVar1 + 0x10) >> 0x1f & 7U)) >> 3); | uVar2 = (**(code **
+
+=== 005420D0 [Cluster H] (005420D0  (n=110)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0053FB80 x1
+  [2] ins=44 被调 unique=0: 
+  [PSEUDO]: void FUN_005420d0(int param_1) | { | puVar1 = (undefined4 *)(*(code *)**(undefined4 **)(param_1 + 4))(param_1,1,0x40); | puVar1[0xb] = 0; | 
+
+=== 005425D0 [Cluster H] (005425D0  (n=135)  sec=.text) ===
+  [1] E8调用方 4 处; E9尾调 0 处; 父:005423B0 x1 00542660 x1 005428C0 x1 005429B0 x1
+  [2] ins=45 被调 unique=0: 
+  [PSEUDO]: { | iVar1 = *(int *)(param_1 + 0x198); | ((int)(*(int *)(iVar1 + 0x10) + (*(int *)(iVar1 + 0x10) >> 0x1f & 7U)) >> 3); | uVar2 = (**(code **
+
+=== 00542DB0 [Cluster H] (00542DB0  (n=121)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0053FB80 x1
+  [2] ins=46 被调 unique=0: 
+  [PSEUDO]: void FUN_00542db0(undefined4 *param_1) | { | iVar1 = (int)param_1; | puVar2 = (undefined4 *)(*(code *)**(undefined4 **)((int)param_1 + 4))(p
+
+=== 005435D0 [Cluster H] (005435D0  (n=228)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=85 被调 unique=0: 
+  [PSEUDO]: void FUN_005435d0(int param_1,int param_2,int *param_3,undefined4 param_4,int param_5,int *param_6, | { | iVar3 = param_1; | iVar2 = *(int *
+
+=== 00543E90 [Cluster H] (00543E90  (n=120)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=51 被调 unique=0: 
+  [PSEUDO]: void FUN_00543e90(int param_1,int param_2,int param_3,int *param_4,int param_5) | { | iVar2 = *(int *)(param_1 + 0x24); | iVar3 = *(int *)(p
+
+=== 00544130 [Cluster H] (00544130  (n=133)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0053FB80 x1
+  [2] ins=45 被调 unique=1: 005441C0 x2
+  [PSEUDO]: void FUN_00544130(int param_1) | { | puVar1 = (undefined4 *)(*(code *)**(undefined4 **)(param_1 + 4))(param_1,1,0x30); | puVar1[10] = *(int 
+
+=== 005441C0 [Cluster H] (005441C0  (n=188)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 0 处; 父:00544130 x2
+  [2] ins=62 被调 unique=0: 
+  [PSEUDO]: void FUN_005441c0(int param_1) | { | iVar1 = *(int *)(param_1 + 0x1a0); | uVar2 = (*(code *)**(undefined4 **)(param_1 + 4))(param_1,1,0x400)
+
+=== 00544850 [Cluster H] (00544850  (n=152)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 0 处; 父:00544720 x1 00544954 x1
+  [2] ins=61 被调 unique=0: 
+  [PSEUDO]: void FUN_00544850(int param_1) | { | iVar4 = *(int *)(param_1 + 0x1a8); | iVar1 = (*(code *)**(undefined4 **)(param_1 + 4))(param_1,1,0x7fc)
+
+=== 005448F0 [Cluster H] (005448F0  (n=144)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=39 被调 unique=0: 
+  [PSEUDO]: void FUN_005448f0(int *param_1,char param_2) | { | iVar1 = param_1[0x6a]; | iVar2 = *(int *)(iVar1 + 0x18); | if (param_1[0x13] != 0) { | pa
+
+=== 00544B60 [Cluster H] (00544B60  (n=261)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 0 处; 父:00544A90 x1 00544FB0 x1
+  [2] ins=82 被调 unique=2: 00544C70=FUN_00544c70 00544E50=FUN_00544e50
+  [PSEUDO]: void FUN_00544b60(int param_1,int param_2,int param_3,int param_4) | { | iVar8 = *(int *)(*(int *)(param_1 + 0x1a8) + 0x18); | iVar6 = (para
+
+=== 005452D0 [Cluster H] (005452D0  (n=134)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:005452A0 x1
+  [2] ins=58 被调 unique=3: 00545360=FUN_00545360 00545720=FUN_00545720 005458D0=FUN_005458d0
+  [PSEUDO]: void FUN_005452d0(int *param_1,int param_2) | { | puVar1 = (undefined4 *)(**(code **)param_1[1])(param_1,1,param_2 << 5); | iVar3 = 0; | puV
+
+=== 00545A70 [Cluster H] (00545A70  (n=154)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0053FB80 x1
+  [2] ins=52 被调 unique=3: 00545B10=FUN_00545b10 00545D70=FUN_00545d70 00545ED0
+  [PSEUDO]: void FUN_00545a70(int *param_1) | { | puVar1 = (undefined4 *)(**(code **)param_1[1])(param_1,1,0x58); | param_1[0x6a] = (int)puVar1; | puVar
+
+=== 00545C70 [Cluster H] (00545C70  (n=213)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00545B10 x1
+  [2] ins=84 被调 unique=0: 
+  [PSEUDO]: { | bool bVar4; | iVar2 = param_1[0x19]; | iVar3 = param_1[0x15]; | iVar7 = 1; | do {
+
+=== 00545F10 [Cluster H] (00545F10  (n=236)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=95 被调 unique=4: 00545ED0 0053E660 00545D70=FUN_00545d70 00546000
+  [PSEUDO]: void FUN_00545f10(int *param_1) | { | iVar1 = param_1[0x6a]; | param_1[0x1d] = *(int *)(iVar1 + 0x10); | iVar3 = param_1[0x13]; | param_1[0x
+
+=== 00548410 [Cluster H] (00548410  (n=170)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 0 处; 父:004A6DD0 x2
+  [2] ins=63 被调 unique=1: 00410AF0
+  [PSEUDO]: void FUN_00548410(undefined4 param_1,undefined4 *param_2,undefined4 *param_3,undefined4 *param_4, | { | iVar1 = FUN_00410af0(param_1); | if 
+
+=== 0054A4B0 [Cluster H] (0054A4B0  (n=163)  sec=.text) ===
+  [1] E8调用方 3 处; E9尾调 0 处; 父:0054A560 x1 0054B580 x1 0054B720 x1
+  [2] ins=53 被调 unique=9: 00554970 005546C0 00554B30 00554B60 004736A0=FUN_004736a0 00554710 0054A740=FUN_0054a740 00553DC0 00554AE0
+  [PSEUDO]: { | void *local_c; | local_4 = 0xffffffff; | puStack_8 = &LAB_005a4548; | local_c = ExceptionList; | ExceptionList = &local_c;
+
+=== 0054A6C0 [Cluster H] (0054A6C0  (n=117)  sec=.text) ===
+  [1] E8调用方 56 处; E9尾调 0 处; 父:004BB800 x6 004EFB20 x6 004BAD20 x3 00495CD0 x2 004EE2A0 x2
+  [2] ins=35 被调 unique=4: 005538E0 x2 00553830 0054F670 0054B150
+  [PSEUDO]: FUN_0054a6c0(int param_1,undefined4 param_2,undefined4 param_3,int param_4,undefined4 param_5) | { | iVar1 = param_4; | if ((*(int *)(param_
+
+=== 0054B150 [Cluster H] (0054B150  (n=267)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 0 处; 父:0054A6C0 x1 0054AB30 x1
+  [2] ins=73 被调 unique=6: 005015F0 x2 00554C90 00554CD0 0054C510 004E8500=FUN_004e8500 00553DE0=FUN_00553de0
+  [PSEUDO]: void __thiscall FUN_0054b150(int param_1,int param_2) | { | DWORD DVar1; | DWORD *pDVar3; | DWORD *pDVar4; | DWORD local_24 [6];
+
+=== 0054B940 [Cluster H] (0054B940  (n=250)  sec=.text) ===
+  [1] E8调用方 5 处; E9尾调 0 处; 父:004B2C70 x1 004B2FD0 x1 004B7980 x1 004D7D50 x1 004D8A80 x1
+  [2] ins=94 被调 unique=2: 005092C0=FUN_005092c0 00403490=FUN_00403490
+  [PSEUDO]: FUN_0054b940(int param_1,uint param_2,undefined4 *param_3,undefined4 *param_4,int *param_5) | { | if ((-1 < (int)param_2) && | (param_2 < (u
+
+=== 0054BCD0 [Cluster H] (0054BCD0  (n=181)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0054AB30 x1
+  [2] ins=49 被调 unique=8: 005015F0 00553830 005538E0 00553920 004736B0 00553870 00553880 005547A0
+  [PSEUDO]: void __fastcall FUN_0054bcd0(int param_1) | { | DWORD DVar2; | DWORD local_18; | void *local_c; | local_4 = 0xffffffff;
+
+=== 0054C2C0 [Cluster H] (0054C2C0  (n=164)  sec=.text) ===
+  [1] E8调用方 4 处; E9尾调 0 处; 父:0054A740 x2 005544A0 x1 00555C10 x1
+  [2] ins=64 被调 unique=0: 
+  [PSEUDO]: { | iVar4 = (*param_1 - param_1[1]) / 0x18 + param_2; | if ((-1 < iVar4) && (iVar4 < 0x15)) { | return param_1; | } | if (iVar4 < 1) {
+
+=== 0054C510 [Cluster H] (0054C510  (n=202)  sec=.text) ===
+  [1] E8调用方 4 处; E9尾调 0 处; 父:0054B150 x1 0054B260 x1 00553DE0 x1 00555E00 x1
+  [2] ins=62 被调 unique=4: 0054CC30=FUN_0054cc30 005095F5=_malloc 00403440 004E8500=FUN_004e8500
+  [PSEUDO]: void __thiscall FUN_0054c510(int *param_1,undefined4 *param_2) | { | void *pvVar1; | void *local_c; | puStack_8 = &LAB_005a4698; | local_c =
+
+=== 0054C870 [Cluster H] (0054C870  (n=184)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 0 处; 父:0054A300 x2
+  [2] ins=53 被调 unique=2: 004E6050=FUN_004e6050 004E8500=FUN_004e8500
+  [PSEUDO]: void FUN_0054c870(int param_1) | { | local_2c = in_stack_00000018; | local_30 = in_stack_00000014; | local_28 = in_stack_0000001c; | local_2
+
+=== 0054CAE0 [Cluster H] (0054CAE0  (n=168)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0054B720 x1
+  [2] ins=77 被调 unique=2: 005092C0=FUN_005092c0 00403490=FUN_00403490
+  [PSEUDO]: { | param_1[1] = param_2[1]; | param_1[2] = param_2[2]; | piVar1 = param_1 + 3; | if (param_2 + 3 != piVar1) { | iVar2 = param_2[4];
+
+=== 0054CD90 [Cluster H] (0054CD90  (n=239)  sec=.text) ===
+  [1] E8调用方 3 处; E9尾调 0 处; 父:004B2C70 x1 0054A740 x1 0054B580 x1
+  [2] ins=96 被调 unique=2: 005092C0=FUN_005092c0 00403490=FUN_00403490
+  [PSEUDO]: void FUN_0054cd90(undefined4 *param_1,int param_2,undefined4 *param_3) | { | param_2 = (param_2 - (int)param_1) / 0x18; | if (0 < param_2) {
+
+=== 0054CE80 [Cluster H] (0054CE80  (n=244)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 0 处; 父:004B4F50 x1 0054C5E0 x1
+  [2] ins=98 被调 unique=2: 005092C0=FUN_005092c0 00403490=FUN_00403490
+  [PSEUDO]: void FUN_0054ce80(int param_1,int param_2,undefined4 *param_3) | { | param_1 = (param_2 - param_1) / 0x18; | if (0 < param_1) { | piVar4 = p
+
+=== 0054CF80 [Cluster H] (0054CF80  (n=245)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 0 处; 父:0054C5E0 x2
+  [2] ins=86 被调 unique=4: 00402BF0=FUN_00402bf0 004030F0=FUN_004030f0 005092C0=FUN_005092c0 00402A70=FUN_00402a70
+  [PSEUDO]: { | void *local_10; | puStack_c = &LAB_005a4759; | local_10 = ExceptionList; | uStack_7 = 0; | ExceptionList = &local_10;
+
+=== 0054D0E0 [Cluster H] (0054D0E0  (n=111)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00550060 x1
+  [2] ins=28 被调 unique=2: 00553290 00553790
+  [PSEUDO]: { | void *local_c; | local_4 = 0xffffffff; | puStack_8 = &LAB_005a4786; | local_c = ExceptionList; | ExceptionList = &local_c;
+
+=== 0054DB70 [Cluster H] (0054DB70  (n=101)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:005506A0 x1
+  [2] ins=28 被调 unique=4: 00553920 x3 00553830 0054F670 00553530
+  [PSEUDO]: void __thiscall FUN_0054db70(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4) | { | if (*(int *)(param_1 + 8) == 2) { |
+
+=== 0054E660 [Cluster H] (0054E660  (n=135)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 1 处; 父:
+  [2] ins=43 被调 unique=5: 005538E0 x2 0054F530 00553830 0054F670 0054F760
+  [PSEUDO]: FUN_0054e660(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,int param_5, | { | iVar1 = param_5; | if ((*(int *)(param_
+
+=== 0054E6F0 [Cluster H] (0054E6F0  (n=193)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 1 处; 父:004ACB00 x1
+  [2] ins=63 被调 unique=4: 005538E0 x2 00553830 0054F670 0054F760
+  [PSEUDO]: FUN_0054e6f0(int param_1,undefined4 param_2,undefined4 param_3,int param_4,undefined4 param_5) | { | iVar3 = param_4; | if ((*(int *)(param_
+
+=== 0054E7C0 [Cluster H] (0054E7C0  (n=204)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 1 处; 父:004ACB00 x1
+  [2] ins=68 被调 unique=4: 005538E0 x2 00553830 0054F670 0054F760
+  [PSEUDO]: FUN_0054e7c0(int param_1,int param_2,undefined4 param_3,undefined4 param_4,int param_5, | { | iVar3 = param_5; | if ((*(int *)(param_1 + 0x1
+
+=== 0054E890 [Cluster H] (0054E890  (n=266)  sec=.text) ===
+  [1] E8调用方 6 处; E9尾调 0 处; 父:0048B570 x2 0054E580 x2 0054E150 x1 0054E3D0 x1
+  [2] ins=95 被调 unique=8: 00553830 005538E0 0054F2D0=FUN_0054f2d0 0054E9A0 00507850=FUN_00507850 0054F7A0 00402E90=FUN_00402e90 00554970
+  [PSEUDO]: void __fastcall FUN_0054e890(int param_1) | { | FUN_00553830(); | DAT_00724e24 = 4; | local_4 = 1; | FUN_005538e0(&local_4,4);
+
+=== 0054F6E0 [Cluster H] (0054F6E0  (n=119)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0054EA60 x1
+  [2] ins=27 被调 unique=2: 004736A0=FUN_004736a0 00553B80
+  [PSEUDO]: { | void *local_c; | local_4 = 0xffffffff; | puStack_8 = &LAB_005a49c3; | local_c = ExceptionList; | ExceptionList = &local_c;
+
+=== 0054FF00 [Cluster H] (0054FF00  (n=211)  sec=.text) ===
+  [1] E8调用方 3 处; E9尾调 0 处; 父:00551230 x2 00550EC0 x1
+  [2] ins=90 被调 unique=4: 0054FEC0 00508AE6=FUN_00508ae6 005092C0=FUN_005092c0 00403490=FUN_00403490
+  [PSEUDO]: void FUN_0054ff00(undefined4 param_1,undefined4 param_2,int *param_3) | { | FUN_0054fec0(param_1,param_2,local_34); | iVar5 = 0; | puVar8 = 
+
+=== 00550490 [Cluster H] (00550490  (n=154)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:004D9690 x1
+  [2] ins=72 被调 unique=2: 005092C0=FUN_005092c0 00403490=FUN_00403490
+  [PSEUDO]: void __thiscall FUN_00550490(int param_1,char *param_2) | { | if (param_2 != (char *)0x0) { | piVar1 = (int *)(param_1 + 0x684); | uVar5 = 0
+
+=== 00550A50 [Cluster H] (00550A50  (n=168)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00498840 x1
+  [2] ins=66 被调 unique=2: 005092C0=FUN_005092c0 00403490=FUN_00403490
+  [PSEUDO]: void FUN_00550a50(char *param_1) | { | if (param_1 != (char *)0x0) { | uVar3 = 0xffffffff; | pcVar5 = param_1; | do {
+
+=== 00550B00 [Cluster H] (00550B00  (n=249)  sec=.text) ===
+  [1] E8调用方 3 处; E9尾调 0 处; 父:00550C00 x1 00550C20 x1 00550D70 x1
+  [2] ins=94 被调 unique=2: 005092C0=FUN_005092c0 00403490=FUN_00403490
+  [PSEUDO]: { | LSTATUS LVar3; | HKEY local_8; | DWORD local_4; | uVar7 = 0; | local_4 = 0x100;
+
+=== 005513E0 [Cluster H] (005513E0  (n=250)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:004B2320 x1
+  [2] ins=84 被调 unique=5: 00555950 x4 00550210=FUN_00550210 005558F0 00555930 005534D0
+  [PSEUDO]: void __thiscall FUN_005513e0(int param_1,int *param_2) | { | piVar1 = param_2; | if ((*(int *)(param_1 + 0x610) != 0) && (*(int *)(param_1 +
+
+=== 00551D80 [Cluster H] (00551D80  (n=183)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00551F00 x1
+  [2] ins=62 被调 unique=0: 
+  [PSEUDO]: void FUN_00551d80(undefined1 *param_1) | { | uVar1 = *param_1; | param_1[5] = uVar1; | uVar1 = param_1[2]; | param_1[2] = param_1[0xc];
+
+=== 00551E40 [Cluster H] (00551E40  (n=183)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00551F00 x1
+  [2] ins=62 被调 unique=0: 
+  [PSEUDO]: void FUN_00551e40(undefined1 *param_1) | { | uVar1 = *param_1; | param_1[0x15] = uVar1; | uVar1 = param_1[1]; | param_1[1] = param_1[0xd];
+
+=== 00552510 [Cluster H] (00552510  (n=201)  sec=.text) ===
+  [1] E8调用方 9 处; E9尾调 0 处; 父:0055FB60 x2 005764E0 x2 00577350 x2 005522E0 x1 00567500 x1
+  [2] ins=85 被调 unique=2: 005092C0=FUN_005092c0 00403490=FUN_00403490
+  [PSEUDO]: { | param_2 = (param_2 - (int)param_1) / 0xc; | if (param_2 < 1) { | return param_3; | } | do {
+
+=== 00552CA0 [Cluster H] (00552CA0  (n=194)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00552830 x1
+  [2] ins=91 被调 unique=0: 
+  [PSEUDO]: { | pcVar2 = (char *)param_1[1]; | iVar3 = *param_1; | if ((uint)(param_3 + param_4) <= (uint)((int)pcVar2 - iVar3)) { | pcVar5 = (char *)(p
+
+=== 00553290 [Cluster H] (00553290  (n=126)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0054D0E0 x1
+  [2] ins=35 被调 unique=3: 004736A0=FUN_004736a0 00554690 00555A50
+  [PSEUDO]: { | void *local_c; | local_4 = 0xffffffff; | puStack_8 = &LAB_005a4d81; | local_c = ExceptionList; | ExceptionList = &local_c;
+
+=== 00553390 [Cluster H] (00553390  (n=154)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00553430 x1
+  [2] ins=51 被调 unique=7: 00554970 005546C0 00554B60 004736A0=FUN_004736a0 00554710 00555DE0 00554AE0
+  [PSEUDO]: { | void *local_c; | local_4 = 0xffffffff; | puStack_8 = &LAB_005a4dd8; | local_c = ExceptionList; | ExceptionList = &local_c;
+
+=== 005536A0 [Cluster H] (005536A0  (n=175)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0054D3D0 x1
+  [2] ins=65 被调 unique=3: 00553960 x3 00553890 005561E0
+  [PSEUDO]: void __thiscall FUN_005536a0(int *param_1,int param_2) | { | cVar1 = *(char *)(param_2 + 4); | if (cVar1 == '\x03') { | if (param_1[2] == 1)
+
+=== 00553B80 [Cluster H] (00553B80  (n=121)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 0 处; 父:0054A170 x1 0054F6E0 x1
+  [2] ins=40 被调 unique=3: 0054C370=FUN_0054c370 005519D0 00554650
+  [PSEUDO]: { | void *local_c; | local_4 = 0xffffffff; | puStack_8 = &LAB_005a4dfb; | local_c = ExceptionList; | ExceptionList = &local_c;
+
+=== 00554030 [Cluster H] (00554030  (n=176)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0054B260 x1
+  [2] ins=75 被调 unique=7: 00553860 00553880 00554820 00553870 00553A80 005539D0 00553B20
+  [PSEUDO]: { | iVar2 = FUN_00553860(param_3); | iVar2 = iVar2 + 0x578; | uVar3 = FUN_00553880(iVar2); | iVar2 = FUN_00554820(uVar3,iVar2,param_3); | if
+
+=== 005540E0 [Cluster H] (005540E0  (n=269)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 0 处; 父:0054B260 x1 0054F310 x1
+  [2] ins=106 被调 unique=4: 00553870 x2 005541F0 005542F0=FUN_005542f0 00554630
+  [PSEUDO]: { | ushort uVar1; | iVar2 = param_2; | uVar1 = *(ushort *)(param_2 + 6); | if (*(short *)(param_2 + 8) != 0) { | FUN_005541f0(*(short *)(par
+
+=== 005541F0 [Cluster H] (005541F0  (n=241)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:005540E0 x1
+  [2] ins=83 被调 unique=3: 004E8500=FUN_004e8500 00554CB0 00402E90=FUN_00402e90
+  [PSEUDO]: void __thiscall FUN_005541f0(int param_1,short param_2) | { | if ((*(int *)(param_1 + 0x3c) != *(int *)(param_1 + 0x2c)) && | (param_2 != *(
+
+=== 005547A0 [Cluster H] (005547A0  (n=114)  sec=.text) ===
+  [1] E8调用方 7 处; E9尾调 0 处; 父:0054B0C0 x1 0054BCD0 x1 0054BD90 x1 0054DB30 x1 0054F2D0 x1
+  [2] ins=47 被调 unique=2: 00554760 00554C80
+  [PSEUDO]: { | sockaddr local_10; | if (*param_1 == 0xffffffff) { | return -1; | } | FUN_00554760(param_4,&local_10);
+
+=== 00554820 [Cluster H] (00554820  (n=124)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 0 处; 父:0054F310 x1 00554030 x1
+  [2] ins=49 被调 unique=2: 00554C80 005548A0
+  [PSEUDO]: { | sockaddr local_10; | if (*param_1 == 0xffffffff) { | return -1; | } | local_14 = 0x10;
+
+=== 00554D90 [Cluster H] (00554D90  (n=167)  sec=.text) ===
+  [1] E8调用方 3 处; E9尾调 0 处; 父:00554E40 x2 0054FEC0 x1
+  [2] ins=67 被调 unique=2: 005558A0 x2 00554EB0=FUN_00554eb0
+  [PSEUDO]: void FUN_00554d90(int param_1,int param_2,uint param_3) | { | uVar2 = *(uint *)(param_1 + 0x10) + param_3 * 8; | uVar1 = *(uint *)(param_1 +
+
+=== 00554E40 [Cluster H] (00554E40  (n=110)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0054FEC0 x1
+  [2] ins=42 被调 unique=3: 00555800 x2 00554D90 x2 005558C0
+  [PSEUDO]: void FUN_00554e40(undefined4 param_1,int param_2) | { | FUN_00555800(local_8,(uint *)(param_2 + 0x10),8); | uVar1 = *(uint *)(param_2 + 0x10
+
+=== 00555950 [Cluster H] (00555950  (n=116)  sec=.text) ===
+  [1] E8调用方 6 处; E9尾调 0 处; 父:005513E0 x4 005507B0 x1 005514E0 x1
+  [2] ins=53 被调 unique=2: 00403870 00552F50=FUN_00552f50
+  [PSEUDO]: void __thiscall FUN_00555950(int *param_1,undefined4 *param_2,uint param_3) | { | uStack_4 = (uint)param_1 & 0xffffff; | iVar1 = param_1[1];
+
+=== 00555A50 [Cluster H] (00555A50  (n=122)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00553290 x1
+  [2] ins=37 被调 unique=2: 00553830 0054C370=FUN_0054c370
+  [PSEUDO]: { | void *local_c; | local_4 = 0xffffffff; | puStack_8 = &LAB_005a4e5b; | local_c = ExceptionList; | ExceptionList = &local_c;
+
+=== 00555AF0 [Cluster H] (00555AF0  (n=284)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 1 处; 父:00553330 x1 00555AD0 x1
+  [2] ins=88 被调 unique=5: 004E6050=FUN_004e6050 00402E90=FUN_00402e90 00555C10=FUN_00555c10 00556260 00553830
+  [PSEUDO]: void __fastcall FUN_00555af0(undefined4 *param_1) | { | void *local_c; | puStack_8 = &LAB_005a4e91; | local_c = ExceptionList; | ExceptionLi
+
+=== 00555F50 [Cluster H] (00555F50  (n=223)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00553570 x1
+  [2] ins=63 被调 unique=5: 004E8500=FUN_004e8500 00554BE0 005561F0 00554CB0 00402E90=FUN_00402e90
+  [PSEUDO]: { | iVar4 = 0; | if (*(int *)(param_1 + 0x5ac) != *(int *)(param_1 + 0x59c)) { | do { | cVar2 = FUN_00554be0(); | if (cVar2 == '\0') {
+
+=== 00556260 [Cluster H] (00556260  (n=110)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00555AF0 x1
+  [2] ins=33 被调 unique=2: 004E6050=FUN_004e6050 004E8500=FUN_004e8500
+  [PSEUDO]: void FUN_00556260(void) | { | FUN_004e6050(&stack0x00000014); | FUN_004e6050(&stack0x00000004); | while (in_stack_00000014 != local_10) { | 
+
+=== 005566D0 [Cluster H] (005566D0  (n=248)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00556A20 x1
+  [2] ins=86 被调 unique=3: 0050B600=FUN_0050b600 00571C70=FUN_00571c70 00508B38=operator_new
+  [PSEUDO]: { | void *pvVar2; | FUN_0050b600(param_1,s__s__s_005d12a8,local_20,param_2); | FUN_00571c70(param_1,1); | FUN_0050b600(param_1,s__s__s_005d1
+
+=== 00556910 [Cluster H] (00556910  (n=157)  sec=.text) ===
+  [1] E8调用方 4 处; E9尾调 0 处; 父:00556A20 x2 0055C580 x1 00584C00 x1
+  [2] ins=68 被调 unique=0: 
+  [PSEUDO]: { | bool bVar7; | iVar4 = 0; | pbVar5 = *(byte **)(param_1 + 0x350); | pbVar2 = param_2; | pbVar6 = pbVar5;
+
+=== 005570E0 [Cluster H] (005570E0  (n=268)  sec=.text) ===
+  [1] E8调用方 3 处; E9尾调 0 处; 父:004DBC30 x1 005571F0 x1 00557230 x1
+  [2] ins=91 被调 unique=2: 00477200 00558600=FUN_00558600
+  [PSEUDO]: { | FUN_00477200(); | if ((*(int *)(param_2 + 0xc) == param_1[7]) && (*(int *)(param_2 + 0x10) == param_1[8])) { | iVar1 = 0; | iVar3 = *(in
+
+=== 00557260 [Cluster H] (00557260  (n=102)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 0 处; 父:00556A20 x1 00557260 x1
+  [2] ins=37 被调 unique=1: 00557260
+  [PSEUDO]: { | iVar1 = 0; | if (0 < *(int *)(param_2 + 0x34)) { | do { | FUN_00557260(*(undefined4 *)(*(int *)(param_2 + 0x38) + iVar1 * 4),param_2); |
+
+=== 00557F30 [Cluster H] (00557F30  (n=107)  sec=.text) ===
+  [1] E8调用方 3 处; E9尾调 0 处; 父:0055D950 x1 0055DA50 x1 0055DC20 x1
+  [2] ins=37 被调 unique=0: 
+  [PSEUDO]: { | if ((-1 < param_2) && (param_2 < *(int *)(param_1 + 0x1c))) { | iVar1 = *(int *)(param_1 + 0x350) + param_2 * 0x334; | if (*(int *)(iVar
+
+=== 00558A60 [Cluster H] (00558A60  (n=125)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 0 处; 父:00558BD0 x1 00558D80 x1
+  [2] ins=43 被调 unique=2: 00572E10=FUN_00572e10 00573BA0=FUN_00573ba0
+  [PSEUDO]: void __fastcall FUN_00558a60(undefined4 *param_1) | { | if (param_1[0xe1] != 0) { | FUN_00572e10(); | if (param_1[0x15] != 0) { | puVar2 = (
+
+=== 00558AE0 [Cluster H] (00558AE0  (n=125)  sec=.text) ===
+  [1] E8调用方 3 处; E9尾调 0 处; 父:00558C50 x1 00558E10 x1 00559750 x1
+  [2] ins=43 被调 unique=2: 00573140=FUN_00573140 00573D50=FUN_00573d50
+  [PSEUDO]: void __fastcall FUN_00558ae0(undefined4 *param_1) | { | if (param_1[0xe1] != 0) { | FUN_00573140(); | if (param_1[0x15] != 0) { | puVar2 = (
+
+=== 00558BD0 [Cluster H] (00558BD0  (n=126)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0055C3F0 x1
+  [2] ins=29 被调 unique=1: 00558A60
+  [PSEUDO]: { | iVar1 = *(int *)(param_1 + 0xfc) + param_2; | if (*(int *)(param_1 + 0x130) < iVar1) { | } | if (*(int *)(param_1 + 0xfc) < *(int *)(par
+
+=== 00558C50 [Cluster H] (00558C50  (n=238)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0055C460 x1
+  [2] ins=63 被调 unique=2: 00509980=__ftol 00558AE0
+  [PSEUDO]: { | float10 extraout_ST0; | float10 extraout_ST0_00; | float10 extraout_ST1; | uVar2 = __ftol(); | iVar1 = *(int *)(param_1 + 0x130);
+
+=== 00558D80 [Cluster H] (00558D80  (n=136)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0055C310 x1
+  [2] ins=40 被调 unique=3: 00558D40 00558B60 00558A60
+  [PSEUDO]: { | if (param_2 == -1) { | } | else { | iVar1 = FUN_00558d40(param_2); | if (iVar1 == 0) {
+
+=== 00558E10 [Cluster H] (00558E10  (n=157)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0055C380 x1
+  [2] ins=48 被调 unique=4: 00509980=__ftol 00558D40 00558BB0 00558AE0
+  [PSEUDO]: { | iVar2 = __ftol(); | iVar3 = FUN_00558d40(iVar2); | if (iVar3 == 0) { | return 0; | }
+
+=== 00558EB0 [Cluster H] (00558EB0  (n=158)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0055DA10 x1
+  [2] ins=55 被调 unique=4: 00475400 x2 00479F80 00474320 00574080
+  [PSEUDO]: void __fastcall FUN_00558eb0(int param_1) | { | FUN_00479f80(0); | FUN_00474320(0xff,0,0,0xff); | FUN_00574080(); | iVar2 = 0;
+
+=== 00558F90 [Cluster H] (00558F90  (n=219)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:005592C0 x1
+  [2] ins=79 被调 unique=7: 00475590=FUN_00475590 00559480=FUN_00559480 00474E90 00475950 00475980 00475520 00475A60
+  [PSEUDO]: void __thiscall FUN_00558f90(int param_1,int param_2) | { | if ((*(int *)(param_1 + 0x32c) == 0) && (param_2 != 0)) { | FUN_00559480(); | } 
+
+=== 005590B0 [Cluster H] (005590B0  (n=241)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:005592C0 x1
+  [2] ins=76 被调 unique=3: 00477D30=FUN_00477d30 00479F80 00475090
+  [PSEUDO]: void FUN_005590b0(void) | { | FUN_00477d30(3,&local_30); | local_48 = 0xff; | local_47 = 0; | local_46 = 0;
+
+=== 00559750 [Cluster H] (00559750  (n=108)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 0 处; 父:0055D560 x2
+  [2] ins=30 被调 unique=1: 00558AE0
+  [PSEUDO]: { | DWORD DVar1; | DVar1 = timeGetTime(); | iVar2 = DVar1 - *(int *)(param_1 + 0x11c); | if (*(int *)(param_1 + 0x124) <= iVar2) { | return 
+
+=== 0055A180 [Cluster H] (0055A180  (n=248)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00493400 x1
+  [2] ins=56 被调 unique=2: 0047C3A0=FUN_0047c3a0 0047DD50
+  [PSEUDO]: void __thiscall FUN_0055a180(int param_1,int param_2) | { | if (param_2 != 0) { | if (*(float *)(param_2 + 0x1f8) <= *(float *)(param_2 + 0x
+
+=== 0055A920 [Cluster H] (0055A920  (n=196)  sec=.text) ===
+  [1] E8调用方 3 处; E9尾调 0 处; 父:0048AA10 x1 00491230 x1 0055A340 x1
+  [2] ins=54 被调 unique=2: 00481B30 00481B90
+  [PSEUDO]: void __thiscall FUN_0055a920(int param_1,int param_2,int param_3) | { | if (param_3 < param_2) { | param_2 = param_3; | } | if (param_2 < 0)
+
+=== 0055A9F0 [Cluster H] (0055A9F0  (n=196)  sec=.text) ===
+  [1] E8调用方 3 处; E9尾调 0 处; 父:0048AA10 x1 00491230 x1 0055A340 x1
+  [2] ins=54 被调 unique=2: 00481B30 00481B90
+  [PSEUDO]: void __thiscall FUN_0055a9f0(int param_1,int param_2,int param_3) | { | if (param_3 < param_2) { | param_2 = param_3; | } | if (param_2 < 0)
+
+=== 0055AAC0 [Cluster H] (0055AAC0  (n=175)  sec=.text) ===
+  [1] E8调用方 5 处; E9尾调 0 处; 父:0055B2C0 x5
+  [2] ins=65 被调 unique=5: 00508AE6=FUN_00508ae6 004745D0 00479F80 0047C2E0 00478150
+  [PSEUDO]: FUN_0055aac0(int param_1,undefined4 param_2,int param_3,undefined4 param_4,undefined4 param_5, | { | if (param_3 < 1) { | iVar3 = 0; | do { 
+
+=== 0055AB70 [Cluster H] (0055AB70  (n=179)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0055B2C0 x1
+  [2] ins=47 被调 unique=7: 00475590=FUN_00475590 00477200 004781D0 004745D0 00479F80 0047C2E0 004748B0
+  [PSEUDO]: void __fastcall FUN_0055ab70(int param_1) | { | float10 fVar1; | if (*(float *)(param_1 + 0x166c) < 0.3) { | if (0.1 <= *(float *)(param_1 +
+
+=== 0055AC30 [Cluster H] (0055AC30  (n=179)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0055B2C0 x1
+  [2] ins=47 被调 unique=7: 00475590=FUN_00475590 00477200 004781D0 004745D0 00479F80 0047C2E0 004748B0
+  [PSEUDO]: void __fastcall FUN_0055ac30(int param_1) | { | float10 fVar1; | if (*(float *)(param_1 + 0x1670) < 0.3) { | if (0.1 <= *(float *)(param_1 +
+
+=== 0055AE30 [Cluster H] (0055AE30  (n=160)  sec=.text) ===
+  [1] E8调用方 4 处; E9尾调 0 处; 父:0055AED0 x4
+  [2] ins=40 被调 unique=5: 00477D30=FUN_00477d30 00477200 004745D0 00479F80 0047C2E0
+  [PSEUDO]: void __thiscall FUN_0055ae30(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4) | { | FUN_00477d30(3,&local_4c); | fVar1 
+
+=== 0055B1C0 [Cluster H] (0055B1C0  (n=143)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0055B2C0 x1
+  [2] ins=39 被调 unique=7: 00475590=FUN_00475590 00477200 004781D0 004745D0 00479F80 0047C2E0 0055AED0=FUN_0055aed0
+  [PSEUDO]: void __fastcall FUN_0055b1c0(int param_1) | { | FUN_00477200(); | FUN_004781d0(*(float *)(param_1 + 0xaa8) * 0.5 + *(float *)(param_1 + 0xaa
+
+=== 0055BBA0 [Cluster H] (0055BBA0  (n=165)  sec=.text) ===
+  [1] E8调用方 3 处; E9尾调 0 处; 父:0048B650 x3
+  [2] ins=60 被调 unique=3: 00402E90=FUN_00402e90 004DB820 0055BC80=FUN_0055bc80
+  [PSEUDO]: void __thiscall FUN_0055bba0(int param_1,int param_2,undefined4 param_3) | { | iVar3 = param_2; | piVar4 = (int *)**(int **)(param_1 + 0x167
+
+=== 0055D1E0 [Cluster H] (0055D1E0  (n=122)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 0 处; 父:0055D260 x1 0055D560 x1
+  [2] ins=51 被调 unique=4: 00567220 00566A90=FUN_00566a90 00566220 00566370
+  [PSEUDO]: void __thiscall FUN_0055d1e0(int param_1,int param_2) | { | if (((param_2 != 0) && (iVar1 = FUN_00567220(), iVar1 != 0)) && | (uVar2 = 0, *(
+
+=== 0055D450 [Cluster H] (0055D450  (n=234)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0055D560 x1
+  [2] ins=56 被调 unique=3: 00559720 005596C0 005596E0
+  [PSEUDO]: { | if ((-1 < param_2) && (param_2 < *(int *)(param_1 + 0x5dc))) { | FUN_00559720(*(undefined4 *)(*(int *)(param_1 + 0x638) + 0x50)); | FUN_
+
+=== 0055D950 [Cluster H] (0055D950  (n=181)  sec=.text) ===
+  [1] E8调用方 3 处; E9尾调 0 处; 父:0055DA50 x2 0056F1D0 x1
+  [2] ins=67 被调 unique=2: 00570630=FUN_00570630 00557F30
+  [PSEUDO]: { | if (param_4 == '\0') { | cVar1 = FUN_00570630(param_1 + 0x1b8,param_1 + 0x248,param_2,param_3); | if (cVar1 != '\0') { | return 1; | }
+
+=== 0055DFC0 [Cluster H] (0055DFC0  (n=138)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 0 处; 父:0048AEB0 x1 0048B140 x1
+  [2] ins=44 被调 unique=3: 00567220 00566E50 0055DF80
+  [PSEUDO]: void __thiscall FUN_0055dfc0(int param_1,int param_2) | { | void *local_c; | puStack_8 = &LAB_005a5328; | local_c = ExceptionList; | piVar1 
+
+=== 0055E8B0 [Cluster H] (0055E8B0  (n=200)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0055C580 x1
+  [2] ins=85 被调 unique=2: 005092C0=FUN_005092c0 00403490=FUN_00403490
+  [PSEUDO]: { | iVar1 = (param_2 - param_1) / 0xc; | piVar5 = param_3; | if (0 < iVar1) { | param_1 = param_1 - (int)param_3; | param_3 = (int *)iVar1;
+
+=== 0055FE10 [Cluster H] (0055FE10  (n=238)  sec=.text) ===
+  [1] E8调用方 12 处; E9尾调 0 处; 父:0055EB70 x1 0055F1E0 x1 0055FB60 x1 0055FF50 x1 005764E0 x1
+  [2] ins=79 被调 unique=6: 00402BF0=FUN_00402bf0 005092C0=FUN_005092c0 00402A70=FUN_00402a70 00402570=FUN_00402570 0047A7A0=FUN_0047a7a0 00509166=__CxxThrowException@8
+  [PSEUDO]: { | void *local_10; | puStack_c = &LAB_005a5441; | local_10 = ExceptionList; | local_14 = &stack0xfffffeb8; | uStack_7 = 0;
+
+=== 00560080 [Cluster I] (00560080  (n=104)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=36 被调 unique=5: 004D4A40=FUN_004d4a40 004FE380 00560100=FUN_00560100 0049B270 00509166=__CxxThrowException@8
+  [PSEUDO]: 
+
+=== 005603F0 [Cluster I] (005603F0  (n=171)  sec=.text) ===
+  [1] E8调用方 3 处; E9尾调 0 处; 父:005637D0 x2 005604A0 x1
+  [2] ins=50 被调 unique=2: 00477200 00477B90=FUN_00477b90
+  [PSEUDO]: void __fastcall FUN_005603f0(int param_1) | { | local_c = (*(float *)(param_1 + 0x48) + *(float *)(param_1 + 0x54)) * 0.5; | local_8 = (*(fl
+
+=== 00560500 [Cluster I] (00560500  (n=257)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:005643F0 x1
+  [2] ins=71 被调 unique=6: 005785C0=FUN_005785c0 005783A0=FUN_005783a0 0050AC61 00570FC0=FUN_00570fc0 0050ACE3 005783C0=FUN_005783c0
+  [PSEUDO]: { | void *local_c; | local_4 = 0xffffffff; | puStack_8 = &LAB_005a54bb; | local_c = ExceptionList; | if (*(int *)(param_1 + 0x3c) != 0) {
+
+=== 00560610 [Cluster I] (00560610  (n=235)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:005603B0 x1
+  [2] ins=65 被调 unique=6: 005785C0=FUN_005785c0 005783A0=FUN_005783a0 0050AC61 00570FC0=FUN_00570fc0 0050ACE3 005783C0=FUN_005783c0
+  [PSEUDO]: { | void *local_c; | local_4 = 0xffffffff; | puStack_8 = &LAB_005a54eb; | local_c = ExceptionList; | if (*(int *)(param_1 + 0x38) != 0) {
+
+=== 00560700 [Cluster I] (00560700  (n=235)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:005603B0 x1
+  [2] ins=65 被调 unique=6: 005785C0=FUN_005785c0 005783A0=FUN_005783a0 0050AC61 00570FC0=FUN_00570fc0 0050ACE3 005783C0=FUN_005783c0
+  [PSEUDO]: { | void *local_c; | local_4 = 0xffffffff; | puStack_8 = &LAB_005a551b; | local_c = ExceptionList; | if (*(int *)(param_1 + 0x40) != 0) {
+
+=== 00561120 [Cluster I] (00561120  (n=136)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=52 被调 unique=4: 0056D2E0=FUN_0056d2e0 00507850=FUN_00507850 0056B210 00508B38=operator_new
+  [PSEUDO]: void __fastcall FUN_00561120(int param_1) | { | void *pvVar2; | FUN_0056d2e0(); | if (*(int *)(param_1 + 0x288) != 0) { | FUN_00507850(*(int
+
+=== 00561BB0 [Cluster I] (00561BB0  (n=175)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00561CF0 x1
+  [2] ins=56 被调 unique=1: 00509980=__ftol
+  [PSEUDO]: { | iVar2 = __ftol(); | iVar3 = __ftol(); | iVar4 = __ftol(); | iVar1 = *(int *)(param_1 + 0x468); | if (iVar1 <= iVar2) {
+
+=== 00561C60 [Cluster I] (00561C60  (n=109)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00562DD0 x1
+  [2] ins=40 被调 unique=0: 
+  [PSEUDO]: { | if (param_2 < 0) { | param_2 = 0; | } | iVar1 = *(int *)(param_1 + 0x4a0); | if (iVar1 <= param_2) {
+
+=== 00561D10 [Cluster I] (00561D10  (n=175)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00561CD0 x1
+  [2] ins=56 被调 unique=1: 00509980=__ftol
+  [PSEUDO]: { | iVar2 = __ftol(); | iVar3 = __ftol(); | iVar4 = __ftol(); | iVar1 = *(int *)(param_1 + 0x4a0); | if (iVar1 <= iVar2) {
+
+=== 00561DC0 [Cluster I] (00561DC0  (n=263)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00561ED0 x1
+  [2] ins=92 被调 unique=5: 00475F90 00476070 00477B30 00477D30=FUN_00477d30 00561F00
+  [PSEUDO]: { | FUN_00475f90(param_2); | puVar5 = (undefined4 *)FUN_00476070(1); | puVar9 = local_40; | for (iVar6 = 0x10; iVar6 != 0; iVar6 = iVar6 + -
+
+=== 00562520 [Cluster I] (00562520  (n=147)  sec=.text) ===
+  [1] E8调用方 3 处; E9尾调 0 处; 父:005625C0 x3
+  [2] ins=54 被调 unique=4: 0056A8A0 005622F0=FUN_005622f0 004754F0 00562510
+  [PSEUDO]: void __thiscall FUN_00562520(int param_1,int param_2,int param_3) | { | if (0 < param_3) { | puVar2 = (undefined4 *)(param_2 + 0x24); | do {
+
+=== 005642C0 [Cluster I] (005642C0  (n=293)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00563780 x1
+  [2] ins=86 被调 unique=2: 004748B0 00564480=FUN_00564480
+  [PSEUDO]: void __fastcall FUN_005642c0(int param_1) | { | float10 fVar4; | piVar3 = *(int **)(param_1 + 0x4b4); | if ((piVar3 != (int *)0x0) && (local
+
+=== 005648B0 [Cluster I] (005648B0  (n=104)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 0 处; 父:00564920 x2
+  [2] ins=40 被调 unique=0: 
+  [PSEUDO]: { | if ((((*param_1 <= *param_3) && (*param_3 < *param_2 != (*param_3 == *param_2))) && | (param_1[1] <= param_3[1])) && | (((param_3[1] < p
+
+=== 00564FC0 [Cluster I] (00564FC0  (n=110)  sec=.text) ===
+  [1] E8调用方 4 处; E9尾调 0 处; 父:0056BC60 x1 0056C290 x1 0056C770 x1 0056C9B0 x1
+  [2] ins=50 被调 unique=0: 
+  [PSEUDO]: { | bool bVar7; | iVar4 = 0; | iVar6 = *(int *)(param_1 + 0x4b4); | if (0 < *(int *)(param_1 + 0x4b0)) { | do {
+
+=== 00565090 [Cluster I] (00565090  (n=164)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00494550 x1
+  [2] ins=57 被调 unique=5: 00564F90 005694E0 005693F0 0056AD20 00569580
+  [PSEUDO]: { | puVar1 = (undefined4 *)FUN_00564f90(param_1); | if (puVar1 == (undefined4 *)0x0) { | return 0; | } | puVar4 = puVar1;
+
+=== 00565140 [Cluster I] (00565140  (n=159)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 0 处; 父:005625C0 x2
+  [2] ins=50 被调 unique=3: 00477D30=FUN_00477d30 00564920=FUN_00564920 005651E0=FUN_005651e0
+  [PSEUDO]: void __fastcall FUN_00565140(int param_1) | { | if (*(int *)(param_1 + 0x300) != 0) { | local_24 = 0; | local_20 = 0; | local_1c = 0xbf80000
+
+=== 00566940 [Cluster I] (00566940  (n=294)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00496250 x1
+  [2] ins=90 被调 unique=8: 00509F8F=FUN_00509f8f 0050B600=FUN_0050b600 00508AE6=FUN_00508ae6 00508B38=operator_new 00565EE0=FUN_00565ee0 00566230=FUN_00566230 0055E370=FUN_0055e370 00509E57=FUN_00509e57
+  [PSEUDO]: void __thiscall FUN_00566940(int *param_1,undefined4 param_2) | { | void *local_b0; | void *local_c; | local_4 = 0xffffffff; | puStack_8 = &
+
+=== 00566D40 [Cluster I] (00566D40  (n=131)  sec=.text) ===
+  [1] E8调用方 7 处; E9尾调 0 处; 父:004902C0 x1 00490300 x1 004EEA60 x1 004EEAB0 x1 0055C580 x1
+  [2] ins=56 被调 unique=1: 00593634=FUN_00593634
+  [PSEUDO]: { | bool bVar8; | iVar4 = (int)&DAT_0072685c - (int)param_2; | do { | cVar1 = *param_2; | param_2[iVar4] = cVar1;
+
+=== 00566DD0 [Cluster I] (00566DD0  (n=116)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 0 处; 父:004DB750 x1 00566A90 x1
+  [2] ins=47 被调 unique=3: 00402E90=FUN_00402e90 004DB820 0055E2B0=FUN_0055e2b0
+  [PSEUDO]: void __thiscall FUN_00566dd0(int param_1,int param_2) | { | puVar1 = *(undefined4 **)(param_1 + 0x10); | puVar2 = (undefined4 *)*puVar1; | l
+
+=== 00566F10 [Cluster I] (00566F10  (n=104)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0048FBB0 x1
+  [2] ins=45 被调 unique=3: 0056F310 0055DF80 00402E90=FUN_00402e90
+  [PSEUDO]: void __fastcall FUN_00566f10(int param_1) | { | piVar3 = (int *)**(int **)(param_1 + 0x10); | if (piVar3 != *(int **)(param_1 + 0x10)) { | d
+
+=== 00567270 [Cluster I] (00567270  (n=236)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00566A90 x1
+  [2] ins=89 被调 unique=3: 0049A680 x3 00402E90=FUN_00402e90 0047BF10=FUN_0047bf10
+  [PSEUDO]: { | if (param_1 != param_2) { | piVar1 = (int *)*param_1; | puVar2 = (undefined4 *)*param_2; | local_c = (undefined4 *)*piVar1; | puVar7 = (
+
+=== 00567360 [Cluster I] (00567360  (n=209)  sec=.text) ===
+  [1] E8调用方 3 处; E9尾调 0 处; 父:0057ED70 x2 005622F0 x1
+  [2] ins=60 被调 unique=1: 0047ECF0=FUN_0047ecf0
+  [PSEUDO]: float10 FUN_00567360(undefined4 param_1,float *param_2,byte param_3) | { | float10 fVar1; | if ((param_3 & 8) != 0) { | fVar1 = (float10)FUN
+
+=== 00569330 [Cluster I] (00569330  (n=188)  sec=.text) ===
+  [1] E8调用方 4 处; E9尾调 0 处; 父:005696A0 x2 005656F0 x1 0056BC60 x1
+  [2] ins=64 被调 unique=1: 0057E590=FUN_0057e590
+  [PSEUDO]: { | if ((-1 < param_2) && (param_2 < *(int *)(param_1[0x48] + 8))) { | if (param_2 == param_1[0x4e]) { | return 1; | } | param_1[0x4d] = par
+
+=== 005693F0 [Cluster I] (005693F0  (n=230)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 4 处; 父:00565090 x1
+  [2] ins=76 被调 unique=2: 0057E810=FUN_0057e810 00509980=__ftol
+  [PSEUDO]: { | if ((0.0 <= param_2) && | (iVar4 = param_1[0x48], fVar1 = (float)*(int *)(iVar4 + 8), | fVar1 < param_2 == (fVar1 == param_2))) { | if (
+
+=== 005694E0 [Cluster I] (005694E0  (n=125)  sec=.text) ===
+  [1] E8调用方 4 处; E9尾调 0 处; 父:00560940 x1 00565090 x1 00569B30 x1 0056BC60 x1
+  [2] ins=33 被调 unique=0: 
+  [PSEUDO]: { | iVar2 = *(int *)(param_1 + 0x120); | if (((iVar2 != 0) && (-1 < param_2)) && (param_2 < *(int *)(iVar2 + 0x18))) { | piVar1 = (int *)(*(
+
+=== 00569580 [Cluster I] (00569580  (n=274)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 0 处; 父:005629D0 x1 00565090 x1
+  [2] ins=73 被调 unique=0: 
+  [PSEUDO]: void __thiscall FUN_00569580(int param_1,float param_2) | { | if ((*(char *)(param_1 + 0x124) != '\0') && | (piVar1 = *(int **)(param_1 + 0x
+
+=== 0056A040 [Cluster I] (0056A040  (n=116)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=53 被调 unique=0: 
+  [PSEUDO]: { | iVar4 = 1; | cVar1 = *(char *)(*(int *)(param_1 + 8) + 0x11); | if ((cVar1 != '\x01') || (*(char *)(*(int *)(param_2 + 8) + 0x11) != '\0
+
+=== 0056A8F0 [Cluster I] (0056A8F0  (n=154)  sec=.text) ===
+  [1] E8调用方 3 处; E9尾调 0 处; 父:0056AA20 x3
+  [2] ins=55 被调 unique=4: 0056A8A0 0056AD30 00475520 0056ADF0
+  [PSEUDO]: void __thiscall FUN_0056a8f0(int param_1,int param_2,int param_3) | { | if (0 < param_3) { | puVar3 = (undefined4 *)(param_2 + 0x28); | do {
+
+=== 0056A990 [Cluster I] (0056A990  (n=138)  sec=.text) ===
+  [1] E8调用方 3 处; E9尾调 0 处; 父:0056AA20 x3
+  [2] ins=52 被调 unique=4: 0056A8A0 0056AD30 004754F0 0056ADF0
+  [PSEUDO]: void __thiscall FUN_0056a990(int param_1,int param_2,int param_3) | { | if (0 < param_3) { | piVar2 = (int *)(param_2 + 0x20); | do { | cVar
+
+=== 0056AD30 [Cluster I] (0056AD30  (n=183)  sec=.text) ===
+  [1] E8调用方 3 处; E9尾调 0 处; 父:005622F0 x1 0056A8F0 x1 0056A990 x1
+  [2] ins=64 被调 unique=8: 00474410 x2 00476070 x2 0057EB20=FUN_0057eb20 0057ED30 004745C0 00479F80 00475590=FUN_00475590 00475820
+  [PSEUDO]: void __thiscall FUN_0056ad30(int param_1,int param_2) | { | puVar1 = *(undefined4 **)(param_2 + 8); | iVar2 = *(int *)(param_2 + 0xc); | if 
+
+=== 0056AFC0 [Cluster I] (0056AFC0  (n=233)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:005604A0 x1
+  [2] ins=68 被调 unique=2: 00476F00=FUN_00476f00 00475220=FUN_00475220
+  [PSEUDO]: void __thiscall FUN_0056afc0(int param_1,float *param_2) | { | local_ac = 0.0; | local_a8 = 0.0; | local_a4 = 0.0; | if (*(int *)(param_1 + 
+
+=== 0056B0B0 [Cluster I] (0056B0B0  (n=239)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:005604A0 x1
+  [2] ins=68 被调 unique=2: 00476F00=FUN_00476f00 00475220=FUN_00475220
+  [PSEUDO]: void __thiscall FUN_0056b0b0(int param_1,float *param_2) | { | local_ac = 0.0; | local_a8 = 0.0; | local_a4 = 0.0; | if (*(int *)(param_1 + 
+
+=== 0056B4A0 [Cluster I] (0056B4A0  (n=145)  sec=.text) ===
+  [1] E8调用方 3 处; E9尾调 0 处; 父:00564AB0 x2 00563070 x1
+  [2] ins=58 被调 unique=3: 00476F00=FUN_00476f00 00570630=FUN_00570630 0057F180
+  [PSEUDO]: { | FUN_00476f00(local_40,param_1 + 0x94,param_1 + 0x54); | cVar1 = FUN_00570630(param_1 + 0x108,local_40,param_2,param_3); | if ((cVar1 != 
+
+=== 0056D6F0 [Cluster I] (0056D6F0  (n=176)  sec=.text) ===
+  [1] E8调用方 3 处; E9尾调 0 处; 父:0056D2E0 x3
+  [2] ins=56 被调 unique=3: 00477B90=FUN_00477b90 0047EDC0 x2 00477D30=FUN_00477d30
+  [PSEUDO]: void FUN_0056d6f0(void) | { | local_24 = 0; | local_20 = 0; | local_1c = 0x3f800000; | FUN_00477d30(0,&local_30);
+
+=== 0056D830 [Cluster I] (0056D830  (n=142)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:004C8660 x1
+  [2] ins=47 被调 unique=1: 00477200
+  [PSEUDO]: void __thiscall FUN_0056d830(int param_1,undefined4 *param_2,int param_3,int param_4) | { | FUN_00477200(); | if (param_3 == 0) { | if ((par
+
+=== 0056DB90 [Cluster I] (0056DB90  (n=182)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 0 处; 父:00566230 x1 00566A90 x1
+  [2] ins=57 被调 unique=3: 00508B38=operator_new 005838F0=FUN_005838f0 00477200
+  [PSEUDO]: LPCRITICAL_SECTION __fastcall FUN_0056db90(LPCRITICAL_SECTION param_1) | { | void *pvVar1; | HANDLE pvVar2; | void *local_c; | puStack_8 = &
+
+=== 0056DF30 [Cluster I] (0056DF30  (n=165)  sec=.text) ===
+  [1] E8调用方 3 处; E9尾调 0 处; 父:0056DFF0 x2 0056E490 x1
+  [2] ins=63 被调 unique=0: 
+  [PSEUDO]: void __fastcall FUN_0056df30(int param_1) | { | iVar1 = 0; | if (*(int *)(param_1 + 0x128) == 0) { | iVar1 = *(int *)(*(int *)(param_1 + 300
+
+=== 0056EB40 [Cluster I] (0056EB40  (n=252)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0056EC40 x1
+  [2] ins=81 被调 unique=3: 00477D30=FUN_00477d30 00475590=FUN_00475590 00475090
+  [PSEUDO]: void FUN_0056eb40(void) | { | FUN_00477d30(3,&local_30); | local_48 = 0xff; | local_47 = 0; | local_46 = 0;
+
+=== 0056F260 [Cluster I] (0056F260  (n=127)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0055DC20 x1
+  [2] ins=54 被调 unique=2: 005818F0=FUN_005818f0 00570630=FUN_00570630
+  [PSEUDO]: { | iVar4 = 0; | if (0 < *(int *)(param_1 + 0x40)) { | do { | iVar1 = *(int *)(*(int *)(param_1 + 0x4c) + iVar4 * 4); | iVar2 = *(int *)(iVa
+
+=== 0056F930 [Cluster I] (0056F930  (n=194)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0056FA00 x1
+  [2] ins=69 被调 unique=0: 
+  [PSEUDO]: { | iVar3 = (int)local_18 - (int)param_3; | iVar5 = (int)local_18 + (0xc - (int)param_3); | iVar4 = 3; | do { | pfVar1 = (float *)(iVar3 + (
+
+=== 00570510 [Cluster I] (00570510  (n=235)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 0 处; 父:0056B350 x1 0057F0B0 x1
+  [2] ins=82 被调 unique=3: 00476E80 x3 00477AD0 005702D0=FUN_005702d0
+  [PSEUDO]: { | local_70 = -*param_1; | local_64 = *param_1; | local_60 = param_1[1]; | local_5c = param_1[2]; | local_6c = -param_1[1];
+
+=== 00571060 [Cluster I] (00571060  (n=111)  sec=.text) ===
+  [1] E8调用方 6 处; E9尾调 0 处; 父:0058FB70 x5 00571040 x1
+  [2] ins=49 被调 unique=0: 
+  [PSEUDO]: { | bool bVar8; | local_8 = 0; | if (0 < *(int *)(param_1 + 0x30)) { | piVar5 = *(int **)(param_1 + 0x34); | do {
+
+=== 00571550 [Cluster I] (00571550  (n=115)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:005715D0 x1
+  [2] ins=50 被调 unique=0: 
+  [PSEUDO]: { | bool bVar7; | local_8 = 0; | if (0 < *param_1) { | piVar4 = (int *)param_1[6]; | do {
+
+=== 00572D00 [Cluster I] (00572D00  (n=173)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00559860 x1
+  [2] ins=55 被调 unique=5: 00595890 x2 005951E0=FUN_005951e0 0047DA70 0047B740=FUN_0047b740 0047B750
+  [PSEUDO]: void __thiscall FUN_00572d00(int param_1,int param_2) | { | if (param_2 != 0) { | if (*(int *)(param_1 + 0xb8) == 0) { | FUN_0047da70(*(unde
+
+=== 00573650 [Cluster I] (00573650  (n=188)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=72 被调 unique=2: 00507850=FUN_00507850 0050ACE3 x3
+  [PSEUDO]: void __fastcall FUN_00573650(int param_1) | { | if (*(int *)(param_1 + 0x18) != 0) { | FUN_00507850(*(int *)(param_1 + 0x18)); | } | if (*(i
+
+=== 00573710 [Cluster I] (00573710  (n=115)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=31 被调 unique=1: 00477200
+  [PSEUDO]: { | void *local_c; | puStack_8 = &LAB_005a5dee; | local_c = ExceptionList; | ExceptionList = &local_c; | local_4 = 0;
+
+=== 00573920 [Cluster I] (00573920  (n=171)  sec=.text) ===
+  [1] E8调用方 6 处; E9尾调 0 处; 父:00573D50 x4 00573BA0 x2
+  [2] ins=50 被调 unique=0: 
+  [PSEUDO]: { | if (param_3 == 0) { | if ((-1 < param_2) && (param_2 < *(int *)(*(int *)(param_1 + 0x28) + 0x28))) { | return param_2 * 0x10 + *(int *)(
+
+=== 00574000 [Cluster I] (00574000  (n=120)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 0 处; 父:00558F50 x1 00574000 x1
+  [2] ins=46 被调 unique=3: 00477D30=FUN_00477d30 00475090 00574000
+  [PSEUDO]: void __fastcall FUN_00574000(int param_1) | { | FUN_00477d30(3,local_c); | iVar1 = 0; | if (0 < *(int *)(param_1 + 0x34)) { | do {
+
+=== 00574E50 [Cluster I] (00574E50  (n=159)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 1 处; 父:
+  [2] ins=40 被调 unique=1: 00575180=FUN_00575180
+  [PSEUDO]: { | void *local_c; | puStack_8 = &LAB_005a5e96; | local_c = ExceptionList; | ExceptionList = &local_c; | local_4 = 6;
+
+=== 005754D0 [Cluster I] (005754D0  (n=155)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 0 处; 父:0057AAF0 x2
+  [2] ins=57 被调 unique=2: 00577050=FUN_00577050 00575E10=FUN_00575e10
+  [PSEUDO]: void __thiscall FUN_005754d0(int param_1,int param_2) | { | if (*(int *)(param_2 + 0x4c) == -1) { | } | if (*(int *)(param_2 + 0x50) == -1) 
+
+=== 00575A50 [Cluster I] (00575A50  (n=118)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00574EF0 x1
+  [2] ins=49 被调 unique=0: 
+  [PSEUDO]: { | iVar2 = (*(int *)(param_1 + 4) - param_3) / 0x18; | if (0 < iVar2) { | puVar3 = param_2; | do { | iVar2 = iVar2 + -1;
+
+=== 00577220 [Cluster I] (00577220  (n=290)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00574930 x1
+  [2] ins=113 被调 unique=3: 005092C0=FUN_005092c0 004C7640=FUN_004c7640 00402E90=FUN_00402e90
+  [PSEUDO]: void FUN_00577220(undefined4 *param_1,int param_2,undefined4 *param_3) | { | param_2 = (param_2 - (int)param_1) / 0x14; | if (0 < param_2) {
+
+=== 005775A0 [Cluster I] (005775A0  (n=190)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 0 处; 父:00574930 x1 00576B90 x1
+  [2] ins=66 被调 unique=2: 00402BF0=FUN_00402bf0 005092C0=FUN_005092c0
+  [PSEUDO]: { | puStack_c = &LAB_005a6051; | local_10 = *unaff_FS_OFFSET; | uStack_7 = 0; | while( true ) { | iVar3 = 0;
+
+=== 00577E80 [Cluster I] (00577E80  (n=157)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0058FB70 x1
+  [2] ins=48 被调 unique=3: 00577AD0=FUN_00577ad0 00508B38=operator_new 0050AC61
+  [PSEUDO]: { | void *local_c; | local_4 = 0xffffffff; | puStack_8 = &LAB_005a6173; | local_c = ExceptionList; | ExceptionList = &local_c;
+
+=== 005780C0 [Cluster I] (005780C0  (n=250)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=107 被调 unique=3: 00578030 005092C0=FUN_005092c0 00403490=FUN_00403490
+  [PSEUDO]: { | (**(code **)(**(int **)(param_1 + 0x1c) + 4))(); | piVar2 = *(int **)(param_1 + 0x18); | iVar4 = piVar2[1]; | if (iVar4 == 3) { | piVar2
+
+=== 00578810 [Cluster I] (00578810  (n=136)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00578660 x1
+  [2] ins=53 被调 unique=0: 
+  [PSEUDO]: void __fastcall FUN_00578810(int param_1) | { | iVar1 = (int)((ulonglong) | ((longlong)(*(int *)(param_1 + 0xc) - *(int *)(param_1 + 8)) * -
+
+=== 005788A0 [Cluster I] (005788A0  (n=117)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 1 处; 父:
+  [2] ins=48 被调 unique=1: 005790D0=FUN_005790d0
+  [PSEUDO]: void __thiscall FUN_005788a0(int param_1,char *param_2,undefined4 param_3) | { | iVar2 = -(int)param_2; | do { | cVar1 = *param_2; | param_2
+
+=== 00578C10 [Cluster I] (00578C10  (n=113)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=48 被调 unique=1: 00570FC0=FUN_00570fc0
+  [PSEUDO]: { | iVar1 = *(int *)(param_1 + 0x20); | if (iVar1 == 0) { | return *(undefined4 *)(param_1 + 8); | } | iVar3 = 0;
+
+=== 00579420 [Cluster I] (00579420  (n=183)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:005562E0 x1
+  [2] ins=46 被调 unique=3: 0047BFD0=FUN_0047bfd0 00477200 0047C3A0=FUN_0047c3a0
+  [PSEUDO]: { | void *local_c; | local_4 = 0xffffffff; | puStack_8 = &LAB_005a627e; | local_c = ExceptionList; | ExceptionList = &local_c;
+
+=== 00579790 [Cluster I] (00579790  (n=209)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 0 处; 父:005795D0 x2
+  [2] ins=80 被调 unique=2: 00579870 x2 00593D6D
+  [PSEUDO]: { | HDC hdc; | MAT2 local_24; | _GLYPHMETRICS local_14; | uVar3 = 0xffffffff; | pcVar5 = param_1;
+
+=== 0057DF40 [Cluster I] (0057DF40  (n=144)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:005611B0 x1
+  [2] ins=59 被调 unique=3: 0050A118=FUN_0050a118 0050AC20 0057DFD0
+  [PSEUDO]: { | uVar1 = param_2; | FUN_0050a118(local_18,4,3,param_2); | FUN_0050a118(local_c,4,3,uVar1); | FUN_0050a118(&param_2,1,1,uVar1); | if ((cha
+
+=== 0057F0B0 [Cluster I] (0057F0B0  (n=195)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0056B350 x1
+  [2] ins=60 被调 unique=2: 00476F00=FUN_00476f00 00570510
+  [PSEUDO]: FUN_0057f0b0(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4, | { | if (*(char *)(param_6 + 0x124) == '\0') { | iVar3 =
+
+=== 0057F180 [Cluster I] (0057F180  (n=141)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0056B4A0 x1
+  [2] ins=47 被调 unique=2: 00476F00=FUN_00476f00 00570630=FUN_00570630
+  [PSEUDO]: { | if (*(char *)(param_4 + 0x124) == '\0') { | iVar3 = param_1 + 0x158; | } | else { | iVar3 = *(int *)(param_1 + 4) * 0x40 + *(int *)(para
+
+=== 00580510 [Cluster I] (00580510  (n=215)  sec=.text) ===
+  [1] E8调用方 3 处; E9尾调 0 处; 父:0057FF40 x3
+  [2] ins=58 被调 unique=0: 
+  [PSEUDO]: void FUN_00580510(void) | { | iVar1 = DAT_0072bac8; | for (pbVar3 = DAT_0072ba24; pbVar3 < DAT_0072bac4; pbVar3 = pbVar3 + 1) { | if (*pbVar
+
+=== 005805F0 [Cluster I] (005805F0  (n=169)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0057FF40 x1
+  [2] ins=44 被调 unique=0: 
+  [PSEUDO]: { | iVar1 = param_1 * 2; | if (*(short *)(&DAT_005b0840 + iVar1) != 0) { | DAT_0072babc = param_1; | DAT_0072ba30 = DAT_0072bac4; | }
+
+=== 00580810 [Cluster I] (00580810  (n=136)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0057FF40 x1
+  [2] ins=58 被调 unique=1: 00593634=FUN_00593634
+  [PSEUDO]: { | bool bVar8; | iVar5 = (int)&DAT_0072ba38 - (int)param_1; | do { | cVar1 = *param_1; | param_1[iVar5] = cVar1;
+
+=== 005808A0 [Cluster I] (005808A0  (n=120)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 1 处; 父:0057FF40 x1
+  [2] ins=32 被调 unique=4: 00509DDB 00508AE6=FUN_00508ae6 0050AC20 00569CB0=FUN_00569cb0
+  [PSEUDO]: void FUN_005808a0(int param_1) | { | DAT_0072bad4 = DAT_0072bad4 + 1; | if (param_1 != 0) { | FUN_00509ddb(local_80,param_1,&stack0x00000008
+
+=== 005820A0 [Cluster I] (005820A0  (n=117)  sec=.text) ===
+  [1] E8调用方 3 处; E9尾调 0 处; 父:005813C0 x1 00585E00 x1 00588930 x1
+  [2] ins=31 被调 unique=3: 0047C1C0 0058E730 00507850=FUN_00507850
+  [PSEUDO]: void __fastcall FUN_005820a0(int param_1) | { | if (*(char *)(param_1 + 0x38) != '\0') { | FUN_0047c1c0(); | FUN_0058e730(); | iVar1 = *(int
+
+=== 00582C60 [Cluster I] (00582C60  (n=226)  sec=.text) ===
+  [1] E8调用方 8 处; E9尾调 0 处; 父:00585680 x1 00587170 x1 00587F50 x1 00588600 x1 00588D10 x1
+  [2] ins=80 被调 unique=3: 00509FA2 x6 0058A670 x2 0058A680
+  [PSEUDO]: { | FUN_0058a680(param_1 + 9,param_2); | FUN_00509fa2(param_1[0x7b] + 8,4,1,param_2); | FUN_00509fa2(param_1[0x7b] + 0xc,4,1,param_2); | FUN
+
+=== 00582D50 [Cluster I] (00582D50  (n=286)  sec=.text) ===
+  [1] E8调用方 8 处; E9尾调 0 处; 父:00587380 x1 00587F80 x1 00588690 x1 00588D60 x1 005892B0 x1
+  [2] ins=95 被调 unique=5: 0050A118=FUN_0050a118 0058A560 x2 0058A620 00507850=FUN_00507850 00508B38=operator_new
+  [PSEUDO]: { | void *pvVar1; | FUN_0058a620(param_1 + 9,param_2); | FUN_0050a118(param_1[0x7b] + 8,4,1,param_2); | FUN_0050a118(param_1[0x7b] + 0xc,4,1
+
+=== 00583C20 [Cluster I] (00583C20  (n=139)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 0 处; 父:0056F2E0 x1 00584A50 x1
+  [2] ins=45 被调 unique=3: 00480770 x2 005565E0=FUN_005565e0 005598C0 x2
+  [PSEUDO]: void __thiscall FUN_00583c20(int param_1,int param_2) | { | iVar3 = 0; | if (param_2 != 0) { | FUN_00480770(param_2 + 0x74); | FUN_00480770(
+
+=== 005847F0 [Cluster I] (005847F0  (n=106)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00583A30 x1
+  [2] ins=38 被调 unique=2: 0055BEB0=FUN_0055beb0 00507850=FUN_00507850
+  [PSEUDO]: void __fastcall FUN_005847f0(int param_1) | { | if (*(char *)(*(int *)(param_1 + 8) + 0x58) != '\0') { | iVar1 = *(int *)(param_1 + 0x274); 
+
+=== 00584AB0 [Cluster I] (00584AB0  (n=159)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0056E0D0 x1
+  [2] ins=61 被调 unique=3: 0056B1D0 x2 005598C0 0056B310
+  [PSEUDO]: { | bool bVar7; | if ((-1 < param_2) && (param_2 <= *(int *)(param_1 + 0x91c))) { | uVar2 = FUN_005598c0(*(undefined4 *)(param_1 + 0x28c + p
+
+=== 00584C50 [Cluster I] (00584C50  (n=121)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00584CD0 x1
+  [2] ins=46 被调 unique=4: 005565D0 x3 005565E0=FUN_005565e0 00556630 00556650
+  [PSEUDO]: { | if (*(int *)(param_1 + 0x274) != 0) { | iVar1 = FUN_005565d0(); | iVar2 = FUN_005565e0(); | if ((-1 < param_2) && (param_2 <= iVar1 + iV
+
+=== 00584D80 [Cluster I] (00584D80  (n=207)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 0 处; 父:0056E490 x1 0056EE70 x1
+  [2] ins=49 被调 unique=3: 005811C0=FUN_005811c0 0058A6D0 00581AA0
+  [PSEUDO]: { | void *local_c; | local_4 = 0xffffffff; | puStack_8 = &LAB_005a69d8; | local_c = ExceptionList; | ExceptionList = &local_c;
+
+=== 00585360 [Cluster I] (00585360  (n=157)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 0 处; 父:0056E490 x1 0056EE70 x1
+  [2] ins=44 被调 unique=3: 005811C0=FUN_005811c0 0058A6D0 00581AA0
+  [PSEUDO]: { | void *local_c; | local_4 = 0xffffffff; | puStack_8 = &LAB_005a69f8; | local_c = ExceptionList; | ExceptionList = &local_c;
+
+=== 005856C0 [Cluster I] (005856C0  (n=170)  sec=.text) ===
+  [1] E8调用方 4 处; E9尾调 0 处; 父:00588800 x2 0056E490 x1 0056EE70 x1
+  [2] ins=46 被调 unique=4: 00477200 x4 005811C0=FUN_005811c0 0058A6D0 00581AA0
+  [PSEUDO]: { | void *local_c; | local_4 = 0xffffffff; | puStack_8 = &LAB_005a6a18; | local_c = ExceptionList; | ExceptionList = &local_c;
+
+=== 00585E30 [Cluster I] (00585E30  (n=203)  sec=.text) ===
+  [1] E8调用方 3 处; E9尾调 0 处; 父:00586690 x3
+  [2] ins=54 被调 unique=0: 
+  [PSEUDO]: void __thiscall FUN_00585e30(int param_1,int param_2) | { | iVar3 = *(int *)(param_1 + 0x28c); | puVar5 = (undefined4 *)(iVar3 + param_2 * 0
+
+=== 005870D0 [Cluster I] (005870D0  (n=147)  sec=.text) ===
+  [1] E8调用方 3 处; E9尾调 0 处; 父:0056EE30 x1 00585D50 x1 00585F00 x1
+  [2] ins=51 被调 unique=3: 00508B38=operator_new 005858E0 00586D40=FUN_00586d40
+  [PSEUDO]: void __fastcall FUN_005870d0(int param_1) | { | void *pvVar1; | if (*(int *)(param_1 + 0x28c) == 0) { | iVar3 = *(int *)(param_1 + 0x26c); |
+
+=== 005875B0 [Cluster I] (005875B0  (n=151)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=44 被调 unique=3: 0056E0D0=FUN_0056e0d0 0056E220 x2 0056E230=FUN_0056e230
+  [PSEUDO]: { | uVar1 = FUN_0056e220(); | uVar1 = FUN_0056e220(); | uVar1 = FUN_0056e0d0(param_1 + 0x2ac); | uVar1 = FUN_0056e0d0(param_1 + 700); | uVar
+
+=== 005877C0 [Cluster I] (005877C0  (n=136)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0056F1D0 x1
+  [2] ins=51 被调 unique=0: 
+  [PSEUDO]: { | iVar2 = 0; | if (0 < *(int *)(param_1 + 0x268)) { | pfVar1 = (float *)(*(int *)(param_1 + 0x28c) + 0xc); | do { | if ((((*param_2 < pfVa
+
+=== 00587A60 [Cluster I] (00587A60  (n=147)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 0 处; 父:0056E490 x1 0056EE70 x1
+  [2] ins=44 被调 unique=3: 005811C0=FUN_005811c0 0058A6D0 00581AA0
+  [PSEUDO]: { | void *local_c; | local_4 = 0xffffffff; | puStack_8 = &LAB_005a6a78; | local_c = ExceptionList; | ExceptionList = &local_c;
+
+=== 00587E70 [Cluster I] (00587E70  (n=125)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0056E0D0 x1
+  [2] ins=54 被调 unique=2: 0056B1D0 x2 0056B310
+  [PSEUDO]: { | bool bVar6; | if (*(int *)(param_1 + 0x2e8) != 0) { | iVar5 = 0; | iVar2 = FUN_0056b1d0(); | if (0 < iVar2) {
+
+=== 005880D0 [Cluster I] (005880D0  (n=197)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 0 处; 父:0056E490 x1 0056EE70 x1
+  [2] ins=48 被调 unique=3: 005811C0=FUN_005811c0 0058A6D0 00581AA0
+  [PSEUDO]: { | void *local_c; | local_4 = 0xffffffff; | puStack_8 = &LAB_005a6b28; | local_c = ExceptionList; | ExceptionList = &local_c;
+
+=== 00588720 [Cluster I] (00588720  (n=209)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 0 处; 父:0056E490 x1 0056EE70 x1
+  [2] ins=56 被调 unique=4: 005811C0=FUN_005811c0 0058A6D0 00581AA0 00477200
+  [PSEUDO]: { | void *local_c; | local_4 = 0xffffffff; | puStack_8 = &LAB_005a6b48; | local_c = ExceptionList; | ExceptionList = &local_c;
+
+=== 00588E10 [Cluster I] (00588E10  (n=187)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 0 处; 父:0056E490 x1 0056EE70 x1
+  [2] ins=47 被调 unique=3: 005811C0=FUN_005811c0 0058A6D0 00581AA0
+  [PSEUDO]: { | void *local_c; | local_4 = 0xffffffff; | puStack_8 = &LAB_005a6ba8; | local_c = ExceptionList; | ExceptionList = &local_c;
+
+=== 00589330 [Cluster I] (00589330  (n=157)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 0 处; 父:0056E490 x1 0056EE70 x1
+  [2] ins=44 被调 unique=3: 005811C0=FUN_005811c0 0058A6D0 00581AA0
+  [PSEUDO]: { | void *local_c; | local_4 = 0xffffffff; | puStack_8 = &LAB_005a6bc8; | local_c = ExceptionList; | ExceptionList = &local_c;
+
+=== 00589970 [Cluster I] (00589970  (n=163)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 0 处; 父:0056E490 x1 0056EE70 x1
+  [2] ins=45 被调 unique=3: 005811C0=FUN_005811c0 0058A6D0 00581AA0
+  [PSEUDO]: { | void *local_c; | local_4 = 0xffffffff; | puStack_8 = &LAB_005a6be8; | local_c = ExceptionList; | ExceptionList = &local_c;
+
+=== 0058A1F0 [Cluster I] (0058A1F0  (n=161)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 0 处; 父:0056E490 x1 0056EE70 x1
+  [2] ins=48 被调 unique=3: 005811C0=FUN_005811c0 0058A6D0 00581AA0
+  [PSEUDO]: { | void *local_c; | local_4 = 0xffffffff; | puStack_8 = &LAB_005a6c08; | local_c = ExceptionList; | ExceptionList = &local_c;
+
+=== 0058A560 [Cluster I] (0058A560  (n=182)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 0 处; 父:00582D50 x2
+  [2] ins=75 被调 unique=3: 0058A620 005092C0=FUN_005092c0 00403490=FUN_00403490
+  [PSEUDO]: void FUN_0058a560(int *param_1,undefined4 param_2) | { | FUN_0058a620(local_80,param_2); | uVar4 = 0xffffffff; | pcVar8 = local_80; | do {
+
+=== 0058B4F0 [Cluster I] (0058B4F0  (n=215)  sec=.text) ===
+  [1] E8调用方 3 处; E9尾调 0 处; 父:0058AA70 x3
+  [2] ins=58 被调 unique=0: 
+  [PSEUDO]: void FUN_0058b4f0(void) | { | iVar1 = DAT_0072c0f8; | for (pbVar3 = DAT_0072bed4; pbVar3 < DAT_0072c0f4; pbVar3 = pbVar3 + 1) { | if (*pbVar
+
+=== 0058B5D0 [Cluster I] (0058B5D0  (n=169)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0058AA70 x1
+  [2] ins=44 被调 unique=0: 
+  [PSEUDO]: { | iVar1 = param_1 * 2; | if (*(short *)(&DAT_005b1500 + iVar1) != 0) { | DAT_0072bfe8 = param_1; | DAT_0072be2c = DAT_0072c0f4; | }
+
+=== 0058C230 [Cluster I] (0058C230  (n=216)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 0 处; 父:0058BC90 x2
+  [2] ins=77 被调 unique=4: 00402BF0=FUN_00402bf0 004030F0=FUN_004030f0 005092C0=FUN_005092c0 00402A70=FUN_00402a70
+  [PSEUDO]: { | puStack_c = &LAB_005a6d89; | local_10 = *unaff_FS_OFFSET; | uStack_7 = 0; | while( true ) { | if (param_1 == param_2) break;
+
+=== 0058D560 [Cluster I] (0058D560  (n=293)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0058D0E0 x1
+  [2] ins=114 被调 unique=3: 005092C0=FUN_005092c0 004C7640=FUN_004c7640 00402E90=FUN_00402e90
+  [PSEUDO]: void FUN_0058d560(int param_1,int param_2,undefined4 *param_3) | { | param_1 = (param_2 - param_1) / 0x14; | if (0 < param_1) { | piVar6 = (
+
+=== 0058D690 [Cluster I] (0058D690  (n=190)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 0 处; 父:0058D0E0 x2
+  [2] ins=66 被调 unique=2: 00402BF0=FUN_00402bf0 005092C0=FUN_005092c0
+  [PSEUDO]: { | puStack_c = &LAB_005a6e71; | local_10 = *unaff_FS_OFFSET; | uStack_7 = 0; | while( true ) { | iVar3 = 0;
+
+=== 0058DD20 [Cluster I] (0058DD20  (n=215)  sec=.text) ===
+  [1] E8调用方 3 处; E9尾调 0 处; 父:0058D7A0 x3
+  [2] ins=58 被调 unique=0: 
+  [PSEUDO]: void FUN_0058dd20(void) | { | iVar1 = DAT_0072c170; | for (pbVar3 = DAT_0072c160; pbVar3 < DAT_0072c16c; pbVar3 = pbVar3 + 1) { | if (*pbVar
+
+=== 0058DE00 [Cluster I] (0058DE00  (n=169)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0058D7A0 x1
+  [2] ins=44 被调 unique=0: 
+  [PSEUDO]: { | iVar1 = param_1 * 2; | if (*(short *)(&DAT_005b1fd0 + iVar1) != 0) { | DAT_0072c164 = param_1; | DAT_0072c15c = DAT_0072c16c; | }
+
+=== 0058E430 [Cluster I] (0058E430  (n=250)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00580970 x1
+  [2] ins=75 被调 unique=0: 
+  [PSEUDO]: void __fastcall FUN_0058e430(undefined4 *param_1) | { | puVar1 = param_1 + 0x12; | param_1[5] = 0; | param_1[6] = 0; | param_1[7] = 0;
+
+=== 0058EDD0 [Cluster I] (0058EDD0  (n=150)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0058EC20 x1
+  [2] ins=54 被调 unique=0: 
+  [PSEUDO]: void __fastcall FUN_0058edd0(int param_1) | { | uVar2 = 0; | if (*(int *)(param_1 + 0x84) - *(int *)(param_1 + 0x80) >> 2 != 0) { | do { | p
+
+=== 0058EE70 [Cluster I] (0058EE70  (n=194)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0058F770 x1
+  [2] ins=79 被调 unique=3: 00508B38=operator_new 0058EA20 0058F330=FUN_0058f330
+  [PSEUDO]: void __fastcall FUN_0058ee70(int *param_1) | { | void *pvVar3; | piStack_4 = param_1; | if (param_1[4] == *(int *)(*(int *)(param_1[2] + 0x1
+
+=== 0058F6C0 [Cluster I] (0058F6C0  (n=166)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 0 处; 父:0058F670 x1 0058F770 x1
+  [2] ins=58 被调 unique=3: 00507850=FUN_00507850 00595909 00595346
+  [PSEUDO]: void __fastcall FUN_0058f6c0(int param_1) | { | iVar1 = 3; | piVar2 = (int *)(param_1 + 0x8c); | do { | if (piVar2[3] != 0) {
+
+=== 0058F9E0 [Cluster I] (0058F9E0  (n=233)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=83 被调 unique=2: 00595374 x3 0058EF40
+  [PSEUDO]: void __thiscall FUN_0058f9e0(int param_1,float param_2,int param_3) | { | double dVar1; | double local_10; | if (*(int *)(*(int *)(*(int *)(
+
+=== 00593200 [Cluster I] (00593200  (n=141)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0058FB70 x1
+  [2] ins=43 被调 unique=2: 00402BF0=FUN_00402bf0 00402A70=FUN_00402a70
+  [PSEUDO]: { | void *local_c; | local_4 = 0xffffffff; | puStack_8 = &LAB_005a7288; | local_c = ExceptionList; | ExceptionList = &local_c;
+
+=== 00593877 [Cluster I] (00593877  (n=207)  sec=.text) ===
+  [1] E8调用方 4 处; E9尾调 0 处; 父:005356F0 x2 00535920 x2
+  [2] ins=94 被调 unique=5: 00514AC3 x3 00514FA8 005143EB 00593DC2=__frnd 0051443F
+  [PSEUDO]: float10 FUN_00593877(double param_1) | { | double dVar1; | float10 fVar4; | uVar2 = FUN_00514ac3(DAT_005d36d4,0xffff); | if ((param_1._6_2_ 
+
+=== 00593946 [Cluster I] (00593946  (n=207)  sec=.text) ===
+  [1] E8调用方 4 处; E9尾调 0 处; 父:005356F0 x2 00535920 x2
+  [2] ins=94 被调 unique=5: 00514AC3 x3 00514FA8 005143EB 00593DC2=__frnd 0051443F
+  [PSEUDO]: float10 FUN_00593946(double param_1) | { | double dVar1; | float10 fVar4; | uVar2 = FUN_00514ac3(DAT_005d36d8,0xffff); | if ((param_1._6_2_ 
+
+=== 00593A18 [Cluster I] (00593A18  (n=123)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0053B690 x1
+  [2] ins=42 被调 unique=0: 
+  [PSEUDO]: 
+
+=== 00593A94 [Cluster I] (00593A94  (n=120)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0053B75F x1
+  [2] ins=42 被调 unique=4: 00508E7C 00593DD4 00508EBE 00508F52
+  [PSEUDO]: 
+
+=== 00593F9E [Cluster I] (00593F9E  (n=119)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00593E39 x1
+  [2] ins=46 被调 unique=0: 
+  [PSEUDO]: 
+
+=== 00594177 [Cluster I] (00594177  (n=101)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00594047 x1
+  [2] ins=49 被调 unique=2: 00593DC2=__frnd 005937AA=FUN_005937aa
+  [PSEUDO]: { | float10 fVar2; | uVar1 = FUN_005937aa(param_2,param_1,param_1); | if ((uVar1 & 0x90) == 0) { | fVar2 = (float10)__frnd(param_2); | if ((
+
+=== 00594450 [Cluster I] (00594450  (n=279)  sec=.text) ===
+  [1] E8调用方 46 处; E9尾调 0 处; 父:00594567 x42 00594A06 x1 00594A19 x1 00594BC4 x1 00594C41 x1
+  [2] ins=83 被调 unique=0: 
+  [PSEUDO]: 
+
+=== 00594AC4 [Cluster I] (00594AC4  (n=104)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=36 被调 unique=1: 00594A06 x4
+  [PSEUDO]: 
+
+=== 00594BC4 [Cluster I] (00594BC4  (n=125)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=44 被调 unique=2: 00594A19 x4 00594450
+  [PSEUDO]: 
+
+=== 00594E5C [Cluster I] (00594E5C  (n=178)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 0 处; 父:00593DA4 x1 00595114 x1
+  [2] ins=54 被调 unique=1: 00594C56=FUN_00594c56
+  [PSEUDO]: float10 FUN_00594e5c(void) | { | float10 in_ST0; | float10 fVar1; | float10 in_ST1; | if (((uint)((unkuint10)in_ST1 >> 0x30) & 0x7fff0000) !
+
+=== 00595114 [Cluster I] (00595114  (n=181)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00595114 x1
+  [2] ins=54 被调 unique=1: 00594F0E=FUN_00594f0e
+  [PSEUDO]: 
+
+=== 005952AF [Cluster I] (005952AF  (n=126)  sec=.text) ===
+  [1] E8调用方 3 处; E9尾调 0 处; 父:00572710 x2 0058F770 x1
+  [2] ins=48 被调 unique=1: 00596780
+  [PSEUDO]: { | if (param_4 == param_1[6]) { | param_1[2] = *param_2; | param_1[3] = param_2[1]; | param_1[4] = param_2[param_4 * 2 + -2]; | param_1[5] 
+
+=== 00595374 [Cluster I] (00595374  (n=145)  sec=.text) ===
+  [1] E8调用方 15 处; E9尾调 0 处; 父:00572710 x12 0058F9E0 x3
+  [2] ins=58 被调 unique=0: 
+  [PSEUDO]: FUN_00595374(int *param_1,undefined4 param_2,undefined4 *param_3,undefined4 param_4, | { | if (*(double *)(param_1 + 2) <= (double)CONCAT44(
+
+=== 00595405 [Cluster I] (00595405  (n=105)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=41 被调 unique=2: 00596780 00596830
+  [PSEUDO]: float10 FUN_00595405(int *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4, | { | float10 fVar2; | double local_c; | iVar1 =
+
+=== 0059546E [Cluster I] (0059546E  (n=134)  sec=.text) ===
+  [1] E8调用方 3 处; E9尾调 0 处; 父:0058F8A0 x3
+  [2] ins=48 被调 unique=0: 
+  [PSEUDO]: FUN_0059546e(int *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4, | { | if (*(double *)(param_1 + 2) <= (double)CONCAT44(p
+
+=== 005954F4 [Cluster I] (005954F4  (n=105)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=41 被调 unique=2: 00596780 00596830
+  [PSEUDO]: float10 FUN_005954f4(int *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4, | { | float10 fVar2; | double local_c; | iVar1 =
+
+=== 0059555D [Cluster I] (0059555D  (n=134)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=48 被调 unique=0: 
+  [PSEUDO]: FUN_0059555d(int *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4, | { | if (*(double *)(param_1 + 2) <= (double)CONCAT44(p
+
+=== 005955E3 [Cluster I] (005955E3  (n=105)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=41 被调 unique=2: 00596780 00596830
+  [PSEUDO]: float10 FUN_005955e3(int *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4, | { | float10 fVar2; | double local_c; | iVar1 =
+
+=== 005957D0 [Cluster I] (005957D0  (n=178)  sec=.text) ===
+  [1] E8调用方 5 处; E9尾调 0 处; 父:0059641A x2 00596001 x1 005961AC x1 005962E6 x1
+  [2] ins=70 被调 unique=1: 00595770 x2
+  [PSEUDO]: { | iVar1 = *param_1; | if (*(double *)(param_2 + iVar1 * 8) <= (double)CONCAT44(param_5,param_4)) { | if ((double)CONCAT44(param_5,param_4)
+
+=== 00596135 [Cluster I] (00596135  (n=119)  sec=.text) ===
+  [1] E8调用方 4 处; E9尾调 0 处; 父:00596001 x1 005961AC x1 005962E6 x1 0059641A x1
+  [2] ins=40 被调 unique=0: 
+  [PSEUDO]: void FUN_00596135(int param_1,double param_2,double param_3,int param_4,double *param_5, | { | uVar1 = *(undefined4 *)(param_1 + param_4 * 8
+
+=== 00596691 [Cluster I] (00596691  (n=231)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0059641A x1
+  [2] ins=75 被调 unique=0: 
+  [PSEUDO]: float10 FUN_00596691(double param_1,double param_2,double param_3,double param_4,double param_5, | double param_6,double param_7) | { | doub
+
+=== 005968E0 [Cluster I] (005968E0  (n=133)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00595AC6 x1
+  [2] ins=56 被调 unique=1: 00596965=FUN_00596965
+  [PSEUDO]: { | if ((*param_1 == *param_3) && | (((*param_2 == *param_3 || (*param_2 == *param_3 + -1)) && (*param_4 == *param_3)))) { | uVar1 = FUN_005
+
+=== 00596C17 [Cluster I] (00596C17  (n=118)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00595CA3 x1
+  [2] ins=50 被调 unique=1: 00596C8D=FUN_00596c8d
+  [PSEUDO]: { | if (((*param_1 == *param_3) && (*param_2 == *param_3)) && (*param_4 == *param_3)) { | uVar1 = FUN_00596c8d(param_1[2],param_1[1],param_2
+
+=== 00597160 [Cluster I] (00597160  (n=192)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=50 被调 unique=1: 00596780
+  [PSEUDO]: { | local_2c[5] = 0; | local_2c[6] = 0; | local_2c[7] = 0; | local_2c[8] = 0; | local_2c[9] = 0;
+
+=== 00597220 [Cluster I] (00597220  (n=240)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=65 被调 unique=1: 00596780 x2
+  [PSEUDO]: { | local_2c[5] = 0; | local_2c[6] = 0; | local_2c[7] = 0; | local_2c[8] = 0; | local_2c[9] = 0;
+
+=== 00597310 [Cluster I] (00597310  (n=192)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=50 被调 unique=1: 00596780
+  [PSEUDO]: { | local_2c[5] = 0; | local_2c[6] = 0; | local_2c[7] = 0; | local_2c[8] = 0; | local_2c[9] = 0;
+
+=== 005973D0 [Cluster I] (005973D0  (n=240)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=65 被调 unique=1: 00596780 x2
+  [PSEUDO]: { | local_2c[5] = 0; | local_2c[6] = 0; | local_2c[7] = 0; | local_2c[8] = 0; | local_2c[9] = 0;
+
+=== 005974C0 [Cluster I] (005974C0  (n=192)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=50 被调 unique=1: 00596780
+  [PSEUDO]: { | local_2c[5] = 0; | local_2c[6] = 0; | local_2c[7] = 0; | local_2c[8] = 0; | local_2c[9] = 0;
+
+=== 00597580 [Cluster I] (00597580  (n=240)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=65 被调 unique=1: 00596780 x2
+  [PSEUDO]: { | local_2c[5] = 0; | local_2c[6] = 0; | local_2c[7] = 0; | local_2c[8] = 0; | local_2c[9] = 0;
+
+=== 00597670 [Cluster I] (00597670  (n=192)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=50 被调 unique=1: 00596780
+  [PSEUDO]: { | local_2c[5] = 0; | local_2c[6] = 0; | local_2c[7] = 0; | local_2c[8] = 0; | local_2c[9] = 0;
+
+=== 00597730 [Cluster I] (00597730  (n=240)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=65 被调 unique=1: 00596780 x2
+  [PSEUDO]: { | local_2c[5] = 0; | local_2c[6] = 0; | local_2c[7] = 0; | local_2c[8] = 0; | local_2c[9] = 0;
+
+=== 00597820 [Cluster I] (00597820  (n=192)  sec=.text) ===
+  [1] E8调用方 8 处; E9尾调 0 处; 父:00595AC6 x4 00595CA3 x4
+  [2] ins=50 被调 unique=1: 00596780
+  [PSEUDO]: { | local_2c[5] = 0; | local_2c[6] = 0; | local_2c[7] = 0; | local_2c[8] = 0; | local_2c[9] = 0;
+
+=== 005978E0 [Cluster I] (005978E0  (n=240)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=65 被调 unique=1: 00596780 x2
+  [PSEUDO]: { | local_2c[5] = 0; | local_2c[6] = 0; | local_2c[7] = 0; | local_2c[8] = 0; | local_2c[9] = 0;
+
+=== 005979D0 [Cluster I] (005979D0  (n=192)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=50 被调 unique=1: 00596780
+  [PSEUDO]: { | local_2c[5] = 0; | local_2c[6] = 0; | local_2c[7] = 0; | local_2c[8] = 0; | local_2c[9] = 0;
+
+=== 00597A90 [Cluster I] (00597A90  (n=240)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=65 被调 unique=1: 00596780 x2
+  [PSEUDO]: { | local_2c[5] = 0; | local_2c[6] = 0; | local_2c[7] = 0; | local_2c[8] = 0; | local_2c[9] = 0;
+
+=== 00597B80 [Cluster I] (00597B80  (n=192)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=50 被调 unique=1: 00596780
+  [PSEUDO]: { | local_2c[5] = 0; | local_2c[6] = 0; | local_2c[7] = 0; | local_2c[8] = 0; | local_2c[9] = 0;
+
+=== 00597C40 [Cluster I] (00597C40  (n=240)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=65 被调 unique=1: 00596780 x2
+  [PSEUDO]: { | local_2c[5] = 0; | local_2c[6] = 0; | local_2c[7] = 0; | local_2c[8] = 0; | local_2c[9] = 0;
+
+=== 00597D30 [Cluster I] (00597D30  (n=192)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=50 被调 unique=1: 00596780
+  [PSEUDO]: { | local_2c[5] = 0; | local_2c[6] = 0; | local_2c[7] = 0; | local_2c[8] = 0; | local_2c[9] = 0;
+
+=== 00597DF0 [Cluster I] (00597DF0  (n=240)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=65 被调 unique=1: 00596780 x2
+  [PSEUDO]: { | local_2c[5] = 0; | local_2c[6] = 0; | local_2c[7] = 0; | local_2c[8] = 0; | local_2c[9] = 0;
+
+=== 00597EE0 [Cluster I] (00597EE0  (n=192)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=50 被调 unique=1: 00596780
+  [PSEUDO]: { | local_2c[5] = 0; | local_2c[6] = 0; | local_2c[7] = 0; | local_2c[8] = 0; | local_2c[9] = 0;
+
+=== 00597FA0 [Cluster I] (00597FA0  (n=240)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=65 被调 unique=1: 00596780 x2
+  [PSEUDO]: { | local_2c[5] = 0; | local_2c[6] = 0; | local_2c[7] = 0; | local_2c[8] = 0; | local_2c[9] = 0;
+
+=== 00598090 [Cluster I] (00598090  (n=192)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=50 被调 unique=1: 00596780
+  [PSEUDO]: { | local_2c[5] = 0; | local_2c[6] = 0; | local_2c[7] = 0; | local_2c[8] = 0; | local_2c[9] = 0;
+
+=== 00598150 [Cluster I] (00598150  (n=240)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=65 被调 unique=1: 00596780 x2
+  [PSEUDO]: { | local_2c[5] = 0; | local_2c[6] = 0; | local_2c[7] = 0; | local_2c[8] = 0; | local_2c[9] = 0;
+
+=== 00598240 [Cluster I] (00598240  (n=192)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=50 被调 unique=1: 00596780
+  [PSEUDO]: { | local_2c[5] = 0; | local_2c[6] = 0; | local_2c[7] = 0; | local_2c[8] = 0; | local_2c[9] = 0;
+
+=== 00598300 [Cluster I] (00598300  (n=240)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=65 被调 unique=1: 00596780 x2
+  [PSEUDO]: { | local_2c[5] = 0; | local_2c[6] = 0; | local_2c[7] = 0; | local_2c[8] = 0; | local_2c[9] = 0;
+
+=== 005983F0 [Cluster I] (005983F0  (n=192)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=50 被调 unique=1: 00596780
+  [PSEUDO]: { | local_2c[5] = 0; | local_2c[6] = 0; | local_2c[7] = 0; | local_2c[8] = 0; | local_2c[9] = 0;
+
+=== 005984B0 [Cluster I] (005984B0  (n=240)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=65 被调 unique=1: 00596780 x2
+  [PSEUDO]: { | local_2c[5] = 0; | local_2c[6] = 0; | local_2c[7] = 0; | local_2c[8] = 0; | local_2c[9] = 0;
+
+=== 005985A0 [Cluster I] (005985A0  (n=192)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=50 被调 unique=1: 00596780
+  [PSEUDO]: { | local_2c[5] = 0; | local_2c[6] = 0; | local_2c[7] = 0; | local_2c[8] = 0; | local_2c[9] = 0;
+
+=== 00598660 [Cluster I] (00598660  (n=240)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=65 被调 unique=1: 00596780 x2
+  [PSEUDO]: { | local_2c[5] = 0; | local_2c[6] = 0; | local_2c[7] = 0; | local_2c[8] = 0; | local_2c[9] = 0;
+
+=== 00598750 [Cluster I] (00598750  (n=192)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=50 被调 unique=1: 00596780
+  [PSEUDO]: { | local_2c[5] = 0; | local_2c[6] = 0; | local_2c[7] = 0; | local_2c[8] = 0; | local_2c[9] = 0;
+
+=== 00598810 [Cluster I] (00598810  (n=240)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=65 被调 unique=1: 00596780 x2
+  [PSEUDO]: { | local_2c[5] = 0; | local_2c[6] = 0; | local_2c[7] = 0; | local_2c[8] = 0; | local_2c[9] = 0;
+
+=== 00598900 [Cluster I] (00598900  (n=192)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=50 被调 unique=1: 00596780
+  [PSEUDO]: { | local_2c[5] = 0; | local_2c[6] = 0; | local_2c[7] = 0; | local_2c[8] = 0; | local_2c[9] = 0;
+
+=== 005989C0 [Cluster I] (005989C0  (n=240)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=65 被调 unique=1: 00596780 x2
+  [PSEUDO]: { | local_2c[5] = 0; | local_2c[6] = 0; | local_2c[7] = 0; | local_2c[8] = 0; | local_2c[9] = 0;
+
+=== 00598AB0 [Cluster I] (00598AB0  (n=192)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=50 被调 unique=1: 00596780
+  [PSEUDO]: { | local_2c[5] = 0; | local_2c[6] = 0; | local_2c[7] = 0; | local_2c[8] = 0; | local_2c[9] = 0;
+
+=== 00598B70 [Cluster I] (00598B70  (n=240)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=65 被调 unique=1: 00596780 x2
+  [PSEUDO]: { | local_2c[5] = 0; | local_2c[6] = 0; | local_2c[7] = 0; | local_2c[8] = 0; | local_2c[9] = 0;
+
+=== 00598C60 [Cluster I] (00598C60  (n=192)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=50 被调 unique=1: 00596780
+  [PSEUDO]: { | local_2c[5] = 0; | local_2c[6] = 0; | local_2c[7] = 0; | local_2c[8] = 0; | local_2c[9] = 0;
+
+=== 00598D20 [Cluster I] (00598D20  (n=240)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=65 被调 unique=1: 00596780 x2
+  [PSEUDO]: { | local_2c[5] = 0; | local_2c[6] = 0; | local_2c[7] = 0; | local_2c[8] = 0; | local_2c[9] = 0;
+
+=== 00598E10 [Cluster I] (00598E10  (n=192)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=50 被调 unique=1: 00596780
+  [PSEUDO]: { | local_2c[5] = 0; | local_2c[6] = 0; | local_2c[7] = 0; | local_2c[8] = 0; | local_2c[9] = 0;
+
+=== 00598ED0 [Cluster I] (00598ED0  (n=240)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=65 被调 unique=1: 00596780 x2
+  [PSEUDO]: { | local_2c[5] = 0; | local_2c[6] = 0; | local_2c[7] = 0; | local_2c[8] = 0; | local_2c[9] = 0;
+
+=== 00598FC0 [Cluster I] (00598FC0  (n=192)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=50 被调 unique=1: 00596780
+  [PSEUDO]: { | local_2c[5] = 0; | local_2c[6] = 0; | local_2c[7] = 0; | local_2c[8] = 0; | local_2c[9] = 0;
+
+=== 00599080 [Cluster I] (00599080  (n=240)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=65 被调 unique=1: 00596780 x2
+  [PSEUDO]: { | local_2c[5] = 0; | local_2c[6] = 0; | local_2c[7] = 0; | local_2c[8] = 0; | local_2c[9] = 0;
+
+=== 00599170 [Cluster I] (00599170  (n=192)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=50 被调 unique=1: 00596780
+  [PSEUDO]: { | local_2c[5] = 0; | local_2c[6] = 0; | local_2c[7] = 0; | local_2c[8] = 0; | local_2c[9] = 0;
+
+=== 00599230 [Cluster I] (00599230  (n=240)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=65 被调 unique=1: 00596780 x2
+  [PSEUDO]: { | local_2c[5] = 0; | local_2c[6] = 0; | local_2c[7] = 0; | local_2c[8] = 0; | local_2c[9] = 0;
+
+=== 00599320 [Cluster I] (00599320  (n=192)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=50 被调 unique=1: 00596780
+  [PSEUDO]: { | local_2c[5] = 0; | local_2c[6] = 0; | local_2c[7] = 0; | local_2c[8] = 0; | local_2c[9] = 0;
+
+=== 005993E0 [Cluster I] (005993E0  (n=240)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=65 被调 unique=1: 00596780 x2
+  [PSEUDO]: { | local_2c[5] = 0; | local_2c[6] = 0; | local_2c[7] = 0; | local_2c[8] = 0; | local_2c[9] = 0;
+
+=== 005994D0 [Cluster I] (005994D0  (n=192)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=50 被调 unique=1: 00596780
+  [PSEUDO]: { | local_2c[5] = 0; | local_2c[6] = 0; | local_2c[7] = 0; | local_2c[8] = 0; | local_2c[9] = 0;
+
+=== 00599590 [Cluster I] (00599590  (n=240)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=65 被调 unique=1: 00596780 x2
+  [PSEUDO]: { | local_2c[5] = 0; | local_2c[6] = 0; | local_2c[7] = 0; | local_2c[8] = 0; | local_2c[9] = 0;
+
+=== 00599680 [Cluster I] (00599680  (n=192)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=50 被调 unique=1: 00596780
+  [PSEUDO]: { | local_2c[5] = 0; | local_2c[6] = 0; | local_2c[7] = 0; | local_2c[8] = 0; | local_2c[9] = 0;
+
+=== 00599740 [Cluster I] (00599740  (n=240)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=65 被调 unique=1: 00596780 x2
+  [PSEUDO]: { | local_2c[5] = 0; | local_2c[6] = 0; | local_2c[7] = 0; | local_2c[8] = 0; | local_2c[9] = 0;
+
+=== 00599830 [Cluster I] (00599830  (n=192)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=50 被调 unique=1: 00596780
+  [PSEUDO]: { | local_2c[5] = 0; | local_2c[6] = 0; | local_2c[7] = 0; | local_2c[8] = 0; | local_2c[9] = 0;
+
+=== 005998F0 [Cluster I] (005998F0  (n=240)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=65 被调 unique=1: 00596780 x2
+  [PSEUDO]: { | local_2c[5] = 0; | local_2c[6] = 0; | local_2c[7] = 0; | local_2c[8] = 0; | local_2c[9] = 0;
+
+=== 005999E0 [Cluster I] (005999E0  (n=192)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=50 被调 unique=1: 00596780
+  [PSEUDO]: { | local_2c[5] = 0; | local_2c[6] = 0; | local_2c[7] = 0; | local_2c[8] = 0; | local_2c[9] = 0;
+
+=== 00599AA0 [Cluster I] (00599AA0  (n=240)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=65 被调 unique=1: 00596780 x2
+  [PSEUDO]: { | local_2c[5] = 0; | local_2c[6] = 0; | local_2c[7] = 0; | local_2c[8] = 0; | local_2c[9] = 0;
+
+=== 00599B90 [Cluster I] (00599B90  (n=192)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=50 被调 unique=1: 00596780
+  [PSEUDO]: { | local_2c[5] = 0; | local_2c[6] = 0; | local_2c[7] = 0; | local_2c[8] = 0; | local_2c[9] = 0;
+
+=== 00599C50 [Cluster I] (00599C50  (n=240)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=65 被调 unique=1: 00596780 x2
+  [PSEUDO]: { | local_2c[5] = 0; | local_2c[6] = 0; | local_2c[7] = 0; | local_2c[8] = 0; | local_2c[9] = 0;
+
+=== 00599D40 [Cluster I] (00599D40  (n=192)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=50 被调 unique=1: 00596780
+  [PSEUDO]: { | local_2c[5] = 0; | local_2c[6] = 0; | local_2c[7] = 0; | local_2c[8] = 0; | local_2c[9] = 0;
+
+=== 00599E00 [Cluster I] (00599E00  (n=240)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=65 被调 unique=1: 00596780 x2
+  [PSEUDO]: { | local_2c[5] = 0; | local_2c[6] = 0; | local_2c[7] = 0; | local_2c[8] = 0; | local_2c[9] = 0;
+
+=== 00599EF0 [Cluster I] (00599EF0  (n=192)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=50 被调 unique=1: 00596780
+  [PSEUDO]: { | local_2c[5] = 0; | local_2c[6] = 0; | local_2c[7] = 0; | local_2c[8] = 0; | local_2c[9] = 0;
+
+=== 00599FB0 [Cluster I] (00599FB0  (n=240)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=65 被调 unique=1: 00596780 x2
+  [PSEUDO]: { | local_2c[5] = 0; | local_2c[6] = 0; | local_2c[7] = 0; | local_2c[8] = 0; | local_2c[9] = 0;
+

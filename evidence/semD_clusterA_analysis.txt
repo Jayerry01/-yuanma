@@ -1,0 +1,295 @@
+=== 004022B0 (004022B0  (n=128)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:004010F0 x1
+  [2] ins=59 被调 unique=1: 0050915B=FUN_0050915b
+  [PSEUDO]: { | if ((((param_1 != (char *)0x0) && (param_2 != 0)) && (param_4 != (char *)0x0)) && (0 < param_3)) { | uVar2 = 0xffffffff; | pcVar5 = para
+
+=== 00402420 (00402420  (n=128)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00401770 x1
+  [2] ins=59 被调 unique=1: 0050915B=FUN_0050915b
+  [PSEUDO]: { | if ((((param_1 != (char *)0x0) && (param_2 != 0)) && (param_4 != (char *)0x0)) && (0 < param_3)) { | uVar2 = 0xffffffff; | pcVar5 = para
+
+=== 00402FFA (00402FFA  (n=102)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 0 处; 父:
+  [2] ins=52 被调 unique=1: 0050920A=FUN_0050920a
+  [PSEUDO]: 
+
+=== 00403F10 (00403F10  (n=208)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00403E70 x1
+  [2] ins=78 被调 unique=2: 00412620 00509980=__ftol
+  [PSEUDO]: void FUN_00403f10(void) | { | double dVar1; | code *pcVar2; | double *pdVar3; | float10 fVar4;
+
+=== 00405560 (00405560  (n=255)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 0 处; 父:00405660 x2
+  [2] ins=75 被调 unique=6: 004054E0=FUN_004054e0 00509980=__ftol 00419DB0 00419BD0 0040AFD0=FUN_0040afd0 0040AEE0=FUN_0040aee0
+  [PSEUDO]: void FUN_00405560(uint *param_1,uint param_2,int param_3) | { | param_1[0x45] = param_2; | uVar1 = __ftol(); | param_1[0x46] = uVar1; | if (
+
+=== 00407670 (00407670  (n=229)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00407260 x1
+  [2] ins=74 被调 unique=5: 00407B50 x4 00407760=FUN_00407760 00430C40 004315E0 004312E0=FUN_004312e0
+  [PSEUDO]: void FUN_00407670(undefined4 param_1,int param_2,int param_3,int param_4,int param_5) | { | if ((param_2 == param_4) && (param_3 == param_5)
+
+=== 00407B50 (00407B50  (n=179)  sec=.text) ===
+  [1] E8调用方 4 处; E9尾调 0 处; 父:00407670 x4
+  [2] ins=55 被调 unique=0: 
+  [PSEUDO]: void FUN_00407b50(undefined4 *param_1,int param_2,int param_3) | { | if (param_2 == 0) { | param_1[1] = 0; | } | else {
+
+=== 00408AD0 (00408AD0  (n=151)  sec=.text) ===
+  [1] E8调用方 3 处; E9尾调 0 处; 父:00408270 x2 004086C0 x1
+  [2] ins=50 被调 unique=5: 00529C80 00430E80 00509D10 00431A80 0040C610=thunk_FUN_0040c620
+  [PSEUDO]: void FUN_00408ad0(uint *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4) | { | float10 fVar1; | fVar1 = (float10)FUN_00529c
+
+=== 004100B0 (004100B0  (n=269)  sec=.text) ===
+  [1] E8调用方 6 处; E9尾调 0 处; 父:00408270 x3 004086C0 x3
+  [2] ins=105 被调 unique=1: 00431EA0 x3
+  [PSEUDO]: FUN_004100b0(int param_1,int *param_2,undefined4 param_3,float param_4,float *param_5,int param_6) | { | float10 fVar4; | float10 fVar5; | f
+
+=== 00415330 (00415330  (n=126)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 2 处; 父:00412AD0 x1 004198E0 x1
+  [2] ins=37 被调 unique=2: 00509980=__ftol 0041A950
+  [PSEUDO]: void FUN_00415330(undefined4 param_1,undefined4 param_2,undefined4 param_3) | { | if ((DAT_005d5a0c != 0) && (iVar1 = *(int *)(DAT_005d5a0c 
+
+=== 004153E0 (004153E0  (n=175)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00415490 x1
+  [2] ins=42 被调 unique=0: 
+  [PSEUDO]: void FUN_004153e0(int param_1,undefined4 param_2,undefined4 param_3,int param_4,int param_5, | { | piVar1 = local_2c; | for (iVar2 = 0xb; iV
+
+=== 00415490 (00415490  (n=170)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00404850 x1
+  [2] ins=77 被调 unique=2: 004153E0 004155C0
+  [PSEUDO]: { | piVar1 = (int *)(param_2 + 0x30); | DAT_007e2768 = (**(code **)(**(int **)(param_1 + 0x75c) + 0x18)) | (*(int **)(param_1 + 0x75c),piVar
+
+=== 00415540 (00415540  (n=123)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00404850 x1
+  [2] ins=43 被调 unique=2: 005095F5=_malloc 0041F6B0=FUN_0041f6b0
+  [PSEUDO]: FUN_00415540(undefined4 param_1,int param_2,undefined4 param_3,int param_4,int param_5,int param_6) | { | void *pvVar1; | if (DAT_005c431c =
+
+=== 004155C0 (004155C0  (n=144)  sec=.text) ===
+  [1] E8调用方 3 处; E9尾调 1 处; 父:0041A9B0 x2 00415490 x1
+  [2] ins=40 被调 unique=2: 00509980=__ftol 0041F6B0=FUN_0041f6b0
+  [PSEUDO]: void FUN_004155c0(int param_1) | { | if (DAT_005c4308 != 0) { | uVar1 = __ftol(); | uVar2 = __ftol(); | uVar3 = __ftol();
+
+=== 004156C0 (004156C0  (n=224)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0040F9F0 x1
+  [2] ins=86 被调 unique=1: 005089FD=FUN_005089fd
+  [PSEUDO]: void FUN_004156c0(int *param_1,int param_2,int param_3) | { | piVar2 = param_1; | if (param_1 != (int *)0x0) { | if (DAT_005c4308 == 0) { | 
+
+=== 00417850 (00417850  (n=267)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 0 处; 父:00415DC0 x1 00421DA0 x1
+  [2] ins=100 被调 unique=1: 00407C10=FUN_00407c10
+  [PSEUDO]: void FUN_00417850(int param_1,float *param_2) | { | puVar1 = *(uint **)(param_1 + 4); | FUN_00407c10(*puVar1 | 0x2000000,&local_c,0,0); | iV
+
+=== 00417960 (00417960  (n=267)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 0 处; 父:00415DC0 x1 00421DA0 x1
+  [2] ins=105 被调 unique=2: 0040FAE0=FUN_0040fae0 0040FB30=FUN_0040fb30
+  [PSEUDO]: void FUN_00417960(undefined4 *param_1,float *param_2) | { | iVar7 = param_1[2]; | FUN_0040fb30(*(uint *)param_1[3] | 0x5000000,&local_c,0); 
+
+=== 00419720 (00419720  (n=268)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00415DC0 x1
+  [2] ins=87 被调 unique=1: 0041A490=FUN_0041a490
+  [PSEUDO]: void FUN_00419720(int *param_1,int param_2,undefined4 param_3) | { | iVar4 = DAT_007eac64; | puVar3 = DAT_007e2808; | iVar1 = *(int *)(param
+
+=== 00419830 (00419830  (n=170)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00415DC0 x1
+  [2] ins=66 被调 unique=1: 005099A7=FUN_005099a7
+  [PSEUDO]: void FUN_00419830(int *param_1,int param_2) | { | iVar2 = *(int *)(param_2 + 8) * 0x20; | if (DAT_007e0eb8 < iVar2) { | DAT_007e0eb8 = iVar2
+
+=== 00419C30 (00419C30  (n=166)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 0 处; 父:0040C900 x1 0040CD10 x1
+  [2] ins=47 被调 unique=1: 00509980=__ftol
+  [PSEUDO]: void FUN_00419c30(int param_1,undefined4 param_2,int param_3,int param_4) | { | iVar5 = param_1; | if (0 < param_3) { | uVar2 = __ftol(); | 
+
+=== 00419CE0 (00419CE0  (n=204)  sec=.text) ===
+  [1] E8调用方 3 处; E9尾调 0 处; 父:0040D860 x2 0040D3B0 x1
+  [2] ins=61 被调 unique=1: 00509980=__ftol
+  [PSEUDO]: void FUN_00419ce0(int param_1,undefined4 param_2,undefined4 param_3,int param_4,int param_5) | { | if (0 < param_4) { | uVar1 = __ftol(); | 
+
+=== 00419DB0 (00419DB0  (n=116)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00405560 x1
+  [2] ins=41 被调 unique=1: 00509980=__ftol
+  [PSEUDO]: void FUN_00419db0(int param_1) | { | iVar1 = DAT_007eac64; | if ((param_1 != 0) && ((*(byte *)(param_1 + 4) & 1) != 0)) { | iVar3 = *(int *)
+
+=== 0041A040 (0041A040  (n=134)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0041A0D0 x1
+  [2] ins=55 被调 unique=0: 
+  [PSEUDO]: { | bool bVar1; | cVar4 = param_4 <= *param_1 * *param_3 + param_1[1] * param_3[1] + param_1[2] * param_3[2]; | bVar1 = param_4 <= *param_2 
+
+=== 0041A400 (0041A400  (n=143)  sec=.text) ===
+  [1] E8调用方 3 处; E9尾调 0 处; 父:00415DC0 x2 00473D10 x1
+  [2] ins=57 被调 unique=1: 0041AE90=FUN_0041ae90
+  [PSEUDO]: void FUN_0041a400(int param_1,int param_2,int param_3) | { | if ((param_2 != 0) || (param_3 != 0)) { | local_10 = *(int *)(param_1 + 4); | l
+
+=== 0041B090 (0041B090  (n=183)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 1 处; 父:
+  [2] ins=47 被调 unique=1: 00410C60
+  [PSEUDO]: void FUN_0041b090(void) | { | if (DAT_005d5a0c != 0) { | puVar1 = local_7c; | for (iVar2 = 0x1f; iVar2 != 0; iVar2 = iVar2 + -1) { | puVar1 
+
+=== 0041B180 (0041B180  (n=222)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0040E660 x1
+  [2] ins=66 被调 unique=2: 00410C60 004219F0=FUN_004219f0
+  [PSEUDO]: void FUN_0041b180(void) | { | if ((DAT_005d5a0c != 0) && (*(int *)(DAT_005d5a0c + 0x6f8) == 0)) { | puVar3 = local_7c; | for (iVar2 = 0x1f; 
+
+=== 0041F390 (0041F390  (n=186)  sec=.text) ===
+  [1] E8调用方 5 处; E9尾调 0 处; 父:004157E0 x2 0041C340 x1 0041CE00 x1 0041CE20 x1
+  [2] ins=50 被调 unique=0: 
+  [PSEUDO]: { | puVar2 = local_7c; | for (iVar1 = 0x1f; iVar1 != 0; iVar1 = iVar1 + -1) { | puVar2 = puVar2 + 1; | } | local_7c[0] = 0x7c;
+
+=== 0041F450 (0041F450  (n=198)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 0 处; 父:004157E0 x2
+  [2] ins=52 被调 unique=0: 
+  [PSEUDO]: { | puVar2 = local_7c; | for (iVar1 = 0x1f; iVar1 != 0; iVar1 = iVar1 + -1) { | puVar2 = puVar2 + 1; | } | local_7c[0] = 0x7c;
+
+=== 0041F7F0 (0041F7F0  (n=266)  sec=.text) ===
+  [1] E8调用方 6 处; E9尾调 0 处; 父:004157E0 x2 0041C340 x2 0041CE20 x2
+  [2] ins=76 被调 unique=0: 
+  [PSEUDO]: { | bVar1 = (byte)DAT_007e28a8; | bVar2 = (byte)DAT_007e3350; | bVar3 = (byte)DAT_007e339c; | if (DAT_005c45b0 == 5) { | return (((param_3 &
+
+=== 0041F900 (0041F900  (n=189)  sec=.text) ===
+  [1] E8调用方 12 处; E9尾调 0 处; 父:0042F0C0 x11 0040E690 x1
+  [2] ins=67 被调 unique=0: 
+  [PSEUDO]: void FUN_0041f900(int param_1,int param_2,uint param_3,int param_4,undefined4 param_5) | { | if (DAT_007eabe0 == 0x10) { | iVar3 = 0; | if (
+
+=== 0041FD10 (0041FD10  (n=139)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0040E740 x1
+  [2] ins=52 被调 unique=0: 
+  [PSEUDO]: { | DWORD iCharSet; | if (*param_1 < '\0') { | iCharSet = 0x88; | } | else {
+
+=== 0041FE00 (0041FE00  (n=243)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00434440 x1
+  [2] ins=86 被调 unique=2: 0041FF00 x3 005095F5=_malloc
+  [PSEUDO]: LPVOID FUN_0041fe00(UINT param_1,void *param_2,DWORD param_3,LONG *param_4,LONG *param_5, | UINT *param_6,UINT *param_7,int *param_8) | { | 
+
+=== 004200F0 (004200F0  (n=169)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0041FA20 x1
+  [2] ins=61 被调 unique=0: 
+  [PSEUDO]: void FUN_004200f0(int param_1,int param_2,int param_3,undefined4 param_4) | { | if ((-1 < param_1) && (param_1 < *(int *)(DAT_005d5a0c + 0x6
+
+=== 004201A0 (004201A0  (n=227)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0041FA20 x1
+  [2] ins=84 被调 unique=0: 
+  [PSEUDO]: void FUN_004201a0(int param_1,int param_2,int param_3,int param_4,int param_5,undefined4 param_6) | { | param_4 = param_4 * 2; | iVar2 = par
+
+=== 00420290 (00420290  (n=227)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0041FA20 x1
+  [2] ins=84 被调 unique=0: 
+  [PSEUDO]: void FUN_00420290(int param_1,int param_2,int param_3,int param_4,int param_5,undefined4 param_6) | { | param_3 = param_3 * 2; | iVar2 = par
+
+=== 004206B0 (004206B0  (n=121)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00420380 x1
+  [2] ins=45 被调 unique=0: 
+  [PSEUDO]: void FUN_004206b0(int param_1,int param_2,int param_3,undefined2 param_4) | { | if (param_2 < 0) { | param_3 = param_3 + param_2; | param_2 
+
+=== 00421B60 (00421B60  (n=149)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00411CE0 x1
+  [2] ins=50 被调 unique=1: 0050A0E0=_strncmp
+  [PSEUDO]: { | void *local_14; | puStack_c = &DAT_005a8478; | puStack_10 = &LAB_0050a518; | local_14 = ExceptionList; | local_1c = &stack0xffffffc0;
+
+=== 00421D00 (00421D00  (n=159)  sec=.text) ===
+  [1] E8调用方 4 处; E9尾调 0 处; 父:004A0550 x1 004A0670 x1 004A0DC0 x1 004A0FB0 x1
+  [2] ins=61 被调 unique=1: 00410A60
+  [PSEUDO]: void FUN_00421d00(HDC param_1,uint param_2,LPCSTR param_3,undefined1 param_4) | { | LPCSTR lpString; | LPCSTR pCVar4; | lpString = param_3; 
+
+=== 00423330 (00423330  (n=210)  sec=.text) ===
+  [1] E8调用方 2 处; E9尾调 1 处; 父:00421DA0 x2
+  [2] ins=65 被调 unique=0: 
+  [PSEUDO]: void FUN_00423330(void) | { | local_74 = *(int *)(DAT_007e28a4 + 4); | local_70 = *(int *)(DAT_007e28a4 + 8); | if (DAT_005c431c == 0) { | l
+
+=== 00423910 (00423910  (n=222)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00421DA0 x1
+  [2] ins=87 被调 unique=3: 004239F0=FUN_004239f0 00428240=FUN_00428240 00427BB0=FUN_00427bb0
+  [PSEUDO]: void FUN_00423910(int param_1,int param_2,undefined4 param_3,undefined4 param_4) | { | _DAT_007e2ba4 = param_2; | iVar4 = 0; | param_2 = par
+
+=== 00428920 (00428920  (n=140)  sec=.text) ===
+  [1] E8调用方 8 处; E9尾调 0 处; 父:00427BB0 x4 00428240 x4
+  [2] ins=49 被调 unique=0: 
+  [PSEUDO]: { | iVar1 = *(int *)(&DAT_007e0ea0 + DAT_007e2c8c * 4); | iVar2 = *(int *)(&DAT_007e0e9c + DAT_007e2c8c * 4); | iVar3 = *(int *)(iVar2 + 0x1
+
+=== 004289B0 (004289B0  (n=110)  sec=.text) ===
+  [1] E8调用方 8 处; E9尾调 0 处; 父:00427F50 x4 00428600 x4
+  [2] ins=39 被调 unique=0: 
+  [PSEUDO]: { | iVar1 = *(int *)(&DAT_007e0ea0 + DAT_007e2c8c * 4); | iVar2 = *(int *)(&DAT_007e0e9c + DAT_007e2c8c * 4); | iVar3 = *(int *)(iVar2 + 0x1
+
+=== 00428A20 (00428A20  (n=197)  sec=.text) ===
+  [1] E8调用方 16 处; E9尾调 0 处; 父:00425970 x4 004261E0 x4 00426A80 x4 00427300 x4
+  [2] ins=67 被调 unique=0: 
+  [PSEUDO]: { | iVar1 = *(int *)(&DAT_007e0ea0 + DAT_007e2c8c * 4); | iVar2 = *(int *)(&DAT_007e0e9c + DAT_007e2c8c * 4); | iVar3 = *(int *)(iVar2 + 0x1
+
+=== 00428AF0 (00428AF0  (n=169)  sec=.text) ===
+  [1] E8调用方 16 处; E9尾调 0 处; 父:00425E00 x4 00426680 x4 00426F10 x4 004277B0 x4
+  [2] ins=58 被调 unique=0: 
+  [PSEUDO]: { | iVar1 = *(int *)(&DAT_007e0ea0 + DAT_007e2c8c * 4); | iVar2 = *(int *)(&DAT_007e0e9c + DAT_007e2c8c * 4); | iVar3 = *(int *)(iVar2 + 0x1
+
+=== 00429640 (00429640  (n=158)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 1 处; 父:
+  [2] ins=50 被调 unique=0: 
+  [PSEUDO]: { | if ((DAT_005d5a58 == 0) || (DAT_005d5a94 == 0)) { | return 0; | } | if (param_1 != (undefined4 *)0x0) { | puVar2 = &DAT_007e2ca0;
+
+=== 00429920 (00429920  (n=112)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00404040 x1
+  [2] ins=31 被调 unique=2: 005089FD=FUN_005089fd 00434AC0
+  [PSEUDO]: void FUN_00429920(void) | { | piVar1 = &DAT_007ddf40; | do { | if ((undefined4 *)*piVar1 != (undefined4 *)0x0) { | FUN_00434ac0(*(undefined4
+
+=== 00429990 (00429990  (n=261)  sec=.text) ===
+  [1] E8调用方 48 处; E9尾调 0 处; 父:0046F880 x6 004708E0 x6 004642F0 x3 00466D70 x3 0046ABA0 x3
+  [2] ins=64 被调 unique=2: 004298E0 005095F5=_malloc
+  [PSEUDO]: void FUN_00429990(undefined4 param_1) | { | if (DAT_005d5b00 == 0) { | FUN_004298e0(); | } | DAT_005d5b04 = _malloc(0x60);
+
+=== 00429AA0 (00429AA0  (n=215)  sec=.text) ===
+  [1] E8调用方 23 处; E9尾调 0 处; 父:004708E0 x5 0046F880 x4 0046ABA0 x2 00461FB0 x1 00463610 x1
+  [2] ins=74 被调 unique=6: 005089FD=FUN_005089fd 005095F5=_malloc 00434AC0 00434600 00434690=FUN_00434690 00434AB0
+  [PSEUDO]: void FUN_00429aa0(char *param_1,int param_2,int param_3,int param_4) | { | void *pvVar2; | if (((DAT_005d5b04 != (int *)0x0) && (param_1 != 
+
+=== 00429B80 (00429B80  (n=176)  sec=.text) ===
+  [1] E8调用方 27 处; E9尾调 0 处; 父:004642F0 x3 00464000 x2 00465810 x2 00466720 x2 00466D70 x2
+  [2] ins=63 被调 unique=5: 005089FD=FUN_005089fd 00434AC0 00434600 00434690=FUN_00434690 00434AB0
+  [PSEUDO]: void FUN_00429b80(int param_1,int param_2,int param_3,int param_4,int param_5) | { | if (DAT_005d5b04 != (int *)0x0) { | DAT_005d5b04[4] = p
+
+=== 00429C30 (00429C30  (n=128)  sec=.text) ===
+  [1] E8调用方 49 处; E9尾调 0 处; 父:0046F880 x6 004708E0 x6 004642F0 x3 00466D70 x3 0046ABA0 x3
+  [2] ins=43 被调 unique=4: 0042A110 0042A010 0042A130 0042A500
+  [PSEUDO]: { | if (DAT_005d5b04 == (int *)0x0) { | return 0; | } | uVar1 = FUN_0042a110(); | if (uVar1 == 0) {
+
+=== 0042A130 (0042A130  (n=112)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00429C30 x1
+  [2] ins=24 被调 unique=0: 
+  [PSEUDO]: void FUN_0042a130(int param_1) | { | if (param_1 != 0) { | DAT_005c679c = 1; | DAT_005c67a0 = 1; | if (*(int *)(DAT_005d5a0c + 0x6d0) == 0) 
+
+=== 0042A300 (0042A300  (n=231)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:00429CB0 x1
+  [2] ins=70 被调 unique=0: 
+  [PSEUDO]: void FUN_0042a300(int param_1) | { | if (param_1 == 0) { | return; | } | if (param_1 == *(int *)(DAT_005d5a0c + 0x6d0)) {
+
+=== 0042B010 (0042B010  (n=111)  sec=.text) ===
+  [1] E8调用方 39 处; E9尾调 0 处; 父:0042BE10 x19 0042B3C0 x13 0042B920 x7
+  [2] ins=51 被调 unique=2: 00509F8F=FUN_00509f8f 00509E57=FUN_00509e57
+  [PSEUDO]: { | bool bVar5; | if (param_1 == (byte *)0x0) { | return 0; | } | pbVar4 = (byte *)&DAT_005d5a24;
+
+=== 0042B080 (0042B080  (n=268)  sec=.text) ===
+  [1] E8调用方 9 处; E9尾调 0 处; 父:0041D940 x1 0041DD20 x1 0041F0D0 x1 0042A9D0 x1 0042AC70 x1
+  [2] ins=114 被调 unique=0: 
+  [PSEUDO]: void FUN_0042b080(char *param_1,char *param_2,undefined1 *param_3,char *param_4,int param_5) | { | if ((param_1 != (char *)0x0) && | ((((par
+
+=== 0042B190 (0042B190  (n=227)  sec=.text) ===
+  [1] E8调用方 45 处; E9尾调 0 处; 父:0042BE10 x19 0042B3C0 x15 0042B920 x8 0041D940 x1 0041DD20 x1
+  [2] ins=108 被调 unique=0: 
+  [PSEUDO]: void FUN_0042b190(undefined1 *param_1,char *param_2,char *param_3,char *param_4,char *param_5) | { | if (param_1 != (undefined1 *)0x0) { | i
+
+=== 0042BCC0 (0042BCC0  (n=287)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:004038A0 x1
+  [2] ins=55 被调 unique=0: 
+  [PSEUDO]: void FUN_0042bcc0(void) | { | _DAT_007dda00 = 0; | puVar2 = &DAT_007dda04; | for (iVar1 = 0x20; iVar1 != 0; iVar1 = iVar1 + -1) { | puVar2 =
+
+=== 0042CFC0 (0042CFC0  (n=106)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0042BE10 x1
+  [2] ins=44 被调 unique=2: 0050A85C 0050A722
+  [PSEUDO]: void FUN_0042cfc0(char *param_1) | { | iVar3 = -1; | uVar4 = 0; | pcVar5 = param_1; | do {
+
+=== 0042D030 (0042D030  (n=172)  sec=.text) ===
+  [1] E8调用方 0 处; E9尾调 1 处; 父:
+  [2] ins=51 被调 unique=0: 
+  [PSEUDO]: void FUN_0042d030(void) | { | HANDLE hFindFile; | BOOL BVar3; | _WIN32_FIND_DATAA local_140; | iVar2 = 0;
+
+=== 0042D1B0 (0042D1B0  (n=128)  sec=.text) ===
+  [1] E8调用方 1 处; E9尾调 0 处; 父:0042DCC0 x1
+  [2] ins=40 被调 unique=1: 00509980=__ftol
+  [PSEUDO]: void FUN_0042d1b0(int param_1) | { | iVar1 = (*(int **)(param_1 + 0xc0))[8]; | if (iVar1 == 0) { | return; | }
+

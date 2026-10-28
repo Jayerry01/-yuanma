@@ -1,0 +1,65 @@
+资料详情
+地图 DES 结构
+DES 包涵声明数量，以 Object *** {} 格式的 GMB 文件中模型的声明，以 Object D_*** {} 格式的 DES 中出生点，箱子，道具，武器，特效等声明！
+声明 说明
+声明
+说明
+# GModel Description File V1.0 # Des for lxres.com # 号为注释符， # 号后面内容将不会执行！
+# GModel Description File V1.0
+# Des for lxres.com
+# 号为注释符， # 号后面内容将不会执行！
+SceneObjects 4 DummeyObjects 6 # 声明数量 SceneObjects 为 GMB 文件中模型数量，一般不需要改动！ DummeyObjects 为 DES 文档中“ Object D_*** ”声明的数量，如果有增加“ Object   D_*** ”声明需要增加该值！该值可以比实际数量大，不可以小！
+SceneObjects 4 DummeyObjects 6 # 声明数量
+SceneObjects 为 GMB 文件中模型数量，一般不需要改动！
+DummeyObjects 为 DES 文档中“ Object D_*** ”声明的数量，如果有增加“ Object   D_*** ”声明需要增加该值！该值可以比实际数量大，不可以小！
+Object *** （ *** 为不含“ D_ ”的随机字符） { Position : 0.0 0.0 -50.0 Quaternion : 1.0 0.0 0.0 0.0 TextureAnimation :   0 .1 .1 Custom : { } } 声明只要不是“ Object D_*** ”格式，匀为 GMB 文件中模型的声明！ Position 为声明的位置，值为： X Y Z ; Quaternion 为声明角度， W X Y Z ；值范围为 ±1 ， ±1=±180° 、 ±0.5=±90° 。 TextureAnimation 为贴图流动为： U X Y ; U ：为开关， 0 关闭， 1 启用， X ：为 X 轴流动速度， 0 为关闭， ± 数字越大速度越快， 1 就很快了，到 30 就看不出流动了！流动方向用正负数控制！ Y ：为 Y 轴方向流动速度，用法与 X 相同！ Custom 为声明的特殊属性， 点击查看详情 ！
+Object *** （ *** 为不含“ D_ ”的随机字符）
+{
+Position : 0.0 0.0 -50.0
+Quaternion : 1.0 0.0 0.0 0.0
+TextureAnimation :   0 .1 .1
+Custom :
+{
+}
+声明只要不是“ Object D_*** ”格式，匀为 GMB 文件中模型的声明！
+Position 为声明的位置，值为： X Y Z ;
+Quaternion 为声明角度， W X Y Z ；值范围为 ±1 ， ±1=±180° 、 ±0.5=±90° 。
+TextureAnimation 为贴图流动为： U X Y ;
+U ：为开关， 0 关闭， 1 启用， X ：为 X 轴流动速度， 0 为关闭， ± 数字越大速度越快， 1 就很快了，到 30 就看不出流动了！流动方向用正负数控制！ Y ：为 Y 轴方向流动速度，用法与 X 相同！
+Custom 为声明的特殊属性， 点击查看详情 ！
+Object D_*** { Position: 0.000 0.000   20.000 Quaternion: -1.000 0.000   0.000 0.000 TextureAnimation: 0 0.000   0.000 Custom: { ***="***" } } DES 中出生点，箱子，道具，武器，特效等声明！ 点击查看道具名称 点击查看武器名称 点击查看特效名称
+Object D_***
+{
+Position: 0.000 0.000   20.000
+Quaternion: -1.000 0.000   0.000 0.000
+TextureAnimation: 0 0.000   0.000
+Custom:
+{
+***="***"
+}
+DES 中出生点，箱子，道具，武器，特效等声明！
+点击查看道具名称
+点击查看武器名称
+点击查看特效名称
+Object D_di # 自定义的声明 { Position: 0.000 0.000   20.000 Quaternion: -1.000 0.000   0.000 0.000 TextureAnimation: 0 0.000   0.000 Custom: { model="di01"# 自定义道具 } } 自定义名称需要在 PST 档中声明！否则将一直旋转，并且无实体！
+Object D_di # 自定义的声明
+{
+Position: 0.000 0.000   20.000
+Quaternion: -1.000 0.000   0.000 0.000
+TextureAnimation: 0 0.000   0.000
+Custom:
+{
+model="di01"# 自定义道具
+}
+自定义名称需要在 PST 档中声明！否则将一直旋转，并且无实体！
+Object D_BBox01 # 箱子的声明 { Position: -498.314 -615.863 -11.853 Quaternion: -0.986 0.000 0.000 -0.165 TextureAnimation: 0 0.000 0.000 Custom: { model="BBox01" ticket=1,4,5 } } Object D_itBBox01 # 箱子内物品的声明 { Position: -498.411 -615.813 -3.517 Quaternion: -0.986 0.000 0.000 -0.165 TextureAnimation: 0 0.000 0.000 Custom: { model="Item03" ticket=1,4,5 } } 以下是可破坏的物品声明 D_BBox01 ～ D_BBox65 箱子 D_BBBox01 ～ D_BBBox60 大箱子 D_Chair01 ～ D_Chair20 椅子 D_Desk01 ～ D_Desk20 桌子 D_RJug01 ～ D_RJug20 坛子 当物品毁坏后，里面隐藏的物体就显现出来。 隐藏物体函数的写法、即在可毁坏的物体名称前添加 “wp” 或 “it” 、 wp 为武器， it 为包子等、、、 如： D_wpBBox01 D_wpBBBox01 D_itChair01 D_itDesk01   D_itRJug01
+Object D_BBox01 # 箱子的声明 { Position: -498.314 -615.863 -11.853 Quaternion: -0.986 0.000 0.000 -0.165 TextureAnimation: 0 0.000 0.000 Custom: { model="BBox01" ticket=1,4,5 } } Object D_itBBox01 # 箱子内物品的声明 { Position: -498.411 -615.813 -3.517 Quaternion: -0.986 0.000 0.000 -0.165 TextureAnimation: 0 0.000 0.000 Custom: { model="Item03" ticket=1,4,5 } }
+以下是可破坏的物品声明
+D_BBox01 ～ D_BBox65 箱子
+D_BBBox01 ～ D_BBBox60 大箱子
+D_Chair01 ～ D_Chair20 椅子
+D_Desk01 ～ D_Desk20 桌子
+D_RJug01 ～ D_RJug20 坛子
+当物品毁坏后，里面隐藏的物体就显现出来。
+隐藏物体函数的写法、即在可毁坏的物体名称前添加 “wp” 或 “it” 、 wp 为武器， it 为包子等、、、
+如： D_wpBBox01 D_wpBBBox01 D_itChair01 D_itDesk01   D_itRJug01

@@ -1,0 +1,547 @@
+# U6 终账: .text 逐字节归属 (2026-10-28)
+# 输入: D:/MeteorProjects/_private/ghidra_scripts/fresh_functions_v12.json  SHA-256=0e86a5021882665515539ba415196b8bbb48925c4ca0fec29fe566efc7fde689
+# 二进制: C:\Program Files (x86)\Meteor\Meteor.exe  .text=[0x401000,0x5A72BD) 1729213 B
+# 口径: 函数区间合并(与 _verify_v12 同源) → 残差洞逐洞分类; 引用通道 C1=E8/E9 rel32, C2=EB/Jcc rel8, C3=全文件 4-LE 值==洞内地址(每洞记前 8 处)
+# 判据: POINTER_TABLE=4LE可指针连排>=4; PADDING=CC/90/00合计>=95%; frac=capstone 最佳起点(0..3)线性解码覆盖率; ORPHAN_REACHABLE=解码>=95%且被引用; ORPHAN_UNREFERENCED=解码>=95%且三通道零引用; DATA_ZERO=零字节>=70%; 其余 PARTIAL_CODE/DATA_UNDECODED 附解码终点
+
+函数 10734 个; 合并覆盖 1650497 B = 95.4479%; 残差 78716 B = 4.5521% (6164 洞)
+
+== 残差构成(逐字节归属终账) ==
+  POINTER_TABLE           60 洞      7411 B  (0.4286% of .text)
+  DATA_ZERO                0 洞         0 B  (0.0000% of .text)
+  PADDING               5609 洞     45760 B  (2.6463% of .text)
+  ORPHAN_REACHABLE       411 洞     16716 B  (0.9667% of .text)
+  ORPHAN_UNREFERENCED     62 洞       713 B  (0.0412% of .text)
+  PARTIAL_CODE            14 洞      2005 B  (0.1159% of .text)
+  DATA_UNDECODED           8 洞      6111 B  (0.3534% of .text)
+  TOTAL                 6164 洞     78716 B  → 覆盖+残差 = 1729213 = 1729213 (100% 收口)
+
+== POINTER_TABLE  top20/60 (按体量) ==
+  0044F2A4-0044F720   1148 B  CC%=  0 90%=  0 00%= 20 pad= 21.3% run=14 dec=100%@off0 depth=1148 refs=8 0x4497e7
+  004213A4-004217E0   1084 B  CC%=  0 90%=  1 00%= 10 pad= 12.3% run=30 dec= 13%@off0 depth=144 refs=11 0x421371
+  00457FF0-004581E0    496 B  CC%=  0 90%=  0 00%= 18 pad= 18.8% run=77 dec= 89%@off0 depth=444 refs=34 0x457fb0
+  0057BD04-0057BEA0    412 B  CC%=  0 90%=  2 00%= 16 pad= 19.7% run=56 dec=100%@off0 depth=412 refs=8 0x5760f2
+  0052BE08-0052BF20    280 B  CC%=  0 90%=  0 00%=  5 pad=  5.4% run=13 dec=100%@off0 depth=280 refs=2 0x52bce8
+  00590FB0-005910C0    272 B  CC%=  0 90%=  2 00%= 24 pad= 27.6% run=66 dec= 67%@off0 depth=184 refs=8 0x590fd8
+  004B7878-004B7980    264 B  CC%=  0 90%=  3 00%= 24 pad= 28.0% run=64 dec=100%@off0 depth=264 refs=33 0x4b787d
+  0057FE0C-0057FF00    244 B  CC%=  0 90%=  0 00%= 16 pad= 16.8% run=31 dec= 99%@off0 depth=243 refs=7 0x57fe24
+  004DEEBC-004DEF90    212 B  CC%=  0 90%=  3 00%=  5 pad=  8.5% run=8 dec=100%@off0 depth=212 refs=3 0x4deecc
+  004E28FC-004E29D0    212 B  CC%=  0 90%=  6 00%=  3 pad= 10.4% run=6 dec=100%@off0 depth=212 refs=2 0x4e2876
+  00534DAC-00534E80    212 B  CC%=  0 90%=  3 00%= 23 pad= 26.4% run=18 dec=100%@off0 depth=212 refs=8 0x534847
+  004CFA44-004CFB00    188 B  CC%=  0 90%=  4 00%=  4 pad=  9.0% run=7 dec=100%@off0 depth=188 refs=6 0x4cf9f1
+  004EE214-004EE2A0    140 B  CC%=  0 90%=  6 00%= 12 pad= 18.6% run=16 dec= 46%@off0 depth=65 refs=5 0x4ee23c
+  004BF39C-004BF410    116 B  CC%=  0 90%= 12 00%= 13 pad= 25.9% run=7 dec=100%@off0 depth=116 refs=6 0x4bf3d0
+  004BE9B0-004BEA20    112 B  CC%=  0 90%=  5 00%= 59 pad= 65.2% run=6 dec=100%@off0 depth=112 refs=3 0x4bea61
+  0053BB28-0053BB90    104 B  CC%=  0 90%=  2 00%= 11 pad= 14.4% run=5 dec=100%@off0 depth=104 refs=4 0x53ba5b
+  0040547C-004054E0    100 B  CC%=  0 90%=  8 00%= 23 pad= 31.0% run=23 dec=100%@off0 depth=100 refs=3 0x405488
+  00471C0C-00471C70    100 B  CC%=  0 90%=  2 00%=  7 pad=  9.0% run=6 dec=100%@off0 depth=100 refs=5 0x471bb4
+  0047564C-004756B0    100 B  CC%=  0 90%=  0 00%= 25 pad= 25.0% run=25 dec= 99%@off0 depth=99 refs=3 0x47562c
+  0052B1DC-0052B240    100 B  CC%=  0 90%=  6 00%= 10 pad= 16.0% run=9 dec=100%@off0 depth=100 refs=3 0x47cc2a
+
+== DATA_ZERO  top0/0 (按体量) ==
+
+== PADDING  top20/5609 (按体量) ==
+  0050564C-00505660     20 B  CC%=  0 90%= 95 00%=  0 pad= 95.0% run=0 dec=100%@off0 depth=20 refs=2 0x5055de
+  00404B11-00404B20     15 B  CC%=  0 90%=100 00%=  0 pad=100.0% run=0 dec=100%@off0 depth=15 refs=0 
+  00408EC1-00408ED0     15 B  CC%=  0 90%=100 00%=  0 pad=100.0% run=0 dec=100%@off0 depth=15 refs=0 
+  0040B0F1-0040B100     15 B  CC%=  0 90%=100 00%=  0 pad=100.0% run=0 dec=100%@off0 depth=15 refs=0 
+  0040C451-0040C460     15 B  CC%=  0 90%=100 00%=  0 pad=100.0% run=0 dec=100%@off0 depth=15 refs=0 
+  0040C761-0040C770     15 B  CC%=  0 90%=100 00%=  0 pad=100.0% run=0 dec=100%@off0 depth=15 refs=0 
+  0040E541-0040E550     15 B  CC%=  0 90%=100 00%=  0 pad=100.0% run=0 dec=100%@off0 depth=15 refs=0 
+  0040E7B1-0040E7C0     15 B  CC%=  0 90%=100 00%=  0 pad=100.0% run=0 dec=100%@off0 depth=15 refs=0 
+  004100A1-004100B0     15 B  CC%=  0 90%=100 00%=  0 pad=100.0% run=0 dec=100%@off0 depth=15 refs=0 
+  00411F81-00411F90     15 B  CC%=  0 90%=100 00%=  0 pad=100.0% run=0 dec=100%@off0 depth=15 refs=0 
+  00418DF1-00418E00     15 B  CC%=  0 90%=100 00%=  0 pad=100.0% run=0 dec=100%@off0 depth=15 refs=0 
+  0041F0C1-0041F0D0     15 B  CC%=  0 90%=100 00%=  0 pad=100.0% run=0 dec=100%@off0 depth=15 refs=0 
+  0041F6A1-0041F6B0     15 B  CC%=  0 90%=100 00%=  0 pad=100.0% run=0 dec=100%@off0 depth=15 refs=0 
+  00425DF1-00425E00     15 B  CC%=  0 90%=100 00%=  0 pad=100.0% run=0 dec=100%@off0 depth=15 refs=0 
+  00428D61-00428D70     15 B  CC%=  0 90%=100 00%=  0 pad=100.0% run=0 dec=100%@off0 depth=15 refs=0 
+  00428D91-00428DA0     15 B  CC%=  0 90%=100 00%=  0 pad=100.0% run=0 dec=100%@off0 depth=15 refs=0 
+  00428DC1-00428DD0     15 B  CC%=  0 90%=100 00%=  0 pad=100.0% run=0 dec=100%@off0 depth=15 refs=1 0x428e38
+  00429D31-00429D40     15 B  CC%=  0 90%=100 00%=  0 pad=100.0% run=0 dec=100%@off0 depth=15 refs=0 
+  00429D71-00429D80     15 B  CC%=  0 90%=100 00%=  0 pad=100.0% run=0 dec=100%@off0 depth=15 refs=0 
+  0042A001-0042A010     15 B  CC%=  0 90%=100 00%=  0 pad=100.0% run=0 dec=100%@off0 depth=15 refs=0 
+
+== ORPHAN_REACHABLE  top20/411 (按体量) ==
+  0053441B-005347D0    949 B  CC%=  0 90%=  4 00%= 22 pad= 26.2% run=0 dec=100%@off0 depth=949 refs=8 0x53454c
+  00523295-00523580    747 B  CC%=  1 90%=  0 00%=  8 pad=  9.6% run=0 dec=100%@off0 depth=747 refs=32 0x5231b5
+  00593E20-00593F9E    382 B  CC%=  1 90%=  0 00%=  5 pad=  7.3% run=0 dec=100%@off0 depth=382 refs=33 0x593e09
+  0052BAE7-0052BC40    345 B  CC%=  0 90%=  1 00%= 18 pad= 19.7% run=0 dec=100%@off0 depth=345 refs=8 0x52ab24
+  0044FC51-0044FD90    319 B  CC%=  0 90%=  3 00%= 14 pad= 17.9% run=0 dec=100%@off0 depth=319 refs=8 0x44fbf9
+  0042DBAD-0042DCC0    275 B  CC%=  0 90%=  2 00%=  2 pad=  5.1% run=0 dec=100%@off0 depth=275 refs=4 0x42db92
+  004DA6CA-004DA7D0    262 B  CC%=  0 90%=  4 00%= 12 pad= 16.8% run=0 dec=100%@off0 depth=262 refs=2 0x4d96cf
+  0050C4F7-0050C5D1    218 B  CC%=  0 90%=  0 00%=  8 pad=  8.7% run=0 dec=100%@off0 depth=218 refs=17 0x50c518
+  004BBFE7-004BC0C0    217 B  CC%=  0 90%=  5 00%= 23 pad= 29.5% run=0 dec=100%@off0 depth=217 refs=3 0x4bbfa7
+  004DD7F3-004DD8C0    205 B  CC%=  0 90%=  3 00%=  3 pad=  6.8% run=0 dec=100%@off0 depth=205 refs=8 0x4dd8ee
+  004DDF53-004DE020    205 B  CC%=  0 90%=  3 00%=  3 pad=  6.8% run=0 dec=100%@off0 depth=205 refs=2 0x4ddf01
+  004DE6A3-004DE770    205 B  CC%=  0 90%=  3 00%=  3 pad=  6.8% run=0 dec=100%@off0 depth=205 refs=3 0x4de7d1
+  004DF663-004DF730    205 B  CC%=  0 90%=  3 00%=  3 pad=  6.8% run=0 dec=100%@off0 depth=205 refs=2 0x4df611
+  004DFDB3-004DFE80    205 B  CC%=  0 90%=  3 00%=  3 pad=  6.8% run=0 dec=100%@off0 depth=205 refs=2 0x4dfd61
+  004E04F3-004E05C0    205 B  CC%=  0 90%=  3 00%=  3 pad=  6.8% run=0 dec=100%@off0 depth=205 refs=2 0x4e04a1
+  004E0C03-004E0CD0    205 B  CC%=  0 90%=  3 00%=  3 pad=  6.8% run=0 dec=100%@off0 depth=205 refs=3 0x4daf12
+  004E1353-004E1420    205 B  CC%=  0 90%=  3 00%=  3 pad=  6.8% run=0 dec=100%@off0 depth=205 refs=2 0x4e1301
+  004E3423-004E34F0    205 B  CC%=  0 90%=  3 00%=  3 pad=  6.8% run=0 dec=100%@off0 depth=205 refs=3 0x47e937
+  004E3C63-004E3D30    205 B  CC%=  0 90%=  3 00%=  3 pad=  6.8% run=0 dec=100%@off0 depth=205 refs=2 0x4e3c11
+  004F007D-004F0140    195 B  CC%=  0 90%=  6 00%= 33 pad= 40.0% run=0 dec=100%@off0 depth=195 refs=15 0x4f003d
+
+== ORPHAN_UNREFERENCED  top20/62 (按体量) ==
+  00403629-0040366B     66 B  CC%=  0 90%=  0 00%=  6 pad=  6.1% run=0 dec=100%@off0 depth=66 refs=0 
+  004E748A-004E74B7     45 B  CC%=  0 90%=  0 00%= 11 pad= 11.1% run=0 dec=100%@off0 depth=45 refs=0 
+  004086A6-004086C0     26 B  CC%=  0 90%= 57 00%=  0 pad= 57.7% run=0 dec=100%@off0 depth=26 refs=0 
+  00593D83-00593D9A     23 B  CC%= 56 90%=  0 00%= 13 pad= 69.6% run=0 dec=100%@off0 depth=23 refs=0 
+  005951C9-005951E0     23 B  CC%= 21 90%=  0 00%=  0 pad= 21.7% run=0 dec=100%@off0 depth=23 refs=0 
+  005022FD-00502310     19 B  CC%=  0 90%= 68 00%= 10 pad= 78.9% run=0 dec=100%@off0 depth=19 refs=0 
+  0058C36D-0058C380     19 B  CC%=  0 90%= 68 00%=  0 pad= 68.4% run=0 dec=100%@off0 depth=19 refs=0 
+  00519C6E-00519C80     18 B  CC%=  0 90%=  5 00%= 50 pad= 55.6% run=0 dec=100%@off0 depth=18 refs=0 
+  0051AFFE-0051B010     18 B  CC%=  0 90%=  5 00%= 50 pad= 55.6% run=0 dec=100%@off0 depth=18 refs=0 
+  00519BAF-00519BC0     17 B  CC%=  0 90%=  0 00%= 52 pad= 52.9% run=0 dec=100%@off0 depth=17 refs=0 
+  0051B78F-0051B7A0     17 B  CC%=  0 90%=  0 00%= 52 pad= 52.9% run=0 dec=100%@off0 depth=17 refs=0 
+  00527EAF-00527EC0     17 B  CC%=  0 90%= 52 00%=  5 pad= 58.8% run=0 dec=100%@off0 depth=17 refs=0 
+  00519D70-00519D80     16 B  CC%=  0 90%=  0 00%= 56 pad= 56.2% run=0 dec=100%@off0 depth=16 refs=0 
+  0051AC71-0051AC80     15 B  CC%=  0 90%=  0 00%= 60 pad= 60.0% run=0 dec=100%@off0 depth=15 refs=0 
+  0051BAF1-0051BB00     15 B  CC%=  0 90%=  0 00%= 60 pad= 60.0% run=0 dec=100%@off0 depth=15 refs=0 
+  00481FD2-00481FE0     14 B  CC%=  0 90%= 64 00%=  7 pad= 71.4% run=0 dec=100%@off0 depth=14 refs=0 
+  004D01E2-004D01F0     14 B  CC%=  0 90%= 85 00%=  0 pad= 85.7% run=0 dec=100%@off0 depth=14 refs=0 
+  0051AD02-0051AD10     14 B  CC%=  0 90%=  0 00%= 57 pad= 57.1% run=0 dec=100%@off0 depth=14 refs=0 
+  00408AC3-00408AD0     13 B  CC%=  0 90%= 15 00%=  0 pad= 15.4% run=0 dec=100%@off0 depth=13 refs=0 
+  00421CC3-00421CD0     13 B  CC%=  0 90%= 15 00%= 30 pad= 46.2% run=0 dec=100%@off0 depth=13 refs=0 
+
+== PARTIAL_CODE  top14/14 (按体量) ==
+  0048E21E-0048E870   1618 B  CC%=  0 90%=  0 00%= 20 pad= 20.8% run=1 dec= 83%@off0 depth=1346 refs=72 0x48ba05
+  00411C7D-00411CE0     99 B  CC%=  0 90%=  4 00%= 21 pad= 25.3% run=0 dec= 94%@off0 depth=94 refs=5 0x411c84
+  0042CF29-0042CF50     39 B  CC%=  0 90%= 12 00%= 23 pad= 35.9% run=0 dec= 87%@off0 depth=34 refs=1 0x42bea7
+  0047E2B9-0047E2E0     39 B  CC%=  0 90%= 10 00%= 23 pad= 33.3% run=0 dec= 87%@off0 depth=34 refs=2 0x47e240
+  0040BAAB-0040BAD0     37 B  CC%=  0 90%= 13 00%= 21 pad= 35.1% run=0 dec= 86%@off0 depth=32 refs=1 0x40b504
+  00470467-00470480     25 B  CC%=  0 90%= 20 00%= 20 pad= 40.0% run=0 dec= 80%@off0 depth=20 refs=2 0x470468
+  004CB249-004CB260     23 B  CC%=  0 90%= 17 00%= 21 pad= 39.1% run=0 dec= 77%@off1 depth=17 refs=1 0x4cb188
+  004DCEFB-004DCF10     21 B  CC%=  0 90%= 23 00%= 19 pad= 42.9% run=0 dec= 76%@off0 depth=16 refs=1 0x4dce72
+  004A781D-004A7830     19 B  CC%=  0 90%=  0 00%= 26 pad= 26.3% run=0 dec= 94%@off0 depth=18 refs=1 0x4a7777
+  00477BFF-00477C10     17 B  CC%=  0 90%=  5 00%= 23 pad= 29.4% run=0 dec= 94%@off0 depth=16 refs=1 0x477b9c
+  00477C7F-00477C90     17 B  CC%=  0 90%=  5 00%= 23 pad= 29.4% run=0 dec= 94%@off0 depth=16 refs=1 0x477c1c
+  00477CFF-00477D10     17 B  CC%=  0 90%=  5 00%= 23 pad= 29.4% run=0 dec= 94%@off0 depth=16 refs=1 0x477c9c
+  00477D9F-00477DB0     17 B  CC%=  0 90%=  5 00%= 23 pad= 29.4% run=0 dec= 70%@off0 depth=12 refs=1 0x477d3c
+  0048454F-00484560     17 B  CC%=  0 90%=  5 00%= 23 pad= 29.4% run=0 dec= 94%@off0 depth=16 refs=1 0x4844f3
+
+== DATA_UNDECODED  top8/8 (按体量) ==
+  005241D2-00525550   4990 B  CC%=  0 90%=  0 00%= 62 pad= 62.9% run=1 dec=  0%@off0 depth=23 refs=35 0x524ba4
+  0053CC25-0053CD70    331 B  CC%=  0 90%=  3 00%=  7 pad= 11.2% run=0 dec=  4%@off0 depth=15 refs=3 0x47c84f
+  004AE7D1-004AE8A0    207 B  CC%=  0 90%=  1 00%= 24 pad= 27.1% run=0 dec= 23%@off0 depth=48 refs=8 0x4a8a7f
+  004CC78D-004CC840    179 B  CC%=  0 90%=  3 00%=  4 pad=  8.4% run=0 dec= 10%@off1 depth=19 refs=3 0x4c6a91
+  0054F22D-0054F2D0    163 B  CC%=  0 90%=  6 00%=  4 pad= 11.0% run=0 dec=  4%@off0 depth=8 refs=2 0x54ee98
+  004D955B-004D95D0    117 B  CC%=  0 90%= 13 00%= 17 pad= 31.6% run=0 dec= 12%@off0 depth=14 refs=3 0x4d8e9a
+  0052F22F-0052F270     65 B  CC%=  0 90%=  9 00%= 21 pad= 30.8% run=0 dec= 27%@off0 depth=18 refs=3 0x52ed6e
+  0056F195-0056F1D0     59 B  CC%=  0 90%= 20 00%= 20 pad= 40.7% run=0 dec= 40%@off0 depth=24 refs=2 0x56f157
+
+== ORPHAN_REACHABLE 全列(有引用的孤儿代码 = 潜在漏建函数) ==
+  0053441B-005347D0    949 B  refs=8 first=0x53454c dec=100%
+  00523295-00523580    747 B  refs=32 first=0x5231b5 dec=100%
+  00593E20-00593F9E    382 B  refs=33 first=0x593e09 dec=100%
+  0052BAE7-0052BC40    345 B  refs=8 first=0x52ab24 dec=100%
+  0044FC51-0044FD90    319 B  refs=8 first=0x44fbf9 dec=100%
+  0042DBAD-0042DCC0    275 B  refs=4 first=0x42db92 dec=100%
+  004DA6CA-004DA7D0    262 B  refs=2 first=0x4d96cf dec=100%
+  0050C4F7-0050C5D1    218 B  refs=17 first=0x50c518 dec=100%
+  004BBFE7-004BC0C0    217 B  refs=3 first=0x4bbfa7 dec=100%
+  004DD7F3-004DD8C0    205 B  refs=8 first=0x4dd8ee dec=100%
+  004DDF53-004DE020    205 B  refs=2 first=0x4ddf01 dec=100%
+  004DE6A3-004DE770    205 B  refs=3 first=0x4de7d1 dec=100%
+  004DF663-004DF730    205 B  refs=2 first=0x4df611 dec=100%
+  004DFDB3-004DFE80    205 B  refs=2 first=0x4dfd61 dec=100%
+  004E04F3-004E05C0    205 B  refs=2 first=0x4e04a1 dec=100%
+  004E0C03-004E0CD0    205 B  refs=3 first=0x4daf12 dec=100%
+  004E1353-004E1420    205 B  refs=2 first=0x4e1301 dec=100%
+  004E3423-004E34F0    205 B  refs=3 first=0x47e937 dec=100%
+  004E3C63-004E3D30    205 B  refs=2 first=0x4e3c11 dec=100%
+  004F007D-004F0140    195 B  refs=15 first=0x4f003d dec=100%
+  004BF595-004BF650    187 B  refs=5 first=0x4bf5b4 dec=100%
+  0051013D-005101E6    169 B  refs=16 first=0x593eae dec=100%
+  0054B01A-0054B0C0    166 B  refs=3 first=0x54b0ca dec=100%
+  004BAC8E-004BAD20    146 B  refs=2 first=0x4ba29b dec=100%
+  00544980-00544A10    144 B  refs=10 first=0x54492c dec=100%
+  005094CB-00509558    141 B  refs=6 first=0x509544 dec= 96%
+  0050C3EB-0050C478    141 B  refs=5 first=0x50c454 dec= 96%
+  00435298-00435320    136 B  refs=5 first=0x4352b0 dec=100%
+  0047E93D-0047E9C0    131 B  refs=3 first=0x47ea0b dec=100%
+  004CBC11-004CBC90    127 B  refs=6 first=0x4c5eca dec=100%
+  004B0055-004B00C0    107 B  refs=7 first=0x4b0078 dec=100%
+  0058B2E9-0058B350    103 B  refs=1 first=0x58abfb dec= 95%
+  00473EBF-00473F20     97 B  refs=5 first=0x473eb0 dec=100%
+  004E656F-004E65D0     97 B  refs=1 first=0x4e65f8 dec=100%
+  0052B311-0052B370     95 B  refs=2 first=0x52b256 dec=100%
+  005446C9-00544720     87 B  refs=4 first=0x544695 dec=100%
+  00491D2A-00491D80     86 B  refs=2 first=0x491a90 dec=100%
+  00476BBB-00476C10     85 B  refs=2 first=0x476a4e dec=100%
+  0053A0FD-0053A150     83 B  refs=4 first=0x539f27 dec=100%
+  00591A1D-00591A70     83 B  refs=5 first=0x591a35 dec=100%
+  00591F47-00591F90     73 B  refs=2 first=0x591f52 dec=100%
+  004C4559-004C45A0     71 B  refs=2 first=0x5a12a6 dec=100%
+  00529119-00529160     71 B  refs=2 first=0x528edb dec=100%
+  00580329-00580370     71 B  refs=2 first=0x580330 dec=100%
+  00517C98-00517CDD     69 B  refs=2 first=0x5cd8cc dec=100%
+  00485C0D-00485C50     67 B  refs=2 first=0x485bc0 dec=100%
+  0053AB2D-0053AB70     67 B  refs=2 first=0x53a50d dec=100%
+  00564446-00564480     58 B  refs=2 first=0x4954b3 dec=100%
+  004304A7-004304E0     57 B  refs=2 first=0x42f4de dec=100%
+  004800A7-004800E0     57 B  refs=4 first=0x4800b0 dec=100%
+  00421C08-00421C40     56 B  refs=5 first=0x421bb9 dec=100%
+  004C47F8-004C4830     56 B  refs=4 first=0x5a129e dec=100%
+  00591CA9-00591CE0     55 B  refs=1 first=0x5b35e0 dec=100%
+  005A70A9-005A70E0     55 B  refs=3 first=0x58fb76 dec=100%
+  004BE7EA-004BE820     54 B  refs=3 first=0x46992f dec=100%
+  005018AA-005018E0     54 B  refs=4 first=0x5018b0 dec=100%
+  005050FA-00505130     54 B  refs=5 first=0x505100 dec=100%
+  0057AA6A-0057AAA0     54 B  refs=4 first=0x57aa70 dec=100%
+  0047B17B-0047B1B0     53 B  refs=4 first=0x47b180 dec=100%
+  004FCDAB-004FCDE0     53 B  refs=2 first=0x4fcc59 dec=100%
+  0058DB4B-0058DB80     53 B  refs=1 first=0x58d920 dec=100%
+  004F562D-004F5660     51 B  refs=4 first=0x4f561a dec=100%
+  004FB40E-004FB440     50 B  refs=3 first=0x4fb413 dec=100%
+  00594015-00594047     50 B  refs=5 first=0x593ff1 dec=100%
+  004E3DCF-004E3E00     49 B  refs=1 first=0x4e3d8c dec= 97%
+  0053B75F-0053B790     49 B  refs=2 first=0x53b77c dec=100%
+  00498B31-00498B60     47 B  refs=1 first=0x498a90 dec=100%
+  00498C11-00498C40     47 B  refs=1 first=0x498b71 dec=100%
+  005010D1-00501100     47 B  refs=1 first=0x5010d7 dec=100%
+  00501101-00501130     47 B  refs=1 first=0x501107 dec=100%
+  00501B11-00501B40     47 B  refs=5 first=0x501aad dec=100%
+  0052D301-0052D330     47 B  refs=2 first=0x525329 dec=100%
+  00565801-00565830     47 B  refs=2 first=0x5657dd dec=100%
+  0056E841-0056E870     47 B  refs=1 first=0x56e578 dec= 97%
+  004E4D03-004E4D30     45 B  refs=2 first=0x4e4ba7 dec=100%
+  0054D723-0054D750     45 B  refs=2 first=0x54d406 dec=100%
+  00509CB4-00509CE0     44 B  refs=9 first=0x5099dc dec=100%
+  00485B75-00485BA0     43 B  refs=1 first=0x485af3 dec=100%
+  004CC075-004CC0A0     43 B  refs=2 first=0x4cbf59 dec=100%
+  00474F87-00474FB0     41 B  refs=5 first=0x474f2e dec= 97%
+  004FCEA7-004FCED0     41 B  refs=2 first=0x4fce16 dec=100%
+  00543027-00543050     41 B  refs=3 first=0x543002 dec=100%
+  004F88B8-004F88E0     40 B  refs=2 first=0x4f88c0 dec=100%
+  0050EBC3-0050EBEB     40 B  refs=4 first=0x50eb76 dec=100%
+  005153C5-005153ED     40 B  refs=13 first=0x51522f dec=100%
+  005A6828-005A6850     40 B  refs=2 first=0x583573 dec=100%
+  005A6DA8-005A6DD0     40 B  refs=2 first=0x58cc53 dec=100%
+  0042F029-0042F050     39 B  refs=2 first=0x42ee85 dec=100%
+  0047E059-0047E080     39 B  refs=3 first=0x47e060 dec=100%
+  004CF749-004CF770     39 B  refs=5 first=0x4cf789 dec=100%
+  00501D69-00501D90     39 B  refs=1 first=0x501d1c dec=100%
+  00501DE9-00501E10     39 B  refs=1 first=0x501d9c dec=100%
+  005383B9-005383E0     39 B  refs=1 first=0x5383bf dec=100%
+  004BEE8A-004BEEB0     38 B  refs=2 first=0x4bee90 dec=100%
+  0057AACA-0057AAF0     38 B  refs=4 first=0x57aad0 dec=100%
+  00502F2B-00502F50     37 B  refs=2 first=0x502fb8 dec=100%
+  00510AF5-00510B1A     37 B  refs=5 first=0x510ae9 dec=100%
+  0056C3DB-0056C400     37 B  refs=1 first=0x56c2b9 dec=100%
+  005A662B-005A6650     37 B  refs=2 first=0x57d883 dec=100%
+  00482E0D-00482E30     35 B  refs=1 first=0x482ddc dec= 97%
+  004F5A8D-004F5AB0     35 B  refs=1 first=0x4f59b8 dec=100%
+  0050ADB4-0050ADD7     35 B  refs=3 first=0x50ada2 dec=100%
+  00402E6E-00402E90     34 B  refs=3 first=0x402e38 dec=100%
+  005A6E8E-005A6EB0     34 B  refs=2 first=0x58ec23 dec=100%
+  004760FF-00476120     33 B  refs=2 first=0x47609c dec=100%
+  0048358F-004835B0     33 B  refs=1 first=0x483463 dec=100%
+  00504F2F-00504F50     33 B  refs=3 first=0x504f22 dec=100%
+  0056C26F-0056C290     33 B  refs=1 first=0x56bc93 dec=100%
+  004888D1-004888F0     31 B  refs=1 first=0x4887aa dec=100%
+  004B28E1-004B2900     31 B  refs=2 first=0x4b28c1 dec=100%
+  004FAAA1-004FAAC0     31 B  refs=2 first=0x4faacd dec=100%
+  0050B3EC-0050B40B     31 B  refs=2 first=0x5ac4dc dec=100%
+  0055D8F1-0055D910     31 B  refs=1 first=0x55d58a dec=100%
+  00564E91-00564EB0     31 B  refs=1 first=0x564d5a dec=100%
+  00478A12-00478A30     30 B  refs=1 first=0x5c4034 dec=100%
+  004F7642-004F7660     30 B  refs=2 first=0x4f76c8 dec=100%
+  005022A2-005022C0     30 B  refs=2 first=0x502283 dec=100%
+  005095D7-005095F5     30 B  refs=1 first=0x5095ac dec=100%
+  00522C62-00522C80     30 B  refs=3 first=0x522c9f dec=100%
+  00481823-00481840     29 B  refs=2 first=0x481658 dec=100%
+  004F70D3-004F70F0     29 B  refs=1 first=0x4f6e54 dec=100%
+  0053FA93-0053FAB0     29 B  refs=1 first=0x53fa44 dec=100%
+  0054FFD3-0054FFF0     29 B  refs=2 first=0x52ba5c dec=100%
+  0058A763-0058A780     29 B  refs=2 first=0x58a746 dec=100%
+  00478A74-00478A90     28 B  refs=1 first=0x5c4038 dec=100%
+  004FF154-004FF170     28 B  refs=1 first=0x5c4080 dec=100%
+  005509F4-00550A10     28 B  refs=1 first=0x5c40c8 dec=100%
+  00476195-004761B0     27 B  refs=2 first=0x476155 dec=100%
+  0047ADE5-0047AE00     27 B  refs=4 first=0x4245ee dec=100%
+  00481AA5-00481AC0     27 B  refs=4 first=0x481a38 dec=100%
+  004A27E5-004A2800     27 B  refs=3 first=0x4a2780 dec=100%
+  00501C05-00501C20     27 B  refs=3 first=0x501b9f dec=100%
+  00505005-00505020     27 B  refs=1 first=0x5c4098 dec=100%
+  00510D75-00510D90     27 B  refs=1 first=0x510dad dec=100%
+  0050EA89-0050EAA3     26 B  refs=3 first=0x50ea3a dec=100%
+  00478B17-00478B30     25 B  refs=1 first=0x5c4040 dec=100%
+  004855B7-004855D0     25 B  refs=1 first=0x4854f0 dec=100%
+  004B2017-004B2030     25 B  refs=1 first=0x4b1d84 dec=100%
+  004C3887-004C38A0     25 B  refs=1 first=0x4f8e02 dec=100%
+  00528357-00528370     25 B  refs=1 first=0x5281e5 dec=100%
+  0052E877-0052E890     25 B  refs=2 first=0x52e8fa dec= 96%
+  0053BED7-0053BEF0     25 B  refs=1 first=0x53be39 dec=100%
+  005A6757-005A6770     25 B  refs=1 first=0x5811c3 dec=100%
+  004A8F58-004A8F70     24 B  refs=1 first=0x5c4060 dec=100%
+  004BEE48-004BEE60     24 B  refs=1 first=0x5c4064 dec=100%
+  005A69D8-005A69F0     24 B  refs=1 first=0x584d83 dec=100%
+  005A69F8-005A6A10     24 B  refs=1 first=0x585363 dec=100%
+  005A6A18-005A6A30     24 B  refs=1 first=0x5856c3 dec=100%
+  005A6A38-005A6A50     24 B  refs=1 first=0x585943 dec=100%
+  005A6A58-005A6A70     24 B  refs=1 first=0x585d03 dec=100%
+  005A6A78-005A6A90     24 B  refs=2 first=0x5a6a5e dec=100%
+  005A6A98-005A6AB0     24 B  refs=1 first=0x587b23 dec=100%
+  005A6B28-005A6B40     24 B  refs=1 first=0x5880d3 dec=100%
+  005A6B48-005A6B60     24 B  refs=1 first=0x588723 dec=100%
+  005A6BA8-005A6BC0     24 B  refs=1 first=0x588e13 dec=100%
+  005A6BC8-005A6BE0     24 B  refs=1 first=0x589333 dec=100%
+  005A6BE8-005A6C00     24 B  refs=1 first=0x589973 dec=100%
+  005A6C08-005A6C20     24 B  refs=1 first=0x58a1f3 dec=100%
+  005A6C28-005A6C40     24 B  refs=1 first=0x58a2c3 dec=100%
+  005A6E18-005A6E30     24 B  refs=1 first=0x58d359 dec=100%
+  005A6EB8-005A6ED0     24 B  refs=1 first=0x58f673 dec=100%
+  005A7108-005A7120     24 B  refs=1 first=0x5918b3 dec=100%
+  005A7148-005A7160     24 B  refs=2 first=0x5a7131 dec=100%
+  005A7188-005A71A0     24 B  refs=1 first=0x591e23 dec=100%
+  005A71C8-005A71E0     24 B  refs=1 first=0x5920d3 dec=100%
+  005A71E8-005A7200     24 B  refs=1 first=0x592859 dec=100%
+  005A7228-005A7240     24 B  refs=1 first=0x592ea3 dec=100%
+  005A7288-005A72A0     24 B  refs=1 first=0x593203 dec=100%
+  004D0CB9-004D0CD0     23 B  refs=1 first=0x4d0bb0 dec=100%
+  00584D29-00584D40     23 B  refs=2 first=0x584d47 dec=100%
+  0058FAC9-0058FAE0     23 B  refs=1 first=0x5c410c dec=100%
+  005A6579-005A6590     23 B  refs=1 first=0x57cb53 dec=100%
+  005A65E9-005A6600     23 B  refs=1 first=0x57cfa6 dec=100%
+  005A6D09-005A6D20     23 B  refs=2 first=0x5a6d4e dec=100%
+  005A6D89-005A6DA0     23 B  refs=1 first=0x58c236 dec=100%
+  005A6E49-005A6E60     23 B  refs=1 first=0x58d453 dec=100%
+  0040104A-00401060     22 B  refs=1 first=0x5c4008 dec=100%
+  0040109A-004010B0     22 B  refs=2 first=0x401041 dec=100%
+  00478ABA-00478AD0     22 B  refs=1 first=0x5c403c dec=100%
+  004FAAFA-004FAB10     22 B  refs=1 first=0x5c407c dec=100%
+  0050191A-00501930     22 B  refs=1 first=0x5c4090 dec=100%
+  0050505A-00505070     22 B  refs=1 first=0x5c409c dec=100%
+  005050AA-005050C0     22 B  refs=2 first=0x505052 dec=100%
+  0050971A-00509730     22 B  refs=3 first=0x509695 dec=100%
+  0054E0AA-0054E0C0     22 B  refs=1 first=0x5c40b8 dec=100%
+  0055001A-00550030     22 B  refs=1 first=0x5c40c4 dec=100%
+  005531EA-00553200     22 B  refs=1 first=0x5c40cc dec=100%
+  0058A7BA-0058A7D0     22 B  refs=1 first=0x5c40f8 dec=100%
+  0058A80A-0058A820     22 B  refs=1 first=0x5c40fc dec=100%
+  0058C39A-0058C3B0     22 B  refs=1 first=0x5c4104 dec=100%
+  0058C3EA-0058C400     22 B  refs=1 first=0x5c4108 dec=100%
+  0058FB1A-0058FB30     22 B  refs=1 first=0x5c4110 dec=100%
+  005A6AEA-005A6B00     22 B  refs=2 first=0x5a6b44 dec=100%
+  005A6CCA-005A6CE0     22 B  refs=2 first=0x5a6ced dec=100%
+  005A6DFA-005A6E10     22 B  refs=1 first=0x58d0e6 dec=100%
+  004F48EB-004F4900     21 B  refs=2 first=0x4f48bb dec=100%
+  0050F6FB-0050F710     21 B  refs=1 first=0x5c4144 dec=100%
+  0054839B-005483B0     21 B  refs=1 first=0x5c40ac dec=100%
+  005A660B-005A6620     21 B  refs=1 first=0x57d5d3 dec=100%
+  005A670B-005A6720     21 B  refs=1 first=0x580d49 dec=100%
+  005A67EB-005A6800     21 B  refs=1 first=0x5825d3 dec=100%
+  005A680B-005A6820     21 B  refs=1 first=0x582b53 dec=100%
+  005A6B0B-005A6B20     21 B  refs=2 first=0x5a6aeb dec=100%
+  00478B9C-00478BB0     20 B  refs=4 first=0x478ad1 dec=100%
+  0048004C-00480060     20 B  refs=4 first=0x524922 dec=100%
+  0058C33C-0058C350     20 B  refs=1 first=0x5c4100 dec=100%
+  005A678C-005A67A0     20 B  refs=1 first=0x5813c3 dec=100%
+  005A695C-005A6970     20 B  refs=1 first=0x583cb9 dec=100%
+  004E4EBD-004E4ED0     19 B  refs=1 first=0x5c406c dec=100%
+  0050B5D2-0050B5E5     19 B  refs=1 first=0x5ac4fc dec=100%
+  0055379D-005537B0     19 B  refs=1 first=0x5c40d4 dec=100%
+  0057F20D-0057F220     19 B  refs=1 first=0x5c40e8 dec=100%
+  005A62DD-005A62F0     19 B  refs=1 first=0x57a7ef dec=100%
+  005A63AD-005A63C0     19 B  refs=2 first=0x5a63c9 dec=100%
+  005A669D-005A66B0     19 B  refs=1 first=0x580973 dec=100%
+  005A6C8D-005A6CA0     19 B  refs=1 first=0x58bac9 dec=100%
+  005A6D5D-005A6D70     19 B  refs=1 first=0x58c093 dec=100%
+  0041B25E-0041B270     18 B  refs=1 first=0x41b227 dec=100%
+  00485D1E-00485D30     18 B  refs=1 first=0x5c405c dec=100%
+  004A24A3-004A24B5     18 B  refs=2 first=0x4a24a0 dec=100%
+  0050185E-00501870     18 B  refs=1 first=0x5c4084 dec=100%
+  00508AD4-00508AE6     18 B  refs=1 first=0x508ab8 dec=100%
+  0051BCDE-0051BCF0     18 B  refs=1 first=0x51bd03 dec=100%
+  005A688E-005A68A0     18 B  refs=1 first=0x5838f3 dec=100%
+  005A68CE-005A68E0     18 B  refs=1 first=0x583a33 dec=100%
+  004219DF-004219F0     17 B  refs=1 first=0x421996 dec=100%
+  004E4F1F-004E4F30     17 B  refs=1 first=0x5c4070 dec=100%
+  0050EE7D-0050EE8E     17 B  refs=3 first=0x50ee63 dec=100%
+  0054A0CF-0054A0E0     17 B  refs=1 first=0x5c40b0 dec=100%
+  0054A11F-0054A130     17 B  refs=1 first=0x5c40b4 dec=100%
+  0054E0FF-0054E110     17 B  refs=1 first=0x5c40bc dec=100%
+  0055323F-00553250     17 B  refs=1 first=0x5c40d0 dec=100%
+  0057AA2F-0057AA40     17 B  refs=1 first=0x5c40d8 dec=100%
+  004C0DC0-004C0DD0     16 B  refs=1 first=0x4c092d dec=100%
+  00585890-005858A0     16 B  refs=1 first=0x5c40f0 dec=100%
+  005A64A0-005A64B0     16 B  refs=1 first=0x57c3d3 dec=100%
+  005A64C0-005A64D0     16 B  refs=1 first=0x57c773 dec=100%
+  005A64E0-005A64F0     16 B  refs=1 first=0x57c883 dec=100%
+  005A6500-005A6510     16 B  refs=1 first=0x57c993 dec=100%
+  005A69C0-005A69D0     16 B  refs=1 first=0x5842d9 dec=100%
+  005A6C50-005A6C60     16 B  refs=1 first=0x58a9a3 dec=100%
+  005A70F0-005A7100     16 B  refs=1 first=0x591773 dec=100%
+  005A7130-005A7140     16 B  refs=1 first=0x591a73 dec=100%
+  005A7170-005A7180     16 B  refs=1 first=0x591ce3 dec=100%
+  005A71B0-005A71C0     16 B  refs=1 first=0x591f93 dec=100%
+  005A7210-005A7220     16 B  refs=2 first=0x5a71e9 dec=100%
+  005A7250-005A7260     16 B  refs=1 first=0x592f83 dec=100%
+  005A7270-005A7280     16 B  refs=2 first=0x5a7256 dec=100%
+  0050C8F1-0050C900     15 B  refs=1 first=0x5ac514 dec=100%
+  0051A781-0051A790     15 B  refs=1 first=0x452e24 dec=100%
+  0051AA01-0051AA10     15 B  refs=1 first=0x51aa65 dec=100%
+  0051B881-0051B890     15 B  refs=1 first=0x51b8e5 dec=100%
+  0059D341-0059D350     15 B  refs=1 first=0x47a666 dec=100%
+  0059DF51-0059DF60     15 B  refs=1 first=0x48a299 dec=100%
+  0059E3D1-0059E3E0     15 B  refs=1 first=0x48b659 dec=100%
+  0059ECD1-0059ECE0     15 B  refs=1 first=0x496a53 dec=100%
+  0059F121-0059F130     15 B  refs=1 first=0x49ab43 dec=100%
+  0059F561-0059F570     15 B  refs=1 first=0x49f5d6 dec=100%
+  0059F701-0059F710     15 B  refs=1 first=0x4a0803 dec=100%
+  0059F731-0059F740     15 B  refs=1 first=0x4a09a9 dec=100%
+  0059F761-0059F770     15 B  refs=1 first=0x4a0bb9 dec=100%
+  0059F831-0059F840     15 B  refs=1 first=0x4a1ae3 dec=100%
+  0059F861-0059F870     15 B  refs=1 first=0x4a1d69 dec=100%
+  0059F8E1-0059F8F0     15 B  refs=1 first=0x4a26b6 dec=100%
+  0059F911-0059F920     15 B  refs=2 first=0x59f92d dec=100%
+  005A0981-005A0990     15 B  refs=1 first=0x4b6026 dec=100%
+  005A0F41-005A0F50     15 B  refs=1 first=0x4bc309 dec=100%
+  005A1351-005A1360     15 B  refs=1 first=0x4c2de3 dec=100%
+  005A1571-005A1580     15 B  refs=1 first=0x4c60a3 dec=100%
+  005A1651-005A1660     15 B  refs=1 first=0x4c7996 dec=100%
+  005A16E1-005A16F0     15 B  refs=1 first=0x4c7f86 dec=100%
+  005A19C1-005A19D0     15 B  refs=1 first=0x4cb269 dec=100%
+  005A3621-005A3630     15 B  refs=1 first=0x4f0259 dec=100%
+  005A3B61-005A3B70     15 B  refs=2 first=0x5a3b85 dec=100%
+  005A3D91-005A3DA0     15 B  refs=1 first=0x4fd633 dec=100%
+  005A4191-005A41A0     15 B  refs=1 first=0x505de9 dec=100%
+  005A45E1-005A45F0     15 B  refs=1 first=0x54ba43 dec=100%
+  005A4D81-005A4D90     15 B  refs=1 first=0x553293 dec=100%
+  005A4E91-005A4EA0     15 B  refs=1 first=0x555af3 dec=100%
+  005A5441-005A5450     15 B  refs=1 first=0x55fe16 dec=100%
+  005A5831-005A5840     15 B  refs=1 first=0x5665b3 dec=100%
+  005A5981-005A5990     15 B  refs=1 first=0x569cb3 dec=100%
+  005A6051-005A6060     15 B  refs=1 first=0x5775a6 dec=100%
+  005A6E71-005A6E80     15 B  refs=1 first=0x58d696 dec=100%
+  0059CE22-0059CE30     14 B  refs=1 first=0x46fc53 dec=100%
+  0059D282-0059D290     14 B  refs=2 first=0x59d29d dec=100%
+  0059F482-0059F490     14 B  refs=1 first=0x49e226 dec=100%
+  005A0D02-005A0D10     14 B  refs=1 first=0x4b9893 dec=100%
+  005A3002-005A3010     14 B  refs=1 first=0x4e7e03 dec=100%
+  005A3DF2-005A3E00     14 B  refs=1 first=0x4fe3e6 dec=100%
+  005A46E2-005A46F0     14 B  refs=1 first=0x54c5e6 dec=100%
+  005A52F2-005A5300     14 B  refs=1 first=0x55beb3 dec=100%
+  005A6412-005A6420     14 B  refs=2 first=0x5a6425 dec=100%
+  00510203-00510210     13 B  refs=1 first=0x510205 dec=100%
+  00519F83-00519F90     13 B  refs=2 first=0x519f65 dec=100%
+  0051A053-0051A060     13 B  refs=1 first=0x51a057 dec=100%
+  0051A1E3-0051A1F0     13 B  refs=1 first=0x51a1e7 dec=100%
+  0051B0D3-0051B0E0     13 B  refs=1 first=0x51b0d7 dec=100%
+  0051B683-0051B690     13 B  refs=1 first=0x51b687 dec=100%
+  00523173-00523180     13 B  refs=1 first=0x523095 dec=100%
+  0059B2E3-0059B2F0     13 B  refs=1 first=0x443273 dec=100%
+  0059B303-0059B310     13 B  refs=1 first=0x443393 dec=100%
+  0059B323-0059B330     13 B  refs=1 first=0x443503 dec=100%
+  0059B393-0059B3A0     13 B  refs=1 first=0x443803 dec=100%
+  0059B3B3-0059B3C0     13 B  refs=1 first=0x443a63 dec=100%
+  0059B3D3-0059B3E0     13 B  refs=1 first=0x443b33 dec=100%
+  0059B3F3-0059B400     13 B  refs=1 first=0x443c53 dec=100%
+  0059B413-0059B420     13 B  refs=1 first=0x443db3 dec=100%
+  0059B473-0059B480     13 B  refs=1 first=0x444183 dec=100%
+  0059B633-0059B640     13 B  refs=1 first=0x4451f3 dec=100%
+  0059B653-0059B660     13 B  refs=1 first=0x4452c3 dec=100%
+  0059CAC3-0059CAD0     13 B  refs=1 first=0x46a213 dec=100%
+  0059CB03-0059CB10     13 B  refs=1 first=0x46b2b3 dec=100%
+  0059CB53-0059CB60     13 B  refs=1 first=0x46b7a3 dec=100%
+  0059D0C3-0059D0D0     13 B  refs=1 first=0x471cd3 dec=100%
+  0059D0E3-0059D0F0     13 B  refs=1 first=0x472f13 dec=100%
+  0059DC73-0059DC80     13 B  refs=1 first=0x488953 dec=100%
+  0059E713-0059E720     13 B  refs=1 first=0x491469 dec=100%
+  0059ED33-0059ED40     13 B  refs=1 first=0x497a29 dec=100%
+  0059ED53-0059ED60     13 B  refs=1 first=0x497b79 dec=100%
+  0059F693-0059F6A0     13 B  refs=1 first=0x4a0283 dec=100%
+  0059F6D3-0059F6E0     13 B  refs=1 first=0x4a0743 dec=100%
+  0059F793-0059F7A0     13 B  refs=1 first=0x4a1183 dec=100%
+  0059F7C3-0059F7D0     13 B  refs=1 first=0x4a1293 dec=100%
+  005A10C3-005A10D0     13 B  refs=1 first=0x4bd493 dec=100%
+  005A16C3-005A16D0     13 B  refs=2 first=0x5a1657 dec=100%
+  005A1833-005A1840     13 B  refs=2 first=0x5a1845 dec=100%
+  005A1FD3-005A1FE0     13 B  refs=2 first=0x5a1fe8 dec=100%
+  005A2183-005A2190     13 B  refs=1 first=0x4d7fc3 dec=100%
+  005A2533-005A2540     13 B  refs=1 first=0x4d9699 dec=100%
+  005A2D13-005A2D20     13 B  refs=1 first=0x4e3533 dec=100%
+  005A3023-005A3030     13 B  refs=1 first=0x4e7f53 dec=100%
+  005A42C3-005A42D0     13 B  refs=2 first=0x5a42af dec=100%
+  005A4313-005A4320     13 B  refs=2 first=0x5a42ff dec=100%
+  005A48F3-005A4900     13 B  refs=1 first=0x54e9a3 dec=100%
+  005A49C3-005A49D0     13 B  refs=1 first=0x54f6e3 dec=100%
+  005A4E23-005A4E30     13 B  refs=1 first=0x553c23 dec=100%
+  005A6113-005A6120     13 B  refs=1 first=0x577ad3 dec=100%
+  005A6173-005A6180     13 B  refs=1 first=0x577e83 dec=100%
+  005A66F3-005A6700     13 B  refs=1 first=0x580ad3 dec=100%
+  0059AC64-0059AC70     12 B  refs=1 first=0x436bb3 dec=100%
+  0059C224-0059C230     12 B  refs=1 first=0x44ea93 dec=100%
+  0059C7A4-0059C7B0     12 B  refs=1 first=0x4582e3 dec=100%
+  0059C7D4-0059C7E0     12 B  refs=1 first=0x4591c3 dec=100%
+  0059E4A4-0059E4B0     12 B  refs=3 first=0x59e46a dec=100%
+  0059E534-0059E540     12 B  refs=1 first=0x48f053 dec=100%
+  005A0504-005A0510     12 B  refs=1 first=0x4b2903 dec=100%
+  005A0544-005A0550     12 B  refs=1 first=0x4b29c3 dec=100%
+  005A05E4-005A05F0     12 B  refs=1 first=0x4b31b3 dec=100%
+  005A0654-005A0660     12 B  refs=1 first=0x4b3253 dec=100%
+  005A0BB4-005A0BC0     12 B  refs=1 first=0x4b83c3 dec=100%
+  005A0C14-005A0C20     12 B  refs=1 first=0x4b86d3 dec=100%
+  005A1994-005A19A0     12 B  refs=1 first=0x4cada3 dec=100%
+  005A1E14-005A1E20     12 B  refs=1 first=0x4d5229 dec=100%
+  005A3C44-005A3C50     12 B  refs=1 first=0x4fb243 dec=100%
+  005A3F74-005A3F80     12 B  refs=1 first=0x5009d3 dec=100%
+  005A4288-005A4294     12 B  refs=1 first=0x5071c3 dec=100%
+  005A42D8-005A42E4     12 B  refs=1 first=0x507adb dec=100%
+  005A4D04-005A4D10     12 B  refs=1 first=0x552839 dec=100%
+  005A6034-005A6040     12 B  refs=1 first=0x577053 dec=100%
+  0050992B-00509936     11 B  refs=2 first=0x5098c6 dec=100%
+  0050F0D0-0050F0DB     11 B  refs=2 first=0x50f0d1 dec=100%
+  0051B5D5-0051B5E0     11 B  refs=2 first=0x51b5b3 dec=100%
+  005A0825-005A0830     11 B  refs=1 first=0x4b43f3 dec=100%
+  005A0A75-005A0A80     11 B  refs=2 first=0x5a0a61 dec=100%
+  005A2C75-005A2C80     11 B  refs=1 first=0x4e1713 dec=100%
+  004C0016-004C0020     10 B  refs=1 first=0x5b057a dec=100%
+  00519166-00519170     10 B  refs=1 first=0x519167 dec=100%
+  0051B476-0051B480     10 B  refs=1 first=0x51b454 dec=100%
+  0059A3A6-0059A3B0     10 B  refs=1 first=0x4030f3 dec=100%
+  0059B456-0059B460     10 B  refs=1 first=0x443f43 dec=100%
+  0059CB96-0059CBA0     10 B  refs=1 first=0x46b913 dec=100%
+  0059CBF6-0059CC00     10 B  refs=1 first=0x46c1d3 dec=100%
+  0059D456-0059D460     10 B  refs=1 first=0x47bfd3 dec=100%
+  0059D476-0059D480     10 B  refs=1 first=0x47c073 dec=100%
+  0059D986-0059D990     10 B  refs=1 first=0x4872c3 dec=100%
+  0059E416-0059E420     10 B  refs=2 first=0x59e430 dec=100%
+  0059E6D6-0059E6E0     10 B  refs=1 first=0x490ba9 dec=100%
+  0059E786-0059E790     10 B  refs=2 first=0x59e72a dec=100%
+  0059E8C6-0059E8D0     10 B  refs=1 first=0x492843 dec=100%
+  0059EB86-0059EB90     10 B  refs=2 first=0x59eb2a dec=100%
+  0059FC96-0059FCA0     10 B  refs=1 first=0x4a9013 dec=100%
+  0059FCB6-0059FCC0     10 B  refs=1 first=0x4a9193 dec=100%
+  005A0286-005A0290     10 B  refs=1 first=0x4aed33 dec=100%
+  005A1AD6-005A1AE0     10 B  refs=1 first=0x4d0ac3 dec=100%
+  005A2056-005A2060     10 B  refs=1 first=0x4d76f9 dec=100%
+  005A2736-005A2740     10 B  refs=1 first=0x4db923 dec=100%
+  005A3886-005A3890     10 B  refs=1 first=0x4f2e99 dec=100%
+  005A38A6-005A38B0     10 B  refs=1 first=0x4f3383 dec=100%
+  005A4046-005A4050     10 B  refs=1 first=0x503029 dec=100%
+  005A433A-005A4344     10 B  refs=1 first=0x508057 dec=100%
+  005A4786-005A4790     10 B  refs=1 first=0x54d0e3 dec=100%
+  005A5246-005A5250     10 B  refs=2 first=0x5a5247 dec=100%
+  005A57B6-005A57C0     10 B  refs=1 first=0x566023 dec=100%
+  005A5806-005A5810     10 B  refs=1 first=0x5664b3 dec=100%
+  005A5896-005A58A0     10 B  refs=1 first=0x566a93 dec=100%
+  005A5936-005A5940     10 B  refs=2 first=0x5a596c dec=100%
+  005A5AF6-005A5B00     10 B  refs=1 first=0x56db93 dec=100%
+  005A5E36-005A5E40     10 B  refs=1 first=0x574c33 dec=100%
+  005A5E96-005A5EA0     10 B  refs=1 first=0x574e53 dec=100%
+  005A5F06-005A5F10     10 B  refs=1 first=0x574ef3 dec=100%
+  005A67B6-005A67C0     10 B  refs=1 first=0x581ac3 dec=100%
+  005A67D6-005A67E0     10 B  refs=1 first=0x581c49 dec=100%
+  005A6B76-005A6B80     10 B  refs=1 first=0x588809 dec=100%
+  005A6B96-005A6BA0     10 B  refs=1 first=0x588979 dec=100%
+  005A72B3-005A72BD     10 B  refs=1 first=0x5932b3 dec=100%
+  0050F717-0050F720      9 B  refs=1 first=0x50f6ae dec=100%
+  0051A678-0051A680      8 B  refs=1 first=0x51a61f dec=100%
+  0050F12A-0050F131      7 B  refs=2 first=0x50f127 dec=100%
+  005215C2-005215C7      5 B  refs=1 first=0x5193b2 dec=100%
+  0051A5EC-0051A5F0      4 B  refs=1 first=0x51a58e dec=100%
+

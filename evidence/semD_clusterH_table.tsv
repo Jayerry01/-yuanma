@@ -1,0 +1,99 @@
+Addr	SemanticName	ConfirmedFact	Inference	OpenUnknown
+0x00540090	JPEG_Decompress_Manager_Ops	param_1+0x184 (cinfo->dest/src), param_1+0x118, 嵌入式 libjpeg 解码状态流转	libjpeg 解压缩上下文管理器缓冲区推进与状态消费	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00540310	JPEG_Decompress_Manager_Ops	param_1+0x184 (cinfo->dest/src), param_1+0x118, 嵌入式 libjpeg 解码状态流转	libjpeg 解压缩上下文管理器缓冲区推进与状态消费	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x005404C0	JPEG_Decompress_Manager_Ops	param_1+0x184 (cinfo->dest/src), param_1+0x118, 嵌入式 libjpeg 解码状态流转	libjpeg 解压缩上下文管理器缓冲区推进与状态消费	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x005405A0	JPEG_Decompress_Manager_Ops	param_1+0x184 (cinfo->dest/src), param_1+0x118, 嵌入式 libjpeg 解码状态流转	libjpeg 解压缩上下文管理器缓冲区推进与状态消费	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00540670	JPEG_Decompress_Manager_Ops	param_1+0x184 (cinfo->dest/src), param_1+0x118, 嵌入式 libjpeg 解码状态流转	libjpeg 解压缩上下文管理器缓冲区推进与状态消费	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00540E50	Net_Protocol_Subsystem_Helper	callees=[2] ins=94 被调 unique=0: pseudo=: { | iVar1 = param_1; | param_1._0_1_ =	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00541880	Net_Protocol_Subsystem_Helper	callees=[2] ins=103 被调 unique=0: pseudo=: { | piVar1 = (int *)param_1[4]; | pbVa	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x005419A0	Net_Protocol_Subsystem_Helper	callees=[2] ins=96 被调 unique=1: 00541880 x2 pseudo=: { | if (param_3 < param_5) { | cVar2 =	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00542050	Net_Protocol_Subsystem_Helper	callees=[2] ins=44 被调 unique=0: pseudo=: { | iVar1 = *(int *)(param_1 + 0x198);	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x005420D0	Net_Protocol_Subsystem_Helper	callees=[2] ins=44 被调 unique=0: pseudo=: void FUN_005420d0(int param_1) | { | p	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x005425D0	Net_Protocol_Subsystem_Helper	callees=[2] ins=45 被调 unique=0: pseudo=: { | iVar1 = *(int *)(param_1 + 0x198);	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00542DB0	Net_Protocol_Subsystem_Helper	callees=[2] ins=46 被调 unique=0: pseudo=: void FUN_00542db0(undefined4 *param_1)	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x005435D0	Net_Protocol_Subsystem_Helper	callees=[2] ins=85 被调 unique=0: pseudo=: void FUN_005435d0(int param_1,int para	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00543E90	Net_Protocol_Subsystem_Helper	callees=[2] ins=51 被调 unique=0: pseudo=: void FUN_00543e90(int param_1,int para	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00544130	Net_Protocol_Subsystem_Helper	callees=[2] ins=45 被调 unique=1: 005441C0 x2 pseudo=: void FUN_00544130(int param_1) | { | p	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x005441C0	Net_Protocol_Subsystem_Helper	callees=[2] ins=62 被调 unique=0: pseudo=: void FUN_005441c0(int param_1) | { | i	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00544850	Net_Protocol_Subsystem_Helper	callees=[2] ins=61 被调 unique=0: pseudo=: void FUN_00544850(int param_1) | { | i	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x005448F0	Net_Protocol_Subsystem_Helper	callees=[2] ins=39 被调 unique=0: pseudo=: void FUN_005448f0(int *param_1,char pa	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00544B60	Net_Protocol_Subsystem_Helper	callees=[2] ins=82 被调 unique=2: 00544C70=FUN_00544c70 0054 pseudo=: void FUN_00544b60(int param_1,int para	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x005452D0	Net_Protocol_Subsystem_Helper	callees=[2] ins=58 被调 unique=3: 00545360=FUN_00545360 0054 pseudo=: void FUN_005452d0(int *param_1,int par	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00545A70	Net_Protocol_Subsystem_Helper	callees=[2] ins=52 被调 unique=3: 00545B10=FUN_00545b10 0054 pseudo=: void FUN_00545a70(int *param_1) | { | 	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00545C70	Net_Protocol_Subsystem_Helper	callees=[2] ins=84 被调 unique=0: pseudo=: { | bool bVar4; | iVar2 = param_1[0x19	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00545F10	Net_Protocol_Subsystem_Helper	callees=[2] ins=95 被调 unique=4: 00545ED0 0053E660 00545D70 pseudo=: void FUN_00545f10(int *param_1) | { | 	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00548410	Net_Protocol_Subsystem_Helper	callees=[2] ins=63 被调 unique=1: 00410AF0 pseudo=: void FUN_00548410(undefined4 param_1,u	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0054A4B0	Net_Protocol_Subsystem_Helper	callees=[2] ins=53 被调 unique=9: 00554970 005546C0 00554B30 pseudo=: { | void *local_c; | local_4 = 0xfffff	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0054A6C0	Net_Protocol_Subsystem_Helper	callees=[2] ins=35 被调 unique=4: 005538E0 x2 00553830 0054F pseudo=: FUN_0054a6c0(int param_1,undefined4 pa	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0054B150	Net_Protocol_Subsystem_Helper	callees=[2] ins=73 被调 unique=6: 005015F0 x2 00554C90 00554 pseudo=: void __thiscall FUN_0054b150(int param	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0054B940	Net_Packet_Buffer_Vector_Insert	调用 0x403490 (vector 扩容) 与 0x5092c0 (memcpy), 属于 n=21 画像组	网络数据包发送/接收队列 STL vector 动态扩容与插入	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0054BCD0	Net_Protocol_Subsystem_Helper	callees=[2] ins=49 被调 unique=8: 005015F0 00553830 005538E0 pseudo=: void __fastcall FUN_0054bcd0(int param	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0054C2C0	Net_Protocol_Subsystem_Helper	callees=[2] ins=64 被调 unique=0: pseudo=: { | iVar4 = (*param_1 - param_1[1]) / 	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0054C510	Net_Protocol_Subsystem_Helper	callees=[2] ins=62 被调 unique=4: 0054CC30=FUN_0054cc30 0050 pseudo=: void __thiscall FUN_0054c510(int *para	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0054C870	Net_Protocol_Subsystem_Helper	callees=[2] ins=53 被调 unique=2: 004E6050=FUN_004e6050 004E pseudo=: void FUN_0054c870(int param_1) | { | l	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0054CAE0	Net_Packet_Buffer_Vector_Insert	调用 0x403490 (vector 扩容) 与 0x5092c0 (memcpy), 属于 n=21 画像组	网络数据包发送/接收队列 STL vector 动态扩容与插入	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0054CD90	Net_Packet_Buffer_Vector_Insert	调用 0x403490 (vector 扩容) 与 0x5092c0 (memcpy), 属于 n=21 画像组	网络数据包发送/接收队列 STL vector 动态扩容与插入	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0054CE80	Net_Packet_Buffer_Vector_Insert	调用 0x403490 (vector 扩容) 与 0x5092c0 (memcpy), 属于 n=21 画像组	网络数据包发送/接收队列 STL vector 动态扩容与插入	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0054CF80	Net_Protocol_Subsystem_Helper	callees=[2] ins=86 被调 unique=4: 00402BF0=FUN_00402bf0 0040 pseudo=: { | void *local_10; | puStack_c = &LAB	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0054D0E0	Net_Protocol_Subsystem_Helper	callees=[2] ins=28 被调 unique=2: 00553290 00553790 pseudo=: { | void *local_c; | local_4 = 0xfffff	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0054DB70	Net_Protocol_Subsystem_Helper	callees=[2] ins=28 被调 unique=4: 00553920 x3 00553830 0054F pseudo=: void __thiscall FUN_0054db70(int param	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0054E660	Net_Protocol_Subsystem_Helper	callees=[2] ins=43 被调 unique=5: 005538E0 x2 0054F530 00553 pseudo=: FUN_0054e660(int param_1,undefined4 pa	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0054E6F0	Net_Protocol_Subsystem_Helper	callees=[2] ins=63 被调 unique=4: 005538E0 x2 00553830 0054F pseudo=: FUN_0054e6f0(int param_1,undefined4 pa	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0054E7C0	Net_Protocol_Subsystem_Helper	callees=[2] ins=68 被调 unique=4: 005538E0 x2 00553830 0054F pseudo=: FUN_0054e7c0(int param_1,int param_2,u	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0054E890	Net_Protocol_Subsystem_Helper	callees=[2] ins=95 被调 unique=8: 00553830 005538E0 0054F2D0 pseudo=: void __fastcall FUN_0054e890(int param	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0054F6E0	Net_Session_Heartbeat_Timeout	调用 0x4736a0 比较时间戳，检查对端网络心跳超时	多人联机玩家连接心跳超时与掉线状态判定	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0054FF00	Net_Protocol_Subsystem_Helper	callees=[2] ins=90 被调 unique=4: 0054FEC0 00508AE6=FUN_0050 pseudo=: void FUN_0054ff00(undefined4 param_1,u	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00550490	Net_Message_Serialize_Field	0x5092c0 (memcpy) 序列化网络结构，操作玩家 ID 与位移状态	多人游戏网络同步协议消息字段序列化与打包	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00550A50	Net_Message_Serialize_Field	0x5092c0 (memcpy) 序列化网络结构，操作玩家 ID 与位移状态	多人游戏网络同步协议消息字段序列化与打包	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00550B00	Net_Protocol_Subsystem_Helper	callees=[2] ins=94 被调 unique=2: 005092C0=FUN_005092c0 0040 pseudo=: { | LSTATUS LVar3; | HKEY local_8; | D	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x005513E0	Net_Protocol_Subsystem_Helper	callees=[2] ins=84 被调 unique=5: 00555950 x4 00550210=FUN_0 pseudo=: void __thiscall FUN_005513e0(int param	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00551D80	Net_Protocol_Subsystem_Helper	callees=[2] ins=62 被调 unique=0: pseudo=: void FUN_00551d80(undefined1 *param_1)	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00551E40	Net_Protocol_Subsystem_Helper	callees=[2] ins=62 被调 unique=0: pseudo=: void FUN_00551e40(undefined1 *param_1)	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00552510	Net_Message_Serialize_Field	0x5092c0 (memcpy) 序列化网络结构，操作玩家 ID 与位移状态	多人游戏网络同步协议消息字段序列化与打包	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00552CA0	Net_Protocol_Subsystem_Helper	callees=[2] ins=91 被调 unique=0: pseudo=: { | pcVar2 = (char *)param_1[1]; | iVa	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00553290	Net_Session_Heartbeat_Timeout	调用 0x4736a0 比较时间戳，检查对端网络心跳超时	多人联机玩家连接心跳超时与掉线状态判定	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00553390	Net_Session_Heartbeat_Timeout	调用 0x4736a0 比较时间戳，检查对端网络心跳超时	多人联机玩家连接心跳超时与掉线状态判定	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x005536A0	Net_Protocol_Subsystem_Helper	callees=[2] ins=65 被调 unique=3: 00553960 x3 00553890 00556 pseudo=: void __thiscall FUN_005536a0(int *para	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00553B80	Net_Protocol_Subsystem_Helper	callees=[2] ins=40 被调 unique=3: 0054C370=FUN_0054c370 0055 pseudo=: { | void *local_c; | local_4 = 0xfffff	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00554030	Net_Protocol_Subsystem_Helper	callees=[2] ins=75 被调 unique=7: 00553860 00553880 00554820 pseudo=: { | iVar2 = FUN_00553860(param_3); | i	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x005540E0	Net_Protocol_Subsystem_Helper	callees=[2] ins=106 被调 unique=4: 00553870 x2 005541F0 0055 pseudo=: { | ushort uVar1; | iVar2 = param_2; |	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x005541F0	Net_Protocol_Subsystem_Helper	callees=[2] ins=83 被调 unique=3: 004E8500=FUN_004e8500 0055 pseudo=: void __thiscall FUN_005541f0(int param	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x005547A0	Net_Protocol_Subsystem_Helper	callees=[2] ins=47 被调 unique=2: 00554760 00554C80 pseudo=: { | sockaddr local_10; | if (*param_1 	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00554820	Net_Protocol_Subsystem_Helper	callees=[2] ins=49 被调 unique=2: 00554C80 005548A0 pseudo=: { | sockaddr local_10; | if (*param_1 	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00554D90	Net_Protocol_Subsystem_Helper	callees=[2] ins=67 被调 unique=2: 005558A0 x2 00554EB0=FUN_0 pseudo=: void FUN_00554d90(int param_1,int para	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00554E40	Net_Protocol_Subsystem_Helper	callees=[2] ins=42 被调 unique=3: 00555800 x2 00554D90 x2 00 pseudo=: void FUN_00554e40(undefined4 param_1,i	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00555950	Net_Protocol_Subsystem_Helper	callees=[2] ins=53 被调 unique=2: 00403870 00552F50=FUN_0055 pseudo=: void __thiscall FUN_00555950(int *para	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00555A50	Net_Protocol_Subsystem_Helper	callees=[2] ins=37 被调 unique=2: 00553830 0054C370=FUN_0054 pseudo=: { | void *local_c; | local_4 = 0xfffff	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00555AF0	Net_Protocol_Subsystem_Helper	callees=[2] ins=88 被调 unique=5: 004E6050=FUN_004e6050 0040 pseudo=: void __fastcall FUN_00555af0(undefined	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00555F50	Net_Protocol_Subsystem_Helper	callees=[2] ins=63 被调 unique=5: 004E8500=FUN_004e8500 0055 pseudo=: { | iVar4 = 0; | if (*(int *)(param_1 	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00556260	Net_Protocol_Subsystem_Helper	callees=[2] ins=33 被调 unique=2: 004E6050=FUN_004e6050 004E pseudo=: void FUN_00556260(void) | { | FUN_004e	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x005566D0	Net_Protocol_Subsystem_Helper	callees=[2] ins=86 被调 unique=3: 0050B600=FUN_0050b600 0057 pseudo=: { | void *pvVar2; | FUN_0050b600(param	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00556910	Net_Protocol_Subsystem_Helper	callees=[2] ins=68 被调 unique=0: pseudo=: { | bool bVar7; | iVar4 = 0; | pbVar5 	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x005570E0	Net_Protocol_Subsystem_Helper	callees=[2] ins=91 被调 unique=2: 00477200 00558600=FUN_0055 pseudo=: { | FUN_00477200(); | if ((*(int *)(pa	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00557260	Net_Protocol_Subsystem_Helper	callees=[2] ins=37 被调 unique=1: 00557260 pseudo=: { | iVar1 = 0; | if (0 < *(int *)(para	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00557F30	Net_Protocol_Subsystem_Helper	callees=[2] ins=37 被调 unique=0: pseudo=: { | if ((-1 < param_2) && (param_2 < *	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00558A60	Net_Protocol_Subsystem_Helper	callees=[2] ins=43 被调 unique=2: 00572E10=FUN_00572e10 0057 pseudo=: void __fastcall FUN_00558a60(undefined	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00558AE0	Net_Protocol_Subsystem_Helper	callees=[2] ins=43 被调 unique=2: 00573140=FUN_00573140 0057 pseudo=: void __fastcall FUN_00558ae0(undefined	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00558BD0	Net_Protocol_Subsystem_Helper	callees=[2] ins=29 被调 unique=1: 00558A60 pseudo=: { | iVar1 = *(int *)(param_1 + 0xfc) +	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00558C50	Net_Protocol_Subsystem_Helper	callees=[2] ins=63 被调 unique=2: 00509980=__ftol 00558AE0 pseudo=: { | float10 extraout_ST0; | float10 ex	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00558D80	Net_Protocol_Subsystem_Helper	callees=[2] ins=40 被调 unique=3: 00558D40 00558B60 00558A60 pseudo=: { | if (param_2 == -1) { | } | else { 	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00558E10	Net_Protocol_Subsystem_Helper	callees=[2] ins=48 被调 unique=4: 00509980=__ftol 00558D40 0 pseudo=: { | iVar2 = __ftol(); | iVar3 = FUN_00	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00558EB0	Net_Protocol_Subsystem_Helper	callees=[2] ins=55 被调 unique=4: 00475400 x2 00479F80 00474 pseudo=: void __fastcall FUN_00558eb0(int param	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00558F90	Net_Protocol_Subsystem_Helper	callees=[2] ins=79 被调 unique=7: 00475590=FUN_00475590 0055 pseudo=: void __thiscall FUN_00558f90(int param	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x005590B0	Net_Protocol_Subsystem_Helper	callees=[2] ins=76 被调 unique=3: 00477D30=FUN_00477d30 0047 pseudo=: void FUN_005590b0(void) | { | FUN_0047	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00559750	Net_Protocol_Subsystem_Helper	callees=[2] ins=30 被调 unique=1: 00558AE0 pseudo=: { | DWORD DVar1; | DVar1 = timeGetTime	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0055A180	Net_Protocol_Subsystem_Helper	callees=[2] ins=56 被调 unique=2: 0047C3A0=FUN_0047c3a0 0047 pseudo=: void __thiscall FUN_0055a180(int param	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0055A920	Net_Protocol_Subsystem_Helper	callees=[2] ins=54 被调 unique=2: 00481B30 00481B90 pseudo=: void __thiscall FUN_0055a920(int param	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0055A9F0	Net_Protocol_Subsystem_Helper	callees=[2] ins=54 被调 unique=2: 00481B30 00481B90 pseudo=: void __thiscall FUN_0055a9f0(int param	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0055AAC0	Net_Protocol_Subsystem_Helper	callees=[2] ins=65 被调 unique=5: 00508AE6=FUN_00508ae6 0047 pseudo=: FUN_0055aac0(int param_1,undefined4 pa	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0055AB70	Net_Protocol_Subsystem_Helper	callees=[2] ins=47 被调 unique=7: 00475590=FUN_00475590 0047 pseudo=: void __fastcall FUN_0055ab70(int param	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0055AC30	Net_Protocol_Subsystem_Helper	callees=[2] ins=47 被调 unique=7: 00475590=FUN_00475590 0047 pseudo=: void __fastcall FUN_0055ac30(int param	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0055AE30	Net_Protocol_Subsystem_Helper	callees=[2] ins=40 被调 unique=5: 00477D30=FUN_00477d30 0047 pseudo=: void __thiscall FUN_0055ae30(int param	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0055B1C0	Net_Protocol_Subsystem_Helper	callees=[2] ins=39 被调 unique=7: 00475590=FUN_00475590 0047 pseudo=: void __fastcall FUN_0055b1c0(int param	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0055BBA0	Net_Protocol_Subsystem_Helper	callees=[2] ins=60 被调 unique=3: 00402E90=FUN_00402e90 004D pseudo=: void __thiscall FUN_0055bba0(int param	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0055D1E0	Net_Protocol_Subsystem_Helper	callees=[2] ins=51 被调 unique=4: 00567220 00566A90=FUN_0056 pseudo=: void __thiscall FUN_0055d1e0(int param	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0055D450	Net_Protocol_Subsystem_Helper	callees=[2] ins=56 被调 unique=3: 00559720 005596C0 005596E0 pseudo=: { | if ((-1 < param_2) && (param_2 < *	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0055D950	Net_Protocol_Subsystem_Helper	callees=[2] ins=67 被调 unique=2: 00570630=FUN_00570630 0055 pseudo=: { | if (param_4 == '\0') { | cVar1 = F	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0055DFC0	Net_Protocol_Subsystem_Helper	callees=[2] ins=44 被调 unique=3: 00567220 00566E50 0055DF80 pseudo=: void __thiscall FUN_0055dfc0(int param	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0055E8B0	Net_Message_Serialize_Field	0x5092c0 (memcpy) 序列化网络结构，操作玩家 ID 与位移状态	多人游戏网络同步协议消息字段序列化与打包	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0055FE10	Net_Protocol_Subsystem_Helper	callees=[2] ins=79 被调 unique=6: 00402BF0=FUN_00402bf0 0050 pseudo=: { | void *local_10; | puStack_c = &LAB	网络协议栈、封包序列化与大厅会话底层辅助	需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID

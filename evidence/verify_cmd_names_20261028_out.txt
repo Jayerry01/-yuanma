@@ -1,0 +1,182 @@
+== target == C:\Program Files (x86)\Meteor\Meteor.exe
+  bytes=1945600 sha256=baebb6d59e6da61e
+  sections (name, RVA, rawptr, rawsize): [('.text', '0x1000', '0x1000', '0x1a7000'), ('.rdata', '0x1a8000', '0x1a8000', '0x1c000'), ('.data', '0x1c4000', '0x1c4000', '0x12000'), ('.data1', '0x3f3000', '0x1d6000', '0x1000'), ('.rsrc', '0x3f4000', '0x1d7000', '0x4000')]
+
+== 区域字符串清单 [0x5C9710,0x5C98A0) ==
+  005c9710        'debugS.log'
+  005c971c        '00test'
+  005c9724        'lose'
+  005c972c        'win'
+  005c9730 REGION 'editai'
+  005c9738 REGION 'lag'
+  005c973c REGION 'adddummy2'
+  005c9748 REGION 'adddummy'
+  005c9754 REGION 'ang'
+  005c9758 REGION 'box'
+  005c975c REGION 'wave'
+  005c9764 REGION 'dropw'
+  005c976c REGION 'mhp'
+  005c9770 REGION 'msense'
+  005c9778 REGION 'minverse'
+  005c9784 REGION 'pose'
+  005c978c REGION 'switch'
+  005c9794 REGION 'weapon'
+  005c979c REGION 'loadmyno'
+  005c97a8 REGION 'testserver'
+  005c97b4 REGION 'loadsnp'
+  005c97bc REGION 'moveto'
+  005c97c4 REGION 'elight'
+  005c97cc REGION 'play'
+  005c97d4 REGION 'joins'
+  005c97dc REGION 'shows'
+  005c97e4 REGION 'loadmych'
+  005c97f0 REGION 'loadch'
+  005c97f8 REGION 'dcam'
+  005c9800 REGION 'freecam'
+  005c9808 REGION 'loadsn'
+  005c9810 REGION 'cheat'
+  005c9818 REGION 'closeserver'
+  005c9824 REGION 'host'
+  005c982c REGION 'load'
+  005c9834 REGION 'save'
+  005c983c REGION 'replay'
+  005c9844 REGION 'serverinfo'
+  005c9850 REGION 'camera'
+  005c9858 REGION 'kill'
+  005c9860 REGION 'AI'
+  005c9864 REGION 'skick'
+  005c986c REGION 'kick'
+  005c9874 REGION 'quit'
+  005c987c REGION 'mnet'
+  005c9884 REGION 'position'
+  005c9890        'default.mrc'
+  005c989c        'Base'
+  region [0x005C9730,0x005C9884] string count = 42
+
+== 映射器 0x4B63B0..0x4B6940 ==
+  entries=48  (chain order = address order, first match wins)
+  004b63bb id=0x0b(11) len= 4 actual= 4 OK 005c68a0 'fps' OUTSIDE
+  004b63d8 id=0x0e(14) len= 9 actual= 9 OK 005c9884 'position' REGION
+  004b63f5 id=0x2f(47) len= 5 actual= 5 OK 005c987c 'mnet' REGION
+  004b6412 id=0x02( 2) len= 5 actual= 5 OK 005c9874 'quit' REGION
+  004b642f id=0x30(48) len= 5 actual= 5 OK 005c986c 'kick' REGION
+  004b644c id=0x37(55) len= 6 actual= 6 OK 005c9864 'skick' REGION
+  004b6469 id=0x18(24) len= 3 actual= 3 OK 005c9860 'AI' REGION
+  004b6486 id=0x38(56) len= 5 actual= 5 OK 005c9858 'kill' REGION
+  004b64a3 id=0x39(57) len= 7 actual= 7 OK 005c9850 'camera' REGION
+  004b64c0 id=0x3a(58) len=11 actual=11 OK 005c9844 'serverinfo' REGION
+  004b64dd id=0x3b(59) len= 7 actual= 7 OK 005c7644 'record' OUTSIDE
+  004b64fa id=0x3c(60) len= 7 actual= 7 OK 005c983c 'replay' REGION
+  004b6517 id=0x3d(61) len= 5 actual= 5 OK 005c9834 'save' REGION
+  004b6534 id=0x3e(62) len= 5 actual= 5 OK 005c982c 'load' REGION
+  004b6551 id=0x3f(63) len= 5 actual= 5 OK 005c9824 'host' REGION
+  004b656e id=0x40(64) len=12 actual=12 OK 005c9818 'closeserver' REGION
+  004b6597 id=0x2e(46) len= 6 actual= 6 OK 005c9810 'cheat' REGION
+  004b65b6 id=0x01( 1) len= 7 actual= 7 OK 005c9808 'loadsn' REGION
+  004b65d1 id=0x03( 3) len= 8 actual= 8 OK 005c9800 'freecam' REGION
+  004b65ee id=0x04( 4) len= 5 actual= 5 OK 005c97f8 'dcam' REGION
+  004b660b id=0x05( 5) len= 7 actual= 7 OK 005c97f0 'loadch' REGION
+  004b6628 id=0x10(16) len= 9 actual= 9 OK 005c97e4 'loadmych' REGION
+  004b6645 id=0x06( 6) len= 6 actual= 6 OK 005c97dc 'shows' REGION
+  004b6662 id=0x07( 7) len= 5 actual= 5 OK 005c9824 'host' REGION
+  004b667f id=0x08( 8) len= 6 actual= 6 OK 005c97d4 'joins' REGION
+  004b669c id=0x09( 9) len= 5 actual= 5 OK 005c7b4c 'test' OUTSIDE
+  004b66b9 id=0x0a(10) len= 5 actual= 5 OK 005c97cc 'play' REGION
+  004b66d6 id=0x0c(12) len= 7 actual= 7 OK 005c97c4 'elight' REGION
+  004b66f3 id=0x0d(13) len= 7 actual= 7 OK 005c97bc 'moveto' REGION
+  004b6710 id=0x0f(15) len= 8 actual= 8 OK 005c97b4 'loadsnp' REGION
+  004b672d id=0x11(17) len=11 actual=11 OK 005c97a8 'testserver' REGION
+  004b674a id=0x12(18) len= 9 actual= 9 OK 005c979c 'loadmyno' REGION
+  004b6767 id=0x19(25) len= 7 actual= 7 OK 005c9794 'weapon' REGION
+  004b6784 id=0x13(19) len= 7 actual= 7 OK 005c978c 'switch' REGION
+  004b67a1 id=0x14(20) len= 5 actual= 5 OK 005c9784 'pose' REGION
+  004b67be id=0x15(21) len= 9 actual= 9 OK 005c9778 'minverse' REGION
+  004b67db id=0x16(22) len= 7 actual= 7 OK 005c9770 'msense' REGION
+  004b67f8 id=0x17(23) len= 4 actual= 4 OK 005c976c 'mhp' REGION
+  004b6815 id=0x20(32) len= 6 actual= 6 OK 005c9764 'dropw' REGION
+  004b6832 id=0x2a(42) len= 5 actual= 5 OK 005c975c 'wave' REGION
+  004b684f id=0x2b(43) len= 4 actual= 4 OK 005c9758 'box' REGION
+  004b686c id=0x2c(44) len= 4 actual= 4 OK 005c9754 'ang' REGION
+  004b6889 id=0x2d(45) len= 9 actual= 9 OK 005c9748 'adddummy' REGION
+  004b68a6 id=0x33(51) len=10 actual=10 OK 005c973c 'adddummy2' REGION
+  004b68c3 id=0x31(49) len= 4 actual= 4 OK 005c9738 'lag' REGION
+  004b68e0 id=0x34(52) len= 7 actual= 7 OK 005c9730 'editai' REGION
+  004b68fd id=0x35(53) len= 4 actual= 4 OK 005c972c 'win' OUTSIDE
+  004b691c id=0x36(54) len= 5 actual= 5 OK 005c9724 'lose' OUTSIDE
+  length-including-NUL matches: 48/48
+  duplicate names: [('host', 7, 'DEAD(duplicate name, first match wins)')]
+  distinct ids=48  unmapped ids in 1..0x40: ['0x1a', '0x1b', '0x1c', '0x1d', '0x1e', '0x1f', '0x21', '0x22', '0x23', '0x24', '0x25', '0x26', '0x27', '0x28', '0x29', '0x32']
+
+== vtable 锚点 ==
+  abs32 refs to 0x004B63B0: ['0x5a9178']
+  abs32 refs to 0x004B6940: ['0x5a9174']
+  0x5A9178 - 0x110 = 0x5A9068 (mapper slot)
+  0x5A9174 - 0x10C = 0x5A9068 (executor slot)
+
+== 执行器跳表 0x4B7878 (64 x u32) ==
+  handled ids=48 default ids=16
+  default ids: ['0x1a', '0x1b', '0x1c', '0x1d', '0x1e', '0x1f', '0x21', '0x22', '0x23', '0x24', '0x25', '0x26', '0x27', '0x28', '0x29', '0x2e']
+  handled id -> handler:
+    01:004b69c2 02:004b73b5 03:004b6b2e 04:004b6b47 05:004b6a44 06:004b6b60 07:004b6b84 08:004b6be9 09:004b6cd9 0a:004b73c2 0b:004b73d2 0c:004b7557 0d:004b75e5 0e:004b76cb 0f:004b69d3 10:004b6a81 11:004b6ffa 12:004b6add 13:004b6f75 14:004b76ee 15:004b72cc 16:004b72e4 17:004b73fb 18:004b7736 19:004b6d7d 20:004b6f8c 2a:004b7300 2b:004b7293 2c:004b6fa3 2d:004b6e87 2f:004b77a3 30:004b733d 31:004b77c7 32:004b782a 33:004b6da9 34:004b77af 35:004b7253 36:004b7273 37:004b7379 38:004b6999 39:004b69fc 3a:004b7407 3b:004b7413 3c:004b7466 3d:004b74bf 3e:004b750b 3f:004b7311 40:004b732d
+
+== 社区名单核对（docs/12 笔记 44 名 + box off = 45） ==
+  community list = 45 names
+  A) exact mapper entries: 40/45
+     pose         005c9784 REGION
+     weapon       005c9794 REGION
+     loadch       005c97f0 REGION
+     loadmych     005c97e4 REGION
+     loadmyno     005c979c REGION
+     dropw        005c9764 REGION
+     switch       005c978c REGION
+     moveto       005c97bc REGION
+     position     005c9884 REGION
+     box          005c9758 REGION
+     wave         005c975c REGION
+     mhp          005c976c REGION
+     ang          005c9754 REGION
+     win          005c972c outside-region
+     lose         005c9724 outside-region
+     cheat        005c9810 REGION
+     testserver   005c97a8 REGION
+     test         005c7b4c outside-region
+     loadsnp      005c97b4 REGION
+     loadsn       005c9808 REGION
+     joins        005c97d4 REGION
+     freecam      005c9800 REGION
+     play         005c97cc REGION
+     editai       005c9730 REGION
+     host         005c9824 REGION
+     lag          005c9738 REGION
+     shows        005c97dc REGION
+     mnet         005c987c REGION
+     kick         005c986c REGION
+     skick        005c9864 REGION
+     kill         005c9858 REGION
+     camera       005c9850 REGION
+     msense       005c9770 REGION
+     minverse     005c9778 REGION
+     elight       005c97c4 REGION
+     quit         005c9874 REGION
+     record       005c7644 outside-region
+     AI           005c9860 REGION
+     adddummy     005c9748 REGION
+     adddummy2    005c973c REGION
+  B) case-insensitive mapper hits: 1
+     'FPS' -> 'fps' 005c68a0 outside-region
+  C) standalone non-.text string but NOT in mapper: 1
+     IP           [('0x5c422c', '.data')]
+  D) absent (no non-.text NUL-terminated occurrence): 3 ['disarm', 'reset', 'box off']
+     disarm: case-insensitive byte-substring occurrences=0 (substring/instruction-immediate not accepted as hit)
+     reset: case-insensitive byte-substring occurrences=3 (substring/instruction-immediate not accepted as hit)
+     box off: case-insensitive byte-substring occurrences=0 (substring/instruction-immediate not accepted as hit)
+
+== 与用户 41/45 主张的对账 ==
+  45 名清单命中（映射器，含大小写回退）: 41/45
+  其中落在连续区 0x5C9730-0x5C9884 : 36
+  其中在区段外                  : 5 -> win@005C972C, lose@005C9724, test@005C7B4C, record@005C7644, FPS@005C68A0
+  未命中                        : 3 -> ['disarm', 'reset', 'box off']
+  区段内 42 串 == 映射器名字集合: True (coverage 42/42)
+  映射器唯一名字总数=47 (48 条目 - host 重复 1)；其中区段内 42、区段外 5
+  cheat -> id 0x2E，执行器跳表该槽=default(0x4B785B)：映射存在但无处理器
+  host  -> 先后注册 0x3F(0x4B6551) 与 0x07(0x4B6B84)，首命中 0x3F，0x07 不可达

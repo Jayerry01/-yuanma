@@ -1,0 +1,185 @@
+# U1 残余收口：slot9 乾坤刀 架势→trie 选择机制（2026-10-28）
+
+口径：全部结论基于 Meteor.exe（PE32 x86，imagebase 0x400000，
+sha256 baebb6d5…58619；读取源 C:\Program Files (x86)\Meteor\，分析树 D:\MeteorRE\）。
+反汇编 = capstone 32 位线性解码（detail=False，逐字节列印）；vtable 槽位 = 文件双字直读。
+反编译参考 = D:\MeteorRE\evidence\decomp_u3u4_*.c（41 文件，Ghidra 12.1.4 headless）。
+凡"全 .text"均指对 .text 节完整字节扫描（模式逐条列于 §6/§7），非抽样。
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. 结论速览（三档）
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+- 机械：slot9 链路全部字节落位——单例身份、三棵 trie 的 7/9/8 注册分裂、
+  选择器架势分派、stance 字段读通道 5 处、写通道 2 处，逐一给出 VA 与字节。
+- 语义：架势 0=持刀式 / 1=持槍式 / 2=拔刀式，与社区招式名内嵌架势标注
+  100% 互证（见 §4 表）；选择器输入 = actor(=controller 对象) vft+0x1D8 返回值。
+- 可复刻：注册表、选择规则、架势字段位置、miss 哨兵 99999、'a' 后缀追加门
+  全部可直写复刻；唯一未闭项 = stance 非零值的运行时写入通道（§8 边界）。
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2. 单例身份链（字节证据）
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+- Meyers 单例：全局 0x666390，守卫 0x666388 bit0；getter FUN_004E18C0；
+  dtor 包装 FUN_004E1900（经 FUN_005089BC；可选 FUN_00507850 释放，见 decomp_u3u4_004e1550.c）。
+- 构造 FUN_004E1420（292 B）：经基类构造 FUN_004DC9A0 在 +4 / +0x40 / +0x50
+  各建一棵内联 trie（param_1[1]=&PTR_FUN_005AAAE8 查找虚表；param_1[3]=99999
+  miss 哨兵；param_1[4]=alloc(0xC) 根哨兵）；最终 vptr=0x5AAEF0。
+- 注册体 FUN_004E1910（3670 B）：24 次 trie 插入（§3）+ 附属注册
+  ([+0x14]=9、[+0x18]=0x1E1、vector@+0x20←{0x1EE..0x1F2,499,500}、
+  vector@+0x2C←{0x67}、FUN_004E4130(0x9E,0x3C)/(0x9F,0x3C)、
+  FUN_0049C330 六组 (92,0)(98,0)(88,1)(99,1)(89,2)(93,2)、
+  FUN_004E42F0+FUN_0046EF70 ≈50 move-id 入 +0x60 区映射、
+  FUN_004E3E00 追加 0x1BE,0x1C3,0x1C9,0x1CA,0x1CB,0x1E6,0x1E7,0x208,0x209,0x20C)。
+- trie 查找 FUN_00503440（vtable 0x5AAAE8 槽+4）：兄弟链走 [this+0xC]，
+  SSO 0x80，miss 返回哨兵 99999=0x1869F；插入 = 同表槽+8 FUN_005035C0。
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+3. 7/9/8 注册分裂（双通道证明）——修正旧"主 12 / 持刀式 9 / 拔刀式 3"
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+通道 A：capstone ESI 映射扫描（piVar1 重指向前缀切段）。
+通道 B：decomp_u3u4_004e1910.c 逐条 piVar1 重赋值点 + 字面量指针。
+
+trie@+4（7 条，持刀式）：
+  88 lm, 89 bbm, 90 m, 91 bm, 104 ma, 105 bma, 159 ffm
+trie@+0x40（9 条，持槍式）：
+  92 rm, 93 bbm, 94 m, 95 fm, 96 ffm, 97 bm, 104 ma, 105 bma, 158 bfm
+trie@+0x50（8 条，拔刀式）：
+  98 rm, 99 lm, 100 m, 101 bfm, 102 fbm, 103 bbfm, 104 ma, 105 bma
+
+共享字面量（通道 B 旁证）：104/105 三树同为 DAT_005c9e4c/PTR_DAT_005c9e3c；
+"m" = DAT_005c6838 与 FUN_004DCA80 的 'a' 追加路径共用同一指针。
+插入习语：FUN_00402570 string 构造 → (**(code **)(*trie + 8))(trie, key, id)。
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+4. 架势语义闭环（社区名互证 100%）
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+来源标注：PM=PoseMap(社区) / POS=P0.POS(原版) / EX=Input.txt(社区口径，二进制否决后采信的标定)。
+
+stance 0 = 持刀式：G91 裂顏擊[持刀狀態] m=90、G160 霸王落[持刀式] ffm=159、
+  G92 邪蛇/土龍 持刀掃腿 bm=91；转出 G89 持槍式[左A] lm=88、G90 拔刀式[下下A] bbm=89。
+stance 1 = 持槍式：G95 劈 m=94、G96 勾 fm=95、G97 輪 ffm=96、G98 回 bm=97、
+  G159 勾魂鎖[持槍式] bfm=158；转出 G93 持刀式[右A] rm=92、G94 收刀→拔刀式 bbm=93。
+stance 2 = 拔刀式：G101 破喉擊[拔刀狀態] m=100、G102 一閃 bfm=101、G103 一滅 fbm=102；
+  转出 G99 持刀式[右A] rm=98、G100 持槍式[左A] lm=99。
+ma=104（G104 死鬥）与 bma=105（G105 乾坤空踢）三树共享。
+六条转换技恰好每源架势各两条、指向另两态——与 7/9/8 分裂完全自洽。
+互证源：u1_chain_20261028_out.txt（act 组名）。
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+5. 选择器与组合解析（actor 身份判定）
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+选择器 = 单例 vft+4 = FUN_004E2770：
+  iVar1 = [param_2 vft+0x1D8]();
+  0 → FUN_0047A270(param_3) 后查 [this+4] 树；1 → [this+0x40]；2 → [this+0x50]；
+  其他 → 不构造输出串。
+组合解析 = 单例 vft+0x10 = FUN_004DCA80：
+  先以 (actor, actor+0xBA 双字=actor+0x2E8 串1区间, &out) 调选择器；
+  miss 哨兵 0x1869F 直通；扫 [this+0x28..0x2C] 命中且 [actor vft+0x170]()!=0 → out=1；
+  否则由 DAT_005C6838("m") 构造、当 [actor vft+0x130]()==0 || [actor+0xD8]==0
+  时追加 'a'(0x61)；二次选择器；次级映射走 [this+0xD 树] {key+0x10,value+0x14}
+  → out = value<<8|2。
+
+actor 身份 = controller 对象（0x5AA6A8 窗口），三条独立字节证据：
+  a) param_2 vft+0x1D8 必须返回 ∈{0,1,2}。全文件含 0x4D0E00 的 vtable 双字
+     仅 0x5AA880 = 0x5AA6A8+0x1D8（scan_ptr 单槽命中）；而 entity 家族
+     [0x5AA9F8+0x1D8]=0x4E40A0（mov eax,0xC8; ret 4，恒返 200）、
+     [0x5AA970+0x1D8]=0x4DD100（[this+0x28..0x2C) 数组线性查找，返回指针或 0）
+     ——均不可能，排除。
+  b) actor+0x2E8 串1区间与 controller 构造 FUN_004CABD0 内
+     lea edi,[esi+0x2E8]（@0x4CAC4A）吻合。
+  c) FUN_004D0E00（controller vft+0x1D8）读数链：
+     stance = [ ([this vft+0x94]()) + 0x8B4 ]，
+     controller vft+0x94 = FUN_004CE3C0 = [this+0x10] ? [this+0x10]-0x65C : 0
+     ——未绑定时返回 0 → 架势恒 0（持刀式默认）。
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+6. stance 字段通道全景（全 .text 穷举，逐形态零命中表）
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+位移 0x8B4 的全部立即数编址形态扫描结果：
+
+写（2 处）：
+  0x4DC72E  mov [ecx+0x8B4],eax   —— FUN_004DC720 守卫写器内部（见 §7：死槽）
+  0x4DBAB3  mov [esi+0x8B4],edi   —— FUN_004DB9E0 批量清零块 0x4DBA72–0x4DBAD7
+           （同块清 +0x84C、+0x810/0x814/0x818/0x81C/0x820/0x824/0x828、
+            +0x8AA(word)、+0x8AC、+0x8B0、+0x8B4、+0x8B8；edi=0）
+读（5 处）：
+  0x4D0E08  FUN_004D0E00 尾读（controller vft+0x1D8 架势读数）
+  0x4E2834  武器实例方法：entity=[X vft+0x94]() → push [entity+0x8B8] →
+            push [entity+0x8B4] → call [edi vft+0x78](entity, stance, +0x8B8)
+  0x4E2A77  同上孪生（尾部多 call 0x4DD0A0）
+  0x48F44A  FUN_0048F490：call 0x4E18C0（trie 单例）→ [vft+0x70] 查询 →
+            call [vft+0x78](esi, [esi+0x8B4], [esi+0x8B8])（0 回退）
+  0x4DC724  FUN_004DC720 自身比较读
+
+零命中形态（全部为 0）：
+  SIB 写(89/C7+SIB)、字节写(88/C6)、字写(66 89/66 C7)、字节/字读(8A/66 8B)、
+  FPU fstp(D9 98-9F)、F7 组、lea(8D)、add/sub/cmp 立即数(81 C0-C7/E8-EF/F8-FF、05/2D/3D)、
+  SIB 读 —— 位移 0x8B4 无一存在。
+内点指针假设检验：0x8B4-0x65C=0x258 处写 8 处，逐一解码均为他构字段
+  （0x4E7ED8 自链空表头、0x4ED49E vtable 0x5AB468 类清零、0x4F4A1F/0x4F4BD1
+   计时器子对象传 FUN_005499A0）；0x8B4-0x2E8=0x5CC 读写均 0。
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+7. 0x528-vs-0x8B4 悖论判决（修正前窗结论）
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+事实：
+  - vptr 0x5AA6A8 安装点全文件仅 2 处：0x4CAD53（构造 FUN_004CABD0 内
+    mov dword ptr [esi],0x5AA6A8 —— 位于 [this+0]）与 0x4CADC2（重初始化
+    FUN_004CADA0 内 mov [ebp],0x5AA6A8）。
+  - FUN_004CABD0 两处调用者的分配尺寸均为 0x528：0x4F1B3B push 0x528
+    （GetOrCreateController FUN_004F1AE0）、0x4F1DB3 push 0x528（FUN_004F1D90）。
+  - 槽 +0x39C/+0x3A0 的函数体（FUN_004DC960 读 [this+0x810/0x814/0x818]、
+    FUN_004DC720 写 [this+0x8B4]）对 0x528 对象越界。
+  - 调度面穷举：FF 90-97 A0 03 00 00（call [reg+0x3A0]）全 .text 恰 2 处
+    （0x4F4AF5、0x4F4C1C），均经 FUN_00487830 返回值（singleton，vptr
+    0x5A9068）→ 槽值 0x492B10；mov r32,[reg+0x3A0]（8B 80-BF）5 处均为
+    数据字段读（flag 测试/记录字段），无一处装入后调用；
+    scan_ptr：0x4DC720 全文件单双字 0x5AAA48。
+判决：0x5AA6A8 窗口槽 +0x39C/+0x3A0 为安装但不可达的死虚槽（vestigial）。
+  两函数体与 FUN_004DB9E0 批量清零字段集（+0x810..+0x8B8）吻合，
+  系为 entity 布局而写的实现被基类槽位继承进 controller vtable。
+修正：前窗"FUN_004F4AB0/FUN_004F4C00 经 controller vft+0x3A0=FUN_004DC720
+  设架势"不成立——实际经 singleton vft+0x3A0 = 前转器 0x492B10：
+  gate [singleton+0x22B8] → 0x44EF10（第二单例，全局 0x5E0330，0x98 B）→
+  0x470260（arg 0..3 跳表 0x470468，调 0x429DE0 配 +0x68/+0x6C/+0x70/+0x74 成员）。
+  该链语义（触发器效果应用，非 stance 写入）至此命名到前转深度。
+live 槽位镜像表（vtable 双字直读）：
+  singleton 0x5A9068：+0x94=0x496310  +0x1D8=0x492AA0  +0x39C=0x492AE0  +0x3A0=0x492B10
+  controller 0x5AA6A8：+0x94=0x4CE3C0 +0x1D8=0x4D0E00  +0x39C=0x4DC960  +0x3A0=0x4DC720
+  entity     0x5AA9F8：+0x94=0x4DD130 +0x1D8=0x4E40A0  +0x39C=0x4F5860  +0x3A0=0x4DCE50
+  entity 基  0x5AA970：+0x94=0x55C3F0 +0x1D8=0x4DD100  +0x39C=0x4E40D0  +0x3A0=0x4DCE20
+  警示：同槽位偏移跨类语义分家（0x1D8 在 controller=stance 读、在
+  0x5AA9F8=常数 200、在 0x5AA970=数组查找），禁止跨类槽位外推。
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+8. 开边界（明示，供后续轮次攻击）
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1) stance 非零运行时写入：§6 全部静态可枚举立即数编址形态下不存在。
+   剩余理论通道：(a) 数据驱动偏移的通用设值器（偏移存于数据段，
+   代码侧为 mov [reg+reg] 形态）；(b) 块拷贝搬运（rep movsd/memcpy
+   跨越该字段）。两者未枚举，静态单轮不可穷尽。
+2) [controller+0x10] 绑定点未定位。已知：FUN_004CE3C0 以 −0x65C 还原
+   目标对象；0x4DC050（0x5AA970 vft+0x10）为 add ecx,−0x65C 前转至
+   0x5565E0（= mov eax,[ecx+0x20]; ret，外层 +0x20 getter）——嵌套关系
+   存在但绑存指令未落位。
+3) FUN_004F4AB0/FUN_004F4C00 前转链末端 0x429DE0 的语义（效果应用细节）
+   未展开；FUN_004F4900 走 +0x39C(1)、FUN_004F4C00 三连
+   +0x39C(0)/+0x3A0(0)/+0x120。
+4) 0x5A9FE0 全文件零引用（非任何对象的 vptr）——mega-vtable 旧模型作废；
+   controller = 0x528 B 堆对象缓存于 [player+0x1A4]（0x4F1AE0：singleton
+   vft+0x118 查询 → new(0x528)@0x508B38 → 0x4CABD0@0x4F1B51 → 缓存
+   @0x4F1B62 → 接线 vft+0x38(singleton+0x20)、[esi vft+0x10]、
+   vft+0x3C(singleton+0x2180)）；FUN_004F4D50/D80 脚本入口读同一缓存。
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+9. 证据与工具清单
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+- 反编译：D:\MeteorRE\evidence\decomp_u3u4_004e1910.c / 004dca80.c /
+  004e2770.c / 004f4ab0.c / 004f4c00.c / 004f4900.c / 004f4d50.c /
+  004f4d80.c / 004d0e00.c / 004d0d00.c / 004ce3c0.c / 004e2bb0.c /
+  004e2be0.c / 0048f490.c / 004e1550.c / 004db940.c / 004f4850.c（41 文件全读）
+- 扫描器：D:\MeteorRE\tools\scan_call.py、scan_ptr.py、va.py（_pe.json 结构
+  {ib,ep,secs:[{name,va,vs,rs,pr,ch}]}）；本轮内联 capstone 解码器与
+  形态扫描（FF/mov-load/写读全形态/立即数算术/0x65C 全量 87 处/0x258/0x5CC）。
+- 语义互证：D:\MeteorRE\evidence\u1_chain_20261028_out.txt。
+- 本文件即本轮产物；抽样口径=无（全量扫描），每项结论附 VA 可直查。

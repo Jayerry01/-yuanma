@@ -1,0 +1,374 @@
+005c908f : 9a&g
+005c9098 : MGiI
+005c909d : wn>Jj
+005c90df : #.zf
+005c90ed : +o*7
+005c90ff : -RelayServer
+005c910c : Sound
+005c9114 : ModelQuality
+005c9124 : TexQuality
+005c9130 : Height
+005c9138 : Width
+005c9140 : DisplayColor
+005c9150 : Read error
+005c915c : config.ini
+005c9168 : level %d
+
+005c9174 : singlerec.ini
+005c9188 : level
+005c9190 : Agent
+005c9198 : 127.0.0.1
+005c91a4 : Single
+005c91ac : sn%02d
+005c91b4 : Scene Spec %d %d
+005c91c8 : WebNewsAddr.ini
+005c91d8 : testgameserver
+005c91e8 : Speed
+005c91f0 : AngAttack
+005c91fc : Attack
+005c9204 : Model
+005c920c : Scene
+005c9214 : Cheat Mode On!
+005c9228 :  been the host-client
+005c9240 : Warring!, Miss Character Map Position
+005c9268 : Warring!, Load new character fail !
+005c928c : d_base
+005c9294 : Command: 
+005c92a0 : T-Chat:
+005c92a8 : Chat:
+005c92b0 : V%4.2f.%d
+005c92bc : VipBlue
+005c92c4 : VipRed
+005c92cc : d_wpnR
+005c92d4 : Load Scene Fail! %s
+005c92e8 : cmodel\
+005c92f0 : ctexture
+005c92fc : %s%s.pst
+005c9308 : Load COL Fail! %s
+005c931c : %s%s.cob
+005c9328 : Load PVS Fail! %s
+005c933c : %s%s.pvb
+005c9348 : %s%s.des
+005c9354 : %s%s.gmc
+005c9360 : %s%s.gmb
+005c9370 : mmv\start.mv
+005c9380 : mmv\V%d.mv
+005c938c : mmv\B%d.mv
+005c9398 : music\menu.mp3
+005c93a8 : music\s%d.mp3
+005c93b8 : d_wpnL
+005c93c0 : Asnow.jpg
+005c93cc : s001.bmp
+005c93d8 : s002.bmp
+005c93e4 : UITexture
+005c93f0 : texture
+005c93f8 : SFX\effect.lst
+005c9408 : etexture\
+005c9414 : SFX\
+005c941c : TexturePatch
+005c942c : CModel
+005c9434 : MGStringtableHT.ini
+005c9448 : MGStringtable.ini
+005c945c : Waves\
+005c9464 : MMRun.wav
+005c9470 : MMSCore.wav
+005c947c : Cmodel\FlyBar.des
+005c9490 : Cmodel\FlyBar.gmc
+005c94a4 : cmodel\%sl.des
+005c94b4 : cmodel\%sl.gmc
+005c94c4 : cmodel\%sl.gmb
+005c94d4 : cmodel\%sb.des
+005c94e4 : cmodel\%sb.gmc
+005c94f4 : cmodel\%sb.gmb
+005c9504 : cmodel\%sa.des
+005c9514 : cmodel\%sa.gmc
+005c9524 : cmodel\%sa.gmb
+005c9534 : cmodel\%s.des
+005c9544 : cmodel\%s.gmc
+005c9554 : cmodel\%s.gmb
+005c9564 : ctexture\
+005c9570 : Server SpeedUp 
+005c9580 : %d %s 				%s
+
+005c9590 : debug.log
+005c959c : End.
+
+005c95a4 : %s Camp:%d State:%d Killed:%d Died:%d
+
+005c95cc : 
+%s Type:%d ATeam Win:%d BTeam Win:%d 		%s
+
+005c95f8 : Score.log
+005c9604 : pmodel\p%d.pos
+005c9614 : PscriptLib\jug.pst
+005c9628 : PscriptLib\chair.pst
+005c9640 : PscriptLib\desk.pst
+005c9654 : PscriptLib\box.pst
+005c9668 : PscriptLib\def.pst
+005c967c : common\character.act
+005c9694 : SOFTWARE\InterServ\Meteor
+005c96b0 : Command:
+005c96bc : .MCB
+005c96c4 : %s%s.*
+005c96cc : mface
+005c96d4 : shadow1
+005c96dc : shadow2
+005c96e4 : %s%d
+005c96f0 : BeKill hp%d
+005c96fc : BeHit
+005c9704 : Reborn hp%d
+005c9710 : debugS.log
+005c971c : 00test
+005c9724 : lose
+005c9730 : editai
+005c973c : adddummy2
+005c9748 : adddummy
+005c975c : wave
+005c9764 : dropw
+005c9770 : msense
+005c9778 : minverse
+005c9784 : pose
+005c978c : switch
+005c9794 : weapon
+005c979c : loadmyno
+005c97a8 : testserver
+005c97b4 : loadsnp
+005c97bc : moveto
+005c97c4 : elight
+005c97cc : play
+005c97d4 : joins
+005c97dc : shows
+005c97e4 : loadmych
+005c97f0 : loadch
+005c97f8 : dcam
+005c9800 : freecam
+005c9808 : loadsn
+005c9810 : cheat
+005c9818 : closeserver
+005c9824 : host
+005c982c : load
+005c9834 : save
+005c983c : replay
+005c9844 : serverinfo
+005c9850 : camera
+005c9858 : kill
+005c9864 : skick
+005c986c : kick
+005c9874 : quit
+005c987c : mnet
+005c9884 : position
+005c9890 : default.mrc
+005c989c : BaseAI
+005c98a4 : test!!!
+005c98ac : Switch Extra Camera.
+005c98c4 : Replaying... %02d:%02d:%02d
+005c98e0 : Recording...
+005c98f0 : Be Queried :
+005c9900 :  ANG:
+005c9908 :  DEF:
+005c9910 :  ATT:
+005c9918 :  HP:
+005c9920 : Position: %5.0f %5.0f %5.0f
+005c993c : %d R  R:%d Send:%d RSPack:%d Q:%d,LoseR:%d
+005c9968 : %d UR R:%d S:%d RP:%d SP:%d LoseR:%d
+005c9990 : R  R:%d Send:%d RSPack:%d Q:%d,LoseR:%d
+005c99b8 : UR R:%d S:%d RP:%d SP:%d LoseR:%d
+005c99dc : stexture\
+005c99e8 : .\waves
+005c99f0 : .\image
+005c99f8 : .\model
+005c9a00 : .\creature
+005c9a0c : .\texture
+005c9a18 : Guard hit!
+005c9a24 : RobotHit
+005c9a30 : behit!
+005c9a38 : dead
+005c9a40 : The End...
+005c9a4c : Track
+005c9a54 : Lock
+005c9a5c : GunHit
+005c9a6c : Level
+005c9a74 : Peace
+005c9a7c : PlayerHP
+005c9a88 : PlayerWeapon2
+005c9a98 : PlayerWeapon
+005c9aa8 : PlayerSpawnDir
+005c9ab8 : PlayerSpawn
+005c9ac4 : RoundTime
+005c9ad0 : Rule
+005c9ad8 : Load %s_.pst error
+005c9aec : Level\%s_.pst
+005c9afc : Load %s.wp error
+005c9b10 : OnStart
+005c9b18 : Load NPC %s.pst error
+005c9b30 : Team
+005c9b38 : Weapon2
+005c9b40 : Weapon
+005c9b48 : Name
+005c9b50 : Level\%s.pst
+005c9b60 : crouch
+005c9b6c : block
+005c9b74 : pause
+005c9b84 : %d %d %.3f
+
+005c9b90 : Link %d
+
+005c9b9c : Size %d
+
+005c9ba8 : Pos %.3f %.3f %.3f
+
+005c9bbc : Waypoints %d
+
+005c9bcc : Level\%s.wp
+005c9bd8 : Link
+005c9be0 : Size
+005c9bec : %s.wp
+005c9bf4 : flag
+005c9bfc : enemyvip
+005c9c0c : player
+005c9c14 : door
+005c9c1c : safe
+005c9c24 : Joystick.ini
+005c9c34 : Active Attack
+005c9c48 : HitAttack
+005c9c54 : Score
+005c9c5c : Fool
+005c9c64 : InitialCamera
+005c9c74 : Crouch
+005c9c7c : Cure
+005c9c84 : DropItem
+005c9c90 : LeftTurn
+005c9c9c : RightTurn
+005c9ca8 : Fake
+005c9cb0 : DropWeapon
+005c9cbc : Unlock
+005c9cc4 : SwitchWeapon
+005c9cd4 : Jump
+005c9cdc : Guard
+005c9ce4 : meteor.res
+005c9cf0 : Unknown
+005c9cf8 : *.mrc
+005c9d08 : .mrc
+005c9d10 : Meteor1.0
+005c9d1c : Load Pose Fail %s
+005c9d30 : Load Full Animation Fail %s
+005c9d4c : Load Single Animation Fail %s
+005c9d6c : %s.amc
+005c9d74 : Load Bone Fail %s
+005c9d88 : Load Skin 300 Fail %s
+005c9da0 : %s_300.skc
+005c9dac : Load Skin 800 Fail %s
+005c9dc4 : %s_800.skc
+005c9dd0 : Load Skin 1500 Fail %s
+005c9de8 : %s.amb
+005c9df0 : %s.bnc
+005c9df8 : %s.pos
+005c9e00 : %s.skc
+005c9e08 : ptexture\
+005c9e1c : lrfm
+005c9e24 : bffm
+005c9e50 : lrbm
+005c9e58 : fffm
+005c9e60 : bbfm
+005c9e68 : bfma
+005c9e74 : bbma
+005c9e7c : fbma
+005c9e84 : blrm
+005c9e94 : lrfbm
+005c9e9c : llma
+005c9ea4 : rrma
+005c9eac : ffma
+005c9eb4 : 0 Exit
+005c9ebc : common\character.amc
+005c9ed4 : common\character.amb
+005c9eec : pmodel\
+005c9ef8 : FrameWeight
+005c9f04 : BeginMorphdata
+005c9f14 : BeginPose
+005c9f20 :  Spart memory alloc error!
+005c9f3c :  VApart memory alloc error!
+005c9f58 : moveUV alloc error!
+005c9f6c : Dummy
+005c9f74 : file %s open error
+005c9f88 : ReBorn
+005c9f90 : FrontHit
+005c9f9c : performance counter Error!
+005c9fb8 : OnInit
+005c9fc0 : OnUpdate
+005c9fcc : Print
+005c9fd8 : Call
+005c9fe0 : UpdateAIAttrib
+005c9ff0 : RemoveNPC
+005c9ffc : AddNPC
+005ca004 : GameOver
+005ca010 : Rand
+005ca018 : SetTarget
+005ca024 : IsPerforming
+005ca034 : StopPerform
+005ca040 : PlayerPerform
+005ca050 : Perform
+005ca058 : ChangeBehavior
+005ca068 : DisableWaypoints
+005ca07c : EnableWaypoints
+005ca08c : GetGameTime
+005ca098 : GetLeader
+005ca0a4 : GetEnemy
+005ca0b0 : GetTeam
+005ca0b8 : GetMaxHP
+005ca0c4 : GetHP
+005ca0cc : GetSelf
+005ca0d4 : GetAnyChar
+005ca0e0 : GetChar
+005ca0e8 : dodge
+005ca0f0 : attacktarget
+005ca100 : patrol
+005ca108 : follow
+005ca114 : idle
+005ca11c : wait
+005ca124 : faceto
+005ca12c : guard
+005ca134 : waypoint
+005ca140 : char
+005ca148 :  
+	"
+005ca158 : .?AVout_of_range@std@@
+005ca170 : %d%s[%d]
+005ca17c : AttackGoal
+005ca188 : FastLook
+005ca194 : GetItem
+005ca19c : AvoidObstacle
+005ca1ac : Dodge
+005ca1b4 : Kill
+005ca1bc : Combat
+005ca1c4 : RandomRun
+005ca1d0 : Follow
+005ca1d8 : Patrol
+005ca1e0 : GotoGoal
+005ca1ec : Wait
+005ca1f4 : Init
+005ca1fc : lrfb
+005ca288 : Spawn
+005ca294 : Burst
+005ca29c : Look
+005ca2a4 : Attack3
+005ca2ac : Attack2
+005ca2b4 : Attack1
+005ca2bc : Think
+005ca2c4 : View
+005ca378 : %s %d
+005ca384 : attack
+005ca38c : jump
+005ca394 : aggress
+005ca5a0 : DirectSound
+005ca5ac : DirectSound3D
+005ca5bc : Patch\
+005ca5d8 : .?AVios@@
+005ca5f0 : .?AVistream@@
+005ca608 : .?AVifstream@@
+005ca620 : .?AVstreambuf@@
+005ca638 : .?AVfilebuf@@
+005ca650 : .?AVostream@@
+005ca668 : .?AVofstream@@
+005ca6a8 : .?AVtype_info@@
+005ca6d0 : acos
+005ca900 : asin

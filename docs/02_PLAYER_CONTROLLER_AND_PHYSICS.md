@@ -368,8 +368,9 @@ $$\vec{v}' = \vec{v} - (\vec{v} \cdot \vec{n}) \vec{n}$$
 ## 十一、MoveState 状态机（+0xDC）——静态派发表 × 动态 143K 事件实测（2026-10-28）
 
 > 数据来源：① 静态——跳跃派发表 `0x4CF75C`（12 项字节）、状态 setter `FUN_004D0500`、
-> 复位 `0x4CB0A7`；② 动态——Frida 事件级采集 143,550 事件（762 s 实游，
-> `dyncap/capture_log.jsonl`），SetState 观测 1,620 次、KeyEvent 3,369 次、
+> 复位 `0x4CB0A7`；② 动态——Frida 事件级采集 **144,101 事件**（追踪窗 899.9 s，
+> `dyncap/capture_log.jsonl`，2026-10-28 终读；旧引 143,550/762 s 系会话中途读数），
+> SetState 观测 1,620 次、KeyEvent 3,369 次、
 > 扇出 133,003 次。枚举正典：`src/include/meteor_types.h`（12 态）。
 
 ### 1. 状态枚举与观测分布
@@ -463,7 +464,7 @@ stateDiagram-v2
 | T14 | 攀爬蹬墙跳 | WallClimb(2) | 跳跃沿 | 蹬墙 BranchWallJump（282 经蹬墙方程）| 9 |
 
 **断言点**：迁移后 `moveState` 枚举值 + 迁移时刻的守卫条件（攻击双闸/能力常量/跳跃派发表）。
-**数据出处**：`dyncap/capture_log.jsonl`（143,550 事件，762 s 实游）。
+**数据出处**：`dyncap/capture_log.jsonl`（144,101 事件，追踪窗 899.9 s，2026-10-28 终读）。
 
 > ✅ **2026-10-27 对账标记已解除**：原始采集件已寻回并落账 `dyncap/capture_log.jsonl`
 > （144,101 行 JSONL，2026-10-28 03:23 会话终版，从 `_private\dyncap\` 拷入；

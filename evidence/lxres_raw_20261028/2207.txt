@@ -1,0 +1,242 @@
+资料详情
+可以使用文本编辑软件打开（列如：记事本）
+文件打开后可以看到一些字符串，推荐使用 big5 编码打开文件，文件中有一些官方的繁体注释！ 注释符是 # 号！
+文件中是一些 pose 片段，例如：
+Pose 0
+{
+source     1
+Start      1
+End        65
+LoopStart  1
+LoopEnd    65
+}
+以下为 pose 片段详解：
+Pose xx {} Pose 名， xx 为数字， 查看官方 pose 编号
+Pose xx {}
+Pose 名， xx 为数字， 查看官方 pose 编号
+source 动作库源， 0 为 character.amb 公共库， 1 为 pmodel 中的私有库（例如： p0.amb ）
+source
+动作库源， 0 为 character.amb 公共库， 1 为 pmodel 中的私有库（例如： p0.amb ）
+Start 动作库中的开始帧
+Start
+动作库中的开始帧
+End 动作库中的结束帧
+End
+动作库中的结束帧
+LoopStart 循环播放的开始帧（用于重复 pose ，如：站立，跑动）
+LoopStart
+循环播放的开始帧（用于重复 pose ，如：站立，跑动）
+LoopEnd 循环播放的结束帧（用于重复 pose ，如：站立，跑动）
+LoopEnd
+循环播放的结束帧（用于重复 pose ，如：站立，跑动）
+EffectType 特效类型，好像没用
+EffectType
+特效类型，好像没用
+EffectID 特效 ID ，特效需要在 effect.lst 文件中录入
+EffectID
+特效 ID ，特效需要在 effect.lst 文件中录入
+Link 链接 pose ，本 pose 播放完成后自动播放 Link 的 pose
+Link
+链接 pose ，本 pose 播放完成后自动播放 Link 的 pose
+Action/Blend 行动 / 混合片段，作用暂未发现有差别，本文将统一解说 作用：主要用于加速或减速播放 pose 片段， Action/Blend 片段中主要有三个参数： start 开始帧（不能超出 pose 的开始帧） end 结束帧（不能超出 pose 的结束帧） speed 播放速度，数字越大播放速度越快
+Action/Blend
+行动 / 混合片段，作用暂未发现有差别，本文将统一解说
+作用：主要用于加速或减速播放 pose 片段， Action/Blend 片段中主要有三个参数：
+start 开始帧（不能超出 pose 的开始帧）
+start
+开始帧（不能超出 pose 的开始帧）
+end 结束帧（不能超出 pose 的结束帧）
+end
+结束帧（不能超出 pose 的结束帧）
+speed 播放速度，数字越大播放速度越快
+speed
+播放速度，数字越大播放速度越快
+Attack 攻击，如果 pose 需要有攻击需要加上 Attack 参数如下： bone 带攻击的骨骼，多个骨骼用 , 号分开 weapon 武器 effect 特效 b 质心 bau Head 头部 bau Neck 颈部 bau Spine1 胸部 bau Spine 腹部 bad Pelvis 骨盆 bau L Clavicle 左肩 bau L UpperArm 左上臂 bau L Forearm 左前臂 bau L Hand 左手掌 bbu L Finger0 左母指 0 bbu L Finger01 左母指 1 bbu L Finger1 左中指 0 bbu L Finger11 左中指 1 bad L Thigh 左大腿 bad L Calf 左小腿 bad L Foot 左脚 bbd L Toe0 左脚趾 bau R Clavicle 右肩 bau R UpperArm 右上臂 bau R Forearm 右前臂 bau R Hand 右手掌 bbu R Finger0 右母指 0 bbu R Finger01 右母指 1 bbu R Finger1 右中指 0 bbu R Finger11 右中指 1 bad R Thigh 右大腿 bad R Calf 右小腿 bad R Foot 右脚 bbd R Toe0 右脚趾 d base 镜头 d top 头顶 d wpnL 左武器 L d wpnLP 左武器 LP d wpnR 右武器 R d wpnRP 右武器 RP Start 开始帧 End 结束帧 AttackType 攻击类型， 0 不破防， 1 破防 CheckFriend 攻击友军 DefenseValue 被防御僵持时间（ 0-255 ） DefenseMove 被防御击退距离（ 0-255 ） TargetValue 被攻击僵持时间（ 0-255 ） TargetMove 被攻击击退距离（ 0-255 ） TargetPose 被攻击时播放的 pose TargetPoseFront 被从正面攻击时播放的 pose TargetPoseBack 被从背面攻击时播放的 pose TargetPoseLeft 被从左面攻击时播放的 pose TargetPoseRight 被从右面攻击时播放的 pose
+Attack
+攻击，如果 pose 需要有攻击需要加上 Attack
+参数如下：
+bone 带攻击的骨骼，多个骨骼用 , 号分开 weapon 武器 effect 特效 b 质心 bau Head 头部 bau Neck 颈部 bau Spine1 胸部 bau Spine 腹部 bad Pelvis 骨盆 bau L Clavicle 左肩 bau L UpperArm 左上臂 bau L Forearm 左前臂 bau L Hand 左手掌 bbu L Finger0 左母指 0 bbu L Finger01 左母指 1 bbu L Finger1 左中指 0 bbu L Finger11 左中指 1 bad L Thigh 左大腿 bad L Calf 左小腿 bad L Foot 左脚 bbd L Toe0 左脚趾 bau R Clavicle 右肩 bau R UpperArm 右上臂 bau R Forearm 右前臂 bau R Hand 右手掌 bbu R Finger0 右母指 0 bbu R Finger01 右母指 1 bbu R Finger1 右中指 0 bbu R Finger11 右中指 1 bad R Thigh 右大腿 bad R Calf 右小腿 bad R Foot 右脚 bbd R Toe0 右脚趾 d base 镜头 d top 头顶 d wpnL 左武器 L d wpnLP 左武器 LP d wpnR 右武器 R d wpnRP 右武器 RP
+bone
+带攻击的骨骼，多个骨骼用 , 号分开
+weapon 武器
+weapon
+武器
+effect 特效
+effect
+特效
+b 质心
+b
+质心
+bau Head 头部
+bau Head
+头部
+bau Neck 颈部
+bau Neck
+颈部
+bau Spine1 胸部
+bau Spine1
+胸部
+bau Spine 腹部
+bau Spine
+腹部
+bad Pelvis 骨盆
+bad Pelvis
+骨盆
+bau L Clavicle 左肩
+bau L Clavicle
+左肩
+bau L UpperArm 左上臂
+bau L UpperArm
+左上臂
+bau L Forearm 左前臂
+bau L Forearm
+左前臂
+bau L Hand 左手掌
+bau L Hand
+左手掌
+bbu L Finger0 左母指 0
+bbu L Finger0
+左母指 0
+bbu L Finger01 左母指 1
+bbu L Finger01
+左母指 1
+bbu L Finger1 左中指 0
+bbu L Finger1
+左中指 0
+bbu L Finger11 左中指 1
+bbu L Finger11
+左中指 1
+bad L Thigh 左大腿
+bad L Thigh
+左大腿
+bad L Calf 左小腿
+bad L Calf
+左小腿
+bad L Foot 左脚
+bad L Foot
+左脚
+bbd L Toe0 左脚趾
+bbd L Toe0
+左脚趾
+bau R Clavicle 右肩
+bau R Clavicle
+右肩
+bau R UpperArm 右上臂
+bau R UpperArm
+右上臂
+bau R Forearm 右前臂
+bau R Forearm
+右前臂
+bau R Hand 右手掌
+bau R Hand
+右手掌
+bbu R Finger0 右母指 0
+bbu R Finger0
+右母指 0
+bbu R Finger01 右母指 1
+bbu R Finger01
+右母指 1
+bbu R Finger1 右中指 0
+bbu R Finger1
+右中指 0
+bbu R Finger11 右中指 1
+bbu R Finger11
+右中指 1
+bad R Thigh 右大腿
+bad R Thigh
+右大腿
+bad R Calf 右小腿
+bad R Calf
+右小腿
+bad R Foot 右脚
+bad R Foot
+右脚
+bbd R Toe0 右脚趾
+bbd R Toe0
+右脚趾
+d base 镜头
+d base
+镜头
+d top 头顶
+d top
+头顶
+d wpnL 左武器 L
+d wpnL
+左武器 L
+d wpnLP 左武器 LP
+d wpnLP
+左武器 LP
+d wpnR 右武器 R
+d wpnR
+右武器 R
+d wpnRP 右武器 RP
+d wpnRP
+右武器 RP
+Start 开始帧
+Start
+开始帧
+End 结束帧
+End
+结束帧
+AttackType 攻击类型， 0 不破防， 1 破防
+AttackType
+攻击类型， 0 不破防， 1 破防
+CheckFriend 攻击友军
+CheckFriend
+攻击友军
+DefenseValue 被防御僵持时间（ 0-255 ）
+DefenseValue
+被防御僵持时间（ 0-255 ）
+DefenseMove 被防御击退距离（ 0-255 ）
+DefenseMove
+被防御击退距离（ 0-255 ）
+TargetValue 被攻击僵持时间（ 0-255 ）
+TargetValue
+被攻击僵持时间（ 0-255 ）
+TargetMove 被攻击击退距离（ 0-255 ）
+TargetMove
+被攻击击退距离（ 0-255 ）
+TargetPose 被攻击时播放的 pose
+TargetPose
+被攻击时播放的 pose
+TargetPoseFront 被从正面攻击时播放的 pose
+TargetPoseFront
+被从正面攻击时播放的 pose
+TargetPoseBack 被从背面攻击时播放的 pose
+TargetPoseBack
+被从背面攻击时播放的 pose
+TargetPoseLeft 被从左面攻击时播放的 pose
+TargetPoseLeft
+被从左面攻击时播放的 pose
+TargetPoseRight 被从右面攻击时播放的 pose
+TargetPoseRight
+被从右面攻击时播放的 pose
+Drag 武器拖影 参数： Start 开始帧 End 结束帧 Time 拖影显示时长 Color 拖影颜色
+Drag
+武器拖影
+参数：
+Start 开始帧
+Start
+开始帧
+End 结束帧
+End
+结束帧
+Time 拖影显示时长
+Time
+拖影显示时长
+Color 拖影颜色
+Color
+拖影颜色
+NextPose 连招，在这片段范围内可以连接下一招式 参数： Start 开始帧 End 结束帧 Time 衔接时长
+NextPose
+连招，在这片段范围内可以连接下一招式
+参数：
+Start 开始帧
+Start
+开始帧
+End 结束帧
+End
+结束帧
+Time 衔接时长
+Time
+衔接时长

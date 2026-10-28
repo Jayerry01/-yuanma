@@ -1,0 +1,10 @@
+undefined4 * __thiscall FUN_00592c40(undefined4 *param_1,undefined4 param_2,undefined4 param_3)
+
+{
+  FUN_005778a0(param_2,param_3);
+  *param_1 = &PTR_FUN_005b36b0;
+  param_1[1] = 0x13;
+  return param_1;
+}
+
+

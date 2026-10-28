@@ -1,0 +1,37 @@
+Addr	SemanticName	ConfirmedFact	Inference	OpenUnknown
+0x00430560	Str_HexChar_To_Nibble	判断 '0'..'9', 'a'..'f', 'A'..'F', 左移 4 位返回十六进制半字节	ASCII 十六进制字符转半字节算子 (如颜色码 #RRGGBB 解析)	需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x00430980	Mem_Buffer_Release_Type2	iVar1 = *param_1, 若等于 2 则 free(param_1[1])	带引用/类型标志的动态内存缓冲区类型判别析构器	需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x00430BB0	Math_Random_Range_Test	rand() & 0x80000003, param_1 <= param_3 <= param_2 范围测试	带概率掩码的区间命中随机数判定	需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x00430DC0	Geom_Matrix4x4_Transform	0x4315e0 循环 0x10 dword 矩阵乘法; 0x431900 4x4 逆矩阵/行列式; 0x430dc0 倒数 1.0/param_5 齐次矩阵构建	4x4 几何变换矩阵相乘、求逆与齐次透视投影构建	需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x00430E80	Geom_Vector3_Cross_Normal	0x430e80 叉积 p1[1]=p2[2]*p3[0]-p3[2]*p2[0]; 0x430f30 向量相减后计算三角形法线并归一化	3D 几何向量叉积与三角形表面法向量快速计算器	需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x00430F30	Geom_Vector3_Cross_Normal	0x430e80 叉积 p1[1]=p2[2]*p3[0]-p3[2]*p2[0]; 0x430f30 向量相减后计算三角形法线并归一化	3D 几何向量叉积与三角形表面法向量快速计算器	需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x004315E0	Geom_Matrix4x4_Transform	0x4315e0 循环 0x10 dword 矩阵乘法; 0x431900 4x4 逆矩阵/行列式; 0x430dc0 倒数 1.0/param_5 齐次矩阵构建	4x4 几何变换矩阵相乘、求逆与齐次透视投影构建	需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x00431900	Geom_Matrix4x4_Transform	0x4315e0 循环 0x10 dword 矩阵乘法; 0x431900 4x4 逆矩阵/行列式; 0x430dc0 倒数 1.0/param_5 齐次矩阵构建	4x4 几何变换矩阵相乘、求逆与齐次透视投影构建	需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x00431A80	UI_Math_Subsystem_Helper	callees=[2] ins=37 被调 unique=1: 00431B00=FUN_00431b00 pseudo=: void FUN_00431a80(undefined4 *param_1,	UI 与数学辅助函数	需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x00431E20	UI_Math_Subsystem_Helper	callees=[2] ins=36 被调 unique=1: 00430C40 pseudo=: void FUN_00431e20(int param_1,int para	UI 与数学辅助函数	需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x00432390	UI_Math_Subsystem_Helper	callees=[2] ins=35 被调 unique=1: 0058E140=FUN_0058e140 pseudo=: { | puVar1 = (undefined4 *)0x0; | loca	UI 与数学辅助函数	需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x00432510	UI_Math_Subsystem_Helper	callees=[2] ins=66 被调 unique=3: 00432910 004324A0 00410C60 pseudo=: { | local_4 = 0; | if (param_1 == (int	UI 与数学辅助函数	需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x004325F0	UI_Math_Subsystem_Helper	callees=[2] ins=34 被调 unique=0: pseudo=: bool FUN_004325f0(short param_1,int pa	UI 与数学辅助函数	需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x004327B0	Audio_Mixer_Control	tMIXERCONTROLDETAILS, tagMIXERLINECONTROLSA, tagMIXERLINEA, winmm 音量调节	Win32 底层硬件混音器主音量/声道控制与查询	需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x00432BF0	DDraw_SurfaceDesc_Init_B	local_7c[0] = 0x7c (sizeof DDSURFACEDESC2 = 124B), 循环 0x1f 清零	DirectDraw 字体/UI 表面描述体初始化	需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x004337F0	UI_Math_Subsystem_Helper	callees=[2] ins=59 被调 unique=0: pseudo=: void FUN_004337f0(HANDLE param_1,int *	UI 与数学辅助函数	需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x00433AD0	Font_Texture_Cache_Alloc	DAT_005d9b74 / DAT_005d9b78 缓冲区通过 0x5089fd (free) 与 0x5095f5 (malloc) 管理	字体纹理缓存表面全局双缓冲区的重配与释放	需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x00433C80	Font_Texture_UV_Map	若 param_1 为 0 则回退至 DAT_005d9b74, 访问偏移 0x30/0x34 纹理 UV 坐标	字形贴图 UV 纹理坐标映射与图元裁剪	需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x00433D10	Font_Texture_UV_Map	若 param_1 为 0 则回退至 DAT_005d9b74, 访问偏移 0x30/0x34 纹理 UV 坐标	字形贴图 UV 纹理坐标映射与图元裁剪	需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x00433E00	UI_Math_Subsystem_Helper	callees=[2] ins=49 被调 unique=1: 0041F6B0=FUN_0041f6b0 pseudo=: void FUN_00433e00(int *param_1,undefin	UI 与数学辅助函数	需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x00434310	UI_Math_Subsystem_Helper	callees=[2] ins=33 被调 unique=5: 00433AD0 00432BF0 00433DA0 pseudo=: void FUN_00434310(undefined4 param_1,u	UI 与数学辅助函数	需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x00434380	UI_Math_Subsystem_Helper	callees=[2] ins=47 被调 unique=0: pseudo=: { | if ((param_1 == 0) && (param_1 = D	UI 与数学辅助函数	需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x00434600	Font_Texture_Cache_Alloc	DAT_005d9b74 / DAT_005d9b78 缓冲区通过 0x5089fd (free) 与 0x5095f5 (malloc) 管理	字体纹理缓存表面全局双缓冲区的重配与释放	需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x004348B0	UI_Math_Subsystem_Helper	callees=[2] ins=98 被调 unique=2: 004345A0 00433D10 pseudo=: void FUN_004348b0(int *param_1,int *pa	UI 与数学辅助函数	需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x00434B10	Font_Texture_UV_Map	若 param_1 为 0 则回退至 DAT_005d9b74, 访问偏移 0x30/0x34 纹理 UV 坐标	字形贴图 UV 纹理坐标映射与图元裁剪	需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x00434E00	GDI_Glyph_Metrics_Calc	MAT2 MStack_24, _GLYPHMETRICS _Stack_14, 获取字形外边框度量与步长	Windows GDI TrueType 字体轮廓度量计算与字距测量	需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x00435120	UI_Math_Subsystem_Helper	callees=[2] ins=44 被调 unique=1: 00548400 pseudo=: { | HDC unaff_ESI; | piVar2 = (int *)t	UI 与数学辅助函数	需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x004351A0	UI_Math_Subsystem_Helper	callees=[2] ins=38 被调 unique=3: 00507A30=FUN_00507a30 0050 pseudo=: { | void *pvStack_c; | local_4 = 0xfff	UI 与数学辅助函数	需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x00443D20	UI_Widget_Hierarchy_Dispatch	param_1+0x38 虚表子控件分派, operator_new(0x508b38) 控件分配并构造 0x470480	UI 控件树层次遍历、事件冒泡分发与组件构造析构	需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x00443EC0	UI_Widget_Hierarchy_Dispatch	param_1+0x38 虚表子控件分派, operator_new(0x508b38) 控件分配并构造 0x470480	UI 控件树层次遍历、事件冒泡分发与组件构造析构	需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x0044DA00	UI_HUD_Transform_Render	1.0 / DAT_005c7b60 屏幕高宽比变换, param_1+0x2c4 HUD 坐标, 连续 15 次 0x463070 变换	UI 与战斗 HUD 图元屏幕自适应矩阵变换与渲染	需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x0044DED0	UI_HUD_Transform_Render	1.0 / DAT_005c7b60 屏幕高宽比变换, param_1+0x2c4 HUD 坐标, 连续 15 次 0x463070 变换	UI 与战斗 HUD 图元屏幕自适应矩阵变换与渲染	需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x0044EE60	UI_Widget_Hierarchy_Dispatch	param_1+0x38 虚表子控件分派, operator_new(0x508b38) 控件分配并构造 0x470480	UI 控件树层次遍历、事件冒泡分发与组件构造析构	需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x0044EF10	UI_Widget_Hierarchy_Dispatch	param_1+0x38 虚表子控件分派, operator_new(0x508b38) 控件分配并构造 0x470480	UI 控件树层次遍历、事件冒泡分发与组件构造析构	需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x0044F110	UI_HUD_Transform_Render	1.0 / DAT_005c7b60 屏幕高宽比变换, param_1+0x2c4 HUD 坐标, 连续 15 次 0x463070 变换	UI 与战斗 HUD 图元屏幕自适应矩阵变换与渲染	需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x0045A770	Config_ServerCfg_Parser	fopen(s_server_cfg_005c794c, 'r'), fgets 逐行解析 server.cfg 网络参数	多人对战服务器配置文件 server.cfg 加载解析器	需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位

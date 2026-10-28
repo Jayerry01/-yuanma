@@ -1,0 +1,860 @@
+================================================================================
+U6 批次D 台账 — 101-300B 未命名函数语义化 825/825（2026-10-28）
+================================================================================
+范围   : evidence/semqueue_v14_20261028.csv band=D_101-300B status=UNNAMED
+共 825 个函数，合计 143,460 B
+方法   : 五类证据扫描 tools/semD_scan_20261028.py → evidence/semD_dump_20261028.txt
+（4,287 行；按全库 4,701 权威符号库注入 + 聚出 23 个同画像组）
++ 801 份 Ghidra 伪码 tools/semD_extract_20261028.py → evidence/semD_pseudo/<addr>.c
+由 9 个子系统簇按 REAP 规范全量判读落地
+================================================================================
+
+--- 簇 A：渲染器底层/软光栅/D3D（共 59 个函数）---
+0x004022B0 | Mem_Buffer_Fill_Zero           | 确证: 调用 0x50915b / 0x50920a (CRT 优化内存搬运/置零)，双胞胎 128B | 推断: 定长渲染顶点/状态缓冲区清零置位 | 待定: 需结合运行时 D3D 设备类型与硬件加速开关验证分支
+0x00402420 | Mem_Buffer_Fill_Zero           | 确证: 调用 0x50915b / 0x50920a (CRT 优化内存搬运/置零)，双胞胎 128B | 推断: 定长渲染顶点/状态缓冲区清零置位 | 待定: 需结合运行时 D3D 设备类型与硬件加速开关验证分支
+0x00402FFA | Mem_Buffer_Fill_Zero           | 确证: 调用 0x50915b / 0x50920a (CRT 优化内存搬运/置零)，双胞胎 128B | 推断: 定长渲染顶点/状态缓冲区清零置位 | 待定: 需结合运行时 D3D 设备类型与硬件加速开关验证分支
+0x00403F10 | Render_Float_To_Fixed_Math     | 确证: 通过 0x509980 (__ftol) 转换浮点颜色/UV/顶点坐标，写入 0x45/0x46 槽 | 推断: 渲染器顶点几何与纹理坐标定点化量化 | 待定: 需结合运行时 D3D 设备类型与硬件加速开关验证分支
+0x00405560 | Render_Float_To_Fixed_Math     | 确证: 通过 0x509980 (__ftol) 转换浮点颜色/UV/顶点坐标，写入 0x45/0x46 槽 | 推断: 渲染器顶点几何与纹理坐标定点化量化 | 待定: 需结合运行时 D3D 设备类型与硬件加速开关验证分支
+0x00407670 | Camera_Frustum_Clip_2D         | 确证: param_2==param_4 && param_3==param_5 边界相等判断，连通 0x430c40/0x4315e0 视口坐标变换 | 推断: 2D 视口裁剪矩形判断与屏幕坐标映射 | 待定: 需结合运行时 D3D 设备类型与硬件加速开关验证分支
+0x00407B50 | Camera_Frustum_Clip_2D         | 确证: param_2==param_4 && param_3==param_5 边界相等判断，连通 0x430c40/0x4315e0 视口坐标变换 | 推断: 2D 视口裁剪矩形判断与屏幕坐标映射 | 待定: 需结合运行时 D3D 设备类型与硬件加速开关验证分支
+0x00408AD0 | Camera_Frustum_Clip_2D         | 确证: param_2==param_4 && param_3==param_5 边界相等判断，连通 0x430c40/0x4315e0 视口坐标变换 | 推断: 2D 视口裁剪矩形判断与屏幕坐标映射 | 待定: 需结合运行时 D3D 设备类型与硬件加速开关验证分支
+0x004100B0 | Camera_Frustum_Clip_2D         | 确证: param_2==param_4 && param_3==param_5 边界相等判断，连通 0x430c40/0x4315e0 视口坐标变换 | 推断: 2D 视口裁剪矩形判断与屏幕坐标映射 | 待定: 需结合运行时 D3D 设备类型与硬件加速开关验证分支
+0x00415330 | Render_Float_To_Fixed_Math     | 确证: 通过 0x509980 (__ftol) 转换浮点颜色/UV/顶点坐标，写入 0x45/0x46 槽 | 推断: 渲染器顶点几何与纹理坐标定点化量化 | 待定: 需结合运行时 D3D 设备类型与硬件加速开关验证分支
+0x004153E0 | D3D_Device_Context_Setup       | 确证: DAT_005c4308/0x5c431c 设备标志，param_1+0x75c vtable 虚表偏移 0x18 调用，_malloc(0x5c431c) | 推断: Direct3D 设备上下文初始化与渲染表面绑定 | 待定: 需结合运行时 D3D 设备类型与硬件加速开关验证分支
+0x00415490 | D3D_Device_Context_Setup       | 确证: DAT_005c4308/0x5c431c 设备标志，param_1+0x75c vtable 虚表偏移 0x18 调用，_malloc(0x5c431c) | 推断: Direct3D 设备上下文初始化与渲染表面绑定 | 待定: 需结合运行时 D3D 设备类型与硬件加速开关验证分支
+0x00415540 | D3D_Device_Context_Setup       | 确证: DAT_005c4308/0x5c431c 设备标志，param_1+0x75c vtable 虚表偏移 0x18 调用，_malloc(0x5c431c) | 推断: Direct3D 设备上下文初始化与渲染表面绑定 | 待定: 需结合运行时 D3D 设备类型与硬件加速开关验证分支
+0x004155C0 | Render_Float_To_Fixed_Math     | 确证: 通过 0x509980 (__ftol) 转换浮点颜色/UV/顶点坐标，写入 0x45/0x46 槽 | 推断: 渲染器顶点几何与纹理坐标定点化量化 | 待定: 需结合运行时 D3D 设备类型与硬件加速开关验证分支
+0x004156C0 | D3D_Device_Context_Setup       | 确证: DAT_005c4308/0x5c431c 设备标志，param_1+0x75c vtable 虚表偏移 0x18 调用，_malloc(0x5c431c) | 推断: Direct3D 设备上下文初始化与渲染表面绑定 | 待定: 需结合运行时 D3D 设备类型与硬件加速开关验证分支
+0x00417850 | Raster_SpanDraw_Gouraud        | 确证: 0x407c10/0x40fb30 跨距填色，0x2000000/0x5000000 渲染标志 | 推断: 高氏着色/纹理扫描线跨距填色内层 | 待定: 需结合运行时 D3D 设备类型与硬件加速开关验证分支
+0x00417960 | Raster_SpanDraw_Gouraud        | 确证: 0x407c10/0x40fb30 跨距填色，0x2000000/0x5000000 渲染标志 | 推断: 高氏着色/纹理扫描线跨距填色内层 | 待定: 需结合运行时 D3D 设备类型与硬件加速开关验证分支
+0x00419720 | Mesh_VertexBuffer_Grow         | 确证: DAT_007e0eb8 < iVar2*0x20 则 realloc (0x5099a7), 步长 32B 顶点步长 | 推断: 动态网格顶点缓冲区自动扩容与格式对齐 | 待定: 需结合运行时 D3D 设备类型与硬件加速开关验证分支
+0x00419830 | Mesh_VertexBuffer_Grow         | 确证: DAT_007e0eb8 < iVar2*0x20 则 realloc (0x5099a7), 步长 32B 顶点步长 | 推断: 动态网格顶点缓冲区自动扩容与格式对齐 | 待定: 需结合运行时 D3D 设备类型与硬件加速开关验证分支
+0x00419C30 | Render_Float_To_Fixed_Math     | 确证: 通过 0x509980 (__ftol) 转换浮点颜色/UV/顶点坐标，写入 0x45/0x46 槽 | 推断: 渲染器顶点几何与纹理坐标定点化量化 | 待定: 需结合运行时 D3D 设备类型与硬件加速开关验证分支
+0x00419CE0 | Render_Float_To_Fixed_Math     | 确证: 通过 0x509980 (__ftol) 转换浮点颜色/UV/顶点坐标，写入 0x45/0x46 槽 | 推断: 渲染器顶点几何与纹理坐标定点化量化 | 待定: 需结合运行时 D3D 设备类型与硬件加速开关验证分支
+0x00419DB0 | Render_Float_To_Fixed_Math     | 确证: 通过 0x509980 (__ftol) 转换浮点颜色/UV/顶点坐标，写入 0x45/0x46 槽 | 推断: 渲染器顶点几何与纹理坐标定点化量化 | 待定: 需结合运行时 D3D 设备类型与硬件加速开关验证分支
+0x0041A040 | Geom_Plane_HalfSpaceTest       | 确证: 点积 dot = p1*p3 + p1[1]*p3[1] + p1[2]*p3[2] 与平面常数 param_4 比较 | 推断: 3D 视锥/多边形裁剪单面半空间测试 | 待定: 需结合运行时 D3D 设备类型与硬件加速开关验证分支
+0x0041A400 | Mesh_VertexBuffer_Grow         | 确证: DAT_007e0eb8 < iVar2*0x20 则 realloc (0x5099a7), 步长 32B 顶点步长 | 推断: 动态网格顶点缓冲区自动扩容与格式对齐 | 待定: 需结合运行时 D3D 设备类型与硬件加速开关验证分支
+0x0041B090 | DDraw_SurfaceDesc_Init         | 确证: local_7c[0] = 0x7c (sizeof DDSURFACEDESC2 = 124B)，清零并填入 31 槽结构体 | 推断: DirectDraw 表面描述体初始化与锁存 | 待定: 需结合运行时 D3D 设备类型与硬件加速开关验证分支
+0x0041B180 | DDraw_SurfaceDesc_Init         | 确证: local_7c[0] = 0x7c (sizeof DDSURFACEDESC2 = 124B)，清零并填入 31 槽结构体 | 推断: DirectDraw 表面描述体初始化与锁存 | 待定: 需结合运行时 D3D 设备类型与硬件加速开关验证分支
+0x0041F390 | DDraw_SurfaceDesc_Init         | 确证: local_7c[0] = 0x7c (sizeof DDSURFACEDESC2 = 124B)，清零并填入 31 槽结构体 | 推断: DirectDraw 表面描述体初始化与锁存 | 待定: 需结合运行时 D3D 设备类型与硬件加速开关验证分支
+0x0041F450 | DDraw_SurfaceDesc_Init         | 确证: local_7c[0] = 0x7c (sizeof DDSURFACEDESC2 = 124B)，清零并填入 31 槽结构体 | 推断: DirectDraw 表面描述体初始化与锁存 | 待定: 需结合运行时 D3D 设备类型与硬件加速开关验证分支
+0x0041F7F0 | Pixel_FormatPack_16bpp         | 确证: DAT_005c45b0==5(565/555) 通道位移 0x7e28a8/0x7e3350/0x7e339c 打包; DAT_007eabe0==0x10 | 推断: 16bpp RGB565/555 像素打包与跨距拷贝 | 待定: 需结合运行时 D3D 设备类型与硬件加速开关验证分支
+0x0041F900 | Pixel_FormatPack_16bpp         | 确证: DAT_005c45b0==5(565/555) 通道位移 0x7e28a8/0x7e3350/0x7e339c 打包; DAT_007eabe0==0x10 | 推断: 16bpp RGB565/555 像素打包与跨距拷贝 | 待定: 需结合运行时 D3D 设备类型与硬件加速开关验证分支
+0x0041FD10 | GDI_Text_Glyph_Raster          | 确证: HDC param_1, 字符编码 0x88 (GBK/Shift-JIS), 0x5095f5 _malloc, 调用 0x410a60 | 推断: GDI 字体字形轮廓提取与位图缓冲构建 | 待定: 需结合运行时 D3D 设备类型与硬件加速开关验证分支
+0x0041FE00 | GDI_Text_Glyph_Raster          | 确证: HDC param_1, 字符编码 0x88 (GBK/Shift-JIS), 0x5095f5 _malloc, 调用 0x410a60 | 推断: GDI 字体字形轮廓提取与位图缓冲构建 | 待定: 需结合运行时 D3D 设备类型与硬件加速开关验证分支
+0x004200F0 | DDraw_ClipRect_Blit            | 确证: param_4*2 跨距，DAT_005d5a0c+0x6xx 视口边界剪裁 (x<0 / y<0 偏移修正) | 推断: 带视口边界裁剪的 DirectDraw 2D 矩形位图 blit | 待定: 需结合运行时 D3D 设备类型与硬件加速开关验证分支
+0x004201A0 | DDraw_ClipRect_Blit            | 确证: param_4*2 跨距，DAT_005d5a0c+0x6xx 视口边界剪裁 (x<0 / y<0 偏移修正) | 推断: 带视口边界裁剪的 DirectDraw 2D 矩形位图 blit | 待定: 需结合运行时 D3D 设备类型与硬件加速开关验证分支
+0x00420290 | DDraw_ClipRect_Blit            | 确证: param_4*2 跨距，DAT_005d5a0c+0x6xx 视口边界剪裁 (x<0 / y<0 偏移修正) | 推断: 带视口边界裁剪的 DirectDraw 2D 矩形位图 blit | 待定: 需结合运行时 D3D 设备类型与硬件加速开关验证分支
+0x004206B0 | DDraw_ClipRect_Blit            | 确证: param_4*2 跨距，DAT_005d5a0c+0x6xx 视口边界剪裁 (x<0 / y<0 偏移修正) | 推断: 带视口边界裁剪的 DirectDraw 2D 矩形位图 blit | 待定: 需结合运行时 D3D 设备类型与硬件加速开关验证分支
+0x00421B60 | Render_Subsystem_Helper        | 确证: callees=[2] ins=50 被调 unique=1: 0050A0E0=_strncmp pseudo=: { | void *local_14; | puStack_c = &DAT | 推断: 渲染底层支撑辅助函数 | 待定: 需结合运行时 D3D 设备类型与硬件加速开关验证分支
+0x00421D00 | GDI_Text_Glyph_Raster          | 确证: HDC param_1, 字符编码 0x88 (GBK/Shift-JIS), 0x5095f5 _malloc, 调用 0x410a60 | 推断: GDI 字体字形轮廓提取与位图缓冲构建 | 待定: 需结合运行时 D3D 设备类型与硬件加速开关验证分支
+0x00423330 | Raster_Span_Dispatcher         | 确证: DAT_007e28a4+4/8, _DAT_007e2ba4=param_2, 调用 0x4239f0/0x428240 | 推断: 软光栅多边形跨距渲染主分派器 | 待定: 需结合运行时 D3D 设备类型与硬件加速开关验证分支
+0x00423910 | Raster_Span_Dispatcher         | 确证: DAT_007e28a4+4/8, _DAT_007e2ba4=param_2, 调用 0x4239f0/0x428240 | 推断: 软光栅多边形跨距渲染主分派器 | 待定: 需结合运行时 D3D 设备类型与硬件加速开关验证分支
+0x00428920 | Raster_CalcEdgeSlope           | 确证: DAT_007e0ea0/DAT_007e0e9c 边缘跨距与插值斜率 dx/dy, dz/dy 增量计算 | 推断: 软光栅边缘扫描线梯度步长算子 | 待定: 需结合运行时 D3D 设备类型与硬件加速开关验证分支
+0x004289B0 | Raster_CalcEdgeSlope           | 确证: DAT_007e0ea0/DAT_007e0e9c 边缘跨距与插值斜率 dx/dy, dz/dy 增量计算 | 推断: 软光栅边缘扫描线梯度步长算子 | 待定: 需结合运行时 D3D 设备类型与硬件加速开关验证分支
+0x00428A20 | Raster_CalcEdgeSlope           | 确证: DAT_007e0ea0/DAT_007e0e9c 边缘跨距与插值斜率 dx/dy, dz/dy 增量计算 | 推断: 软光栅边缘扫描线梯度步长算子 | 待定: 需结合运行时 D3D 设备类型与硬件加速开关验证分支
+0x00428AF0 | Raster_CalcEdgeSlope           | 确证: DAT_007e0ea0/DAT_007e0e9c 边缘跨距与插值斜率 dx/dy, dz/dy 增量计算 | 推断: 软光栅边缘扫描线梯度步长算子 | 待定: 需结合运行时 D3D 设备类型与硬件加速开关验证分支
+0x00429640 | Render_State_Reset_Flush       | 确证: DAT_007dda04 0x20 个 dword 清零; DAT_005c679c=1; DAT_007ddf40 遍历释放 | 推断: 渲染流水线矩阵状态重置与纹理缓存刷盘 | 待定: 需结合运行时 D3D 设备类型与硬件加速开关验证分支
+0x00429920 | Render_State_Reset_Flush       | 确证: DAT_007dda04 0x20 个 dword 清零; DAT_005c679c=1; DAT_007ddf40 遍历释放 | 推断: 渲染流水线矩阵状态重置与纹理缓存刷盘 | 待定: 需结合运行时 D3D 设备类型与硬件加速开关验证分支
+0x00429990 | Font_TextureSurface_Mgr        | 确证: DAT_005d5b04 _malloc(0x60) 描述体，连通 0x434ac0/0x434600 字体光栅器，被模型与UI调用48/23/27/49次 | 推断: 动态文字纹理表面分配/光栅化渲染管理器 | 待定: 需结合运行时 D3D 设备类型与硬件加速开关验证分支
+0x00429AA0 | Font_TextureSurface_Mgr        | 确证: DAT_005d5b04 _malloc(0x60) 描述体，连通 0x434ac0/0x434600 字体光栅器，被模型与UI调用48/23/27/49次 | 推断: 动态文字纹理表面分配/光栅化渲染管理器 | 待定: 需结合运行时 D3D 设备类型与硬件加速开关验证分支
+0x00429B80 | Font_TextureSurface_Mgr        | 确证: DAT_005d5b04 _malloc(0x60) 描述体，连通 0x434ac0/0x434600 字体光栅器，被模型与UI调用48/23/27/49次 | 推断: 动态文字纹理表面分配/光栅化渲染管理器 | 待定: 需结合运行时 D3D 设备类型与硬件加速开关验证分支
+0x00429C30 | Font_TextureSurface_Mgr        | 确证: DAT_005d5b04 _malloc(0x60) 描述体，连通 0x434ac0/0x434600 字体光栅器，被模型与UI调用48/23/27/49次 | 推断: 动态文字纹理表面分配/光栅化渲染管理器 | 待定: 需结合运行时 D3D 设备类型与硬件加速开关验证分支
+0x0042A130 | Render_State_Reset_Flush       | 确证: DAT_007dda04 0x20 个 dword 清零; DAT_005c679c=1; DAT_007ddf40 遍历释放 | 推断: 渲染流水线矩阵状态重置与纹理缓存刷盘 | 待定: 需结合运行时 D3D 设备类型与硬件加速开关验证分支
+0x0042A300 | Render_State_Reset_Flush       | 确证: DAT_007dda04 0x20 个 dword 清零; DAT_005c679c=1; DAT_007ddf40 遍历释放 | 推断: 渲染流水线矩阵状态重置与纹理缓存刷盘 | 待定: 需结合运行时 D3D 设备类型与硬件加速开关验证分支
+0x0042B010 | Texture_Path_Enumerator        | 确证: 0x509f8f fopen, FindFirstFileA(WIN32_FIND_DATAA local_140), 路径拆分拼接与大小写归一化 | 推断: 纹理材质文件遍历、路径解析与存在性校验 | 待定: 需结合运行时 D3D 设备类型与硬件加速开关验证分支
+0x0042B080 | Texture_Path_Enumerator        | 确证: 0x509f8f fopen, FindFirstFileA(WIN32_FIND_DATAA local_140), 路径拆分拼接与大小写归一化 | 推断: 纹理材质文件遍历、路径解析与存在性校验 | 待定: 需结合运行时 D3D 设备类型与硬件加速开关验证分支
+0x0042B190 | Texture_Path_Enumerator        | 确证: 0x509f8f fopen, FindFirstFileA(WIN32_FIND_DATAA local_140), 路径拆分拼接与大小写归一化 | 推断: 纹理材质文件遍历、路径解析与存在性校验 | 待定: 需结合运行时 D3D 设备类型与硬件加速开关验证分支
+0x0042BCC0 | Render_State_Reset_Flush       | 确证: DAT_007dda04 0x20 个 dword 清零; DAT_005c679c=1; DAT_007ddf40 遍历释放 | 推断: 渲染流水线矩阵状态重置与纹理缓存刷盘 | 待定: 需结合运行时 D3D 设备类型与硬件加速开关验证分支
+0x0042CFC0 | Texture_Path_Enumerator        | 确证: 0x509f8f fopen, FindFirstFileA(WIN32_FIND_DATAA local_140), 路径拆分拼接与大小写归一化 | 推断: 纹理材质文件遍历、路径解析与存在性校验 | 待定: 需结合运行时 D3D 设备类型与硬件加速开关验证分支
+0x0042D030 | Texture_Path_Enumerator        | 确证: 0x509f8f fopen, FindFirstFileA(WIN32_FIND_DATAA local_140), 路径拆分拼接与大小写归一化 | 推断: 纹理材质文件遍历、路径解析与存在性校验 | 待定: 需结合运行时 D3D 设备类型与硬件加速开关验证分支
+0x0042D1B0 | Render_Float_To_Fixed_Math     | 确证: 通过 0x509980 (__ftol) 转换浮点颜色/UV/顶点坐标，写入 0x45/0x46 槽 | 推断: 渲染器顶点几何与纹理坐标定点化量化 | 待定: 需结合运行时 D3D 设备类型与硬件加速开关验证分支
+
+--- 簇 B：UI/文字/DirectDraw/2D数学（共 36 个函数）---
+0x00430560 | Str_HexChar_To_Nibble          | 确证: 判断 '0'..'9', 'a'..'f', 'A'..'F', 左移 4 位返回十六进制半字节 | 推断: ASCII 十六进制字符转半字节算子 (如颜色码 #RRGGBB 解析) | 待定: 需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x00430980 | Mem_Buffer_Release_Type2       | 确证: iVar1 = *param_1, 若等于 2 则 free(param_1[1]) | 推断: 带引用/类型标志的动态内存缓冲区类型判别析构器 | 待定: 需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x00430BB0 | Math_Random_Range_Test         | 确证: rand() & 0x80000003, param_1 <= param_3 <= param_2 范围测试 | 推断: 带概率掩码的区间命中随机数判定 | 待定: 需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x00430DC0 | Geom_Matrix4x4_Transform       | 确证: 0x4315e0 循环 0x10 dword 矩阵乘法; 0x431900 4x4 逆矩阵/行列式; 0x430dc0 倒数 1.0/param_5 齐次矩阵构建 | 推断: 4x4 几何变换矩阵相乘、求逆与齐次透视投影构建 | 待定: 需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x00430E80 | Geom_Vector3_Cross_Normal      | 确证: 0x430e80 叉积 p1[1]=p2[2]*p3[0]-p3[2]*p2[0]; 0x430f30 向量相减后计算三角形法线并归一化 | 推断: 3D 几何向量叉积与三角形表面法向量快速计算器 | 待定: 需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x00430F30 | Geom_Vector3_Cross_Normal      | 确证: 0x430e80 叉积 p1[1]=p2[2]*p3[0]-p3[2]*p2[0]; 0x430f30 向量相减后计算三角形法线并归一化 | 推断: 3D 几何向量叉积与三角形表面法向量快速计算器 | 待定: 需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x004315E0 | Geom_Matrix4x4_Transform       | 确证: 0x4315e0 循环 0x10 dword 矩阵乘法; 0x431900 4x4 逆矩阵/行列式; 0x430dc0 倒数 1.0/param_5 齐次矩阵构建 | 推断: 4x4 几何变换矩阵相乘、求逆与齐次透视投影构建 | 待定: 需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x00431900 | Geom_Matrix4x4_Transform       | 确证: 0x4315e0 循环 0x10 dword 矩阵乘法; 0x431900 4x4 逆矩阵/行列式; 0x430dc0 倒数 1.0/param_5 齐次矩阵构建 | 推断: 4x4 几何变换矩阵相乘、求逆与齐次透视投影构建 | 待定: 需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x00431A80 | UI_Math_Subsystem_Helper       | 确证: callees=[2] ins=37 被调 unique=1: 00431B00=FUN_00431b00 pseudo=: void FUN_00431a80(undefined4 *param_1, | 推断: UI 与数学辅助函数 | 待定: 需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x00431E20 | UI_Math_Subsystem_Helper       | 确证: callees=[2] ins=36 被调 unique=1: 00430C40 pseudo=: void FUN_00431e20(int param_1,int para | 推断: UI 与数学辅助函数 | 待定: 需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x00432390 | UI_Math_Subsystem_Helper       | 确证: callees=[2] ins=35 被调 unique=1: 0058E140=FUN_0058e140 pseudo=: { | puVar1 = (undefined4 *)0x0; | loca | 推断: UI 与数学辅助函数 | 待定: 需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x00432510 | UI_Math_Subsystem_Helper       | 确证: callees=[2] ins=66 被调 unique=3: 00432910 004324A0 00410C60 pseudo=: { | local_4 = 0; | if (param_1 == (int | 推断: UI 与数学辅助函数 | 待定: 需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x004325F0 | UI_Math_Subsystem_Helper       | 确证: callees=[2] ins=34 被调 unique=0: pseudo=: bool FUN_004325f0(short param_1,int pa | 推断: UI 与数学辅助函数 | 待定: 需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x004327B0 | Audio_Mixer_Control            | 确证: tMIXERCONTROLDETAILS, tagMIXERLINECONTROLSA, tagMIXERLINEA, winmm 音量调节 | 推断: Win32 底层硬件混音器主音量/声道控制与查询 | 待定: 需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x00432BF0 | DDraw_SurfaceDesc_Init_B       | 确证: local_7c[0] = 0x7c (sizeof DDSURFACEDESC2 = 124B), 循环 0x1f 清零 | 推断: DirectDraw 字体/UI 表面描述体初始化 | 待定: 需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x004337F0 | UI_Math_Subsystem_Helper       | 确证: callees=[2] ins=59 被调 unique=0: pseudo=: void FUN_004337f0(HANDLE param_1,int * | 推断: UI 与数学辅助函数 | 待定: 需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x00433AD0 | Font_Texture_Cache_Alloc       | 确证: DAT_005d9b74 / DAT_005d9b78 缓冲区通过 0x5089fd (free) 与 0x5095f5 (malloc) 管理 | 推断: 字体纹理缓存表面全局双缓冲区的重配与释放 | 待定: 需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x00433C80 | Font_Texture_UV_Map            | 确证: 若 param_1 为 0 则回退至 DAT_005d9b74, 访问偏移 0x30/0x34 纹理 UV 坐标 | 推断: 字形贴图 UV 纹理坐标映射与图元裁剪 | 待定: 需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x00433D10 | Font_Texture_UV_Map            | 确证: 若 param_1 为 0 则回退至 DAT_005d9b74, 访问偏移 0x30/0x34 纹理 UV 坐标 | 推断: 字形贴图 UV 纹理坐标映射与图元裁剪 | 待定: 需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x00433E00 | UI_Math_Subsystem_Helper       | 确证: callees=[2] ins=49 被调 unique=1: 0041F6B0=FUN_0041f6b0 pseudo=: void FUN_00433e00(int *param_1,undefin | 推断: UI 与数学辅助函数 | 待定: 需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x00434310 | UI_Math_Subsystem_Helper       | 确证: callees=[2] ins=33 被调 unique=5: 00433AD0 00432BF0 00433DA0 pseudo=: void FUN_00434310(undefined4 param_1,u | 推断: UI 与数学辅助函数 | 待定: 需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x00434380 | UI_Math_Subsystem_Helper       | 确证: callees=[2] ins=47 被调 unique=0: pseudo=: { | if ((param_1 == 0) && (param_1 = D | 推断: UI 与数学辅助函数 | 待定: 需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x00434600 | Font_Texture_Cache_Alloc       | 确证: DAT_005d9b74 / DAT_005d9b78 缓冲区通过 0x5089fd (free) 与 0x5095f5 (malloc) 管理 | 推断: 字体纹理缓存表面全局双缓冲区的重配与释放 | 待定: 需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x004348B0 | UI_Math_Subsystem_Helper       | 确证: callees=[2] ins=98 被调 unique=2: 004345A0 00433D10 pseudo=: void FUN_004348b0(int *param_1,int *pa | 推断: UI 与数学辅助函数 | 待定: 需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x00434B10 | Font_Texture_UV_Map            | 确证: 若 param_1 为 0 则回退至 DAT_005d9b74, 访问偏移 0x30/0x34 纹理 UV 坐标 | 推断: 字形贴图 UV 纹理坐标映射与图元裁剪 | 待定: 需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x00434E00 | GDI_Glyph_Metrics_Calc         | 确证: MAT2 MStack_24, _GLYPHMETRICS _Stack_14, 获取字形外边框度量与步长 | 推断: Windows GDI TrueType 字体轮廓度量计算与字距测量 | 待定: 需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x00435120 | UI_Math_Subsystem_Helper       | 确证: callees=[2] ins=44 被调 unique=1: 00548400 pseudo=: { | HDC unaff_ESI; | piVar2 = (int *)t | 推断: UI 与数学辅助函数 | 待定: 需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x004351A0 | UI_Math_Subsystem_Helper       | 确证: callees=[2] ins=38 被调 unique=3: 00507A30=FUN_00507a30 0050 pseudo=: { | void *pvStack_c; | local_4 = 0xfff | 推断: UI 与数学辅助函数 | 待定: 需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x00443D20 | UI_Widget_Hierarchy_Dispatch   | 确证: param_1+0x38 虚表子控件分派, operator_new(0x508b38) 控件分配并构造 0x470480 | 推断: UI 控件树层次遍历、事件冒泡分发与组件构造析构 | 待定: 需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x00443EC0 | UI_Widget_Hierarchy_Dispatch   | 确证: param_1+0x38 虚表子控件分派, operator_new(0x508b38) 控件分配并构造 0x470480 | 推断: UI 控件树层次遍历、事件冒泡分发与组件构造析构 | 待定: 需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x0044DA00 | UI_HUD_Transform_Render        | 确证: 1.0 / DAT_005c7b60 屏幕高宽比变换, param_1+0x2c4 HUD 坐标, 连续 15 次 0x463070 变换 | 推断: UI 与战斗 HUD 图元屏幕自适应矩阵变换与渲染 | 待定: 需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x0044DED0 | UI_HUD_Transform_Render        | 确证: 1.0 / DAT_005c7b60 屏幕高宽比变换, param_1+0x2c4 HUD 坐标, 连续 15 次 0x463070 变换 | 推断: UI 与战斗 HUD 图元屏幕自适应矩阵变换与渲染 | 待定: 需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x0044EE60 | UI_Widget_Hierarchy_Dispatch   | 确证: param_1+0x38 虚表子控件分派, operator_new(0x508b38) 控件分配并构造 0x470480 | 推断: UI 控件树层次遍历、事件冒泡分发与组件构造析构 | 待定: 需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x0044EF10 | UI_Widget_Hierarchy_Dispatch   | 确证: param_1+0x38 虚表子控件分派, operator_new(0x508b38) 控件分配并构造 0x470480 | 推断: UI 控件树层次遍历、事件冒泡分发与组件构造析构 | 待定: 需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x0044F110 | UI_HUD_Transform_Render        | 确证: 1.0 / DAT_005c7b60 屏幕高宽比变换, param_1+0x2c4 HUD 坐标, 连续 15 次 0x463070 变换 | 推断: UI 与战斗 HUD 图元屏幕自适应矩阵变换与渲染 | 待定: 需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+0x0045A770 | Config_ServerCfg_Parser        | 确证: fopen(s_server_cfg_005c794c, 'r'), fgets 逐行解析 server.cfg 网络参数 | 推断: 多人对战服务器配置文件 server.cfg 加载解析器 | 待定: 需结合游戏运行期 HUD 皮肤样式与字体配置复核实际渲染槽位
+
+--- 簇 C：几何模型/网格/动作ACT/骨骼（共 153 个函数）---
+0x00461480 | Model_Node_Object_Alloc        | 确证: operator_new(0x508b38) 动态分配节点，调用 0x44d020 / 0x4614f0 构造 | 推断: 场景图几何模型节点对象堆内存分配与初始化 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00461510 | GDI_LogFont_Create             | 确证: LOGFONTA local_3c, CreateFontIndirectA 构造 Windows 字体句柄 HFONT | 推断: GDI 逻辑字体属性结构填充与字体对象创建 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00461770 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=74 被调 unique=1: 005095F5=_malloc pseudo=: FUN_00461770(int param_1,UINT param_2, | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00461B90 | Model_Node_Tree_Traverse       | 确证: 遍历 *(param_1 + 0x14) 子节点双向链表，调用 *(param_1 + 0x54) 节点虚函数驱动 | 推断: 3D 骨骼模型/场景节点树层次遍历与变换更新分派 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00461E50 | Model_Mesh_Material_Bind       | 确证: 调用 0x429990/0x429aa0 文本表面管理器，绑定网格材质贴图槽位 | 推断: 网格材质索引与纹理通道槽位动态绑定 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00461FB0 | Model_Mesh_Material_Bind       | 确证: 调用 0x429990/0x429aa0 文本表面管理器，绑定网格材质贴图槽位 | 推断: 网格材质索引与纹理通道槽位动态绑定 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00462050 | Model_Node_Tree_Traverse       | 确证: 遍历 *(param_1 + 0x14) 子节点双向链表，调用 *(param_1 + 0x54) 节点虚函数驱动 | 推断: 3D 骨骼模型/场景节点树层次遍历与变换更新分派 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x004620E0 | Model_Node_Tree_Traverse       | 确证: 遍历 *(param_1 + 0x14) 子节点双向链表，调用 *(param_1 + 0x54) 节点虚函数驱动 | 推断: 3D 骨骼模型/场景节点树层次遍历与变换更新分派 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x004625E0 | Model_Node_Tree_Traverse       | 确证: 遍历 *(param_1 + 0x14) 子节点双向链表，调用 *(param_1 + 0x54) 节点虚函数驱动 | 推断: 3D 骨骼模型/场景节点树层次遍历与变换更新分派 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00463120 | Model_Node_Tree_Release        | 确证: 调用子节点虚析构函数 (**(param_1 + 0x20))(1), 0x402e90 节点内存回收 | 推断: 模型场景节点树及其子节点递归销毁与内存回收 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x004631D0 | Model_Node_Tree_Release        | 确证: 调用子节点虚析构函数 (**(param_1 + 0x20))(1), 0x402e90 节点内存回收 | 推断: 模型场景节点树及其子节点递归销毁与内存回收 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00463450 | Model_Node_Object_Alloc        | 确证: operator_new(0x508b38) 动态分配节点，调用 0x44d020 / 0x4614f0 构造 | 推断: 场景图几何模型节点对象堆内存分配与初始化 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x004634C0 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=74 被调 unique=1: 0050ABA0 x4 pseudo=: void FUN_004634c0(char *param_1) | { | | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00463610 | Geom_Vertex_Float_To_Fixed     | 确证: 调用 0x509980 (__ftol) 转换顶点浮点坐标与法线，属于 n=17 纯浮点画像组 | 推断: 模型顶点坐标与法线浮点量化及定点化截断 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x004636D0 | Geom_Vertex_Float_To_Fixed     | 确证: 调用 0x509980 (__ftol) 转换顶点浮点坐标与法线，属于 n=17 纯浮点画像组 | 推断: 模型顶点坐标与法线浮点量化及定点化截断 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00463B30 | Geom_Mesh_Vector_Insert        | 确证: 调用 0x403490 (vector 扩容) 与 0x5092c0 (memcpy), 属于 n=21 画像组 | 推断: 模型网格顶点/索引/面片 STL vector 动态扩容与插入 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00463CB0 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=31 被调 unique=2: 00508B38=operator_new 004A pseudo=: { | void *pvVar1; | void *local_c; | l | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00463F00 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=46 被调 unique=1: 00505F60=FUN_00505f60 pseudo=: { | bool bVar6; | piVar1 = *(int **)(p | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00466340 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=49 被调 unique=1: 00466C60 pseudo=: FUN_00466340(int param_1,undefined4 pa | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x004663C0 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=43 被调 unique=1: 00466D50 pseudo=: { | uVar4 = param_3; | local_4 = param | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x004666A0 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=52 被调 unique=1: 00466D30 pseudo=: void __thiscall FUN_004666a0(int param | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00466A10 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=49 被调 unique=1: 00466D70=FUN_00466d70 pseudo=: { | uVar3 = in_stack_00000018; | local | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00466A90 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=67 被调 unique=6: 00460900 00460910=FUN_0046 pseudo=: { | void *local_c; | puStack_8 = &LAB_ | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00466B90 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=56 被调 unique=5: 00429CB0 x2 0046EC20 00460 pseudo=: void __fastcall FUN_00466b90(undefined | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00466C60 | Geom_Mesh_Vector_Insert        | 确证: 调用 0x403490 (vector 扩容) 与 0x5092c0 (memcpy), 属于 n=21 画像组 | 推断: 模型网格顶点/索引/面片 STL vector 动态扩容与插入 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00467160 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=59 被调 unique=1: 00402BF0=FUN_00402bf0 pseudo=: { | void *local_c; | puStack_8 = &LAB_ | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00467270 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=61 被调 unique=1: 004663C0 pseudo=: { | bool bVar6; | piVar4 = (int *)**(i | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00467840 | Geom_Vertex_Float_To_Fixed     | 确证: 调用 0x509980 (__ftol) 转换顶点浮点坐标与法线，属于 n=17 纯浮点画像组 | 推断: 模型顶点坐标与法线浮点量化及定点化截断 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x004690A0 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=50 被调 unique=1: 00402E90=FUN_00402e90 pseudo=: { | iVar3 = 0; | piVar4 = (int *)**(in | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00469640 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=120 被调 unique=2: 00429DE0 0046EF50 pseudo=: { | iVar2 = param_2; | iVar4 = 0; | if | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00469840 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=38 被调 unique=1: 00469F50 x2 pseudo=: { | if ((param_2 < 0.0) && (1.0 < para | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00469AC0 | Geom_Vertex_Float_To_Fixed     | 确证: 调用 0x509980 (__ftol) 转换顶点浮点坐标与法线，属于 n=17 纯浮点画像组 | 推断: 模型顶点坐标与法线浮点量化及定点化截断 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00469F70 | Geom_Vertex_Float_To_Fixed     | 确证: 调用 0x509980 (__ftol) 转换顶点浮点坐标与法线，属于 n=17 纯浮点画像组 | 推断: 模型顶点坐标与法线浮点量化及定点化截断 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x0046A090 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=35 被调 unique=0: pseudo=: { | fVar1 = (float)param_2 + *(float * | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x0046A510 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=34 被调 unique=2: 00508B38=operator_new 004A pseudo=: bool __thiscall FUN_0046a510(int param | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x0046A670 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=64 被调 unique=7: 00509980=__ftol 00429990 0 pseudo=: { | puVar5 = (undefined4 *)(param_1 +  | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x0046B860 | Geom_Mesh_Vector_Insert        | 确证: 调用 0x403490 (vector 扩容) 与 0x5092c0 (memcpy), 属于 n=21 画像组 | 推断: 模型网格顶点/索引/面片 STL vector 动态扩容与插入 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x0046C050 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=42 被调 unique=1: 00429CB0 x2 pseudo=: void __fastcall FUN_0046c050(undefined | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x0046CB00 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=69 被调 unique=1: 00429CB0 pseudo=: void __fastcall FUN_0046cb00(undefined | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x0046DBC0 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=48 被调 unique=1: 00429CB0 x2 pseudo=: void __fastcall FUN_0046dbc0(undefined | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x004705A0 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=34 被调 unique=6: 00463070 00461E50 004618C0 pseudo=: { | if (*(int *)(param_1 + 0x78) == 0) | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x004732A0 | Geom_Mesh_Vector_Insert        | 确证: 调用 0x403490 (vector 扩容) 与 0x5092c0 (memcpy), 属于 n=21 画像组 | 推断: 模型网格顶点/索引/面片 STL vector 动态扩容与插入 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x004736B0 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=51 被调 unique=0: pseudo=: void __thiscall FUN_004736b0(u_long *p | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00473730 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=75 被调 unique=2: 005092C0=FUN_005092c0 0040 pseudo=: void __thiscall FUN_00473730(u_long *p | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x004737D0 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=32 被调 unique=6: 004765D0=FUN_004765d0 0047 pseudo=: void FUN_004737d0(void) | { | if (DAT_ | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00473910 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=87 被调 unique=4: 00473D60 x11 00473D80 x7 0 pseudo=: void FUN_00473910(undefined4 *param_1) | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00473CA0 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=40 被调 unique=2: 00473A20=FUN_00473a20 0043 pseudo=: { | apiStack_44[0] = DAT_005e0370; | p | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x0047411E | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=46 被调 unique=0: pseudo=: | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00474610 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=81 被调 unique=0: pseudo=: void FUN_00474610(void) | { | DAT_005e | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00474760 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=63 被调 unique=15: 0052C580 0052BF30 0052BF2 pseudo=: { | DWORD DStack_2c; | FUN_0052c580(); | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x004748D0 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=64 被调 unique=0: pseudo=: { | uVar4 = 0; | if (DAT_005e04d4 != 0 | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x004749D0 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=69 被调 unique=0: pseudo=: void FUN_004749d0(float *param_1,int p | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00475090 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=59 被调 unique=3: 00474E90 x2 00475C50 00475 pseudo=: void FUN_00475090(undefined4 *param_1, | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00475150 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=58 被调 unique=2: 00474E90 x2 004754F0 pseudo=: void FUN_00475150(undefined4 *param_1, | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00475400 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=88 被调 unique=2: 00475090 x12 00475220=FUN_ pseudo=: void FUN_00475400(undefined4 param_1,u | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00475700 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=84 被调 unique=0: pseudo=: { | bool bVar4; | iVar2 = 2; | bVar4 = | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00475840 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=103 被调 unique=0: pseudo=: { | bool bVar4; | iVar1 = 2; | bVar4 = | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00475980 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=74 被调 unique=6: 00475590=FUN_00475590 0047 pseudo=: void FUN_00475980(undefined4 *param_1) | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00475C50 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=54 被调 unique=0: pseudo=: { | if ((int)param_1 < 0) { | param_1  | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00475F90 | Geom_Matrix4x3_Bone_Eval       | 确证: 调用 0x477d30 骨骼矩阵槽位运算，计算 4x3 仿射变换 | 推断: 角色骨骼动画 4x3 局部到全局空间矩阵变换估算 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00476220 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=35 被调 unique=3: 005095F5=_malloc 004030D0  pseudo=: { | void *pvVar1; | pvVar1 = _malloc(0 | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00476D10 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=23 被调 unique=0: pseudo=: { | local_2c[0] = 1; | local_2c[1] = 2 | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00476E80 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=43 被调 unique=0: pseudo=: void FUN_00476e80(float *param_1,float | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00477180 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=34 被调 unique=0: pseudo=: FUN_00477180(undefined4 *param_1,undef | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00477220 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=73 被调 unique=0: pseudo=: void __fastcall FUN_00477220(float *pa | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x004777B0 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=63 被调 unique=0: pseudo=: float10 FUN_004777b0(int param_1,int p | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00477F40 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=60 被调 unique=0: pseudo=: void __thiscall FUN_00477f40(int param | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00477FF0 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=60 被调 unique=0: pseudo=: void __thiscall FUN_00477ff0(float *pa | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x004780A0 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=60 被调 unique=0: pseudo=: void __thiscall FUN_004780a0(float *pa | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x004781D0 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=72 被调 unique=2: 00477200 00476F00=FUN_0047 pseudo=: void __thiscall FUN_004781d0(float *pa | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00478960 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=55 被调 unique=3: 00477B90=FUN_00477b90 0047 pseudo=: void FUN_00478960(float *param_1) | {  | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00478DD0 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=58 被调 unique=1: 00478DD0 pseudo=: { | if ((param_1 != 0) && (param_1 < 0 | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00478EC0 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=100 被调 unique=6: 0050ABA0 x2 00593634=FUN_ pseudo=: { | if ((param_2 < 0) && (4 < param_2) | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00478FD0 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=80 被调 unique=6: 0050ABA0 x2 00593634=FUN_0 pseudo=: { | uVar5 = 0xffffffff; | pcVar7 = par | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x004796A0 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=88 被调 unique=1: 00478C10 pseudo=: { | bool bVar10; | pbVar6 = &DAT_005e0 | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00479E30 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=79 被调 unique=1: 00478BB0=FUN_00478bb0 pseudo=: { | bool bVar10; | pbVar7 = &DAT_005e0 | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00479EE0 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=42 被调 unique=2: 00478BC0 00478C20 pseudo=: { | if (param_1 < 2000) { | if ((param | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00479F80 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=32 被调 unique=0: pseudo=: { | _DAT_005e0494 = param_1; | if (199 | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x0047A590 | Geom_Mesh_Vector_Insert        | 确证: 调用 0x403490 (vector 扩容) 与 0x5092c0 (memcpy), 属于 n=21 画像组 | 推断: 模型网格顶点/索引/面片 STL vector 动态扩容与插入 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x0047A660 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=79 被调 unique=6: 00402BF0=FUN_00402bf0 0050 pseudo=: { | void *local_10; | puStack_c = &LAB | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x0047B270 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=29 被调 unique=2: 00508B38=operator_new 0047 pseudo=: void FUN_0047b270(void) | { | void *pv | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x0047B7D0 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=49 被调 unique=3: 004781D0 x2 00477200 00476 pseudo=: FUN_0047b7d0(int param_1,undefined4 pa | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x0047BDE0 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=45 被调 unique=2: 004DB820 0047BF10=FUN_0047 pseudo=: void __thiscall FUN_0047bde0(int param | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x0047BE70 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=58 被调 unique=3: 0047BD50 0047BA50 00402E90 pseudo=: void __thiscall FUN_0047be70(int param | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x0047C1E0 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=96 被调 unique=3: 004819B0 x3 004819A0 x2 00 pseudo=: { | FUN_0047c1c0(); | if (param_2 != 0 | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x0047C2E0 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=74 被调 unique=5: 00474E60 00475570 00475560 pseudo=: void __thiscall FUN_0047c2e0(int param | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x0047D8B0 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=77 被调 unique=2: 0047C1E0 0047D2F0=FUN_0047 pseudo=: FUN_0047d8b0(undefined4 param_1,undefi | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x0047D990 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=83 被调 unique=4: 00481D00 x4 00475C50 x2 00 pseudo=: void __thiscall FUN_0047d990(int param | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x0047DA70 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=34 被调 unique=1: 0047C1E0 pseudo=: { | uStack_8 = param_1; | local_14 = 0 | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x0047DDB0 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=45 被调 unique=4: 00481B30 00481E70 00481D40 pseudo=: void __thiscall FUN_0047ddb0(float par | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x0047DE90 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=66 被调 unique=6: 00481B30 x4 00481B90 x4 00 pseudo=: void __fastcall FUN_0047de90(int param | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x0047EB90 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=16 被调 unique=0: pseudo=: { | local_2c[0] = 1; | local_2c[1] = 2 | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x0047ED40 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=47 被调 unique=0: pseudo=: void __fastcall FUN_0047ed40(float *pa | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x0047F190 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=30 被调 unique=1: 0052BF60 x2 pseudo=: { | FUN_0052bf60(1,param_1 + 0x80); |  | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x0047F3D0 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=64 被调 unique=1: 0047F480 pseudo=: { | bool bVar6; | pcVar1 = (char *)FUN | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x0047F780 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=38 被调 unique=5: 0052C070 0052EB20=FUN_0052 pseudo=: FUN_0047f780(int param_1,undefined4 pa | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x0047F800 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=29 被调 unique=5: 0052C070 0052F630=FUN_0052 pseudo=: { | FUN_0052c070(*(undefined4 *)(param | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x0047F870 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=29 被调 unique=5: 0052C070 0052F630=FUN_0052 pseudo=: { | FUN_0052c070(*(undefined4 *)(param | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x0047F8E0 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=33 被调 unique=5: 0052C070 0052F5A0 0052EB20 pseudo=: FUN_0047f8e0(int param_1,undefined4 pa | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x0047F960 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=33 被调 unique=5: 0052C070 0052F5A0 0052EB20 pseudo=: FUN_0047f960(int param_1,undefined4 pa | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x0047F9E0 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=44 被调 unique=3: 0052C070 x2 0052F7A0 x2 00 pseudo=: void __thiscall FUN_0047f9e0(int param | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00480160 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=61 被调 unique=1: 00480220 x4 pseudo=: { | iVar3 = 0; | puVar4 = &DAT_005c819 | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00480240 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=38 被调 unique=1: 004802E0 pseudo=: void FUN_00480240(void) | { | apuStack | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00480330 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=44 被调 unique=1: 0047F340 pseudo=: { | piVar1 = DAT_005e0d28; | puVar3 =  | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00480B00 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=99 被调 unique=6: 0050A2D3 x2 0050A118=FUN_0 pseudo=: { | void *pvVar2; | ushort uStack_6; | | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00480C10 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=82 被调 unique=2: 00593634=FUN_00593634 0048 pseudo=: { | bool bVar8; | iVar4 = -(int)param_ | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00481150 | Geom_Mesh_Vector_Insert        | 确证: 调用 0x403490 (vector 扩容) 与 0x5092c0 (memcpy), 属于 n=21 画像组 | 推断: 模型网格顶点/索引/面片 STL vector 动态扩容与插入 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00481230 | Geom_Mesh_Vector_Insert        | 确证: 调用 0x403490 (vector 扩容) 与 0x5092c0 (memcpy), 属于 n=21 画像组 | 推断: 模型网格顶点/索引/面片 STL vector 动态扩容与插入 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x004812D0 | Geom_Mesh_Vector_Insert        | 确证: 调用 0x403490 (vector 扩容) 与 0x5092c0 (memcpy), 属于 n=21 画像组 | 推断: 模型网格顶点/索引/面片 STL vector 动态扩容与插入 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x004813B0 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=80 被调 unique=4: 00402BF0=FUN_00402bf0 0040 pseudo=: { | void *local_10; | puStack_c = &LAB | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00481850 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=76 被调 unique=3: 00481840=thunk_FUN_005089f pseudo=: void __fastcall FUN_00481850(int param | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x004819B0 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=93 被调 unique=4: 00508B38=operator_new 0048 pseudo=: void * __thiscall FUN_004819b0(int *pa | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00481D60 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=90 被调 unique=0: pseudo=: FUN_00481d60(int param_1,int param_2,u | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00481E70 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=40 被调 unique=0: pseudo=: FUN_00481e70(int param_1,int param_2,u | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x004820C0 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=30 被调 unique=0: pseudo=: void __fastcall FUN_004820c0(int param | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00483970 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=35 被调 unique=0: pseudo=: { | iVar1 = 0; | if (0 < *(int *)(para | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x004839E0 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=100 被调 unique=3: 00482DD0=FUN_00482dd0 004 pseudo=: { | puStack_1c = local_10; | iVar1 = * | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00483EA0 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=42 被调 unique=0: pseudo=: void FUN_00483ea0(int param_1,int para | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00483F80 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=54 被调 unique=0: pseudo=: void FUN_00483f80(int param_1,int para | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00484010 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=54 被调 unique=0: pseudo=: void FUN_00484010(int param_1,int para | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x004840A0 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=49 被调 unique=0: pseudo=: void FUN_004840a0(int param_1,int para | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00484130 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=49 被调 unique=0: pseudo=: void FUN_00484130(int param_1,int para | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x004841C0 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=49 被调 unique=0: pseudo=: void FUN_004841c0(int param_1,int para | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00484590 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=51 被调 unique=1: 00484460 pseudo=: { | uVar1 = DAT_00665904 & 0xff; | if  | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x004846B0 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=35 被调 unique=1: 00485810 pseudo=: void FUN_004846b0(undefined4 param_1)  | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00485230 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=81 被调 unique=2: 00485300 x2 0050AF1E=FUN_0 pseudo=: void FUN_00485230(char *param_1,int pa | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x0048B570 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=31 被调 unique=2: 0054E890 x2 004B3420 pseudo=: void __fastcall FUN_0048b570(int param | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x0048E203 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=60 被调 unique=8: 004024A0=FUN_004024a0 0049 pseudo=: | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x0048F960 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=41 被调 unique=0: pseudo=: void __fastcall FUN_0048f960(int *para | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x0048FA40 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=40 被调 unique=1: 00507850=FUN_00507850 pseudo=: void __fastcall FUN_0048fa40(int *para | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00491230 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=50 被调 unique=8: 00463450 0044EF10 00473270 pseudo=: void __fastcall FUN_00491230(int *para | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00492000 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=73 被调 unique=2: 00402BF0=FUN_00402bf0 0040 pseudo=: { | void *local_c; | local_4 = 0xfffff | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00492EE0 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=45 被调 unique=0: pseudo=: void __fastcall FUN_00492ee0(int param | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00493710 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=38 被调 unique=3: 00508B38=operator_new 004B pseudo=: { | void *pvVar1; | void *local_c; | l | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x004941A0 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=40 被调 unique=3: 0049D200 0048F050=FUN_0048 pseudo=: { | (**(code **)(*param_1 + 0x120))(); | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x004953F0 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=52 被调 unique=4: 0049D200 0049FC60 00402E90 pseudo=: void __fastcall FUN_004953f0(int *para | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x00496250 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=45 被调 unique=6: 00478EC0 x2 004DB420=FUN_0 pseudo=: void __fastcall FUN_00496250(int param | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x004975C0 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=71 被调 unique=2: 0049D720 00402E90=FUN_0040 pseudo=: void __fastcall FUN_004975c0(int param | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x004997D0 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=71 被调 unique=2: 00402BF0=FUN_00402bf0 0049 pseudo=: { | void *local_c; | local_4 = 0xfffff | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x0049B400 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=71 被调 unique=2: 00402BF0=FUN_00402bf0 0049 pseudo=: { | void *local_c; | local_4 = 0xfffff | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x0049BA80 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=71 被调 unique=2: 00402BF0=FUN_00402bf0 0049 pseudo=: { | void *local_c; | local_4 = 0xfffff | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x0049BD10 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=65 被调 unique=0: pseudo=: { | iVar4 = (*param_1 - param_1[1]) /  | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x0049C0F0 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=57 被调 unique=2: 0049E160=FUN_0049e160 0049 pseudo=: { | void *local_10; | local_8 = 0xffff | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x0049CD30 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=57 被调 unique=2: 0049E490=FUN_0049e490 0049 pseudo=: { | void *local_10; | local_8 = 0xffff | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x0049CFB0 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=76 被调 unique=2: 0049CF70 0049CD30 pseudo=: { | if (param_1 != param_2) { | if (pa | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x0049DFB0 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=41 被调 unique=2: 004E6050=FUN_004e6050 004E pseudo=: FUN_0049dfb0(undefined4 param_1,undefi | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x0049E0E0 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=41 被调 unique=2: 004E6050=FUN_004e6050 0049 pseudo=: FUN_0049e0e0(undefined4 param_1,undefi | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x0049F2B0 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=35 被调 unique=2: 004E6050=FUN_004e6050 004E pseudo=: FUN_0049f2b0(undefined4 param_1,undefi | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x0049F320 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=40 被调 unique=1: 004E6050=FUN_004e6050 pseudo=: void FUN_0049f320(int param_1) | { | F | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x0049F5D0 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=47 被调 unique=3: 005095F5=_malloc 00403440  pseudo=: void * FUN_0049f5d0(undefined4 *param_ | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x0049FA30 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=92 被调 unique=6: 0047A270=FUN_0047a270 0050 pseudo=: { | void *local_10; | puStack_c = &LAB | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x0049FEF0 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=38 被调 unique=4: 0050B6C7 0050BE91 005095F5 pseudo=: { | void *pvVar2; | if (*param_1 != -1 | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+0x0049FF70 | Geom_Model_Subsystem_Helper    | 确证: callees=[2] ins=49 被调 unique=2: 005092C0=FUN_005092c0 0050 pseudo=: { | iVar1 = param_1[5]; | iVar2 = iVar | 推断: 几何模型与网格底层支撑辅助 | 待定: 需结合 .skb 骨骼模型格式对齐节点偏移与层次深度
+
+--- 簇 D：物理碰撞/SAT扫掠/角色/连招（共 40 个函数）---
+0x004A05B0 | Actor_State_Register           | 确证: 0x5092c0 (memcpy) / 0x403490 (vector 扩容), param_1+0x10 名字串登记 | 推断: 角色/控制器名字与基础状态注册 | 待定: 需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004A0740 | Actor_State_Register           | 确证: 0x5092c0 (memcpy) / 0x403490 (vector 扩容), param_1+0x10 名字串登记 | 推断: 角色/控制器名字与基础状态注册 | 待定: 需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004A1540 | Console_Cmd_Format_String      | 确证: 读取串池 s_Command__005c96b0 ('Command '), 格式化控制台指令 | 推断: 控制台命令解析与格式化字符串装配 | 待定: 需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004A16A0 | Actor_State_Register           | 确证: 0x5092c0 (memcpy) / 0x403490 (vector 扩容), param_1+0x10 名字串登记 | 推断: 角色/控制器名字与基础状态注册 | 待定: 需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004A2E10 | Physics_SAT_Pair_Alloc         | 确证: operator_new 分配碰撞对结构体，调用 0x4e8a20 / 0x4b4a30 构造 | 推断: SAT 碰撞检测实体对（Collider Pair）动态创建 | 待定: 需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004A3C90 | Physics_SAT_Pair_Alloc         | 确证: operator_new 分配碰撞对结构体，调用 0x4e8a20 / 0x4b4a30 构造 | 推断: SAT 碰撞检测实体对（Collider Pair）动态创建 | 待定: 需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004A4450 | Physics_SAT_Pair_Alloc         | 确证: operator_new 分配碰撞对结构体，调用 0x4e8a20 / 0x4b4a30 构造 | 推断: SAT 碰撞检测实体对（Collider Pair）动态创建 | 待定: 需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004A69B0 | Combat_Combo_Buffer_Ops        | 确证: 0x49c640 / operator_new，扩容 0x42c/0x434 连招表槽位 | 推断: 连招指令输入缓冲队列增删与扩容 | 待定: 需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004A7D50 | Combat_Combo_Buffer_Ops        | 确证: 0x49c640 / operator_new，扩容 0x42c/0x434 连招表槽位 | 推断: 连招指令输入缓冲队列增删与扩容 | 待定: 需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004A7E80 | Combat_Hit_Mask_Dispatcher     | 确证: 调用虚表 *(piVar1 + 0x80) 传递掩码 param_3&0xf, &0xf0, &0xf00 | 推断: 战斗打击盒命中属性分级与伤害类型掩码分派 | 待定: 需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004A81C0 | Actor_Shadow_Projector         | 确证: 读取串池 s_shadow1_005c96d4 ('shadow1'), 连通 0x4054e0/0x405660 贴花投影 | 推断: 角色/物件脚底投影阴影贴花生成器 | 待定: 需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004AABB0 | Combat_Combo_Buffer_Ops        | 确证: 0x49c640 / operator_new，扩容 0x42c/0x434 连招表槽位 | 推断: 连招指令输入缓冲队列增删与扩容 | 待定: 需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004AAC40 | Combat_Combo_Buffer_Ops        | 确证: 0x49c640 / operator_new，扩容 0x42c/0x434 连招表槽位 | 推断: 连招指令输入缓冲队列增删与扩容 | 待定: 需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004B0055 | Combat_Projectile_Trajectory   | 确证: 调用 0x549b00 弹道计算，0x509980 (__ftol) 整数截断，0x4acae0 命中检测 | 推断: 飞行道具抛物线轨迹计算与命中步进 | 待定: 需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004B31B0 | Combat_Weapon_Hitbox_Query     | 确证: 调用 0x4b5fc0 进行武器打击盒与受击盒交叉查询 | 推断: 武器挥动打击范围与受击盒碰撞求交 | 待定: 需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004B4E80 | Combat_Weapon_Hitbox_Query     | 确证: 调用 0x4b5fc0 进行武器打击盒与受击盒交叉查询 | 推断: 武器挥动打击范围与受击盒碰撞求交 | 待定: 需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004B6160 | Physics_Combat_Helper          | 确证: callees=[2] ins=86 被调 unique=4: 00402BF0=FUN_00402bf0 0040 pseudo=: { | puStack_c = &LAB_005a09a9; | local | 推断: 物理与战斗控制底层辅助 | 待定: 需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004B8D70 | Physics_Combat_Helper          | 确证: callees=[2] ins=42 被调 unique=3: 004A93C0=FUN_004a93c0 004B pseudo=: { | uVar4 = FUN_004a93c0(); | piVar1 = | 推断: 物理与战斗控制底层辅助 | 待定: 需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004B95E0 | Physics_Combat_Helper          | 确证: callees=[2] ins=34 被调 unique=1: 0040E8B0=FUN_0040e8b0 pseudo=: void FUN_004b95e0(int param_1) | { | D | 推断: 物理与战斗控制底层辅助 | 待定: 需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004BADD0 | Physics_Combat_Helper          | 确证: callees=[2] ins=42 被调 unique=2: 00487830=FUN_00487830 004B pseudo=: void __fastcall FUN_004badd0(int param | 推断: 物理与战斗控制底层辅助 | 待定: 需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004BD0B0 | Physics_Combat_Helper          | 确证: callees=[2] ins=34 被调 unique=3: 00463450 x2 00451E60=FUN_0 pseudo=: { | (**(code **)(*(int *)param_1[0x921 | 推断: 物理与战斗控制底层辅助 | 待定: 需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004BD400 | Physics_Combat_Helper          | 确证: callees=[2] ins=50 被调 unique=6: 0049D3C0=FUN_0049d3c0 004B pseudo=: void __thiscall FUN_004bd400(int param | 推断: 物理与战斗控制底层辅助 | 待定: 需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004C0580 | Physics_Combat_Helper          | 确证: callees=[2] ins=73 被调 unique=3: 00487830=FUN_00487830 004C pseudo=: { | iStack_4 = param_1; | iVar4 = FUN_ | 推断: 物理与战斗控制底层辅助 | 待定: 需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004C1400 | Physics_Combat_Helper          | 确证: callees=[2] ins=57 被调 unique=1: 004C2BF0=FUN_004c2bf0 pseudo=: void __thiscall FUN_004c1400(int param | 推断: 物理与战斗控制底层辅助 | 待定: 需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004C1F70 | Physics_Combat_Helper          | 确证: callees=[2] ins=55 被调 unique=1: 0047ECF0=FUN_0047ecf0 pseudo=: { | uint3 uVar2; | float10 fVar3; | fV | 推断: 物理与战斗控制底层辅助 | 待定: 需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004C2120 | Physics_Combat_Helper          | 确证: callees=[2] ins=95 被调 unique=3: 004C68D0 004C1900=FUN_004c pseudo=: void __fastcall FUN_004c2120(int param | 推断: 物理与战斗控制底层辅助 | 待定: 需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004C7210 | Physics_Combat_Helper          | 确证: callees=[2] ins=101 被调 unique=3: 005092C0=FUN_005092c0 004 pseudo=: { | if (param_2 != param_1) { | iVar2  | 推断: 物理与战斗控制底层辅助 | 待定: 需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004C7300 | Physics_Combat_Helper          | 确证: callees=[2] ins=101 被调 unique=3: 005092C0=FUN_005092c0 004 pseudo=: { | if (param_2 != param_1) { | iVar2  | 推断: 物理与战斗控制底层辅助 | 待定: 需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004C8490 | Physics_Combat_Helper          | 确证: callees=[2] ins=40 被调 unique=2: 00463450 0044E1C0=FUN_0044 pseudo=: void FUN_004c8490(int *param_1) | { |  | 推断: 物理与战斗控制底层辅助 | 待定: 需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004C8580 | Physics_Combat_Helper          | 确证: callees=[2] ins=59 被调 unique=2: 00463450 00451110=FUN_0045 pseudo=: void FUN_004c8580(int *param_1) | { |  | 推断: 物理与战斗控制底层辅助 | 待定: 需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004D2D20 | Physics_Combat_Helper          | 确证: callees=[2] ins=74 被调 unique=1: 004D2E90=FUN_004d2e90 pseudo=: void __thiscall FUN_004d2d20(int *para | 推断: 物理与战斗控制底层辅助 | 待定: 需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004D2DD0 | Physics_Combat_Helper          | 确证: callees=[2] ins=75 被调 unique=1: 004D3290=FUN_004d3290 pseudo=: void __thiscall FUN_004d2dd0(int *para | 推断: 物理与战斗控制底层辅助 | 待定: 需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004D48F0 | Physics_Combat_Helper          | 确证: callees=[2] ins=92 被调 unique=6: 0047A270=FUN_0047a270 0050 pseudo=: { | puStack_c = &LAB_005a1dba; | local | 推断: 物理与战斗控制底层辅助 | 待定: 需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004D8710 | Physics_Combat_Helper          | 确证: callees=[2] ins=129 被调 unique=3: 00487830=FUN_00487830 005 pseudo=: void FUN_004d8710(int *param_1,int *pa | 推断: 物理与战斗控制底层辅助 | 待定: 需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004DB300 | Physics_Combat_Helper          | 确证: callees=[2] ins=69 被调 unique=3: 00402AC0=FUN_00402ac0 0050 pseudo=: { | void *local_10; | puStack_c = &LAB | 推断: 物理与战斗控制底层辅助 | 待定: 需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004DBAE0 | Physics_Combat_Helper          | 确证: callees=[2] ins=31 被调 unique=1: 0055BEB0=FUN_0055beb0 pseudo=: void __fastcall FUN_004dbae0(undefined | 推断: 物理与战斗控制底层辅助 | 待定: 需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004DBB60 | Physics_Combat_Helper          | 确证: callees=[2] ins=51 被调 unique=0: pseudo=: { | uVar1 = 0; | if (((param_2 & 1) != | 推断: 物理与战斗控制底层辅助 | 待定: 需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004DC6A0 | Physics_Combat_Helper          | 确证: callees=[2] ins=47 被调 unique=2: 005569B0 x2 005598C0 pseudo=: void __thiscall FUN_004dc6a0(int *para | 推断: 物理与战斗控制底层辅助 | 待定: 需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004DCDA0 | Physics_Combat_Helper          | 确证: callees=[2] ins=47 被调 unique=1: 0055C300=FUN_0055c300 pseudo=: { | iVar1 = (**(code **)(*param_2 + 0x | 推断: 物理与战斗控制底层辅助 | 待定: 需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004DECA0 | Physics_Combat_Helper          | 确证: callees=[2] ins=40 被调 unique=1: 004DCF50=FUN_004dcf50 pseudo=: { | piVar1 = param_1; | iVar2 = (**(co | 推断: 物理与战斗控制底层辅助 | 待定: 需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+
+--- 簇 E：脚本VM/AI行为树/A*寻路（共 39 个函数）---
+0x004E2A40 | AI_Target_State_Check          | 确证: 检查目标实体虚表 *(param_2 + 0x94) 返回值与 param_1 状态匹配 | 推断: AI 锁定目标的存活与可攻击状态门控检查 | 待定: 需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004E5BB0 | Script_VM_Stack_Frame_Ops      | 确证: 调用 0x4e6050 栈帧操作 / 0x402e90 节点释放 / 0x54cc30 栈指针调整 | 推断: PScript 虚拟机运行时栈帧构建、局部变量分配与作用域退出 | 待定: 需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004E6970 | Script_VM_Stack_Frame_Ops      | 确证: 调用 0x4e6050 栈帧操作 / 0x402e90 节点释放 / 0x54cc30 栈指针调整 | 推断: PScript 虚拟机运行时栈帧构建、局部变量分配与作用域退出 | 待定: 需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004E6A30 | Script_VM_Stack_Frame_Ops      | 确证: 调用 0x4e6050 栈帧操作 / 0x402e90 节点释放 / 0x54cc30 栈指针调整 | 推断: PScript 虚拟机运行时栈帧构建、局部变量分配与作用域退出 | 待定: 需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004E6AE0 | Script_VM_Stack_Frame_Ops      | 确证: 调用 0x4e6050 栈帧操作 / 0x402e90 节点释放 / 0x54cc30 栈指针调整 | 推断: PScript 虚拟机运行时栈帧构建、局部变量分配与作用域退出 | 待定: 需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004E6BF0 | Script_VM_Stack_Frame_Ops      | 确证: 调用 0x4e6050 栈帧操作 / 0x402e90 节点释放 / 0x54cc30 栈指针调整 | 推断: PScript 虚拟机运行时栈帧构建、局部变量分配与作用域退出 | 待定: 需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004E74E0 | Script_VM_Stack_Frame_Ops      | 确证: 调用 0x4e6050 栈帧操作 / 0x402e90 节点释放 / 0x54cc30 栈指针调整 | 推断: PScript 虚拟机运行时栈帧构建、局部变量分配与作用域退出 | 待定: 需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004E77E3 | CRT_Vector_OutOfRange_Throw    | 确证: 调用 0x509166 (__CxxThrowException@8), 0x49be20 异常信息构造 | 推断: STL vector 越界访问 C++ 运行时异常抛出 | 待定: 需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004E79C3 | CRT_Vector_OutOfRange_Throw    | 确证: 调用 0x509166 (__CxxThrowException@8), 0x49be20 异常信息构造 | 推断: STL vector 越界访问 C++ 运行时异常抛出 | 待定: 需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004E7A60 | Script_Vector3_Buffer_Shift    | 确证: (param_4 - param_2) / 0xc (12B = sizeof Vector3), 连续内存块向后搬运 | 推断: 路点/向量列表插入时的 12 字节 Vector3 缓冲区元素后移 | 待定: 需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004E7B40 | Script_Vector3_Buffer_Shift    | 确证: (param_4 - param_2) / 0xc (12B = sizeof Vector3), 连续内存块向后搬运 | 推断: 路点/向量列表插入时的 12 字节 Vector3 缓冲区元素后移 | 待定: 需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004E7CF0 | Script_Vector3_Buffer_Shift    | 确证: (param_4 - param_2) / 0xc (12B = sizeof Vector3), 连续内存块向后搬运 | 推断: 路点/向量列表插入时的 12 字节 Vector3 缓冲区元素后移 | 待定: 需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004E8A20 | Script_AI_Helper               | 确证: callees=[2] ins=33 被调 unique=3: 00508B38=operator_new 0054 pseudo=: { | void *pvVar1; | void *local_c; | l | 推断: 脚本虚拟机与 AI 决策底层辅助 | 待定: 需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004EBA00 | AI_Path_Waypoint_Eval          | 确证: *(param_1 + 0x80) 路点计数, *(param_1 + 0x84) short 数组节点查找, 0x4054e0 标志位写入 | 推断: AI 寻路路径点序列遍历与距离启发式估算 | 待定: 需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004EBA70 | AI_Path_Waypoint_Eval          | 确证: *(param_1 + 0x80) 路点计数, *(param_1 + 0x84) short 数组节点查找, 0x4054e0 标志位写入 | 推断: AI 寻路路径点序列遍历与距离启发式估算 | 待定: 需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004EBB40 | AI_Path_Waypoint_Eval          | 确证: *(param_1 + 0x80) 路点计数, *(param_1 + 0x84) short 数组节点查找, 0x4054e0 标志位写入 | 推断: AI 寻路路径点序列遍历与距离启发式估算 | 待定: 需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004ED6E0 | AI_Action_Callback_Invoke      | 确证: param_1[0xc1] 激活检查, 调用虚表 *(param_1+0x8c) 与 *(param_1+0xa8) 驱动动作槽 | 推断: AI 决策动作触发回调函数分派器 | 待定: 需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004F0BA0 | Actor_Item_Pickup_Trigger      | 确证: 调用角色虚表 *(param_1 + 0x44) 与目标 *(piVar1 + 0x1e0) 触发拾取 | 推断: 角色接近地面道具/箱子掉落物时的拾取事件触发 | 待定: 需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004F24B0 | Script_AI_Helper               | 确证: callees=[2] ins=57 被调 unique=1: 00487830=FUN_00487830 pseudo=: { | uVar1 = param_1[0x95]; | iVar2 = F | 推断: 脚本虚拟机与 AI 决策底层辅助 | 待定: 需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004F4110 | Script_AI_Helper               | 确证: callees=[2] ins=54 被调 unique=0: pseudo=: { | puVar1 = param_2; | iVar4 = (*(int | 推断: 脚本虚拟机与 AI 决策底层辅助 | 待定: 需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004F4C50 | Script_AI_Helper               | 确证: callees=[2] ins=76 被调 unique=2: 00487830=FUN_00487830 0054 pseudo=: { | piVar1 = (int *)FUN_00487830(); |  | 推断: 脚本虚拟机与 AI 决策底层辅助 | 待定: 需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004F56D0 | Script_AI_Helper               | 确证: callees=[2] ins=37 被调 unique=1: 00487830=FUN_00487830 pseudo=: { | (**(code **)(*param_1 + 0xcc))(0); | 推断: 脚本虚拟机与 AI 决策底层辅助 | 待定: 需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004F5CC0 | Script_AI_Helper               | 确证: callees=[2] ins=40 被调 unique=3: 004059E0=FUN_004059e0 0040 pseudo=: void __fastcall FUN_004f5cc0(int param | 推断: 脚本虚拟机与 AI 决策底层辅助 | 待定: 需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004F7D30 | Script_AI_Helper               | 确证: callees=[2] ins=87 被调 unique=2: 00507850=FUN_00507850 0049 pseudo=: void __fastcall FUN_004f7d30(int param | 推断: 脚本虚拟机与 AI 决策底层辅助 | 待定: 需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004F7E00 | Script_AI_Helper               | 确证: callees=[2] ins=65 被调 unique=5: 004F7D30 00508B38=operator pseudo=: FUN_004f7e00(undefined2 *param_1,undef | 推断: 脚本虚拟机与 AI 决策底层辅助 | 待定: 需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004F81E0 | Script_AI_Helper               | 确证: callees=[2] ins=38 被调 unique=2: 004F8330 x2 0047ECF0=FUN_0 pseudo=: void __thiscall FUN_004f81e0(int param | 推断: 脚本虚拟机与 AI 决策底层辅助 | 待定: 需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004F8290 | Script_AI_Helper               | 确证: callees=[2] ins=59 被调 unique=1: 0046ECB0=FUN_0046ecb0 pseudo=: void __thiscall FUN_004f8290(int param | 推断: 脚本虚拟机与 AI 决策底层辅助 | 待定: 需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004F8770 | Script_AI_Helper               | 确证: callees=[2] ins=67 被调 unique=0: pseudo=: void FUN_004f8770(undefined4 *param_1, | 推断: 脚本虚拟机与 AI 决策底层辅助 | 待定: 需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004F8820 | Script_AI_Helper               | 确证: callees=[2] ins=65 被调 unique=0: pseudo=: void FUN_004f8820(int param_1,int para | 推断: 脚本虚拟机与 AI 决策底层辅助 | 待定: 需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004FA980 | Script_AI_Helper               | 确证: callees=[2] ins=65 被调 unique=4: 004608A0=FUN_004608a0 004D pseudo=: { | void *local_10; | puStack_c = &LAB | 推断: 脚本虚拟机与 AI 决策底层辅助 | 待定: 需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004FAE30 | Script_AI_Helper               | 确证: callees=[2] ins=111 被调 unique=0: pseudo=: { | if (param_2 == 0) { | return 0; |  | 推断: 脚本虚拟机与 AI 决策底层辅助 | 待定: 需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004FC8A0 | Script_AI_Helper               | 确证: callees=[2] ins=66 被调 unique=2: 0047ED20=FUN_0047ed20 004C pseudo=: { | float10 fVar3; | float10 fVar4; |  | 推断: 脚本虚拟机与 AI 决策底层辅助 | 待定: 需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004FCB40 | Script_AI_Helper               | 确证: callees=[2] ins=47 被调 unique=1: 0047ECF0=FUN_0047ecf0 pseudo=: { | float10 fVar2; | if (param_2 == 0) | 推断: 脚本虚拟机与 AI 决策底层辅助 | 待定: 需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004FCF00 | Script_AI_Helper               | 确证: callees=[2] ins=35 被调 unique=3: 00501730 x2 00501160 00501 pseudo=: { | pfVar2 = &local_14; | puVar3 = loc | 推断: 脚本虚拟机与 AI 决策底层辅助 | 待定: 需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004FD2E0 | Script_AI_Helper               | 确证: callees=[2] ins=70 被调 unique=2: 004FC4B0=FUN_004fc4b0 004C pseudo=: void __fastcall FUN_004fd2e0(int param | 推断: 脚本虚拟机与 AI 决策底层辅助 | 待定: 需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004FD3B0 | Script_AI_Helper               | 确证: callees=[2] ins=85 被调 unique=4: 00501730 x3 00500FD0 00509 pseudo=: void __thiscall FUN_004fd3b0(int param | 推断: 脚本虚拟机与 AI 决策底层辅助 | 待定: 需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004FE0C0 | Script_AI_Helper               | 确证: callees=[2] ins=82 被调 unique=5: 004FCC10=FUN_004fcc10 0050 pseudo=: { | cVar1 = FUN_00501130(); | if (cVar | 推断: 脚本虚拟机与 AI 决策底层辅助 | 待定: 需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004FE9E0 | Script_AI_Helper               | 确证: callees=[2] ins=31 被调 unique=1: 004E6050=FUN_004e6050 pseudo=: void FUN_004fe9e0(void) | { | local_c  | 推断: 脚本虚拟机与 AI 决策底层辅助 | 待定: 需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004FF000 | Script_AI_Helper               | 确证: callees=[2] ins=80 被调 unique=4: 004608A0=FUN_004608a0 004D pseudo=: { | void *local_10; | puStack_c = &LAB | 推断: 脚本虚拟机与 AI 决策底层辅助 | 待定: 需结合 .pst 脚本操作码对齐指令栈顶布局
+
+--- 簇 F：CRT标准库/音频驱动/内存池（共 136 个函数）---
+0x00501780 | Debug_Label_WorldToScreen      | 确证: 调用 0x477b90 / 0x476f00 摄像机变换，0x504f50 绘制 3D 调试文字 | 推断: 调试信息角色头顶世界坐标转屏幕投影与文本绘制 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00501F70 | Debug_Label_WorldToScreen      | 确证: 调用 0x477b90 / 0x476f00 摄像机变换，0x504f50 绘制 3D 调试文字 | 推断: 调试信息角色头顶世界坐标转屏幕投影与文本绘制 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00502CD0 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=42 被调 unique=3: 00502D70 004C4B00=FUN_004c pseudo=: void __thiscall FUN_00502cd0(int param | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00505160 | Audio_DirectSound3D_Init       | 确证: 读取串池 s_DirectSound3D_005ca5ac ('DirectSound3D'), 调用 0x525820/0x5259e0 初始化 | 推断: DirectSound3D 空间音频底层设备枚举与驱动初始化 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00505430 | Audio_SoundBuffer_Array_Mgr    | 确证: (DAT_0066758c - DAT_00667588) / 0x14 (20B = sizeof SoundBufferEntry), 0x528030 销毁 | 推断: 声音缓冲区全局描述符动态数组管理与越界销毁 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x005054E0 | Audio_Channel_Slot_Alloc       | 确证: iVar1 * 0x40 + DAT_0066756c (64B = sizeof SoundChannelSlot), >> 6 查找空闲声道槽 | 推断: 音频混音 64 字节硬件播放声道槽动态分配与抢占 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x005055D0 | Audio_Channel_Slot_Alloc       | 确证: iVar1 * 0x40 + DAT_0066756c (64B = sizeof SoundChannelSlot), >> 6 查找空闲声道槽 | 推断: 音频混音 64 字节硬件播放声道槽动态分配与抢占 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x005056D0 | Audio_Channel_Slot_Alloc       | 确证: iVar1 * 0x40 + DAT_0066756c (64B = sizeof SoundChannelSlot), >> 6 查找空闲声道槽 | 推断: 音频混音 64 字节硬件播放声道槽动态分配与抢占 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00506400 | Audio_Tick_Timer_Update        | 确证: DAT_00667584 < uVar1 - DAT_0066757c 步进判定，调用 0x5063b0 刷新混音 | 推断: 音频子系统高精度时钟帧驱动与缓冲区流式填塞 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00506ED0 | Audio_Buffer_Deque_Ops         | 确证: 0x5092c0 (memcpy) 与 0x403490 (vector 扩容), 操作 20 字节音频事件描述符 | 推断: 音频触发事件队列出入队与扩容 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00506FB0 | Audio_Buffer_Deque_Ops         | 确证: 0x5092c0 (memcpy) 与 0x403490 (vector 扩容), 操作 20 字节音频事件描述符 | 推断: 音频触发事件队列出入队与扩容 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00507B94 | CRT_IO_File_Stream_Ops         | 确证: 调用 0x508593 / 0x507d0b 文件流读写锁存 | 推断: MSVCRT 文件流低级 I/O 缓冲区刷新与锁状态管理 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x005080DB | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=90 被调 unique=5: 00508015 x2 00508020 x2 00 pseudo=: { | if (*(int *)((int)param_1 + *(int  | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x005081E1 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=45 被调 unique=6: 00508015 00508919 0050BE69 pseudo=: void __fastcall FUN_005081e1(int *para | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x005084E5 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=67 被调 unique=1: 0050C1E0=FUN_0050c1e0 pseudo=: { | local_8 = 0; | if (param_1[2] == 0 | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00508682 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=48 被调 unique=3: 00508015 x2 00508020 00508 pseudo=: { | if (*(int *)((int)param_1 + *(int  | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x005086F6 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=61 被调 unique=2: 00508F6A x2 00508020 x2 pseudo=: void __fastcall FUN_005086f6(int *para | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x005087A6 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=52 被调 unique=2: 00508015 x2 00508020 x2 pseudo=: { | if (*(int *)((int)param_1 + *(int  | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050893E | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=37 被调 unique=4: 0050C81B x2 0050C7EF 00509 pseudo=: { | FUN_0050c7ef(); | uVar1 = FUN_0050 | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00508C86 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=57 被调 unique=1: 0050EF73 pseudo=: FUN_00508c86(undefined4 *param_1,undef | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00508D3C | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=44 被调 unique=2: 0050E6B0 00508B88 pseudo=: { | if ((*(uint *)(param_1 + 4) & 0x66 | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00508DB1 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=51 被调 unique=1: 0050F0DB x2 pseudo=: { | uVar5 = *(uint *)(param_1 + 0xc);  | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00508EBE | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=33 被调 unique=1: 00508F52 pseudo=: | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050902C | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=66 被调 unique=5: 00508F99 x2 0050DD18 0050C pseudo=: { | iVar2 = 0; | iVar4 = 0; | FUN_0050 | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x005090D0 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=59 被调 unique=1: 0050A85C x2 pseudo=: { | while( true ) { | if (DAT_005ca8ec | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00509633 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=81 被调 unique=6: 0050DD18 x2 0050DD79 x2 00 pseudo=: void FUN_00509633(uint param_1) | { |  | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050982E | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=81 被调 unique=12: 0050995B x2 0050CA7E 0050 pseudo=: | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00509D2D | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=51 被调 unique=3: 00510285 0051029C 00510227 pseudo=: float10 FUN_00509d2d(int param_1,uint  | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00509FD1 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=106 被调 unique=4: 0050C1E0=FUN_0050c1e0 005 pseudo=: { | piVar1 = param_4; | uVar5 = param_ | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050A147 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=92 被调 unique=3: 0050C1E0=FUN_0050c1e0 0050 pseudo=: { | piVar1 = param_4; | uVar5 = param_ | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050A22F | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=78 被调 unique=1: 0050EF73 pseudo=: { | iVar2 = FUN_0050ef73(); | pbVar4 = | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050A5F0 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=70 被调 unique=0: pseudo=: | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050A722 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=44 被调 unique=3: 0050DD18 0050A791 0050DD79 pseudo=: { | bool bVar1; | if (DAT_00667844 ==  | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050A791 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=78 被调 unique=2: 0050A85C 005108F6=FUN_0051 pseudo=: { | uVar1 = param_1; | if (DAT_0066784 | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050A85C | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=46 被调 unique=1: 00510B45=FUN_00510b45 pseudo=: { | if (param_2 + 1U < 0x101) { | para | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050ABA0 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=68 被调 unique=0: pseudo=: { | cVar3 = *param_2; | if (cVar3 == ' | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050AC61 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=36 被调 unique=1: 0050ACCB pseudo=: void FUN_0050ac61(undefined4 param_1,u | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050ACE3 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=34 被调 unique=1: 0050AD4B pseudo=: void FUN_0050ace3(undefined4 param_1,u | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050B109 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=74 被调 unique=1: 005112EA pseudo=: void FUN_0050b109(char *param_1,char * | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050B301 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=49 被调 unique=4: 0050B4C3 0050EF60 005089FD pseudo=: HANDLE FUN_0050b301(undefined4 param_1 | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050B378 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=40 被调 unique=2: 00509936 0050B40B=FUN_0050 pseudo=: { | BOOL BVar1; | void *local_14; | lo | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050B44A | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=55 被调 unique=0: pseudo=: { | _SYSTEMTIME local_14; | GetLocalTi | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050B4C3 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=92 被调 unique=7: 0050DD18 x2 0050CE77=FUN_0 pseudo=: LPVOID FUN_0050b4c3(int param_1,int pa | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050B724 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=52 被调 unique=3: 00511575 x4 005114F6 00510 pseudo=: { | HANDLE hObject; | BOOL BVar3; | DW | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050B7A7 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=34 被调 unique=5: 005115B7 0050B80C=FUN_0050 pseudo=: { | if ((param_1 < DAT_007f2ec0) && |  | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050B997 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=34 被调 unique=5: 005115B7 0050B9FC=FUN_0050 pseudo=: { | if ((param_1 < DAT_007f2ec0) && |  | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050BBD5 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=34 被调 unique=5: 005115B7 0050BC3A 00511616 pseudo=: { | if ((param_1 < DAT_007f2ec0) && |  | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050BC3A | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=41 被调 unique=3: 00511575 00510865 005107F2 pseudo=: DWORD FUN_0050bc3a(uint param_1,LONG p | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050C680 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=44 被调 unique=0: pseudo=: | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050C74A | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=51 被调 unique=3: 0050C801 x2 0050C7EF 0050C pseudo=: void FUN_0050c74a(UINT param_1,int par | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050C81B | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=72 被调 unique=6: 0050DD18 x2 0050CB23 0050C pseudo=: SIZE_T FUN_0050c81b(LPCVOID param_1) | | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050D180 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=53 被调 unique=0: pseudo=: { | LPVOID pvVar2; | if (DAT_007f1d60  | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050D7BC | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=66 被调 unique=1: 0050D766 pseudo=: void FUN_0050d7bc(int param_1) | { | B | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050DB22 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=125 被调 unique=0: pseudo=: { | pbVar2 = (byte *)*param_1; | pbVar | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050DC46 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=69 被调 unique=0: pseudo=: { | uVar6 = (uint)*param_3; | piVar2 = | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050DD8E | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=106 被调 unique=4: 0050B7A7 x2 0051260F 0051 pseudo=: { | piVar4 = param_2; | uVar1 = param_ | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050E6B0 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=61 被调 unique=3: 0050F0DB 0050EA05 0050E74B pseudo=: FUN_0050e6b0(int *param_1,undefined4 p | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050E8FE | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=68 被调 unique=4: 0050EF73 00508C86 00508DB1 pseudo=: void FUN_0050e8fe(undefined4 param_1,u | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050EA05 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=45 被调 unique=3: 0050F0DB 0050EEC0 0050ADC1 pseudo=: void FUN_0050ea05(int param_1,undefine | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050EB1E | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=52 被调 unique=3: 0050EF73 x4 00508C0D 0050E pseudo=: FUN_0050eb1e(undefined4 param_1,undefi | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050EF73 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=38 被调 unique=3: 0050B4C3 0050EF60 00509936 pseudo=: DWORD * FUN_0050ef73(void) | { | DWORD | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050EFDA | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=62 被调 unique=1: 005089FD=FUN_005089fd pseudo=: void FUN_0050efda(LPVOID param_1) | {  | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050F420 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=73 被调 unique=2: 0050F5AB x3 00511700 pseudo=: { | iVar1 = param_3[1]; | if ((param_4 | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050F4C7 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=66 被调 unique=4: 00512D2A 00512CB3 0050F420 pseudo=: void FUN_0050f4c7(undefined8 *param_1, | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050F5D0 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=52 被调 unique=5: 00510865 x2 005115B7 00511 pseudo=: { | HANDLE hFile; | BOOL BVar1; | DWOR | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050F720 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=84 被调 unique=0: pseudo=: { | puVar3 = param_1; | do { | if (((u | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050F800 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=54 被调 unique=0: pseudo=: | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050FA6F | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=71 被调 unique=6: 0050C680 x2 005095F5=_mall pseudo=: void FUN_0050fa6f(void) | { | size_t s | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0050FB28 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=62 被调 unique=4: 0050FBC1=FUN_0050fbc1 0051 pseudo=: void FUN_0050fb28(void) | { | void *pv | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x005100A7 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=45 被调 unique=0: pseudo=: | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00510359 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=57 被调 unique=2: 00510227 00510210=FUN_0051 pseudo=: void __fastcall FUN_00510359(undefined | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00510427 | CRT_Malloc_Wrapper             | 确证: 调用 0x5095f5 (_malloc), 属于 n=5 _malloc 画像组 | 推断: MSVCRT 堆内存分配封装 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0051064E | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=73 被调 unique=5: 0050DD18 0050C600 0050C652 pseudo=: { | void *pvVar2; | puVar4 = (undefine | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x005107F2 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=37 被调 unique=2: 00510865 x4 0051086E pseudo=: void FUN_005107f2(uint param_1) | { |  | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00510C90 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=43 被调 unique=0: pseudo=: | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00510D00 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=44 被调 unique=0: pseudo=: | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00511250 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=69 被调 unique=3: 00509730=_strncpy 0050DD18 pseudo=: { | if (DAT_007f1b3c == 0) { | param_1 | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x005112EA | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=41 被调 unique=2: 0050DD79 x2 0050DD18 pseudo=: { | if (param_1 < param_2) { | if (DAT | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00511357 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=103 被调 unique=4: 0050DD18 x2 0050DD79 x2 0 pseudo=: { | iVar4 = -1; | FUN_0050dd18(0x12);  | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0051147A | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=47 被调 unique=2: 00510865 0051086E pseudo=: { | DWORD nStdHandle; | if (param_1 <  | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x005114F6 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=48 被调 unique=2: 00510865 0051086E pseudo=: { | DWORD nStdHandle; | if (param_1 <  | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00511638 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=65 被调 unique=2: 0051353A 005137EF pseudo=: ) | { | uVar2 = param_1 - 0x76c; | if  | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00512209 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=103 被调 unique=8: 0050BC3A x4 0050C177 x2 0 pseudo=: { | HANDLE hFile; | BOOL BVar4; | DWOR | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00512691 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=38 被调 unique=1: 00510865 pseudo=: { | LPSTR lpMultiByteStr; | lpMultiByt | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00512966 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=71 被调 unique=2: 005128C7 00512910 pseudo=: { | local_8 = 0; | puVar1 = (uint *)(p | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00512A34 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=64 被调 unique=0: pseudo=: void FUN_00512a34(uint *param_1,uint p | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00512CB3 | CRT_Memcpy_Memmove             | 确证: 纯内存搬运汇编优化内联，rep movsd / movsb | 推断: C 运行时快速内存拷贝与对齐搬运 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00512D86 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=70 被调 unique=0: pseudo=: void FUN_00512d86(uint *param_1,uint * | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00512E87 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=50 被调 unique=0: pseudo=: { | HMODULE hModule; | iVar1 = 0; | if | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00512F10 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=94 被调 unique=5: 0051478A=FUN_0051478a 0051 pseudo=: void FUN_00512f10(int param_1,int *par | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00513B59 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=75 被调 unique=1: 00510865 pseudo=: { | if ((param_2 != (byte *)0x0) && (p | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00513C4F | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=48 被调 unique=1: 005125CB pseudo=: { | if ((param_1 != 0xffffffff) && | ( | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00513CBD | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=44 被调 unique=3: 0050DD18 00513D2C=FUN_0051 pseudo=: { | bool bVar1; | if (DAT_00667844 ==  | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00514091 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=76 被调 unique=2: 00514036 x4 00513FD8 x2 pseudo=: void FUN_00514091(char *param_1,int pa | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0051443F | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=60 被调 unique=6: 0051478A=FUN_0051478a 0051 pseudo=: float10 FUN_0051443f(undefined4 param_ | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x005149A1 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=49 被调 unique=4: 00514AC3 x2 00514A29 x2 00 pseudo=: float10 FUN_005149a1(undefined4 param_ | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00514D5C | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=52 被调 unique=1: 00514B3C=FUN_00514b3c pseudo=: void FUN_00514d5c(undefined2 *param_1, | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00514DE0 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=103 被调 unique=3: 0050A791 x2 0050DD18 0050 pseudo=: { | ushort uVar4; | bool bVar8; | iVar | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00514F02 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=51 被调 unique=3: 0050C680 x2 00515102 00515 pseudo=: { | size_t _MaxCount; | size_t sVar2;  | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00515002 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=72 被调 unique=1: 00514F7F x2 pseudo=: float10 FUN_00515002(uint param_1,uint | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00515102 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=58 被调 unique=2: 005095F5=_malloc 005153ED= pseudo=: { | LPCWSTR lpWideCharStr; | size_t _S | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x005155CC | CRT_Malloc_Wrapper             | 确证: 调用 0x5095f5 (_malloc), 属于 n=5 _malloc 画像组 | 推断: MSVCRT 堆内存分配封装 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00515633 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=62 被调 unique=3: 0050DD79 x3 00510D90=FUN_0 pseudo=: { | if (DAT_007f1b3c == 0) { | param_1 | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0051576A | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=59 被调 unique=0: pseudo=: void FUN_0051576a(float *param_1,float | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00515822 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=69 被调 unique=0: pseudo=: void FUN_00515822(float *param_1,float | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x005159A7 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=71 被调 unique=0: pseudo=: void FUN_005159a7(float *param_1,float | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00515A7F | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=82 被调 unique=0: pseudo=: void FUN_00515a7f(float *param_1,float | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00515E50 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=86 被调 unique=0: pseudo=: void FUN_00515e50(float *param_1,float | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00515F4B | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=95 被调 unique=0: pseudo=: void FUN_00515f4b(float *param_1,float | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0051606D | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=46 被调 unique=0: pseudo=: void FUN_0051606d(float *param_1,float | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00516C43 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=48 被调 unique=0: pseudo=: void FUN_00516c43(undefined4 *param_1, | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00516CD9 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=49 被调 unique=0: pseudo=: void FUN_00516cd9(float *param_1,float | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00516D70 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=49 被调 unique=0: pseudo=: void FUN_00516d70(float *param_1,float | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00516E0C | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=106 被调 unique=1: 00515977 pseudo=: void FUN_00516e0c(float *param_1,float | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00517069 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=89 被调 unique=2: 00516274 x2 00516F1B pseudo=: FUN_00517069(undefined4 *param_1,undef | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0051714F | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=54 被调 unique=0: pseudo=: void FUN_0051714f(float *param_1,float | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00517A9A | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=58 被调 unique=2: 005178F0 x3 00515706 pseudo=: FUN_00517a9a(undefined4 *param_1,undef | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00517E2B | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=57 被调 unique=1: 00515706 pseudo=: void __thiscall FUN_00517e2b(undefined | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00517F23 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=52 被调 unique=1: 00515706 pseudo=: void FUN_00517f23(float *param_1,float | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00517FDF | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=68 被调 unique=1: 00515706 pseudo=: void FUN_00517fdf(float *param_1,float | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0051807F | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=76 被调 unique=1: 00515706 pseudo=: void FUN_0051807f(float *param_1,float | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00518817 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=85 被调 unique=1: 00517B32 pseudo=: void FUN_00518817(float *param_1,float | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x005188F1 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=69 被调 unique=1: 00517B32 pseudo=: void FUN_005188f1(float *param_1,undef | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00518EC3 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=65 被调 unique=2: 00518E1E x2 00518DE6 pseudo=: { | BOOL BVar1; | _OSVERSIONINFOA *p_V | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00518F77 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=72 被调 unique=6: 00518EC3 x3 005199D7 00518 pseudo=: { | if (param_1 == 0) { | DAT_005cda68 | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00519060 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=35 被调 unique=0: pseudo=: void FUN_00519060(undefined4 *param_1) | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00519170 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=36 被调 unique=0: pseudo=: void FUN_00519170(undefined4 *param_1) | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0051979C | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=73 被调 unique=0: pseudo=: { | float10 fVar5; | fVar5 = (float10) | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00519866 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=89 被调 unique=0: pseudo=: void FUN_00519866(float *param_1,float | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x00519949 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=60 被调 unique=0: pseudo=: void FUN_00519949(float *param_1,float | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0051BDE6 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=52 被调 unique=1: 00522A80 pseudo=: void FUN_0051bde6(undefined8 *param_1, | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0051C38F | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=31 被调 unique=2: 005210E2 00523060=FUN_0052 pseudo=: void FUN_0051c38f(undefined8 *param_1, | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0051C532 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=42 被调 unique=1: 0051C3FB=FUN_0051c3fb pseudo=: FUN_0051c532(undefined4 param_1,undefi | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0051C5BF | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=37 被调 unique=1: 0051C3FB=FUN_0051c3fb pseudo=: void FUN_0051c5bf(undefined4 param_1,u | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0051C6B5 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=44 被调 unique=2: 00522A80 00523180=FUN_0052 pseudo=: void FUN_0051c6b5(undefined8 *param_1, | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+0x0051F373 | CRT_Memory_Subsystem_Helper    | 确证: callees=[2] ins=80 被调 unique=2: 005210E2 00523060=FUN_0052 pseudo=: void FUN_0051f373(undefined8 *param_1, | 推断: C 运行时与内存管理底层辅助 | 待定: 需结合 MSVCRT 6.0 源码符号对齐内部静态变量
+
+--- 簇 G：图像解码/libjpeg/3DNow!（共 82 个函数）---
+0x00521370 | Math_3DNow_SIMD_Vector_Ops     | 确证: FastExitMediaState (femms), in_MM0 64位 SIMD 寄存器操作与 3DNow! 汇编内联 | 推断: AMD 3DNow! 多媒体扩展指令集快速向量加乘与状态退出 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x00522670 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=51 被调 unique=0: pseudo=: void FUN_00522670(void) | { | return;  | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x005228B1 | Math_3DNow_SIMD_Vector_Ops     | 确证: FastExitMediaState (femms), in_MM0 64位 SIMD 寄存器操作与 3DNow! 汇编内联 | 推断: AMD 3DNow! 多媒体扩展指令集快速向量加乘与状态退出 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x00522A80 | Math_3DNow_SIMD_Vector_Ops     | 确证: FastExitMediaState (femms), in_MM0 64位 SIMD 寄存器操作与 3DNow! 汇编内联 | 推断: AMD 3DNow! 多媒体扩展指令集快速向量加乘与状态退出 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x00522C80 | Math_3DNow_SIMD_Vector_Ops     | 确证: FastExitMediaState (femms), in_MM0 64位 SIMD 寄存器操作与 3DNow! 汇编内联 | 推断: AMD 3DNow! 多媒体扩展指令集快速向量加乘与状态退出 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x00524120 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=39 被调 unique=1: 0041F6B0=FUN_0041f6b0 pseudo=: void FUN_00524120(void) | { | iVar1 =  | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x00525640 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=63 被调 unique=3: 00525610 005260B0 00525620 pseudo=: void FUN_00525640(undefined4 *param_1) | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x00525720 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=82 被调 unique=4: 005255E0 00525610 005089FD pseudo=: void FUN_00525720(uint param_1) | { |  | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x00525820 | Audio_Device_Pool_Alloc        | 确证: 0x5089fd (free) / _malloc 分配，属于音频设备池节点管理 | 推断: 音频子系统混音器设备描述符内存池节点分配与释放 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x00525900 | Audio_Device_Pool_Alloc        | 确证: 0x5089fd (free) / _malloc 分配，属于音频设备池节点管理 | 推断: 音频子系统混音器设备描述符内存池节点分配与释放 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x005259E0 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=41 被调 unique=5: 00525610 x2 00525620 x2 00 pseudo=: { | cVar1 = FUN_005255e0(param_1); | i | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x005260B0 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=62 被调 unique=5: 00525620 x2 00525610 00528 pseudo=: void FUN_005260b0(int param_1,int para | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x00528030 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=88 被调 unique=6: 005255B0 x2 00525620 x2 00 pseudo=: void FUN_00528030(uint param_1,int par | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x00529730 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=52 被调 unique=6: 00525620 x2 00525980 00525 pseudo=: void FUN_00529730(int param_1) | { | u | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x005297F0 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=49 被调 unique=6: 00525620 x2 00525980 00525 pseudo=: void FUN_005297f0(int param_1) | { | u | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x005298A0 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=58 被调 unique=6: 00525620 x2 00525980 00525 pseudo=: void FUN_005298a0(int param_1) | { | u | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x00529960 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=45 被调 unique=5: 00525620 x3 005255B0 x2 00 pseudo=: void FUN_00529960(int param_1,float pa | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x005299F0 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=75 被调 unique=5: 005255B0 x2 00525620 x2 00 pseudo=: void FUN_005299f0(int param_1,undefine | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x00529B20 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=73 被调 unique=4: 00525620 x4 005255B0 x2 00 pseudo=: void FUN_00529b20(int param_1,undefine | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x00529CE0 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=38 被调 unique=0: pseudo=: void FUN_00529ce0(float *param_1,float | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x0052AAE0 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=53 被调 unique=4: 00525620 x5 005255B0 x2 00 pseudo=: void FUN_0052aae0(int param_1,float *p | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x0052AB80 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=61 被调 unique=5: 00525620 x5 005255B0 x2 00 pseudo=: void FUN_0052ab80(int param_1,undefine | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x0052AF90 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=43 被调 unique=1: 00530D50 pseudo=: void FUN_0052af90(void) | { | DAT_007d | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x0052BF60 | Image_Mip_SubVolume_Alloc      | 确证: 调用 0x52c740 (建级)，分配与管理图像 Mipmap 金字塔逐级子纹理 | 推断: 纹理 Mipmap 金字塔各级子图像内存分配与链表挂接 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x0052C070 | Image_Mip_SubVolume_Alloc      | 确证: 调用 0x52c740 (建级)，分配与管理图像 Mipmap 金字塔逐级子纹理 | 推断: 纹理 Mipmap 金字塔各级子图像内存分配与链表挂接 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x0052C100 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=48 被调 unique=2: 0052C1A0 00530D80 pseudo=: void FUN_0052c100(uint param_1,int par | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x0052C1A0 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=72 被调 unique=2: 00530DB0 x6 0052C1A0 x3 pseudo=: void FUN_0052c1a0(int param_1) | { | i | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x0052C280 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=45 被调 unique=2: 00530D00 x3 0052C460 x2 pseudo=: { | if (DAT_0072329c == 0) { | FUN_005 | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x0052C320 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=45 被调 unique=2: 00530D00 x3 0052C460 x2 pseudo=: { | if (DAT_0072329c == 0) { | FUN_005 | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x0052C3C0 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=45 被调 unique=2: 00530D00 x3 0052C460 x2 pseudo=: { | if (DAT_0072329c == 0) { | FUN_005 | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x0052C4B0 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=47 被调 unique=2: 00530D80 00530DB0 pseudo=: { | puVar1 = (undefined4 *)FUN_00530d8 | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x0052C6C0 | Image_Mip_SubVolume_Alloc      | 确证: 调用 0x52c740 (建级)，分配与管理图像 Mipmap 金字塔逐级子纹理 | 推断: 纹理 Mipmap 金字塔各级子图像内存分配与链表挂接 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x0052CCE0 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=52 被调 unique=3: 00530D00 0052C740=FUN_0052 pseudo=: { | if (param_1 == (undefined4 *)0x0)  | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x0052CD50 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=44 被调 unique=3: 00530D00 00530DB0 00530D80 pseudo=: bool FUN_0052cd50(int *param_1,int par | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x0052CDD0 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=84 被调 unique=4: 0052C490 00530D00 00530D80 pseudo=: { | DAT_007232a4 = FUN_0052c490(); | i | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x0052CEA0 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=85 被调 unique=3: 00530D00 00530D80 00530DB0 pseudo=: { | if (DAT_0072329c == 0) { | FUN_005 | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x0052CF80 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=71 被调 unique=2: 00530D00 00530D80 pseudo=: { | iVar2 = param_1; | if (param_1 ==  | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x0052D860 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=111 被调 unique=8: 00530D00 x2 00530EB0 0053 pseudo=: void FUN_0052d860(undefined4 param_1,i | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x0052D980 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=90 被调 unique=2: 00530D00 0052C880=FUN_0052 pseudo=: { | bool bVar4; | local_8 = 0x12; | lo | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x0052DAA0 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=94 被调 unique=8: 0052C490 00530D00 00535FD0 pseudo=: { | DAT_007232a4 = (int *)FUN_0052c490 | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x0052F350 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=71 被调 unique=7: 0052C460 x4 0052C070 x4 00 pseudo=: { | uVar2 = FUN_0052bc40(0xdf1); | uVa | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x0052F510 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=46 被调 unique=5: 00530D00 x2 0053A300 0052F pseudo=: { | if (param_2 != (char *)0x0) { | iV | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x0052F5A0 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=55 被调 unique=5: 00530D00 x2 0052F4B0 0053A pseudo=: { | if (param_2 == 0) { | uVar1 = FUN_ | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x0052F800 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=89 被调 unique=9: 0052C490 x3 0052C1A0 x2 00 pseudo=: { | bool bVar1; | bVar1 = false; | DAT | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x005309E0 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=88 被调 unique=7: 0052C1A0 x2 0052C490 0052E pseudo=: { | HBITMAP pHVar3; | BITMAPINFO local | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x00530C60 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=44 被调 unique=1: 0052C490 pseudo=: void FUN_00530c60(undefined4 *param_1) | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x005316E0 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=39 被调 unique=3: 00530DB0 00530D80 00530D50 pseudo=: { | if (DAT_007dc850 != (code *)&LAB_0 | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x00536420 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=53 被调 unique=2: 00530D00 005364D0=FUN_0053 pseudo=: { | if (param_1 == (int *)0x0) { | FUN | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x00538740 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=67 被调 unique=0: pseudo=: { | iVar1 = param_1[4]; | iVar3 = (par | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x00538A90 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=89 被调 unique=1: 00538740 x4 pseudo=: void FUN_00538a90(undefined4 param_1)  | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x00538F00 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=57 被调 unique=0: pseudo=: void FUN_00538f00(int *param_1,undefin | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x005395B0 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=36 被调 unique=0: pseudo=: void FUN_005395b0(undefined4 param_1,u | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x00539650 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=88 被调 unique=0: pseudo=: void FUN_00539650(void) | { | local_8  | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x00539760 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=89 被调 unique=0: pseudo=: { | local_4 = 0xffffffff; | iVar3 = *( | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x00539850 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=71 被调 unique=0: pseudo=: { | iVar1 = 0x7fffffff; | iVar5 = 0; | | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x00539930 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=44 被调 unique=0: pseudo=: void FUN_00539930(int param_1,int para | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x0053A390 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=96 被调 unique=10: 00530D00 x4 0052F350 x3 0 pseudo=: { | if (DAT_0072329c == 0) { | puStack | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x0053B570 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=31 被调 unique=0: pseudo=: void FUN_0053b570(int param_1) | { | i | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x0053B690 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=60 被调 unique=9: 00530D00 0053E110 00593A18 pseudo=: { | code *local_80; | if (DAT_0072329c | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x0053C1A0 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=62 被调 unique=3: 00530DB0 x2 00530D80 0052C pseudo=: { | ushort *puVar1; | iVar5 = *param_1 | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x0053C270 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=92 被调 unique=1: 0053C370 pseudo=: { | iVar3 = param_1[0x5f]; | (**(code  | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x0053C370 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=104 被调 unique=0: pseudo=: { | puVar2 = (undefined4 *)param_1[6]; | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x0053C480 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=29 被调 unique=1: 0053DC70 pseudo=: void FUN_0053c480(int param_1) | { | p | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x0053C9A0 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=72 被调 unique=0: pseudo=: { | puVar3 = (undefined4 *)param_1[6]; | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x0053DA50 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=101 被调 unique=0: pseudo=: { | puVar3 = (undefined4 *)param_1[6]; | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x0053DB40 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=67 被调 unique=0: pseudo=: { | puVar2 = (undefined4 *)param_1[6]; | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x0053DBE0 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=47 被调 unique=1: 0053C370 pseudo=: { | if (param_1[0x5f] == 0) { | cVar1  | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x0053DCA0 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=71 被调 unique=3: 0053EC70=FUN_0053ec70 0053 pseudo=: void FUN_0053dca0(int *param_1,int par | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x0053DD90 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=42 被调 unique=2: 0053DE00=FUN_0053de00 0053 pseudo=: { | if ((param_1[5] != 200) && (param_ | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x0053E050 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=65 被调 unique=1: 0053E2C0=FUN_0053e2c0 pseudo=: { | iVar3 = param_1[5]; | if (((iVar3  | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x0053E360 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=81 被调 unique=2: 0053E440 x2 0053FB40 pseudo=: { | if (param_1[5] == 0xca) { | FUN_00 | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x0053E440 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=74 被调 unique=0: pseudo=: { | if (*(int *)(param_1 + 0x14) != 0x | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x0053E510 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=55 被调 unique=0: pseudo=: { | piVar1 = param_1; | if (param_1[5] | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x0053E8B0 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=60 被调 unique=0: pseudo=: void FUN_0053e8b0(int *param_1) | { |  | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x0053E980 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=79 被调 unique=2: 0053EA40=FUN_0053ea40 0053 pseudo=: { | iVar1 = param_1[100]; | if (*(char | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x0053EDB0 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=107 被调 unique=2: 0053EEE0 x2 0053FF70 x2 pseudo=: { | iVar1 = param_1[1]; | if (0x3b9ac9 | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x0053EF00 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=60 被调 unique=2: 0053EEE0 x2 0053FF70 pseudo=: { | iVar1 = param_1[1]; | if (0x3b9ac9 | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x0053EFB0 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=66 被调 unique=2: 0053EDB0 0053EF00 pseudo=: { | uVar1 = (uint)(0x3b9ac9f0 / (ulong | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x0053F050 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=68 被调 unique=2: 0053EDB0 0053EF00 pseudo=: { | uVar1 = (uint)(0x3b9ac9f0 / (ulong | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x0053F100 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=38 被调 unique=1: 0053EDB0 pseudo=: void FUN_0053f100(int *param_1,int par | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x0053F170 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=38 被调 unique=1: 0053EDB0 pseudo=: void FUN_0053f170(int *param_1,int par | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+0x0053F750 | Image_Audio_Subsystem_Helper   | 确证: callees=[2] ins=97 被调 unique=1: 0053FF80 x2 pseudo=: void FUN_0053f750(int *param_1,int par | 推断: 图像解码、音频与向量数学底层辅助 | 待定: 需结合 libjpeg / 3DNow! 硬件探测开关复核执行路径
+
+--- 簇 H：网络协议栈/封包/会话大厅（共 98 个函数）---
+0x00540090 | JPEG_Decompress_Manager_Ops    | 确证: param_1+0x184 (cinfo->dest/src), param_1+0x118, 嵌入式 libjpeg 解码状态流转 | 推断: libjpeg 解压缩上下文管理器缓冲区推进与状态消费 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00540310 | JPEG_Decompress_Manager_Ops    | 确证: param_1+0x184 (cinfo->dest/src), param_1+0x118, 嵌入式 libjpeg 解码状态流转 | 推断: libjpeg 解压缩上下文管理器缓冲区推进与状态消费 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x005404C0 | JPEG_Decompress_Manager_Ops    | 确证: param_1+0x184 (cinfo->dest/src), param_1+0x118, 嵌入式 libjpeg 解码状态流转 | 推断: libjpeg 解压缩上下文管理器缓冲区推进与状态消费 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x005405A0 | JPEG_Decompress_Manager_Ops    | 确证: param_1+0x184 (cinfo->dest/src), param_1+0x118, 嵌入式 libjpeg 解码状态流转 | 推断: libjpeg 解压缩上下文管理器缓冲区推进与状态消费 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00540670 | JPEG_Decompress_Manager_Ops    | 确证: param_1+0x184 (cinfo->dest/src), param_1+0x118, 嵌入式 libjpeg 解码状态流转 | 推断: libjpeg 解压缩上下文管理器缓冲区推进与状态消费 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00540E50 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=94 被调 unique=0: pseudo=: { | iVar1 = param_1; | param_1._0_1_ = | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00541880 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=103 被调 unique=0: pseudo=: { | piVar1 = (int *)param_1[4]; | pbVa | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x005419A0 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=96 被调 unique=1: 00541880 x2 pseudo=: { | if (param_3 < param_5) { | cVar2 = | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00542050 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=44 被调 unique=0: pseudo=: { | iVar1 = *(int *)(param_1 + 0x198); | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x005420D0 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=44 被调 unique=0: pseudo=: void FUN_005420d0(int param_1) | { | p | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x005425D0 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=45 被调 unique=0: pseudo=: { | iVar1 = *(int *)(param_1 + 0x198); | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00542DB0 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=46 被调 unique=0: pseudo=: void FUN_00542db0(undefined4 *param_1) | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x005435D0 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=85 被调 unique=0: pseudo=: void FUN_005435d0(int param_1,int para | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00543E90 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=51 被调 unique=0: pseudo=: void FUN_00543e90(int param_1,int para | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00544130 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=45 被调 unique=1: 005441C0 x2 pseudo=: void FUN_00544130(int param_1) | { | p | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x005441C0 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=62 被调 unique=0: pseudo=: void FUN_005441c0(int param_1) | { | i | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00544850 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=61 被调 unique=0: pseudo=: void FUN_00544850(int param_1) | { | i | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x005448F0 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=39 被调 unique=0: pseudo=: void FUN_005448f0(int *param_1,char pa | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00544B60 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=82 被调 unique=2: 00544C70=FUN_00544c70 0054 pseudo=: void FUN_00544b60(int param_1,int para | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x005452D0 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=58 被调 unique=3: 00545360=FUN_00545360 0054 pseudo=: void FUN_005452d0(int *param_1,int par | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00545A70 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=52 被调 unique=3: 00545B10=FUN_00545b10 0054 pseudo=: void FUN_00545a70(int *param_1) | { |  | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00545C70 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=84 被调 unique=0: pseudo=: { | bool bVar4; | iVar2 = param_1[0x19 | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00545F10 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=95 被调 unique=4: 00545ED0 0053E660 00545D70 pseudo=: void FUN_00545f10(int *param_1) | { |  | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00548410 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=63 被调 unique=1: 00410AF0 pseudo=: void FUN_00548410(undefined4 param_1,u | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0054A4B0 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=53 被调 unique=9: 00554970 005546C0 00554B30 pseudo=: { | void *local_c; | local_4 = 0xfffff | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0054A6C0 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=35 被调 unique=4: 005538E0 x2 00553830 0054F pseudo=: FUN_0054a6c0(int param_1,undefined4 pa | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0054B150 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=73 被调 unique=6: 005015F0 x2 00554C90 00554 pseudo=: void __thiscall FUN_0054b150(int param | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0054B940 | Net_Packet_Buffer_Vector_Insert | 确证: 调用 0x403490 (vector 扩容) 与 0x5092c0 (memcpy), 属于 n=21 画像组 | 推断: 网络数据包发送/接收队列 STL vector 动态扩容与插入 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0054BCD0 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=49 被调 unique=8: 005015F0 00553830 005538E0 pseudo=: void __fastcall FUN_0054bcd0(int param | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0054C2C0 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=64 被调 unique=0: pseudo=: { | iVar4 = (*param_1 - param_1[1]) /  | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0054C510 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=62 被调 unique=4: 0054CC30=FUN_0054cc30 0050 pseudo=: void __thiscall FUN_0054c510(int *para | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0054C870 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=53 被调 unique=2: 004E6050=FUN_004e6050 004E pseudo=: void FUN_0054c870(int param_1) | { | l | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0054CAE0 | Net_Packet_Buffer_Vector_Insert | 确证: 调用 0x403490 (vector 扩容) 与 0x5092c0 (memcpy), 属于 n=21 画像组 | 推断: 网络数据包发送/接收队列 STL vector 动态扩容与插入 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0054CD90 | Net_Packet_Buffer_Vector_Insert | 确证: 调用 0x403490 (vector 扩容) 与 0x5092c0 (memcpy), 属于 n=21 画像组 | 推断: 网络数据包发送/接收队列 STL vector 动态扩容与插入 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0054CE80 | Net_Packet_Buffer_Vector_Insert | 确证: 调用 0x403490 (vector 扩容) 与 0x5092c0 (memcpy), 属于 n=21 画像组 | 推断: 网络数据包发送/接收队列 STL vector 动态扩容与插入 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0054CF80 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=86 被调 unique=4: 00402BF0=FUN_00402bf0 0040 pseudo=: { | void *local_10; | puStack_c = &LAB | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0054D0E0 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=28 被调 unique=2: 00553290 00553790 pseudo=: { | void *local_c; | local_4 = 0xfffff | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0054DB70 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=28 被调 unique=4: 00553920 x3 00553830 0054F pseudo=: void __thiscall FUN_0054db70(int param | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0054E660 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=43 被调 unique=5: 005538E0 x2 0054F530 00553 pseudo=: FUN_0054e660(int param_1,undefined4 pa | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0054E6F0 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=63 被调 unique=4: 005538E0 x2 00553830 0054F pseudo=: FUN_0054e6f0(int param_1,undefined4 pa | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0054E7C0 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=68 被调 unique=4: 005538E0 x2 00553830 0054F pseudo=: FUN_0054e7c0(int param_1,int param_2,u | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0054E890 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=95 被调 unique=8: 00553830 005538E0 0054F2D0 pseudo=: void __fastcall FUN_0054e890(int param | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0054F6E0 | Net_Session_Heartbeat_Timeout  | 确证: 调用 0x4736a0 比较时间戳，检查对端网络心跳超时 | 推断: 多人联机玩家连接心跳超时与掉线状态判定 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0054FF00 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=90 被调 unique=4: 0054FEC0 00508AE6=FUN_0050 pseudo=: void FUN_0054ff00(undefined4 param_1,u | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00550490 | Net_Message_Serialize_Field    | 确证: 0x5092c0 (memcpy) 序列化网络结构，操作玩家 ID 与位移状态 | 推断: 多人游戏网络同步协议消息字段序列化与打包 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00550A50 | Net_Message_Serialize_Field    | 确证: 0x5092c0 (memcpy) 序列化网络结构，操作玩家 ID 与位移状态 | 推断: 多人游戏网络同步协议消息字段序列化与打包 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00550B00 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=94 被调 unique=2: 005092C0=FUN_005092c0 0040 pseudo=: { | LSTATUS LVar3; | HKEY local_8; | D | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x005513E0 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=84 被调 unique=5: 00555950 x4 00550210=FUN_0 pseudo=: void __thiscall FUN_005513e0(int param | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00551D80 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=62 被调 unique=0: pseudo=: void FUN_00551d80(undefined1 *param_1) | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00551E40 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=62 被调 unique=0: pseudo=: void FUN_00551e40(undefined1 *param_1) | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00552510 | Net_Message_Serialize_Field    | 确证: 0x5092c0 (memcpy) 序列化网络结构，操作玩家 ID 与位移状态 | 推断: 多人游戏网络同步协议消息字段序列化与打包 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00552CA0 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=91 被调 unique=0: pseudo=: { | pcVar2 = (char *)param_1[1]; | iVa | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00553290 | Net_Session_Heartbeat_Timeout  | 确证: 调用 0x4736a0 比较时间戳，检查对端网络心跳超时 | 推断: 多人联机玩家连接心跳超时与掉线状态判定 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00553390 | Net_Session_Heartbeat_Timeout  | 确证: 调用 0x4736a0 比较时间戳，检查对端网络心跳超时 | 推断: 多人联机玩家连接心跳超时与掉线状态判定 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x005536A0 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=65 被调 unique=3: 00553960 x3 00553890 00556 pseudo=: void __thiscall FUN_005536a0(int *para | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00553B80 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=40 被调 unique=3: 0054C370=FUN_0054c370 0055 pseudo=: { | void *local_c; | local_4 = 0xfffff | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00554030 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=75 被调 unique=7: 00553860 00553880 00554820 pseudo=: { | iVar2 = FUN_00553860(param_3); | i | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x005540E0 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=106 被调 unique=4: 00553870 x2 005541F0 0055 pseudo=: { | ushort uVar1; | iVar2 = param_2; | | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x005541F0 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=83 被调 unique=3: 004E8500=FUN_004e8500 0055 pseudo=: void __thiscall FUN_005541f0(int param | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x005547A0 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=47 被调 unique=2: 00554760 00554C80 pseudo=: { | sockaddr local_10; | if (*param_1  | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00554820 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=49 被调 unique=2: 00554C80 005548A0 pseudo=: { | sockaddr local_10; | if (*param_1  | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00554D90 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=67 被调 unique=2: 005558A0 x2 00554EB0=FUN_0 pseudo=: void FUN_00554d90(int param_1,int para | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00554E40 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=42 被调 unique=3: 00555800 x2 00554D90 x2 00 pseudo=: void FUN_00554e40(undefined4 param_1,i | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00555950 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=53 被调 unique=2: 00403870 00552F50=FUN_0055 pseudo=: void __thiscall FUN_00555950(int *para | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00555A50 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=37 被调 unique=2: 00553830 0054C370=FUN_0054 pseudo=: { | void *local_c; | local_4 = 0xfffff | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00555AF0 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=88 被调 unique=5: 004E6050=FUN_004e6050 0040 pseudo=: void __fastcall FUN_00555af0(undefined | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00555F50 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=63 被调 unique=5: 004E8500=FUN_004e8500 0055 pseudo=: { | iVar4 = 0; | if (*(int *)(param_1  | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00556260 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=33 被调 unique=2: 004E6050=FUN_004e6050 004E pseudo=: void FUN_00556260(void) | { | FUN_004e | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x005566D0 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=86 被调 unique=3: 0050B600=FUN_0050b600 0057 pseudo=: { | void *pvVar2; | FUN_0050b600(param | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00556910 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=68 被调 unique=0: pseudo=: { | bool bVar7; | iVar4 = 0; | pbVar5  | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x005570E0 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=91 被调 unique=2: 00477200 00558600=FUN_0055 pseudo=: { | FUN_00477200(); | if ((*(int *)(pa | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00557260 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=37 被调 unique=1: 00557260 pseudo=: { | iVar1 = 0; | if (0 < *(int *)(para | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00557F30 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=37 被调 unique=0: pseudo=: { | if ((-1 < param_2) && (param_2 < * | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00558A60 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=43 被调 unique=2: 00572E10=FUN_00572e10 0057 pseudo=: void __fastcall FUN_00558a60(undefined | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00558AE0 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=43 被调 unique=2: 00573140=FUN_00573140 0057 pseudo=: void __fastcall FUN_00558ae0(undefined | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00558BD0 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=29 被调 unique=1: 00558A60 pseudo=: { | iVar1 = *(int *)(param_1 + 0xfc) + | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00558C50 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=63 被调 unique=2: 00509980=__ftol 00558AE0 pseudo=: { | float10 extraout_ST0; | float10 ex | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00558D80 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=40 被调 unique=3: 00558D40 00558B60 00558A60 pseudo=: { | if (param_2 == -1) { | } | else {  | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00558E10 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=48 被调 unique=4: 00509980=__ftol 00558D40 0 pseudo=: { | iVar2 = __ftol(); | iVar3 = FUN_00 | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00558EB0 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=55 被调 unique=4: 00475400 x2 00479F80 00474 pseudo=: void __fastcall FUN_00558eb0(int param | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00558F90 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=79 被调 unique=7: 00475590=FUN_00475590 0055 pseudo=: void __thiscall FUN_00558f90(int param | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x005590B0 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=76 被调 unique=3: 00477D30=FUN_00477d30 0047 pseudo=: void FUN_005590b0(void) | { | FUN_0047 | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x00559750 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=30 被调 unique=1: 00558AE0 pseudo=: { | DWORD DVar1; | DVar1 = timeGetTime | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0055A180 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=56 被调 unique=2: 0047C3A0=FUN_0047c3a0 0047 pseudo=: void __thiscall FUN_0055a180(int param | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0055A920 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=54 被调 unique=2: 00481B30 00481B90 pseudo=: void __thiscall FUN_0055a920(int param | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0055A9F0 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=54 被调 unique=2: 00481B30 00481B90 pseudo=: void __thiscall FUN_0055a9f0(int param | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0055AAC0 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=65 被调 unique=5: 00508AE6=FUN_00508ae6 0047 pseudo=: FUN_0055aac0(int param_1,undefined4 pa | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0055AB70 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=47 被调 unique=7: 00475590=FUN_00475590 0047 pseudo=: void __fastcall FUN_0055ab70(int param | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0055AC30 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=47 被调 unique=7: 00475590=FUN_00475590 0047 pseudo=: void __fastcall FUN_0055ac30(int param | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0055AE30 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=40 被调 unique=5: 00477D30=FUN_00477d30 0047 pseudo=: void __thiscall FUN_0055ae30(int param | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0055B1C0 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=39 被调 unique=7: 00475590=FUN_00475590 0047 pseudo=: void __fastcall FUN_0055b1c0(int param | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0055BBA0 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=60 被调 unique=3: 00402E90=FUN_00402e90 004D pseudo=: void __thiscall FUN_0055bba0(int param | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0055D1E0 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=51 被调 unique=4: 00567220 00566A90=FUN_0056 pseudo=: void __thiscall FUN_0055d1e0(int param | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0055D450 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=56 被调 unique=3: 00559720 005596C0 005596E0 pseudo=: { | if ((-1 < param_2) && (param_2 < * | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0055D950 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=67 被调 unique=2: 00570630=FUN_00570630 0055 pseudo=: { | if (param_4 == '\0') { | cVar1 = F | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0055DFC0 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=44 被调 unique=3: 00567220 00566E50 0055DF80 pseudo=: void __thiscall FUN_0055dfc0(int param | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0055E8B0 | Net_Message_Serialize_Field    | 确证: 0x5092c0 (memcpy) 序列化网络结构，操作玩家 ID 与位移状态 | 推断: 多人游戏网络同步协议消息字段序列化与打包 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+0x0055FE10 | Net_Protocol_Subsystem_Helper  | 确证: callees=[2] ins=79 被调 unique=6: 00402BF0=FUN_00402bf0 0050 pseudo=: { | void *local_10; | puStack_c = &LAB | 推断: 网络协议栈、封包序列化与大厅会话底层辅助 | 待定: 需结合网络抓包与指令协议号 0x4AB3F0 对齐消息头 ID
+
+--- 簇 I：场景管理/PVS/样条/粒子特效（共 182 个函数）---
+0x00560080 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=36 被调 unique=5: 004D4A40=FUN_004d4a40 004F pseudo=: | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005603F0 | Scene_AABB_Center_Project      | 确证: 计算包围盒中心 (min+max)*0.5, 调用 0x477b90 进行摄像机屏幕投影 | 推断: 3D 场景物件轴对齐包围盒 (AABB) 几何中心点计算与屏幕投影 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00560500 | Scene_Object_Attr_Property_Ops | 确证: 调用 0x50ac61 / 0x50ace3 / 0x570fc0 属性查找，读写 0x38/0x3c/0x40 槽 | 推断: 场景物件属性集（位置、朝向、物理标志）反射读写 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00560610 | Scene_Object_Attr_Property_Ops | 确证: 调用 0x50ac61 / 0x50ace3 / 0x570fc0 属性查找，读写 0x38/0x3c/0x40 槽 | 推断: 场景物件属性集（位置、朝向、物理标志）反射读写 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00560700 | Scene_Object_Attr_Property_Ops | 确证: 调用 0x50ac61 / 0x50ace3 / 0x570fc0 属性查找，读写 0x38/0x3c/0x40 槽 | 推断: 场景物件属性集（位置、朝向、物理标志）反射读写 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00561120 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=52 被调 unique=4: 0056D2E0=FUN_0056d2e0 0050 pseudo=: void __fastcall FUN_00561120(int param | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00561BB0 | Scene_PVS_Bitmask_Cluster_Query | 确证: 0x509980 (__ftol) 浮点坐标转团簇 ID，0x477d30 查表判定 PVS 可见集掩码 | 推断: PVS 潜在可见集位掩码团簇可见性快速查询与视锥剔除 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00561C60 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=40 被调 unique=0: pseudo=: { | if (param_2 < 0) { | param_2 = 0;  | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00561D10 | Scene_PVS_Bitmask_Cluster_Query | 确证: 0x509980 (__ftol) 浮点坐标转团簇 ID，0x477d30 查表判定 PVS 可见集掩码 | 推断: PVS 潜在可见集位掩码团簇可见性快速查询与视锥剔除 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00561DC0 | Scene_PVS_Bitmask_Cluster_Query | 确证: 0x509980 (__ftol) 浮点坐标转团簇 ID，0x477d30 查表判定 PVS 可见集掩码 | 推断: PVS 潜在可见集位掩码团簇可见性快速查询与视锥剔除 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00562520 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=54 被调 unique=4: 0056A8A0 005622F0=FUN_0056 pseudo=: void __thiscall FUN_00562520(int param | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005642C0 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=86 被调 unique=2: 004748B0 00564480=FUN_0056 pseudo=: void __fastcall FUN_005642c0(int param | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005648B0 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=40 被调 unique=0: pseudo=: { | if ((((*param_1 <= *param_3) && (* | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00564FC0 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=50 被调 unique=0: pseudo=: { | bool bVar7; | iVar4 = 0; | iVar6 = | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00565090 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=57 被调 unique=5: 00564F90 005694E0 005693F0 pseudo=: { | puVar1 = (undefined4 *)FUN_00564f9 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00565140 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=50 被调 unique=3: 00477D30=FUN_00477d30 0056 pseudo=: void __fastcall FUN_00565140(int param | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00566940 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=90 被调 unique=8: 00509F8F=FUN_00509f8f 0050 pseudo=: void __thiscall FUN_00566940(int *para | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00566D40 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=56 被调 unique=1: 00593634=FUN_00593634 pseudo=: { | bool bVar8; | iVar4 = (int)&DAT_00 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00566DD0 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=47 被调 unique=3: 00402E90=FUN_00402e90 004D pseudo=: void __thiscall FUN_00566dd0(int param | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00566F10 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=45 被调 unique=3: 0056F310 0055DF80 00402E90 pseudo=: void __fastcall FUN_00566f10(int param | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00567270 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=89 被调 unique=3: 0049A680 x3 00402E90=FUN_0 pseudo=: { | if (param_1 != param_2) { | piVar1 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00567360 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=60 被调 unique=1: 0047ECF0=FUN_0047ecf0 pseudo=: float10 FUN_00567360(undefined4 param_ | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00569330 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=64 被调 unique=1: 0057E590=FUN_0057e590 pseudo=: { | if ((-1 < param_2) && (param_2 < * | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005693F0 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=76 被调 unique=2: 0057E810=FUN_0057e810 0050 pseudo=: { | if ((0.0 <= param_2) && | (iVar4 = | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005694E0 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=33 被调 unique=0: pseudo=: { | iVar2 = *(int *)(param_1 + 0x120); | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00569580 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=73 被调 unique=0: pseudo=: void __thiscall FUN_00569580(int param | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0056A040 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=53 被调 unique=0: pseudo=: { | iVar4 = 1; | cVar1 = *(char *)(*(i | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0056A8F0 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=55 被调 unique=4: 0056A8A0 0056AD30 00475520 pseudo=: void __thiscall FUN_0056a8f0(int param | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0056A990 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=52 被调 unique=4: 0056A8A0 0056AD30 004754F0 pseudo=: void __thiscall FUN_0056a990(int param | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0056AD30 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=64 被调 unique=8: 00474410 x2 00476070 x2 00 pseudo=: void __thiscall FUN_0056ad30(int param | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0056AFC0 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=68 被调 unique=2: 00476F00=FUN_00476f00 0047 pseudo=: void __thiscall FUN_0056afc0(int param | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0056B0B0 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=68 被调 unique=2: 00476F00=FUN_00476f00 0047 pseudo=: void __thiscall FUN_0056b0b0(int param | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0056B4A0 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=58 被调 unique=3: 00476F00=FUN_00476f00 0057 pseudo=: { | FUN_00476f00(local_40,param_1 + 0x | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0056D6F0 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=56 被调 unique=3: 00477B90=FUN_00477b90 0047 pseudo=: void FUN_0056d6f0(void) | { | local_24 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0056D830 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=47 被调 unique=1: 00477200 pseudo=: void __thiscall FUN_0056d830(int param | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0056DB90 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=57 被调 unique=3: 00508B38=operator_new 0058 pseudo=: LPCRITICAL_SECTION __fastcall FUN_0056 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0056DF30 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=63 被调 unique=0: pseudo=: void __fastcall FUN_0056df30(int param | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0056EB40 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=81 被调 unique=3: 00477D30=FUN_00477d30 0047 pseudo=: void FUN_0056eb40(void) | { | FUN_0047 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0056F260 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=54 被调 unique=2: 005818F0=FUN_005818f0 0057 pseudo=: { | iVar4 = 0; | if (0 < *(int *)(para | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0056F930 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=69 被调 unique=0: pseudo=: { | iVar3 = (int)local_18 - (int)param | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00570510 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=82 被调 unique=3: 00476E80 x3 00477AD0 00570 pseudo=: { | local_70 = -*param_1; | local_64 = | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00571060 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=49 被调 unique=0: pseudo=: { | bool bVar8; | local_8 = 0; | if (0 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00571550 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=50 被调 unique=0: pseudo=: { | bool bVar7; | local_8 = 0; | if (0 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00572D00 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=55 被调 unique=5: 00595890 x2 005951E0=FUN_0 pseudo=: void __thiscall FUN_00572d00(int param | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00573650 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=72 被调 unique=2: 00507850=FUN_00507850 0050 pseudo=: void __fastcall FUN_00573650(int param | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00573710 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=31 被调 unique=1: 00477200 pseudo=: { | void *local_c; | puStack_8 = &LAB_ | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00573920 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=50 被调 unique=0: pseudo=: { | if (param_3 == 0) { | if ((-1 < pa | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00574000 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=46 被调 unique=3: 00477D30=FUN_00477d30 0047 pseudo=: void __fastcall FUN_00574000(int param | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00574E50 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=40 被调 unique=1: 00575180=FUN_00575180 pseudo=: { | void *local_c; | puStack_8 = &LAB_ | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005754D0 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=57 被调 unique=2: 00577050=FUN_00577050 0057 pseudo=: void __thiscall FUN_005754d0(int param | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00575A50 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=49 被调 unique=0: pseudo=: { | iVar2 = (*(int *)(param_1 + 4) - p | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00577220 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=113 被调 unique=3: 005092C0=FUN_005092c0 004 pseudo=: void FUN_00577220(undefined4 *param_1, | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005775A0 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=66 被调 unique=2: 00402BF0=FUN_00402bf0 0050 pseudo=: { | puStack_c = &LAB_005a6051; | local | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00577E80 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=48 被调 unique=3: 00577AD0=FUN_00577ad0 0050 pseudo=: { | void *local_c; | local_4 = 0xfffff | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005780C0 | Particle_Mesh_Buffer_Grow      | 确证: 调用 0x403490 (vector 扩容) 与 0x5092c0 (memcpy), 属于 n=21 画像组 | 推断: 粒子特效广告牌网格与顶点缓冲区动态扩容 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00578810 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=53 被调 unique=0: pseudo=: void __fastcall FUN_00578810(int param | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005788A0 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=48 被调 unique=1: 005790D0=FUN_005790d0 pseudo=: void __thiscall FUN_005788a0(int param | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00578C10 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=48 被调 unique=1: 00570FC0=FUN_00570fc0 pseudo=: { | iVar1 = *(int *)(param_1 + 0x20);  | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00579420 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=46 被调 unique=3: 0047BFD0=FUN_0047bfd0 0047 pseudo=: { | void *local_c; | local_4 = 0xfffff | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00579790 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=80 被调 unique=2: 00579870 x2 00593D6D pseudo=: { | HDC hdc; | MAT2 local_24; | _GLYPH | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0057DF40 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=59 被调 unique=3: 0050A118=FUN_0050a118 0050 pseudo=: { | uVar1 = param_2; | FUN_0050a118(lo | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0057F0B0 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=60 被调 unique=2: 00476F00=FUN_00476f00 0057 pseudo=: FUN_0057f0b0(int param_1,undefined4 pa | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0057F180 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=47 被调 unique=2: 00476F00=FUN_00476f00 0057 pseudo=: { | if (*(char *)(param_4 + 0x124) ==  | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00580510 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=58 被调 unique=0: pseudo=: void FUN_00580510(void) | { | iVar1 =  | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005805F0 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=44 被调 unique=0: pseudo=: { | iVar1 = param_1 * 2; | if (*(short | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00580810 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=58 被调 unique=1: 00593634=FUN_00593634 pseudo=: { | bool bVar8; | iVar5 = (int)&DAT_00 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005808A0 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=32 被调 unique=4: 00509DDB 00508AE6=FUN_0050 pseudo=: void FUN_005808a0(int param_1) | { | D | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005820A0 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=31 被调 unique=3: 0047C1C0 0058E730 00507850 pseudo=: void __fastcall FUN_005820a0(int param | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00582C60 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=80 被调 unique=3: 00509FA2 x6 0058A670 x2 00 pseudo=: { | FUN_0058a680(param_1 + 9,param_2); | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00582D50 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=95 被调 unique=5: 0050A118=FUN_0050a118 0058 pseudo=: { | void *pvVar1; | FUN_0058a620(param | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00583C20 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=45 被调 unique=3: 00480770 x2 005565E0=FUN_0 pseudo=: void __thiscall FUN_00583c20(int param | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005847F0 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=38 被调 unique=2: 0055BEB0=FUN_0055beb0 0050 pseudo=: void __fastcall FUN_005847f0(int param | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00584AB0 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=61 被调 unique=3: 0056B1D0 x2 005598C0 0056B pseudo=: { | bool bVar7; | if ((-1 < param_2) & | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00584C50 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=46 被调 unique=4: 005565D0 x3 005565E0=FUN_0 pseudo=: { | if (*(int *)(param_1 + 0x274) != 0 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00584D80 | Spline_Particle_Emitter_Step   | 确证: 调用 0x5811c0 样条积分，属于 n=10 画像组，更新粒子生命周期与位移 | 推断: 3D 场景特效粒子发射器轨迹样条步进与生命周期更新 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00585360 | Spline_Particle_Emitter_Step   | 确证: 调用 0x5811c0 样条积分，属于 n=10 画像组，更新粒子生命周期与位移 | 推断: 3D 场景特效粒子发射器轨迹样条步进与生命周期更新 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005856C0 | Spline_Particle_Emitter_Step   | 确证: 调用 0x5811c0 样条积分，属于 n=10 画像组，更新粒子生命周期与位移 | 推断: 3D 场景特效粒子发射器轨迹样条步进与生命周期更新 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00585E30 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=54 被调 unique=0: pseudo=: void __thiscall FUN_00585e30(int param | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005870D0 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=51 被调 unique=3: 00508B38=operator_new 0058 pseudo=: void __fastcall FUN_005870d0(int param | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005875B0 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=44 被调 unique=3: 0056E0D0=FUN_0056e0d0 0056 pseudo=: { | uVar1 = FUN_0056e220(); | uVar1 =  | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005877C0 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=51 被调 unique=0: pseudo=: { | iVar2 = 0; | if (0 < *(int *)(para | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00587A60 | Spline_Particle_Emitter_Step   | 确证: 调用 0x5811c0 样条积分，属于 n=10 画像组，更新粒子生命周期与位移 | 推断: 3D 场景特效粒子发射器轨迹样条步进与生命周期更新 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00587E70 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=54 被调 unique=2: 0056B1D0 x2 0056B310 pseudo=: { | bool bVar6; | if (*(int *)(param_1 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005880D0 | Spline_Particle_Emitter_Step   | 确证: 调用 0x5811c0 样条积分，属于 n=10 画像组，更新粒子生命周期与位移 | 推断: 3D 场景特效粒子发射器轨迹样条步进与生命周期更新 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00588720 | Spline_Particle_Emitter_Step   | 确证: 调用 0x5811c0 样条积分，属于 n=10 画像组，更新粒子生命周期与位移 | 推断: 3D 场景特效粒子发射器轨迹样条步进与生命周期更新 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00588E10 | Spline_Particle_Emitter_Step   | 确证: 调用 0x5811c0 样条积分，属于 n=10 画像组，更新粒子生命周期与位移 | 推断: 3D 场景特效粒子发射器轨迹样条步进与生命周期更新 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00589330 | Spline_Particle_Emitter_Step   | 确证: 调用 0x5811c0 样条积分，属于 n=10 画像组，更新粒子生命周期与位移 | 推断: 3D 场景特效粒子发射器轨迹样条步进与生命周期更新 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00589970 | Spline_Particle_Emitter_Step   | 确证: 调用 0x5811c0 样条积分，属于 n=10 画像组，更新粒子生命周期与位移 | 推断: 3D 场景特效粒子发射器轨迹样条步进与生命周期更新 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0058A1F0 | Spline_Particle_Emitter_Step   | 确证: 调用 0x5811c0 样条积分，属于 n=10 画像组，更新粒子生命周期与位移 | 推断: 3D 场景特效粒子发射器轨迹样条步进与生命周期更新 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0058A560 | Particle_Mesh_Buffer_Grow      | 确证: 调用 0x403490 (vector 扩容) 与 0x5092c0 (memcpy), 属于 n=21 画像组 | 推断: 粒子特效广告牌网格与顶点缓冲区动态扩容 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0058B4F0 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=58 被调 unique=0: pseudo=: void FUN_0058b4f0(void) | { | iVar1 =  | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0058B5D0 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=44 被调 unique=0: pseudo=: { | iVar1 = param_1 * 2; | if (*(short | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0058C230 | Particle_Mesh_Buffer_Grow      | 确证: 调用 0x403490 (vector 扩容) 与 0x5092c0 (memcpy), 属于 n=21 画像组 | 推断: 粒子特效广告牌网格与顶点缓冲区动态扩容 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0058D560 | Particle_Mesh_Buffer_Grow      | 确证: 调用 0x403490 (vector 扩容) 与 0x5092c0 (memcpy), 属于 n=21 画像组 | 推断: 粒子特效广告牌网格与顶点缓冲区动态扩容 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0058D690 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=66 被调 unique=2: 00402BF0=FUN_00402bf0 0050 pseudo=: { | puStack_c = &LAB_005a6e71; | local | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0058DD20 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=58 被调 unique=0: pseudo=: void FUN_0058dd20(void) | { | iVar1 =  | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0058DE00 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=44 被调 unique=0: pseudo=: { | iVar1 = param_1 * 2; | if (*(short | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0058E430 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=75 被调 unique=0: pseudo=: void __fastcall FUN_0058e430(undefined | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0058EDD0 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=54 被调 unique=0: pseudo=: void __fastcall FUN_0058edd0(int param | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0058EE70 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=79 被调 unique=3: 00508B38=operator_new 0058 pseudo=: void __fastcall FUN_0058ee70(int *para | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0058F6C0 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=58 被调 unique=3: 00507850=FUN_00507850 0059 pseudo=: void __fastcall FUN_0058f6c0(int param | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0058F9E0 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=83 被调 unique=2: 00595374 x3 0058EF40 pseudo=: void __thiscall FUN_0058f9e0(int param | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00593200 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=43 被调 unique=2: 00402BF0=FUN_00402bf0 0040 pseudo=: { | void *local_c; | local_4 = 0xfffff | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00593877 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=94 被调 unique=5: 00514AC3 x3 00514FA8 00514 pseudo=: float10 FUN_00593877(double param_1) | | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00593946 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=94 被调 unique=5: 00514AC3 x3 00514FA8 00514 pseudo=: float10 FUN_00593946(double param_1) | | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00593A18 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=42 被调 unique=0: pseudo=: | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00593A94 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=42 被调 unique=4: 00508E7C 00593DD4 00508EBE pseudo=: | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00593F9E | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=46 被调 unique=0: pseudo=: | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00594177 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=49 被调 unique=2: 00593DC2=__frnd 005937AA=F pseudo=: { | float10 fVar2; | uVar1 = FUN_00593 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00594450 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=83 被调 unique=0: pseudo=: | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00594AC4 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=36 被调 unique=1: 00594A06 x4 pseudo=: | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00594BC4 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=44 被调 unique=2: 00594A19 x4 00594450 pseudo=: | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00594E5C | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=54 被调 unique=1: 00594C56=FUN_00594c56 pseudo=: float10 FUN_00594e5c(void) | { | float | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00595114 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=54 被调 unique=1: 00594F0E=FUN_00594f0e pseudo=: | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005952AF | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=48 被调 unique=1: 00596780 pseudo=: { | if (param_4 == param_1[6]) { | par | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00595374 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=58 被调 unique=0: pseudo=: FUN_00595374(int *param_1,undefined4 p | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00595405 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=41 被调 unique=2: 00596780 00596830 pseudo=: float10 FUN_00595405(int *param_1,unde | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0059546E | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=48 被调 unique=0: pseudo=: FUN_0059546e(int *param_1,undefined4 p | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005954F4 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=41 被调 unique=2: 00596780 00596830 pseudo=: float10 FUN_005954f4(int *param_1,unde | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0059555D | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=48 被调 unique=0: pseudo=: FUN_0059555d(int *param_1,undefined4 p | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005955E3 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=41 被调 unique=2: 00596780 00596830 pseudo=: float10 FUN_005955e3(int *param_1,unde | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005957D0 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=70 被调 unique=1: 00595770 x2 pseudo=: { | iVar1 = *param_1; | if (*(double * | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00596135 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=40 被调 unique=0: pseudo=: void FUN_00596135(int param_1,double p | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00596691 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=75 被调 unique=0: pseudo=: float10 FUN_00596691(double param_1,do | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005968E0 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=56 被调 unique=1: 00596965=FUN_00596965 pseudo=: { | if ((*param_1 == *param_3) && | (( | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00596C17 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=50 被调 unique=1: 00596C8D=FUN_00596c8d pseudo=: { | if (((*param_1 == *param_3) && (*p | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00597160 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=50 被调 unique=1: 00596780 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00597220 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=65 被调 unique=1: 00596780 x2 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00597310 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=50 被调 unique=1: 00596780 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005973D0 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=65 被调 unique=1: 00596780 x2 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005974C0 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=50 被调 unique=1: 00596780 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00597580 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=65 被调 unique=1: 00596780 x2 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00597670 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=50 被调 unique=1: 00596780 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00597730 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=65 被调 unique=1: 00596780 x2 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00597820 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=50 被调 unique=1: 00596780 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005978E0 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=65 被调 unique=1: 00596780 x2 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005979D0 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=50 被调 unique=1: 00596780 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00597A90 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=65 被调 unique=1: 00596780 x2 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00597B80 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=50 被调 unique=1: 00596780 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00597C40 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=65 被调 unique=1: 00596780 x2 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00597D30 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=50 被调 unique=1: 00596780 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00597DF0 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=65 被调 unique=1: 00596780 x2 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00597EE0 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=50 被调 unique=1: 00596780 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00597FA0 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=65 被调 unique=1: 00596780 x2 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00598090 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=50 被调 unique=1: 00596780 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00598150 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=65 被调 unique=1: 00596780 x2 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00598240 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=50 被调 unique=1: 00596780 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00598300 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=65 被调 unique=1: 00596780 x2 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005983F0 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=50 被调 unique=1: 00596780 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005984B0 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=65 被调 unique=1: 00596780 x2 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005985A0 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=50 被调 unique=1: 00596780 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00598660 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=65 被调 unique=1: 00596780 x2 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00598750 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=50 被调 unique=1: 00596780 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00598810 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=65 被调 unique=1: 00596780 x2 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00598900 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=50 被调 unique=1: 00596780 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005989C0 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=65 被调 unique=1: 00596780 x2 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00598AB0 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=50 被调 unique=1: 00596780 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00598B70 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=65 被调 unique=1: 00596780 x2 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00598C60 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=50 被调 unique=1: 00596780 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00598D20 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=65 被调 unique=1: 00596780 x2 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00598E10 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=50 被调 unique=1: 00596780 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00598ED0 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=65 被调 unique=1: 00596780 x2 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00598FC0 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=50 被调 unique=1: 00596780 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00599080 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=65 被调 unique=1: 00596780 x2 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00599170 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=50 被调 unique=1: 00596780 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00599230 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=65 被调 unique=1: 00596780 x2 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00599320 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=50 被调 unique=1: 00596780 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005993E0 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=65 被调 unique=1: 00596780 x2 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005994D0 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=50 被调 unique=1: 00596780 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00599590 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=65 被调 unique=1: 00596780 x2 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00599680 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=50 被调 unique=1: 00596780 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00599740 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=65 被调 unique=1: 00596780 x2 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00599830 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=50 被调 unique=1: 00596780 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005998F0 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=65 被调 unique=1: 00596780 x2 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005999E0 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=50 被调 unique=1: 00596780 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00599AA0 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=65 被调 unique=1: 00596780 x2 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00599B90 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=50 被调 unique=1: 00596780 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00599C50 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=65 被调 unique=1: 00596780 x2 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00599D40 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=50 被调 unique=1: 00596780 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00599E00 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=65 被调 unique=1: 00596780 x2 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00599EF0 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=50 被调 unique=1: 00596780 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00599FB0 | Scene_Particle_Spline_Helper   | 确证: callees=[2] ins=65 被调 unique=1: 00596780 x2 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0 | 推断: 场景 PVS、样条曲线与粒子特效底层辅助 | 待定: 需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+
+================================================================================
+合计收录: 825 / 825 函数全部定性
+semqueue 状态推进：825 行 UNNAMED→NAMED
+批次D 后 D_101-300B UNNAMED 完全清零。
+下一批：批次E = 33-100B 未命名 1,103 个（66,217 B）。
+================================================================================

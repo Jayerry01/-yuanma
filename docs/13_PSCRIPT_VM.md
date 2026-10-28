@@ -242,6 +242,38 @@ wait > idle > run > follow > patrol > attacktarget > kill > dodge
 切换 `attacktarget` 时整块拷进角色对象的 `+0xD4`。
 ✅ **这 12 字节已解** = 目标点表 `0x666858` 的 `TargetPos[槽]`（Vec3，10 槽），见 **§十一**。
 
+### 行为类名表：8 条命令 ≠ 14 个行为类（2026-10-28 补）
+
+`0x4FB91D`–`0x4FBA06` 是一段**类指针 → 名字**的反查链（每个分支
+`CMP EAX,<类构造函数> / MOV ECX,<名字串>`），最终交给 `sprintf("%d%s[%d]")`
+（`0x5CA170`）做调试输出（`0x4FBA1E`）。它把 `ChangeBehavior` 的**命令名**
+与引擎内部的**行为类**分开：
+
+| 行为类 | 构造函数 | 调试名 | 可经 `ChangeBehavior` 命令到达 |
+|---|---|---|---|
+| `Init` | `0x5038E0` | `0x5CA1F4` | 否（AI 初始态） |
+| `Wait` | `0x503970` | `0x5CA1EC` | ✅ `"wait"` |
+| （无调试名，空串） | `0x5039F0` | `""`（`0x5D5A24` 空串） | ✅ `"idle"` |
+| `GotoGoal` | `0x503910` | `0x5CA1E0` | 否 |
+| `Patrol` | `0x503A00` | `0x5CA1D8` | ✅ `"patrol"` |
+| `Follow` | `0x503B30` | `0x5CA1D0` | ✅ `"follow"` |
+| `RandomRun` | `0x503D00` | `0x5CA1C4` | ✅ **`"run"` 实际装载的是 RandomRun 类** |
+| `Combat` | `0x503E00` | `0x5CA1BC` | 否 |
+| `Kill` | `0x504670` | `0x5CA1B4` | ✅ `"kill"` |
+| `Dodge` | `0x504560` | `0x5CA1AC` | ✅ `"dodge"` |
+| `AvoidObstacle` | `0x504700` | `0x5CA19C` | 否 |
+| `GetItem` | `0x5048F0` | `0x5CA194` | 否 |
+| `FastLook` | `0x5049D0` | `0x5CA188` | 否 |
+| `AttackGoal` | `0x504A70` | `0x5CA17C` | ✅ **`"attacktarget"` 装载的是 AttackGoal 类** |
+| `Perform`（类） | `0x504BE0` | `0x5CA050`（与 VM 内建同名，不同对象） | 否 |
+
+**读法**：`ChangeBehavior` 的 8 条小写命令（§四）是**脚本可写的入口**；
+上表 14 个类才是**引擎内部行为对象全集**。`Combat`/`FastLook`/`GetItem`/
+`AvoidObstacle`/`GotoGoal`/`Init` 没有对应小写命令，只由 C++ 内部切换。
+这与社区 1562 页给出的 13 个 AI 行为名（`AttackGoal FastLook GetItem
+AvoidObstacle Dodge Kill Combat RandomRun Follow Patrol GotoGoal Wait Init`）
+逐字吻合——1562 列的是**类名**，不是 `ChangeBehavior` 参数。
+
 ---
 
 ## 五、动作名词汇表（`Perform` 与玩家输入共用）
@@ -302,6 +334,65 @@ wait > idle > run > follow > patrol > attacktarget > kill > dodge
 
 `GetTeam` 是两个 VM **同名但不同实现**（VM-A `0x4F8E20`，VM-B `0x56CB10`）。
 
+### 6.1 11 个内建的实参分派（2026-10-28 逐条反汇编）
+
+社区 1776 页把 VM-B 的脚本面写成了「语句 / 变量 / 函数」三张表；二进制侧
+`0x56BB80`–`0x56CC00` 的 11 个处理体可逐条对榫（证据
+`evidence/vmb_handlers_20261028.txt`）：
+
+- **`SetSceneItem`（`0x56BC60`）**：要求 `argc >= 2`，`arg0` 类型码 ∈ 3..8
+  （否则返回 0）→ 经 `0x726858` 场景管理器的 `0x564FC0`（按名字）或
+  `0x564F90` 查物件。`arg1`（关键字）比较链**顺序**为：
+  `name → animation → damage → hell → safea → safeb → door → machine →
+  treasure → normal → targeta → targetb → pose → frame → attribute`。
+  `arg1 == "name"` 时 `arg2` 再比 11 个物件类：
+  `animation / damage / hell / safea / safeb / door / machine / treasure /
+  normal / targeta / targetb`。
+  `arg1 == "attribute"` 时 `arg2` 再比 7 个属性：
+  `active / collision / visible / damage / damagevalue / reborn / interactive`，
+  各自落到物件对象的字段：
+
+  | 属性 | 写入 | 事件号 |
+  |---|---|---|
+  | `active` | `byte [obj+0x8] = (v != 0)` | 6 |
+  | `collision` | `byte [obj+0xA] = (v != 0)` | 3 |
+  | `visible` | `byte [obj+0x9] = (v != 0)` | 4 |
+  | `damage` | `byte [obj+0xB] = (v != 0)` | 5 |
+  | `interactive` | `byte [obj+0xC] = v & 0xFF` | 7 |
+  | `damagevalue` | `float [obj+0x18] = (float)v`（**原值，无 /10**） | — |
+  | `reborn` | `float [obj+0x1C] = (float)v` | — |
+
+  写属性成功且全局 `[0x72B6A8] != 0` 时，会把 `(2, obj, 事件号, v)` 交给
+  `[0x5D1784]` 的函数指针（属性变更的网络同步出口，❓ 具体实现未读）。
+  `arg1 == "pose"` 要求 `argc >= 4`：`0x5694E0(动画, 序号, 循环)` →
+  `0x56AD10` / `0x569570` / `0x569560`（FMC 动画播放与帧区间），与 1776
+  「第三参=动画序号、第四参=是否循环」一致；`"frame"` 走 `0x56BFD0`。
+- **`GetSceneItem`（`0x56C290`）**：`arg1` 仅 `index` / `state` / `pose` 三个键。
+- **`SetScene`（`0x56C400`）**：`arg1` 为 `snow / winddir / snowspeed /
+  snowsize / snowdensity`（天气系统，1776 未收录）。
+- **`Misc`（`0x56C770`）**：`arg1` 比较链恰好 4 项，与 1776 完全一致：
+  - `randomseries(row, lo, hi)`：`argc >= 3`，在 `0x726888` 生成
+    `[row][col]` 表，行距 = 500 项 × 8 B（`0x7D0`），每项 `{i, rand()}`，
+    条数封顶 `0x1F4 = 500`，随后 `qsort(基址, 条数, 8, 0x56C740)`；
+  - `getseries(row, col)`：返回 `[0x726888 + (row*500 + col)*8]` 的首 dword；
+  - `gettime()`：`0x4748C0()` × `[0x5A9BAC] = 1000.0` → 取整
+    （返回值单位 = **毫秒**）；
+  - `transfer(id, dname)`：按名查物件后 `sprintf("%d", id)`，把结果交给
+    `[0x5D186C]` 指向的 `0x56CB40`（该函数按首参返回 3/-1/0/1，
+    ❓ 传送是否真正生效未验证——`0x56CB40` 不写任何对象字段）。
+- **`MakeString`（`0x56C630`）**：`argc >= 3`，`arg0` 必须为字符串类型码 7、
+  `arg1` 为 7/8（整数），执行 `sprintf("%s%02d", str, int)`——
+  1776 的示例 `MakeString(name,"hua",9) → "hua09"` **由 `%02d` 补零直接证实**。
+- **`rand`（`0x56C960`）**：`argc == 2` 时 `min + round(rand01 × (max−min))`；
+  `argc != 2` 直接返回 `rand()`。
+- **`CreateEffect`（`0x56C9B0`）**：`argc >= 2`，`arg0` 为字符串/物件、
+  `arg1` 为特效名，第三参为循环标志（与 1776 一致）。
+
+> 1776 的 `SetSceneItem(...,"attribute","damagevalue",100)` 注释「100/10HP」：
+> 二进制里该值是**原样存 float**，没有除 10；「10 HP」来自**显示血量 =
+> `PlayerHP ÷ 10`** 的全局换算（本文 §十二 已有 `mov [ebx+0x588],0x3E8`
+> 字节锚点），不是 setter 里做的除法。
+
 ---
 
 ## 七、AI 参数全部是脚本全局，不是二进制常量
@@ -345,6 +436,44 @@ int HP = 1000;
 > 原版没有难度百分比，只有上面这组**每个 NPC 一份**的整数权重
 > （`View` 视距、`Think` 思考间隔、`Attack1/2/3` 三档攻击倾向、`Burst` 爆气等）。
 > 想调难度，改 `.pst`，不是改代码常量。
+
+### 7.1 社区 1562 的 18 个 AI 常量：18/18 在镜像中有名（2026-10-28）
+
+| 常量 | 名字 VA | 常量 | 名字 VA |
+|---|---|---|---|
+| `Name` | `0x5C9B48` | `Dodge` | `0x5CA1AC` |
+| `Model` | `0x5C9204` | `Jump` | `0x5C9CD4` |
+| `Weapon` | `0x5C9B40` | `Look` | `0x5CA29C` |
+| `Weapon2` | `0x5C9B38` | `Burst` | `0x5CA294` |
+| `Team` | `0x5C9B30` | `Aim` | `0x5CA290` |
+| `View` | `0x5CA2C4` | `GetItem` | `0x5CA194` |
+| `Think` | `0x5CA2BC` | `Spawn` | `0x5CA288` |
+| `Attack1/2/3` | `0x5CA2B4/AC/A4` | `HP` | `0x5CA284` |
+| `Guard` | `0x5C9CDC` | | |
+
+读取点分两簇：`Name/Model/Weapon/Weapon2/Team` 在 NPC `.pst` 装载器
+`0x4BFD79`–`0x4BFEB4`（`0x4BF910` 那个 "Load NPC %s.pst error" 函数内）；
+`View/Think/Attack1/2/3/Guard/Dodge/Jump/Look/Burst/Aim/GetItem/Spawn/HP`
+在 `0x5012FA`–`0x5015B8`（AI 属性装载，§七 主体）。**社区表与字节一一对上**。
+
+### 7.2 社区 1563 的函数清单是本 exe 的**超集**（版本差）
+
+1563 列 23 个 AI 函数；本 exe 实有 16 个（全部是 VM-A 内建，§三），
+7 个在镜像里**连名字串都不存在**：
+
+| 1563 列出 | 本 exe |
+|---|---|
+| `GetChar` `GetAnyChar` `GetHP` `GetTeam` `GetEnemy` `GetGameTime` `ChangeBehavior` `Perform` `PlayerPerform` `StopPerform` `SetTarget` `Distance` `Rand` `AddNPC` `RemoveNPC` `Say` | ✅ 16 个均在 §三注册表 |
+| `GetWeaponType` `GetWeapon` `GetAnger` `OpenFile` `CloseFile` | ❌ 全镜像 0 命中 |
+| `WriteFile` `ReadFile` | ⚠ 仅 `kernel32` 导入名（`0x5C34DC` / `0x5C32FE`），非 VM 内建 |
+
+（1563 的 `OpenFile/WriteFile/CloseFile/ReadFile` 来自社区 1777 的
+`Save/Load` 示例——那段脚本在本 exe 里无法执行，因为四个函数都没有注册。）
+
+⇒ 引用 1563 时必须标注「**非本构建**」：它描述的是一份**更晚或改版**的脚本层
+（多了武器/怒气查询与文件 I/O），不能当作本 exe 的 API 清单。反之，
+本 exe 的 `GetSelf/GetMaxHP/GetLeader/IsPerforming/GameOver/UpdateAIAttrib/Call/Print/
+EnableWaypoints/DisableWaypoints` 10 个内建 1563 **没有列**。
 
 ---
 
@@ -544,6 +673,8 @@ ChangeBehavior(who,"attacktarget",slot[,mode])
 | 中心动作派发器 `0x504C40`–`0x504F60` 的动作 ID 数值 | ❓ |
 | `block` 动作名的调用点 | ❓ |
 | AI 属性"取两次"的含义 | ❓ |
+| `Misc("transfer")` 是否真正传送 | ❓ 名/参数已锚；`0x56CB40` 只按首参返回 1 个整数，未写对象字段 |
+| 属性变更网络出口 `[0x5D1784]` | ❓ 仅在 `[0x72B6A8]!=0` 时调用，实参 `(2,obj,属性号,v)` |
 | `0x5CA1FC` 连招键串池的消费方 | ❓ |
 | VM 是字节码还是 AST 直解 | ❓ 未见字节码分派特征，倾向 AST/树遍历，无证据 |
 
@@ -560,6 +691,8 @@ ChangeBehavior(who,"attacktarget",slot[,mode])
 | `tools/scan_ptr.py` | 全文件扫 32 位小端指针槽 |
 | `tools/ghidra_scripts/PstApiTable.java` | 名字池 → 指针槽 |
 | `tools/ghidra_scripts/PstDispatch.java` | 分段反汇编 + 立即数字符串解析 |
+| `evidence/vmb_handlers_20261028.txt` | VM-B 11 内建逐条反汇编 + 字符串立即数标注 + SetSceneItem 参数分派跳表 |
+| `evidence/pool_5C9_5CB.txt` | `0x5C9000`–`0x5CBFFF` 有序串池（AI/VM 名字锚点） |
 | `_install_snapshot/` | 安装目录 `PScriptLib/` + `Level/` 快照（109 文件） |
 
 ## 十二、地图脚本头常量：.pst 头部解析与脚本语言面（2026-10-27，社区文档 × 二进制互证）

@@ -1,0 +1,1759 @@
+==============================================================================
+批次C 扫描: 331 个 301-1000B UNNAMED 函数, 五类证据 + 画像聚类
+判据: 调用方=E8字节扫描(C1通道); 被调/IAT/imm32/f32=capstone线性解码
+NAMED 集来源: u6_semA/B 台账 + INVESTIGATION.md 已确立结论
+==============================================================================
+
+FUN 00404510  (n=339)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:004126B0 x1
+[2] ins=77 被调 unique=2: 005095F5=alloc_wrap 00404810
+[3] IAT: -
+
+FUN 00406730  (n=553)  sec=.text
+[1] E8调用方 2 处; E9尾调 0 处; 父:004065C0 x2
+[2] ins=173 被调 unique=1: 00430E80
+[3] IAT: -
+
+FUN 00406960  (n=515)  sec=.text
+[1] E8调用方 2 处; E9尾调 0 处; 父:004065C0 x2
+[2] ins=163 被调 unique=2: 005095F5=alloc_wrap 005089FD=free
+[3] IAT: -
+
+FUN 004080A0  (n=456)  sec=.text
+[1] E8调用方 4 处; E9尾调 0 处; 父:00408270 x1 004086C0 x1 0040AB90 x1 0040AD40 x1
+[2] ins=181 被调 unique=0: 
+[3] IAT: -
+
+FUN 00408B70  (n=549)  sec=.text
+[1] E8调用方 4 处; E9尾调 0 处; 父:00408270 x1 004086C0 x1 0040AB90 x1 0040AD40 x1
+[2] ins=168 被调 unique=4: 00410000 x3 00406ED0 00430E60 0040FF40
+[3] IAT: -
+
+FUN 00410F60  (n=548)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:0050982E x1
+[2] ins=179 被调 unique=4: 005095F5=alloc_wrap 0050A22F x3 005089FD=free 004010F0
+[3] IAT: {'USER32.dll!LoadCursorA': 1, 'USER32.dll!LoadIconA': 1, 'GDI32.dll!CreateSolidBrush': 1, 'USER32.dll!RegisterClassExA': 1, 'KERNEL32.dll!GetCommandLineA': 1, 'USER32.dll!UnregisterClassA': 1}
+
+FUN 00415A00  (n=793)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:004157E0 x1
+[2] ins=250 被调 unique=0: 
+[3] IAT: -
+
+FUN 00417A70  (n=425)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00415DC0 x1
+[2] ins=128 被调 unique=1: 0041A490 x2
+[3] IAT: -
+
+FUN 00419260  (n=378)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00415DC0 x1
+[2] ins=117 被调 unique=2: 0041A490 x2 005099A7=realloc
+[3] IAT: -
+
+FUN 004193E0  (n=416)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00415DC0 x1
+[2] ins=124 被调 unique=2: 005099A7=realloc 0041A490
+[3] IAT: -
+
+FUN 00419580  (n=416)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00415DC0 x1
+[2] ins=124 被调 unique=2: 005099A7=realloc 0041A490
+[3] IAT: -
+
+FUN 004198E0  (n=644)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00415DC0 x1
+[2] ins=214 被调 unique=5: 0041A970 x8 0041A490 x2 0041A990 x2 004157E0 x2 00415330
+[3] IAT: -
+
+FUN 0041A0D0  (n=346)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00415DC0 x1
+[2] ins=119 被调 unique=1: 0041A040
+[3] IAT: -
+
+FUN 0041A230  (n=459)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00415DC0 x1
+[2] ins=149 被调 unique=3: 0041A970 x7 0041A990 x4 0041A9B0
+[3] IAT: -
+
+FUN 0041A9B0  (n=646)  sec=.text
+[1] E8调用方 2 处; E9尾调 0 处; 父:00415DC0 x1 0041A230 x1
+[2] ins=184 被调 unique=4: 0041A970 x11 00509980=__ftol 0041A950=set_texture 004155C0 x2
+[3] IAT: -
+
+FUN 0041B2D0  (n=982)  sec=.text
+[1] E8调用方 0 处; E9尾调 1 处; 父:
+[2] ins=305 被调 unique=1: 00509980=__ftol
+[3] IAT: -
+
+FUN 0041C030  (n=334)  sec=.text
+[1] E8调用方 4 处; E9尾调 0 处; 父:0040ED80 x1 0040F090 x1 0040F650 x1 0041BD30 x1
+[2] ins=111 被调 unique=2: 00509980=__ftol 005095F5=alloc_wrap
+[3] IAT: -
+
+FUN 0041F520  (n=385)  sec=.text
+[1] E8调用方 2 处; E9尾调 0 处; 父:004157E0 x2
+[2] ins=108 被调 unique=0: 
+[3] IAT: -
+
+FUN 0041F6B0  (n=307)  sec=.text
+[1] E8调用方 28 处; E9尾调 1 处; 父:0042F0C0 x14 0040E690 x1 0040EB20 x1 0040ED80 x1 0040F650 x1
+[2] ins=82 被调 unique=0: 
+[3] IAT: -
+
+FUN 0041FA20  (n=668)  sec=.text
+[1] E8调用方 4 处; E9尾调 0 处; 父:00420380 x3 0041F9E0 x1
+[2] ins=256 被调 unique=6: 00509980=__ftol 0041FCC0 004200F0 00420040 004201A0 00420290
+[3] IAT: -
+
+FUN 00420380  (n=805)  sec=.text
+[1] E8调用方 3 处; E9尾调 0 处; 父:0042F0C0 x3
+[2] ins=288 被调 unique=5: 0041FA20 x3 00420730 x2 005095F5=alloc_wrap 004206B0 005089FD=free
+[3] IAT: -
+
+FUN 00420730  (n=650)  sec=.text
+[1] E8调用方 2 处; E9尾调 0 处; 父:00420380 x2
+[2] ins=275 被调 unique=0: 
+[3] IAT: -
+
+FUN 004209C0  (n=439)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:0042F0C0 x1
+[2] ins=135 被调 unique=1: 0041BD00
+[3] IAT: -
+
+FUN 00423440  (n=565)  sec=.text
+[1] E8调用方 3 处; E9尾调 0 处; 父:00421DA0 x3
+[2] ins=238 被调 unique=9: 00423680 00425200 00424AC0 00424360 00423C30 00427300 00426A80 004261E0 00425970
+[3] IAT: -
+
+FUN 00423680  (n=650)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00423440 x1
+[2] ins=208 被调 unique=1: 00509980=__ftol
+[3] IAT: -
+
+FUN 004239F0  (n=562)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00423910 x1
+[2] ins=175 被调 unique=1: 00509980=__ftol
+[3] IAT: -
+
+FUN 00425E00  (n=984)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00425970 x1
+[2] ins=296 被调 unique=4: 00428AF0=slope_noz 00428CF0 x4 00428D70 x2 00428D40
+[3] IAT: -
+
+FUN 00426F10  (n=995)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00426A80 x1
+[2] ins=300 被调 unique=4: 00428AF0=slope_noz 00428CF0 x4 00428D70 x2 00428D40
+[3] IAT: -
+
+FUN 00427BB0  (n=925)  sec=.text
+[1] E8调用方 2 处; E9尾调 0 处; 父:00421DA0 x1 00423910 x1
+[2] ins=274 被调 unique=4: 00428920 x4 00428CF0 x4 00428D40 x2 00427F50
+[3] IAT: -
+
+FUN 00427F50  (n=748)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00427BB0 x1
+[2] ins=222 被调 unique=3: 004289B0 x4 00428CF0 x4 00428D40
+[3] IAT: -
+
+FUN 00428240  (n=957)  sec=.text
+[1] E8调用方 2 处; E9尾调 0 处; 父:00421DA0 x1 00423910 x1
+[2] ins=286 被调 unique=4: 00428920 x4 00428CF0 x4 00428D40 x2 00428600
+[3] IAT: -
+
+FUN 00428600  (n=796)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00428240 x1
+[2] ins=234 被调 unique=3: 004289B0 x4 00428CF0 x4 00428D40
+[3] IAT: -
+
+FUN 00428BA0  (n=326)  sec=.text
+[1] E8调用方 16 处; E9尾调 0 处; 父:00423C30 x4 00424360 x4 00424AC0 x4 00425200 x4
+[2] ins=99 被调 unique=1: 00509980=__ftol
+[3] IAT: -
+
+FUN 00428DD0  (n=419)  sec=.text
+[1] E8调用方 2 处; E9尾调 0 处; 父:00405210 x2
+[2] ins=157 被调 unique=2: 00509CE0=chkstk 0040E550
+[3] IAT: -
+
+FUN 00429700  (n=359)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:004038A0 x1
+[2] ins=147 被调 unique=3: 004298B0 x12 004298C0 00432250
+[3] IAT: -
+
+FUN 0042A1A0  (n=350)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:0042A3F0 x1
+[2] ins=128 被调 unique=1: 0042A550 x3
+[3] IAT: -
+
+FUN 0042B280  (n=309)  sec=.text
+[1] E8调用方 38 处; E9尾调 0 处; 父:0042BE10 x16 0041C340 x7 0041DD20 x6 0041E840 x3 0041CE20 x2
+[2] ins=121 被调 unique=0: 
+[3] IAT: -
+
+FUN 0042D230  (n=337)  sec=.text
+[1] E8调用方 8 处; E9尾调 0 处; 父:0042DCC0 x6 0042D0E0 x2
+[2] ins=106 被调 unique=1: 0042F0C0 x5
+[3] IAT: -
+
+FUN 00430C70  (n=324)  sec=.text
+[1] E8调用方 5 处; E9尾调 0 处; 父:00404B20 x1 00404BE0 x1 00404CB0 x1 00404D70 x1 004059E0 x1
+[2] ins=93 被调 unique=0: 
+[3] IAT: -
+
+FUN 00430FB0  (n=454)  sec=.text
+[1] E8调用方 6 处; E9尾调 0 处; 父:00415DC0 x2 00421DA0 x2 00428FC0 x2
+[2] ins=161 被调 unique=0: 
+[3] IAT: -
+
+FUN 00431180  (n=348)  sec=.text
+[1] E8调用方 17 处; E9尾调 0 处; 父:00408F00 x2 0040DB40 x2 00415DC0 x2 00421DA0 x2 00428FC0 x2
+[2] ins=124 被调 unique=0: 
+[3] IAT: -
+
+FUN 004312E0  (n=570)  sec=.text
+[1] E8调用方 20 处; E9尾调 0 处; 父:00407760 x6 00407260 x3 00421DA0 x3 00431B00 x3 00415DC0 x2
+[2] ins=205 被调 unique=0: 
+[3] IAT: -
+
+FUN 00431680  (n=640)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:004315E0 x1
+[2] ins=210 被调 unique=0: 
+[3] IAT: -
+
+FUN 00432040  (n=517)  sec=.text
+[1] E8调用方 6 处; E9尾调 0 处; 父:00404B20 x2 00404D70 x2 00404BE0 x1 00404CB0 x1
+[2] ins=132 被调 unique=1: 00431A20 x4
+[3] IAT: -
+
+FUN 00432C70  (n=332)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00433B60 x1
+[2] ins=111 被调 unique=1: 00432BF0
+[3] IAT: -
+
+FUN 004331D0  (n=508)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00432E20 x1
+[2] ins=179 被调 unique=0: 
+[3] IAT: -
+
+FUN 004333D0  (n=520)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00432E20 x1
+[2] ins=183 被调 unique=0: 
+[3] IAT: -
+
+FUN 004335E0  (n=520)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00432E20 x1
+[2] ins=183 被调 unique=0: 
+[3] IAT: -
+
+FUN 00433880  (n=587)  sec=.text
+[1] E8调用方 2 处; E9尾调 0 处; 父:00434440 x1 004615E0 x1
+[2] ins=191 被调 unique=0: 
+[3] IAT: -
+
+FUN 00434440  (n=339)  sec=.text
+[1] E8调用方 4 处; E9尾调 0 处; 父:00523590 x3 00429EE0 x1
+[2] ins=109 被调 unique=3: 0041F6B0 0041FE00 00433880
+[3] IAT: -
+
+FUN 00434690  (n=530)  sec=.text
+[1] E8调用方 2 处; E9尾调 0 处; 父:00429AA0 x1 00429B80 x1
+[2] ins=189 被调 unique=10: 00433AD0 x2 00433B60 x2 00433E90 x2 00433EA0 005089FD=free 005095F5=alloc_wrap 00508AE6=strtok_ish 00434310 004345A0 004348B0
+[3] IAT: {'USER32.dll!SetRect': 1}
+
+FUN 004438D0  (n=328)  sec=.text
+[1] E8调用方 6 处; E9尾调 0 处; 父:00436BB0 x3 00446380 x3
+[2] ins=121 被调 unique=3: 00429E60 x4 00429D40 x4 0043C6C0
+[3] IAT: -
+
+FUN 00443F40  (n=539)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00435320 x1
+[2] ins=155 被调 unique=9: 00508B38=malloc 00462E50 x3 00462D50 x2 00463CB0 x2 00463050 x2 00462BF0 x2 00570FC0 x2 0046A510 00461E50
+[3] IAT: -
+
+FUN 00445370  (n=912)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00435320 x1
+[2] ins=254 被调 unique=9: 00508B38=malloc 00462E50 x5 00462D50 x4 00463CB0 x4 00462BF0 x4 00463050 x3 00570FC0 x2 0046A510 00461E50
+[3] IAT: -
+
+FUN 0045B0A0  (n=405)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:0045A770 x1
+[2] ins=129 被调 unique=1: 0050915B x11
+[3] IAT: -
+
+FUN 00460A60  (n=373)  sec=.text
+[1] E8调用方 8 处; E9尾调 0 处; 父:0044BDA0 x8
+[2] ins=155 被调 unique=3: 00461390 x4 00460BE0=rb_rebalance 0044CF00
+[3] IAT: -
+
+FUN 00460BE0  (n=430)  sec=.text
+[1] E8调用方 31 处; E9尾调 0 处; 父:00460A60 x2 0049C330 x2 0049C910 x2 0049D240 x2 0049D520 x2
+[2] ins=159 被调 unique=0: 
+[3] IAT: -
+
+FUN 00461130  (n=442)  sec=.text
+[1] E8调用方 2 处; E9尾调 0 处; 父:0044BDA0 x2
+[2] ins=167 被调 unique=3: 00461390 x2 00461340 004612F0
+[3] IAT: -
+
+FUN 004615E0  (n=387)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00434F10 x1
+[2] ins=122 被调 unique=5: 0041F6B0 00429F90 00461770 00433880 00429FD0
+[3] IAT: -
+
+FUN 00466D70  (n=426)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00466A10 x1
+[2] ins=151 被调 unique=11: 00509980=__ftol 00429990 x3 00429C30 x3 00429B80 x2 00429D80 x2 0042A8F0 004351A0 00435120 00429AA0 00429D00 00429DE0
+[3] IAT: -
+
+FUN 00467C50  (n=425)  sec=.text
+[1] E8调用方 36 处; E9尾调 0 处; 父:00435C10 x10 00444230 x10 004708E0 x10 0043F030 x2 00436BB0 x1
+[2] ins=157 被调 unique=7: 0046F3D0 x2 0049D3C0 0046ECB0 00460BE0=rb_rebalance 0044CF00 0046F150 0046EF70
+[3] IAT: -
+
+FUN 00469340  (n=325)  sec=.text
+[1] E8调用方 2 处; E9尾调 0 处; 父:00467650 x1 00469D30 x1
+[2] ins=126 被调 unique=3: 00466190 x4 00469A60 00465730
+[3] IAT: -
+
+FUN 00469490  (n=427)  sec=.text
+[1] E8调用方 2 处; E9尾调 0 处; 父:00467650 x1 00469D30 x1
+[2] ins=157 被调 unique=4: 00466190 x5 0046EF50 x2 00469A00 00465730
+[3] IAT: -
+
+FUN 004698C0  (n=317)  sec=.text
+[1] E8调用方 22 处; E9尾调 0 处; 父:00436BB0 x6 00446380 x6 0043CE80 x5 0043F030 x2 00435C10 x1
+[2] ins=102 被调 unique=6: 00509980=__ftol 00469F70 00429990 00429AA0 00429C30 00429D00
+[3] IAT: -
+
+FUN 0046ABA0  (n=444)  sec=.text
+[1] E8调用方 10 处; E9尾调 0 处; 父:00436BB0 x5 00446380 x5
+[2] ins=158 被调 unique=10: 00509980=__ftol 00429990 x3 00429C30 x3 00429AA0 x2 00429D00 x2 00429D80 x2 0042A8F0 004351A0 00429B80 00435120
+[3] IAT: -
+
+FUN 0046B0D0  (n=358)  sec=.text
+[1] E8调用方 2 处; E9尾调 0 处; 父:00468230 x2
+[2] ins=134 被调 unique=1: 004663C0 x2
+[3] IAT: -
+
+FUN 0046B910  (n=872)  sec=.text
+[1] E8调用方 2 处; E9尾调 0 处; 父:00435320 x1 004708E0 x1
+[2] ins=272 被调 unique=15: 00509980=__ftol 00429E60 x4 00429D40 x4 00429990 x2 00429C30 x2 00429D00 x2 00508B38=malloc 00402B70 x2 00402A70 x2 004636D0 x2 00463B30 x2 00429AA0
+[3] IAT: -
+
+FUN 0046EF90  (n=442)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00466720 x1
+[2] ins=167 被调 unique=3: 0046F310 x2 00461340 004612F0
+[3] IAT: -
+
+FUN 0046F150  (n=442)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00467C50 x1
+[2] ins=167 被调 unique=3: 0046F3D0 x2 00461340 004612F0
+[3] IAT: -
+
+FUN 0046F880  (n=967)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:004708E0 x1
+[2] ins=298 被调 unique=14: 00509980=__ftol 00429990 x6 00429C30 x6 00429D00 x6 00429DE0 x6 00429AA0 x4 00429D80 x4 00429DC0 x4 004054E0 x4 00404FE0 x2 00405660 x2 0040C770 x2
+[3] IAT: -
+
+FUN 00473A20  (n=302)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00473CA0 x1
+[2] ins=111 被调 unique=2: 00473D40 x16 00473D80 x10
+[3] IAT: -
+
+FUN 00474A90  (n=970)  sec=.text
+[1] E8调用方 2 处; E9尾调 0 处; 父:004737D0 x1 00474190 x1
+[2] ins=103 被调 unique=0: 
+[3] IAT: -
+
+FUN 00475220  (n=465)  sec=.text
+[1] E8调用方 6 处; E9尾调 0 处; 父:00475400 x1 0047BBF0 x1 0056AFC0 x1 0056B0B0 x1 0057E590 x1
+[2] ins=155 被调 unique=1: 00476E80
+[3] IAT: -
+
+FUN 00475AA0  (n=338)  sec=.text
+[1] E8调用方 2 处; E9尾调 0 处; 父:00473B50 x1 00474760 x1
+[2] ins=101 被调 unique=8: 00475590 x15 00479F60 x2 004756B0 00475820 004757E0 00479140 00474E90 00474570
+[3] IAT: -
+
+FUN 00475CF0  (n=665)  sec=.text
+[1] E8调用方 0 处; E9尾调 1 处; 父:
+[2] ins=181 被调 unique=4: 00474570 x4 00474310 x3 00476F00 x2 0047ECF0
+[3] IAT: -
+
+FUN 00476F00  (n=572)  sec=.text
+[1] E8调用方 38 处; E9尾调 0 处; 父:00475CF0 x2 0056AA20 x2 005724F0 x2 00572E10 x2 00573BA0 x2
+[2] ins=206 被调 unique=0: 
+[3] IAT: -
+
+FUN 00477870  (n=601)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00477AD0 x1
+[2] ins=194 被调 unique=2: 00477D10=m4_at 004777B0 x2
+[3] IAT: -
+
+FUN 004782E0  (n=509)  sec=.text
+[1] E8调用方 2 处; E9尾调 0 处; 父:00501F30 x1 00586690 x1
+[2] ins=134 被调 unique=2: 00477200 00476F00
+[3] IAT: -
+
+FUN 004784E0  (n=391)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:0055A340 x1
+[2] ins=89 被调 unique=2: 00477200 00476F00
+[3] IAT: -
+
+FUN 00478670  (n=375)  sec=.text
+[1] E8调用方 14 处; E9尾调 0 处; 父:00573140 x4 00572E10 x3 0056A0C0 x2 00573BA0 x1 00573D50 x1
+[2] ins=89 被调 unique=1: 00476F00
+[3] IAT: -
+
+FUN 004787F0  (n=363)  sec=.text
+[1] E8调用方 2 处; E9尾调 0 处; 父:00572E10 x1 00573140 x1
+[2] ins=105 被调 unique=1: 00477F20
+[3] IAT: -
+
+FUN 00478C90  (n=317)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00474760 x1
+[2] ins=56 被调 unique=5: 00478E70 0047DF50 00480240 00508B38=malloc 0047F190
+[3] IAT: -
+
+FUN 00479780  (n=551)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00473E30 x1
+[2] ins=161 被调 unique=9: 00508AE6=strtok_ish 00508B38=malloc 0047F190 0050ABA0 0047F4B0 0047F290 0047F2C0 00480040 0047F2F0
+[3] IAT: -
+
+FUN 0047B880  (n=307)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:0056B230 x1
+[2] ins=85 被调 unique=0: 
+[3] IAT: -
+
+FUN 0047C3A0  (n=454)  sec=.text
+[1] E8调用方 23 处; E9尾调 0 处; 父:0055A340 x18 0055A180 x1 00560970 x1 00579420 x1 00585400 x1
+[2] ins=161 被调 unique=8: 00481EE0=mesh_idx_write 00481C20=mesh_setpos 00481CB0=mesh_setnormal 00481D00=mesh_setcolor 00481D40=mesh_setuv 00481B30=mesh_begin 00481B90=mesh_end 0047C1E0=mesh_alloc
+[3] IAT: -
+
+FUN 0047CDB0  (n=582)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00588ED0 x1
+[2] ins=200 被调 unique=8: 00481EE0=mesh_idx_write 00481B30=mesh_begin 00481C20=mesh_setpos 00481CB0=mesh_setnormal 00481D40=mesh_setuv 00481B90=mesh_end 0047C1E0=mesh_alloc 00481D00=mesh_setcolor
+[3] IAT: -
+
+FUN 0047D000  (n=696)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:0047D2C0 x1
+[2] ins=221 被调 unique=9: 00481EE0=mesh_idx_write 00481B30=mesh_begin 00481B90=mesh_end 0047C1E0=mesh_alloc 00481C20=mesh_setpos 0047EC40 00481C60 00481D00=mesh_setcolor 00481D40=mesh_setuv
+[3] IAT: -
+
+FUN 0047DAE2  (n=526)  sec=.text
+[1] E8调用方 0 处; E9尾调 0 处; 父:
+[2] ins=197 被调 unique=7: 00481EE0=mesh_idx_write 00481C20=mesh_setpos 00481CB0=mesh_setnormal 00481D00=mesh_setcolor 00481D40=mesh_setuv 00481B30=mesh_begin 00481B90=mesh_end
+[3] IAT: -
+
+FUN 0047EE00  (n=338)  sec=.text
+[1] E8调用方 5 处; E9尾调 0 处; 父:00573D50 x2 00573140 x1 0057E810 x1 0058EFD0 x1
+[2] ins=107 被调 unique=1: 00509D10
+[3] IAT: -
+
+FUN 0047EF60  (n=550)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:005822F0 x1
+[2] ins=133 被调 unique=1: 0047EC40
+[3] IAT: -
+
+FUN 0047F4B0  (n=707)  sec=.text
+[1] E8调用方 5 处; E9尾调 0 处; 父:00479A00 x4 00479780 x1
+[2] ins=197 被调 unique=14: 00481850 x4 0047F3D0 x3 00480C10 x2 00480B00 x2 00402BD0 x2 0047F800 0047F870 00402B70 00402A70 0047F8E0 004024A0 0047F960
+[3] IAT: -
+
+FUN 0047FA70  (n=659)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00479A00 x1
+[2] ins=203 被调 unique=9: 0052C070 x3 0047FD10 x2 0047FD40 x2 0052CAF0 x2 0047F9E0 00508B38=malloc 0052CA60 0052FA40 00507850
+[3] IAT: -
+
+FUN 00482880  (n=560)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00482150 x1
+[2] ins=227 被调 unique=0: 
+[3] IAT: -
+
+FUN 00484730  (n=301)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:004844B0 x1
+[2] ins=87 被调 unique=3: 00484860 x2 00484C90 x2 00484CB0
+[3] IAT: -
+
+FUN 00484CB0  (n=356)  sec=.text
+[1] E8调用方 2 处; E9尾调 0 处; 父:00484730 x1 00484E20 x1
+[2] ins=130 被调 unique=3: 00484560 x6 00484590 x4 004846B0 x2
+[3] IAT: -
+
+FUN 00484E20  (n=580)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:004844B0 x1
+[2] ins=203 被调 unique=5: 00484560 x8 00484860 x3 00484C90 x3 00484590 00484CB0
+[3] IAT: -
+
+FUN 00485070  (n=434)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:004842B0 x1
+[2] ins=142 被调 unique=6: 00484560 x5 00485230 x3 00485350 x3 004846B0 x2 005089FD=free 00484400=game_malloc0
+[3] IAT: -
+
+FUN 0048F720  (n=567)  sec=.text
+[1] E8调用方 0 处; E9尾调 0 处; 父:
+[2] ins=155 被调 unique=11: 0049DC30 x4 00403200 x4 00402BD0 x4 004026E0 x2 00402B70 00402A70 0049D3C0 0050AAA9 004AB200 0049DE10 00473340
+[3] IAT: -
+
+FUN 004949D0  (n=645)  sec=.text
+[1] E8调用方 0 处; E9尾调 0 处; 父:
+[2] ins=189 被调 unique=12: 0049F670 x2 005498C0 00508B38=malloc 005678A0 0056B230 0047B310 0047B740 00477EB0 00477E30 00460BE0=rb_rebalance 0044CF00 0049EBB0
+[3] IAT: -
+
+FUN 00497670  (n=410)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:0048A7E0 x1
+[2] ins=153 被调 unique=5: 0043C6C0 x3 0049BA20 x2 0049D720 x2 004B48C0 00402E90=deque_free_node
+[3] IAT: -
+
+FUN 00498660  (n=380)  sec=.text
+[1] E8调用方 0 处; E9尾调 0 处; 父:
+[2] ins=104 被调 unique=3: 00476120 x6 00508B38=malloc 004E7E00
+[3] IAT: -
+
+FUN 0049AB40  (n=529)  sec=.text
+[1] E8调用方 4 处; E9尾调 0 处; 父:0049A750 x1 004D3690 x1 004D5220 x1 004D54C0 x1
+[2] ins=182 被调 unique=8: 00402A70 x3 00402BF0=op_new 004030F0 x2 004DA870 x2 004608A0 005092C0 00560170 004F4800
+[3] IAT: -
+
+FUN 0049C910  (n=373)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00491D80 x1
+[2] ins=155 被调 unique=3: 0049F400 x4 00460BE0=rb_rebalance 0044CF00
+[3] IAT: -
+
+FUN 0049D240  (n=373)  sec=.text
+[1] E8调用方 5 处; E9尾调 0 处; 父:0048B650 x1 00494C60 x1 004A9EE0 x1 004AC160 x1 004BD490 x1
+[2] ins=155 被调 unique=3: 0049F5D0 x4 00460BE0=rb_rebalance 0044CF00
+[3] IAT: -
+
+FUN 0049D520  (n=373)  sec=.text
+[1] E8调用方 2 处; E9尾调 0 处; 父:00492250 x2
+[2] ins=155 被调 unique=3: 0049F7F0 x4 00460BE0=rb_rebalance 0044CF00
+[3] IAT: -
+
+FUN 0049D760  (n=373)  sec=.text
+[1] E8调用方 4 处; E9尾调 0 处; 父:00496A50 x4
+[2] ins=155 被调 unique=3: 0049F970 x4 00460BE0=rb_rebalance 0044CF00
+[3] IAT: -
+
+FUN 0049E610  (n=442)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00496830 x1
+[2] ins=167 被调 unique=3: 0049E160 x2 00461340 004612F0
+[3] IAT: -
+
+FUN 0049ED70  (n=442)  sec=.text
+[1] E8调用方 4 处; E9尾调 0 处; 父:00490068 x2 004B14C0 x2
+[2] ins=167 被调 unique=3: 0049F730 x2 00461340 004612F0
+[3] IAT: -
+
+FUN 0049EF30  (n=442)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00493B10 x1
+[2] ins=167 被调 unique=3: 0049F8B0 x2 00461340 004612F0
+[3] IAT: -
+
+FUN 0049F0F0  (n=442)  sec=.text
+[1] E8调用方 4 处; E9尾调 0 处; 父:00496A50 x2 004972C0 x2
+[2] ins=167 被调 unique=3: 0049F970 x2 00461340 004612F0
+[3] IAT: -
+
+FUN 004A1FC0  (n=304)  sec=.text
+[1] E8调用方 15 处; E9尾调 0 处; 父:00401770 x15
+[2] ins=120 被调 unique=4: 00403200 0049BE40 00402BC0 005092C0
+[3] IAT: -
+
+FUN 004A2F60  (n=346)  sec=.text
+[1] E8调用方 3 处; E9尾调 0 处; 父:00435320 x1 00463CB0 x1 0046A510 x1
+[2] ins=91 被调 unique=7: 00402BF0=op_new 004E8A20 004B4A30 004A4B30 004A30C0 004A34A0 004A5650
+[3] IAT: -
+
+FUN 004A3350  (n=328)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:004A36A0 x1
+[2] ins=124 被调 unique=5: 0040F870 x2 0049C2F0 x2 0049D3C0 004A8B00 00402E90=deque_free_node
+[3] IAT: -
+
+FUN 004A34A0  (n=499)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:004A2F60 x1
+[2] ins=146 被调 unique=7: 00508AE6=strtok_ish 0040ED10 0040F550 004A8160 0042A910 0040ED80 0049C640=vector_insert
+[3] IAT: {'KERNEL32.dll!FindFirstFileA': 1}
+
+FUN 004A5650  (n=337)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:004A2F60 x1
+[2] ins=94 被调 unique=0: 
+[3] IAT: -
+
+FUN 004AA730  (n=979)  sec=.text
+[1] E8调用方 0 处; E9尾调 0 处; 父:
+[2] ins=315 被调 unique=9: 004B5F30 x8 004B57C0 x8 005005B0 004B48C0 004E8720 0046EF50 0043C6C0 00508B38=malloc 00402E90=deque_free_node
+[3] IAT: -
+
+FUN 004AAD20  (n=600)  sec=.text
+[1] E8调用方 5 处; E9尾调 0 处; 父:00488B90 x1 00489660 x1 004899C0 x1 00489D60 x1 004D7FC0 x1
+[2] ins=164 被调 unique=12: 0049C640=vector_insert 00402E90=deque_free_node 004D6570 00492000 005005B0 004D65C0 0049D3C0 004A8E30 004B4940 004B4A50 0049B240 004920F0
+[3] IAT: -
+
+FUN 004AB3F0  (n=903)  sec=.text
+[1] E8调用方 2 处; E9尾调 0 处; 父:004BAEC0 x1 004EE3B0 x1
+[2] ins=340 被调 unique=7: 0049BE40 x8 00402BC0 x8 0049C0D0 x7 004B4050 x5 0050AAA9 00498C40 004B4070
+[3] IAT: -
+
+FUN 004AB780  (n=796)  sec=.text
+[1] E8调用方 2 处; E9尾调 0 处; 父:004ACEB0 x1 004BEAA0 x1
+[2] ins=299 被调 unique=7: 0049BE40 x6 00402BC0 x6 00402B70 00402A70 0049C0D0 0050915B 004026E0
+[3] IAT: -
+
+FUN 004AEA30  (n=307)  sec=.text
+[1] E8调用方 0 处; E9尾调 0 处; 父:
+[2] ins=111 被调 unique=6: 0049F670 x2 0050A8DE 00549A90 0044CF00 0049EBB0 00460BE0=rb_rebalance
+[3] IAT: -
+
+FUN 004B3C70  (n=484)  sec=.text
+[1] E8调用方 2 处; E9尾调 0 处; 父:004A9A40 x1 004A9BC0 x1
+[2] ins=142 被调 unique=5: 00549DD0 x9 00509980=__ftol 00549D20 00549DA0 00549D80
+[3] IAT: -
+
+FUN 004B3E60  (n=484)  sec=.text
+[1] E8调用方 2 处; E9尾调 0 处; 父:004A9A40 x1 004A9BC0 x1
+[2] ins=142 被调 unique=5: 00549DD0 x9 00509980=__ftol 00549D20 00549DA0 00549D80
+[3] IAT: -
+
+FUN 004B40A0  (n=417)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:004A9EE0 x1
+[2] ins=113 被调 unique=4: 00549DE0 x9 00549D20 00549DA0 00549D80
+[3] IAT: -
+
+FUN 004B4250  (n=408)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:004A9EE0 x1
+[2] ins=110 被调 unique=4: 00549DE0 x9 00549D20 00549DA0 00549D80
+[3] IAT: -
+
+FUN 004B4A50  (n=373)  sec=.text
+[1] E8调用方 2 处; E9尾调 0 处; 父:004AAD20 x1 004D6780 x1
+[2] ins=155 被调 unique=3: 0049E490 x4 00460BE0=rb_rebalance 0044CF00
+[3] IAT: -
+
+FUN 004B4CC0  (n=442)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:004B14C0 x1
+[2] ins=176 被调 unique=5: 004B6020 x4 004B5FC0 x2 004B5F50 x2 00460BE0=rb_rebalance 0044CF00
+[3] IAT: -
+
+FUN 004B8F20  (n=442)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:004B8C40 x1
+[2] ins=167 被调 unique=3: 004B90E0 x2 00461340 004612F0
+[3] IAT: -
+
+FUN 004BD490  (n=877)  sec=.text
+[1] E8调用方 0 处; E9尾调 0 处; 父:
+[2] ins=193 被调 unique=16: 005498C0 x4 004024A0 x4 00403200 x4 0048EE50 x2 00493D90 004B36F0 00492690 005519D0 00498CA0 00549A90 00549BD0 005519E0
+[3] IAT: -
+
+FUN 004C0DD0  (n=497)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:004C0820 x1
+[2] ins=149 被调 unique=17: 00474570 x4 00501B40 x4 00474600 x2 00474410 x2 004745D0 x2 00477200 00501E60 00501FE0 00501E70 00501F70 00501F30 00501F00
+[3] IAT: -
+
+FUN 004C0FD0  (n=873)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:004BFF60 x1
+[2] ins=234 被调 unique=5: 00477D30 x4 0047EC40 x2 00501830 004C2BF0 004C13C0
+[3] IAT: -
+
+FUN 004C16E0  (n=531)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:004BF410 x1
+[2] ins=171 被调 unique=4: 004C6050 004C68D0=deque_dtor_elem 004C4DF0 004C2A30
+[3] IAT: -
+
+FUN 004C1900  (n=373)  sec=.text
+[1] E8调用方 3 处; E9尾调 0 处; 父:004C14B0 x1 004C2120 x1 004C2230 x1
+[2] ins=131 被调 unique=7: 00502CD0 x5 004C2BF0 x2 004C2040 x2 004C1A80 0047ECF0 004C1D50 004C1F70
+[3] IAT: -
+
+FUN 004C2230  (n=543)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:004BF410 x1
+[2] ins=180 被调 unique=6: 004C6050 x2 004C24B0 x2 004E8500 004C68D0=deque_dtor_elem 004C1900 004C2A30
+[3] IAT: -
+
+FUN 004C2A30  (n=446)  sec=.text
+[1] E8调用方 4 处; E9尾调 1 处; 父:004C14B0 x1 004C16E0 x1 004C2230 x1 004C2DE0 x1
+[2] ins=152 被调 unique=4: 00509980=__ftol 004B6360 004C2BF0 004C4870
+[3] IAT: -
+
+FUN 004C3940  (n=509)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:004C8510 x1
+[2] ins=153 被调 unique=8: 00477B90 x6 00477200 x2 00529C40 x2 00487830 00501600 004FB730 004C2BF0 00477C10
+[3] IAT: -
+
+FUN 004C41A0  (n=337)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:004BF910 x1
+[2] ins=112 被调 unique=4: 004FB440 004C6350 004C5200 004FB550
+[3] IAT: -
+
+FUN 004C4DF0  (n=309)  sec=.text
+[1] E8调用方 2 处; E9尾调 0 处; 父:004C16E0 x1 004C4F30 x1
+[2] ins=131 被调 unique=4: 004E8500 x2 004C4300 00402E90=deque_free_node 004C6F20
+[3] IAT: -
+
+FUN 004C5760  (n=443)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:004C2DE0 x1
+[2] ins=162 被调 unique=5: 004C6090 x2 004C4300 00402E90=deque_free_node 004C6050 004C6F20
+[3] IAT: -
+
+FUN 004C61E0  (n=360)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:004BF910 x1
+[2] ins=150 被调 unique=2: 005092C0 x2 00403490 x2
+[3] IAT: -
+
+FUN 004C6AB0  (n=440)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:004C4F30 x1
+[2] ins=164 被调 unique=5: 004C68D0=deque_dtor_elem 004C4300 00402E90=deque_free_node 004C6050 004C6F20
+[3] IAT: -
+
+FUN 004D0E10  (n=333)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:004CABD0 x1
+[2] ins=89 被调 unique=2: 0049C330 x9 0049AFF0
+[3] IAT: -
+
+FUN 004D3930  (n=563)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:004D2900 x1
+[2] ins=209 被调 unique=7: 00403200 x3 004D4A40 x2 004D4840 x2 004D4000 004D4180 00402E90=deque_free_node 0049FE20
+[3] IAT: -
+
+FUN 004D3B70  (n=352)  sec=.text
+[1] E8调用方 3 处; E9尾调 0 处; 父:004D3690 x2 004D2900 x1
+[2] ins=115 被调 unique=5: 00402AC0 x3 005005B0 0049E380 00402BF0=op_new 0049FE20
+[3] IAT: -
+
+FUN 004D3CD0  (n=388)  sec=.text
+[1] E8调用方 4 处; E9尾调 0 处; 父:004D5220 x2 004D3690 x1 004D5FC0 x1
+[2] ins=168 被调 unique=4: 00403490 x3 00402B30 x2 005092C0 004D4000
+[3] IAT: -
+
+FUN 004D4000  (n=377)  sec=.text
+[1] E8调用方 10 处; E9尾调 0 处; 父:004D5790 x2 004D58B0 x2 004D3930 x1 004D3CD0 x1 004D4640 x1
+[2] ins=150 被调 unique=3: 004D43E0 00402E90=deque_free_node 004F4800
+[3] IAT: -
+
+FUN 004D4640  (n=498)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:004D3690 x1
+[2] ins=190 被调 unique=6: 00403200 x3 004D4840 x2 004D4000 004D4180 00402E90=deque_free_node 0049FE20
+[3] IAT: -
+
+FUN 004D54C0  (n=510)  sec=.text
+[1] E8调用方 0 处; E9尾调 0 处; 父:
+[2] ins=155 被调 unique=11: 004026E0 x3 0046EF50 0049AB40 0049FB80 0049FE20 004D6AB0 004DB820 0049E220 00402E90=deque_free_node 004D4A40 0049B270
+[3] IAT: -
+
+FUN 004D5FC0  (n=454)  sec=.text
+[1] E8调用方 0 处; E9尾调 0 处; 父:
+[2] ins=100 被调 unique=7: 0049B240 x4 004920F0 x4 00492000 x2 004D6570 x2 004D65C0 x2 004D3CD0 004D3E60
+[3] IAT: -
+
+FUN 004D6780  (n=354)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00496A50 x1
+[2] ins=115 被调 unique=5: 0049C640=vector_insert 00402E90=deque_free_node 0049D3C0 004B4940 004B4A50
+[3] IAT: -
+
+FUN 004D6E60  (n=339)  sec=.text
+[1] E8调用方 3 处; E9尾调 0 处; 父:004D5020 x2 004D59D0 x1
+[2] ins=113 被调 unique=5: 00402AC0 x3 005005B0 0049E380 00402BF0=op_new 0049FE20
+[3] IAT: -
+
+FUN 004DAC50  (n=481)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:004DA980 x1
+[2] ins=170 被调 unique=5: 00402BF0=op_new 004030F0 x3 00402A70 x3 005092C0 x2 004DA870
+[3] IAT: -
+
+FUN 004DAF50  (n=417)  sec=.text
+[1] E8调用方 2 处; E9尾调 0 处; 父:004DA8A0 x1 004DA980 x1
+[2] ins=149 被调 unique=5: 004DA870 x3 00402A70 x3 00402BF0=op_new 004030F0 x2 004608A0
+[3] IAT: -
+
+FUN 004DB100  (n=509)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:004DA980 x1
+[2] ins=205 被调 unique=3: 00403490 x3 005092C0 x2 00402B30
+[3] IAT: -
+
+FUN 004DE970  (n=753)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:004DE770 x1
+[2] ins=251 被调 unique=4: 004A8E30 x8 0049C640=vector_insert 00402570=std::string_ctor_assign 004E4130=map_insert
+[3] IAT: -
+
+FUN 004DF190  (n=820)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:004DEF90 x1
+[2] ins=274 被调 unique=4: 004A8E30 x8 0049C640=vector_insert 00402570=std::string_ctor_assign 004E4130=map_insert
+[3] IAT: -
+
+FUN 004E07C0  (n=982)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:004E05C0 x1
+[2] ins=329 被调 unique=4: 00402570=std::string_ctor_assign 004A8E30 x8 0049C640=vector_insert 004E4130=map_insert
+[3] IAT: -
+
+FUN 004E4470  (n=442)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:004E3E00 x1
+[2] ins=167 被调 unique=3: 004E46F0 x2 00461340 004612F0
+[3] IAT: -
+
+FUN 004E62A0  (n=719)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:004E5410 x1
+[2] ins=255 被调 unique=7: 004E6050 x8 0049BD10 x2 004E7CF0 x2 00402E90=deque_free_node 00509166 x2 004E74E0 004E75C0
+[3] IAT: -
+
+FUN 004E8EF0  (n=440)  sec=.text
+[1] E8调用方 2 处; E9尾调 0 处; 父:004E90B0 x1 004EA800 x1
+[2] ins=117 被调 unique=5: 0040ED80 x3 0040D860 x3 004059E0 00405DF0 0040C770
+[3] IAT: -
+
+FUN 004EB870  (n=397)  sec=.text
+[1] E8调用方 4 处; E9尾调 0 处; 父:004A5C70 x2 004A5BC0 x1 004EA800 x1
+[2] ins=126 被调 unique=0: 
+[3] IAT: -
+
+FUN 004F52B0  (n=318)  sec=.text
+[1] E8调用方 0 处; E9尾调 0 处; 父:
+[2] ins=99 被调 unique=4: 00487830 x11 0040FA50 0040B100 00404CB0
+[3] IAT: -
+
+FUN 004F7EC0  (n=797)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:004F7E00 x1
+[2] ins=300 被调 unique=9: 00507850 x3 004F8330 x2 004F8260 x2 0049F3D0 x2 004F84B0 x2 004F8770 004F8820 00508B38=malloc 004F81E0
+[3] IAT: -
+
+FUN 004FA650  (n=445)  sec=.text
+[1] E8调用方 3 处; E9尾调 0 处; 父:004FA240 x2 004F9720 x1
+[2] ins=130 被调 unique=6: 00402BF0=op_new 005092C0 x2 00402A70 x2 00402570=std::string_ctor_assign 00402850 x2 00509166 x2
+[3] IAT: -
+
+FUN 004FA810  (n=360)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:004FA240 x1
+[2] ins=151 被调 unique=2: 005092C0 x2 00403490 x2
+[3] IAT: -
+
+FUN 004FABA0  (n=562)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:004C2DE0 x1
+[2] ins=177 被调 unique=14: 00509E57 x3 004FADE0 x2 00481850 x2 00402BD0 x2 0050A2D3 x2 00402B70 00402A70 00480C10 00480B00 0049DC30 00509F8F=fopen 00402E90=deque_free_node
+[3] IAT: -
+
+FUN 004FB240  (n=420)  sec=.text
+[1] E8调用方 8 处; E9尾调 0 处; 父:00550EC0 x2 00552120 x2 005525E0 x2 004FAFA0 x1 00505770 x1
+[2] ins=121 被调 unique=8: 00402AC0 x2 00509166 x2 00402850 00402BF0=op_new 005092C0 00402A70 005005B0 0047A7A0
+[3] IAT: -
+
+FUN 004FB770  (n=320)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:004C0020 x1
+[2] ins=97 被调 unique=7: 004FCFA0 004FD3B0 00500BE0 004FDA00 004C0580 004FE0C0 004FA210
+[3] IAT: -
+
+FUN 004FB8B0  (n=496)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:004C0820 x1
+[2] ins=140 被调 unique=8: 00501830 00477D30 0047ECF0 00508AE6=strtok_ish 00501D90 00501C90 00501780 00501D10
+[3] IAT: -
+
+FUN 004FC4B0  (n=341)  sec=.text
+[1] E8调用方 5 处; E9尾调 0 处; 父:004FD2E0 x3 004FBAA0 x2
+[2] ins=105 被调 unique=6: 0050A8DE x4 004C2BF0 x2 004FD580 00500FA0 00500C60 005012A0
+[3] IAT: -
+
+FUN 004FCFA0  (n=822)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:004FB770 x1
+[2] ins=246 被调 unique=13: 004FD4C0 x3 00500BE0 x3 00500C40 x3 004C1360 x2 0050A8DE x2 004FCED0 x2 00501160 0047ECF0 004FD2E0 00501070 004FDD10 004FD630
+[3] IAT: -
+
+FUN 004FDBB0  (n=351)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:004F9930 x1
+[2] ins=126 被调 unique=4: 00403200 00402B30 00403490 004C82D0
+[3] IAT: -
+
+FUN 004FEA50  (n=493)  sec=.text
+[1] E8调用方 3 处; E9尾调 0 处; 父:004FE3E0 x2 004FD630 x1
+[2] ins=146 被调 unique=6: 00402BF0=op_new 005092C0 x2 00402A70 x2 00402570=std::string_ctor_assign 00402850 x2 00509166 x2
+[3] IAT: -
+
+FUN 004FEE70  (n=400)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:004FE3E0 x1
+[2] ins=161 被调 unique=2: 005092C0 x2 00403490 x2
+[3] IAT: -
+
+FUN 005012F0  (n=742)  sec=.text
+[1] E8调用方 2 处; E9尾调 0 处; 父:004BFC00 x1 004F9EB0 x1
+[2] ins=218 被调 unique=3: 00571660 x30 005092C0 00403490
+[3] IAT: -
+
+FUN 00505220  (n=519)  sec=.text
+[1] E8调用方 0 处; E9尾调 1 处; 父:
+[2] ins=174 被调 unique=9: 00505660 00506E90 00505430 004815F0 005092C0 00403490 005259E0 00525900 00527C90
+[3] IAT: -
+
+FUN 005099A7  (n=781)  sec=.text
+[1] E8调用方 36 处; E9尾调 1 处; 父:00528190 x4 00405DF0 x3 0040C830 x3 0040C900 x3 004E90B0 x3
+[2] ins=277 被调 unique=16: 0050C1E0 x4 0050DD18 x2 0050CB23 x2 0050CB4E x2 0050F884 x2 0050DD79 x2 0050D8D5 x2 005095F5=alloc_wrap 005089FD=free 0050D32C 0050CE77 00509B32
+[3] IAT: {'KERNEL32.dll!HeapAlloc': 2, 'KERNEL32.dll!HeapReAlloc': 3}
+
+FUN 0050AF1E  (n=340)  sec=.text
+[1] E8调用方 7 处; E9尾调 0 处; 父:00482150 x1 00485230 x1 00561F90 x1 0056A210 x1 0056C770 x1
+[2] ins=132 被调 unique=2: 0050B0C0 x3 0050B072
+[3] IAT: -
+
+FUN 0050B80C  (n=395)  sec=.text
+[1] E8调用方 6 处; E9尾调 0 处; 父:0050B19A x4 0050B7A7 x1 00512209 x1
+[2] ins=135 被调 unique=4: 00510865 x2 0051086E x2 0050BC3A 005107F2
+[3] IAT: {'KERNEL32.dll!WriteFile': 2, 'KERNEL32.dll!GetLastError': 2}
+
+FUN 0050B9FC  (n=473)  sec=.text
+[1] E8调用方 2 处; E9尾调 0 处; 父:0050B997 x1 0050BEA8 x1
+[2] ins=170 被调 unique=4: 00510865 0051086E 005107F2 0050BC3A
+[3] IAT: {'KERNEL32.dll!ReadFile': 2, 'KERNEL32.dll!GetLastError': 2}
+
+FUN 0050BCAD  (n=444)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:0050982E x1
+[2] ins=150 被调 unique=2: 005095F5=alloc_wrap 00509936
+[3] IAT: {'KERNEL32.dll!GetStartupInfoA': 1, 'KERNEL32.dll!GetFileType': 2, 'KERNEL32.dll!GetStdHandle': 1, 'KERNEL32.dll!SetHandleCount': 1}
+
+FUN 0050C936  (n=328)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:0050CA7E x1
+[2] ins=115 被调 unique=6: 00509CE0=chkstk 0050A0E0 0050ABA0 00510D90 005123AF 0050C909
+[3] IAT: {'KERNEL32.dll!GetVersionExA': 1, 'KERNEL32.dll!GetEnvironmentVariableA': 1, 'KERNEL32.dll!GetModuleFileNameA': 1}
+[4] 串(2): "__GLOBAL_HEAP_SELECTED" | "__MSVCRT_HEAP_SELECT"
+
+FUN 0050D622  (n=324)  sec=.text
+[1] E8调用方 2 处; E9尾调 0 处; 父:0050CA7E x1 0050D91A x1
+[2] ins=102 被调 unique=1: 00511700
+[3] IAT: {'KERNEL32.dll!HeapAlloc': 1, 'KERNEL32.dll!VirtualAlloc': 1, 'KERNEL32.dll!VirtualFree': 1, 'KERNEL32.dll!HeapFree': 1}
+
+FUN 0050D91A  (n=520)  sec=.text
+[1] E8调用方 3 处; E9尾调 0 处; 父:0050969A x1 00509B32 x1 0050B55C x1
+[2] ins=180 被调 unique=3: 0050DB22 x2 00511700 0050D622
+[3] IAT: {'KERNEL32.dll!VirtualAlloc': 1}
+
+FUN 0050E74B  (n=435)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:0050E6B0 x1
+[2] ins=149 被调 unique=8: 0050F0DB x3 0050EF73 x3 005126FA 00508DB1 0050E9A8 0050EAA3 0050EE27 0050E8FE
+[3] IAT: -
+
+FUN 0050F89F  (n=318)  sec=.text
+[1] E8调用方 2 处; E9尾调 0 处; 父:0050982E x1 0050B3EC x1
+[2] ins=102 被调 unique=2: 0050EF73 0050F9DD
+[3] IAT: {'KERNEL32.dll!UnhandledExceptionFilter': 1}
+
+FUN 0050FBC1  (n=436)  sec=.text
+[1] E8调用方 2 处; E9尾调 0 处; 父:0050FB28 x2
+[2] ins=187 被调 unique=0: 
+[3] IAT: -
+
+FUN 0050FD75  (n=306)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:0050982E x1
+[2] ins=132 被调 unique=3: 005095F5=alloc_wrap 005089FD=free 0050C1E0
+[3] IAT: {'KERNEL32.dll!GetEnvironmentStringsW': 1, 'KERNEL32.dll!GetEnvironmentStrings': 2, 'KERNEL32.dll!WideCharToMultiByte': 1, 'KERNEL32.dll!FreeEnvironmentStringsW': 1, 'KERNEL32.dll!FreeEnvironmentStringsA': 1}
+
+FUN 0050FEE0  (n=339)  sec=.text
+[1] E8调用方 5 处; E9尾调 0 处; 父:0050FEA7 x2 00509936 x1 0050995B x1 0051274A x1
+[2] ins=100 被调 unique=5: 0050C680 x3 0050F720 x3 0050F710 x2 00509730 00512E87
+[3] IAT: {'KERNEL32.dll!GetModuleFileNameA': 1, 'KERNEL32.dll!GetStdHandle': 1, 'KERNEL32.dll!WriteFile': 1}
+[4] 串(2): "Microsoft Visual C++ Runtime" | "<program name unknown>"
+
+FUN 005104DE  (n=368)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00509F5E x1
+[2] ins=124 被调 unique=1: 0050BEA8
+[3] IAT: -
+
+FUN 005108F6  (n=511)  sec=.text
+[1] E8调用方 8 处; E9尾调 0 处; 父:0051109F x2 00593500 x2 00593634 x2 0050A791 x1 00513D2C x1
+[2] ins=181 被调 unique=2: 00509CE0=chkstk 00510B1A
+[3] IAT: {'KERNEL32.dll!LCMapStringW': 4, 'KERNEL32.dll!LCMapStringA': 2, 'KERNEL32.dll!MultiByteToWideChar': 2}
+
+FUN 00510B45  (n=318)  sec=.text
+[1] E8调用方 2 处; E9尾调 0 处; 父:0050A85C x1 0051109F x1
+[2] ins=117 被调 unique=2: 00509CE0=chkstk 00511700
+[3] IAT: {'KERNEL32.dll!GetStringTypeW': 2, 'KERNEL32.dll!GetStringTypeA': 2, 'KERNEL32.dll!MultiByteToWideChar': 2}
+
+FUN 00510E4C  (n=429)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00511234 x1
+[2] ins=143 被调 unique=6: 00511043 x2 0050DD18 00510FF9 00511076 0051109F 0050DD79
+[3] IAT: {'KERNEL32.dll!GetCPInfo': 1}
+
+FUN 005123C6  (n=517)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:005123AF x1
+[2] ins=195 被调 unique=3: 0050A85C=_isctype 00513CBD 00510865
+[3] IAT: -
+
+FUN 00512AC1  (n=364)  sec=.text
+[1] E8调用方 2 处; E9尾调 0 处; 父:00512C2D x1 00512C43 x1
+[2] ins=138 被调 unique=5: 00512A34 x4 00512A0D x3 005129F2 x2 00512966 x2 00512A19
+[3] IAT: -
+
+FUN 00513568  (n=647)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:0051353A x1
+[2] ins=207 被调 unique=10: 0050DD79 x3 005090D0 x3 00509730 x2 0050DD18 00514F02 0050F800 005089FD=free 0050C680 005095F5=alloc_wrap 0050F710
+[3] IAT: {'KERNEL32.dll!GetTimeZoneInformation': 1, 'KERNEL32.dll!WideCharToMultiByte': 1}
+
+FUN 005139BC  (n=320)  sec=.text
+[1] E8调用方 4 处; E9尾调 0 处; 父:00513810 x4
+[2] ins=101 被调 unique=0: 
+[3] IAT: -
+
+FUN 00513DF8  (n=386)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:0051274A x1
+[2] ins=138 被调 unique=5: 0050DD79 x3 0050EF73 00513F7A 0050DD18 0050C739
+[3] IAT: -
+
+FUN 00514158  (n=659)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00512D2A x1
+[2] ins=232 被调 unique=6: 00514036 x4 0050F710 x2 00514D5C 00514B3C 00514064 00513FD8
+[3] IAT: -
+[4] 串(4): "1#QNAN" | "1#INF" | "1#IND" | "1#SNAN"
+
+FUN 0051478A  (n=535)  sec=.text
+[1] E8调用方 2 处; E9尾调 0 处; 父:00512F10 x1 0051443F x1
+[2] ins=189 被调 unique=2: 00514AE6 x5 00515002
+[3] IAT: -
+
+FUN 00514B3C  (n=544)  sec=.text
+[1] E8调用方 2 处; E9尾调 0 处; 父:00514158 x1 00514D5C x1
+[2] ins=177 被调 unique=3: 00513FB7 00514036 00514064
+[3] IAT: -
+
+FUN 00515170  (n=597)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:005150C3 x1
+[2] ins=224 被调 unique=2: 00510B1A x2 00509CE0=chkstk
+[3] IAT: {'KERNEL32.dll!CompareStringW': 1, 'KERNEL32.dll!CompareStringA': 2, 'KERNEL32.dll!GetCPInfo': 1, 'KERNEL32.dll!MultiByteToWideChar': 3}
+
+FUN 00518563  (n=692)  sec=.text
+[1] E8调用方 0 处; E9尾调 0 处; 父:
+[2] ins=253 被调 unique=3: 00516274 x7 00516F1B x2 005164BD x2
+[3] IAT: -
+
+FUN 0051C3FB  (n=311)  sec=.text
+[1] E8调用方 6 处; E9尾调 0 处; 父:0051C532 x3 0051C5BF x3
+[2] ins=77 被调 unique=2: 00523180 x2 00522980
+[3] IAT: -
+
+FUN 0051EC9A  (n=421)  sec=.text
+[1] E8调用方 0 处; E9尾调 0 处; 父:
+[2] ins=112 被调 unique=1: 00523060 x3
+[3] IAT: -
+
+FUN 005205E0  (n=738)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00521975 x1
+[2] ins=195 被调 unique=0: 
+[3] IAT: -
+
+FUN 00520CBA  (n=820)  sec=.text
+[1] E8调用方 8 处; E9尾调 0 处; 父:0052174F x7 00520FEE x1
+[2] ins=230 被调 unique=0: 
+[3] IAT: -
+
+FUN 005213FB  (n=455)  sec=.text
+[1] E8调用方 12 处; E9尾调 0 处; 父:005215C7 x5 0052174F x5 00521975 x2
+[2] ins=118 被调 unique=0: 
+[3] IAT: -
+
+FUN 00522480  (n=492)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:0051AF40 x1
+[2] ins=132 被调 unique=0: 
+[3] IAT: -
+
+FUN 00522760  (n=329)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:0051BC20 x1
+[2] ins=78 被调 unique=0: 
+[3] IAT: -
+
+FUN 00522D69  (n=759)  sec=.text
+[1] E8调用方 0 处; E9尾调 0 处; 父:
+[2] ins=175 被调 unique=1: 00522C80
+[3] IAT: -
+
+FUN 00523590  (n=461)  sec=.text
+[1] E8调用方 1 处; E9尾调 1 处; 父:005238E0 x1
+[2] ins=136 被调 unique=3: 00434440 x3 004219F0 0040E740
+[3] IAT: -
+
+FUN 00527C90  (n=359)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00505220 x1
+[2] ins=112 被调 unique=1: 005089FD=free
+[3] IAT: {'KERNEL32.dll!EnterCriticalSection': 1, 'WINMM.dll!timeKillEvent': 1, 'ole32.dll!CoUninitialize': 1, 'KERNEL32.dll!WaitForSingleObjectEx': 1, 'WINMM.dll!waveOutReset': 1, 'WINMM.dll!waveOutUnprepareHeader': 1, 'WINMM.dll!waveOutClose': 1, 'KERNEL32.dll!CloseHandle': 1, 'KERNEL32.dll!DeleteCriticalSection': 1}
+
+FUN 00527EF0  (n=312)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00505A60 x1
+[2] ins=106 被调 unique=5: 005255B0 x2 00525620 x2 005095F5=alloc_wrap 00525980 00525610
+[3] IAT: {'KERNEL32.dll!IsBadWritePtr': 1}
+
+FUN 005285C0  (n=442)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00505A60 x1
+[2] ins=138 被调 unique=1: 005095F5=alloc_wrap
+[3] IAT: -
+
+FUN 00528CF0  (n=323)  sec=.text
+[1] E8调用方 3 处; E9尾调 0 处; 父:00506090 x1 0052AC30 x1 0052ADD0 x1
+[2] ins=105 被调 unique=9: 005255B0 x3 00525620 x3 005089FD=free 00525980 00525610 005259A0 00528E40 005297F0 005260B0
+[3] IAT: -
+
+FUN 0052C8C0  (n=413)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:0052C880 x1
+[2] ins=151 被调 unique=5: 00530DB0 x5 0052C1A0 x3 00530D00 x2 00530F00 00530D80
+[3] IAT: -
+
+FUN 0052CB10  (n=454)  sec=.text
+[1] E8调用方 7 处; E9尾调 0 处; 父:0052E890 x2 0052CCE0 x1 0052DB90 x1 0052E300 x1 00538F90 x1
+[2] ins=165 被调 unique=4: 00530DB0 x3 0052C1A0 x3 00530D80 x3 00530D00
+[3] IAT: -
+
+FUN 0052D410  (n=450)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:0052D860 x1
+[2] ins=156 被调 unique=4: 0052B240 0052BC40 0052CF80 00530DB0
+[3] IAT: -
+
+FUN 0052D5E0  (n=633)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:0052D860 x1
+[2] ins=210 被调 unique=4: 0052B240 0052BC40 0052CF80 00530DB0
+[3] IAT: -
+
+FUN 0052DB90  (n=322)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:0052DAA0 x1
+[2] ins=126 被调 unique=11: 0052C1A0 x5 0052C4A0 x4 0052C490 00530FA0 0052E890=img_partner 00530DC0 0052CB10 0052CD50 0052DCE0 00536A30 00536420
+[3] IAT: -
+
+FUN 0052EB20  (n=372)  sec=.text
+[1] E8调用方 11 处; E9尾调 0 处; 父:0052F270 x3 0052ECA0 x2 0047F780 x1 0047F800 x1 0047F870 x1
+[2] ins=120 被调 unique=9: 00530DB0 x2 00530D00 0052B240 0052ECA0 0052E890=img_partner 00539EC0 00530F00 00530EB0 0052C1A0
+[3] IAT: -
+
+FUN 0052F630  (n=360)  sec=.text
+[1] E8调用方 3 处; E9尾调 0 处; 父:0047F800 x1 0047F870 x1 0052F510 x1
+[2] ins=128 被调 unique=9: 00530E60 x9 00530D00 x2 00530E70 005310C0 0053A300 0053B4E0 0053B960 0052F420 0052F510
+[3] IAT: -
+
+FUN 0052F910  (n=301)  sec=.text
+[1] E8调用方 0 处; E9尾调 1 处; 父:
+[2] ins=100 被调 unique=9: 0052C490 x3 00531000 x3 0052C1A0 x2 0052C4A0 x2 0052F7A0 x2 00530D00 0052CCE0 0052DAA0 00530060
+[3] IAT: -
+
+FUN 0052FA70  (n=376)  sec=.text
+[1] E8调用方 4 处; E9尾调 0 处; 父:00530730 x2 0052FA70 x1 0052FD70 x1
+[2] ins=143 被调 unique=4: 0052C740 00530D80 0052C1A0 0052FA70
+[3] IAT: -
+
+FUN 0052FBF0  (n=377)  sec=.text
+[1] E8调用方 5 处; E9尾调 0 处; 父:0052FD70 x2 00530480 x2 0052FBF0 x1
+[2] ins=143 被调 unique=4: 0052C740 00530D80 0052C1A0 0052FBF0
+[3] IAT: -
+
+FUN 00530480  (n=674)  sec=.text
+[1] E8调用方 3 处; E9尾调 0 处; 父:00530060 x2 00530480 x1
+[2] ins=250 被调 unique=6: 0052FBF0 x2 00530D00 x2 0052C740 00530D80 0052C1A0 00530480
+[3] IAT: -
+
+FUN 00530730  (n=681)  sec=.text
+[1] E8调用方 3 处; E9尾调 0 处; 父:00530060 x2 00530730 x1
+[2] ins=253 被调 unique=6: 0052FA70 x2 00530D00 x2 0052C740 00530D80 0052C1A0 00530730
+[3] IAT: -
+
+FUN 00530AE0  (n=354)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00530C50 x1
+[2] ins=137 被调 unique=4: 00530D80 x2 00530DB0 x2 00530D00 0052CF80
+[3] IAT: -
+
+FUN 00538530  (n=525)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00538F90 x1
+[2] ins=136 被调 unique=0: 
+[3] IAT: -
+
+FUN 005387F0  (n=326)  sec=.text
+[1] E8调用方 4 处; E9尾调 0 处; 父:00538BA0 x4
+[2] ins=141 被调 unique=0: 
+[3] IAT: -
+
+FUN 00538940  (n=328)  sec=.text
+[1] E8调用方 4 处; E9尾调 0 处; 父:00538BA0 x4
+[2] ins=141 被调 unique=0: 
+[3] IAT: -
+
+FUN 005399B0  (n=381)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00539B30 x1
+[2] ins=127 被调 unique=0: 
+[3] IAT: -
+
+FUN 00539B30  (n=506)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00539D30 x1
+[2] ins=175 被调 unique=3: 00539850 00539930 005399B0
+[3] IAT: -
+
+FUN 00539D30  (n=393)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:0052E890 x1
+[2] ins=138 被调 unique=12: 0052C1A0 x5 00530D80 x2 0052E890=img_partner 0052BC40 005395B0 00539B30 00539620 00530DC0 00530DB0 0052CB10 00539650 00539760
+[3] IAT: -
+
+FUN 0053ADD0  (n=622)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:0053A390 x1
+[2] ins=219 被调 unique=3: 0052C880 00530D00 00530D80
+[3] IAT: -
+
+FUN 0053B040  (n=989)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:0053A390 x1
+[2] ins=358 被调 unique=2: 0052C880 x3 00530D80 x3
+[3] IAT: -
+
+FUN 0053BFB0  (n=484)  sec=.text
+[1] E8调用方 3 处; E9尾调 0 处; 父:0053BB90 x1 0053BDC0 x1 0053BEF0 x1
+[2] ins=182 被调 unique=3: 00531770 x2 0052BCA0 005316E0
+[3] IAT: -
+
+FUN 0053C630  (n=644)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:0053C4F0 x1
+[2] ins=214 被调 unique=0: 
+[3] IAT: -
+
+FUN 0053CE30  (n=798)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:0053CA40 x1
+[2] ins=300 被调 unique=0: 
+[3] IAT: -
+
+FUN 0053D460  (n=866)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:0053CA40 x1
+[2] ins=279 被调 unique=1: 0053E340
+[3] IAT: -
+
+FUN 0053D7D0  (n=637)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:0053CA40 x1
+[2] ins=230 被调 unique=1: 0053E320
+[3] IAT: -
+
+FUN 0053EA40  (n=492)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:0053E980 x1
+[2] ins=156 被调 unique=1: 0053E5B0 x5
+[3] IAT: -
+
+FUN 0053EC70  (n=315)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:0053DCA0 x1
+[2] ins=99 被调 unique=5: 004D5FB0 0053FF70 004E8500 00514EE1 00593B0D=scanf_sh
+[3] IAT: -
+
+FUN 0053F1E0  (n=393)  sec=.text
+[1] E8调用方 0 处; E9尾调 0 处; 父:
+[2] ins=158 被调 unique=4: 0053FFA0 x2 0053FF90 0053EFB0 0053F050
+[3] IAT: -
+
+FUN 0053FB80  (n=467)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:0053FB40 x1
+[2] ins=162 被调 unique=14: 0053F890 0053FD60 0053FAB0 00545A70 00544720 00544130 00543AD0 005433C0 00543050 00542DB0 005420D0 00541A80
+[3] IAT: -
+
+FUN 0053FDE0  (n=339)  sec=.text
+[1] E8调用方 0 处; E9尾调 0 处; 父:
+[2] ins=126 被调 unique=0: 
+[3] IAT: -
+
+FUN 005401C0  (n=323)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00540140 x1
+[2] ins=110 被调 unique=0: 
+[3] IAT: -
+
+FUN 00540380  (n=319)  sec=.text
+[1] E8调用方 0 处; E9尾调 0 处; 父:
+[2] ins=109 被调 unique=2: 005405A0 005404C0
+[3] IAT: -
+
+FUN 005415C0  (n=689)  sec=.text
+[1] E8调用方 4 处; E9尾调 0 处; 父:00541AC0 x2 00542140 x2
+[2] ins=231 被调 unique=0: 
+[3] IAT: -
+
+FUN 005433C0  (n=484)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:0053FB80 x1
+[2] ins=152 被调 unique=1: 0053E5C0
+[3] IAT: -
+
+FUN 00544C70  (n=474)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00544B60 x1
+[2] ins=164 被调 unique=0: 
+[3] IAT: -
+
+FUN 00545360  (n=959)  sec=.text
+[1] E8调用方 3 处; E9尾调 0 处; 父:00545720 x2 005452D0 x1
+[2] ins=346 被调 unique=0: 
+[3] IAT: -
+
+FUN 00545720  (n=312)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:005452D0 x1
+[2] ins=123 被调 unique=3: 00545360 x2 00545860 005458A0
+[3] IAT: -
+
+FUN 005458D0  (n=385)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:005452D0 x1
+[2] ins=127 被调 unique=0: 
+[3] IAT: -
+
+FUN 00545B10  (n=350)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00545A70 x1
+[2] ins=131 被调 unique=2: 00545C70 00545D50
+[3] IAT: -
+
+FUN 00545D70  (n=317)  sec=.text
+[1] E8调用方 2 处; E9尾调 0 处; 父:00545A70 x1 00545F10 x1
+[2] ins=112 被调 unique=1: 00545EB0 x2
+[3] IAT: -
+
+FUN 0054A170  (n=365)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:004B2900 x1
+[2] ins=101 被调 unique=8: 004736A0 x3 00402A70 x2 0054C370 x2 00554690 00553B80 00402BF0=op_new 004608A0 0054B560
+[3] IAT: -
+
+FUN 0054A300  (n=427)  sec=.text
+[1] E8调用方 2 处; E9尾调 2 处; 父:004B29C0 x1 0054A2E0 x1
+[2] ins=132 被调 unique=8: 00402E90=deque_free_node 004E6050 x2 0054C870 x2 0049CA90 x2 0054A740 004B2E30 00553C20 005546B0
+[3] IAT: -
+
+FUN 0054BD90  (n=460)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:0054AB30 x1
+[2] ins=133 被调 unique=8: 005015F0 00553830 005538E0 00553920 004736A0 00553870 00553880 005547A0
+[3] IAT: -
+
+FUN 0054EA60  (n=409)  sec=.text
+[1] E8调用方 3 处; E9尾调 0 处; 父:004ACEB0 x1 004BEAA0 x1 0054E9E0 x1
+[2] ins=132 被调 unique=13: 0054F530 x2 0049A680 x2 00508B38=malloc 0054F6E0 005015F0 00553DC0 0054F630 00554660 0054FA30 0054F7E0 00553830 005538E0
+[3] IAT: -
+
+FUN 0054F310  (n=459)  sec=.text
+[1] E8调用方 2 处; E9尾调 0 处; 父:0054EC50 x2
+[2] ins=143 被调 unique=13: 0043C6C0 x2 00553830 00553860 00553880 00554820 00553870 0054FE60 005015F0 00554670 00553A80 005539D0 00553B20
+[3] IAT: -
+
+FUN 0054F7E0  (n=590)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:0054EA60 x1
+[2] ins=243 被调 unique=7: 0054FA60 x4 0054FDA0 x3 00460BE0=rb_rebalance 0044CF00 x2 004B48C0 0046EF70 0054FC20
+[3] IAT: -
+
+FUN 0054FA60  (n=442)  sec=.text
+[1] E8调用方 4 处; E9尾调 0 处; 父:0054F7E0 x4
+[2] ins=167 被调 unique=3: 0054FDA0 x2 00461340 004612F0
+[3] IAT: -
+
+FUN 0054FC20  (n=373)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:0054F7E0 x1
+[2] ins=155 被调 unique=3: 0054FDA0 x4 00460BE0=rb_rebalance 0044CF00
+[3] IAT: -
+
+FUN 00550060  (n=389)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:004B31B0 x1
+[2] ins=106 被调 unique=4: 00402A70 x6 004608A0 x5 0054D0E0 00402BF0=op_new
+[3] IAT: -
+
+FUN 00550210  (n=636)  sec=.text
+[1] E8调用方 2 处; E9尾调 0 处; 父:004D9690 x1 005513E0 x1
+[2] ins=225 被调 unique=4: 00403200 x3 00402B30 x3 00403490 x3 00550530
+[3] IAT: -
+
+FUN 00550530  (n=359)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00550210 x1
+[2] ins=121 被调 unique=7: 00509F8F=fopen 004C6050 0054E090 0050B600=sscanf_sh 004736B0 00551530 00509E57
+[3] IAT: -
+
+FUN 00550EC0  (n=461)  sec=.text
+[1] E8调用方 2 处; E9尾调 0 处; 父:00498840 x1 004ACE50 x1
+[2] ins=158 被调 unique=8: 00402AC0 x2 004FB240 x2 00402E90=deque_free_node 00402BD0 x2 004608A0 00402A70 0054FF00 004026E0
+[3] IAT: -
+
+FUN 005525E0  (n=583)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00552830 x1
+[2] ins=196 被调 unique=8: 00403200 x4 0050A22F x3 004FB240 x2 00402E90=deque_free_node 005531B0 005531D0 0050915B 00403490
+[3] IAT: -
+
+FUN 005542F0  (n=429)  sec=.text
+[1] E8调用方 4 处; E9尾调 0 处; 父:0054AB30 x1 0054EC50 x1 00553DE0 x1 005540E0 x1
+[2] ins=149 被调 unique=4: 005015F0 0050A8DE 00509980=__ftol 005547A0
+[3] IAT: -
+
+FUN 00555C10  (n=449)  sec=.text
+[1] E8调用方 3 处; E9尾调 0 处; 父:00553480 x1 00555AF0 x1 00555DE0 x1
+[2] ins=129 被调 unique=5: 004E8500 x4 00402E90=deque_free_node 0054C2C0 00554CB0 00553830
+[3] IAT: -
+
+FUN 00555E00  (n=335)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00553530 x1
+[2] ins=106 被调 unique=10: 00553AE0 005539C0 005539E0 00553870 00553880 005561F0 00554C90 00554CD0 0054C510 004E8500
+[3] IAT: -
+
+FUN 00556030  (n=425)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00553750 x1
+[2] ins=156 被调 unique=9: 00553880 x3 00554B90 x2 00554920 x2 00553830 x2 00553860 00553870 00553A80 005539D0 00553B20
+[3] IAT: -
+
+FUN 005567D0  (n=306)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00556A20 x1
+[2] ins=96 被调 unique=3: 0050B600=sscanf_sh 00571C70 x2 0050915B
+[3] IAT: -
+
+FUN 00557AB0  (n=337)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00557C70 x1
+[2] ins=112 被调 unique=5: 0050B600=sscanf_sh 00508B38=malloc 00571C70 x2 005572D0 0050AC61
+[3] IAT: -
+
+FUN 005592C0  (n=441)  sec=.text
+[1] E8调用方 2 处; E9尾调 0 处; 父:0056D9B0 x1 00584CF0 x1
+[2] ins=127 被调 unique=10: 00475590 x4 00474990 00476090 00477D30 0047ECF0 005795B0 00579A90 005590B0 00558F90 00558F50
+[3] IAT: -
+
+FUN 00559480  (n=569)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00558F90 x1
+[2] ins=184 被调 unique=1: 00476E20 x2
+[3] IAT: -
+
+FUN 0055ACF0  (n=312)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:0055AED0 x1
+[2] ins=82 被调 unique=7: 00477D30 x3 0047EC40 x2 00477B90 x2 00477200 004745D0 00479F80=text3d_glyph 0047C2E0
+[3] IAT: -
+
+FUN 0055AED0  (n=751)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:0055B1C0 x1
+[2] ins=229 被调 unique=5: 0055AE30 x4 005565C0 x2 00509980=__ftol 0055ACF0 00565830
+[3] IAT: -
+
+FUN 0055DC20  (n=418)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00565520 x1
+[2] ins=141 被调 unique=5: 00570630 x3 0055D540 0055C4F0 0056F260 00557F30
+[3] IAT: -
+
+FUN 0055E980  (n=491)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:0055C580 x1
+[2] ins=177 被调 unique=8: 0049E5E0 x3 0055ED10 x2 004C7640 00402E90=deque_free_node 0055EB70 004C7210 0055EE90 0055F040
+[3] IAT: -
+
+FUN 0055EB70  (n=414)  sec=.text
+[1] E8调用方 4 处; E9尾调 0 处; 父:0055E980 x1 00575E10 x1 0057BF70 x1 0057CDB0 x1
+[2] ins=164 被调 unique=6: 004026E0 x2 0055F1E0 00402E90=deque_free_node 00473340 00403200 0055FE10
+[3] IAT: -
+
+FUN 0055ED10  (n=377)  sec=.text
+[1] E8调用方 6 处; E9尾调 0 处; 父:0055E980 x2 0057BF70 x2 0057CDB0 x2
+[2] ins=150 被调 unique=3: 0055F440 00402E90=deque_free_node 004F4800
+[3] IAT: -
+
+FUN 0055EE90  (n=429)  sec=.text
+[1] E8调用方 3 处; E9尾调 0 处; 父:0055E980 x1 0057BF70 x1 0057CDB0 x1
+[2] ins=164 被调 unique=5: 005601B0 x2 0055FB60 x2 0055F6A0 00402E90=deque_free_node 0055FF50
+[3] IAT: -
+
+FUN 0055F040  (n=406)  sec=.text
+[1] E8调用方 3 处; E9尾调 0 处; 父:0055E980 x1 0057BF70 x1 0057CDB0 x1
+[2] ins=152 被调 unique=3: 0055F900 00402E90=deque_free_node 00560120
+[3] IAT: -
+
+FUN 00560E50  (n=368)  sec=.text
+[1] E8调用方 2 处; E9尾调 0 处; 父:00560C10 x1 00561F70 x1
+[2] ins=112 被调 unique=3: 00507850 x9 0056CEF0 0050ACE3
+[3] IAT: -
+
+FUN 005611B0  (n=970)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00493400 x1
+[2] ins=295 被调 unique=12: 0050A118 x8 00508B38=malloc 0050A38C x2 0050A2D3 x2 00507850 00509F8F=fopen 0050AC20 0057DF30 0056B1F0 0057DF40 00509E57 00474380
+[3] IAT: -
+
+FUN 00561F90  (n=858)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00561F00 x1
+[2] ins=255 被调 unique=3: 0056AEE0 x3 0056AF20 0050AF1E
+[3] IAT: -
+
+FUN 005622F0  (n=532)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00562520 x1
+[2] ins=154 被调 unique=5: 0056AEE0 x2 0056AF20 x2 0056AD30 004748B0 00567360
+[3] IAT: -
+
+FUN 00562A30  (n=642)  sec=.text
+[1] E8调用方 2 处; E9尾调 0 处; 父:005625C0 x2
+[2] ins=179 被调 unique=11: 00477B90 x4 0047EC40 x3 00562CC0 x2 0056B1C0 x2 0047EDC0 x2 00476070 00477D30 00477200 00474410 004745C0 00474470
+[3] IAT: -
+
+FUN 00562DD0  (n=659)  sec=.text
+[1] E8调用方 11 处; E9尾调 0 处; 父:004F07D0 x1 004F0C50 x1 004F0F00 x1 00563070 x1 005644A0 x1
+[2] ins=205 被调 unique=3: 00561CD0 x2 00561C60 0056AEE0
+[3] IAT: -
+
+FUN 00564760  (n=323)  sec=.text
+[1] E8调用方 6 处; E9尾调 0 处; 父:004CEB50 x2 004C1360 x1 004F0C50 x1 004F0F00 x1 00560380 x1
+[2] ins=127 被调 unique=5: 00562DD0 00570600 0056AEE0 0056F5F0 0056B350
+[3] IAT: -
+
+FUN 00565520  (n=462)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:004F3380 x1
+[2] ins=167 被调 unique=5: 0055D540 00562DD0 004A8B00 0055DC20 0046ECB0
+[3] IAT: -
+
+FUN 00566230  (n=306)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00566940 x1
+[2] ins=111 被调 unique=9: 0056DC50 00507850 00508B38=malloc 0056DB90 004807D0 00593634 005092C0 00403490 0056E490
+[3] IAT: -
+
+FUN 00566A90  (n=686)  sec=.text
+[1] E8调用方 3 处; E9尾调 1 处; 父:0055D1E0 x1 00566A70 x1 00567250 x1
+[2] ins=177 被调 unique=9: 00508B38=malloc 00565EE0 00567270 00403200 0056DB90 00566380 0056EE70 00567200 00566DD0
+[3] IAT: -
+
+FUN 00568780  (n=706)  sec=.text
+[1] E8调用方 2 处; E9尾调 0 处; 父:00568AB0 x1 0057F260 x1
+[2] ins=208 被调 unique=5: 00508B38=malloc 0050AC61 x2 00507850 x2 00477200 x2 005679F0
+[3] IAT: -
+
+FUN 00568F80  (n=405)  sec=.text
+[1] E8调用方 20 处; E9尾调 0 处; 父:00496A50 x11 004972C0 x2 00563540 x2 005842D0 x2 00587B90 x2
+[2] ins=158 被调 unique=11: 00509E57 x3 005679F0 x2 00508B38=malloc 00567440 00509F8F=fopen 005156CA 00480830 0050A118 00567A50 00567CC0 00568AB0
+[3] IAT: -
+
+FUN 00569B30  (n=369)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00563540 x1
+[2] ins=132 被调 unique=6: 0050AB32=fgets 0050B600=sscanf_sh 00509F8F=fopen 0056B540 00509E57 005694E0
+[3] IAT: -
+
+FUN 0056A0C0  (n=333)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:0056D2E0 x1
+[2] ins=102 被调 unique=4: 00477200 x4 00478670 x2 00477B90 x2 00477AD0 x2
+[3] IAT: -
+
+FUN 0056E0D0  (n=327)  sec=.text
+[1] E8调用方 7 处; E9尾调 0 处; 父:005875B0 x3 00582880 x2 00588DB0 x2
+[2] ins=121 被调 unique=4: 00584A40 x3 00584C00 00584AB0 00587E70
+[3] IAT: -
+
+FUN 0056E230  (n=602)  sec=.text
+[1] E8调用方 6 处; E9尾调 0 处; 父:00582880 x2 005875B0 x2 00588DB0 x2
+[2] ins=241 被调 unique=8: 0056DE30 x2 0056DE50 x2 00587E50 x2 0056DE70 0056DEB0 0056DE90 00587EF0 00587F10
+[3] IAT: -
+
+FUN 005702D0  (n=568)  sec=.text
+[1] E8调用方 2 处; E9尾调 0 处; 父:00570510 x1 00570600 x1
+[2] ins=194 被调 unique=1: 0047ECF0 x2
+[3] IAT: -
+
+FUN 00570C80  (n=350)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:0058FB70 x1
+[2] ins=125 被调 unique=4: 00402BF0=op_new 00402A70 x2 005092C0 00403490
+[3] IAT: -
+
+FUN 005739D0  (n=454)  sec=.text
+[1] E8调用方 2 处; E9尾调 0 处; 父:00573BA0 x1 00573D50 x1
+[2] ins=130 被调 unique=3: 00477B90 x4 0047EC40 x3 00476E80
+[3] IAT: -
+
+FUN 00574EF0  (n=642)  sec=.text
+[1] E8调用方 5 处; E9尾调 2 处; 父:0055BEB0 x1 0055E0A0 x1 00560150 x1 0057BF70 x1 0057D101 x1
+[2] ins=210 被调 unique=10: 00402E90=deque_free_node 00577860 x2 004FE380 x2 004A8B00 00576490 004F4110 005764E0 00575A50 0047A7E0 0049B270
+[3] IAT: -
+
+FUN 00575180  (n=554)  sec=.text
+[1] E8调用方 2 处; E9尾调 0 处; 父:00574E50 x1 0057AAF0 x1
+[2] ins=194 被调 unique=7: 0049F3D0 x2 00576490 x2 00552510 0047A7E0 005764E0 00577860 005771E0
+[3] IAT: -
+
+FUN 005764E0  (n=599)  sec=.text
+[1] E8调用方 2 处; E9尾调 0 处; 父:00574EF0 x1 00575180 x1
+[2] ins=220 被调 unique=6: 00577850 x2 00552510 x2 0055F1E0 00402E90=deque_free_node 0055FE10 004C7210
+[3] IAT: -
+
+FUN 00576F00  (n=324)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00574930 x1
+[2] ins=122 被调 unique=3: 005092C0 x3 004C7640 00402E90=deque_free_node
+[3] IAT: -
+
+FUN 00577350  (n=585)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00575E10 x1
+[2] ins=217 被调 unique=6: 0047A7E0 x2 00552510 x2 0055F1E0 00402E90=deque_free_node 0055FE10 004C7210
+[3] IAT: -
+
+FUN 00577AD0  (n=331)  sec=.text
+[1] E8调用方 4 处; E9尾调 0 处; 父:0058FB70 x2 00577D50 x1 00577E80 x1
+[2] ins=117 被调 unique=4: 00402BF0=op_new 00402A70 x2 005092C0 00403490
+[3] IAT: -
+
+FUN 005795D0  (n=436)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00579580 x1
+[2] ins=136 被调 unique=5: 00579790 x2 00508B38=malloc 00579880 x2 00579A30 0050B0EC
+[3] IAT: -
+
+FUN 0057CB50  (n=595)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:0057BF70 x1
+[2] ins=196 被调 unique=9: 004DA940 x2 00560170 x2 005092C0 0055FE10 0049E5E0 004F4800 0057C770 0057C880 0057C990
+[3] IAT: -
+
+FUN 0057CDB0  (n=490)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:0057BF70 x1
+[2] ins=175 被调 unique=8: 0049E5E0 x3 0055ED10 x2 004C7640 00402E90=deque_free_node 0055EB70 004C7210 0055EE90 0055F040
+[3] IAT: -
+
+FUN 0057CFA0  (n=353)  sec=.text
+[1] E8调用方 2 处; E9尾调 0 处; 父:0057BF70 x2
+[2] ins=108 被调 unique=5: 004C5D40 x2 0057C770 x2 00576DF0 0057C880 0057C990
+[3] IAT: -
+
+FUN 0057D150  (n=454)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:0057D990 x1
+[2] ins=114 被调 unique=1: 0050A8DE x8
+[3] IAT: -
+
+FUN 0057D320  (n=688)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:0057DCB0 x1
+[2] ins=197 被调 unique=3: 00593D9A x4 0050A8DE x3 0047EC40 x2
+[3] IAT: -
+
+FUN 0057DB70  (n=313)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:0057DCB0 x1
+[2] ins=98 被调 unique=1: 00476090 x4
+[3] IAT: -
+
+FUN 0057E590  (n=628)  sec=.text
+[1] E8调用方 2 处; E9尾调 0 处; 父:00569330 x2
+[2] ins=182 被调 unique=7: 00477200 x2 00477B90 x2 00476F00 x2 0057E550 00478670 00476E80 00475220
+[3] IAT: -
+
+FUN 0057EB20  (n=527)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:0056AD30 x1
+[2] ins=138 被调 unique=6: 0047EC40 x4 00477B90 x4 0047EDC0 x3 00477D30 00477200 00476F00
+[3] IAT: -
+
+FUN 00582880  (n=523)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00582E70 x1
+[2] ins=194 被调 unique=10: 005092C0 x2 00403490 x2 0056E0D0 x2 0056E230 x2 00583220 00583260 00583280 00583200 005832B0 00583240
+[3] IAT: -
+
+FUN 00584180  (n=325)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:005842D0 x1
+[2] ins=118 被调 unique=3: 005565E0 x2 005092C0 00403490
+[3] IAT: -
+
+FUN 00585940  (n=917)  sec=.text
+[1] E8调用方 2 处; E9尾调 0 处; 父:0056E490 x1 0056EE70 x1
+[2] ins=220 被调 unique=11: 00481EE0=mesh_idx_write 00481D00=mesh_setcolor 00481D40=mesh_setuv 00481B30=mesh_begin 00481B90=mesh_end 005811C0 0058A6D0 00581AA0 0056E220 0047C140 0047C1E0=mesh_alloc
+[3] IAT: -
+
+FUN 0058B870  (n=448)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:0058BA70 x1
+[2] ins=152 被调 unique=7: 00509F8F=fopen 0058BA30 0047A7E0 004815F0 005092C0 00403490 005910E0
+[3] IAT: -
+
+FUN 0058E750  (n=331)  sec=.text
+[1] E8调用方 0 处; E9尾调 0 处; 父:
+[2] ins=125 被调 unique=2: 00509FA2 x18 0058A680
+[3] IAT: -
+
+FUN 0058F8A0  (n=318)  sec=.text
+[1] E8调用方 0 处; E9尾调 0 处; 父:
+[2] ins=99 被调 unique=3: 0059546E x3 0058F0F0 0047EC40
+[3] IAT: -
+
+FUN 00593634  (n=308)  sec=.text
+[1] E8调用方 17 处; E9尾调 0 处; 父:0057F260 x2 00478EC0 x1 00478FD0 x1 00479A00 x1 00480860 x1
+[2] ins=119 被调 unique=6: 0050DD79 x2 005108F6 x2 0050DD18 005095F5=alloc_wrap 0050F710 005089FD=free
+[3] IAT: {'KERNEL32.dll!InterlockedIncrement': 1, 'KERNEL32.dll!InterlockedDecrement': 3}
+
+FUN 00593B72  (n=467)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:00593B50 x1
+[2] ins=127 被调 unique=6: 005102B5 x3 00593D45 x2 00510285 00510270 00510210 00594047
+[3] IAT: -
+
+FUN 005942AA  (n=305)  sec=.text
+[1] E8调用方 2 处; E9尾调 0 处; 父:005941E0 x1 0059421E x1
+[2] ins=94 被调 unique=1: 00512F10
+[3] IAT: -
+
+FUN 005962E6  (n=308)  sec=.text
+[1] E8调用方 0 处; E9尾调 0 处; 父:
+[2] ins=109 被调 unique=3: 005957D0 00595770 00596135
+[3] IAT: -
+
+FUN 0059641A  (n=631)  sec=.text
+[1] E8调用方 0 处; E9尾调 0 处; 父:
+[2] ins=229 被调 unique=4: 005957D0 x2 00595770 x2 00596135 00596691
+[3] IAT: -
+
+FUN 00596965  (n=690)  sec=.text
+[1] E8调用方 1 处; E9尾调 0 处; 父:005968E0 x1
+[2] ins=229 被调 unique=2: 005095F5=alloc_wrap 005089FD=free
+[3] IAT: -
+
+==============================================================================
+画像聚类: 按 已命名辅助使用集 + IAT 集 分组 (同组→同族批量定性候选)
+==============================================================================
+组 n=24  named={deque_free_node}  iat={-}
+    0047F4B0 (n=707)
+    00497670 (n=410)
+    004A3350 (n=328)
+    004C4DF0 (n=309)
+    004C5760 (n=443)
+    004D3930 (n=563)
+    004D4000 (n=377)
+    004D4640 (n=498)
+    004D54C0 (n=510)
+    004E62A0 (n=719)
+    0054A300 (n=427)
+    00550EC0 (n=461)
+    005525E0 (n=583)
+    00555C10 (n=449)
+    0055E980 (n=491)
+    0055EB70 (n=414)
+    0055ED10 (n=377)
+    0055EE90 (n=429)
+    0055F040 (n=406)
+    00574EF0 (n=642)
+    005764E0 (n=599)
+    00576F00 (n=324)
+    00577350 (n=585)
+    0057CDB0 (n=490)
+组 n=14  named={__ftol}  iat={-}
+    0041B2D0 (n=982)
+    0041FA20 (n=668)
+    00423680 (n=650)
+    004239F0 (n=562)
+    00428BA0 (n=326)
+    00466D70 (n=426)
+    004698C0 (n=317)
+    0046ABA0 (n=444)
+    0046F880 (n=967)
+    004B3C70 (n=484)
+    004B3E60 (n=484)
+    004C2A30 (n=446)
+    005542F0 (n=429)
+    0055AED0 (n=751)
+组 n=11  named={malloc}  iat={-}
+    00443F40 (n=539)
+    00445370 (n=912)
+    00478C90 (n=317)
+    0047FA70 (n=659)
+    00498660 (n=380)
+    004F7EC0 (n=797)
+    0054EA60 (n=409)
+    00566230 (n=306)
+    00566A90 (n=686)
+    00568780 (n=706)
+    005795D0 (n=436)
+组 n=11  named={rb_rebalance}  iat={-}
+    00460A60 (n=373)
+    00467C50 (n=425)
+    0049C910 (n=373)
+    0049D240 (n=373)
+    0049D520 (n=373)
+    0049D760 (n=373)
+    004AEA30 (n=307)
+    004B4A50 (n=373)
+    004B4CC0 (n=442)
+    0054F7E0 (n=590)
+    0054FC20 (n=373)
+组 n=11  named={op_new}  iat={-}
+    0049AB40 (n=529)
+    004A2F60 (n=346)
+    004D3B70 (n=352)
+    004D6E60 (n=339)
+    004DAC50 (n=481)
+    004DAF50 (n=417)
+    004FB240 (n=420)
+    0054A170 (n=365)
+    00550060 (n=389)
+    00570C80 (n=350)
+    00577AD0 (n=331)
+组 n=3  named={alloc_wrap,free}  iat={-}
+    00406960 (n=515)
+    00420380 (n=805)
+    00596965 (n=690)
+组 n=3  named={realloc}  iat={-}
+    00419260 (n=378)
+    004193E0 (n=416)
+    00419580 (n=416)
+组 n=3  named={map_insert,std::string_ctor_assign,vector_insert}  iat={-}
+    004DE970 (n=753)
+    004DF190 (n=820)
+    004E07C0 (n=982)
+组 n=3  named={img_partner}  iat={-}
+    0052DB90 (n=322)
+    0052EB20 (n=372)
+    00539D30 (n=393)

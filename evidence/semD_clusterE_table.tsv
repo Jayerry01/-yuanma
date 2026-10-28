@@ -1,0 +1,40 @@
+Addr	SemanticName	ConfirmedFact	Inference	OpenUnknown
+0x004E2A40	AI_Target_State_Check	检查目标实体虚表 *(param_2 + 0x94) 返回值与 param_1 状态匹配	AI 锁定目标的存活与可攻击状态门控检查	需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004E5BB0	Script_VM_Stack_Frame_Ops	调用 0x4e6050 栈帧操作 / 0x402e90 节点释放 / 0x54cc30 栈指针调整	PScript 虚拟机运行时栈帧构建、局部变量分配与作用域退出	需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004E6970	Script_VM_Stack_Frame_Ops	调用 0x4e6050 栈帧操作 / 0x402e90 节点释放 / 0x54cc30 栈指针调整	PScript 虚拟机运行时栈帧构建、局部变量分配与作用域退出	需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004E6A30	Script_VM_Stack_Frame_Ops	调用 0x4e6050 栈帧操作 / 0x402e90 节点释放 / 0x54cc30 栈指针调整	PScript 虚拟机运行时栈帧构建、局部变量分配与作用域退出	需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004E6AE0	Script_VM_Stack_Frame_Ops	调用 0x4e6050 栈帧操作 / 0x402e90 节点释放 / 0x54cc30 栈指针调整	PScript 虚拟机运行时栈帧构建、局部变量分配与作用域退出	需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004E6BF0	Script_VM_Stack_Frame_Ops	调用 0x4e6050 栈帧操作 / 0x402e90 节点释放 / 0x54cc30 栈指针调整	PScript 虚拟机运行时栈帧构建、局部变量分配与作用域退出	需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004E74E0	Script_VM_Stack_Frame_Ops	调用 0x4e6050 栈帧操作 / 0x402e90 节点释放 / 0x54cc30 栈指针调整	PScript 虚拟机运行时栈帧构建、局部变量分配与作用域退出	需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004E77E3	CRT_Vector_OutOfRange_Throw	调用 0x509166 (__CxxThrowException@8), 0x49be20 异常信息构造	STL vector 越界访问 C++ 运行时异常抛出	需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004E79C3	CRT_Vector_OutOfRange_Throw	调用 0x509166 (__CxxThrowException@8), 0x49be20 异常信息构造	STL vector 越界访问 C++ 运行时异常抛出	需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004E7A60	Script_Vector3_Buffer_Shift	(param_4 - param_2) / 0xc (12B = sizeof Vector3), 连续内存块向后搬运	路点/向量列表插入时的 12 字节 Vector3 缓冲区元素后移	需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004E7B40	Script_Vector3_Buffer_Shift	(param_4 - param_2) / 0xc (12B = sizeof Vector3), 连续内存块向后搬运	路点/向量列表插入时的 12 字节 Vector3 缓冲区元素后移	需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004E7CF0	Script_Vector3_Buffer_Shift	(param_4 - param_2) / 0xc (12B = sizeof Vector3), 连续内存块向后搬运	路点/向量列表插入时的 12 字节 Vector3 缓冲区元素后移	需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004E8A20	Script_AI_Helper	callees=[2] ins=33 被调 unique=3: 00508B38=operator_new 0054 pseudo=: { | void *pvVar1; | void *local_c; | l	脚本虚拟机与 AI 决策底层辅助	需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004EBA00	AI_Path_Waypoint_Eval	*(param_1 + 0x80) 路点计数, *(param_1 + 0x84) short 数组节点查找, 0x4054e0 标志位写入	AI 寻路路径点序列遍历与距离启发式估算	需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004EBA70	AI_Path_Waypoint_Eval	*(param_1 + 0x80) 路点计数, *(param_1 + 0x84) short 数组节点查找, 0x4054e0 标志位写入	AI 寻路路径点序列遍历与距离启发式估算	需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004EBB40	AI_Path_Waypoint_Eval	*(param_1 + 0x80) 路点计数, *(param_1 + 0x84) short 数组节点查找, 0x4054e0 标志位写入	AI 寻路路径点序列遍历与距离启发式估算	需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004ED6E0	AI_Action_Callback_Invoke	param_1[0xc1] 激活检查, 调用虚表 *(param_1+0x8c) 与 *(param_1+0xa8) 驱动动作槽	AI 决策动作触发回调函数分派器	需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004F0BA0	Actor_Item_Pickup_Trigger	调用角色虚表 *(param_1 + 0x44) 与目标 *(piVar1 + 0x1e0) 触发拾取	角色接近地面道具/箱子掉落物时的拾取事件触发	需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004F24B0	Script_AI_Helper	callees=[2] ins=57 被调 unique=1: 00487830=FUN_00487830 pseudo=: { | uVar1 = param_1[0x95]; | iVar2 = F	脚本虚拟机与 AI 决策底层辅助	需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004F4110	Script_AI_Helper	callees=[2] ins=54 被调 unique=0: pseudo=: { | puVar1 = param_2; | iVar4 = (*(int	脚本虚拟机与 AI 决策底层辅助	需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004F4C50	Script_AI_Helper	callees=[2] ins=76 被调 unique=2: 00487830=FUN_00487830 0054 pseudo=: { | piVar1 = (int *)FUN_00487830(); | 	脚本虚拟机与 AI 决策底层辅助	需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004F56D0	Script_AI_Helper	callees=[2] ins=37 被调 unique=1: 00487830=FUN_00487830 pseudo=: { | (**(code **)(*param_1 + 0xcc))(0);	脚本虚拟机与 AI 决策底层辅助	需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004F5CC0	Script_AI_Helper	callees=[2] ins=40 被调 unique=3: 004059E0=FUN_004059e0 0040 pseudo=: void __fastcall FUN_004f5cc0(int param	脚本虚拟机与 AI 决策底层辅助	需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004F7D30	Script_AI_Helper	callees=[2] ins=87 被调 unique=2: 00507850=FUN_00507850 0049 pseudo=: void __fastcall FUN_004f7d30(int param	脚本虚拟机与 AI 决策底层辅助	需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004F7E00	Script_AI_Helper	callees=[2] ins=65 被调 unique=5: 004F7D30 00508B38=operator pseudo=: FUN_004f7e00(undefined2 *param_1,undef	脚本虚拟机与 AI 决策底层辅助	需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004F81E0	Script_AI_Helper	callees=[2] ins=38 被调 unique=2: 004F8330 x2 0047ECF0=FUN_0 pseudo=: void __thiscall FUN_004f81e0(int param	脚本虚拟机与 AI 决策底层辅助	需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004F8290	Script_AI_Helper	callees=[2] ins=59 被调 unique=1: 0046ECB0=FUN_0046ecb0 pseudo=: void __thiscall FUN_004f8290(int param	脚本虚拟机与 AI 决策底层辅助	需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004F8770	Script_AI_Helper	callees=[2] ins=67 被调 unique=0: pseudo=: void FUN_004f8770(undefined4 *param_1,	脚本虚拟机与 AI 决策底层辅助	需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004F8820	Script_AI_Helper	callees=[2] ins=65 被调 unique=0: pseudo=: void FUN_004f8820(int param_1,int para	脚本虚拟机与 AI 决策底层辅助	需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004FA980	Script_AI_Helper	callees=[2] ins=65 被调 unique=4: 004608A0=FUN_004608a0 004D pseudo=: { | void *local_10; | puStack_c = &LAB	脚本虚拟机与 AI 决策底层辅助	需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004FAE30	Script_AI_Helper	callees=[2] ins=111 被调 unique=0: pseudo=: { | if (param_2 == 0) { | return 0; | 	脚本虚拟机与 AI 决策底层辅助	需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004FC8A0	Script_AI_Helper	callees=[2] ins=66 被调 unique=2: 0047ED20=FUN_0047ed20 004C pseudo=: { | float10 fVar3; | float10 fVar4; | 	脚本虚拟机与 AI 决策底层辅助	需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004FCB40	Script_AI_Helper	callees=[2] ins=47 被调 unique=1: 0047ECF0=FUN_0047ecf0 pseudo=: { | float10 fVar2; | if (param_2 == 0)	脚本虚拟机与 AI 决策底层辅助	需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004FCF00	Script_AI_Helper	callees=[2] ins=35 被调 unique=3: 00501730 x2 00501160 00501 pseudo=: { | pfVar2 = &local_14; | puVar3 = loc	脚本虚拟机与 AI 决策底层辅助	需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004FD2E0	Script_AI_Helper	callees=[2] ins=70 被调 unique=2: 004FC4B0=FUN_004fc4b0 004C pseudo=: void __fastcall FUN_004fd2e0(int param	脚本虚拟机与 AI 决策底层辅助	需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004FD3B0	Script_AI_Helper	callees=[2] ins=85 被调 unique=4: 00501730 x3 00500FD0 00509 pseudo=: void __thiscall FUN_004fd3b0(int param	脚本虚拟机与 AI 决策底层辅助	需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004FE0C0	Script_AI_Helper	callees=[2] ins=82 被调 unique=5: 004FCC10=FUN_004fcc10 0050 pseudo=: { | cVar1 = FUN_00501130(); | if (cVar	脚本虚拟机与 AI 决策底层辅助	需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004FE9E0	Script_AI_Helper	callees=[2] ins=31 被调 unique=1: 004E6050=FUN_004e6050 pseudo=: void FUN_004fe9e0(void) | { | local_c 	脚本虚拟机与 AI 决策底层辅助	需结合 .pst 脚本操作码对齐指令栈顶布局
+0x004FF000	Script_AI_Helper	callees=[2] ins=80 被调 unique=4: 004608A0=FUN_004608a0 004D pseudo=: { | void *local_10; | puStack_c = &LAB	脚本虚拟机与 AI 决策底层辅助	需结合 .pst 脚本操作码对齐指令栈顶布局

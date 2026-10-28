@@ -1,0 +1,35 @@
+void FUN_004e6a30(void)
+
+{
+  int in_stack_00000014;
+  undefined4 in_stack_00000018;
+  int in_stack_0000001c;
+  int *in_stack_00000020;
+  int local_30;
+  undefined4 local_2c;
+  int local_28;
+  int *local_24;
+  undefined1 local_20 [16];
+  int local_10;
+  
+  local_2c = in_stack_00000018;
+  local_30 = in_stack_00000014;
+  local_28 = in_stack_0000001c;
+  local_24 = in_stack_00000020;
+  FUN_004e6050(&stack0x00000004);
+  FUN_004e6050(&local_30);
+  FUN_004e6050(local_20);
+  FUN_004e6050(&stack0x00000004);
+  FUN_004e6050(&local_30);
+  while (in_stack_00000014 != local_10) {
+    in_stack_00000014 = in_stack_00000014 + 0xc;
+    if (in_stack_00000014 == in_stack_0000001c) {
+      in_stack_00000020 = in_stack_00000020 + 1;
+      in_stack_00000014 = *in_stack_00000020;
+      in_stack_0000001c = in_stack_00000014 + 0x1f8;
+    }
+  }
+  return;
+}
+
+

@@ -1,0 +1,52 @@
+311 记录字段统计:
+  pguid GUID_Key: 256
+  pguid NULL: 40
+  pguid other_005AD1F0: 4
+  pguid A36D02E0(XAxis): 2
+  pguid A36D02E1(YAxis): 2
+  pguid A36D02E2(ZAxis?): 2
+  pguid A36D02E4(RyAxis?): 2
+  pguid A36D02F4(?): 1
+  pguid A36D02F5(?): 1
+  pguid A36D02E3(RxAxis?): 1
+  dwOfs 范围 0x0-0xff
+  dwType 低字节分布: {3: 11, 16: 4, 12: 296}
+  dwFlags 分布: {256: 8, 0: 303}
+  第一条 GUID_Key 记录 idx=44 ofs=0x0 type=0x8000000c flags=0x00000000
+  rec[  0] pguid=A36D02E0(XAxis)        dwOfs=0x0000 dwType=0x80ffff03 dwFlags=0x00000100
+  rec[ 14] pguid=NULL                   dwOfs=0x0032 dwType=0x80ffff0c dwFlags=0x00000000
+  rec[ 15] pguid=NULL                   dwOfs=0x0033 dwType=0x80ffff0c dwFlags=0x00000000
+  rec[270] pguid=GUID_Key               dwOfs=0x00e2 dwType=0x8000e20c dwFlags=0x00000000
+  rec[310] pguid=NULL                   dwOfs=0x0013 dwType=0x80ffff0c dwFlags=0x00000000
+
+全文件 4LE==0x5241E0 命中(排除表自身): ['005AD324']
+  头候选 @ 005AD324: 前16B 10 00 00 00 01 00 00 00 50 00 00 00 2c 00 00 00 | 此处起 e0 41 52 00 18 00 00 00 10 00 00 00 02 00 00 00 00 01 00 00 00 01 00 00
+    若 rgodf 在末字段, 头=(dwSize=24, dwObjSize=16, dwFlags=0x1, dwDataSize=0x50, dwNumObjs=44, rgodf=0x5241e0)
+
+0x5AD180-0x5AD300 全景(找 SysKeyboard/SysMouse 6F1D2B60/61):
+  005AD180  30 ac ef 31 5c 51 d0 11 a9 aa 00 aa 00 61 be 93
+  005AD190  86 fa 9a 27 81 49 ce 11 a5 21 00 20 af 0b e5 60
+  005AD1A0  84 fa 9a 27 81 49 ce 11 a5 21 00 20 af 0b e5 60
+  005AD1B0  83 fa 9a 27 81 49 ce 11 a5 21 00 20 af 0b e5 60
+  005AD1C0  46 d9 d4 47 e8 62 cf 11 93 bc 44 45 53 54 00 00
+  005AD1D0  61 2b 1d 6f a0 d5 cf 11 bf c7 44 45 53 54 00 00
+  005AD1E0  60 2b 1d 6f a0 d5 cf 11 bf c7 44 45 53 54 00 00
+  005AD1F0  f2 02 6d a3 f3 c9 cf 11 bf c7 44 45 53 54 00 00
+  005AD200  20 82 72 55 3c d3 cf 11 bf c7 44 45 53 54 00 00
+  005AD210  e4 02 6d a3 f3 c9 cf 11 bf c7 44 45 53 54 00 00
+  005AD220  e3 02 6d a3 f3 c9 cf 11 bf c7 44 45 53 54 00 00
+  005AD230  f5 02 6d a3 f3 c9 cf 11 bf c7 44 45 53 54 00 00
+  005AD240  f4 02 6d a3 f3 c9 cf 11 bf c7 44 45 53 54 00 00
+  005AD250  e2 02 6d a3 f3 c9 cf 11 bf c7 44 45 53 54 00 00
+  005AD260  e1 02 6d a3 f3 c9 cf 11 bf c7 44 45 53 54 00 00
+  005AD270  e0 02 6d a3 f3 c9 cf 11 bf c7 44 45 53 54 00 00
+  005AD280  bc c6 d7 57 56 23 d3 11 8e 9d 00 c0 4f 68 44 ae
+  005AD290  82 e6 44 59 2e c9 cf 11 bf c7 44 45 53 54 00 00
+  005AD2A0  84 b6 4c 9a 6d 23 d3 11 8e 9d 00 c0 4f 68 44 ae
+  005AD2B0  02 15 28 93 f8 8c d0 11 89 ab 00 a0 c9 05 41 29
+  005AD2C0  40 32 22 bb 2b e7 d0 11 a9 b4 00 aa 00 c0 99 3e
+  005AD2D0  3e 1c c1 69 6b b4 d1 11 ad 7a 00 c0 4f c2 9b 4e
+  005AD2E0  00 4e 04 da b2 69 d0 11 a1 d5 00 aa 00 b8 df bb
+  005AD2F0  9a 50 59 9c bd 39 d1 11 8c 4a 00 c0 4f d9 30 c5
+  SysKeyboard 6F1D2B60: ['005AD1E0']
+  SysMouse 6F1D2B61: ['005AD1D0']

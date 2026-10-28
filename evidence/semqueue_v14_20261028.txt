@@ -1,0 +1,16 @@
+# 语义全覆盖队列 v14 (2026-10-28)
+# 输入: fresh_functions_v14.json SHA-256=d081a18f...79c456d (11,140 函数边界, U6 终账同源)
+# 命名判据: 地址被 INVESTIGATION.md + docs/*.md + evidence/*.txt|md 语料引用 >=1 次
+#         (机械导出件 u6_*/v8_func/lxres_1563_funcs 不计入, 防自证)
+# 命名 4,334/11,140 = 38.90%; 未命名 6,806; 语义实账 = >=33B 未命名 2,295 个
+
+band        total  unnamed   unnamed_bytes
+B_>1000B        249       36      58975
+C_301-1000B    1153      331     162830
+D_101-300B     1670      825     143460
+E_33-100B      1834     1103      66217
+F_<=32B        6234     4511      53614
+
+未命名字节合计(不含已命名): 485096 B
+批次规划: B(>1KB,36) → C(301-1000B,331) → D(101-300B,825) → E(33-100B,1103) → F(<=32B,4511 批量签名分类)
+批次 A(前置): U6 残差语义化 179 洞 = DATA_UNDECODED 14/PARTIAL_CODE 17/ORPHAN_REACHABLE 57/ORPHAN_UNREFERENCED 91

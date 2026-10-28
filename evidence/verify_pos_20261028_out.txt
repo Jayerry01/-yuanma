@@ -1,0 +1,130 @@
+== 文件集（去重后） ==
+pmodel/*.POS 文件数 25；pose 块总数 12535
+  ATKPose.pos        131775 B  pose=171
+  ATKPose_I.pos      129447 B  pose=171
+  ATKPose_LE.pos      66310 B  pose=171
+  BackUP.pos         131813 B  pose=171
+  P0.POS             296888 B  pose=574
+  P0bak.POS          161299 B  pose=371
+  P1.POS             296400 B  pose=574
+  P10.POS            296830 B  pose=574
+  P11.POS            296824 B  pose=574
+  P12.POS            296824 B  pose=574
+  P13.POS            296400 B  pose=574
+  P14.POS            296824 B  pose=574
+  P15.POS            296820 B  pose=574
+  P16.POS            296820 B  pose=574
+  P17.POS            296574 B  pose=574
+  P18.POS            296820 B  pose=574
+  P19.POS            296824 B  pose=574
+  P2.POS             296820 B  pose=574
+  P3.POS             296824 B  pose=574
+  P4.POS             296735 B  pose=574
+  P5.POS             296820 B  pose=574
+  P6.POS             296887 B  pose=574
+  P7.POS             296820 B  pose=574
+  P8.POS             296824 B  pose=574
+  P9.POS             296824 B  pose=574
+
+== 关键词使用统计（25 个 .POS 合计） ==
+词	顶层	嵌套	状态
+action	11794	0	used
+attack	6705	0	used
+attacktype	0	6705	used
+attackvalue	0	0	ZERO
+angertype	0	0	ZERO
+angervalue	0	0	ZERO
+blend	10285	0	used
+bone	0	6460	used
+checkfriend	0	6705	used
+color	0	3297	used
+defensemove	0	6578	used
+defensevalue	0	6578	used
+defensepose	0	0	ZERO
+drag	3297	0	used
+effecttype	10337	0	used
+effectid	10312	0	used
+end	10458	37216	used
+hit	0	0	ZERO
+link	2658	0	used
+loopstart	3551	0	used
+loopend	3551	0	used
+name	0	0	ZERO
+nextpose	5135	0	used
+pose	12535	0	used
+start	10458	37216	used
+source	10458	0	used
+speed	0	21932	used
+time	0	8432	used
+targettype	0	0	ZERO
+targetvalue	0	6704	used
+targetspeed	0	0	ZERO
+targetpose	0	6705	used
+targetposefront	0	6662	used
+targetposeback	0	6662	used
+targetposeright	0	6662	used
+targetposeleft	0	6662	used
+targetmove	0	6704	used
+零使用关键词 8 个: ['attackvalue', 'angertype', 'angervalue', 'defensepose', 'hit', 'name', 'targettype', 'targetspeed']
+
+== 零使用关键词全文复核（\b词\b, 含注释; 范围 25 .POS + character.act） ==
+attackvalue	0 hits
+angertype	0 hits
+angervalue	0 hits
+defensepose	0 hits
+hit	0 hits
+name	0 hits
+targettype	0 hits
+targetspeed	0 hits
+
+== P0.POS 概况 ==
+bytes 296888  pose 块 574  id 范围 0..573
+缺号 0: []
+顶层键 {'action': 543, 'attack': 299, 'blend': 461, 'drag': 143, 'effectid': 472, 'effecttype': 473, 'end': 479, 'link': 121, 'loopend': 167, 'loopstart': 167, 'nextpose': 233, 'pose': 574, 'source': 479, 'start': 479}
+嵌套键 {'"bad': 177, '"bau': 346, '"effect"': 17, '"weapon"': 2, '"weapon","effect"': 9, 'attacktype': 299, 'bone': 289, 'checkfriend': 299, 'color': 143, 'defensemove': 293, 'defensevalue': 293, 'end': 1679, 'speed': 997, 'start': 1679, 'targetmove': 299, 'targetpose': 299, 'targetposeback': 297, 'targetposefront': 297, 'targetposeleft': 297, 'targetposeright': 297, 'targetvalue': 299, 'time': 376}
+无 source 的 pose 块 95: [31, 37, 38, 39, 76, 89, 101, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 223, 254, 278, 308, 324, 330, 335, 337, 348, 365, 366, 376, 377, 378, 379, 380, 381, 382, 383, 384, 385, 386, 387, 388, 389, 390, 391, 392, 393, 394, 395, 396, 397, 398, 399, 435, 436, 437, 457, 460, 525, 534, 539, 544, 545, 546, 547, 548, 549, 550, 564]
+只含 Link 的 pose 块 0: []
+Link 非空 121 条
+
+== 社区 pose 表(1758) vs P0.POS ==
+1758 行数 484  id 0..573; P0 574 块
+1758 独有 id []
+P0 独有 id [92, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 254, 278, 308, 324, 330, 335, 337, 348, 376, 377, 378, 379, 380, 381, 382, 383, 384, 385, 386, 387, 388, 389, 390, 391, 392, 393, 394, 395, 396, 397, 398, 399, 435, 436, 437, 457, 460, 475, 476, 477, 524, 525, 534, 539, 544, 545, 546, 547, 548, 549, 550, 564]
+自动衔接(1758) 107 条; Link(P0) 121 条
+交集 97，一致 91，不一致 6
+  DIFF pose 152: P0.Link=180  1758=0
+  DIFF pose 159: P0.Link=156  1758=152
+  DIFF pose 160: P0.Link=154  1758=152
+  DIFF pose 217: P0.Link=212  1758=213
+  DIFF pose 220: P0.Link=219  1758=221
+  DIFF pose 222: P0.Link=219  1758=223
+仅 P0 有 Link（1758 未标）: [22, 32, 95, 96, 97, 98, 99, 100, 102, 103, 104, 105, 106, 107, 108, 111, 114, 115, 154, 156, 158, 224, 370, 372]
+仅 1758 标衔接（P0 无 Link）: [25, 26, 161, 162, 163, 206, 207, 208, 269, 296]
+
+== attack.bone 值中的 weapon/effect（2207 把它们列为参数） ==
+  ATKPose.pos      "weapon"=119  "effect"=38
+  ATKPose_I.pos    "weapon"=119  "effect"=36
+  ATKPose_LE.pos   "weapon"=64  "effect"=10
+  BackUP.pos       "weapon"=119  "effect"=38
+  P0.POS           "weapon"=204  "effect"=169
+  P0bak.POS        "weapon"=120  "effect"=37
+  P1.POS           "weapon"=204  "effect"=169
+  P10.POS          "weapon"=204  "effect"=169
+  P11.POS          "weapon"=204  "effect"=169
+  P12.POS          "weapon"=204  "effect"=169
+  P13.POS          "weapon"=204  "effect"=169
+  P14.POS          "weapon"=204  "effect"=169
+  P15.POS          "weapon"=204  "effect"=169
+  P16.POS          "weapon"=204  "effect"=169
+  P17.POS          "weapon"=204  "effect"=169
+  P18.POS          "weapon"=204  "effect"=169
+  P19.POS          "weapon"=204  "effect"=169
+  P2.POS           "weapon"=204  "effect"=169
+  P3.POS           "weapon"=204  "effect"=169
+  P4.POS           "weapon"=204  "effect"=169
+  P5.POS           "weapon"=204  "effect"=169
+  P6.POS           "weapon"=204  "effect"=169
+  P7.POS           "weapon"=204  "effect"=169
+  P8.POS           "weapon"=204  "effect"=169
+  P9.POS           "weapon"=204  "effect"=169
+  说明：二者只作为 bone 列表的取值出现，不是独立关键字（37 词表中无 weapon/effect）。

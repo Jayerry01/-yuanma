@@ -1,0 +1,92 @@
+== act 二进制侧证据（组数容量 / 解析链路） 2026-10-28 ==
+目标: C:\Program Files (x86)\Meteor\Meteor.exe
+  bytes=1945600 sha256=baebb6d59e6da61e...
+反编译源: D:\MeteorRE\decompiled_full\Meteor_all_functions.c
+  sha256=978b5634329a192c...
+数据: C:\Program Files (x86)\Meteor\Common\character.act
+  bytes=10389 sha256=e52865424fe065e8...
+下文行号均指反编译源文件行号（不是 exe 地址）；exe 地址见每段标题。
+
+== [1] 入口: 启动时加载 common\character.act ==
+  FUN_004e82e0  @ 170558
+    (**(code **)(*param_1 + 0x40))(s_pmodel__005c9eec);
+    FUN_00508ae6(param_1 + 0x56,s_ptexture__005c9e08);
+    FUN_00574930(s_common_character_act_005c967c);
+  FUN_004e8510  @ 170584
+    iVar2 = FUN_004db920(param_2,param_1 + 0x10,param_1 + 0x27c,param_3,param_4);
+    ...
+    FUN_0055ce50(param_1 + 0x25c);   ; 消费者；manager 由调用者对象 +0x25C 给出
+                                     ; DB 指针最后落在 manager+0x644
+
+== [2] 装载器 FUN_00574930: 解析结果 -> 动态扩容拷贝 ==
+  267249  iVar2 = FUN_00509f8f(param_2,&DAT_005ca380);   ; 读文件
+  267253  FUN_0058e080(iVar2);
+  267254  FUN_0058c440();                                ; bison 解析
+  267255  FUN_00509e57(iVar2);
+  267256  iVar2 = FUN_0058e0b0();                        ; 错误数
+  267258  piVar3 = (int *)FUN_0058cc30();                ; &DAT_0072c10C: group 向量
+  267264  uVar8 = iVar2 - iVar4 >> 3;                    ; 组数 = (end-begin)>>3
+  267266  iVar2 = FUN_00576930(uVar8,iVar4,iVar2);       ; realloc 扩到组数*8
+  267284  param_1[3] = *piVar1 + uVar8 * 8;              ; 新 end
+  267286  piVar5 = (int *)FUN_0058cc40();                ; &DAT_0072c134: action 向量
+  267292  uVar8 = (iVar2 - iVar4) / 0x14;                ; 条数 = 字节数/0x14
+  267294  iVar6 = FUN_00576b90(uVar8,iVar4,iVar2);       ; realloc 扩到条数*0x14
+  267304  param_1[7] = iVar6 + uVar8 * 0x14;
+  结论: 目标数组按解析产出的向量长度现算现扩；没有定长组数组。
+
+== [3] 解析器 FUN_0058c440 的语义动作: 增长式全局向量 ==
+  283231  switch(iVar4) {
+  283232  case 4:   ; group(range) 归约
+  283233    if (DAT_0072c110 == DAT_0072c114) FUN_0058ce10(DAT_0072c110,&DAT_0072c144);
+  283238    *DAT_0072c110 = DAT_0072c144;  puVar3[1] = DAT_0072c148;  DAT_0072c110 += 2;
+            ; 每个 group 追加一对 {begin,end} (8 B)
+  283244  case 5:   DAT_0072c144 = local_8[-2]; DAT_0072c148 = *local_8;   ; 区间组 203-204
+  283248  case 6:   DAT_0072c144 = *local_8;    DAT_0072c148 = DAT_0072c144; ; 单值组 200
+  283252  case 10:  DAT_0072c120 = *local_8; DAT_0072c12c = DAT_0072c128;   ; 开启目标列表
+  283256  case 0xb: ; 连招表 N(...) 归约
+  283257    DAT_0072c124 = (int)DAT_0072c12c - DAT_0072c128 >> 2;
+  283258    if (DAT_0072c138 == DAT_0072c13c) FUN_0058d0e0(DAT_0072c138,&DAT_0072c120);
+  283263    else { FUN_0058d450(); DAT_0072c138 += 0x14; }
+            ; 每条连招 = 0x14 B 记录 (源 + 目标列表)
+  283266  case 0xe: ; 目标编号
+  283268    if (DAT_0072c12c == DAT_0072c130) FUN_0046ecb0(DAT_0072c12c,local_8);
+  283274    else { *DAT_0072c12c = *local_8; DAT_0072c12c += 1; }
+  283403  FUN_0058cc30 -> &DAT_0072c10c  ; 组向量 {begin,end,cap}
+  283411  FUN_0058cc40 -> &DAT_0072c134  ; 连招向量 {begin,end,cap}
+  结论: 组与连招都追加进可扩容向量；上限只受内存与 bison 栈限制。
+
+== [4] 消费者 FUN_0055ce50: 组索引写入每 pose 槽位 ==
+  249843  *(int **)(param_1 + 0x644) = param_2;          ; DB 指针挂到 manager+0x644
+  249848  if (0 < *param_2) {                            ; *param_2 = 组数
+  249851    iVar3 = *(int *)(iVar2 + iVar7 * 8);         ; 组 begin
+  249852    if (iVar3 <= *(int *)(iVar2 + 4 + iVar7 * 8)) {  ; end
+  249855      if ((iVar5 < 0) || (*(int *)(param_1 + 0x5dc) <= iVar3)) break;  ; pose 上限动态
+  249857      *(int *)(*(int *)(param_1 + 0x62c) + 0x68 + iVar5) = iVar7;      ; pose*0xAC+0x68=组号
+  249859    } while (iVar3 <= *(int *)(iVar2 + iVar7 * 8 + 4));
+  249862  } while (iVar7 < *param_2);
+  249865  if (0 < param_2[1]) {                            ; param_2[1] = 连招条数
+  249869    if (piVar9[1] != 0 && 0 <= *piVar9 && *piVar9 < *(int *)(param_1 + 0x5dc)) {
+  249872      *(int *)(*(int *)(param_1 + 0x62c) + 0x6c + iVar7 * 0xac) = piVar9[1];
+  249874      iVar7 = *(int *)(*(int *)(param_1 + 0x62c) + 0x74 + *piVar9 * 0xac);
+  249883      FUN_0055e630(iVar7,uVar6 - uVar4,&local_4);  ; 目标列表按需扩容
+  249887      for (uVar6 = piVar9[1] & 0x3fffffff; uVar6 != 0; uVar6--) *puVar10 = *puVar8;
+  249899    local_10 = local_10 + 0x14;                      ; 步进 = 0x14
+  结论: 每个 pose 一个 int 组号(+0x68)，连招目标列表按需扩容(+0x70/+0x74)；无固定组数组。
+
+== [5] 组号 API 的越界界 = 动态组数 ==
+  FUN_0055d020 @ 249916
+  249927  param_2 < (uint)(*(int *)(iVar5 + 0xc) - *(int *)(iVar5 + 8) >> 3)   ; DB+0xC/+0x8 = end/begin
+  249934  FUN_0055d260(*(undefined4 *)(*(int *)(iVar5 + 8) + param_2 * 8),0,uVar1,0xc0a00000,1);
+  FUN_0055d130 @ 249970
+  249982  (-1 < (int)param_2 && (param_2 < (uint)(*(int *)(iVar1 + 0xc) - *(int *)(iVar1 + 8) >> 3)))
+  结论: 所有组号入口都按 (end-begin)>>3 现算上限。
+
+== [6] 结构性事实与边界 ==
+  - 每 pose 的组号是单 int(+0x68)：一个 pose 只能属于一个组；
+    后写组覆盖前写组（同 pose 出现在两组时，前组静默失效）。
+  - pose 上限来自 manager+0x5DC（实测 P0.POS 为 574），不是常量。
+  - 唯一定常量: bison 栈（FUN_0058c440 内 283112 `local_10 = 200`；
+    283135 `if (9999 < local_10) overflow`；283139-283141 翻倍封顶 10000），
+    与组数无关。
+  - 本证据只覆盖“容量/布局”。输入侧可达性（Input.txt 20 链引用 1..160、
+    KeyMap 表 160 项）另见 docs/07 §12，不在本文件结论内。

@@ -1,0 +1,183 @@
+Addr	SemanticName	ConfirmedFact	Inference	OpenUnknown
+0x00560080	Scene_Particle_Spline_Helper	callees=[2] ins=36 被调 unique=5: 004D4A40=FUN_004d4a40 004F pseudo=:	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005603F0	Scene_AABB_Center_Project	计算包围盒中心 (min+max)*0.5, 调用 0x477b90 进行摄像机屏幕投影	3D 场景物件轴对齐包围盒 (AABB) 几何中心点计算与屏幕投影	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00560500	Scene_Object_Attr_Property_Ops	调用 0x50ac61 / 0x50ace3 / 0x570fc0 属性查找，读写 0x38/0x3c/0x40 槽	场景物件属性集（位置、朝向、物理标志）反射读写	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00560610	Scene_Object_Attr_Property_Ops	调用 0x50ac61 / 0x50ace3 / 0x570fc0 属性查找，读写 0x38/0x3c/0x40 槽	场景物件属性集（位置、朝向、物理标志）反射读写	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00560700	Scene_Object_Attr_Property_Ops	调用 0x50ac61 / 0x50ace3 / 0x570fc0 属性查找，读写 0x38/0x3c/0x40 槽	场景物件属性集（位置、朝向、物理标志）反射读写	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00561120	Scene_Particle_Spline_Helper	callees=[2] ins=52 被调 unique=4: 0056D2E0=FUN_0056d2e0 0050 pseudo=: void __fastcall FUN_00561120(int param	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00561BB0	Scene_PVS_Bitmask_Cluster_Query	0x509980 (__ftol) 浮点坐标转团簇 ID，0x477d30 查表判定 PVS 可见集掩码	PVS 潜在可见集位掩码团簇可见性快速查询与视锥剔除	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00561C60	Scene_Particle_Spline_Helper	callees=[2] ins=40 被调 unique=0: pseudo=: { | if (param_2 < 0) { | param_2 = 0; 	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00561D10	Scene_PVS_Bitmask_Cluster_Query	0x509980 (__ftol) 浮点坐标转团簇 ID，0x477d30 查表判定 PVS 可见集掩码	PVS 潜在可见集位掩码团簇可见性快速查询与视锥剔除	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00561DC0	Scene_PVS_Bitmask_Cluster_Query	0x509980 (__ftol) 浮点坐标转团簇 ID，0x477d30 查表判定 PVS 可见集掩码	PVS 潜在可见集位掩码团簇可见性快速查询与视锥剔除	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00562520	Scene_Particle_Spline_Helper	callees=[2] ins=54 被调 unique=4: 0056A8A0 005622F0=FUN_0056 pseudo=: void __thiscall FUN_00562520(int param	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005642C0	Scene_Particle_Spline_Helper	callees=[2] ins=86 被调 unique=2: 004748B0 00564480=FUN_0056 pseudo=: void __fastcall FUN_005642c0(int param	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005648B0	Scene_Particle_Spline_Helper	callees=[2] ins=40 被调 unique=0: pseudo=: { | if ((((*param_1 <= *param_3) && (*	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00564FC0	Scene_Particle_Spline_Helper	callees=[2] ins=50 被调 unique=0: pseudo=: { | bool bVar7; | iVar4 = 0; | iVar6 =	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00565090	Scene_Particle_Spline_Helper	callees=[2] ins=57 被调 unique=5: 00564F90 005694E0 005693F0 pseudo=: { | puVar1 = (undefined4 *)FUN_00564f9	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00565140	Scene_Particle_Spline_Helper	callees=[2] ins=50 被调 unique=3: 00477D30=FUN_00477d30 0056 pseudo=: void __fastcall FUN_00565140(int param	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00566940	Scene_Particle_Spline_Helper	callees=[2] ins=90 被调 unique=8: 00509F8F=FUN_00509f8f 0050 pseudo=: void __thiscall FUN_00566940(int *para	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00566D40	Scene_Particle_Spline_Helper	callees=[2] ins=56 被调 unique=1: 00593634=FUN_00593634 pseudo=: { | bool bVar8; | iVar4 = (int)&DAT_00	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00566DD0	Scene_Particle_Spline_Helper	callees=[2] ins=47 被调 unique=3: 00402E90=FUN_00402e90 004D pseudo=: void __thiscall FUN_00566dd0(int param	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00566F10	Scene_Particle_Spline_Helper	callees=[2] ins=45 被调 unique=3: 0056F310 0055DF80 00402E90 pseudo=: void __fastcall FUN_00566f10(int param	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00567270	Scene_Particle_Spline_Helper	callees=[2] ins=89 被调 unique=3: 0049A680 x3 00402E90=FUN_0 pseudo=: { | if (param_1 != param_2) { | piVar1	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00567360	Scene_Particle_Spline_Helper	callees=[2] ins=60 被调 unique=1: 0047ECF0=FUN_0047ecf0 pseudo=: float10 FUN_00567360(undefined4 param_	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00569330	Scene_Particle_Spline_Helper	callees=[2] ins=64 被调 unique=1: 0057E590=FUN_0057e590 pseudo=: { | if ((-1 < param_2) && (param_2 < *	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005693F0	Scene_Particle_Spline_Helper	callees=[2] ins=76 被调 unique=2: 0057E810=FUN_0057e810 0050 pseudo=: { | if ((0.0 <= param_2) && | (iVar4 =	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005694E0	Scene_Particle_Spline_Helper	callees=[2] ins=33 被调 unique=0: pseudo=: { | iVar2 = *(int *)(param_1 + 0x120);	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00569580	Scene_Particle_Spline_Helper	callees=[2] ins=73 被调 unique=0: pseudo=: void __thiscall FUN_00569580(int param	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0056A040	Scene_Particle_Spline_Helper	callees=[2] ins=53 被调 unique=0: pseudo=: { | iVar4 = 1; | cVar1 = *(char *)(*(i	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0056A8F0	Scene_Particle_Spline_Helper	callees=[2] ins=55 被调 unique=4: 0056A8A0 0056AD30 00475520 pseudo=: void __thiscall FUN_0056a8f0(int param	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0056A990	Scene_Particle_Spline_Helper	callees=[2] ins=52 被调 unique=4: 0056A8A0 0056AD30 004754F0 pseudo=: void __thiscall FUN_0056a990(int param	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0056AD30	Scene_Particle_Spline_Helper	callees=[2] ins=64 被调 unique=8: 00474410 x2 00476070 x2 00 pseudo=: void __thiscall FUN_0056ad30(int param	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0056AFC0	Scene_Particle_Spline_Helper	callees=[2] ins=68 被调 unique=2: 00476F00=FUN_00476f00 0047 pseudo=: void __thiscall FUN_0056afc0(int param	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0056B0B0	Scene_Particle_Spline_Helper	callees=[2] ins=68 被调 unique=2: 00476F00=FUN_00476f00 0047 pseudo=: void __thiscall FUN_0056b0b0(int param	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0056B4A0	Scene_Particle_Spline_Helper	callees=[2] ins=58 被调 unique=3: 00476F00=FUN_00476f00 0057 pseudo=: { | FUN_00476f00(local_40,param_1 + 0x	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0056D6F0	Scene_Particle_Spline_Helper	callees=[2] ins=56 被调 unique=3: 00477B90=FUN_00477b90 0047 pseudo=: void FUN_0056d6f0(void) | { | local_24	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0056D830	Scene_Particle_Spline_Helper	callees=[2] ins=47 被调 unique=1: 00477200 pseudo=: void __thiscall FUN_0056d830(int param	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0056DB90	Scene_Particle_Spline_Helper	callees=[2] ins=57 被调 unique=3: 00508B38=operator_new 0058 pseudo=: LPCRITICAL_SECTION __fastcall FUN_0056	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0056DF30	Scene_Particle_Spline_Helper	callees=[2] ins=63 被调 unique=0: pseudo=: void __fastcall FUN_0056df30(int param	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0056EB40	Scene_Particle_Spline_Helper	callees=[2] ins=81 被调 unique=3: 00477D30=FUN_00477d30 0047 pseudo=: void FUN_0056eb40(void) | { | FUN_0047	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0056F260	Scene_Particle_Spline_Helper	callees=[2] ins=54 被调 unique=2: 005818F0=FUN_005818f0 0057 pseudo=: { | iVar4 = 0; | if (0 < *(int *)(para	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0056F930	Scene_Particle_Spline_Helper	callees=[2] ins=69 被调 unique=0: pseudo=: { | iVar3 = (int)local_18 - (int)param	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00570510	Scene_Particle_Spline_Helper	callees=[2] ins=82 被调 unique=3: 00476E80 x3 00477AD0 00570 pseudo=: { | local_70 = -*param_1; | local_64 =	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00571060	Scene_Particle_Spline_Helper	callees=[2] ins=49 被调 unique=0: pseudo=: { | bool bVar8; | local_8 = 0; | if (0	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00571550	Scene_Particle_Spline_Helper	callees=[2] ins=50 被调 unique=0: pseudo=: { | bool bVar7; | local_8 = 0; | if (0	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00572D00	Scene_Particle_Spline_Helper	callees=[2] ins=55 被调 unique=5: 00595890 x2 005951E0=FUN_0 pseudo=: void __thiscall FUN_00572d00(int param	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00573650	Scene_Particle_Spline_Helper	callees=[2] ins=72 被调 unique=2: 00507850=FUN_00507850 0050 pseudo=: void __fastcall FUN_00573650(int param	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00573710	Scene_Particle_Spline_Helper	callees=[2] ins=31 被调 unique=1: 00477200 pseudo=: { | void *local_c; | puStack_8 = &LAB_	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00573920	Scene_Particle_Spline_Helper	callees=[2] ins=50 被调 unique=0: pseudo=: { | if (param_3 == 0) { | if ((-1 < pa	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00574000	Scene_Particle_Spline_Helper	callees=[2] ins=46 被调 unique=3: 00477D30=FUN_00477d30 0047 pseudo=: void __fastcall FUN_00574000(int param	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00574E50	Scene_Particle_Spline_Helper	callees=[2] ins=40 被调 unique=1: 00575180=FUN_00575180 pseudo=: { | void *local_c; | puStack_8 = &LAB_	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005754D0	Scene_Particle_Spline_Helper	callees=[2] ins=57 被调 unique=2: 00577050=FUN_00577050 0057 pseudo=: void __thiscall FUN_005754d0(int param	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00575A50	Scene_Particle_Spline_Helper	callees=[2] ins=49 被调 unique=0: pseudo=: { | iVar2 = (*(int *)(param_1 + 4) - p	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00577220	Scene_Particle_Spline_Helper	callees=[2] ins=113 被调 unique=3: 005092C0=FUN_005092c0 004 pseudo=: void FUN_00577220(undefined4 *param_1,	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005775A0	Scene_Particle_Spline_Helper	callees=[2] ins=66 被调 unique=2: 00402BF0=FUN_00402bf0 0050 pseudo=: { | puStack_c = &LAB_005a6051; | local	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00577E80	Scene_Particle_Spline_Helper	callees=[2] ins=48 被调 unique=3: 00577AD0=FUN_00577ad0 0050 pseudo=: { | void *local_c; | local_4 = 0xfffff	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005780C0	Particle_Mesh_Buffer_Grow	调用 0x403490 (vector 扩容) 与 0x5092c0 (memcpy), 属于 n=21 画像组	粒子特效广告牌网格与顶点缓冲区动态扩容	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00578810	Scene_Particle_Spline_Helper	callees=[2] ins=53 被调 unique=0: pseudo=: void __fastcall FUN_00578810(int param	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005788A0	Scene_Particle_Spline_Helper	callees=[2] ins=48 被调 unique=1: 005790D0=FUN_005790d0 pseudo=: void __thiscall FUN_005788a0(int param	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00578C10	Scene_Particle_Spline_Helper	callees=[2] ins=48 被调 unique=1: 00570FC0=FUN_00570fc0 pseudo=: { | iVar1 = *(int *)(param_1 + 0x20); 	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00579420	Scene_Particle_Spline_Helper	callees=[2] ins=46 被调 unique=3: 0047BFD0=FUN_0047bfd0 0047 pseudo=: { | void *local_c; | local_4 = 0xfffff	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00579790	Scene_Particle_Spline_Helper	callees=[2] ins=80 被调 unique=2: 00579870 x2 00593D6D pseudo=: { | HDC hdc; | MAT2 local_24; | _GLYPH	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0057DF40	Scene_Particle_Spline_Helper	callees=[2] ins=59 被调 unique=3: 0050A118=FUN_0050a118 0050 pseudo=: { | uVar1 = param_2; | FUN_0050a118(lo	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0057F0B0	Scene_Particle_Spline_Helper	callees=[2] ins=60 被调 unique=2: 00476F00=FUN_00476f00 0057 pseudo=: FUN_0057f0b0(int param_1,undefined4 pa	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0057F180	Scene_Particle_Spline_Helper	callees=[2] ins=47 被调 unique=2: 00476F00=FUN_00476f00 0057 pseudo=: { | if (*(char *)(param_4 + 0x124) == 	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00580510	Scene_Particle_Spline_Helper	callees=[2] ins=58 被调 unique=0: pseudo=: void FUN_00580510(void) | { | iVar1 = 	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005805F0	Scene_Particle_Spline_Helper	callees=[2] ins=44 被调 unique=0: pseudo=: { | iVar1 = param_1 * 2; | if (*(short	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00580810	Scene_Particle_Spline_Helper	callees=[2] ins=58 被调 unique=1: 00593634=FUN_00593634 pseudo=: { | bool bVar8; | iVar5 = (int)&DAT_00	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005808A0	Scene_Particle_Spline_Helper	callees=[2] ins=32 被调 unique=4: 00509DDB 00508AE6=FUN_0050 pseudo=: void FUN_005808a0(int param_1) | { | D	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005820A0	Scene_Particle_Spline_Helper	callees=[2] ins=31 被调 unique=3: 0047C1C0 0058E730 00507850 pseudo=: void __fastcall FUN_005820a0(int param	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00582C60	Scene_Particle_Spline_Helper	callees=[2] ins=80 被调 unique=3: 00509FA2 x6 0058A670 x2 00 pseudo=: { | FUN_0058a680(param_1 + 9,param_2);	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00582D50	Scene_Particle_Spline_Helper	callees=[2] ins=95 被调 unique=5: 0050A118=FUN_0050a118 0058 pseudo=: { | void *pvVar1; | FUN_0058a620(param	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00583C20	Scene_Particle_Spline_Helper	callees=[2] ins=45 被调 unique=3: 00480770 x2 005565E0=FUN_0 pseudo=: void __thiscall FUN_00583c20(int param	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005847F0	Scene_Particle_Spline_Helper	callees=[2] ins=38 被调 unique=2: 0055BEB0=FUN_0055beb0 0050 pseudo=: void __fastcall FUN_005847f0(int param	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00584AB0	Scene_Particle_Spline_Helper	callees=[2] ins=61 被调 unique=3: 0056B1D0 x2 005598C0 0056B pseudo=: { | bool bVar7; | if ((-1 < param_2) &	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00584C50	Scene_Particle_Spline_Helper	callees=[2] ins=46 被调 unique=4: 005565D0 x3 005565E0=FUN_0 pseudo=: { | if (*(int *)(param_1 + 0x274) != 0	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00584D80	Spline_Particle_Emitter_Step	调用 0x5811c0 样条积分，属于 n=10 画像组，更新粒子生命周期与位移	3D 场景特效粒子发射器轨迹样条步进与生命周期更新	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00585360	Spline_Particle_Emitter_Step	调用 0x5811c0 样条积分，属于 n=10 画像组，更新粒子生命周期与位移	3D 场景特效粒子发射器轨迹样条步进与生命周期更新	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005856C0	Spline_Particle_Emitter_Step	调用 0x5811c0 样条积分，属于 n=10 画像组，更新粒子生命周期与位移	3D 场景特效粒子发射器轨迹样条步进与生命周期更新	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00585E30	Scene_Particle_Spline_Helper	callees=[2] ins=54 被调 unique=0: pseudo=: void __thiscall FUN_00585e30(int param	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005870D0	Scene_Particle_Spline_Helper	callees=[2] ins=51 被调 unique=3: 00508B38=operator_new 0058 pseudo=: void __fastcall FUN_005870d0(int param	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005875B0	Scene_Particle_Spline_Helper	callees=[2] ins=44 被调 unique=3: 0056E0D0=FUN_0056e0d0 0056 pseudo=: { | uVar1 = FUN_0056e220(); | uVar1 = 	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005877C0	Scene_Particle_Spline_Helper	callees=[2] ins=51 被调 unique=0: pseudo=: { | iVar2 = 0; | if (0 < *(int *)(para	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00587A60	Spline_Particle_Emitter_Step	调用 0x5811c0 样条积分，属于 n=10 画像组，更新粒子生命周期与位移	3D 场景特效粒子发射器轨迹样条步进与生命周期更新	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00587E70	Scene_Particle_Spline_Helper	callees=[2] ins=54 被调 unique=2: 0056B1D0 x2 0056B310 pseudo=: { | bool bVar6; | if (*(int *)(param_1	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005880D0	Spline_Particle_Emitter_Step	调用 0x5811c0 样条积分，属于 n=10 画像组，更新粒子生命周期与位移	3D 场景特效粒子发射器轨迹样条步进与生命周期更新	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00588720	Spline_Particle_Emitter_Step	调用 0x5811c0 样条积分，属于 n=10 画像组，更新粒子生命周期与位移	3D 场景特效粒子发射器轨迹样条步进与生命周期更新	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00588E10	Spline_Particle_Emitter_Step	调用 0x5811c0 样条积分，属于 n=10 画像组，更新粒子生命周期与位移	3D 场景特效粒子发射器轨迹样条步进与生命周期更新	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00589330	Spline_Particle_Emitter_Step	调用 0x5811c0 样条积分，属于 n=10 画像组，更新粒子生命周期与位移	3D 场景特效粒子发射器轨迹样条步进与生命周期更新	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00589970	Spline_Particle_Emitter_Step	调用 0x5811c0 样条积分，属于 n=10 画像组，更新粒子生命周期与位移	3D 场景特效粒子发射器轨迹样条步进与生命周期更新	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0058A1F0	Spline_Particle_Emitter_Step	调用 0x5811c0 样条积分，属于 n=10 画像组，更新粒子生命周期与位移	3D 场景特效粒子发射器轨迹样条步进与生命周期更新	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0058A560	Particle_Mesh_Buffer_Grow	调用 0x403490 (vector 扩容) 与 0x5092c0 (memcpy), 属于 n=21 画像组	粒子特效广告牌网格与顶点缓冲区动态扩容	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0058B4F0	Scene_Particle_Spline_Helper	callees=[2] ins=58 被调 unique=0: pseudo=: void FUN_0058b4f0(void) | { | iVar1 = 	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0058B5D0	Scene_Particle_Spline_Helper	callees=[2] ins=44 被调 unique=0: pseudo=: { | iVar1 = param_1 * 2; | if (*(short	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0058C230	Particle_Mesh_Buffer_Grow	调用 0x403490 (vector 扩容) 与 0x5092c0 (memcpy), 属于 n=21 画像组	粒子特效广告牌网格与顶点缓冲区动态扩容	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0058D560	Particle_Mesh_Buffer_Grow	调用 0x403490 (vector 扩容) 与 0x5092c0 (memcpy), 属于 n=21 画像组	粒子特效广告牌网格与顶点缓冲区动态扩容	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0058D690	Scene_Particle_Spline_Helper	callees=[2] ins=66 被调 unique=2: 00402BF0=FUN_00402bf0 0050 pseudo=: { | puStack_c = &LAB_005a6e71; | local	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0058DD20	Scene_Particle_Spline_Helper	callees=[2] ins=58 被调 unique=0: pseudo=: void FUN_0058dd20(void) | { | iVar1 = 	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0058DE00	Scene_Particle_Spline_Helper	callees=[2] ins=44 被调 unique=0: pseudo=: { | iVar1 = param_1 * 2; | if (*(short	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0058E430	Scene_Particle_Spline_Helper	callees=[2] ins=75 被调 unique=0: pseudo=: void __fastcall FUN_0058e430(undefined	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0058EDD0	Scene_Particle_Spline_Helper	callees=[2] ins=54 被调 unique=0: pseudo=: void __fastcall FUN_0058edd0(int param	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0058EE70	Scene_Particle_Spline_Helper	callees=[2] ins=79 被调 unique=3: 00508B38=operator_new 0058 pseudo=: void __fastcall FUN_0058ee70(int *para	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0058F6C0	Scene_Particle_Spline_Helper	callees=[2] ins=58 被调 unique=3: 00507850=FUN_00507850 0059 pseudo=: void __fastcall FUN_0058f6c0(int param	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0058F9E0	Scene_Particle_Spline_Helper	callees=[2] ins=83 被调 unique=2: 00595374 x3 0058EF40 pseudo=: void __thiscall FUN_0058f9e0(int param	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00593200	Scene_Particle_Spline_Helper	callees=[2] ins=43 被调 unique=2: 00402BF0=FUN_00402bf0 0040 pseudo=: { | void *local_c; | local_4 = 0xfffff	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00593877	Scene_Particle_Spline_Helper	callees=[2] ins=94 被调 unique=5: 00514AC3 x3 00514FA8 00514 pseudo=: float10 FUN_00593877(double param_1) |	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00593946	Scene_Particle_Spline_Helper	callees=[2] ins=94 被调 unique=5: 00514AC3 x3 00514FA8 00514 pseudo=: float10 FUN_00593946(double param_1) |	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00593A18	Scene_Particle_Spline_Helper	callees=[2] ins=42 被调 unique=0: pseudo=:	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00593A94	Scene_Particle_Spline_Helper	callees=[2] ins=42 被调 unique=4: 00508E7C 00593DD4 00508EBE pseudo=:	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00593F9E	Scene_Particle_Spline_Helper	callees=[2] ins=46 被调 unique=0: pseudo=:	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00594177	Scene_Particle_Spline_Helper	callees=[2] ins=49 被调 unique=2: 00593DC2=__frnd 005937AA=F pseudo=: { | float10 fVar2; | uVar1 = FUN_00593	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00594450	Scene_Particle_Spline_Helper	callees=[2] ins=83 被调 unique=0: pseudo=:	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00594AC4	Scene_Particle_Spline_Helper	callees=[2] ins=36 被调 unique=1: 00594A06 x4 pseudo=:	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00594BC4	Scene_Particle_Spline_Helper	callees=[2] ins=44 被调 unique=2: 00594A19 x4 00594450 pseudo=:	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00594E5C	Scene_Particle_Spline_Helper	callees=[2] ins=54 被调 unique=1: 00594C56=FUN_00594c56 pseudo=: float10 FUN_00594e5c(void) | { | float	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00595114	Scene_Particle_Spline_Helper	callees=[2] ins=54 被调 unique=1: 00594F0E=FUN_00594f0e pseudo=:	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005952AF	Scene_Particle_Spline_Helper	callees=[2] ins=48 被调 unique=1: 00596780 pseudo=: { | if (param_4 == param_1[6]) { | par	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00595374	Scene_Particle_Spline_Helper	callees=[2] ins=58 被调 unique=0: pseudo=: FUN_00595374(int *param_1,undefined4 p	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00595405	Scene_Particle_Spline_Helper	callees=[2] ins=41 被调 unique=2: 00596780 00596830 pseudo=: float10 FUN_00595405(int *param_1,unde	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0059546E	Scene_Particle_Spline_Helper	callees=[2] ins=48 被调 unique=0: pseudo=: FUN_0059546e(int *param_1,undefined4 p	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005954F4	Scene_Particle_Spline_Helper	callees=[2] ins=41 被调 unique=2: 00596780 00596830 pseudo=: float10 FUN_005954f4(int *param_1,unde	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x0059555D	Scene_Particle_Spline_Helper	callees=[2] ins=48 被调 unique=0: pseudo=: FUN_0059555d(int *param_1,undefined4 p	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005955E3	Scene_Particle_Spline_Helper	callees=[2] ins=41 被调 unique=2: 00596780 00596830 pseudo=: float10 FUN_005955e3(int *param_1,unde	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005957D0	Scene_Particle_Spline_Helper	callees=[2] ins=70 被调 unique=1: 00595770 x2 pseudo=: { | iVar1 = *param_1; | if (*(double *	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00596135	Scene_Particle_Spline_Helper	callees=[2] ins=40 被调 unique=0: pseudo=: void FUN_00596135(int param_1,double p	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00596691	Scene_Particle_Spline_Helper	callees=[2] ins=75 被调 unique=0: pseudo=: float10 FUN_00596691(double param_1,do	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005968E0	Scene_Particle_Spline_Helper	callees=[2] ins=56 被调 unique=1: 00596965=FUN_00596965 pseudo=: { | if ((*param_1 == *param_3) && | ((	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00596C17	Scene_Particle_Spline_Helper	callees=[2] ins=50 被调 unique=1: 00596C8D=FUN_00596c8d pseudo=: { | if (((*param_1 == *param_3) && (*p	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00597160	Scene_Particle_Spline_Helper	callees=[2] ins=50 被调 unique=1: 00596780 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00597220	Scene_Particle_Spline_Helper	callees=[2] ins=65 被调 unique=1: 00596780 x2 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00597310	Scene_Particle_Spline_Helper	callees=[2] ins=50 被调 unique=1: 00596780 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005973D0	Scene_Particle_Spline_Helper	callees=[2] ins=65 被调 unique=1: 00596780 x2 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005974C0	Scene_Particle_Spline_Helper	callees=[2] ins=50 被调 unique=1: 00596780 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00597580	Scene_Particle_Spline_Helper	callees=[2] ins=65 被调 unique=1: 00596780 x2 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00597670	Scene_Particle_Spline_Helper	callees=[2] ins=50 被调 unique=1: 00596780 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00597730	Scene_Particle_Spline_Helper	callees=[2] ins=65 被调 unique=1: 00596780 x2 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00597820	Scene_Particle_Spline_Helper	callees=[2] ins=50 被调 unique=1: 00596780 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005978E0	Scene_Particle_Spline_Helper	callees=[2] ins=65 被调 unique=1: 00596780 x2 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005979D0	Scene_Particle_Spline_Helper	callees=[2] ins=50 被调 unique=1: 00596780 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00597A90	Scene_Particle_Spline_Helper	callees=[2] ins=65 被调 unique=1: 00596780 x2 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00597B80	Scene_Particle_Spline_Helper	callees=[2] ins=50 被调 unique=1: 00596780 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00597C40	Scene_Particle_Spline_Helper	callees=[2] ins=65 被调 unique=1: 00596780 x2 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00597D30	Scene_Particle_Spline_Helper	callees=[2] ins=50 被调 unique=1: 00596780 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00597DF0	Scene_Particle_Spline_Helper	callees=[2] ins=65 被调 unique=1: 00596780 x2 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00597EE0	Scene_Particle_Spline_Helper	callees=[2] ins=50 被调 unique=1: 00596780 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00597FA0	Scene_Particle_Spline_Helper	callees=[2] ins=65 被调 unique=1: 00596780 x2 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00598090	Scene_Particle_Spline_Helper	callees=[2] ins=50 被调 unique=1: 00596780 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00598150	Scene_Particle_Spline_Helper	callees=[2] ins=65 被调 unique=1: 00596780 x2 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00598240	Scene_Particle_Spline_Helper	callees=[2] ins=50 被调 unique=1: 00596780 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00598300	Scene_Particle_Spline_Helper	callees=[2] ins=65 被调 unique=1: 00596780 x2 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005983F0	Scene_Particle_Spline_Helper	callees=[2] ins=50 被调 unique=1: 00596780 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005984B0	Scene_Particle_Spline_Helper	callees=[2] ins=65 被调 unique=1: 00596780 x2 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005985A0	Scene_Particle_Spline_Helper	callees=[2] ins=50 被调 unique=1: 00596780 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00598660	Scene_Particle_Spline_Helper	callees=[2] ins=65 被调 unique=1: 00596780 x2 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00598750	Scene_Particle_Spline_Helper	callees=[2] ins=50 被调 unique=1: 00596780 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00598810	Scene_Particle_Spline_Helper	callees=[2] ins=65 被调 unique=1: 00596780 x2 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00598900	Scene_Particle_Spline_Helper	callees=[2] ins=50 被调 unique=1: 00596780 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005989C0	Scene_Particle_Spline_Helper	callees=[2] ins=65 被调 unique=1: 00596780 x2 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00598AB0	Scene_Particle_Spline_Helper	callees=[2] ins=50 被调 unique=1: 00596780 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00598B70	Scene_Particle_Spline_Helper	callees=[2] ins=65 被调 unique=1: 00596780 x2 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00598C60	Scene_Particle_Spline_Helper	callees=[2] ins=50 被调 unique=1: 00596780 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00598D20	Scene_Particle_Spline_Helper	callees=[2] ins=65 被调 unique=1: 00596780 x2 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00598E10	Scene_Particle_Spline_Helper	callees=[2] ins=50 被调 unique=1: 00596780 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00598ED0	Scene_Particle_Spline_Helper	callees=[2] ins=65 被调 unique=1: 00596780 x2 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00598FC0	Scene_Particle_Spline_Helper	callees=[2] ins=50 被调 unique=1: 00596780 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00599080	Scene_Particle_Spline_Helper	callees=[2] ins=65 被调 unique=1: 00596780 x2 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00599170	Scene_Particle_Spline_Helper	callees=[2] ins=50 被调 unique=1: 00596780 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00599230	Scene_Particle_Spline_Helper	callees=[2] ins=65 被调 unique=1: 00596780 x2 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00599320	Scene_Particle_Spline_Helper	callees=[2] ins=50 被调 unique=1: 00596780 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005993E0	Scene_Particle_Spline_Helper	callees=[2] ins=65 被调 unique=1: 00596780 x2 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005994D0	Scene_Particle_Spline_Helper	callees=[2] ins=50 被调 unique=1: 00596780 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00599590	Scene_Particle_Spline_Helper	callees=[2] ins=65 被调 unique=1: 00596780 x2 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00599680	Scene_Particle_Spline_Helper	callees=[2] ins=50 被调 unique=1: 00596780 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00599740	Scene_Particle_Spline_Helper	callees=[2] ins=65 被调 unique=1: 00596780 x2 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00599830	Scene_Particle_Spline_Helper	callees=[2] ins=50 被调 unique=1: 00596780 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005998F0	Scene_Particle_Spline_Helper	callees=[2] ins=65 被调 unique=1: 00596780 x2 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x005999E0	Scene_Particle_Spline_Helper	callees=[2] ins=50 被调 unique=1: 00596780 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00599AA0	Scene_Particle_Spline_Helper	callees=[2] ins=65 被调 unique=1: 00596780 x2 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00599B90	Scene_Particle_Spline_Helper	callees=[2] ins=50 被调 unique=1: 00596780 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00599C50	Scene_Particle_Spline_Helper	callees=[2] ins=65 被调 unique=1: 00596780 x2 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00599D40	Scene_Particle_Spline_Helper	callees=[2] ins=50 被调 unique=1: 00596780 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00599E00	Scene_Particle_Spline_Helper	callees=[2] ins=65 被调 unique=1: 00596780 x2 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00599EF0	Scene_Particle_Spline_Helper	callees=[2] ins=50 被调 unique=1: 00596780 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围
+0x00599FB0	Scene_Particle_Spline_Helper	callees=[2] ins=65 被调 unique=1: 00596780 x2 pseudo=: { | local_2c[5] = 0; | local_2c[6] = 0	场景 PVS、样条曲线与粒子特效底层辅助	需结合 .des 场景定义文件与 PVS 二进制块格式验证团簇范围

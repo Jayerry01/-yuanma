@@ -1,0 +1,41 @@
+Addr	SemanticName	ConfirmedFact	Inference	OpenUnknown
+0x004A05B0	Actor_State_Register	0x5092c0 (memcpy) / 0x403490 (vector 扩容), param_1+0x10 名字串登记	角色/控制器名字与基础状态注册	需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004A0740	Actor_State_Register	0x5092c0 (memcpy) / 0x403490 (vector 扩容), param_1+0x10 名字串登记	角色/控制器名字与基础状态注册	需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004A1540	Console_Cmd_Format_String	读取串池 s_Command__005c96b0 ('Command '), 格式化控制台指令	控制台命令解析与格式化字符串装配	需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004A16A0	Actor_State_Register	0x5092c0 (memcpy) / 0x403490 (vector 扩容), param_1+0x10 名字串登记	角色/控制器名字与基础状态注册	需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004A2E10	Physics_SAT_Pair_Alloc	operator_new 分配碰撞对结构体，调用 0x4e8a20 / 0x4b4a30 构造	SAT 碰撞检测实体对（Collider Pair）动态创建	需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004A3C90	Physics_SAT_Pair_Alloc	operator_new 分配碰撞对结构体，调用 0x4e8a20 / 0x4b4a30 构造	SAT 碰撞检测实体对（Collider Pair）动态创建	需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004A4450	Physics_SAT_Pair_Alloc	operator_new 分配碰撞对结构体，调用 0x4e8a20 / 0x4b4a30 构造	SAT 碰撞检测实体对（Collider Pair）动态创建	需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004A69B0	Combat_Combo_Buffer_Ops	0x49c640 / operator_new，扩容 0x42c/0x434 连招表槽位	连招指令输入缓冲队列增删与扩容	需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004A7D50	Combat_Combo_Buffer_Ops	0x49c640 / operator_new，扩容 0x42c/0x434 连招表槽位	连招指令输入缓冲队列增删与扩容	需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004A7E80	Combat_Hit_Mask_Dispatcher	调用虚表 *(piVar1 + 0x80) 传递掩码 param_3&0xf, &0xf0, &0xf00	战斗打击盒命中属性分级与伤害类型掩码分派	需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004A81C0	Actor_Shadow_Projector	读取串池 s_shadow1_005c96d4 ('shadow1'), 连通 0x4054e0/0x405660 贴花投影	角色/物件脚底投影阴影贴花生成器	需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004AABB0	Combat_Combo_Buffer_Ops	0x49c640 / operator_new，扩容 0x42c/0x434 连招表槽位	连招指令输入缓冲队列增删与扩容	需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004AAC40	Combat_Combo_Buffer_Ops	0x49c640 / operator_new，扩容 0x42c/0x434 连招表槽位	连招指令输入缓冲队列增删与扩容	需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004B0055	Combat_Projectile_Trajectory	调用 0x549b00 弹道计算，0x509980 (__ftol) 整数截断，0x4acae0 命中检测	飞行道具抛物线轨迹计算与命中步进	需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004B31B0	Combat_Weapon_Hitbox_Query	调用 0x4b5fc0 进行武器打击盒与受击盒交叉查询	武器挥动打击范围与受击盒碰撞求交	需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004B4E80	Combat_Weapon_Hitbox_Query	调用 0x4b5fc0 进行武器打击盒与受击盒交叉查询	武器挥动打击范围与受击盒碰撞求交	需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004B6160	Physics_Combat_Helper	callees=[2] ins=86 被调 unique=4: 00402BF0=FUN_00402bf0 0040 pseudo=: { | puStack_c = &LAB_005a09a9; | local	物理与战斗控制底层辅助	需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004B8D70	Physics_Combat_Helper	callees=[2] ins=42 被调 unique=3: 004A93C0=FUN_004a93c0 004B pseudo=: { | uVar4 = FUN_004a93c0(); | piVar1 =	物理与战斗控制底层辅助	需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004B95E0	Physics_Combat_Helper	callees=[2] ins=34 被调 unique=1: 0040E8B0=FUN_0040e8b0 pseudo=: void FUN_004b95e0(int param_1) | { | D	物理与战斗控制底层辅助	需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004BADD0	Physics_Combat_Helper	callees=[2] ins=42 被调 unique=2: 00487830=FUN_00487830 004B pseudo=: void __fastcall FUN_004badd0(int param	物理与战斗控制底层辅助	需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004BD0B0	Physics_Combat_Helper	callees=[2] ins=34 被调 unique=3: 00463450 x2 00451E60=FUN_0 pseudo=: { | (**(code **)(*(int *)param_1[0x921	物理与战斗控制底层辅助	需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004BD400	Physics_Combat_Helper	callees=[2] ins=50 被调 unique=6: 0049D3C0=FUN_0049d3c0 004B pseudo=: void __thiscall FUN_004bd400(int param	物理与战斗控制底层辅助	需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004C0580	Physics_Combat_Helper	callees=[2] ins=73 被调 unique=3: 00487830=FUN_00487830 004C pseudo=: { | iStack_4 = param_1; | iVar4 = FUN_	物理与战斗控制底层辅助	需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004C1400	Physics_Combat_Helper	callees=[2] ins=57 被调 unique=1: 004C2BF0=FUN_004c2bf0 pseudo=: void __thiscall FUN_004c1400(int param	物理与战斗控制底层辅助	需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004C1F70	Physics_Combat_Helper	callees=[2] ins=55 被调 unique=1: 0047ECF0=FUN_0047ecf0 pseudo=: { | uint3 uVar2; | float10 fVar3; | fV	物理与战斗控制底层辅助	需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004C2120	Physics_Combat_Helper	callees=[2] ins=95 被调 unique=3: 004C68D0 004C1900=FUN_004c pseudo=: void __fastcall FUN_004c2120(int param	物理与战斗控制底层辅助	需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004C7210	Physics_Combat_Helper	callees=[2] ins=101 被调 unique=3: 005092C0=FUN_005092c0 004 pseudo=: { | if (param_2 != param_1) { | iVar2 	物理与战斗控制底层辅助	需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004C7300	Physics_Combat_Helper	callees=[2] ins=101 被调 unique=3: 005092C0=FUN_005092c0 004 pseudo=: { | if (param_2 != param_1) { | iVar2 	物理与战斗控制底层辅助	需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004C8490	Physics_Combat_Helper	callees=[2] ins=40 被调 unique=2: 00463450 0044E1C0=FUN_0044 pseudo=: void FUN_004c8490(int *param_1) | { | 	物理与战斗控制底层辅助	需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004C8580	Physics_Combat_Helper	callees=[2] ins=59 被调 unique=2: 00463450 00451110=FUN_0045 pseudo=: void FUN_004c8580(int *param_1) | { | 	物理与战斗控制底层辅助	需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004D2D20	Physics_Combat_Helper	callees=[2] ins=74 被调 unique=1: 004D2E90=FUN_004d2e90 pseudo=: void __thiscall FUN_004d2d20(int *para	物理与战斗控制底层辅助	需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004D2DD0	Physics_Combat_Helper	callees=[2] ins=75 被调 unique=1: 004D3290=FUN_004d3290 pseudo=: void __thiscall FUN_004d2dd0(int *para	物理与战斗控制底层辅助	需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004D48F0	Physics_Combat_Helper	callees=[2] ins=92 被调 unique=6: 0047A270=FUN_0047a270 0050 pseudo=: { | puStack_c = &LAB_005a1dba; | local	物理与战斗控制底层辅助	需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004D8710	Physics_Combat_Helper	callees=[2] ins=129 被调 unique=3: 00487830=FUN_00487830 005 pseudo=: void FUN_004d8710(int *param_1,int *pa	物理与战斗控制底层辅助	需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004DB300	Physics_Combat_Helper	callees=[2] ins=69 被调 unique=3: 00402AC0=FUN_00402ac0 0050 pseudo=: { | void *local_10; | puStack_c = &LAB	物理与战斗控制底层辅助	需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004DBAE0	Physics_Combat_Helper	callees=[2] ins=31 被调 unique=1: 0055BEB0=FUN_0055beb0 pseudo=: void __fastcall FUN_004dbae0(undefined	物理与战斗控制底层辅助	需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004DBB60	Physics_Combat_Helper	callees=[2] ins=51 被调 unique=0: pseudo=: { | uVar1 = 0; | if (((param_2 & 1) !=	物理与战斗控制底层辅助	需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004DC6A0	Physics_Combat_Helper	callees=[2] ins=47 被调 unique=2: 005569B0 x2 005598C0 pseudo=: void __thiscall FUN_004dc6a0(int *para	物理与战斗控制底层辅助	需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004DCDA0	Physics_Combat_Helper	callees=[2] ins=47 被调 unique=1: 0055C300=FUN_0055c300 pseudo=: { | iVar1 = (**(code **)(*param_2 + 0x	物理与战斗控制底层辅助	需结合武器 .pst 与动作 .act 标签复核命中掩码位定义
+0x004DECA0	Physics_Combat_Helper	callees=[2] ins=40 被调 unique=1: 004DCF50=FUN_004dcf50 pseudo=: { | piVar1 = param_1; | iVar2 = (**(co	物理与战斗控制底层辅助	需结合武器 .pst 与动作 .act 标签复核命中掩码位定义

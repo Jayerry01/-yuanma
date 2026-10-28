@@ -1,0 +1,633 @@
+================================================================================
+U6 批次C 台账 — 301-1000B 未命名函数语义化 331/331（2026-10-28）
+================================================================================
+范围   : evidence/semqueue_v14_20261028.csv band=C_301-1000B status=UNNAMED
+         共 331 个函数，合计 162,830 B
+方法   : 五类证据扫描 tools/semC_scan_20261028.py → evidence/semC_dump_20261028.txt
+         （1,759 行；按已命名辅助集+IAT 集聚出 9 个同画像组）
+       + 330 份 Ghidra 伪码 tools(内联) → evidence/semC_pseudo/<addr>.c（952KB）
+         由 8 个子系统簇并行判读（A 渲染38/B UI13/C 资源77/D 容器脚本46/
+         E1 CRT+SSE+音频36/E2 图像+音频17/E3 图像+JPEG+网络36/F 场景文本样条67）
+       + 0x522D69 无伪码，capstone 汇编补读（§八）
+抽查   : 伪码引用字符串 14 处字节实测全命中（§九）；3 处早期假设被伪码推翻（§九）
+口径   : 【确认】伪码/汇编直接读出；【推断】语义命名；同体/同构模板实例化并组目
+         （组名+成员表+代表判据）；命名不回写二进制。
+================================================================================
+
+【一】簇 A — 渲染器（38 个，判据 evidence/semC_pseudo + semC_dump_20261028.txt）
+--------------------------------------------------------------------------------
+[组A1] 无 Z 纹理内层循环  00425E00 + 00426F10
+  判据: 共调 slope_noz 0x428AF0 + 0x428CF0/0x428D70/0x428D40 建边；纹素取值
+    *(tex + (u>>0x14+…)*…)→光 LUT >>14；差异 = 0x426F10 带彩键测试（纹素≠材质+0x2C 才写），
+    0x425E00 直写（批次B 已记 0x425E00 为 0x425970 的无 Z 回退，本批正式命名）。
+  名: Raster_NoZTex_Inner_NoKey / _ColorKey
+
+[组A2] Z-Gouraud 内层  00427BB0 + 00428240
+  判据: 16bit z-buffer 读改写测试 + 色板 LUT；差异 = 0x428240 带 stipple(棋盘)。
+  父 0x421DA0+0x423910。名: Raster_ZGouraud_Inner / _Stipple
+
+[组A3] 平涂内层（A2 关 Z 回退）  00427F50 + 00428600
+  判据: 0x4289B0 建边；shade 索引入色板；0x428600 带 stipple；受 DAT_005C4628(Z 开关)
+    门控切换。名: Raster_FlatFill_Inner / _Stipple
+
+[组A4] S-H 多边形裁剪  00423680 + 004239F0
+  判据: 平面距式 p1x+p2y+p3z-p0 分类；0x423680 含 UV 插值，0x4239F0 仅 pos+diffuse。
+  名: PolyClip_SH_UV / PolyClip_SH_Pos
+
+[组A5] 线框三胞胎  00419260 + 004193E0 + 00419580  （**推翻早期"顶点缓冲重建"假设**）
+  判据: realloc(0x5D5ADC, 面×6) 索引模式 {3,4},{4,5},{5,3}；父 0x415DC0；
+    顶点格式 0x112/0x1E2 两型。名: Wireframe_Build_0x112_A/B / _0x1E2
+
+[组A6] 凸多边形填充管线  00420380 + 0041FA20 + 00420730
+  判据: 0x420730 建边表→0x4206B0 填 span；0x41FA20→0x420290/0x4201A0；
+    0x420380 = 凸多边形填色主管（调 alloc_wrap+free）。名: PolyFill_Pipe / _Sub / _EdgeBuild
+
+[组A7] 分组索引绘制  004198E0 + 00417A70
+  判据: 材质 0x41A490(表 0x7E5BE0)；vt+0x74 DIP 0x112；vt+0x70(3/2, 0x1C4)。
+  名: MeshGroup_Draw / _Prep
+
+[组A8] D3D 渲染状态启停  0041A9B0 + 0041A230
+  判据: 0x41A970/0x41A990（状态码 0x1C/0x22-25/0x30）；0x41A950 SetTexture(4/5)。
+  名: D3DState_AlphaSpecApply / _Gather
+
+[组A9] 点命中/边链接  00408B70 + 004080A0
+  判据: 0x406ED0 8 点→0x410000/0x40FF40；0x4080A0 叉积+边表 p+24。
+  名: Mesh_PointTriQuery_Cand / _EdgeLink_Cand
+
+[单体]
+00423440 | Raster_Dispatch_ByMaterial
+  确认: 6×0x423680 裁剪；mat+0x2C==-1(无纹理)、DAT_007E2700(透视/Z)、DAT_007E0410
+    三态选 8 个光栅体（0x423C30…0x427300 全部命中批次B 命名）。父 0x421DA0×3。
+00428BA0 | Slope_Persp_Set（批次B 辅助转正）
+  确认: 端点 0x7E0EA0/0x7E0E9C + 侧 0x7E2C8C×4；梯度 x→0x7E2BC8→0x7E2BD4/0x7E2B80；
+    16 调用方 = 4 透视光栅体 ×4。
+0041B2D0 | DDraw_FadeBlit_Fill
+  确认: fade<1e-6 → Blit 填 0xCC0020；16bpp 锁双面（忙等重试 0x8876001C）565/555。
+00415A00 | Texture_EvictBySize
+  确认: 0x7F0680×0x7F18DC 链；w*h(α×4/3)+D 优级释放 0x40/0x44。
+00410F60 | WinMain_InitWindowClass
+  确认: RegisterClassExA（类名 "Lz3DCWANG" 字节实测@file 0x1C4588）；
+    GetCommandLineA→argv→0x4010F0。= WinMain→main 垫片前半。
+00406730 | Mesh_VertexNormalSmooth
+  确认: 面法线叉积经 0x430E80；按引用均值写 +0xC。
+00406960 | Mesh_VertexWeld
+  确认: 三分量差 <0.01 均值回写 +0xC（调 alloc_wrap+free）。
+004209C0 | Blit_Rows_ColorKey
+  确认: 键色按 0x7F18E4(565/555/332/4444)+0x70C/D/E；0x41BD00 逐行。
+00428DD0 | MaterialNode_RetargetTexture
+  确认: 0x7E5BE0[id]+0x38 链；flag0→+0x2C=-1 否则 0x40E550 设索引。
+0041F520 | DDraw_ZFormatProbe_Cand
+  确认: DDPF(0x7C, 0x101007/0x111007) 经 vt+0x18；QI(vt+0xC) 得设备。
+00429700 | Audio_FormatProbe_Cand
+  确认: thunk 0x4325F0 12 档递降(0xAC44/0x5622/0x2B11×16/8×2声道)。
+0042A1A0 | SortedInsert_Cand
+  确认: 0x5D5A0C+0x6D0/0x6CC；0x42A550 定序双链插入。
+0041A0D0 | Frustum_Classify
+  确认: 4 平面组(0x7E2820) 6 顶点经 0x41A040；和 8→2，有出→1（0/1/2 三级）。
+00404510 | ObjectTemplate_Alloc_Cand
+  确认: malloc(0x770)+名；50/200 float@0x724/0x728，0xB4×3@0x6BC。
+0042D230 | HUD_GaugeRefresh_Cand
+  确认: 杆1(+0x80)(+4-28)×(+4C/+64)；杆2(+0x84)+0x48/+0x68；0x42F0C0。
+0041C030 | Texture_FourColor_Cand
+  确认: malloc(0x60)；4 组 RGB + 0x3F800000 alphaFF；vt+0x14 建面入设备。
+0042B280 | stricmp
+  确认: '`'<c<'{'→-0x20；n=0 直比。= 大小写不敏感串比较。
+0041F6B0 | Color_PackByBpp
+  确认: 移位 0x7E28A8/0x3350/0x339C；5→>>4+0xF<<0x7E280C，1/2→565，余 555。
+    （= 字体绘制管线 0x434440 的着色入口，28 调用方）
+
+【二】簇 B — 数学/字体/UI 底层（13 个）
+--------------------------------------------------------------------------------
+[组B1] 16bpp 软件 α 混合三档  004331D0 + 004333D0 + 004335E0
+  判据: 逐字同构；门控 0x7EABE0==0x10；vt+0x64 Lock(desc 0x7C) 忙等重试 0x8876021C，
+    vt+0x80 Unlock；掩码 0x4331D0=0x3DEF/0x7BEF(50%)、0x4333D0=dst75/s25、
+    0x4335E0=src75/dst25；key 相等跳写。名: DDraw_Blend50 / Blend75_DstHeavy / Blend75_SrcHeavy
+
+[组B2] 矩阵乘法族  004312E0 + 00430FB0 + 00431180 （**推翻早期"DIB/窗口辅助"假设**）
+  判据: 0x4312E0=4x4×4x4（16 点积）；0x430FB0=4x3×4x4（B 平移并入）；
+    0x431180=4x3×4x3；调用方 0x415DC0/0x421DA0/0x408F00。名: Mat4_Mul / Mat43_Mul44 / Mat43_Mul43
+
+[单体]
+00431680 | LUDecompose_NR
+  确认: 行尺度 1/max|row| 比例选主元；换行 *param_3 取负（奇偶）；pivot≈0 置 1e-07
+    （Numerical Recipes TINY）。= ludcmp。
+00430C70 | Mat4_PerspectiveOffCenter
+  确认: m[0]/m[5]=2n/(r-l,t-b)，m[8]/m[9] 偏心，m[10]=f/(n-f)，m[11]=-1.0；
+    常量 0.07874016(=1/12.7)。
+00432040 | Camera_FrustumCornersBuild
+  确认: +4==1 透视分支两平面行 + 四组 {w,vec3} 各调 0x431A20 归一化×4；
+    else 正交分支恒等基含 -0.5/aspect。
+00433880 | Blit_1bppMaskFill
+  确认: bpp 8/0x10/32 三分支；1bpp 源逐位测写 param_7 色；pitch 0x5D9B7C、宽高 0x5D9B80/84。
+00434440 | Font_DrawTextToSurface
+  确认: 手写 strlen+MBCS 双字节合并；0x41FE00 产 256B 字形位图；色经 0x41F6B0；
+    逐字 0x433880 贴位图，x 前进 0x5C4310+字宽，字格 0x7EAC60/0x7F18D0，y-=0x724300。
+00434690 | Texture_TileSheetLoadOrCreate
+  确认: 释放旧槽 0x433EA0+free；param_2==0→0x434310 建空面；否则 0x433AD0/0x433B60
+    (0,name,8)/0x433E90 加载，名 "%s%02d"@0x5C44B0（字节实测，agent 转录 %s.%02d 已修）；
+    SetRect(p1+1,0,0,tw,th)；[7]/[8]=总高宽÷tile，[9]=帧数。
+00432C70 | DDraw_OffscreenSurface_Create
+  确认: desc 0x7C flags=7；ddsCaps=0x40 或 0x840(SYSTEMMEMORY)；经 0x5D5A0C+0x6EC
+    vt+0x18 创建；登记 2048 槽 0x5D5B70+辅表 0x5D7B70，计数 0x5D9B70，上限 0x800。
+
+【三】簇 C — 资源/容器/网格（77 个）
+--------------------------------------------------------------------------------
+[组C1] map::insert(hint) 实例化组  00461130 0046EF90 0046F150 0049E610 0049ED70 0049EF30 0049F0F0 004B8F20
+  判据: hint 合法性检查+节点分配+0x461340/0x4612F0 旋转+尾黑化+size++（各键构造辅助
+    0x461390/0x46F310/0x46F3D0/0x49E160/0x49F730/0x49F8B0/0x49F970/0x4B90E0）。
+  名: Map_InsertHint_<T> ×8（**修正:批次B 线索"find/erase 族"实为 insert-with-hint**）
+
+[组C2] map insert_unique 组  00460A60 0049C910 0049D240 0049D520 0049D760 004B4A50 004B4CC0
+  判据: 树下行+0x460BE0 再平衡，param_2={node,inserted}；键 int/uint/8B(比较器 0x4B5FC0)。
+  名: Map_InsertUnique_<T> ×7
+
+[组C2a] 随机 id 分配特化  004AEA30
+  判据: rand()%0x7fff 插 +0x3B4 树，重复走 0x49EBB0。名: Map_AllocRandomId15
+
+[组C3] 位流同步帧编解码  004B3C70 + 004B3E60 + 004B40A0 + 004B4250
+  判据: 共享打包辅助 0x549D20/DA0/DF0/EE0/D80；
+    0x4B3C70=pack(14bit×2+12+6+11×3+16×2)；0x4B3E60=pack(12+7×4+12×3+16×2)；
+    0x4B40A0=unpack((v-64)*.5,朝向 v*.05,(v-2048)*.25)；0x4B4250=unpack((v-8191)*.5,…)。
+  名: SyncFrame_Encode_A/B / SyncFrame_Decode_A/B
+
+[组C4] 网格基本体构建族  0047C3A0 + 0047CDB0 + 0047D000 + 0047DAE2
+  判据: 全用 0x47C1E0 分配 + SetPos/SetNormal/SetColor/SetUV/begin/end/索引写全家桶。
+    0x47C3A0=quad(4顶点/2三角,索引 0,1,2,0,2,3, 23 调用方)；0x47CDB0=圆筒(两环 r→param_4)；
+    0x47D000=经纬球(sin/cos×0.017453292, 索引四元组)；0x47DAE2=分段墙面条带(段×4 顶点,UV 步进)。
+  名: Mesh_BuildQuad / Mesh_BuildCylinder / Mesh_BuildSphere / Mesh_BuildWallStrip
+
+[组C5] inflate/deflate 位流族  00484730 + 00484CB0 + 00484E20 + 00485070
+  判据: 0x484730=固定 Huffman 表（0x120 项=8、0x70 项=9 且前 0x1E=5；0x484860(0x120,0x101)）；
+    0x484E20=动态块头（HLIT+0x101/HDIST+1/HCLEN+4；序表 0x5C8A50；双表 0x5C8AA0/0x5C8BA0）；
+    0x484CB0=符号解码循环（6B 树节点下行，99=错，(len,dist) 窗拷 0x665908）；
+    0x485070=LZ77 滑窗解压（树 0x485230(0x100/0x40/0x40)；0x3F→8bit 扩长）。
+  名: Inflate_FixedTables / Inflate_DecodeSymbols / Inflate_DynamicHeader / LZ_WindowDecode
+
+[单体]
+004AA730 | SceneNode_PairsSerialize_Cand
+  确认: 0x4B48C0 遍历取 +0xD8 与 0x48 步长表；operator_new(cnt*2) 导出 u16 对。
+00474A90 | RenderBackend_InstallTables
+  确认: DAT_005E03A0=mode；1→0x476xxx/2→0x47Exxx 填 PTR_005C7C60..CF8；
+    空槽 0x58E140/0x4D5FB0/0x4E8500。= 渲染后端函数表安装（软件/硬件双路）。
+0046F880 | UI_SelectList_CreateAssets
+  确认: s_tlist_bmp/s_sslist_bmp/s_tback×2/s_tl_bmp/s_tr_bmp(0x5C7C00-1C)；
+    0x429AA0 载图+0x429DC0 缩放；0x404FE0 双 quad 属性 0x17/0x16。
+00445370 | Menu_ScreenBuild_FwdBack
+  确认: "Con Back/Forward"；s_muc003/s_mub017/s_mub018/s_MUa001c_MCb；按钮 id 0x4E/0x41/0x40。
+00443F40 | Menu_ScreenBuild_Basic
+  确认: 同族 s_muc002/s_muc003/s_mua008_mcb，id 0x1A/0x1B。
+004AB3F0 | Net_PacketEncodeLists
+  确认: 写 p[0..2]+1；五组 (尾-头)+1；0x4B4050 逐表序列化；0x50AAA9 itoa(+0x44)→0x498C40。
+004AB780 | Net_PacketDecodeLists
+  确认: 与 0x4AB3F0 成对；5 个 count 前导表→+8/14/20/2C/38 五 vector；尾串 atoi→+0x44。
+004BD490 | Net_JoinGame_Register
+  确认: 拷 param_3 三串；遍历 +0x3A8 比对；0x49D240 按 param_2 键 insert；0x48EE50×2。
+0046B910 | UI_DialogPanel_Init
+  确认: s_gialog_bmp(0x5C7BCC)；缩放 0.625；两个 0x34 按钮(id 1-2/4-5)；0x4636D0/0x463B30。
+0047F4B0 | Resource_AcquirePairByName
+  确认: 0x47F3D0 取名+0x47F800 存在性；0x480C10 于 +0xBC 表(0x18 步长)查 0x480B00；0x481850 构建。
+0047FA70 | ScreenShot_GrabARGB
+  确认: 0x52C070/0x52CAF0 锁背缓冲；new(w*h*4)；色键 +0xAC 或第二缓冲 alpha。
+004949D0 | Map_SpawnObjectsFromRecords
+  确认: param_3/0x18 条；new(0x1D0)+0x5678A0 ctor；0x477EB0/0x477E30 姿态；键插 +0x8BE 树。
+00477870 | Mat4_Determinant
+  确认: 0x477D10(i,j) 子式+0x4777B0 三阶，按行展开。
+004AAD20 | Mask_ExpandToPairMap
+  确认: 0x4D6570 取 0x48 记录类型==5；6 位掩码逐位查 +0x58 树；命中 vector::insert 入对 map。
+00476F00 | Mat4_Multiply（低层被 0x4312E0 族外所有矩阵代码复用，41+ 调用方）
+0048F720 | EventText_FormatAndPost
+  确认: 0x49D3C0 查 param_2≠p1[0x8BB]；itoa+DAT_005C462C 分隔+param_3 拼接；虚调 (*p1+0xFC)。
+00482880 | D3D_ZBufferFormatSelect
+  确认: 候选 0x50/0x49/0x4D/0x4B/0x4F/0x47 = D16/D15S1/D24X8/D24S8/D24X4S4/D32；
+    受 +0x36E3C/40 上限。
+00479780 | MapResource_TwoPhaseLoad
+  确认: 单例 DAT_005EF684(new 0xC0,0x47F190)；拼 0x5C4530/0x5C80D8 前缀；循环 2 次 0x47F4B0。
+0047EF60 | Basis_FromNormal
+  确认: 按分量绝对值选主轴构造垂直系；0x47EC40。
+0049AB40 | Record_CopyCtor_2StrBufVec
+  确认: 三段 0x402BF0/0x4DA870 复制；第四段/0xC 经 0x560170/0x4F4800；vtable 0x5A94E4。
+004782E0 | Mat4_RotateAxisAngle
+  确认: 轴归一(<1e-07 拒)；Rodrigues (1-cos) 项；param_6 选转置；0x476F00。
+004A34A0 | FaceDir_ScanAndLoad
+  确认: FindFirstFileA；"%s\%s" 拼 p1[0x67..]；0x40ED80(name,40.0f) 建纹理入 vector；
+    默认 s_mface/0x3F333333 灰。= 目录扫脸谱纹理。
+00475220 | CornerVectors_Rotate_Cand
+  确认: 2×分量构造 24 浮点块；0x476E80 循环 8 次旋写（疑盒角）。
+0046ABA0 | Widget_TextureOrSolid
+  确认: 0x4351A0 查文件→0x429AA0 载图；否则 0x429B80 纯色+0x435120 填 0xff；+0x54=1。
+00466D70 | Widget_TextureOrSolid2
+  确认: 同构，存 +0x1C/+0x20 双纹理。
+00497670 | Entity_ClearRefsAndMaps
+  确认: 遍历 +0x2194/0x21A0/0x21AC 链表对 +0x14 释放；+0x21B0/21BC 树清(0x18)。
+00460BE0 | RB_RebalanceAfterInsert（批次B 辅助转正，31 调用方）
+00469490 | Anim_StepForward
+  确认: 区间 +0x1C..0x34，计数 +0x6C；0x466190(0/1)+0x44 触发。
+00469340 | Anim_StepBackward
+  确认: 计数-1，0x469A60，对称逻辑。
+00467C50 | Registry_MapAssign
+  确认: 0x49D3C0 查 +0x10 树；vector+0x54 push 1；新键 0x46F3D0+0x460BE0；旧值释放后置 p2。
+0045B0A0 | ServerConfig_INIParse
+  确认: 11 键 s_player_num/s_game_num/s_game_time/s_life_adjust/s_hideitem/s_friendfire/
+    s_autoswitch/s_walknoise/s_healthitem/s_updateitem/s_specialitem；atoi→+0x6A..0x8C。
+004784E0 | Mat4_BuildProjection
+  确认: param_8=0 透视(1/(f-n)) 否则正交(-2/(n-f))；0x476F00。
+004615E0 | Text_DrawToSurface
+  确认: 每字符 0x461770 取字形(0x100 缓冲)+0x433880 blit；0x429F90/0x429FD0 锁面。
+00498660 | PscriptLib_LoadCommon
+  确认: 串 s_common_character_act/s_PscriptLib_def/box/desk/chair/jug_pst；
+    0x476120 逐个累计；一次性 new(0x2A0)+虚调+0x68。
+00478670 | Quat_ToMat4
+  确认: 1-2y²-2z² 对角+2xy-2zw 交叉项；0x476F00。
+004787F0 | Mat4_ToQuat
+  确认: trace 分支取最大对角，SQRT(trace+1)。
+0046B0D0 | LightGroup_Equal
+  确认: 双方 +0x3C==0 时遍历 +0x20 链表 0x4663C0 取 12B 色串比较；否则比 +0x50/+0xC。
+004A2F60 | FaceManager_Ctor
+  确认: vtable 0x5A9980/+0xC=0x5A98F8；两 new(0x18) 树头+0x4B4A30；
+    0x4A30C0+0x4A34A0+0x4A5650。
+00475AA0 | RenderState_RestoreBlock
+  确认: 0x475590(状态,0x5E043C..0x4D0)×15；灯光循环 0x479F60(i)。
+0047EE00 | Quat_Slerp
+  确认: 点积<0 取反；1-dot≤0.0001 线性否则 0x509D10(acos) sin 加权。
+004A5650 | Character_SetAction
+  确认: 组表 +0x7D/count+0x118；0x18 步长记录(帧域 +0x10<+4 判卧)；
+    mode 0x10 直设/0x20 融合(+0x5C=1.0,速率 1/(f57-f76))/默认排队 +0x10A/10B。
+004438D0 | Sprite_LayerReorder
+  确认: 0x429E60/0x429D40 对 +0x3C 及 +8 链→+0x20 表逐 sprite 层设 param_2+1/+2。
+004A3350 | FaceManager_Clear
+  确认: 遍历 +0x19C..1A0 查 +0x1A8 树后 0x40F870 释放；0x4A8B00 区间擦除；+0x1B4 树释放。
+004698C0 | ActorSprite_Init
+  确认: +8=p2；按 +0x38==2 选 +0x18/+0x1C；0x469F70 定 rect；旗标非零 0x429AA0 载图存 +0x70。
+00478C90 | Screenshot_DispatchAndPackMgr_Init
+  确认: 0x478E70(DAT_005E04A0,p1)；DAT_005E03A0=1/2 装 PTR_005C809C.. 表+0x480240/0x47DF50；
+    new(0xC0)→DAT_005EF684。
+0047B880 | TransformBlock_Copy
+  确认: 拷三 dword+三个 0x40 矩阵(+0x14/0x54/0x94)+0xD4..0x11C 标量；+0xD4 非零调 0x47BA50。
+004A1FC0 | String_SplitByDelims
+  确认: 拷 *param_2 临时；逐字符对 param_3 分隔集；非分隔 append(0x49BE40/0x402BC0)；
+    遇分隔 0x5092C0 收尾。
+00473A20 | TextureStage_DefaultStates
+  确认: 0x473D80(0,stage,v)；0x10/11/12 过滤+0x13/14；(0,1,4) MODULATE；0x16=3 各向异性。
+    = DX7 纹理级状态预设。
+00475CF0 | Frustum_PlanesExtract
+  确认: 0x474570(3) 切矩阵，0x476F00 乘 proj×view；DAT_005E08B4..0910 = 6 平面(行和/差)；
+    0x47ECF0 归一。E9 尾调（0 E8 调用方）。
+
+【四】簇 D — STL 记录族/AI/脚本（46 个）
+--------------------------------------------------------------------------------
+[组D1] 连招表注册体三胞胎  004DE970 + 004DF190 + 004E07C0
+  判据: this+0x14=表号、+0x18=容量；vec@0x20 push act 码、vec@0x2C push 副码；
+    0x4E4130 map 插键；0x402570 注册串→虚调+8(slot,str)；串池 0x5C9E24-0x5C9E7C。
+    0x4DE970=表2/容0xC（act 2C-2F,4D-4F；ID 4,3A,5,6,7,92）；
+    0x4DF190=表3/容0xB（act 28-2B；ID 0,54,1,2,3,56,8E,8F）；
+    0x4E07C0=表1/容0xF（act 38-3B,53-55；13 串 ID 18,19,1F,1A,1B,1C,53,57,20,1D,21,1E,95）。
+  名: ComboTable_Register_A/B/C（父 0x4DE770/0x4DEF90/0x4E05C0 = 批次B 三胞胎构造器的
+    注册方法侧）
+
+[组D2] vector 后移赋值模板族（MSVC6 vector::operator=/erase 后移）
+  004D3930 vec48b_A（3 串+0x28B 嵌套 vec 0x4D4180/0x4D4A40/0x4D4840）
+  004D4640 vec48b_B（步长 0x48 串偏移异 -0x21/-1E/-1B）
+  004DB100 vec34b（3 段串拷）
+  004FEE70 vec30b（2 段串拷）
+  004C5760 vec24b_A（8B 嵌套 vec 0x4C4300/0x4C6090/0x4C6050）
+  004C6AB0 vec24b_B（边析构 0x4C68D0）
+  004C61E0 vec1cPairStr_Fwd（前移半部）
+  004FA810 vec1cPairStr_Bwd（后移半部）
+
+[组D3] 记录拷贝构造/赋值组
+  004DAC50 rec3Str_Ctor（3 串偏移 4/7/10）；004DAF50 rec3Str_Assign
+  004D3B70 rec48b_Ctor（虚表 0x5A94E4→0x5A9488）；004D6E60 rec48b_Assign
+  004D3CD0 rec48b_InnerAssign（仅 +4/+10/+1C+0x28/2C+0x4D4000）
+  004FEA50 rec2Str_Ctor（length_error 0x5C42C8/0x5C42B0）；004FA650 rec2StrDword_Ctor
+
+[组D4] STL 小件  004D4000 vector12b_Assign；004C4DF0 vector8bEdge_Assign；
+  004E4470 RB_InsertRebalance（0x4E4130 配对）
+
+004E62A0 | Record_Assign_DequeFamily（D2 模板族成员）
+  判据: 画像组「调 deque_free_node 0x402E90」成员（semC_dump 聚类 n=24 组之一）；
+    被调 0x4E6050×8(元素析构)+0x49BD10×2+0x4E7CF0×2+0x509166×2+0x4E74E0/0x4E75C0；
+    父 0x4E5410。本条为子代理漏报项，按画像+被调补判（推断级，元素类型未解码）。
+
+[单体]
+004F7EC0 | AStar_SearchStep
+  确认: open 堆 pop(0x4F8770/0x4F8820)；命中 +0x30 返 0；0x4F8330 节点(8B 边,+0x16 closed)；
+    op_new(0x14){id,g,f,父} 入 open/+10 闭表，f(+0xC) 上滤。
+005012F0 | AIConfig_LoadActionIds
+  确认: 0x571660 按名查×30；"Think/Attack1-3/Guard/Dodge/Burst/GetItem/Spawn"(0x5CA2BC..)
+    →ushort +0x430-0x44A。
+004FABA0 | File_LoadBuffer_DirOrPack
+  确认: 0x49DC30 拼路径(基 0x6669EC)+fopen+fread→+0xC；否则 0x480C10/0x480B00/0x481850 资源包。
+004C2230 | Nav_RemoveVertexKeepOrder
+  确认: 0x24 记录@0x4FC/0x500；邻接删边+清自身+全对 0x4C1900 断链+0x4C24B0 通知+0x4C2A30 重建。
+004C16E0 | Nav_RemoveVertexSwapPop
+  确认: 尾记录覆盖+0x4C4DF0 搬邻接+他点边 ID 改写+虚析构。
+004D54C0 | StoryNode_CopyFromList
+  确认: 0x46EF50 枚举≥2；0x49FB80/0x49FE20 拷 0x28B；0x49E220 链入(虚表 0x5A9488)。
+004C3940 | SceneObj_LabelXformSetup
+  确认: 0x87830 ctx；+0x2488 虚调 0x4C 比 ID；0x477200+0x501600/0x529C40/0x477B90(0-2)+
+    0x477C10(3,pos z-29)；0x124 记录+4==3→0x4FB730。
+004C0DD0 | Editor_DrawSelectedBoxes
+  确认: +0x58C 选中；0x501E60/0x501FE0 批；0x501B40±20(0x41A00000) 方块×4 按 +0x4C 配色。
+004FB8B0 | AI_DebugDrawBehaviorLabel
+  确认: 行为 fnptr→名链 GotoGoal/Patrol/Follow/RandomRun/Combat/Dodge/AvoidObstacle/GetItem/
+    FastLook/AttackGoal/Perform(0x5CA1C4..)；"%d s %d"(0x5CA170)→0x501780 画字，距≤500。
+004C2A30 | SpatialGrid_Rebuild
+  确认: 10×10 格@+0x28(0x4B6360)；pos/0x4D4,/0x4D8 夹取；桶=x*10+y+3 push ushort。
+004E8EF0 | Lights_CreateTriAxis
+  确认: 3×0x40ED80(0.8f,0x5C44B8,0x96)；0x40D860 沿 (1,0,0)(0,1,0)(0,0,1)。
+004EB870 | VertexData_Unpack
+  确认: ×1/param_2 定点→float；3 short pos+偏移 6/7/8B 法线，符号取 +9 位 0/1/2；
+    出步长 8 float。
+004FB240 | String_Substr
+  确认: 越界抛 length_error(0x5C42B0)；0x5092C0 拷 min(n,size-off)。
+004C1900 | PairRelation_Classify
+  确认: 0x4C1A80 判关联；0x4C1D50→0x502CD0(_,0,d)；0x4C1F70→1；0x4C2040→2 双向。
+004D6780 | Items_GroupByTag
+  确认: 0x48 记录 +0x2C==1；0xC vec 找 0xB 项；0x49D3C0 查桶；新桶 0x4B4940/0x4B4A50。
+004FDBB0 | AI_QueueDropPerform
+  确认: 0x30 记录@0x68/0x6C，rec+0xC==0x504BE0(Perform)→后移删除+0x4C82D0 尾毁。
+004FC4B0 | AI_SetMoveTarget
+  确认: +0xC4=idx；-2→+0xD4..+DC+rand%10-5；≥0→0x4C2BF0 pos，jitter=(short+14-10)/2。
+004C41A0 | SceneObj_ListResize
+  确认: 0x124 步长；魔数 0x1F8FC7E3÷0x124 缩容；不足 0x4C5200 扩。
+004D0E10 | KeyBind_DefaultInit
+  确认: 9 次 0x49C330 {20,45,47,1200,1000,51,27,25,59}→slot0-8；+0x48 清 0x42 dwords。
+004C0FD0 | Cursor_NudgePickTarget
+  确认: 0x666240×300；旗标 0x666280-8C±0.3/0x666294-98±1 移选中物；0x4C13C0 拾取。
+004FCFA0 | AI_CombatApproach
+  确认: 距² vs (0x47ECF0*0.125)²；+0xB0>0.3→0x4C1360 视线×2+rand%3+0x4FD4C0+0x500BE0/C40
+    转态+0x4FD630(0x504700)。
+004FB770 | AI_ActorFrameUpdate
+  确认: 调 0x4FCFA0/0x4FD3B0/0x500BE0；+0x7C 计时，速度=short(*(+10)+2)*0.01 下限 0.1；
+    到点 0x4FDA00+0x4C0580；清死目标+0x74/78；调行为 fn。
+004F52B0 | LevelEnter_CameraReset
+  确认: 虚调 0x44→+0x3C4=0；ctx 虚调 0x1D8/0x1DC(1)；+0x74→0x40FA50/0x40B100/0x404CB0
+    (1.32,120)；0x254(0)+0x304(1)。
+004D5FC0 | Mission_FindType10Copy
+  确认: 0x4D6570/0x4D65C0 链表遍；项[0]==0x10→子查(2,[1])→0x4D3CD0 拷+0x4D3E60。
+
+【五】簇 E1 — CRT/SSE/音频（36 个）
+--------------------------------------------------------------------------------
+[CRT 标准名 24 个，判据=伪码+IAT+串]
+005099A7 | realloc（HeapReAlloc/HeapAlloc+SBH 0x5D91A/0x5D87E；_newmode 0x667714+callnewh 重试）
+0050B80C | _write（WriteFile；LF→CRLF 1028B 缓冲；ioinfo 0x7F2DC0 步长 0x24）
+0050B9FC | _read（ReadFile；CR/LF→LF+Ctrl-Z；单字节回推）
+0050BCAD | _ioinit（malloc(0x480) ioinfo；GetStartupInfoA lpReserved2 句柄解码）
+0050C936 | _heap_init（GetVersionExA；串 "__GLOBAL_HEAP_SELECTED"/"__MSVCRT_HEAP_SELECT"）
+0050D622 | __sbh_alloc_new_region（VirtualAlloc 0x400000 保留+0x10000 提交；头 0x2020 入链 0x5CABC8）
+0050D91A | __sbh_alloc_block（0x5CCBE8 region 链；穷尽→0x5D622）
+0050AF1E | qsort（CUTOFF 8 插入排序；lostk/histk[30] 显式栈）
+0050FBC1 | parse_cmdline（引号/反斜杠计数/DBCS 表 0x7F1C40）
+0050FD75 | __crtGetEnvironmentStringsA（W→WC2MB→malloc；回落 ANSI）
+0050FEE0 | _rterrmsg（错码表 0x5CCD68；stderr 或 MessageBox "Microsoft Visual C++ Runtime Library"）
+0050E74B | FindHandler（magic 0xE06D7363+0x19930520；catchable-type 匹配；= __CxxFrameHandler 主体）
+0050F89F | _XcptFilter（_siglookup；SIGFPE 子码 0x81-0x8a）
+00513DF8 | raise（sig 2/4/8/b/f/15/16 处理器表 0x66799C-9A8；SIGFPE 子码 0x8C）
+005104DE | _openfile（r/w/a→0/0x301/0x109；t/b/c/n/D/R/S/T 位；_sopen 0x50BEA8）
+005123C6 | strtol（base0 自动 0x/八进制；溢出 errno 0x22）
+00510E4C | _setmbcp（CP 表 0x5CD0B8；建 _mbctype 0x7F1C40 LeadByte 区）
+005108F6 | __crtLCMapStringA（W/A 探测 0x66785C；MB→W→LCMapStringW→回转 A）
+00510B45 | __crtGetStringTypeA（探测 0x667860）
+00515170 | __crtCompareStringA（DBCS LeadByte 特判 GetCPInfo）
+00513568 | _tzset（TZ 串 0x5ACDA8 解析 ±hh:mm:ss+DST；tzname 0x5CD32C/0x5CD330）
+005139BC | _loadday（闰年+weekday 公式 %7, 0x16d=365；DST 起 0x5CD338/止 0x5CD348）
+00514158 | _cvt（串 "1#INF/QNAN/IND/SNAN"；BCD17 位提取+进位舍入）
+00514B3C | _LDMUL12（BCD 长双乘，5×5 逐字积 0x513FB7）
+0051478A | FP_OverflowUnderflow_Cand（±HUGE_VAL 0x5CD5B0/C0；frexp 分解造 denormal）
+00512AC1 | _ltod/_ltof（80 位布局 exp@+10 偏置 0x3fff；描述符选双/单精度）
+
+[SSE 数学库 8 个]
+00518563 | Mat4_Compose_TRpS（T(p)·R·T(-p)；单位阵 0x3F800000；乘 0x516267）
+0051C3FB | Vec2_RotateInterp_Cand（点积阈值 0x3F7FFF58；rsqrt+牛顿迭代；sincos 经 0x522980/0x523180）
+0051EC9A | Quat_ToMat4_SSE（0.5 广播+共轭 ^0x80000000；= D3DXMatrixRotationQuaternion 对应）
+005205E0 | Mat4_Inverse_SSE_A（伴随子式+rcp+2 次牛顿迭代；det==0 返 0；emms）
+00520CBA | Mat4_Inverse_SSE_B（同构变体）
+005213FB | Mat4_Multiply_SSE（8 组 MUL/ADD 全 16 元素；emms）
+00522480 | SinCos4_SSE_A（归约+双 4 次极小多项式+象限位；常量池 0x5CF0xx）
+00522760 | SinCos4_SSE_B（同构，常量池 0x5CF2xx）
+
+[单体]
+00523590 | Splash_InterServ_Draw（**修正早期"浮点库入口"假设**）
+  确认: 串解交织 "_C_1999_2000_Int(erServ)"；"Times New Roman"(0x5CF4B8 字节实测)；
+    0x434440 三次着色(0x40/0xff)。= D3D 版权 splash/彩蛋文本。
+00505220 | Audio_SubsystemShutdown（**修正早期"音频初始化枢纽"假设**）
+  确认: 守旗 0x6675DC；通道数组(步 0x40/0x14)逐槽停 0x505660/0x505430；
+    0x5259E0/0x525900/0x527C90(waveOut/CoUninit/timeKillEvent) 后旗清 0。
+
+【六】簇 E2 — 图像库/音频资源（17 个）
+--------------------------------------------------------------------------------
+[组E2-1] Mip 金字塔递归族（**修正早期"量化/中值切分"假设**）
+  00530730 Mip_HalveAxis0_Box（src[2x]+src[2x+1] 均值；模板 0x732A4）
+  00530480 Mip_HalveAxis1_Box（纵向 2y/2y+1 均值）
+  0052FA70 Mip_HalveAxis0_Decim（(v*2)>>1 取偶点尾级；0x73290[2]==1 转入）
+  0052FBF0 Mip_HalveAxis1_Decim
+  0052F910 MipChain_Start_Pow2（0x531000 幂 2 化三轴；0x530060 各 >>1 起链；变则
+    0x52F7A0(0x2600,0x2603)+0x52DAA0）
+  共判据: 0x52C740 建级+0x530D80 配块+尾递归(维>>1)+[0x14] 计数++；[0x11]=低一级 mip 链。
+
+[单体]
+0052D5E0 | Volume_CopyIn_Clipped（负偏移截断+0x2329C 界钳；texel=byte0xD×byte3 三重循环）
+0052D410 | Image_CopyRect_Clipped（0x600/0x603/0x52CF80 锁查；行拷）
+0052CB10 | ImageObj_DeepCopy（0x530DB0×3 清旧+0x52C1A0×3 销子链+复制调色板/[0x18]/[0xB]；null→0x509）
+0052C8C0 | Image3D_CreateReset（[0xA]=0x601 类型标签；[4]/[7]/[6]=行/片/体字节；0x530F00 验格式）
+0052EB20 | Image_ResizeCurrent（同尺寸短路；0x52E890 枢纽重建）
+0052F630 | ImageLoad_FileDispatch（0x530E70 取扩展名；thunk_50A9D0×7 对表 0x5CFE14..0x5CFDF0
+    分派 0x53B960/0x53B4E0/0x53A300；兜底 0x52F420→0x52F510）= 多格式图像加载分派器
+00530AE0 | Image_PackRows_Swizzle（[8]=0x1907/0x1908 时 RB 互换；行尾零填 (-[4]&3) 对齐）
+0052DB90 | Image_Clone_PaletteUp（源[8]=0x1900 COLOR_INDEX 经 0x52C4A0+0x530FA0 展开再 0x52E890）
+00527C90 | AudioDevice_Shutdown（waveOutReset/UnprepareHeader×4(free lpData)/Close+
+    timeKillEvent[0x6E]；COM 路 Release×4+CoUninitialize；双 5s 等待）
+005285C0 | WaveFmt_ChunkParse（默认 0x1101/22050Hz；按 FourCC(0x5CF58C/84/7C) 遍块；
+    0x11=IMA-ADPCM；**修正"内存池"假设**——属音频族，错误码 0xA---）
+00528CF0 | AudioRes_DestroyBatch（池锁 0x525980/0x525610/0x525620；[0x385] 子项引用--；
+    0x5297F0 摘链；0x5260B0 注销）
+00527EF0 | PoolNode_AllocBatch（IsBadWritePtr(arr,count*4)；惰性头 0x667A54；节点 malloc(0x28)）
+
+【七】簇 E3 — BMP/JPEG/量化/网络会话（36 个）
+--------------------------------------------------------------------------------
+[大发现] 嵌入 libjpeg 全链（0x53C630-0x540380）
+  铁证: 0x53EC70 getenv("JPEGMEM")(字节实测@file 0x1D1144)+"%ld%c" sscanf，m/M×1000000。
+0053EC70 | Jpeg_InitMemoryMgr
+0053C630 | Jpeg_ParseAPP0（'JFIF\0'/'JFXX\0'；类型 0x10/0x11/0x13；版本!=1 报 0x77）
+0053CE30 | Jpeg_ParseSOF（Lf-8==Nf*3；Ci/H/V/Tq；条目 0x54B）
+0053D460 | Jpeg_ParseDHT（16 计数和≤0x100；表槽 ctx+0x28/0x1C+Tc；0x53E340 建表）
+0053D7D0 | Jpeg_ParseDQT（Pq/Tq>3 报 0x1F；zigzag 0x5ADAA0..0x5ADBA0 64×int）
+005415C0 | Jpeg_MakeDerivedTbl（规范码生成；fast 表 +0x90/+0x490）
+0053EA40 | Jpeg_InitialSetup（尺寸≤0xFFDC、P==8 报 0xF、Nf≤10、H/V∈1..4 报 0x12）
+005433C0 | Jpeg_UpsampleDispatch（按 H:maxH 选 1:1/1:2/2:2/整比 fn 0x5436C0-0x543A20）
+0053FB80 | Jpeg_DecompressMain（串接 12 个 0x54xxxx）
+0053FDE0 | Jpeg_ScanStepPump（进度块 ctx[0x60]，fn 链 [0x61]..[0x6A]/[99]）
+0053F1E0 | Jpeg_BufferAllocPass（双链 ctx+0x44/+0x48；0x53FF90 定步长）
+005401C0 | Jpeg_SampleEdgePad（首行复制到 -1 行、末 2 行镜像）
+00540380 | Jpeg_OutputRowPump（状态机 +0x44∈{0,1,2}，缓冲翻转 ^1）
+[jquant2 两遍量化器 0x545 族]
+00545720 | Jq2_MedianCutSplit（跨径 *0x10/*0xC/*8 选轴中点分裂）
+00545360 | Jq2_UpdateBox（0x20 步长扫描收缩包围盒）
+005458D0 | Jq2_ComputeColor（盒均值→调色板）
+00544C70 | Jq2_FindNearbyColors（加权平方距 R×4/G×9/B×1；256B 掩码）
+00545D70 | Jq2_BuildRampTable（+0x4C==1 时 0x1FE 镜像展开）
+00545B10 | Jpeg_ComponentFill_Candidate（ctx[0x19]=分量数；err 0x5E/0x5F）
+[RGB 33³ 立方体反色映射（**回填批次B 未知#9: 35,937=33³**）]
+00538530 | RgbCube_PrefixSumBuild（三重 0x21 循环=33，五通道累加）
+005387F0 | RgbCube_BoxSumQuery_A（0x21 步长 4 点容斥）
+00538940 | RgbCube_BoxSumQuery_B（param_2 选轴）
+[0x539 图像族]
+00539D30 | Image_Convert24To8（调色板 0x300 自 0x7232F8/FC/300；0x539760 逐像素映射）
+00539B30 | Image_RadialFadeWeights（0x72CE80 32 项 (0x400-i²) 径向衰减；素数步长采样）
+005399B0 | Palette_ApplyRadialShade（0x7232FC 平面对称窗，系数>>0x12）
+[STL map 辅助]
+0054F7E0 | Map_InsertHint（0x546FDA0 建节点+0x460BE0）
+0054FA60 | RB_InsertNodeFixup（双旋 0x461340/0x4612F0）
+0054FC20 | RB_LowerBoundOrInsert
+[网络会话对象族]
+0054A170 | SessionObj_Ctor（vtable 0x5AE084；deque[0x2C..0x31]/map[0x3F..]/双 deque[0x53..0x55]）
+0054A300 | SessionObj_Dtor（同布局逆序；MSVC 状态码 9..1）
+0054BD90 | Net_PumpRecvDispatch（timeGetTime；≤0x14 包/轮；玩家表 +0x14C 步 0x18 查重；+0xD8=now+3000）
+0054EA60 | Net_PeerAdd（op_new 0xA4；RB 插 0x54F7E0；DAT_00724E24=3）
+0054F310 | Net_MsgProcess_Candidate（0x553860(key)+0x578 查表；标志 0x10/0x8/0x40 分支；0x578=1400 上限）
+[BMP/RLE 装载族]
+0053B040 | BMP_LoadPixelData（bpp 1/4/8 三分支；0x300=256 色调色板；DAT_007DC850/54 读/seek）
+0053ADD0 | BMP_LoadRLE（转义码 0/1/2=EOL/EOF/delta；nibble 4bit）
+0053BFB0 | SpriteRLE_RowDecode（负字节=(b&0x7f)+1 次重复；0x665/0x660 分支 0x5316E0/0x531770）
+
+【八】簇 F — 场景/文本/样条/网络（67 个）+ 0x522D69 汇编补
+--------------------------------------------------------------------------------
+[0x522D69]（无伪码，capstone 补读）| Math_3DNow_Helper
+  确认: 前导对齐垫（lea esp,[esp]×3+mov edi,edi，批次A 已定性垫型）；
+    call 0x522C80；movd mm1,[0x5CF44C]；pfmul mm0,mm1；ret；后接 3DNow 多项式
+    (pfmul/pfcmpge/pf2id/pi2fd，常量池 0x5CF398-0x5CF44C)。= AMD 3DNow! 数学库
+    包装入口+多项式体（SSE 库 0x522A80/0x523060/0x523180 的 3DNow 对应侧）。
+
+[单体]
+005611B0 | MapPVS_Load（fopen 魔数 "Section PVS V1.0"@0x5D14C8 字节实测（agent 转录
+    Section_PVS_V1_0 已修）；"Invalid PVS file"；扇区表×0xC+两索引数组 0xFF 填充）
+00585940 | ParticleObj_Ctor_Mesh（vtbl 0x5B10C0，名 "Particle"@0x5D2F28 实测；
+    0x47C1E0(8000,4000,12000) 建 2000×4 顶 quad 公告板网格）
+00561F90 | PVS_DecodeBuildBatches（0xAA 转义+逐字节位扫；0x56AEE0/0x56AF20 写顶点缓存；
+    按材质聚批+qsort 0x56A040）
+0055AED0 | SceneLabel_Dispatch（PTR_FUN_0x5D186C 取层；分数 f∈(0,0.3)∨(0.5,0.8) 双绘）
+00568780 | BoneNodes_Alloc（new(n*0x2B0+4)+0x50AC61(ctor 0x57E3A0)；名 "normal"@0x5D1568 实测；
+    new(cnt<<6)×2 矩阵）
+00596965 | Thomas_Solve64（malloc(n<<3)×4 双精度前代回代；= 0x596C8D 外层）
+0057D320 | Particle_FlightUpdate（位置夹入 +0x10..0x24；风速×0x19C；rand()*3.05e-05 改道）
+00566A90 | Entity_CloneFromTemplate（new 0x144+0x565EE0；拷 +0x14/54/94 三个 0x40 矩阵块）
+00562DD0 | PVS_GatherCellsAabb（夹取 +0x1E0..0x1F4；三重循环收单元至 +0x2A0；扇区 +0x50=0）
+00562A30 | Scene_DrawEntities（+0x4B4 表(步 0xAC)类型 9<t<0x10；构矩阵+0x474410 提交）
+00574EF0 | FxContainer_Dtor（0x4A8B00/0x576490/0x5764E0/0x575A50 清向量+0x402E90 释块）
+00550210 | Lobby_SetNamesLoad（串赋值 +0x191/18B/194；调 0x550530("Lobby.lst"@0x5D1180 实测)）
+0059641A | Spline_ArcLength（0x595770/0x5957D0 定位区间；0x596135 立方系数+0x596691 端点修正）
+0057E590 | BoneMats_Write_Aabb（0x478670+0x477B90(3)→0x476F00 写 +0x118 与 *(p3+0x154)+i*0x40；
+    8 点 min/max→AABB 0x220..0x234）
+0056E230 | Node_ResolveByName（0x5C6888 与 10B "Character"(0x5D1884)；名称表 0x56DE30-DE90；
+    type8 走 0x587E50/EF0/F10；*p4=1/2 来源）
+005764E0 | Vec_Assign_Str68（4 dword+内层 0xC 向量+0x4C7210 串+0x14 dword）
+0057CB50 | BigStruct_CopyCtor（9 dword+0x4DA940/0x5092C0 向量+0x57C770/C880/C990 成员构造）
+00577350 | Vec_MoveBkwd_Str68（同 0x5764E0 倒序，0x47A7E0 dtor）
+005525E0 | Net_ParseHostColonPort（strtok 0x50A22F 两级分隔 0x5D121C(":/")/0x5C793C；
+    0x5531D0 找 ':'；默认 *p4=0x50(80)）
+00559480 | Skin_VerticesByBones（+0x380 表(步 0x3C)；权重[8]==1 单矩阵 0x476E20(调色板
+    +0x350+bone*0x334)；多权重累加×[10][i]）= CPU 蒙皮
+005702D0 | Ray_SlabAabbHit（逐轴分类码+t 参数，取最大 t 轴求交）
+00575180 | FxContainer_Reset（与 0x574EF0 同体字段清空；+0x50=0.12f）
+005622F0 | WaterMesh_Animate（顶点+sin(freq*6.283+t*spd*6.283)*amp(0x1EC)；UV 偏移 0x1C8/1CC）
+0057EB20 | Billboard_MatrixBuild（+0x1D0==1 双轴 0x47EDC0 逆视变换，==2 单轴；行 0..3=right/up/pos）
+00582880 | AttachNodes_BindByName（串写 +0x1EC→0xF4/100；0x56E0D0 查名；0x583200-0x5832B0 挂接）
+0055E980 | Vec_Assign_StrAC（0x10B+6 dword+内层 4B 向量+0x55EB70/0x4C7210/0x55ED10×2/…）
+0057CDB0 | Vec_MoveBkwd_StrAC（同 0x55E980 倒序）
+00593B72 | CRT_pow（控制字 0x27F 保存；指数 0x7FF00000 inf/nan 分支；log2 内在+0x594047 主路）
+00565520 | Pick_EntitiesInBox（调 0x562DD0；实体 vtbl+4 取 AABB→0x55DC20 命中→压 p3 置 [9]=1）
+00550EC0 | Str_HalfsEqual（len≥0xE；前半 substr+后半逐字节相等）
+005739D0 | OBB_UpdateFromCorners（8 角点 +0x84 经 0x476E80 回写；三轴 0x90/B4/A8-p0）
+0057D150 | Particle_SpawnRandomize（rand()*3.05e-05 在 +0x10..0x24/±0x190/0x178..184 域）
+00555C10 | NetRing_Clear（(2×deque/0x18+0x15*vec)-0x15 循环 0x54C2C0+0x554CB0；每指针 21 项）
+0058B870 | ScriptFile_OpenGlobals（fopen→0x72C0FC；名→0x72BE08；清 0xC/0x14 向量；0x5910E0 locale）
+005592C0 | PlayerOverheadText（[0xCA]&&0x474990 可见；相机差 0x47ECF0<250→0x5795B0+0x579A90 画名）
+005795D0 | GlyphMeshes_Build（模式1 NUL 分隔计数+0x79790/0x79880；否则 0x50B0EC(wcslen) 逐 wchar）
+005542F0 | NetSend_QueueFlushThrottled（timeGetTime-+0x18>500；0x18 步环模 0x15；
+    0x547A0 发送+rand%1000 概率丢弃）
+0055EE90 | Vec_Assign_Str68b（0x55F6A0/0x5601B0/0x55FB60/0x55FF50）
+00556030 | NetRecv_PacketRing（0x554B90 可读+0x553860/70+0x554920 接收，上限 0x579；
+    标志 &10/8/40→0x553A80/0x5539D0/0x553B20 校验）
+0055DC20 | RayPick_InCell（0x570630 射线测；扇区→0x638+0x94+idx*0x68；项 0x1000→玩家表，
+    0x1001→+0x658 链 0x56F260，余 0x557F30）
+0055EB70 | Vec_Assign_String（步 0xC 元素为串）
+0055F040 | Vec_Assign_Str24（步 0x18 POD 6 dword）
+00568F80 | ModelFile_LoadToNode（new 0x124+0x567440 引用计数→+0x120；fopen('b' 判)；
+    二进制魔数 0x5D1734(11B)；0x567A50/0x567CC0/0x568AB0 三段解析；20 调用方）
+00550060 | ServerListEntry_Ctor（0x54D0E0 基类；六组 0x4608A0+0x402A70 串构造(0x18B..0x1A1)；
+    vtbl 0x5AE110）
+0055ED10 | Vec_Assign_Str12（步 0xC POD 3 dword）
+00569B30 | KeyValueConfig_Load（fgets+sscanf "%s %d"(0x5D1280)→8B 对压 +0x10；尾 0x5694E0(0,1)）
+00560E50 | PVS_SceneData_Free（0x507850 释放 +0x2E4/2E8/2F0/288/2FC/2F8/2F4；0x5611B0 同体）
+00550530 | LobbyList_Load（fopen；sscanf "%s %d"(0x5CA378) 跳 '#'；0x4736B0→(str,count)8B 压 +0x670）
+0057CFA0 | Vec_UninitCopy_StrAC（0xAC 步进；Catch_0x57D101 回滚）
+00570C80 | NamedFxObj_Ctor38（vtbl 0x5AE244，type=0x26；两 string+0x402BF0(8)）
+00557AB0 | VertexCloud_SectionParse（sscanf "%s %d" 计数→new(n*4+4)+0x50AC61(0x571D30)；
+    每子项 sscanf "%f,%f,%f"(0x5D1298)）
+00555E00 | NetOut_EnqueuePacket（标志&40/8/10→0x553AE0/0x5539C0/0x5539E0；环满(==0x15) 0x5561F0）
+0056A0C0 | BoneLocalMats_Compute（每 0x2B0 节点：0x477200 恒等+0x478670+0x477B90(3)→0x477AD0）
+00577AD0 | NamedObj_Ctor3（vtbl 0x5AE264，+0x1=3；同 0x570C80 结构）
+0058E750 | FxDesc_FreadFields（0x58A680+18×fread 0x509FA2：0x44/0x48-6C/0x80-84/0x88-8C/0xA0-A4/0x78/0x90-98）
+0056E0D0 | Node_FindChildByName（"Character" 判；子表 +0x4C 逐名(+0x24)；type8→0x587E70）
+00584180 | InstanceSlots_Clear（+0x274 循环 vtbl+0x18(i,0)；+0x91C 槽释放+串置空 0x5D5A24）
+00576F00 | Vec_Assign_Str14（步 0x14，内层 4B 向量 0x4C7640/0x5092C0）
+00564760 | Raycast_SceneCells（0x570600 单元盒测；扇区 +0x50==0 置 1+0x56F5F0 三平面射测；
+    0x56B350）
+0058F8A0 | SplineTrack_Sample3（三通道 0x59546E(0x8C/90/94,0xA4,0xA8/AC/B0,t)→xyz）
+0057DB70 | CameraPlanes_Basis（0x476090 基向量→+0x1F8/1EC/1E0(负)/1D4；+0x1A0=DAT_5E0884/88/98）
+0055ACF0 | TextQuad_DrawCamFacing（0x477D30(3) 相机位+0x1678+0x1E0 缩放；0x479F80+0x47C2E0）
+00593634 | CRT_strlwr（locale 感知；Interlocked 0x7F1D4C+0x5108F6）
+005962E6 | SplineSeg_SecondDeriv（0x596135 系数→*p8=d*6*dx+c*2）
+005567D0 | DbaseSection_Parse（sscanf "%s %s"(0x5D12A8) 段名+贴图；'b'→[0xA0]=2/'d'→3；
+    "%f,%f,%f,%f"(0x5D1288)→+0x84-90；前缀 "d_base"(0x5C928C)）
+00566230 | CharName_SetLower（new 0x130(0x56DB90)；0x4807D0 取名→0x593634 小写→+0x120）
+005942AA | CRT_FpieeeHandler（状态字 &0x20；指数 0x7FF0→fscale±1536；尾调 0x512F10）
+
+【九】抽查与修正记录
+--------------------------------------------------------------------------------
+1. 字符串字节实测 14 处全命中（2026-10-28，_pe.json RVA 口径）：
+   0x5C44B0="%s%02d"（agent 转录 "%s.%02d" 已修）；0x5CF4B8="Times New Roman"；
+   0x5D14C8="Section PVS V1.0"（agent 转录下划线版已修）；0x5D1180="Lobby.lst"；
+   0x5D1568="normal"；0x5D2F28="Particle"；0x5D1298="%s %f %f %f\n"；0x5CA2BC="Think"；
+   0x5CA170="%d%s[%d]"；0x5CA378="%s %d"；0x5D121C=":/"；0x5D1280="%s %d\n"；
+   0x5D12A8="%s %s\n"；0x5D1288="%s %f %f %f %f\n"；
+   全文检索命中：JPEGMEM@0x1D1144、Lz3DCWANG@0x1C4588、Lobby.lst、Times New Roman。
+2. 早期假设被伪码推翻（撤回入账）：
+   ① 0x419260/0x4193E0/0x419580 "顶点/索引缓冲重建" → 实为线框三胞胎（索引模式 3,4/4,5/5,3）；
+   ② 0x505220 "音频初始化枢纽" → 实为音频子系统关闭序列（0x527C90 是其子步）；
+   ③ 0x523590 "浮点/向量库公共入口" → 实为 D3D 版权 splash（©1999-2000 InterServ 解交织）；
+   ④ 批次B 线索 "map find/erase 族 n=442" → 实为 map::insert(hint) 实例化组；
+   ⑤ E2 递归族 "量化/中值切分" → 实为 mip 金字塔盒式均值/抽点生成；
+   ⑥ 0x5285C0/0x528CF0 "内存池管理" → 0x5285C0=WAV 头解析、0x528CF0=音频资源销毁
+      （池节点分配仅 0x527EF0 成立）。
+3. 批次B 未知#9 回填：35,937 = 33³（RGB 立方体三轴各 33 格），0x538F90 的两张 dword 表
+   (0x72CF20/0x7B95A0) = 立方体前缀和通道（见 §七 0x538 族）。
+4. 0x508AE6 定性细化：批次B 记"字符串记号切分(strtok 族)"；本批 0x434690 处其用法为
+   格式串拼名（sprintf 族语义），真名待复核 → 已在簇 B 0x434690 条目标注。
+
+【十】未知清单（不阻命名）
+--------------------------------------------------------------------------------
+1. 0x408B70/0x4080A0 点命中与边链接的消费方（拾取 or 导航）
+2. 0x404510 对象模板 0x770B 的字段布局
+3. 0x429700 音频 12 档探测的设备绑定路径
+4. 0x42A1A0 定序双链的排序键语义
+5. 0x41F520 Z 格式协商的接口归属（vt+0x18 非 COM 标准位）
+6. 0x432C70 desc+0x50 &0x4000（疑 DXT FourCC）触发辅表填充的语义
+7. 0x4AA730 u16 对序列化的消费方
+8. 0x48F720 事件文本上屏去向
+9. 0x4BD490 的 0x48EE50 去向
+10. 0x4D54C0 剧情节点上层容器
+11. 0x51478A 精确 CRT 静态名
+12. 0x51C3FB 精确语义（2D 旋转/插值变体）
+13. 0x545B10 是否 libjpeg 原生（体例同源但成员名未证）
+14. 0x54F310 消息处理分支到 0x55 区协作函数的完整映射
+15. 0x508AE6 真名（strtok vs sprintf 族多面手）复核
+16. 0x522D69 多项式体的精确数学函数（疑 rsqrt/sqrt 3DNow 侧）
+17. D1 连招表三胞胎注册串与 U1 trie 逐 ID 对账（留数据等价轮）
+
+================================================================================
+semqueue 状态推进：330 行 UNNAMED→NAMED（cited_in=u6_semC_20261028.txt;semC_pseudo/<addr>.c）
++ 0x522D69 1 行 NAMED（cited_in=u6_semC_20261028.txt，判据=汇编补读 §八）。
+批次C 后 C_301-1000B UNNAMED 清零。
+下一批：批次D = 101-300B 未命名 825 个（143,460 B）。
+================================================================================

@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<!--head开始-->
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>地图GMC Shaders - 流星笔记 - 流星资源网-流星蝴蝶剑.net 官网资源下载站</title>
+	<meta name="keywords" content="地图GMC Shaders,流星笔记,流星资源网-流星蝴蝶剑.net 官网资源下载站" />
+	<meta name="description" content="地图GMC Shaders" />
+	<meta property="og:type" content="res"/>
+    <meta property="og:title" content="地图GMC Shaders"/>
+    <meta property="og:description" content="地图GMC Shaders"/>
+    <meta property="og:image" content="/e/data/images/notimg.gif"/>
+    <meta property="og:res:category" content="流星笔记"/>
+    <meta property="og:res:author" content="漠之北"/>
+    <meta property="og:url" content="/LiuXingBiJi/1567.html"/>
+    <meta property="og:res:status" content="[!--zhuangtai--]"/>
+    <meta property="og:res:update_time" content="2019-02-16 14:33:02"/>
+<meta name="author" content="漠之北">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform " />
+<meta name="applicable-device" content="pc">
+<meta http-equiv="mobile-agent" content="format=xhtml; url=https://m.lxres.com/"/>
+<link rel="canonical" href="/LiuXingBiJi/1567.html" /><!--url-->
+<link rel="stylesheet" href="/style/css/biji_global.css" />
+<link rel="stylesheet" href="/style/css/biji.css" />
+<link rel="shortcut icon" type="image/ico" href="/favicon.ico" />
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon.png" />
+<link rel="apple-touch-icon" href="/favicon.png" />
+<meta name="theme-color" content="#330000">
+<!--<script type="text/javascript" src="/style/js/m.js"></script>-->
+<!--[if lt IE 9]>
+<script src="/style/js/html5shiv.min.js"></script>
+<script src="/style/js/respond.min.js"></script>
+<![endif]-->
+</head>
+<!--head结束-->
+<body>
+<!--header开始-->
+<!--header菜单栏开始-->
+<header>
+	<!--最上面菜单栏开始-->
+    <div class="top">
+        <div class="w-all">
+		<!--开始-->
+            <ul class="fl">
+                <li><i class="pticon pticon-home pticon-lg"></i><a href="/" title="流星资源网-流星蝴蝶剑.net 官网资源下载站">流星资源网-流星蝴蝶剑.net 官网资源下载站</a></li>
+            </ul>
+		<!--结束-->
+		<!--开始-->
+            <ul class="fr">
+				<li><i class="pticon pticon-27 pticon-lg"></i><a href="javascript:void(0)" onclick="dashangToggle()" title="赞助，支持一下">赞助网站</a></li>
+                <li><i class="pticon pticon-cube pticon-lg"></i><a href="/e/add/AddInfo.php?classid=11&mid=1&ecmscheck=1" title="我要投稿">我要投稿</a></li>
+                <li><i class="pticon pticon-globe pticon-lg"></i><a class="C_Language" href="javascript:zh_tran('t');" id="Z_Language" title="繁體中文">繁體中文</a></li>
+                <li><i class="pticon pticon-star pticon-lg"></i><a href="javascript:$.pt.addFav();" title="加入收藏夹">收藏本站</a></li>
+                <li><i class="pticon pticon-mobile pticon-lg"></i><a href="https://m.lxres.com/" target="_blank" title="移动网站">移动网站</a></li>
+            </ul>
+		<!--结束-->
+        </div>
+    </div>
+	<!--最上面菜单栏结束-->
+	<!--主菜单栏开始-->
+    <div class="clear"></div>
+    <div class="logosearch w-all">
+        <!--网站LOGO开始-->
+        <div class="logo fl"><a href="/" title="流星资源网-流星蝴蝶剑.net 官网资源下载站"><img src="/style/images/logo.png" alt="流星资源网-流星蝴蝶剑.net 官网资源下载站" /></a></div>
+        <!--网站LOGO结束-->
+        <!--搜索菜单栏开始-->
+		<form class="searchbox fr" action="/e/search/index.php" method="post">
+            <div class="dropmenu">
+                <span class="tri"></span>
+                <ul class="dropmenu-item">
+                    <li data-type="title">名称</li>
+                    <li data-type="writer">作者</li>
+                    <li data-type="title,smalltext,writer">综合</li>
+                </ul>
+            </div>
+            <input name="searchtype" type="hidden" value="title"/>
+            <input type="hidden" name="tbname" value="lx">
+            <input type="hidden" name="tempid" value="1">
+            <label class="fl"><input type="text" name="keyboard" id="" class="text"/></label>
+            <input type="submit" value="搜索" class="searchbtn"/>
+        </form>
+		<!--搜索菜单栏结束-->
+    </div>
+	<!--主菜单栏结束-->
+    <nav class="w-all">
+        <ul class="clearfix">
+            <li><a href="/" title="首页">首页</a></li>
+            <li class=""><a href="/ZhuKeHuDuan/" title="主客户端">主客户端</a></li>
+            <li class=""><a href="/DanJiRenWu/" title="单机任务">单机任务</a></li>
+            <li class=""><a href="/BuDingGongJu/" title="补丁工具">补丁工具</a></li>
+            <li class=""><a href="/DiTuXiaZai/" title="地图下载">地图下载</a></li>
+            <li class=""><a href="/RenWuWuQi/" title="人物武器">人物武器</a></li>
+            <li class=""><a href="/ZhuTiGuangYing/" title="主题光影">主题光影</a></li>
+            <li class=""><a href="/YingYinLuXiang/" title="影音录像">影音录像</a></li>
+            <li class=""><a href="/ZiLiaoJiaoCheng/" title="资料教程">资料教程</a></li>
+            <li class="active"><a href="/e/action/ListInfo/?classid=99" title="流星笔记">流星笔记</a></li>
+        </ul>
+    </nav>
+</header>
+<!--header菜单栏结束-->
+<!--header结束-->
+<!--section开始-->
+<section class="w-all">
+<!--当前位置开始-->
+    <nav class="mt20">
+        <ul class="clearfix">
+            <li><a href="/" title="流星资源网-流星蝴蝶剑.net 官网资源下载站"><i class="pticon pticon-home pticon-lg"></i>&nbsp;首页</a><i class="pticon pticon-angle-right icon"></i></li>
+            <li><a href="/e/action/ListInfo/?classid=99" title="流星笔记">流星笔记</a><i class="pticon pticon-angle-right icon"></i></li>	
+            <li><a href="/LiuXingBiJi/1567.html" title="地图GMC Shaders"><h1>地图GMC Shaders</h1></a></li>
+        </ul>
+    </nav>
+<!--当前位置结束-->
+    <div class="container clearfix mt20">
+        <!--左侧内容开始-->
+        <div class="w-right">
+            <!--详情开始-->
+            <div class="card">
+                <div class="header line">
+                    <h2>资料详情</h2>
+                </div>
+                <div class="body">
+<p class="MsoNormal" align="center" style="text-align:center">
+<p class="MsoNormal" align="center" style="text-align:center"><b style="mso-bidi-font-weight:&#10;normal"><span style="font-size:16.0pt">地图<span lang="EN-US">GMC Shaders<o:p></o:p></span></span></b></p>
+<p class="MsoNormal" style="text-align: center;"><b style="mso-bidi-font-weight:&#10;normal"><span style="mso-bidi-font-size:10.5pt">作者：漠之北<span lang="EN-US"><o:p></o:p></span></span></b></p>
+<p class="MsoNormal" align="left" style="text-align:left"><b style="mso-bidi-font-weight:&#10;normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p>&nbsp;</o:p></span></b></p>
+<div align="center">
+<table class="MsoTable15Grid5DarkAccent2" border="1" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border:none;mso-border-alt:solid white .5pt;&#10; mso-border-themecolor:background1;mso-yfti-tbllook:1184;mso-padding-alt:0cm 5.4pt 0cm 5.4pt">
+    <tbody>
+        <tr style="mso-yfti-irow:-1;mso-yfti-firstrow:yes;mso-yfti-lastfirstrow:yes">
+            <td width="75" valign="top" style="width:56.45pt;border:solid white 1.0pt;&#10;  mso-border-themecolor:background1;border-right:none;mso-border-top-alt:solid white .5pt;&#10;  mso-border-top-themecolor:background1;mso-border-left-alt:solid white .5pt;&#10;  mso-border-left-themecolor:background1;mso-border-bottom-alt:solid white .5pt;&#10;  mso-border-bottom-themecolor:background1;background:#ED7D31;mso-background-themecolor:&#10;  accent2;padding:0cm 5.4pt 0cm 5.4pt">
+            <p class="MsoNormal" align="center" style="text-align:center;mso-yfti-cnfc:5"><b><span style="mso-bidi-font-size:10.5pt;color:white;mso-themecolor:background1">名称<span lang="EN-US"><o:p></o:p></span></span></b></p>
+            </td>
+            <td width="76" valign="top" style="width:2.0cm;border-top:solid white 1.0pt;&#10;  mso-border-top-themecolor:background1;border-left:none;border-bottom:solid white 1.0pt;&#10;  mso-border-bottom-themecolor:background1;border-right:none;mso-border-top-alt:&#10;  solid white .5pt;mso-border-top-themecolor:background1;mso-border-bottom-alt:&#10;  solid white .5pt;mso-border-bottom-themecolor:background1;background:#ED7D31;&#10;  mso-background-themecolor:accent2;padding:0cm 5.4pt 0cm 5.4pt">
+            <p class="MsoNormal" align="center" style="text-align:center;mso-yfti-cnfc:1"><b><span style="mso-bidi-font-size:10.5pt;color:white;mso-themecolor:background1">说明<span lang="EN-US"><o:p></o:p></span></span></b></p>
+            </td>
+            <td width="142" valign="top" style="width:106.35pt;border-top:solid white 1.0pt;&#10;  mso-border-top-themecolor:background1;border-left:none;border-bottom:solid white 1.0pt;&#10;  mso-border-bottom-themecolor:background1;border-right:none;mso-border-top-alt:&#10;  solid white .5pt;mso-border-top-themecolor:background1;mso-border-bottom-alt:&#10;  solid white .5pt;mso-border-bottom-themecolor:background1;background:#ED7D31;&#10;  mso-background-themecolor:accent2;padding:0cm 5.4pt 0cm 5.4pt">
+            <p class="MsoNormal" align="center" style="text-align:center;mso-yfti-cnfc:1"><b><span style="mso-bidi-font-size:10.5pt;color:white;mso-themecolor:background1">参数<span lang="EN-US"><o:p></o:p></span></span></b></p>
+            </td>
+            <td width="260" valign="top" style="width:195.3pt;border:solid white 1.0pt;&#10;  mso-border-themecolor:background1;border-left:none;mso-border-top-alt:solid white .5pt;&#10;  mso-border-top-themecolor:background1;mso-border-bottom-alt:solid white .5pt;&#10;  mso-border-bottom-themecolor:background1;mso-border-right-alt:solid white .5pt;&#10;  mso-border-right-themecolor:background1;background:#ED7D31;mso-background-themecolor:&#10;  accent2;padding:0cm 5.4pt 0cm 5.4pt">
+            <p class="MsoNormal" align="center" style="text-align:center;mso-yfti-cnfc:1"><b><span style="mso-bidi-font-size:10.5pt;color:white;mso-themecolor:background1">备注<span lang="EN-US"><o:p></o:p></span></span></b></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:0;height:3.25pt">
+            <td width="75" rowspan="3" valign="top" style="width:56.45pt;border:solid white 1.0pt;&#10;  mso-border-themecolor:background1;border-top:none;mso-border-top-alt:solid white .5pt;&#10;  mso-border-top-themecolor:background1;mso-border-alt:solid white .5pt;&#10;  mso-border-themecolor:background1;background:#ED7D31;mso-background-themecolor:&#10;  accent2;padding:0cm 5.4pt 0cm 5.4pt;height:3.25pt">
+            <p class="MsoNormal" align="left" style="text-align:left;mso-yfti-cnfc:68"><b><span lang="EN-US" style="mso-bidi-font-size:10.5pt;color:white;mso-themecolor:background1">Texture</span></b><span lang="EN-US" style="mso-bidi-font-size:10.5pt;color:white;mso-themecolor:background1;&#10;  mso-bidi-font-weight:bold"><o:p></o:p></span></p>
+            </td>
+            <td width="76" rowspan="3" valign="top" style="width:2.0cm;border-top:none;&#10;  border-left:none;border-bottom:solid white 1.0pt;mso-border-bottom-themecolor:&#10;  background1;border-right:solid white 1.0pt;mso-border-right-themecolor:background1;&#10;  mso-border-top-alt:solid white .5pt;mso-border-top-themecolor:background1;&#10;  mso-border-left-alt:solid white .5pt;mso-border-left-themecolor:background1;&#10;  mso-border-alt:solid white .5pt;mso-border-themecolor:background1;background:&#10;  #F7CAAC;mso-background-themecolor:accent2;mso-background-themetint:102;&#10;  padding:0cm 5.4pt 0cm 5.4pt;height:3.25pt">
+            <p class="MsoNormal" align="left" style="text-align:left;mso-yfti-cnfc:64"><b style="mso-bidi-font-weight:normal"><span style="mso-bidi-font-size:10.5pt">材质<span lang="EN-US"><o:p></o:p></span></span></b></p>
+            </td>
+            <td width="142" valign="top" style="width:106.35pt;border-top:none;border-left:&#10;  none;border-bottom:solid white 1.0pt;mso-border-bottom-themecolor:background1;&#10;  border-right:solid white 1.0pt;mso-border-right-themecolor:background1;&#10;  mso-border-top-alt:solid white .5pt;mso-border-top-themecolor:background1;&#10;  mso-border-left-alt:solid white .5pt;mso-border-left-themecolor:background1;&#10;  mso-border-alt:solid white .5pt;mso-border-themecolor:background1;background:&#10;  #F7CAAC;mso-background-themecolor:accent2;mso-background-themetint:102;&#10;  padding:0cm 5.4pt 0cm 5.4pt;height:3.25pt">
+            <p class="MsoNormal" align="left" style="text-align:left;mso-yfti-cnfc:64"><b style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:&#10;  10.5pt">NORMAL<o:p></o:p></span></b></p>
+            </td>
+            <td width="260" valign="top" style="width:195.3pt;border-top:none;border-left:&#10;  none;border-bottom:solid white 1.0pt;mso-border-bottom-themecolor:background1;&#10;  border-right:solid white 1.0pt;mso-border-right-themecolor:background1;&#10;  mso-border-top-alt:solid white .5pt;mso-border-top-themecolor:background1;&#10;  mso-border-left-alt:solid white .5pt;mso-border-left-themecolor:background1;&#10;  mso-border-alt:solid white .5pt;mso-border-themecolor:background1;background:&#10;  #F7CAAC;mso-background-themecolor:accent2;mso-background-themetint:102;&#10;  padding:0cm 5.4pt 0cm 5.4pt;height:3.25pt">
+            <p class="MsoNormal" align="left" style="text-align:left;mso-yfti-cnfc:64"><b style="mso-bidi-font-weight:normal"><span style="mso-bidi-font-size:10.5pt">标准材质<span lang="EN-US"><o:p></o:p></span></span></b></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:1;height:3.25pt">
+            <td width="142" valign="top" style="width:106.35pt;border-top:none;border-left:&#10;  none;border-bottom:solid white 1.0pt;mso-border-bottom-themecolor:background1;&#10;  border-right:solid white 1.0pt;mso-border-right-themecolor:background1;&#10;  mso-border-top-alt:solid white .5pt;mso-border-top-themecolor:background1;&#10;  mso-border-left-alt:solid white .5pt;mso-border-left-themecolor:background1;&#10;  mso-border-alt:solid white .5pt;mso-border-themecolor:background1;background:&#10;  #FBE4D5;mso-background-themecolor:accent2;mso-background-themetint:51;&#10;  padding:0cm 5.4pt 0cm 5.4pt;height:3.25pt">
+            <p class="MsoNormal" align="left" style="text-align:left"><b style="mso-bidi-font-weight:&#10;  normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt">ALPHACHANNEL<o:p></o:p></span></b></p>
+            </td>
+            <td width="260" valign="top" style="width:195.3pt;border-top:none;border-left:&#10;  none;border-bottom:solid white 1.0pt;mso-border-bottom-themecolor:background1;&#10;  border-right:solid white 1.0pt;mso-border-right-themecolor:background1;&#10;  mso-border-top-alt:solid white .5pt;mso-border-top-themecolor:background1;&#10;  mso-border-left-alt:solid white .5pt;mso-border-left-themecolor:background1;&#10;  mso-border-alt:solid white .5pt;mso-border-themecolor:background1;background:&#10;  #FBE4D5;mso-background-themecolor:accent2;mso-background-themetint:51;&#10;  padding:0cm 5.4pt 0cm 5.4pt;height:3.25pt">
+            <p class="MsoNormal" align="left" style="text-align:left"><b style="mso-bidi-font-weight:&#10;  normal"><span style="mso-bidi-font-size:10.5pt">带<span lang="EN-US">ALPHA</span>透明通道的材质<span lang="EN-US"><o:p></o:p></span></span></b></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:2;height:3.25pt">
+            <td width="142" valign="top" style="width:106.35pt;border-top:none;border-left:&#10;  none;border-bottom:solid white 1.0pt;mso-border-bottom-themecolor:background1;&#10;  border-right:solid white 1.0pt;mso-border-right-themecolor:background1;&#10;  mso-border-top-alt:solid white .5pt;mso-border-top-themecolor:background1;&#10;  mso-border-left-alt:solid white .5pt;mso-border-left-themecolor:background1;&#10;  mso-border-alt:solid white .5pt;mso-border-themecolor:background1;background:&#10;  #F7CAAC;mso-background-themecolor:accent2;mso-background-themetint:102;&#10;  padding:0cm 5.4pt 0cm 5.4pt;height:3.25pt">
+            <p class="MsoNormal" align="left" style="text-align:left;mso-yfti-cnfc:64"><b style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:&#10;  10.5pt">COLORKEY<o:p></o:p></span></b></p>
+            </td>
+            <td width="260" valign="top" style="width:195.3pt;border-top:none;border-left:&#10;  none;border-bottom:solid white 1.0pt;mso-border-bottom-themecolor:background1;&#10;  border-right:solid white 1.0pt;mso-border-right-themecolor:background1;&#10;  mso-border-top-alt:solid white .5pt;mso-border-top-themecolor:background1;&#10;  mso-border-left-alt:solid white .5pt;mso-border-left-themecolor:background1;&#10;  mso-border-alt:solid white .5pt;mso-border-themecolor:background1;background:&#10;  #F7CAAC;mso-background-themecolor:accent2;mso-background-themetint:102;&#10;  padding:0cm 5.4pt 0cm 5.4pt;height:3.25pt">
+            <p class="MsoNormal" align="left" style="text-align:left;mso-yfti-cnfc:64"><b style="mso-bidi-font-weight:normal"><span style="mso-bidi-font-size:10.5pt">用此参数材质效果最好<span lang="EN-US"><o:p></o:p></span></span></b></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:3">
+            <td width="75" valign="top" style="width:56.45pt;border:solid white 1.0pt;&#10;  mso-border-themecolor:background1;border-top:none;mso-border-top-alt:solid white .5pt;&#10;  mso-border-top-themecolor:background1;mso-border-alt:solid white .5pt;&#10;  mso-border-themecolor:background1;background:#ED7D31;mso-background-themecolor:&#10;  accent2;padding:0cm 5.4pt 0cm 5.4pt">
+            <p class="MsoNormal" align="left" style="text-align:left;mso-yfti-cnfc:4"><b><span lang="EN-US" style="mso-bidi-font-size:10.5pt;color:white;mso-themecolor:background1">TwoSide</span></b><span lang="EN-US" style="mso-bidi-font-size:10.5pt;color:white;mso-themecolor:background1;&#10;  mso-bidi-font-weight:bold"><o:p></o:p></span></p>
+            </td>
+            <td width="76" valign="top" style="width:2.0cm;border-top:none;border-left:none;&#10;  border-bottom:solid white 1.0pt;mso-border-bottom-themecolor:background1;&#10;  border-right:solid white 1.0pt;mso-border-right-themecolor:background1;&#10;  mso-border-top-alt:solid white .5pt;mso-border-top-themecolor:background1;&#10;  mso-border-left-alt:solid white .5pt;mso-border-left-themecolor:background1;&#10;  mso-border-alt:solid white .5pt;mso-border-themecolor:background1;background:&#10;  #FBE4D5;mso-background-themecolor:accent2;mso-background-themetint:51;&#10;  padding:0cm 5.4pt 0cm 5.4pt">
+            <p class="MsoNormal" align="left" style="text-align:left"><b style="mso-bidi-font-weight:&#10;  normal"><span style="mso-bidi-font-size:10.5pt">双面材质<span lang="EN-US"><o:p></o:p></span></span></b></p>
+            </td>
+            <td width="142" valign="top" style="width:106.35pt;border-top:none;border-left:&#10;  none;border-bottom:solid white 1.0pt;mso-border-bottom-themecolor:background1;&#10;  border-right:solid white 1.0pt;mso-border-right-themecolor:background1;&#10;  mso-border-top-alt:solid white .5pt;mso-border-top-themecolor:background1;&#10;  mso-border-left-alt:solid white .5pt;mso-border-left-themecolor:background1;&#10;  mso-border-alt:solid white .5pt;mso-border-themecolor:background1;background:&#10;  #FBE4D5;mso-background-themecolor:accent2;mso-background-themetint:51;&#10;  padding:0cm 5.4pt 0cm 5.4pt">
+            <p class="MsoNormal" align="left" style="text-align:left"><b style="mso-bidi-font-weight:&#10;  normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt">0/1<o:p></o:p></span></b></p>
+            </td>
+            <td width="260" valign="top" style="width:195.3pt;border-top:none;border-left:&#10;  none;border-bottom:solid white 1.0pt;mso-border-bottom-themecolor:background1;&#10;  border-right:solid white 1.0pt;mso-border-right-themecolor:background1;&#10;  mso-border-top-alt:solid white .5pt;mso-border-top-themecolor:background1;&#10;  mso-border-left-alt:solid white .5pt;mso-border-left-themecolor:background1;&#10;  mso-border-alt:solid white .5pt;mso-border-themecolor:background1;background:&#10;  #FBE4D5;mso-background-themecolor:accent2;mso-background-themetint:51;&#10;  padding:0cm 5.4pt 0cm 5.4pt">
+            <p class="MsoNormal" align="left" style="text-align:left"><b style="mso-bidi-font-weight:&#10;  normal"><span style="mso-bidi-font-size:10.5pt">双面材质<span lang="EN-US"><o:p></o:p></span></span></b></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:4;height:1.35pt">
+            <td width="75" rowspan="13" valign="top" style="width:56.45pt;border:solid white 1.0pt;&#10;  mso-border-themecolor:background1;border-top:none;mso-border-top-alt:solid white .5pt;&#10;  mso-border-top-themecolor:background1;mso-border-alt:solid white .5pt;&#10;  mso-border-themecolor:background1;background:#ED7D31;mso-background-themecolor:&#10;  accent2;padding:0cm 5.4pt 0cm 5.4pt;height:1.35pt">
+            <p class="MsoNormal" align="left" style="text-align:left;mso-yfti-cnfc:68"><b><span lang="EN-US" style="mso-bidi-font-size:10.5pt;color:white;mso-themecolor:background1">Blend</span></b><span lang="EN-US" style="mso-bidi-font-size:10.5pt;color:white;mso-themecolor:background1;&#10;  mso-bidi-font-weight:bold"><o:p></o:p></span></p>
+            </td>
+            <td width="76" rowspan="13" valign="top" style="width:2.0cm;border-top:none;&#10;  border-left:none;border-bottom:solid white 1.0pt;mso-border-bottom-themecolor:&#10;  background1;border-right:solid white 1.0pt;mso-border-right-themecolor:background1;&#10;  mso-border-top-alt:solid white .5pt;mso-border-top-themecolor:background1;&#10;  mso-border-left-alt:solid white .5pt;mso-border-left-themecolor:background1;&#10;  mso-border-alt:solid white .5pt;mso-border-themecolor:background1;background:&#10;  #F7CAAC;mso-background-themecolor:accent2;mso-background-themetint:102;&#10;  padding:0cm 5.4pt 0cm 5.4pt;height:1.35pt">
+            <p class="MsoNormal" align="left" style="text-align:left;mso-yfti-cnfc:64"><b style="mso-bidi-font-weight:normal"><span style="mso-bidi-font-size:10.5pt">混合<span lang="EN-US"><o:p></o:p></span></span></b></p>
+            </td>
+            <td width="142" valign="top" style="width:106.35pt;border-top:none;border-left:&#10;  none;border-bottom:solid white 1.0pt;mso-border-bottom-themecolor:background1;&#10;  border-right:solid white 1.0pt;mso-border-right-themecolor:background1;&#10;  mso-border-top-alt:solid white .5pt;mso-border-top-themecolor:background1;&#10;  mso-border-left-alt:solid white .5pt;mso-border-left-themecolor:background1;&#10;  mso-border-alt:solid white .5pt;mso-border-themecolor:background1;background:&#10;  #F7CAAC;mso-background-themecolor:accent2;mso-background-themetint:102;&#10;  padding:0cm 5.4pt 0cm 5.4pt;height:1.35pt">
+            <p class="MsoNormal" align="left" style="text-align:left;mso-yfti-cnfc:64"><b style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:&#10;  10.5pt">DISABLE 1 0<o:p></o:p></span></b></p>
+            </td>
+            <td width="260" valign="top" style="width:195.3pt;border-top:none;border-left:&#10;  none;border-bottom:solid white 1.0pt;mso-border-bottom-themecolor:background1;&#10;  border-right:solid white 1.0pt;mso-border-right-themecolor:background1;&#10;  mso-border-top-alt:solid white .5pt;mso-border-top-themecolor:background1;&#10;  mso-border-left-alt:solid white .5pt;mso-border-left-themecolor:background1;&#10;  mso-border-alt:solid white .5pt;mso-border-themecolor:background1;background:&#10;  #F7CAAC;mso-background-themecolor:accent2;mso-background-themetint:102;&#10;  padding:0cm 5.4pt 0cm 5.4pt;height:1.35pt">
+            <p class="MsoNormal" align="left" style="text-align:left;mso-yfti-cnfc:64"><b style="mso-bidi-font-weight:normal"><span style="mso-bidi-font-size:10.5pt">关闭混合<span lang="EN-US"><o:p></o:p></span></span></b></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:5;height:1.05pt">
+            <td width="142" valign="top" style="width:106.35pt;border-top:none;border-left:&#10;  none;border-bottom:solid white 1.0pt;mso-border-bottom-themecolor:background1;&#10;  border-right:solid white 1.0pt;mso-border-right-themecolor:background1;&#10;  mso-border-top-alt:solid white .5pt;mso-border-top-themecolor:background1;&#10;  mso-border-left-alt:solid white .5pt;mso-border-left-themecolor:background1;&#10;  mso-border-alt:solid white .5pt;mso-border-themecolor:background1;background:&#10;  #FBE4D5;mso-background-themecolor:accent2;mso-background-themetint:51;&#10;  padding:0cm 5.4pt 0cm 5.4pt;height:1.05pt">
+            <p class="MsoNormal" align="left" style="text-align:left"><b style="mso-bidi-font-weight:&#10;  normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt">ENABLE 0 s <o:p></o:p></span></b></p>
+            </td>
+            <td width="260" valign="top" style="width:195.3pt;border-top:none;border-left:&#10;  none;border-bottom:solid white 1.0pt;mso-border-bottom-themecolor:background1;&#10;  border-right:solid white 1.0pt;mso-border-right-themecolor:background1;&#10;  mso-border-top-alt:solid white .5pt;mso-border-top-themecolor:background1;&#10;  mso-border-left-alt:solid white .5pt;mso-border-left-themecolor:background1;&#10;  mso-border-alt:solid white .5pt;mso-border-themecolor:background1;background:&#10;  #FBE4D5;mso-background-themecolor:accent2;mso-background-themetint:51;&#10;  padding:0cm 5.4pt 0cm 5.4pt;height:1.05pt">
+            <p class="MsoNormal" align="left" style="text-align:left"><b style="mso-bidi-font-weight:&#10;  normal"><span style="mso-bidi-font-size:10.5pt">过滤白色<span lang="EN-US"> ALPHA</span>通道失效<span lang="EN-US"><o:p></o:p></span></span></b></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:6;height:1.05pt">
+            <td width="142" valign="top" style="width:106.35pt;border-top:none;border-left:&#10;  none;border-bottom:solid white 1.0pt;mso-border-bottom-themecolor:background1;&#10;  border-right:solid white 1.0pt;mso-border-right-themecolor:background1;&#10;  mso-border-top-alt:solid white .5pt;mso-border-top-themecolor:background1;&#10;  mso-border-left-alt:solid white .5pt;mso-border-left-themecolor:background1;&#10;  mso-border-alt:solid white .5pt;mso-border-themecolor:background1;background:&#10;  #F7CAAC;mso-background-themecolor:accent2;mso-background-themetint:102;&#10;  padding:0cm 5.4pt 0cm 5.4pt;height:1.05pt">
+            <p class="MsoNormal" align="left" style="text-align:left;mso-yfti-cnfc:64"><b style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:&#10;  10.5pt">ENABLE 0 sa <o:p></o:p></span></b></p>
+            </td>
+            <td width="260" valign="top" style="width:195.3pt;border-top:none;border-left:&#10;  none;border-bottom:solid white 1.0pt;mso-border-bottom-themecolor:background1;&#10;  border-right:solid white 1.0pt;mso-border-right-themecolor:background1;&#10;  mso-border-top-alt:solid white .5pt;mso-border-top-themecolor:background1;&#10;  mso-border-left-alt:solid white .5pt;mso-border-left-themecolor:background1;&#10;  mso-border-alt:solid white .5pt;mso-border-themecolor:background1;background:&#10;  #F7CAAC;mso-background-themecolor:accent2;mso-background-themetint:102;&#10;  padding:0cm 5.4pt 0cm 5.4pt;height:1.05pt">
+            <p class="MsoNormal" align="left" style="text-align:left;mso-yfti-cnfc:64"><b style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:&#10;  10.5pt">ALPHA</span></b><b style="mso-bidi-font-weight:normal"><span style="mso-bidi-font-size:10.5pt">通道为黑色<span lang="EN-US"><o:p></o:p></span></span></b></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:7;height:1.05pt">
+            <td width="142" valign="top" style="width:106.35pt;border-top:none;border-left:&#10;  none;border-bottom:solid white 1.0pt;mso-border-bottom-themecolor:background1;&#10;  border-right:solid white 1.0pt;mso-border-right-themecolor:background1;&#10;  mso-border-top-alt:solid white .5pt;mso-border-top-themecolor:background1;&#10;  mso-border-left-alt:solid white .5pt;mso-border-left-themecolor:background1;&#10;  mso-border-alt:solid white .5pt;mso-border-themecolor:background1;background:&#10;  #FBE4D5;mso-background-themecolor:accent2;mso-background-themetint:51;&#10;  padding:0cm 5.4pt 0cm 5.4pt;height:1.05pt">
+            <p class="MsoNormal" align="left" style="text-align:left"><b style="mso-bidi-font-weight:&#10;  normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt">ENABLE 0 1-s <o:p></o:p></span></b></p>
+            </td>
+            <td width="260" valign="top" style="width:195.3pt;border-top:none;border-left:&#10;  none;border-bottom:solid white 1.0pt;mso-border-bottom-themecolor:background1;&#10;  border-right:solid white 1.0pt;mso-border-right-themecolor:background1;&#10;  mso-border-top-alt:solid white .5pt;mso-border-top-themecolor:background1;&#10;  mso-border-left-alt:solid white .5pt;mso-border-left-themecolor:background1;&#10;  mso-border-alt:solid white .5pt;mso-border-themecolor:background1;background:&#10;  #FBE4D5;mso-background-themecolor:accent2;mso-background-themetint:51;&#10;  padding:0cm 5.4pt 0cm 5.4pt;height:1.05pt">
+            <p class="MsoNormal" align="left" style="text-align:left"><b style="mso-bidi-font-weight:&#10;  normal"><span style="mso-bidi-font-size:10.5pt">过滤黑色，并反向白色（白变黑）<span lang="EN-US">ALPHA</span>通道失效<span lang="EN-US"><o:p></o:p></span></span></b></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:8;height:1.05pt">
+            <td width="142" valign="top" style="width:106.35pt;border-top:none;border-left:&#10;  none;border-bottom:solid white 1.0pt;mso-border-bottom-themecolor:background1;&#10;  border-right:solid white 1.0pt;mso-border-right-themecolor:background1;&#10;  mso-border-top-alt:solid white .5pt;mso-border-top-themecolor:background1;&#10;  mso-border-left-alt:solid white .5pt;mso-border-left-themecolor:background1;&#10;  mso-border-alt:solid white .5pt;mso-border-themecolor:background1;background:&#10;  #F7CAAC;mso-background-themecolor:accent2;mso-background-themetint:102;&#10;  padding:0cm 5.4pt 0cm 5.4pt;height:1.05pt">
+            <p class="MsoNormal" align="left" style="text-align:left;mso-yfti-cnfc:64"><b style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:&#10;  10.5pt">ENABLE 0 1-sa <o:p></o:p></span></b></p>
+            </td>
+            <td width="260" valign="top" style="width:195.3pt;border-top:none;border-left:&#10;  none;border-bottom:solid white 1.0pt;mso-border-bottom-themecolor:background1;&#10;  border-right:solid white 1.0pt;mso-border-right-themecolor:background1;&#10;  mso-border-top-alt:solid white .5pt;mso-border-top-themecolor:background1;&#10;  mso-border-left-alt:solid white .5pt;mso-border-left-themecolor:background1;&#10;  mso-border-alt:solid white .5pt;mso-border-themecolor:background1;background:&#10;  #F7CAAC;mso-background-themecolor:accent2;mso-background-themetint:102;&#10;  padding:0cm 5.4pt 0cm 5.4pt;height:1.05pt">
+            <p class="MsoNormal" align="left" style="text-align:left;mso-yfti-cnfc:64"><b style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:&#10;  10.5pt">ALPHA</span></b><b style="mso-bidi-font-weight:normal"><span style="mso-bidi-font-size:10.5pt">通道有效，贴图全黑<span lang="EN-US"><o:p></o:p></span></span></b></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:9;height:1.05pt">
+            <td width="142" valign="top" style="width:106.35pt;border-top:none;border-left:&#10;  none;border-bottom:solid white 1.0pt;mso-border-bottom-themecolor:background1;&#10;  border-right:solid white 1.0pt;mso-border-right-themecolor:background1;&#10;  mso-border-top-alt:solid white .5pt;mso-border-top-themecolor:background1;&#10;  mso-border-left-alt:solid white .5pt;mso-border-left-themecolor:background1;&#10;  mso-border-alt:solid white .5pt;mso-border-themecolor:background1;background:&#10;  #FBE4D5;mso-background-themecolor:accent2;mso-background-themetint:51;&#10;  padding:0cm 5.4pt 0cm 5.4pt;height:1.05pt">
+            <p class="MsoNormal" align="left" style="text-align:left"><b style="mso-bidi-font-weight:&#10;  normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt">ENABLE sa sa <o:p></o:p></span></b></p>
+            </td>
+            <td width="260" valign="top" style="width:195.3pt;border-top:none;border-left:&#10;  none;border-bottom:solid white 1.0pt;mso-border-bottom-themecolor:background1;&#10;  border-right:solid white 1.0pt;mso-border-right-themecolor:background1;&#10;  mso-border-top-alt:solid white .5pt;mso-border-top-themecolor:background1;&#10;  mso-border-left-alt:solid white .5pt;mso-border-left-themecolor:background1;&#10;  mso-border-alt:solid white .5pt;mso-border-themecolor:background1;background:&#10;  #FBE4D5;mso-background-themecolor:accent2;mso-background-themetint:51;&#10;  padding:0cm 5.4pt 0cm 5.4pt;height:1.05pt">
+            <p class="MsoNormal" align="left" style="text-align:left"><b style="mso-bidi-font-weight:&#10;  normal"><span style="mso-bidi-font-size:10.5pt">过滤黑色 稍弱<span lang="EN-US">   ALPHA</span>通道为黑色<span lang="EN-US"><o:p></o:p></span></span></b></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:10;height:1.05pt">
+            <td width="142" valign="top" style="width:106.35pt;border-top:none;border-left:&#10;  none;border-bottom:solid white 1.0pt;mso-border-bottom-themecolor:background1;&#10;  border-right:solid white 1.0pt;mso-border-right-themecolor:background1;&#10;  mso-border-top-alt:solid white .5pt;mso-border-top-themecolor:background1;&#10;  mso-border-left-alt:solid white .5pt;mso-border-left-themecolor:background1;&#10;  mso-border-alt:solid white .5pt;mso-border-themecolor:background1;background:&#10;  #F7CAAC;mso-background-themecolor:accent2;mso-background-themetint:102;&#10;  padding:0cm 5.4pt 0cm 5.4pt;height:1.05pt">
+            <p class="MsoNormal" align="left" style="text-align:left;mso-yfti-cnfc:64"><b style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:&#10;  10.5pt">ENABLE s 1 <o:p></o:p></span></b></p>
+            </td>
+            <td width="260" valign="top" style="width:195.3pt;border-top:none;border-left:&#10;  none;border-bottom:solid white 1.0pt;mso-border-bottom-themecolor:background1;&#10;  border-right:solid white 1.0pt;mso-border-right-themecolor:background1;&#10;  mso-border-top-alt:solid white .5pt;mso-border-top-themecolor:background1;&#10;  mso-border-left-alt:solid white .5pt;mso-border-left-themecolor:background1;&#10;  mso-border-alt:solid white .5pt;mso-border-themecolor:background1;background:&#10;  #F7CAAC;mso-background-themecolor:accent2;mso-background-themetint:102;&#10;  padding:0cm 5.4pt 0cm 5.4pt;height:1.05pt">
+            <p class="MsoNormal" align="left" style="text-align:left;mso-yfti-cnfc:64"><b style="mso-bidi-font-weight:normal"><span style="mso-bidi-font-size:10.5pt">过滤黑色   强光<span lang="EN-US"> ALPHA</span>通道失效<span lang="EN-US"><o:p></o:p></span></span></b></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:11;height:1.05pt">
+            <td width="142" valign="top" style="width:106.35pt;border-top:none;border-left:&#10;  none;border-bottom:solid white 1.0pt;mso-border-bottom-themecolor:background1;&#10;  border-right:solid white 1.0pt;mso-border-right-themecolor:background1;&#10;  mso-border-top-alt:solid white .5pt;mso-border-top-themecolor:background1;&#10;  mso-border-left-alt:solid white .5pt;mso-border-left-themecolor:background1;&#10;  mso-border-alt:solid white .5pt;mso-border-themecolor:background1;background:&#10;  #FBE4D5;mso-background-themecolor:accent2;mso-background-themetint:51;&#10;  padding:0cm 5.4pt 0cm 5.4pt;height:1.05pt">
+            <p class="MsoNormal" align="left" style="text-align:left"><b style="mso-bidi-font-weight:&#10;  normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt">ENABLE s 1-s <o:p></o:p></span></b></p>
+            </td>
+            <td width="260" valign="top" style="width:195.3pt;border-top:none;border-left:&#10;  none;border-bottom:solid white 1.0pt;mso-border-bottom-themecolor:background1;&#10;  border-right:solid white 1.0pt;mso-border-right-themecolor:background1;&#10;  mso-border-top-alt:solid white .5pt;mso-border-top-themecolor:background1;&#10;  mso-border-left-alt:solid white .5pt;mso-border-left-themecolor:background1;&#10;  mso-border-alt:solid white .5pt;mso-border-themecolor:background1;background:&#10;  #FBE4D5;mso-background-themecolor:accent2;mso-background-themetint:51;&#10;  padding:0cm 5.4pt 0cm 5.4pt;height:1.05pt">
+            <p class="MsoNormal" align="left" style="text-align:left"><b style="mso-bidi-font-weight:&#10;  normal"><span style="mso-bidi-font-size:10.5pt">过滤黑色 正常<span lang="EN-US">   ALPHA</span>通道失效<span lang="EN-US"><o:p></o:p></span></span></b></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:12;height:2.3pt">
+            <td width="142" valign="top" style="width:106.35pt;border-top:none;border-left:&#10;  none;border-bottom:solid white 1.0pt;mso-border-bottom-themecolor:background1;&#10;  border-right:solid white 1.0pt;mso-border-right-themecolor:background1;&#10;  mso-border-top-alt:solid white .5pt;mso-border-top-themecolor:background1;&#10;  mso-border-left-alt:solid white .5pt;mso-border-left-themecolor:background1;&#10;  mso-border-alt:solid white .5pt;mso-border-themecolor:background1;background:&#10;  #F7CAAC;mso-background-themecolor:accent2;mso-background-themetint:102;&#10;  padding:0cm 5.4pt 0cm 5.4pt;height:2.3pt">
+            <p class="MsoNormal" align="left" style="text-align:left;mso-yfti-cnfc:64"><b style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:&#10;  10.5pt">ENABLE sa 1 <o:p></o:p></span></b></p>
+            </td>
+            <td width="260" valign="top" style="width:195.3pt;border-top:none;border-left:&#10;  none;border-bottom:solid white 1.0pt;mso-border-bottom-themecolor:background1;&#10;  border-right:solid white 1.0pt;mso-border-right-themecolor:background1;&#10;  mso-border-top-alt:solid white .5pt;mso-border-top-themecolor:background1;&#10;  mso-border-left-alt:solid white .5pt;mso-border-left-themecolor:background1;&#10;  mso-border-alt:solid white .5pt;mso-border-themecolor:background1;background:&#10;  #F7CAAC;mso-background-themecolor:accent2;mso-background-themetint:102;&#10;  padding:0cm 5.4pt 0cm 5.4pt;height:2.3pt">
+            <p class="MsoNormal" align="left" style="text-align:left;mso-yfti-cnfc:64"><b style="mso-bidi-font-weight:normal"><span style="mso-bidi-font-size:10.5pt">过滤黑色   强<span lang="EN-US"> ALPHA</span>通道有效 有羽化效果<span lang="EN-US"><o:p></o:p></span></span></b></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:13;height:2.15pt">
+            <td width="142" valign="top" style="width:106.35pt;border-top:none;border-left:&#10;  none;border-bottom:solid white 1.0pt;mso-border-bottom-themecolor:background1;&#10;  border-right:solid white 1.0pt;mso-border-right-themecolor:background1;&#10;  mso-border-top-alt:solid white .5pt;mso-border-top-themecolor:background1;&#10;  mso-border-left-alt:solid white .5pt;mso-border-left-themecolor:background1;&#10;  mso-border-alt:solid white .5pt;mso-border-themecolor:background1;background:&#10;  #FBE4D5;mso-background-themecolor:accent2;mso-background-themetint:51;&#10;  padding:0cm 5.4pt 0cm 5.4pt;height:2.15pt">
+            <p class="MsoNormal" align="left" style="text-align:left"><b style="mso-bidi-font-weight:&#10;  normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt">ENABLE sa 1-sa <o:p></o:p></span></b></p>
+            </td>
+            <td width="260" valign="top" style="width:195.3pt;border-top:none;border-left:&#10;  none;border-bottom:solid white 1.0pt;mso-border-bottom-themecolor:background1;&#10;  border-right:solid white 1.0pt;mso-border-right-themecolor:background1;&#10;  mso-border-top-alt:solid white .5pt;mso-border-top-themecolor:background1;&#10;  mso-border-left-alt:solid white .5pt;mso-border-left-themecolor:background1;&#10;  mso-border-alt:solid white .5pt;mso-border-themecolor:background1;background:&#10;  #FBE4D5;mso-background-themecolor:accent2;mso-background-themetint:51;&#10;  padding:0cm 5.4pt 0cm 5.4pt;height:2.15pt">
+            <p class="MsoNormal" align="left" style="text-align:left"><b style="mso-bidi-font-weight:&#10;  normal"><span style="mso-bidi-font-size:10.5pt">使<span lang="EN-US">ALPHA</span>通道有羽化效果<span lang="EN-US"><o:p></o:p></span></span></b></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:14;height:2.15pt">
+            <td width="142" valign="top" style="width:106.35pt;border-top:none;border-left:&#10;  none;border-bottom:solid white 1.0pt;mso-border-bottom-themecolor:background1;&#10;  border-right:solid white 1.0pt;mso-border-right-themecolor:background1;&#10;  mso-border-top-alt:solid white .5pt;mso-border-top-themecolor:background1;&#10;  mso-border-left-alt:solid white .5pt;mso-border-left-themecolor:background1;&#10;  mso-border-alt:solid white .5pt;mso-border-themecolor:background1;background:&#10;  #F7CAAC;mso-background-themecolor:accent2;mso-background-themetint:102;&#10;  padding:0cm 5.4pt 0cm 5.4pt;height:2.15pt">
+            <p class="MsoNormal" align="left" style="text-align:left;mso-yfti-cnfc:64"><b style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:&#10;  10.5pt">ENABLE 1 s <o:p></o:p></span></b></p>
+            </td>
+            <td width="260" valign="top" style="width:195.3pt;border-top:none;border-left:&#10;  none;border-bottom:solid white 1.0pt;mso-border-bottom-themecolor:background1;&#10;  border-right:solid white 1.0pt;mso-border-right-themecolor:background1;&#10;  mso-border-top-alt:solid white .5pt;mso-border-top-themecolor:background1;&#10;  mso-border-left-alt:solid white .5pt;mso-border-left-themecolor:background1;&#10;  mso-border-alt:solid white .5pt;mso-border-themecolor:background1;background:&#10;  #F7CAAC;mso-background-themecolor:accent2;mso-background-themetint:102;&#10;  padding:0cm 5.4pt 0cm 5.4pt;height:2.15pt">
+            <p class="MsoNormal" align="left" style="text-align:left;mso-yfti-cnfc:64"><b style="mso-bidi-font-weight:normal"><span style="mso-bidi-font-size:10.5pt">过滤灰色<span lang="EN-US"> ALPHA</span>通道失效<span lang="EN-US"><o:p></o:p></span></span></b></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:15;height:2.15pt">
+            <td width="142" valign="top" style="width:106.35pt;border-top:none;border-left:&#10;  none;border-bottom:solid white 1.0pt;mso-border-bottom-themecolor:background1;&#10;  border-right:solid white 1.0pt;mso-border-right-themecolor:background1;&#10;  mso-border-top-alt:solid white .5pt;mso-border-top-themecolor:background1;&#10;  mso-border-left-alt:solid white .5pt;mso-border-left-themecolor:background1;&#10;  mso-border-alt:solid white .5pt;mso-border-themecolor:background1;background:&#10;  #FBE4D5;mso-background-themecolor:accent2;mso-background-themetint:51;&#10;  padding:0cm 5.4pt 0cm 5.4pt;height:2.15pt">
+            <p class="MsoNormal" align="left" style="text-align:left"><b style="mso-bidi-font-weight:&#10;  normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt">ENABLE 1 sa <o:p></o:p></span></b></p>
+            </td>
+            <td width="260" valign="top" style="width:195.3pt;border-top:none;border-left:&#10;  none;border-bottom:solid white 1.0pt;mso-border-bottom-themecolor:background1;&#10;  border-right:solid white 1.0pt;mso-border-right-themecolor:background1;&#10;  mso-border-top-alt:solid white .5pt;mso-border-top-themecolor:background1;&#10;  mso-border-left-alt:solid white .5pt;mso-border-left-themecolor:background1;&#10;  mso-border-alt:solid white .5pt;mso-border-themecolor:background1;background:&#10;  #FBE4D5;mso-background-themecolor:accent2;mso-background-themetint:51;&#10;  padding:0cm 5.4pt 0cm 5.4pt;height:2.15pt">
+            <p class="MsoNormal" align="left" style="text-align:left"><b style="mso-bidi-font-weight:&#10;  normal"><span style="mso-bidi-font-size:10.5pt">过滤黑色<span lang="EN-US"> ALPHA</span>通道保持原图不变，不滤色<span lang="EN-US"><o:p></o:p></span></span></b></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:16;height:16.55pt">
+            <td width="142" valign="top" style="width:106.35pt;border-top:none;border-left:&#10;  none;border-bottom:solid white 1.0pt;mso-border-bottom-themecolor:background1;&#10;  border-right:solid white 1.0pt;mso-border-right-themecolor:background1;&#10;  mso-border-top-alt:solid white .5pt;mso-border-top-themecolor:background1;&#10;  mso-border-left-alt:solid white .5pt;mso-border-left-themecolor:background1;&#10;  mso-border-alt:solid white .5pt;mso-border-themecolor:background1;background:&#10;  #F7CAAC;mso-background-themecolor:accent2;mso-background-themetint:102;&#10;  padding:0cm 5.4pt 0cm 5.4pt;height:16.55pt">
+            <p class="MsoNormal" align="left" style="text-align:left;mso-yfti-cnfc:64"><b style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:&#10;  10.5pt">ENABLE sa 0 <o:p></o:p></span></b></p>
+            </td>
+            <td width="260" valign="top" style="width:195.3pt;border-top:none;border-left:&#10;  none;border-bottom:solid white 1.0pt;mso-border-bottom-themecolor:background1;&#10;  border-right:solid white 1.0pt;mso-border-right-themecolor:background1;&#10;  mso-border-top-alt:solid white .5pt;mso-border-top-themecolor:background1;&#10;  mso-border-left-alt:solid white .5pt;mso-border-left-themecolor:background1;&#10;  mso-border-alt:solid white .5pt;mso-border-themecolor:background1;background:&#10;  #F7CAAC;mso-background-themecolor:accent2;mso-background-themetint:102;&#10;  padding:0cm 5.4pt 0cm 5.4pt;height:16.55pt">
+            <p class="MsoNormal" align="left" style="text-align:left;mso-yfti-cnfc:64"><b style="mso-bidi-font-weight:normal"><span style="mso-bidi-font-size:10.5pt">贴图正常，<span lang="EN-US"> ALPHA</span>通道为黑色<span lang="EN-US"><o:p></o:p></span></span></b></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:17;mso-yfti-lastrow:yes">
+            <td width="75" valign="top" style="width:56.45pt;border:solid white 1.0pt;&#10;  mso-border-themecolor:background1;border-top:none;mso-border-top-alt:solid white .5pt;&#10;  mso-border-top-themecolor:background1;mso-border-alt:solid white .5pt;&#10;  mso-border-themecolor:background1;background:#ED7D31;mso-background-themecolor:&#10;  accent2;padding:0cm 5.4pt 0cm 5.4pt">
+            <p class="MsoNormal" align="left" style="text-align:left;mso-yfti-cnfc:4"><b><span lang="EN-US" style="mso-bidi-font-size:10.5pt;color:white;mso-themecolor:background1">Opaque</span></b><span lang="EN-US" style="mso-bidi-font-size:10.5pt;color:white;mso-themecolor:background1;&#10;  mso-bidi-font-weight:bold"><o:p></o:p></span></p>
+            </td>
+            <td width="76" valign="top" style="width:2.0cm;border-top:none;border-left:none;&#10;  border-bottom:solid white 1.0pt;mso-border-bottom-themecolor:background1;&#10;  border-right:solid white 1.0pt;mso-border-right-themecolor:background1;&#10;  mso-border-top-alt:solid white .5pt;mso-border-top-themecolor:background1;&#10;  mso-border-left-alt:solid white .5pt;mso-border-left-themecolor:background1;&#10;  mso-border-alt:solid white .5pt;mso-border-themecolor:background1;background:&#10;  #FBE4D5;mso-background-themecolor:accent2;mso-background-themetint:51;&#10;  padding:0cm 5.4pt 0cm 5.4pt">
+            <p class="MsoNormal" align="left" style="text-align:left"><b style="mso-bidi-font-weight:&#10;  normal"><span style="mso-bidi-font-size:10.5pt">透明度<span lang="EN-US"><o:p></o:p></span></span></b></p>
+            </td>
+            <td width="142" valign="top" style="width:106.35pt;border-top:none;border-left:&#10;  none;border-bottom:solid white 1.0pt;mso-border-bottom-themecolor:background1;&#10;  border-right:solid white 1.0pt;mso-border-right-themecolor:background1;&#10;  mso-border-top-alt:solid white .5pt;mso-border-top-themecolor:background1;&#10;  mso-border-left-alt:solid white .5pt;mso-border-left-themecolor:background1;&#10;  mso-border-alt:solid white .5pt;mso-border-themecolor:background1;background:&#10;  #FBE4D5;mso-background-themecolor:accent2;mso-background-themetint:51;&#10;  padding:0cm 5.4pt 0cm 5.4pt">
+            <p class="MsoNormal" align="left" style="text-align:left"><b style="mso-bidi-font-weight:&#10;  normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt">0-1<o:p></o:p></span></b></p>
+            </td>
+            <td width="260" valign="top" style="width:195.3pt;border-top:none;border-left:&#10;  none;border-bottom:solid white 1.0pt;mso-border-bottom-themecolor:background1;&#10;  border-right:solid white 1.0pt;mso-border-right-themecolor:background1;&#10;  mso-border-top-alt:solid white .5pt;mso-border-top-themecolor:background1;&#10;  mso-border-left-alt:solid white .5pt;mso-border-left-themecolor:background1;&#10;  mso-border-alt:solid white .5pt;mso-border-themecolor:background1;background:&#10;  #FBE4D5;mso-background-themecolor:accent2;mso-background-themetint:51;&#10;  padding:0cm 5.4pt 0cm 5.4pt">
+            <p class="MsoNormal" align="left" style="text-align:left"><b style="mso-bidi-font-weight:&#10;  normal"><span style="mso-bidi-font-size:10.5pt">材质的透明度<span lang="EN-US"><o:p></o:p></span></span></b></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<p class="MsoNormal" align="left" style="text-align:left">&nbsp;</p>
+</p>                <br/>
+				</div>
+            </div>
+            <!--详情结束-->
+            <!--评论开始-->
+            <div class="card mt20" id="pl">
+                <div class="pl-520am body" data-id="1567" data-classid="99"></div>
+                <script type="text/javascript" src="/e/extend/pl/api.js"></script>		
+            </div>
+            <!--评论结束-->
+        </div>
+        <!--左侧内容结束-->
+        <!--右侧内容开始-->
+        <div class="w-left">
+            <!--热门推荐开始-->
+            <div class="card">
+                <div class="header line">
+                    <h3>流星笔记</h3>
+                </div>
+                <div class="body">
+                  <div class="div1">
+                    <div class="div2">
+                      <div class="ico1"></div>
+                      <div class="menu">基本资料</div>
+                    </div>
+                    <div class="div3">
+                      <ul>
+                        <li><a href="/LiuXingBiJi/1568.html" title="图片ALPHA透明通道制作">图片ALPHA透明通道制作</a></li>
+                        <li><a href="/LiuXingBiJi/1560.html" title="攻击力分析表">攻击力分析表</a></li>
+                        <li><a href="/LiuXingBiJi/1559.html" title="武器招式表">武器招式表</a></li>
+                        <li><a href="/LiuXingBiJi/1552.html" title="武器编号表">武器编号表</a></li>
+                        <li><a href="/LiuXingBiJi/1551.html" title="隐藏指令">隐藏指令</a></li>
+                        <li><a href="/LiuXingBiJi/1550.html" title="通用指令">通用指令</a></li>
+                      </ul>
+                    </div>
+                    <div class="div2">
+                      <div class="ico2"></div>
+                      <div class="menu">软件工具</div>
+                    </div>
+                    <div class="div3">
+                      <ul>
+                        <li><a href="/LiuXingBiJi/1565.html" title="UltraEdit-32">UltraEdit-32</a></li>
+                      </ul>
+                    </div>
+                    <div class="div2">
+                      <div class="ico3"></div>
+                      <div class="menu">地图制作</div>
+                    </div>
+                    <div class="div3">
+                      <ul>
+                        <li><a href="/LiuXingBiJi/2192.html" title="地图制作常见问题和技巧_1.2.4">地图制作常见问题和技巧_1.2.4</a></li>
+                        <li><a href="/LiuXingBiJi/1776.html" title="地图PST基础 语句 变量 函数">地图PST基础 语句 变量 函数</a></li>
+                        <li><a href="/LiuXingBiJi/1569.html" title="地图DES结构">地图DES结构</a></li>
+                        <li><a class="active" href="/LiuXingBiJi/1567.html" title="地图GMC Shaders">地图GMC Shaders</a></li>
+                        <li><a href="/LiuXingBiJi/1566.html" title="地图GMC结构">地图GMC结构</a></li>
+                        <li><a href="/LiuXingBiJi/1564.html" title="RES地图增加教程">RES地图增加教程</a></li>
+                        <li><a href="/LiuXingBiJi/1561.html" title="Custom属性">Custom属性</a></li>
+                        <li><a href="/LiuXingBiJi/1558.html" title="场景资料表">场景资料表</a></li>
+                        <li><a href="/LiuXingBiJi/1553.html" title="地图制作教程图文版">地图制作教程图文版</a></li>
+                      </ul>
+                    </div>
+                    <div class="div2">
+                      <div class="ico4"></div>
+                      <div class="menu">人物制作</div>
+                    </div>
+                    <div class="div3">
+                      <ul>
+                        <li><a href="/LiuXingBiJi/1554.html" title="人物资料表">人物资料表</a></li>
+                      </ul>
+                    </div>
+                    <div class="div2">
+                      <div class="ico5"></div>
+                      <div class="menu">武器制作</div>
+                    </div>
+                    <div class="div3">
+                      <ul>
+                        <li><a href="/LiuXingBiJi/1948.html" title="流星蝴蝶剑武器制作教程">流星蝴蝶剑武器制作教程</a></li>
+                        <li><a href="/LiuXingBiJi/1557.html" title="武器资料表">武器资料表</a></li>
+                      </ul>
+                    </div>
+                    <div class="div2">
+                      <div class="ico6"></div>
+                      <div class="menu">单机任务</div>
+                    </div>
+                    <div class="div3">
+                      <ul>
+                        <li><a href="/LiuXingBiJi/1964.html" title="单机任务脚本结构基础">单机任务脚本结构基础</a></li>
+                        <li><a href="/LiuXingBiJi/1777.html" title="读取写入文件函数">读取写入文件函数</a></li>
+                        <li><a href="/LiuXingBiJi/1669.html" title="地图AI路径制作">地图AI路径制作</a></li>
+                        <li><a href="/LiuXingBiJi/1563.html" title="AI函数">AI函数</a></li>
+                        <li><a href="/LiuXingBiJi/1562.html" title="AI（NPC）基础说明">AI（NPC）基础说明</a></li>
+                      </ul>
+                    </div>
+                    <div class="div2">
+                      <div class="ico7"></div>
+                      <div class="menu">道具制作</div>
+                    </div>
+                    <div class="div3">
+                      <ul>
+                        <li><a href="/LiuXingBiJi/1555.html" title="道具资料表">道具资料表</a></li>
+                      </ul>
+                    </div>
+                    <div class="div2">
+                      <div class="ico8"></div>
+                      <div class="menu">动作特效</div>
+                    </div>
+                    <div class="div3">
+                      <ul>
+                        <li><a href="/LiuXingBiJi/2308.html" title="特效材质混合值预览">特效材质混合值预览</a></li>
+                        <li><a href="/LiuXingBiJi/2306.html" title="特效编辑器使用帮助">特效编辑器使用帮助</a></li>
+                        <li><a href="/LiuXingBiJi/2207.html" title="​流星pose文件说明">​流星pose文件说明</a></li>
+                        <li><a href="/LiuXingBiJi/2206.html" title="流星出招与连招文件说明">流星出招与连招文件说明</a></li>
+                        <li><a href="/LiuXingBiJi/1758.html" title="pose 动作资料表">pose 动作资料表</a></li>
+                        <li><a href="/LiuXingBiJi/1556.html" title="特效Effect 资料表">特效Effect 资料表</a></li>
+                      </ul>
+                    </div>
+                    <div class="div2">
+                      <div class="ico9"></div>
+                      <div class="menu">游戏帮助</div>
+                    </div>
+                    <div class="div3">
+                      <ul>
+                        <li><a href="/LiuXingBiJi/1992.html" title="win10系统按键连击解决方法！">win10系统按键连击解决方法！</a></li>
+                        <li><a href="/LiuXingBiJi/1760.html" title="人物安装说明">人物安装说明</a></li>
+                        <li><a href="/LiuXingBiJi/1759.html" title="武器安装说明">武器安装说明</a></li>
+                        <li><a href="/LiuXingBiJi/1683.html" title="互动游戏对战平台注册设置联机演示">互动游戏对战平台注册设置联机演示</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <!--热门推荐结束-->
+        </div>
+        <!--右侧内容结束-->
+	</div>
+    <!--友情链接开始-->
+    <div class="card mt20">
+        <div class="body">
+            <div class="links">
+                <ul>
+                    <li><a href="http://tieba.baidu.com/f?kw=%E6%B5%81%E6%98%9F%E8%9D%B4%E8%9D%B6%E5%89%91&amp;fr=index" target="_blank" title="流星蝴蝶剑吧"><img src="/images/min/bdlx.gif" name="流星蝴蝶剑吧" /></a></li>
+                    <li><a href="http://www.yfzz.net/" target="_blank" title="隐龙轩"><img src="/images/min/yfzz.gif" name="隐龙轩" /></a></li>
+                    <li><a href="http://www.yimenonline.com/forum.php" target="_blank" title="易武会友"><img src="/images/min/yimenonline.png" name="易武会友" /></a></li>
+                    <li><a href="http://mp.weixin.qq.com/s?__biz=MzA5NTcxNTA4Ng==&amp;mid=2651090862&amp;idx=2&amp;sn=69742dbb004af0a8ff2b434089005e83&amp;chksm=8b4be5cfbc3c6cd92ae71c88667b7f483b0b15e2a261e2dff54052bc2d6c63a3c7b3e3090409#rd" target="_blank" title="流星公众号"><img src="/images/min/lxhdj2015.gif" name="流星公众号" /></a></li>
+                    <li><a href="https://www.danjipai.com/" target="_blank" title="单机派"><img src="/d/file/p/2025-06-30/54fa2942a4597f09716c14e125df4936.png" name="单机派" /></a></li>
+                </ul>
+			</div>
+		</div>
+    </div>
+    <!--友情链接结束-->
+</section>
+<!--section结束-->
+<!--footer开始-->
+<footer>
+    <div class="copyright w-all tac">
+		<a class="list-item" href="javascript:zh_tran('s');" id="zh_click_s">简体中文</a>
+		<a class="list-item" href="javascript:zh_tran('t');" id="zh_click_t">繁體中文</a>
+        <br />
+        <a class="list-item" href="/s/new/" target="_blank" title="最新资源">最新资源</a>
+        <a class="list-item" href="/s/hot/" target="_blank" title="热门资源">热门资源</a>
+        <a class="list-item" href="/s/good/" target="_blank" title="推荐资源">推荐资源</a>
+        <a class="list-item" href="/s/help/" target="_blank" title="游戏帮助">游戏帮助</a>
+        <a class="list-item" href="/s/sitemap/" target="_blank" title="网站地图">网站地图</a>
+        <br />
+        <p>特别鸣谢：@&nbsp;<font style="color:#990000">孑</font>（&nbsp;页面样式、LOGO、Banner设计&nbsp;），@&nbsp;<font style="color:#990000">右手残疾</font>（&nbsp;插画&nbsp;）！</p>
+        <p>本站所有内容皆由<a href="" >流星资源网-流星蝴蝶剑.net 官网资源下载站</a>搜集自网络，版权归原作者和出版社所有！</p>
+        <p>发布资源,请<a target="_blank" rel="nofollow" href="https://www.lxres.com/login.html" >登陆</a>或者联系：<a href="/cdn-cgi/l/email-protection#dbb7a39bb7a3a9bea8f5b8b4b6"><span class="__cf_email__" data-cfemail="81edf9c1edf9f3e4f2afe2eeec">[email&#160;protected]</span></a></p>
+        <p>Copyright &#169; 2026</p>
+    </div>
+</footer>
+<div class="gotop"><i class="pticon pticon-chevron-up"></i></div>
+<div style="display:none">
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src=/e/public/ViewClick/?classid=99&id=1567&addclick=1></script>
+</div>
+<script type="text/javascript" src="/style/js/jquery.min.js"></script>
+<script type="text/javascript" src="/style/js/common.js"></script>
+<script type="text/javascript" src="/style/js/chinese.js"></script>
+<script type="text/javascript" src="/style/js/biji.js"></script>
+<!--pay开始-->
+<link type="text/css" href="/style/pay/css/pay.css" rel="stylesheet"><!--pay-->
+<div class="hide_box"></div>
+<div class="shang_box">
+	<a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()" title="关闭"><img src="/style/pay/img/close.jpg" alt="取消" /></a>
+	<div class="shang_tit">
+		<p>感谢您对我们的支持!</p>
+	</div>
+	<div class="shang_payimg">
+		<img src="/style/pay/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+	</div>
+		<div class="pay_explain">扫码赞助，所有赞助资金将用于网站建设！</div>
+	<div class="shang_payselect">
+		<div class="pay_item checked" data-id="alipay">
+			<span class="radiobox"></span>
+			<span class="pay_logo"><img src="/style/pay/img/alipay.jpg" alt="支付宝" /></span>
+		</div>
+		<div class="pay_item" data-id="weipay">
+			<span class="radiobox"></span>
+			<span class="pay_logo"><img src="/style/pay/img/wechat.jpg" alt="微信" /></span>
+		</div>
+	</div>
+	<div class="shang_info">
+		<p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码赞助哦！</p>
+		<p><a target=_blank href="/paylist.html" title="查看赞助人列表"><font color="0000ff">查看赞助人列表</font></a></p>
+	</div>
+</div>
+<script type="text/javascript" src="/style/pay/js/pay.js"></script>
+<!--pay结束-->
+<!--footer结束-->
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a51546094b77cc9f',t:'MTc5MzE0MTU3Mg=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

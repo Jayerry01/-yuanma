@@ -1,0 +1,239 @@
+Addr	SemanticName	ConfirmedFact	Inference	OpenUnknown
+0x00560120	Subsystem_I_Small_Helper	callees=[2] ins=22 被调 unique=0:  pseudo=void FUN_00560120(undefined4 *param_1,un	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00560170	Subsystem_I_Small_Helper	callees=[2] ins=24 被调 unique=1: 00402BF0=FUN_00402bf0 pseudo={ | iVar1 = 0; | param_1[1] = 0; | param	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x005603B0	Subsystem_I_Small_Helper	callees=[2] ins=17 被调 unique=2: 00560610=Scene_Object pseudo={ | if (*param_1 == 1) { | FUN_00560700(	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x005604A0	Subsystem_I_Small_Helper	callees=[2] ins=34 被调 unique=3: 0056AFC0=Scene_Partic pseudo=void __thiscall FUN_005604a0(int param_1	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00560940	Inline_Getter_Setter	单行内联读写字段: { | if (*(int *)(param_1 + 0x2c) == 0) { | re	类成员变量单行内联访问器	33-100B 机械内联逻辑，行为已完全自闭合
+0x00561580	Inline_Getter_Setter	单行内联读写字段: { | iVar1 = FUN_005716d0(param_2); | if (iVar	类成员变量单行内联访问器	33-100B 机械内联逻辑，行为已完全自闭合
+0x00561ED0	Inline_Getter_Setter	单行内联读写字段: void FUN_00561ed0(undefined4 param_1) | { | F	类成员变量单行内联访问器	33-100B 机械内联逻辑，行为已完全自闭合
+0x00561F00	Inline_Getter_Setter	单行内联读写字段: { | if (*(char *)(param_1 + 0x250) == '\0') {	类成员变量单行内联访问器	33-100B 机械内联逻辑，行为已完全自闭合
+0x005629D0	Subsystem_I_Small_Helper	callees=[2] ins=34 被调 unique=2: 004748B0 00569580=Sce pseudo=void __fastcall FUN_005629d0(int param_1	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00563780	Subsystem_I_Small_Helper	callees=[2] ins=28 被调 unique=2: 005642C0=Scene_Partic pseudo=void __fastcall FUN_00563780(int param_1	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x005643F0	Inline_Getter_Setter	单行内联读写字段: { | iVar1 = FUN_00564f90(param_1); | if (iVar	类成员变量单行内联访问器	33-100B 机械内联逻辑，行为已完全自闭合
+0x00564420	Inline_Getter_Setter	单行内联读写字段: { | iVar1 = FUN_00564f90(param_1); | if (iVar	类成员变量单行内联访问器	33-100B 机械内联逻辑，行为已完全自闭合
+0x005644A0	Subsystem_I_Small_Helper	callees=[2] ins=29 被调 unique=2: 00562DD0=FUN_00562dd0 pseudo=void __thiscall FUN_005644a0(int param_1	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00564F90	Inline_Getter_Setter	单行内联读写字段: { | if ((-1 < param_2) && (param_2 < *(int *)	类成员变量单行内联访问器	33-100B 机械内联逻辑，行为已完全自闭合
+0x00565030	Inline_Getter_Setter	单行内联读写字段: { | puVar2 = (undefined4 *)FUN_00564f90(param	类成员变量单行内联访问器	33-100B 机械内联逻辑，行为已完全自闭合
+0x00565EB0	Subsystem_I_Small_Helper	callees=[2] ins=15 被调 unique=0:  pseudo=void FUN_00565eb0(undefined4 *param_1,in	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x005661D0	Subsystem_I_Small_Helper	callees=[2] ins=15 被调 unique=2: 0056DC50=FUN_0056dc50 pseudo=void __fastcall FUN_005661d0(int param_1	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00566380	Subsystem_I_Small_Helper	callees=[2] ins=27 被调 unique=3: 0056F2E0 0055DF30 005 pseudo=void __thiscall FUN_00566380(int param_1	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00566750	STL_Deque_Free_Node	调用 0x402e90 (deque_free_node), 回收双端队列/节点内存	STL 双端队列/链表节点销毁与内存归还	33-100B 机械内联逻辑，行为已完全自闭合
+0x00566E70	STL_Deque_Free_Node	调用 0x402e90 (deque_free_node), 回收双端队列/节点内存	STL 双端队列/链表节点销毁与内存归还	33-100B 机械内联逻辑，行为已完全自闭合
+0x00566ED0	STL_Deque_Free_Node	调用 0x402e90 (deque_free_node), 回收双端队列/节点内存	STL 双端队列/链表节点销毁与内存归还	33-100B 机械内联逻辑，行为已完全自闭合
+0x005671D0	Subsystem_I_Small_Helper	callees=[2] ins=18 被调 unique=0:  pseudo=void __fastcall FUN_005671d0(int param_1	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00567870	Subsystem_I_Small_Helper	callees=[2] ins=19 被调 unique=2: 00567500=FUN_00567500 pseudo={ | iVar1 = *param_1; | if (iVar1 + -1 <	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00567960	Subsystem_I_Small_Helper	callees=[2] ins=20 被调 unique=2: 005679F0 0047B570=FUN pseudo=void __fastcall FUN_00567960(undefined4 	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x005679F0	Subsystem_I_Small_Helper	callees=[2] ins=25 被调 unique=2: 00507850=FUN_00507850 pseudo=void __fastcall FUN_005679f0(int param_1	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00567C80	Subsystem_I_Small_Helper	callees=[2] ins=20 被调 unique=1: 0050A118=FUN_0050a118 pseudo=void FUN_00567c80(int param_1,int param_	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x0056A850	Subsystem_I_Small_Helper	callees=[2] ins=22 被调 unique=0:  pseudo=void __fastcall FUN_0056a850(int param_1	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x0056A8A0	Inline_Getter_Setter	单行内联读写字段: { | if (*(char *)(param_1 + 0x131) == '\0') {	类成员变量单行内联访问器	33-100B 机械内联逻辑，行为已完全自闭合
+0x0056ADF0	Subsystem_I_Small_Helper	callees=[2] ins=22 被调 unique=2: 00474470=FUN_00474470 pseudo=void __thiscall FUN_0056adf0(int param_1	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x0056AE40	Inline_Getter_Setter	单行内联读写字段: { | if ((-1 < param_2) && (param_2 <= *(int *	类成员变量单行内联访问器	33-100B 机械内联逻辑，行为已完全自闭合
+0x0056AE80	Subsystem_I_Small_Helper	callees=[2] ins=32 被调 unique=0:  pseudo={ | if (-1 < param_2) { | iVar1 = *(int 	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x0056AEE0	Inline_Getter_Setter	单行内联读写字段: { | iVar1 = *(int *)(param_1 + 0x120); | if (	类成员变量单行内联访问器	33-100B 机械内联逻辑，行为已完全自闭合
+0x0056AF20	Inline_Getter_Setter	单行内联读写字段: { | iVar1 = *(int *)(param_1 + 0x120); | if (	类成员变量单行内联访问器	33-100B 机械内联逻辑，行为已完全自闭合
+0x0056AF50	Subsystem_I_Small_Helper	callees=[2] ins=24 被调 unique=2: 0056AEE0 0056AF20 pseudo={ | if (*(int *)(param_1 + 0x120) != 0) 	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x0056AF90	Inline_Getter_Setter	单行内联读写字段: { | iVar1 = *(int *)(param_1 + 0x120); | if (	类成员变量单行内联访问器	33-100B 机械内联逻辑，行为已完全自闭合
+0x0056B310	Inline_Getter_Setter	单行内联读写字段: { | iVar1 = *(int *)(param_1 + 0x120); | if (	类成员变量单行内联访问器	33-100B 机械内联逻辑，行为已完全自闭合
+0x0056BB30	Subsystem_I_Small_Helper	callees=[2] ins=22 被调 unique=0:  pseudo=void FUN_0056bb30(undefined4 *param_1,un	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x0056D200	Inline_Getter_Setter	单行内联读写字段: { | puVar1 = (undefined4 *)**(undefined4 **)(	类成员变量单行内联访问器	33-100B 机械内联逻辑，行为已完全自闭合
+0x0056D230	Subsystem_I_Small_Helper	callees=[2] ins=30 被调 unique=3: 0056D200 004DB820 005 pseudo=void FUN_0056d230(undefined4 param_1) | 	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x0056D290	STL_Deque_Free_Node	调用 0x402e90 (deque_free_node), 回收双端队列/节点内存	STL 双端队列/链表节点销毁与内存归还	33-100B 机械内联逻辑，行为已完全自闭合
+0x0056D7A0	Inline_Getter_Setter	单行内联读写字段: void __thiscall FUN_0056d7a0(int param_1,unde	类成员变量单行内联访问器	33-100B 机械内联逻辑，行为已完全自闭合
+0x0056D7D0	Inline_Getter_Setter	单行内联读写字段: void __thiscall FUN_0056d7d0(int param_1,unde	类成员变量单行内联访问器	33-100B 机械内联逻辑，行为已完全自闭合
+0x0056D800	Subsystem_I_Small_Helper	callees=[2] ins=14 被调 unique=0:  pseudo={ | uVar1 = 0; | if (param_2 == 0) { | u	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x0056D9B0	Subsystem_I_Small_Helper	callees=[2] ins=36 被调 unique=2: 00559290 005592C0=FUN pseudo=void __thiscall FUN_0056d9b0(int param_1	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x0056DED0	Subsystem_I_Small_Helper	callees=[2] ins=18 被调 unique=0:  pseudo=void __fastcall FUN_0056ded0(int param_1	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x0056DF00	Subsystem_I_Small_Helper	callees=[2] ins=18 被调 unique=0:  pseudo=void __fastcall FUN_0056df00(int param_1	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x0056DFF0	Subsystem_I_Small_Helper	callees=[2] ins=31 被调 unique=2: 0056DF30=Scene_Partic pseudo=void __thiscall FUN_0056dff0(int param_1	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x0056EE30	Subsystem_I_Small_Helper	callees=[2] ins=24 被调 unique=3: 0056DF00 0056E870=FUN pseudo=void __fastcall FUN_0056ee30(int param_1	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x0056F2E0	Subsystem_I_Small_Helper	callees=[2] ins=9 被调 unique=1: 00583C20=Scene_Particl pseudo=void __thiscall FUN_0056f2e0(int param_1	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00570F80	Subsystem_I_Small_Helper	callees=[2] ins=28 被调 unique=1: 0050AC20 pseudo=void __fastcall FUN_00570f80(int param_1	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00570FE0	Subsystem_I_Small_Helper	callees=[2] ins=35 被调 unique=1: 005716F0=FUN_005716f0 pseudo=void __thiscall FUN_00570fe0(int param_1	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00571500	Subsystem_I_Small_Helper	callees=[2] ins=35 被调 unique=1: 005719B0=FUN_005719b0 pseudo=void __thiscall FUN_00571500(int *param_	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00571600	Subsystem_I_Small_Helper	callees=[2] ins=35 被调 unique=1: 005716F0=FUN_005716f0 pseudo=void __thiscall FUN_00571600(int param_1	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00571CB0	Subsystem_I_Small_Helper	callees=[2] ins=18 被调 unique=1: 00507850=FUN_00507850 pseudo=void __fastcall FUN_00571cb0(int param_1	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00571CF0	Subsystem_I_Small_Helper	callees=[2] ins=26 被调 unique=0:  pseudo=void __fastcall FUN_00571cf0(int param_1	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00572DB0	Inline_Getter_Setter	单行内联读写字段: { | if ((-1 < param_2) && (param_2 < *(int *)	类成员变量单行内联访问器	33-100B 机械内联逻辑，行为已完全自闭合
+0x00574080	Subsystem_I_Small_Helper	callees=[2] ins=31 被调 unique=2: 00475400=Geom_Model_S pseudo=void __fastcall FUN_00574080(int param_1	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00574810	Inline_Getter_Setter	单行内联读写字段: { | piVar1 = (int *)FUN_00574840(param_3); | 	类成员变量单行内联访问器	33-100B 机械内联逻辑，行为已完全自闭合
+0x00574C30	Subsystem_I_Small_Helper	callees=[2] ins=25 被调 unique=1: 00574C90=FUN_00574c90 pseudo={ | void *local_c; | puStack_8 = &LAB_00	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00574E20	Subsystem_I_Small_Helper	callees=[2] ins=9 被调 unique=0:  pseudo=void __fastcall FUN_00574e20(undefined4 	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x005753B0	Subsystem_I_Small_Helper	callees=[2] ins=35 被调 unique=1: 00575AD0=FUN_00575ad0 pseudo=void __thiscall FUN_005753b0(int param_1	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00575410	Subsystem_I_Small_Helper	callees=[2] ins=35 被调 unique=1: 00575AD0=FUN_00575ad0 pseudo=void __thiscall FUN_00575410(int param_1	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00575470	Subsystem_I_Small_Helper	callees=[2] ins=35 被调 unique=1: 00576170=FUN_00576170 pseudo=void __thiscall FUN_00575470(int param_1	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00575A20	STL_Deque_Free_Node	调用 0x402e90 (deque_free_node), 回收双端队列/节点内存	STL 双端队列/链表节点销毁与内存归还	33-100B 机械内联逻辑，行为已完全自闭合
+0x00576127	CPP_Exception_Unwind_Thunk	调用 0x509166 (__CxxThrowException@8), C++ 异常展开或越界捕获	标准 STL 容器越界或异常抛出内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00576490	Subsystem_I_Small_Helper	callees=[2] ins=33 被调 unique=0:  pseudo={ | iVar3 = (param_2 - param_1) / 0xc; |	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x005771E0	Subsystem_I_Small_Helper	callees=[2] ins=27 被调 unique=0:  pseudo=void FUN_005771e0(undefined4 *param_1,in	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x0057765E	CPP_Exception_Unwind_Thunk	调用 0x509166 (__CxxThrowException@8), C++ 异常展开或越界捕获	标准 STL 容器越界或异常抛出内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x005777E0	CPP_Exception_Unwind_Thunk	调用 0x509166 (__CxxThrowException@8), C++ 异常展开或越界捕获	标准 STL 容器越界或异常抛出内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00577FA0	Subsystem_I_Small_Helper	callees=[2] ins=26 被调 unique=1: 00577C40=FUN_00577c40 pseudo=void __fastcall FUN_00577fa0(undefined4 	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00578000	Scene_Object_State_Setter	调用 0x5778a0 状态写入器，属于 n=19 画像组	场景物件属性状态写入与标志位同步	33-100B 机械内联逻辑，行为已完全自闭合
+0x00578050	Subsystem_I_Small_Helper	callees=[2] ins=19 被调 unique=0:  pseudo={ | if (*(int **)(param_1 + 0x1c) != (in	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00578090	Scene_Object_State_Setter	调用 0x5778a0 状态写入器，属于 n=19 画像组	场景物件属性状态写入与标志位同步	33-100B 机械内联逻辑，行为已完全自闭合
+0x005781C0	Subsystem_I_Small_Helper	callees=[2] ins=12 被调 unique=1: 0050AC20 pseudo=void __fastcall FUN_005781c0(int param_1	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00578920	Subsystem_I_Small_Helper	callees=[2] ins=47 被调 unique=0:  pseudo={ | bool bVar7; | iVar4 = 0; | pbVar2 = 	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x005793F0	Subsystem_I_Small_Helper	callees=[2] ins=22 被调 unique=0:  pseudo=void FUN_005793f0(undefined4 *param_1,un	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x005794E0	Subsystem_I_Small_Helper	callees=[2] ins=19 被调 unique=2: 00579A30 0047C070 pseudo=void FUN_005794e0(void) | { | void *loca	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00579530	Inline_Getter_Setter	单行内联读写字段: void __thiscall FUN_00579530(int param_1,uint	类成员变量单行内联访问器	33-100B 机械内联逻辑，行为已完全自闭合
+0x00579580	Subsystem_I_Small_Helper	callees=[2] ins=13 被调 unique=1: 005795D0=FUN_005795d0 pseudo=void __thiscall FUN_00579580(undefined4 	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00579A30	Subsystem_I_Small_Helper	callees=[2] ins=27 被调 unique=2: 00479EE0=Geom_Model_S pseudo=void __fastcall FUN_00579a30(int param_1	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x0057C383	CPP_Exception_Unwind_Thunk	调用 0x509166 (__CxxThrowException@8), C++ 异常展开或越界捕获	标准 STL 容器越界或异常抛出内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x0057CAA0	Subsystem_I_Small_Helper	callees=[2] ins=26 被调 unique=1: 00402BF0=FUN_00402bf0 pseudo={ | iVar1 = 0; | param_1[1] = 0; | param	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x0057CAE0	Subsystem_I_Small_Helper	callees=[2] ins=24 被调 unique=1: 00402BF0=FUN_00402bf0 pseudo={ | iVar1 = 0; | param_1[1] = 0; | param	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x0057CB20	STL_Deque_Free_Node	调用 0x402e90 (deque_free_node), 回收双端队列/节点内存	STL 双端队列/链表节点销毁与内存归还	33-100B 机械内联逻辑，行为已完全自闭合
+0x0057D101	CPP_Exception_Unwind_Thunk	调用 0x509166 (__CxxThrowException@8), C++ 异常展开或越界捕获	标准 STL 容器越界或异常抛出内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x0057D880	Subsystem_I_Small_Helper	callees=[2] ins=19 被调 unique=2: 0057D910 0047C070 pseudo=void FUN_0057d880(void) | { | void *loca	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x0057D8D0	Inline_Getter_Setter	单行内联读写字段: void __thiscall FUN_0057d8d0(int param_1,unde	类成员变量单行内联访问器	33-100B 机械内联逻辑，行为已完全自闭合
+0x0057DB40	Inline_Getter_Setter	单行内联读写字段: void __thiscall FUN_0057db40(int param_1,floa	类成员变量单行内联访问器	33-100B 机械内联逻辑，行为已完全自闭合
+0x0057DFD0	Subsystem_I_Small_Helper	callees=[2] ins=45 被调 unique=0:  pseudo={ | iVar4 = 0; | param_1[2] = 0; | if (0	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x0057E060	Subsystem_I_Small_Helper	callees=[2] ins=26 被调 unique=1: 0050A118=FUN_0050a118 pseudo={ | FUN_0050a118(param_1,4,1,param_2); |	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x0057E0A0	Subsystem_I_Small_Helper	callees=[2] ins=20 被调 unique=1: 0057E0E0=FUN_0057e0e0 pseudo=void __thiscall FUN_0057e0a0(int param_1	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x0057E4F0	Inline_Getter_Setter	单行内联读写字段: void __thiscall FUN_0057e4f0(int param_1,unde	类成员变量单行内联访问器	33-100B 机械内联逻辑，行为已完全自闭合
+0x0057E520	Inline_Getter_Setter	单行内联读写字段: void __thiscall FUN_0057e520(int param_1,unde	类成员变量单行内联访问器	33-100B 机械内联逻辑，行为已完全自闭合
+0x0057E550	Inline_Getter_Setter	单行内联读写字段: { | if (((-1 < param_2) && (param_2 < *(int *	类成员变量单行内联访问器	33-100B 机械内联逻辑，行为已完全自闭合
+0x0057ED30	Subsystem_I_Small_Helper	callees=[2] ins=19 被调 unique=0:  pseudo=void __thiscall FUN_0057ed30(int param_1	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x005806A0	Subsystem_I_Small_Helper	callees=[2] ins=15 被调 unique=2: 00580710 00580770 pseudo=void FUN_005806a0(undefined4 param_1) | 	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x005806E0	Subsystem_I_Small_Helper	callees=[2] ins=11 被调 unique=0:  pseudo=void FUN_005806e0(void) | { | DAT_0072ba	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00580710	Subsystem_I_Small_Helper	callees=[2] ins=31 被调 unique=3: 00580800 x2 0057A750= pseudo=void * FUN_00580710(undefined4 param_1,i	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00580770	Subsystem_I_Small_Helper	callees=[2] ins=26 被调 unique=3: 005807C0 0059A17A 005 pseudo=void FUN_00580770(int *param_1,int param	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x005807C0	Inline_Getter_Setter	单行内联读写字段: void FUN_005807c0(int param_1) | { | if (para	类成员变量单行内联访问器	33-100B 机械内联逻辑，行为已完全自闭合
+0x00580920	Subsystem_I_Small_Helper	callees=[2] ins=10 被调 unique=1: 0057FF00=FUN_0057ff00 pseudo=void FUN_00580920(undefined4 param_1,und	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00581500	Inline_Getter_Setter	单行内联读写字段: { | puVar1 = (undefined4 *)**(undefined4 **)(	类成员变量单行内联访问器	33-100B 机械内联逻辑，行为已完全自闭合
+0x00581530	Inline_Getter_Setter	单行内联读写字段: { | puVar1 = (undefined4 *)**(undefined4 **)(	类成员变量单行内联访问器	33-100B 机械内联逻辑，行为已完全自闭合
+0x00581A70	Subsystem_I_Small_Helper	callees=[2] ins=15 被调 unique=0:  pseudo=void __thiscall FUN_00581a70(int param_1	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00581D00	Inline_Getter_Setter	单行内联读写字段: void __thiscall FUN_00581d00(int *param_1,und	类成员变量单行内联访问器	33-100B 机械内联逻辑，行为已完全自闭合
+0x005824F0	Subsystem_I_Small_Helper	callees=[2] ins=17 被调 unique=0:  pseudo=void __fastcall FUN_005824f0(int *param_	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00583130	Subsystem_I_Small_Helper	callees=[2] ins=20 被调 unique=0:  pseudo=void __thiscall FUN_00583130(int *param_	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00583160	Subsystem_I_Small_Helper	callees=[2] ins=32 被调 unique=2: 004DB820 00583570=FUN pseudo=void FUN_00583160(int *param_1,int param	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x005831C0	STL_Deque_Free_Node	调用 0x402e90 (deque_free_node), 回收双端队列/节点内存	STL 双端队列/链表节点销毁与内存归还	33-100B 机械内联逻辑，行为已完全自闭合
+0x00583280	Inline_Getter_Setter	单行内联读写字段: { | while( true ) { | if (param_2 == 0) { | r	类成员变量单行内联访问器	33-100B 机械内联逻辑，行为已完全自闭合
+0x005832B0	Inline_Getter_Setter	单行内联读写字段: { | while( true ) { | if (param_2 == 0) { | r	类成员变量单行内联访问器	33-100B 机械内联逻辑，行为已完全自闭合
+0x00583350	Inline_Getter_Setter	单行内联读写字段: { | if (*(int *)(param_2 + 4) != *(int *)(par	类成员变量单行内联访问器	33-100B 机械内联逻辑，行为已完全自闭合
+0x00584A60	Subsystem_I_Small_Helper	callees=[2] ins=24 被调 unique=2: 005598C0 0056B1D0 pseudo={ | if ((-1 < param_2) && (param_2 <= *(	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00584B50	Inline_Getter_Setter	单行内联读写字段: { | if ((-1 < param_2) && (param_2 <= *(int *	类成员变量单行内联访问器	33-100B 机械内联逻辑，行为已完全自闭合
+0x00584BA0	Subsystem_I_Small_Helper	callees=[2] ins=34 被调 unique=2: 005598C0 0056B1D0 pseudo={ | if ((-1 < param_2) && (param_2 <= *(	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00584C00	Inline_Getter_Setter	单行内联读写字段: { | if (*(int *)(param_1 + 0x274) != 0) { | i	类成员变量单行内联访问器	33-100B 机械内联逻辑，行为已完全自闭合
+0x005858E0	Subsystem_I_Small_Helper	callees=[2] ins=22 被调 unique=0:  pseudo=void __fastcall FUN_005858e0(undefined4 	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00585D00	Particle_Spline_Step_Op	调用 0x5811c0 / 0x5813c0 样条积分算子	特效粒子样条曲线微步进运算	33-100B 机械内联逻辑，行为已完全自闭合
+0x00585E00	Subsystem_I_Small_Helper	callees=[2] ins=12 被调 unique=2: 005820A0=Scene_Partic pseudo=void __fastcall FUN_00585e00(int param_1	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00587790	Inline_Getter_Setter	单行内联读写字段: { | FUN_00583350(param_1); | return 1; | }	类成员变量单行内联访问器	33-100B 机械内联逻辑，行为已完全自闭合
+0x00587B20	Particle_Spline_Step_Op	调用 0x5811c0 / 0x5813c0 样条积分算子	特效粒子样条曲线微步进运算	33-100B 机械内联逻辑，行为已完全自闭合
+0x00587F10	Inline_Getter_Setter	单行内联读写字段: { | if (-1 < param_2) { | iVar1 = FUN_0056b1d	类成员变量单行内联访问器	33-100B 机械内联逻辑，行为已完全自闭合
+0x00588010	Subsystem_I_Small_Helper	callees=[2] ins=14 被调 unique=1: 005824F0 pseudo=void __fastcall FUN_00588010(int param_1	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00588AF0	Inline_Getter_Setter	单行内联读写字段: void __fastcall FUN_00588af0(int param_1) | {	类成员变量单行内联访问器	33-100B 机械内联逻辑，行为已完全自闭合
+0x00588DB0	Subsystem_I_Small_Helper	callees=[2] ins=31 被调 unique=2: 0056E0D0=FUN_0056e0d0 pseudo={ | uVar1 = FUN_0056e0d0(param_1 + 0x274	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x0058A2C0	Particle_Spline_Step_Op	调用 0x5811c0 / 0x5813c0 样条积分算子	特效粒子样条曲线微步进运算	33-100B 机械内联逻辑，行为已完全自闭合
+0x0058A310	Subsystem_I_Small_Helper	callees=[2] ins=31 被调 unique=4: 00582000=FUN_00582000 pseudo=void __fastcall FUN_0058a310(int param_1	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x0058A510	Subsystem_I_Small_Helper	callees=[2] ins=22 被调 unique=2: 00583350 005056D0=Aud pseudo={ | FUN_00583350(param_2); | if (*(int *	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x0058A620	Subsystem_I_Small_Helper	callees=[2] ins=27 被调 unique=1: 0050A118=FUN_0050a118 pseudo=void FUN_0058a620(undefined1 *param_1,in	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x0058A680	Subsystem_I_Small_Helper	callees=[2] ins=30 被调 unique=1: 00509FA2 x2 pseudo=void FUN_0058a680(char *param_1,undefine	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x0058A6D0	Subsystem_I_Small_Helper	callees=[2] ins=14 被调 unique=0:  pseudo={ | iVar2 = 0; | piVar1 = &DAT_005d2f88;	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x0058A700	Subsystem_I_Small_Helper	callees=[2] ins=46 被调 unique=0:  pseudo={ | bool bVar7; | iVar3 = 0; | pbVar5 = 	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x0058B680	Subsystem_I_Small_Helper	callees=[2] ins=15 被调 unique=2: 0058B6F0 0058B750 pseudo=void FUN_0058b680(undefined4 param_1) | 	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x0058B6C0	Subsystem_I_Small_Helper	callees=[2] ins=11 被调 unique=0:  pseudo=void FUN_0058b6c0(void) | { | DAT_0072be	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x0058B6F0	Subsystem_I_Small_Helper	callees=[2] ins=31 被调 unique=3: 00580800 x2 0057A750= pseudo=void * FUN_0058b6f0(undefined4 param_1,i	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x0058B750	Subsystem_I_Small_Helper	callees=[2] ins=26 被调 unique=3: 0058B7A0 0059A17A 005 pseudo=void FUN_0058b750(int *param_1,int param	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x0058B7A0	Inline_Getter_Setter	单行内联读写字段: void FUN_0058b7a0(int param_1) | { | if (para	类成员变量单行内联访问器	33-100B 机械内联逻辑，行为已完全自闭合
+0x0058B810	Subsystem_I_Small_Helper	callees=[2] ins=33 被调 unique=1: 004815F0=FUN_004815f0 pseudo=void FUN_0058b810(void) | { | iVar2 = DA	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x0058BA30	Inline_Getter_Setter	单行内联读写字段: { | FUN_0050add7(param_1,&DAT_0072beb0,&DAT_0	类成员变量单行内联访问器	33-100B 机械内联逻辑，行为已完全自闭合
+0x0058BA70	Inline_Getter_Setter	单行内联读写字段: bool FUN_0058ba70(undefined4 param_1,undefine	类成员变量单行内联访问器	33-100B 机械内联逻辑，行为已完全自闭合
+0x0058C308	CPP_Exception_Unwind_Thunk	调用 0x509166 (__CxxThrowException@8), C++ 异常展开或越界捕获	标准 STL 容器越界或异常抛出内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x0058D74E	CPP_Exception_Unwind_Thunk	调用 0x509166 (__CxxThrowException@8), C++ 异常展开或越界捕获	标准 STL 容器越界或异常抛出内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x0058DEB0	Subsystem_I_Small_Helper	callees=[2] ins=15 被调 unique=2: 0058DF20 0058DF80 pseudo=void FUN_0058deb0(undefined4 param_1) | 	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x0058DEF0	Subsystem_I_Small_Helper	callees=[2] ins=11 被调 unique=0:  pseudo=void FUN_0058def0(void) | { | DAT_0072c1	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x0058DF20	Subsystem_I_Small_Helper	callees=[2] ins=31 被调 unique=3: 00580800 x2 0057A750= pseudo=void * FUN_0058df20(undefined4 param_1,i	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x0058DF80	Subsystem_I_Small_Helper	callees=[2] ins=26 被调 unique=3: 0058DFD0 0059A17A 005 pseudo=void FUN_0058df80(int *param_1,int param	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x0058DFD0	Inline_Getter_Setter	单行内联读写字段: void FUN_0058dfd0(int param_1) | { | if (para	类成员变量单行内联访问器	33-100B 机械内联逻辑，行为已完全自闭合
+0x0058E010	Subsystem_I_Small_Helper	callees=[2] ins=46 被调 unique=0:  pseudo={ | bool bVar7; | iVar3 = 0; | pcVar5 = 	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x0058E0C0	Subsystem_I_Small_Helper	callees=[2] ins=22 被调 unique=2: 00509DDB 0050AC20 pseudo=void FUN_0058e0c0(int param_1) | { | DAT	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x0058EA20	Subsystem_I_Small_Helper	callees=[2] ins=24 被调 unique=0:  pseudo=void __thiscall FUN_0058ea20(undefined4 	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x0058EBA0	Subsystem_I_Small_Helper	callees=[2] ins=25 被调 unique=0:  pseudo=void __thiscall FUN_0058eba0(undefined4 	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x0058EF40	Subsystem_I_Small_Helper	callees=[2] ins=28 被调 unique=0:  pseudo=void __thiscall FUN_0058ef40(int param_1	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x0058F0F0	Subsystem_I_Small_Helper	callees=[2] ins=21 被调 unique=1: 0047EC40=FUN_0047ec40 pseudo=void FUN_0058f0f0(undefined4 *param_1,un	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x0058F220	Subsystem_I_Small_Helper	callees=[2] ins=33 被调 unique=0:  pseudo=void __thiscall FUN_0058f220(int *param_	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x0058F5F0	Subsystem_I_Small_Helper	callees=[2] ins=25 被调 unique=1: 0058EBA0 pseudo={ | FUN_0058eba0(param_2); | param_1[2] 	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x0058F670	Subsystem_I_Small_Helper	callees=[2] ins=20 被调 unique=2: 0058F6C0=Scene_Partic pseudo=void __fastcall FUN_0058f670(undefined4 	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x005910E0	Subsystem_I_Small_Helper	callees=[2] ins=24 被调 unique=0:  pseudo=void FUN_005910e0(undefined4 param_1) | 	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00591140	Inline_Getter_Setter	单行内联读写字段: void FUN_00591140(void) | { | DAT_0072c1ac = 	类成员变量单行内联访问器	33-100B 机械内联逻辑，行为已完全自闭合
+0x00591700	Subsystem_I_Small_Helper	callees=[2] ins=46 被调 unique=0:  pseudo={ | bool bVar7; | iVar3 = 0; | pbVar5 = 	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x005919C0	Subsystem_I_Small_Helper	callees=[2] ins=39 被调 unique=0:  pseudo={ | if (*(int **)(param_1 + 0x18) != (in	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00591C80	Inline_Getter_Setter	单行内联读写字段: { | do { | iVar1 = (**(code **)(**(int **)(pa	类成员变量单行内联访问器	33-100B 机械内联逻辑，行为已完全自闭合
+0x00591F00	Subsystem_I_Small_Helper	callees=[2] ins=29 被调 unique=0:  pseudo={ | (**(code **)(**(int **)(param_1 + 0x	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00592280	Scene_Object_State_Setter	调用 0x5778a0 状态写入器，属于 n=19 画像组	场景物件属性状态写入与标志位同步	33-100B 机械内联逻辑，行为已完全自闭合
+0x005922B0	Subsystem_I_Small_Helper	callees=[2] ins=20 被调 unique=0:  pseudo=void __fastcall FUN_005922b0(int param_1	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x005922E0	Subsystem_I_Small_Helper	callees=[2] ins=12 被调 unique=1: 0050AC20 pseudo=void __fastcall FUN_005922e0(int param_1	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00592310	Scene_Object_State_Setter	调用 0x5778a0 状态写入器，属于 n=19 画像组	场景物件属性状态写入与标志位同步	33-100B 机械内联逻辑，行为已完全自闭合
+0x00592370	Inline_Getter_Setter	单行内联读写字段: { | (**(code **)(**(int **)(param_1 + 0x18) +	类成员变量单行内联访问器	33-100B 机械内联逻辑，行为已完全自闭合
+0x005923B0	Scene_Object_State_Setter	调用 0x5778a0 状态写入器，属于 n=19 画像组	场景物件属性状态写入与标志位同步	33-100B 机械内联逻辑，行为已完全自闭合
+0x005923E0	Subsystem_I_Small_Helper	callees=[2] ins=12 被调 unique=1: 0050AC20 pseudo=void __fastcall FUN_005923e0(int param_1	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00592410	Inline_Getter_Setter	单行内联读写字段: { | (**(code **)(**(int **)(param_1 + 0x18) +	类成员变量单行内联访问器	33-100B 机械内联逻辑，行为已完全自闭合
+0x00592450	Scene_Object_State_Setter	调用 0x5778a0 状态写入器，属于 n=19 画像组	场景物件属性状态写入与标志位同步	33-100B 机械内联逻辑，行为已完全自闭合
+0x00592480	Subsystem_I_Small_Helper	callees=[2] ins=12 被调 unique=1: 0050AC20 pseudo=void __fastcall FUN_00592480(int param_1	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x005924B0	Inline_Getter_Setter	单行内联读写字段: { | (**(code **)(**(int **)(param_1 + 0x18) +	类成员变量单行内联访问器	33-100B 机械内联逻辑，行为已完全自闭合
+0x005924F0	Scene_Object_State_Setter	调用 0x5778a0 状态写入器，属于 n=19 画像组	场景物件属性状态写入与标志位同步	33-100B 机械内联逻辑，行为已完全自闭合
+0x00592520	Subsystem_I_Small_Helper	callees=[2] ins=12 被调 unique=1: 0050AC20 pseudo=void __fastcall FUN_00592520(int param_1	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00592550	Inline_Getter_Setter	单行内联读写字段: { | (**(code **)(**(int **)(param_1 + 0x18) +	类成员变量单行内联访问器	33-100B 机械内联逻辑，行为已完全自闭合
+0x00592590	Scene_Object_State_Setter	调用 0x5778a0 状态写入器，属于 n=19 画像组	场景物件属性状态写入与标志位同步	33-100B 机械内联逻辑，行为已完全自闭合
+0x005925C0	Subsystem_I_Small_Helper	callees=[2] ins=12 被调 unique=1: 0050AC20 pseudo=void __fastcall FUN_005925c0(int param_1	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x005925F0	Inline_Getter_Setter	单行内联读写字段: { | (**(code **)(**(int **)(param_1 + 0x18) +	类成员变量单行内联访问器	33-100B 机械内联逻辑，行为已完全自闭合
+0x00592630	Scene_Object_State_Setter	调用 0x5778a0 状态写入器，属于 n=19 画像组	场景物件属性状态写入与标志位同步	33-100B 机械内联逻辑，行为已完全自闭合
+0x00592680	Subsystem_I_Small_Helper	callees=[2] ins=12 被调 unique=1: 0050AC20 pseudo=void __fastcall FUN_00592680(int param_1	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x005926B0	Subsystem_I_Small_Helper	callees=[2] ins=22 被调 unique=0:  pseudo=void __fastcall FUN_005926b0(int param_1	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x005926F0	Scene_Object_State_Setter	调用 0x5778a0 状态写入器，属于 n=19 画像组	场景物件属性状态写入与标志位同步	33-100B 机械内联逻辑，行为已完全自闭合
+0x00592720	Subsystem_I_Small_Helper	callees=[2] ins=12 被调 unique=1: 0050AC20 pseudo=void __fastcall FUN_00592720(int param_1	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00592750	Subsystem_I_Small_Helper	callees=[2] ins=22 被调 unique=0:  pseudo=void __fastcall FUN_00592750(int param_1	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00592790	Scene_Object_State_Setter	调用 0x5778a0 状态写入器，属于 n=19 画像组	场景物件属性状态写入与标志位同步	33-100B 机械内联逻辑，行为已完全自闭合
+0x005927F0	Inline_Getter_Setter	单行内联读写字段: void __fastcall FUN_005927f0(int param_1) | {	类成员变量单行内联访问器	33-100B 机械内联逻辑，行为已完全自闭合
+0x00592820	Scene_Object_State_Setter	调用 0x5778a0 状态写入器，属于 n=19 画像组	场景物件属性状态写入与标志位同步	33-100B 机械内联逻辑，行为已完全自闭合
+0x005929A0	Subsystem_I_Small_Helper	callees=[2] ins=12 被调 unique=1: 0050AC20 pseudo=void __fastcall FUN_005929a0(int param_1	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x005929D0	Scene_Object_State_Setter	调用 0x5778a0 状态写入器，属于 n=19 画像组	场景物件属性状态写入与标志位同步	33-100B 机械内联逻辑，行为已完全自闭合
+0x00592A00	Inline_Getter_Setter	单行内联读写字段: { | (**(code **)(**(int **)(param_1 + 0x18) +	类成员变量单行内联访问器	33-100B 机械内联逻辑，行为已完全自闭合
+0x00592A30	Subsystem_I_Small_Helper	callees=[2] ins=12 被调 unique=1: 0050AC20 pseudo=void __fastcall FUN_00592a30(int param_1	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00592A60	Scene_Object_State_Setter	调用 0x5778a0 状态写入器，属于 n=19 画像组	场景物件属性状态写入与标志位同步	33-100B 机械内联逻辑，行为已完全自闭合
+0x00592AB0	Scene_Object_State_Setter	调用 0x5778a0 状态写入器，属于 n=19 画像组	场景物件属性状态写入与标志位同步	33-100B 机械内联逻辑，行为已完全自闭合
+0x00592AE0	Subsystem_I_Small_Helper	callees=[2] ins=31 被调 unique=1: 00578030 pseudo={ | (**(code **)(**(int **)(param_1 + 0x	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00592B30	Scene_Object_State_Setter	调用 0x5778a0 状态写入器，属于 n=19 画像组	场景物件属性状态写入与标志位同步	33-100B 机械内联逻辑，行为已完全自闭合
+0x00592B60	Subsystem_I_Small_Helper	callees=[2] ins=31 被调 unique=1: 00578030 pseudo={ | (**(code **)(**(int **)(param_1 + 0x	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00592BB0	Scene_Object_State_Setter	调用 0x5778a0 状态写入器，属于 n=19 画像组	场景物件属性状态写入与标志位同步	33-100B 机械内联逻辑，行为已完全自闭合
+0x00592BE0	Inline_Getter_Setter	单行内联读写字段: { | (**(code **)(**(int **)(param_1 + 0x18) +	类成员变量单行内联访问器	33-100B 机械内联逻辑，行为已完全自闭合
+0x00592C10	Subsystem_I_Small_Helper	callees=[2] ins=12 被调 unique=1: 0050AC20 pseudo=void __fastcall FUN_00592c10(int param_1	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00592C40	Scene_Object_State_Setter	调用 0x5778a0 状态写入器，属于 n=19 画像组	场景物件属性状态写入与标志位同步	33-100B 机械内联逻辑，行为已完全自闭合
+0x00592C70	Inline_Getter_Setter	单行内联读写字段: { | (**(code **)(**(int **)(param_1 + 0x18) +	类成员变量单行内联访问器	33-100B 机械内联逻辑，行为已完全自闭合
+0x00592CA0	Subsystem_I_Small_Helper	callees=[2] ins=12 被调 unique=1: 0050AC20 pseudo=void __fastcall FUN_00592ca0(int param_1	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00592CD0	Scene_Object_State_Setter	调用 0x5778a0 状态写入器，属于 n=19 画像组	场景物件属性状态写入与标志位同步	33-100B 机械内联逻辑，行为已完全自闭合
+0x00592D00	Inline_Getter_Setter	单行内联读写字段: { | (**(code **)(**(int **)(param_1 + 0x18) +	类成员变量单行内联访问器	33-100B 机械内联逻辑，行为已完全自闭合
+0x00592D30	Subsystem_I_Small_Helper	callees=[2] ins=12 被调 unique=1: 0050AC20 pseudo=void __fastcall FUN_00592d30(int param_1	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00593410	Subsystem_I_Small_Helper	callees=[2] ins=23 被调 unique=1: 0050AC20 pseudo=void __fastcall FUN_00593410(int param_1	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00593450	Subsystem_I_Small_Helper	callees=[2] ins=35 被调 unique=1: 00578E10=FUN_00578e10 pseudo=void __thiscall FUN_00593450(int param_1	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x005934B0	Subsystem_I_Small_Helper	callees=[2] ins=36 被调 unique=0:  pseudo={ | iVar4 = 0; | if (0 < *(int *)(param_	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x0059377C	Inline_Getter_Setter	单行内联读写字段: { | if ((((param_2._2_2_ & 0x7ff8) != 0x7ff0)	类成员变量单行内联访问器	33-100B 机械内联逻辑，行为已完全自闭合
+0x0059383C	Subsystem_I_Small_Helper	callees=[2] ins=27 被调 unique=3: 0050C5D1=FUN_0050c5d1 pseudo={ | FUN_0050c5d1(param_2); | piVar1 = pa	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00593D45	Inline_Getter_Setter	单行内联读写字段: void FUN_00593d45(void) | { | float10 in_ST0;	类成员变量单行内联访问器	33-100B 机械内联逻辑，行为已完全自闭合
+0x00593DD4	Inline_Getter_Setter	单行内联读写字段: void FUN_00593dd4(void) | { | return; | }	类成员变量单行内联访问器	33-100B 机械内联逻辑，行为已完全自闭合
+0x00593FE1	Subsystem_I_Small_Helper	callees=[2] ins=22 被调 unique=0:  pseudo=	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00594015	Subsystem_I_Small_Helper	callees=[2] ins=20 被调 unique=1: 00594047=FUN_00594047 pseudo=	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x005941E0	Subsystem_I_Small_Helper	callees=[2] ins=20 被调 unique=2: 005100A7=CRT_Memory_S pseudo=	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x0059421E	Subsystem_I_Small_Helper	callees=[2] ins=17 被调 unique=2: 00510040=__trandisp1  pseudo=	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x0059425B	Subsystem_I_Small_Helper	callees=[2] ins=21 被调 unique=3: 0059440E x2 005100A7= pseudo=	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x005943DB	Subsystem_I_Small_Helper	callees=[2] ins=16 被调 unique=3: 0059440E 00510040=__t pseudo=	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x0059440E	Subsystem_I_Small_Helper	callees=[2] ins=22 被调 unique=0:  pseudo=	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00594A2C	Subsystem_I_Small_Helper	callees=[2] ins=25 被调 unique=1: 00594A06 x2 pseudo=	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00594A78	Subsystem_I_Small_Helper	callees=[2] ins=25 被调 unique=1: 00594A06 x2 pseudo=	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00594B2C	Subsystem_I_Small_Helper	callees=[2] ins=25 被调 unique=1: 00594A19 x2 pseudo=	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00594B78	Subsystem_I_Small_Helper	callees=[2] ins=25 被调 unique=1: 00594A19 x2 pseudo=	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00595346	CRT_Free_Wrapper	调用 0x5089fd (free), 释放局部动态缓冲区	小对象局部缓冲区析构与堆内存释放	33-100B 机械内联逻辑，行为已完全自闭合
+0x00595770	Subsystem_I_Small_Helper	callees=[2] ins=32 被调 unique=0:  pseudo={ | local_c = param_3; | local_8 = param	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00595890	Subsystem_I_Small_Helper	callees=[2] ins=27 被调 unique=2: 005095F5=_malloc 0059 pseudo={ | puVar1 = _malloc(0xc); | if (puVar1 	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x005958E5	Inline_Getter_Setter	单行内联读写字段: { | param_1[2] = 0; | param_1[1] = 0; | retur	类成员变量单行内联访问器	33-100B 机械内联逻辑，行为已完全自闭合
+0x00595FAC	CRT_Free_Wrapper	调用 0x5089fd (free), 释放局部动态缓冲区	小对象局部缓冲区析构与堆内存释放	33-100B 机械内联逻辑，行为已完全自闭合
+0x00596780	Subsystem_I_Small_Helper	callees=[2] ins=27 被调 unique=2: 0059A0A0 0051274A pseudo=void FUN_00596780(undefined4 param_1,und	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x00596800	Inline_Getter_Setter	单行内联读写字段: void FUN_00596800(void) | { | return; | }	类成员变量单行内联访问器	33-100B 机械内联逻辑，行为已完全自闭合
+0x0059A0A0	Subsystem_I_Small_Helper	callees=[2] ins=33 被调 unique=1: 00509F22=FUN_00509f22 pseudo=void FUN_0059a0a0(undefined4 param_1,und	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x0059A11C	Subsystem_I_Small_Helper	callees=[2] ins=14 被调 unique=0:  pseudo={ | if (DAT_0072c1f0 == (undefined *)0x0	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x0059FA98	Subsystem_I_Small_Helper	callees=[2] ins=9 被调 unique=0:  pseudo=	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x0059FF28	Subsystem_I_Small_Helper	callees=[2] ins=9 被调 unique=0:  pseudo=	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x005A26C0	Subsystem_I_Small_Helper	callees=[2] ins=9 被调 unique=0:  pseudo=	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x005A274E	Subsystem_I_Small_Helper	callees=[2] ins=10 被调 unique=0:  pseudo=	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合
+0x005A3268	Subsystem_I_Small_Helper	callees=[2] ins=9 被调 unique=0:  pseudo=	子系统 I 小型辅助内联	33-100B 机械内联逻辑，行为已完全自闭合

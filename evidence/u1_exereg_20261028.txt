@@ -1,0 +1,200 @@
+# U1 exe-side trie registration dump (2026-10-28)  — FINAL (167/167 resolved)
+# Meteor.exe sha256=baebb6d5... imagebase 0x400000, VA=off+0x400000
+# mechanism: derived ctor (SEH prologue; slot vtable; call 0x4DC9A0 base ctor) -> init fn = registration body
+#            slot 9 exception: registration inside getter 0x4E18C0 (lazy path); ctor 0x4E1420 builds 3 tries (+4,+0x40,+0x50)
+# each reg: push <id> ; lea r32,[esp+0x13..0x1f] ; sub esp,0xc ; mov ecx,esp ; push r32 ; push <lit> ; call 0x402570 (pool string ctor)
+#           ; mov eax,[char+4] ; lea esi,[char+4] ; call [eax+8]  = trie insert 0x5035C0 (trie embedded char+4, vtable 0x5AAAE8)
+# slot = dispatcher 0x4E3D80 arg (0-11). Global byte-signature sweep: 167 reg sites, ALL in 0x4DD100-0x4E4000 (closed endpoint)
+# id resolution: push imm direct; reg-held id resolved to nearest mov r32,imm (annotated with assignment address)
+# id space = act group id (character.act group numbers, 0..159 range observed)
+
+== slot 0 ==
+  004dd5b0  id=34     pat="'m'"          lit=0x5c6838   init
+  004dd5d1  id=45     pat="'ma'"         lit=0x5c9e4c   init
+  004dd5f2  id=35     pat="'fm'"         lit=0x5c9e48   init
+  004dd613  id=36     pat="'bm'"         lit=0x5c7c28   init
+  004dd634  id=37     pat="'lm'"         lit=0x5c9e44   init
+  004dd655  id=38     pat="'rm'"         lit=0x5c9e40   init
+  004dd676  id=46     pat="'bma'"        lit=0x5c9e3c   init
+  004dd697  id=39     pat="'bbm'"        lit=0x5c9e38   init
+  004dd6b8  id=40     pat="'bfm'"        lit=0x5c9e34   init
+  004dd6d9  id=41     pat="'fbm'"        lit=0x5c9e30   init
+  004dd6fa  id=42     pat="'ffm'"        lit=0x5c9e2c   init
+  004dd71b  id=43     pat="'bffm'"       lit=0x5c9e24   init
+  004dd73c  id=44     pat="'lrfm'"       lit=0x5c9e1c   init
+  004dd760  id=150    pat="'lrm'"        lit=0x5c9e18   init
+  004dd784  id=151    pat="'rlm'"        lit=0x5c9e14   init
+
+== slot 1 ==
+  004e09fd  id=24     pat="'m'"          lit=0x5c6838   init
+  004e0a1e  id=25     pat="'fm'"         lit=0x5c9e48   init
+  004e0a3f  id=31     pat="'ma'"         lit=0x5c9e4c   init
+  004e0a60  id=26     pat="'ffm'"        lit=0x5c9e2c   init
+  004e0a81  id=27     pat="'lm'"         lit=0x5c9e44   init
+  004e0aa2  id=28     pat="'rm'"         lit=0x5c9e40   init
+  004e0ac3  id=83     pat="'bm'"         lit=0x5c7c28   init
+  004e0ae4  id=87     pat="'bbm'"        lit=0x5c9e38   init
+  004e0b05  id=32     pat="'bma'"        lit=0x5c9e3c   init
+  004e0b26  id=29     pat="'bfm'"        lit=0x5c9e34   init
+  004e0b47  id=33     pat="'fbma'"       lit=0x5c9e7c   init
+  004e0b68  id=30     pat="'bffm'"       lit=0x5c9e24   init
+  004e0b8c  id=149    pat="'bbma'"       lit=0x5c9e74   init
+
+== slot 2 ==
+  004debaf  id=4      pat="'m'"          lit=0x5c6838  id=reg(ebx,004de980) init
+  004debd0  id=58     pat="'ma'"         lit=0x5c9e4c   init
+  004debf1  id=5      pat="'fm'"         lit=0x5c9e48   init
+  004dec12  id=6      pat="'bm'"         lit=0x5c7c28   init
+  004dec33  id=7      pat="'bffm'"       lit=0x5c9e24   init
+  004dec57  id=146    pat="'bfm'"        lit=0x5c9e34   init
+
+== slot 3 ==
+  004df3cd  id=0      pat="'m'"          lit=0x5c6838   init
+  004df3ee  id=84     pat="'ma'"         lit=0x5c9e4c   init
+  004df40f  id=1      pat="'fm'"         lit=0x5c9e48   init
+  004df430  id=2      pat="'bm'"         lit=0x5c7c28   init
+  004df451  id=3      pat="'bffm'"       lit=0x5c9e24   init
+  004df472  id=86     pat="'fma'"        lit=0x5c9e70   init
+  004df496  id=142    pat="'bfm'"        lit=0x5c9e34   init
+  004df4ba  id=143    pat="'bfma'"       lit=0x5c9e68   init
+
+== slot 4 ==
+  004e02d0  id=72     pat="'m'"          lit=0x5c6838   init
+  004e02f1  id=73     pat="'fm'"         lit=0x5c9e48   init
+  004e0312  id=74     pat="'bm'"         lit=0x5c7c28   init
+  004e0333  id=75     pat="'bfm'"        lit=0x5c9e34   init
+  004e0354  id=76     pat="'ffm'"        lit=0x5c9e2c   init
+  004e0375  id=77     pat="'bbm'"        lit=0x5c9e38   init
+  004e0396  id=82     pat="'bma'"        lit=0x5c9e3c   init
+  004e03b7  id=78     pat="'lrm'"        lit=0x5c9e18   init
+  004e03d8  id=79     pat="'rlm'"        lit=0x5c9e14   init
+  004e03f9  id=80     pat="'lrbm'"       lit=0x5c9e50   init
+  004e041a  id=81     pat="'bbfm'"       lit=0x5c9e60   init
+  004e043b  id=58     pat="'ma'"         lit=0x5c9e4c   init
+  004e045f  id=156    pat="'lrfm'"       lit=0x5c9e1c   init
+  004e0483  id=157    pat="'bffm'"       lit=0x5c9e24   init
+
+== slot 5 ==
+  004de45c  id=60     pat="'m'"          lit=0x5c6838  id=reg(ebx,004de405) init
+  004de47d  id=61     pat="'fm'"         lit=0x5c9e48   init
+  004de49e  id=62     pat="'bm'"         lit=0x5c7c28   init
+  004de4bf  id=63     pat="'lm'"         lit=0x5c9e44   init
+  004de4e0  id=64     pat="'rm'"         lit=0x5c9e40   init
+  004de501  id=71     pat="'bma'"        lit=0x5c9e3c   init
+  004de522  id=65     pat="'ffm'"        lit=0x5c9e2c   init
+  004de543  id=66     pat="'bfm'"        lit=0x5c9e34   init
+  004de564  id=67     pat="'bbm'"        lit=0x5c9e38   init
+  004de585  id=68     pat="'lrm'"        lit=0x5c9e18   init
+  004de5a6  id=69     pat="'lrfm'"       lit=0x5c9e1c   init
+  004de5c7  id=70     pat="'lrbm'"       lit=0x5c9e50   init
+  004de5e8  id=58     pat="'ma'"         lit=0x5c9e4c   init
+  004de60c  id=154    pat="'rlm'"        lit=0x5c9e14   init
+  004de630  id=155    pat="'bbfm'"       lit=0x5c9e60   init
+
+== slot 6 ==
+  004dfb74  id=8      pat="'m'"          lit=0x5c6838   init
+  004dfb95  id=58     pat="'ma'"         lit=0x5c9e4c   init
+  004dfbb6  id=9      pat="'fm'"         lit=0x5c9e48   init
+  004dfbd7  id=10     pat="'bm'"         lit=0x5c7c28   init
+  004dfbf8  id=11     pat="'bffm'"       lit=0x5c9e24   init
+  004dfc1c  id=144    pat="'bfm'"        lit=0x5c9e34   init
+  004dfc40  id=145    pat="'bfma'"       lit=0x5c9e68   init
+
+== slot 7 ==
+  004ddd04  id=47     pat="'m'"          lit=0x5c6838   init
+  004ddd25  id=48     pat="'bm'"         lit=0x5c7c28   init
+  004ddd46  id=49     pat="'fm'"         lit=0x5c9e48   init
+  004ddd67  id=50     pat="'rlm'"        lit=0x5c9e14   init
+  004ddd88  id=51     pat="'bbm'"        lit=0x5c9e38   init
+  004ddda9  id=59     pat="'bma'"        lit=0x5c9e3c   init
+  004dddca  id=52     pat="'bfm'"        lit=0x5c9e34   init
+  004dddeb  id=53     pat="'ffm'"        lit=0x5c9e2c   init
+  004dde0c  id=54     pat="'lrm'"        lit=0x5c9e18   init
+  004dde2d  id=55     pat="'bbfm'"       lit=0x5c9e60   init
+  004dde4e  id=56     pat="'lrfm'"       lit=0x5c9e1c   init
+  004dde6f  id=57     pat="'bffm'"       lit=0x5c9e24   init
+  004dde90  id=58     pat="'ma'"         lit=0x5c9e4c   init
+  004ddeb4  id=152    pat="'fffm'"       lit=0x5c9e58   init
+  004dded8  id=153    pat="'lrbm'"       lit=0x5c9e50   init
+
+== slot 8 ==
+  004e1124  id=12     pat="'m'"          lit=0x5c6838   init
+  004e1145  id=13     pat="'fm'"         lit=0x5c9e48   init
+  004e1166  id=21     pat="'ma'"         lit=0x5c9e4c   init
+  004e1187  id=22     pat="'fma'"        lit=0x5c9e70   init
+  004e11a8  id=14     pat="'rm'"         lit=0x5c9e40   init
+  004e11c9  id=15     pat="'lm'"         lit=0x5c9e44   init
+  004e11ea  id=16     pat="'lrm'"        lit=0x5c9e18   init
+  004e120b  id=23     pat="'bma'"        lit=0x5c9e3c   init
+  004e122c  id=17     pat="'bfm'"        lit=0x5c9e34   init
+  004e124d  id=18     pat="'bm'"         lit=0x5c7c28   init
+  004e126e  id=19     pat="'ffm'"        lit=0x5c9e2c   init
+  004e128f  id=20     pat="'blrm'"       lit=0x5c9e84   init
+  004e12b3  id=147    pat="'lrfm'"       lit=0x5c9e1c   init
+  004e12d7  id=148    pat="'bbfm'"       lit=0x5c9e60   init
+
+== slot 9 ==
+  004e1c16  id=88     pat="'lm'"         lit=0x5c9e44   getter 0x4E18C0
+  004e1c37  id=89     pat="'bbm'"        lit=0x5c9e38   getter 0x4E18C0
+  004e1c58  id=90     pat="'m'"          lit=0x5c6838   getter 0x4E18C0
+  004e1c79  id=91     pat="'bm'"         lit=0x5c7c28   getter 0x4E18C0
+  004e1c9a  id=104    pat="'ma'"         lit=0x5c9e4c   getter 0x4E18C0
+  004e1cbb  id=105    pat="'bma'"        lit=0x5c9e3c   getter 0x4E18C0
+  004e1cdf  id=159    pat="'ffm'"        lit=0x5c9e2c   getter 0x4E18C0
+  004e1d04  id=92     pat="'rm'"         lit=0x5c9e40   getter 0x4E18C0
+  004e1d25  id=93     pat="'bbm'"        lit=0x5c9e38   getter 0x4E18C0
+  004e1d46  id=94     pat="'m'"          lit=0x5c6838   getter 0x4E18C0
+  004e1d67  id=95     pat="'fm'"         lit=0x5c9e48   getter 0x4E18C0
+  004e1d88  id=96     pat="'ffm'"        lit=0x5c9e2c   getter 0x4E18C0
+  004e1da9  id=97     pat="'bm'"         lit=0x5c7c28   getter 0x4E18C0
+  004e1dca  id=104    pat="'ma'"         lit=0x5c9e4c   getter 0x4E18C0
+  004e1deb  id=105    pat="'bma'"        lit=0x5c9e3c   getter 0x4E18C0
+  004e1e0f  id=158    pat="'bfm'"        lit=0x5c9e34   getter 0x4E18C0
+  004e1e34  id=98     pat="'rm'"         lit=0x5c9e40   getter 0x4E18C0
+  004e1e55  id=99     pat="'lm'"         lit=0x5c9e44   getter 0x4E18C0
+  004e1e76  id=100    pat="'m'"          lit=0x5c6838   getter 0x4E18C0
+  004e1e97  id=101    pat="'bfm'"        lit=0x5c9e34   getter 0x4E18C0
+  004e1eb8  id=102    pat="'fbm'"        lit=0x5c9e30   getter 0x4E18C0
+  004e1ed9  id=103    pat="'bbfm'"       lit=0x5c9e60   getter 0x4E18C0
+  004e1efa  id=104    pat="'ma'"         lit=0x5c9e4c   getter 0x4E18C0
+  004e1f1b  id=105    pat="'bma'"        lit=0x5c9e3c   getter 0x4E18C0
+
+== slot 10 ==
+  004e39c4  id=106    pat="'ma'"         lit=0x5c9e4c   init
+  004e39e5  id=107    pat="'m'"          lit=0x5c6838   init
+  004e3a06  id=108    pat="'bma'"        lit=0x5c9e3c   init
+  004e3a27  id=109    pat="'lrm'"        lit=0x5c9e18   init
+  004e3a48  id=110    pat="'llm'"        lit=0x5c9e8c   init
+  004e3a69  id=111    pat="'rrm'"        lit=0x5c9e90   init
+  004e3a8a  id=112    pat="'bm'"         lit=0x5c7c28   init
+  004e3aab  id=113    pat="'bbm'"        lit=0x5c9e38   init
+  004e3acc  id=114    pat="'lrfm'"       lit=0x5c9e1c   init
+  004e3aed  id=115    pat="'bfm'"        lit=0x5c9e34   init
+  004e3b0e  id=116    pat="'ffm'"        lit=0x5c9e2c   init
+  004e3b2f  id=117    pat="'fbm'"        lit=0x5c9e30   init
+  004e3b50  id=118    pat="'bffm'"       lit=0x5c9e24   init
+  004e3b71  id=119    pat="'lrbm'"       lit=0x5c9e50   init
+  004e3b92  id=120    pat="'bbfm'"       lit=0x5c9e60   init
+
+== slot 11 ==
+  004e30f1  id=121    pat="'ma'"         lit=0x5c9e4c   init
+  004e3112  id=122    pat="'m'"          lit=0x5c6838   init
+  004e3133  id=123    pat="'fm'"         lit=0x5c9e48   init
+  004e3154  id=124    pat="'bm'"         lit=0x5c7c28   init
+  004e3175  id=125    pat="'bma'"        lit=0x5c9e3c   init
+  004e3196  id=126    pat="'fbm'"        lit=0x5c9e30   init
+  004e31b7  id=127    pat="'lrbm'"       lit=0x5c9e50   init
+  004e31db  id=128    pat="'bbfm'"       lit=0x5c9e60   init
+  004e31ff  id=129    pat="'ffma'"       lit=0x5c9eac   init
+  004e3223  id=130    pat="'rrma'"       lit=0x5c9ea4   init
+  004e3247  id=131    pat="'llma'"       lit=0x5c9e9c   init
+  004e326b  id=132    pat="'bbma'"       lit=0x5c9e74   init
+  004e328f  id=133    pat="'bfm'"        lit=0x5c9e34   init
+  004e32b3  id=134    pat="'lrfm'"       lit=0x5c9e1c   init
+  004e32d7  id=135    pat="'lrfbm'"      lit=0x5c9e94   init
+  004e32fb  id=136    pat="'ffm'"        lit=0x5c9e2c   init
+  004e331f  id=137    pat="'rrm'"        lit=0x5c9e90   init
+  004e3343  id=138    pat="'llm'"        lit=0x5c9e8c   init
+  004e3367  id=139    pat="'bbm'"        lit=0x5c9e38   init
+  004e338b  id=141    pat="'lrm'"        lit=0x5c9e18   init
+  004e33af  id=140    pat="'bffm'"       lit=0x5c9e24   init

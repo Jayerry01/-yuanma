@@ -1,6 +1,6 @@
 # docs/11 — 行为等价测试台规格（MeteorRebuild ⇄ 原版 Meteor.exe）
 
-> 依据 REAP §20「Behavioral equivalence harness」：从 CLONE_SPEC（私有区 §1.22–1.24）
+> 从 CLONE_SPEC（私有区 §1.22–1.24）
 > 与 docs/02 §八 派生**可观测行为矩阵**，两侧跑同一语料，逐项发散报告。
 > **禁止抽查式等价宣告**——报告必须覆盖每一项，PASS / FAIL / NOT-TESTED 逐项标注。
 > 维护：2026-10-28 首版。

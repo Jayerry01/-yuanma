@@ -409,7 +409,7 @@ AvoidObstacle Dodge Kill Combat RandomRun Follow Patrol GotoGoal Wait Init`）
 005014bd  68d49c5c00    PUSH 0x5c9cd4 ="Jump"
 ```
 
-（每个名字都取两次，❓ 推测一次读当前值、一次读默认值，未验证。）
+（每个名字调两次 GetScriptInt：✅ **已闭合**（2026-10-28）。源码写法为 `if (GetVariable("View")) { val = GetVariable("View")->GetShort(); }`，首次判断是否存在，二次提取写入 `ActorController + 0x430..+0x44A` 的 14 属性结构体字段，见 `tools/verify_combo_strings_and_ai_attr_20261028.py`。）
 
 取数器 `0x00571660` 首字节 `83ec088b412453555685c057`——真函数。
 
@@ -669,10 +669,10 @@ ChangeBehavior(who,"attacktarget",slot[,mode])
 | ~~`attacktarget` 第 4 参写入的 `+0x88` 语义~~ | ✅ **闭合（2026-10-28）** = 攻击重复执行计数器（`attack_count`）。若 `>0`，近身判定门限放宽至 80.0f（`0x5AB870`）；若 `≤0`，使用近身常规 40.0f（`0x5A8E7C`）。在有效距离与 30 度视角（`0x4FCED0`）内触发 `0x500C90` 攻击（`rand()%3` 变招），并执行 `dec [ESI+0x88]`，直至减至 0 调用 `0x4FD870` 退出行为 |
 | ~~中心动作派发器 `0x504C40`–`0x504F60` 的动作 ID 数值~~ | ✅ **闭合（2026-10-28）** = 证实不存在 573 个 ActionID 集中派发。`0x504BE0` 为 9 大 Perform 动词分派；`0x504F50` 为 128 项 ASCII 矢量字形单字渲染器（索引 `0x5CA3A0`，1/16 缩放） |
 | ~~`block` 动作名的调用点~~ | ✅ **闭合（2026-10-28）** = 玩家动作队列执行器 `0x004C0730`（匹配后调 `0x004C3900` 即 `Player::SetBlock(0/1)`）；场景描述表 `0x005B0214`（阻挡碰撞属性） |
-| AI 属性"取两次"的含义 | ❓ |
+| ~~AI 属性"取两次"的含义~~ | ✅ **闭合（2026-10-28）** = 源码未暂存指针所致（`if (GetVar("X")) val = GetVar("X")->GetShort()`）。提取值写入 `ActorController` 的 14 项属性结构体（`View +0x430`、`Think +0x432`、`Guard +0x434`、`Dodge +0x436`、`Jump +0x438`、`Look +0x43A`、`Burst +0x43C`、`Aim +0x43E`、`GetItem +0x440`、`Attack1 +0x442`、`Attack2 +0x444`、`Attack3 +0x446`、`Spawn +0x448`、`HP +0x44A`） |
 | ~~`Misc("transfer")` 是否真正传送~~ | ✅ **闭合（2026-10-28）**：真实生效。`Misc`（`0x0056C770` 于 `0x0056C8D9`）调用 `0x564FC0` 提取路点 `[esi+0x28]+0x98` 坐标 Vec3，格式化 actor_id 后调用引擎事件钩子 `[0x5D186C]`（实装回调 `0x004D8CF0`）派发 `0x1E` 传送事件，最终调用 `WorldManager::Slot 200 (+0x31C)` 执行角色硬瞬移（见 `tools/verify_pscript_behavior_params_20261028.py`） |
 | ~~属性变更网络出口 `[0x5D1784]`~~ | ✅ **闭合（2026-10-28）** = 实装为 `0x004D95D0`（由 `0x004936BD` 注册）。实参首参 2 为属性更新包，内部调用 `WorldManager::Slot 167 (+0x29C)` 执行服务器全网多播同步 |
-| `0x5CA1FC` 连招键串池的消费方 | ❓ |
+| ~~`0x5CA1FC` 连招键串池的消费方~~ | ✅ **闭合（2026-10-28）** = `FUN_004ff200`（`0x004FF200`–`0x005005A3`，5,028 字节）。这是 AI 武器招式出招库构建器（`AI_InitWeaponCombos`），为 12 种武器装配 15 种合法出招方向组合序列（`lrfb`、`bbf`、`bff`、`lrb`、`fff` 等共 77 处挂载） |
 | VM 是字节码还是 AST 直解 | ❓ 未见字节码分派特征，倾向 AST/树遍历，无证据 |
 
 ---

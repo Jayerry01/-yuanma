@@ -376,9 +376,7 @@ AvoidObstacle Dodge Kill Combat RandomRun Follow Patrol GotoGoal Wait Init`）
   - `getseries(row, col)`：返回 `[0x726888 + (row*500 + col)*8]` 的首 dword；
   - `gettime()`：`0x4748C0()` × `[0x5A9BAC] = 1000.0` → 取整
     （返回值单位 = **毫秒**）；
-  - `transfer(id, dname)`：按名查物件后 `sprintf("%d", id)`，把结果交给
-    `[0x5D186C]` 指向的 `0x56CB40`（该函数按首参返回 3/-1/0/1，
-    ❓ 传送是否真正生效未验证——`0x56CB40` 不写任何对象字段）。
+  - `transfer(id, dname)`：✅ **已闭合**（2026-10-28）。`0x564FC0` 提取路点 `[esi+0x28]+0x98` 坐标 Vec3，`sprintf("%d", id)` 后传实参 `(0x1E, id_str, &Vec3)` 调用引擎事件钩子 `[0x5D186C]`；该钩子由 `0x004936B3` 注册为 `0x004D8CF0`，判定 `0x1E` 事件后调用 `WorldManager::Slot 200 (+0x31C)` 传参 `(actor_id, 0x4D, &Vec3, 0x40, 1)` 完成角色物理坐标硬重定位与网络同步。此前“指向 0x56CB40”实为看错返回码工具函数的陈旧误区。
 - **`MakeString`（`0x56C630`）**：`argc >= 3`，`arg0` 必须为字符串类型码 7、
   `arg1` 为 7/8（整数），执行 `sprintf("%s%02d", str, int)`——
   1776 的示例 `MakeString(name,"hua",9) → "hua09"` **由 `%02d` 补零直接证实**。

@@ -39,3 +39,7 @@ __pycache__/
 
 *.tmp
 *.log
+
+*.zip
+*.rar
+*.7z

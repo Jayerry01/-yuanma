@@ -1,5 +1,5 @@
 // 按引用者证据队列批量建函数（v6）。
-// 前置校验：目标不在任何既有函数体内（第三轮截断教训）。
+// 前置校验：目标不在任何既有函数体内。
 // 用法：-postScript CreateQueuedFunctions.java <queue.txt>
 import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;

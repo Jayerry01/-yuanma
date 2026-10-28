@@ -1,5 +1,5 @@
 // 批量建立 ILT / 增量链接 thunk：形状 B8 <imm32> E9 <rel32>，尾部 CC 对齐。
-// 前置校验：目标不在任何既有函数体内 + 首字节模式复核（第三轮的教训）。
+// 前置校验：目标不在任何既有函数体内 + 首字节模式复核。
 // 用法：-postScript CreateILTThunks.java <ilt_candidates.txt>
 import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;

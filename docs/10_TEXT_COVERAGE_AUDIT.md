@@ -644,7 +644,7 @@ T2w 在报告里永久可见——「等不到第二条证据」本身就是信�
 
 ## 十七、U6 终账：v13/v14 两轮补建与 100% 字节归属（2026-10-28）
 
-> **证据**：`tools/u6_final_account_20261028.py`（参数 v12/v13/v14）→
+> **证据**：`tools/u6_final_account_20261028.py`（默认运行 v14 最终闭合口径；亦支持显式传参 `v12`/`v13`/`v14` 对比两轮建体前后的洞数量演进）→
 > `evidence/u6_final_account_v14_20261028.txt`（202 行，判据随行）+
 > `evidence/u6_holes_v14_20261028.csv`（6,220 洞逐洞）；
 > 建体日志 `evidence/u6_create_log_20261028.txt`；队列 `evidence/u6_orphans_20261028.txt`（411）

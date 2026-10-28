@@ -6,7 +6,7 @@
 # 判定依据全部随行打印; 否定结论附解码终点
 import json, struct, collections, bisect, io, csv, hashlib, sys
 
-VER = sys.argv[1] if len(sys.argv) > 1 else 'v12'
+VER = sys.argv[1] if len(sys.argv) > 1 else 'v14'  # 默认使用最终闭合口径 v14，亦可显式传入 v12/v13/v14
 BASE = r"D:/MeteorProjects/_private/ghidra_scripts/"
 BIN  = r"C:\Program Files (x86)\Meteor\Meteor.exe"
 OUT_TXT = r"D:\MeteorRE\evidence\u6_final_account_%s_20261028.txt" % VER

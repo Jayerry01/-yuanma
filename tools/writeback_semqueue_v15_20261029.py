@@ -82,6 +82,7 @@ S = sum(int(r['size']) for r in rows)
 # ---------------------------------------------------------------- 命名表
 names = {}
 conflicts = []
+unresolved = []
 for tag, fn, prio in FILES:
     path = os.path.join(EV, fn)
     if not os.path.exists(path):
@@ -94,15 +95,20 @@ for tag, fn, prio in FILES:
             continue
         a = key(r)
         cc = column(r, 'confidence')
-        rec = (r[cn].strip(), tag, r[cc].strip() if cc else '', prio)
+        newname = r[cn].strip()
+        if newname.upper() in ('UNRESOLVED', 'UNKNOWN', '?', '-'):
+            unresolved.append((a, tag, newname))
+            continue
+        rec = (newname, tag, r[cc].strip() if cc else '', prio)
         if a in names and names[a][0] != rec[0]:
             conflicts.append((a, names[a], rec))
             continue
         if a not in names:
             names[a] = rec
         n += 1
-print('命名输入：%d 个唯一地址，冲突 %d' % (len(names), len(conflicts)))
-check(len(names) == 756, '输入 = 756 行', str(len(names)))
+print('命名输入：%d 个唯一地址，冲突 %d，非名字（UNRESOLVED 等）%d'
+      % (len(names), len(conflicts), len(unresolved)))
+check(len(names) == 755, '输入 = 755 行（756 减 1 条 UNRESOLVED）', str(len(names)))
 check(len(conflicts) == 0, '输入内部无同名冲突', str(len(conflicts)))
 
 # ---------------------------------------------------------------- 占位判定
@@ -185,7 +191,18 @@ if conflicts or skipped:
     print('审计行 %d（含覆盖前旧名）→ %s' % (len(conflicts) + len(skipped), os.path.basename(CONF)))
 
 # ---------------------------------------------------------------- 覆盖度
-semantic = [r for r in out if not placeholder(r['name'])]
+# 覆盖度按输出版本自身重算桶名，保证任何人拿 v15 单文件跑同一规则得到同一数
+FREQ2 = {}
+for r in out:
+    FREQ2[r['name']] = FREQ2.get(r['name'], 0) + 1
+BUCKETS2 = {n for n, c in FREQ2.items() if c >= BUCKET_MIN}
+
+
+def ph2(n):
+    return (n.startswith(('FUN_', 'thunk_FUN_', 'LAB_', 'DAT_', 'SUB_')) or n in BUCKETS2)
+
+
+semantic = [r for r in out if not ph2(r['name'])]
 sem_b = sum(int(r['size']) for r in semantic)
 print('')
 print('=== 单一口径（此后只认这个）===')
